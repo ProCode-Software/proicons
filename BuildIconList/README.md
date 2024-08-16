@@ -15,15 +15,15 @@ This plugin is used to create a configuration JSON with the icon descriptions an
 
 ## How to use
 
-1. Select a **frame** containing your icons as **components**. If this criteria is not met, this plugin won't work, but you can modify the code to meet the needs of your workflow.
+1. Select a **frame** containing your icons as **components**. If this criteria is not met, this plugin won't work, but you can modify [`code.ts`](/code.ts) code to meet the needs of your workflow.
 2. Run the plugin
 3. If successful, a plugin window will show with your JSON, formatted in the way shown below:
 
 ```json
 {
-	"Add": {
-		"description": "Plus, Create, New, Addition",
-		"category": "Actions"
-	}
+    "Add": {
+        "description": "Plus, Create, New, Addition",
+        "category": "Actions"
+    }
 }
 ```
