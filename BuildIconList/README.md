@@ -21,9 +21,9 @@ This plugin is used to create a configuration JSON with the icon descriptions an
 
 ```json
 {
-    "Add": {
+	"Add": {
 		"description": "Plus, Create, New, Addition",
 		"category": "Actions"
-	},
+	}
 }
 ```
