@@ -1,0 +1,16 @@
+<textarea></textarea>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: 'Inter', system-ui;
+    }
+    textarea {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<script>
+    onmessage = (event) => {
+        document.querySelector('textarea').innerHTML = event.data.pluginMessage
+    }
+</script>
