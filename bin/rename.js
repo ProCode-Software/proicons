@@ -1,7 +1,12 @@
 function camelCase(str) {
-    return str.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+    return str
+        .toLowerCase()
+        .replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) =>
+            index === 0 ? match.toLowerCase() : match.toUpperCase().trim()
+        )
+        .replace(/\s+/g, "");
 }
 function kebabCase(str) {
-    return str.replace(/[A-Z]/g, function (g) { return '-' + g[0].toLowerCase(); });
+    return str.replaceAll(' ', '-').toLowerCase()
 }
-module.exports = { camelCase, kebabCase }
+module.exports = { camelCase, kebabCase };

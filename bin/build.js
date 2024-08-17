@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const config = require('../src/configs/tags.json')
 const rename = require('./rename')
+const chalk = require('cli-color')
 
 // Move and rename SVGs
 const inDir = path.join('in')
@@ -15,30 +16,36 @@ fs.readdir(inDir, (err, files) => {
         if (file.includes(' -Var')) {
             variableIcons.push(file.slice(0, -4))
         }
-        const newPath = path.join(outDir, rename.camelCase(file.replace(' -Var', '')));
+        const newName = rename.kebabCase(file)
+        const newPath = path.join(outDir, newName);
 
         fs.rename(oldPath, newPath, err => {
             if (err) {
-                console.error(`Error moving file ${file}:`, err);
+                console.error(chalk.red(`Error moving file ${file}:`, err));
             }
         });
     });
+    console.log(chalk.green('Done renaming files!'))
+    buildSvgList()
 })
-console.log('Done renaming files!')
 
 // Build SVG list
-const dict = {}
-fs.readdir(outDir, (err, files) => {
-    if (err) throw err
-    files.forEach(file => {
-        const name = rename.camelCase(file)
-        dict[name] = fs.readFile(path.join(outDir, file), 'utf8', (err, data) => {
-            if (err) throw err
-            return data
-        })
-    });
+function buildSvgList() {
+    const dict = {}
+    fs.readdir(outDir, (err, files) => {
+        if (err) throw err
+        files.forEach(file => {
+            const name = rename.camelCase(file)
+            dict[name] = fs.readFile(path.join(outDir, file), 'utf8', (err, data) => {
+                if (err) throw err
+                return data
+            })
+        });
+    })
     fs.writeFile(path.join('src/configs/icons.json'), JSON.stringify(dict), err => {
         if (err) throw err
         console.log('Done building SVG list!')
+        console.log(chalk.green('Build complete!'));
+        console.log(chalk.cyan('Variable icons:', variableIcons || 'none'))
     })
-})
+}
