@@ -9,7 +9,8 @@ const config = {
     },
     output: {
         chunkFilename: '[name].js',
-        filename: '[name].js'
+        filename: '[name].js',
+        clean: true
     },
     plugins: [
         // Add your plugins here
