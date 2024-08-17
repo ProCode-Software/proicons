@@ -1,0 +1,1714 @@
+{
+    "Add": {
+        "description": "Plus, Create, New, Addition",
+        "category": "Actions"
+    },
+    "Add Circular": {
+        "description": "Add Circle, Plus",
+        "category": "Actions"
+    },
+    "Add Rhombus": {
+        "description": "Add Diamond, Plus, Keyframe, Component",
+        "category": "Actions"
+    },
+    "Add Square": {
+        "description": "Add Box, Plus",
+        "category": "Actions"
+    },
+    "Add Square Multiple": {
+        "description": "",
+        "category": "Actions"
+    },
+    "Add Square Multiple -Var": {
+        "description": "",
+        "category": "Actions"
+    },
+    "App Remove": {
+        "description": "Uninstall, Delete App",
+        "category": "Actions"
+    },
+    "Apps": {
+        "description": "Applications, Software, Plugins, Extensions",
+        "category": "Actions"
+    },
+    "Apps Add": {
+        "description": "Add App, Install",
+        "category": "Actions"
+    },
+    "Backspace": {
+        "description": "Delete",
+        "category": "Actions"
+    },
+    "Cancel": {
+        "description": "Dismiss, X, Close, Abort, Delete",
+        "category": "Actions"
+    },
+    "Checkmark": {
+        "description": "Done, Check, Completed",
+        "category": "Actions"
+    },
+    "Compose": {
+        "description": "Mail, Write",
+        "category": "Actions"
+    },
+    "Copy": {
+        "description": "Clipboard",
+        "category": "Actions"
+    },
+    "Copy -Var": {
+        "description": "Clipboard",
+        "category": "Actions"
+    },
+    "Crop": {
+        "description": "Edit, Photo, Image, Picture",
+        "category": "Actions"
+    },
+    "Cut": {
+        "description": "Scissors",
+        "category": "Actions"
+    },
+    "Delete": {
+        "description": "Trash, Remove",
+        "category": "Actions"
+    },
+    "Eye": {
+        "description": "Look",
+        "category": "Actions"
+    },
+    "Eye Off": {
+        "description": "Invisible, Hidden",
+        "category": "Actions"
+    },
+    "Fast Foward": {
+        "description": "",
+        "category": "Actions"
+    },
+    "Heart": {
+        "description": "Love, Like, Favorite",
+        "category": "Actions"
+    },
+    "Heart Stylistic": {
+        "description": "Love",
+        "category": "Actions"
+    },
+    "Keyboard Shift": {
+        "description": "",
+        "category": "Actions"
+    },
+    "More": {
+        "description": "Kabab",
+        "category": "Actions"
+    },
+    "More Vertical": {
+        "description": "Kabab",
+        "category": "Actions"
+    },
+    "Pause": {
+        "description": "Stop",
+        "category": "Actions"
+    },
+    "Pencil": {
+        "description": "Write, Draw, Edit",
+        "category": "Actions"
+    },
+    "Play": {
+        "description": "Start, Resume",
+        "category": "Actions"
+    },
+    "Play Circular": {
+        "description": "",
+        "category": "Actions"
+    },
+    "Reverse": {
+        "description": "",
+        "category": "Actions"
+    },
+    "Search": {
+        "description": "Find, Look",
+        "category": "Actions"
+    },
+    "Star": {
+        "description": "Favourite, Favorite",
+        "category": "Actions"
+    },
+    "Tune": {
+        "description": "Customize, Sliders, Controls, Settings, Options, Customise",
+        "category": "Actions"
+    },
+    "Checkmark Starburst": {
+        "description": "Verified, Twitter Blue, Trusted, Safe, Legitimate, Real, X Premium",
+        "category": "Security"
+    },
+    "Credit Card": {
+        "description": "Debit Card, Payment",
+        "category": "Security"
+    },
+    "Lock": {
+        "description": "Safe, Secure, Private, Privacy",
+        "category": "Security"
+    },
+    "Lock Open": {
+        "description": "Unlock, Unsafe",
+        "category": "Security"
+    },
+    "Shield": {
+        "description": "Security",
+        "category": "Security"
+    },
+    "Shield Cancel": {
+        "description": "",
+        "category": "Security"
+    },
+    "Shield Checkmark": {
+        "description": "",
+        "category": "Security"
+    },
+    "Shield Keyhole": {
+        "description": "",
+        "category": "Security"
+    },
+    "Chat": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Cloud": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Comment": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Comment Multiple": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Comment Multiple -Var": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Database": {
+        "description": "SQL, MongoDB",
+        "category": "Communication & Cloud"
+    },
+    "Database Add": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Globe": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Mail": {
+        "description": "Gmail, Outlook, Yahoo, Inbox, Unread, Envelope",
+        "category": "Communication & Cloud"
+    },
+    "Mail Open": {
+        "description": "Gmail, Outlook, Yahoo, Inbox, Unread, Envelope Open",
+        "category": "Communication & Cloud"
+    },
+    "Megaphone": {
+        "description": "Announcement",
+        "category": "Communication & Cloud"
+    },
+    "Megaphone Loud": {
+        "description": "Announcement",
+        "category": "Communication & Cloud"
+    },
+    "Mention": {
+        "description": "@, Tag, @mention, At",
+        "category": "Communication & Cloud"
+    },
+    "Narrator": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Person": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Person 2": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Person Add": {
+        "description": "Account Add, User",
+        "category": "Communication & Cloud"
+    },
+    "Person Add 2": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Person Circle": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Person Multiple": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Phone Accept": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Phone Hang Up": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Send": {
+        "description": "",
+        "category": "Communication & Cloud"
+    },
+    "Wi-Fi": {
+        "description": "Internet",
+        "category": "Communication & Cloud"
+    },
+    "Anchor": {
+        "description": "Lock",
+        "category": "Objects"
+    },
+    "Attatch": {
+        "description": "Clip, Paper Clip, Paperclip",
+        "category": "Objects"
+    },
+    "Book Info 2": {
+        "description": "Manual, Infobook, Tutorial",
+        "category": "Objects"
+    },
+    "Calendar": {
+        "description": "Date",
+        "category": "Objects"
+    },
+    "Diamond": {
+        "description": "Premium, Pro",
+        "category": "Objects"
+    },
+    "Eraser": {
+        "description": "",
+        "category": "Objects"
+    },
+    "Eyedropper": {
+        "description": "Color",
+        "category": "Objects"
+    },
+    "Eyedropper Color": {
+        "description": "Eyedropper 2",
+        "category": "Objects"
+    },
+    "Flashlight": {
+        "description": "Torch, Light",
+        "category": "Objects"
+    },
+    "Gift": {
+        "description": "Present",
+        "category": "Objects"
+    },
+    "Hat Graduation": {
+        "description": "Education, Diplomat, Student, Learning",
+        "category": "Objects"
+    },
+    "Highlighter": {
+        "description": "Marker",
+        "category": "Objects"
+    },
+    "Hourglass": {
+        "description": "Time, Timer",
+        "category": "Objects"
+    },
+    "Layers": {
+        "description": "",
+        "category": "Objects"
+    },
+    "Lightbulb": {
+        "description": "Tip",
+        "category": "Objects"
+    },
+    "Link": {
+        "description": "URL, Attatchment",
+        "category": "Objects"
+    },
+    "Microphone": {
+        "description": "Unmute, Speak",
+        "category": "Objects"
+    },
+    "Microphone Off": {
+        "description": "Mute",
+        "category": "Objects"
+    },
+    "Pin": {
+        "description": "",
+        "category": "Objects"
+    },
+    "Pin Off": {
+        "description": "Unpin",
+        "category": "Objects"
+    },
+    "Timer": {
+        "description": "Stopwatch",
+        "category": "Objects"
+    },
+    "Wrench": {
+        "description": "Configure, Spanner, Options, Mechanism, Mechanic",
+        "category": "Objects"
+    },
+    "Alert Circle": {
+        "description": "Warning",
+        "category": "Status"
+    },
+    "Alert Triangle": {
+        "description": "Warning",
+        "category": "Status"
+    },
+    "Arrow Sync": {
+        "description": "",
+        "category": "Status"
+    },
+    "Arrow Sync 2": {
+        "description": "",
+        "category": "Status"
+    },
+    "Badge": {
+        "description": "",
+        "category": "Status"
+    },
+    "Bell": {
+        "description": "Notification, Alert",
+        "category": "Status"
+    },
+    "Cancel Circle": {
+        "description": "",
+        "category": "Status"
+    },
+    "Cancel Square": {
+        "description": "",
+        "category": "Status"
+    },
+    "Checkmark Circle": {
+        "description": "",
+        "category": "Status"
+    },
+    "Clock": {
+        "description": "Analog, Time",
+        "category": "Status"
+    },
+    "Do Not Disturb": {
+        "description": "",
+        "category": "Status"
+    },
+    "Info": {
+        "description": "Information",
+        "category": "Status"
+    },
+    "Probited": {
+        "description": "",
+        "category": "Status"
+    },
+    "Spinner": {
+        "description": "Loading",
+        "category": "Status"
+    },
+    "Emoji": {
+        "description": "Smile, Happy, Smiley, Like, Helpful",
+        "category": "Emojis"
+    },
+    "Emoji Frown": {
+        "description": "Sad, Dislike, Not Helpful",
+        "category": "Emojis"
+    },
+    "Emoji Grin": {
+        "description": "",
+        "category": "Emojis"
+    },
+    "Emoji Laughter": {
+        "description": "",
+        "category": "Emojis"
+    },
+    "Skull": {
+        "description": "Skeleton, Emoji, Bones, Head, Spooky, Poison, Pirate, Kill, Blood, Death, Die,",
+        "category": "Emojis"
+    },
+    "Arrow Clockwise": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Counterclockwise": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Down": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Download": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Enter": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Export": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Foward": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Import": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Left": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Move": {
+        "description": "Arrow 4-Way, Move",
+        "category": "Arrows"
+    },
+    "Arrow Redo": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Redo 2": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Reply": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Right": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Rotate Clockwise": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Rotate Counterclockwise": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Sort": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Swap": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Trending": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Undo": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Undo 2": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Up": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Arrow Up Down": {
+        "description": "Up-Down, Bidirectional, Vertical, Height, Size",
+        "category": "Arrows"
+    },
+    "Arrow Upload": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Chevron Down": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Chevron Left": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Chevron Right": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Chevron Up": {
+        "description": "",
+        "category": "Arrows"
+    },
+    "Subtract": {
+        "description": "Minus, Minimize, Line Horizonal, Subtract",
+        "category": "Arrows"
+    },
+    "Document": {
+        "description": "Docs",
+        "category": "Text"
+    },
+    "Draw Text": {
+        "description": "",
+        "category": "Text"
+    },
+    "Note": {
+        "description": "",
+        "category": "Text"
+    },
+    "Note Add": {
+        "description": "",
+        "category": "Text"
+    },
+    "Quote": {
+        "description": "",
+        "category": "Text"
+    },
+    "Spacebar": {
+        "description": "",
+        "category": "Text"
+    },
+    "Symbols": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Add": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Align Center": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Align Justify": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Align Left": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Align Right": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Bold": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Case Lowercase": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Case Title": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Case Uppercase": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Clear Formatting": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Collapse": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Color": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Edit Style": {
+        "description": "Text edit, Text pencil",
+        "category": "Text"
+    },
+    "Text Effects": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Expand": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Font": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Font Size": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Footnote": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Highlight Color": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Indent Decrease": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Indent Increase": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Italic": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Large": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Letter Spacing": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Line Height": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Line Spacing": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Number List": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Position Bottom": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Position Middle": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Position Top": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Small": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Strikethrough": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Subscript": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Superscript": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Typography": {
+        "description": "",
+        "category": "Text"
+    },
+    "Text Underline": {
+        "description": "",
+        "category": "Text"
+    },
+    "File": {
+        "description": "",
+        "category": "Files"
+    },
+    "File Add": {
+        "description": "",
+        "category": "Files"
+    },
+    "File Sync": {
+        "description": "",
+        "category": "Files"
+    },
+    "Folder": {
+        "description": "",
+        "category": "Files"
+    },
+    "Folder Add": {
+        "description": "",
+        "category": "Files"
+    },
+    "Folder Open": {
+        "description": "",
+        "category": "Files"
+    },
+    "Hard Drive": {
+        "description": "Disk, SSD, HDD, Macintosh HD",
+        "category": "Files"
+    },
+    "PDF": {
+        "description": "",
+        "category": "Files"
+    },
+    "PDF 2": {
+        "description": "",
+        "category": "Files"
+    },
+    "Photo": {
+        "description": "Image, Picture",
+        "category": "Files"
+    },
+    "QR Code": {
+        "description": "",
+        "category": "Files"
+    },
+    "Save": {
+        "description": "Floppy Disk",
+        "category": "Files"
+    },
+    "Save As": {
+        "description": "Floppy Disk",
+        "category": "Files"
+    },
+    "Accessibility": {
+        "description": "",
+        "category": "System & Interface"
+    },
+    "Battery": {
+        "description": "",
+        "category": "System & Interface"
+    },
+    "Battery Full": {
+        "description": "",
+        "category": "System & Interface"
+    },
+    "Button": {
+        "description": "UI",
+        "category": "System & Interface"
+    },
+    "Checkbox Intermediate 2": {
+        "description": "",
+        "category": "System & Interface"
+    },
+    "Checkbox Unchecked": {
+        "description": "",
+        "category": "System & Interface"
+    },
+    "Checkmark Checked": {
+        "description": "",
+        "category": "System & Interface"
+    },
+    "Checkmark Intermediate": {
+        "description": "",
+        "category": "System & Interface"
+    },
+    "Closed Captions": {
+        "description": "",
+        "category": "System & Interface"
+    },
+    "Cursor": {
+        "description": "Cursor, Mouse, Pointer",
+        "category": "System & Interface"
+    },
+    "Cursor Click": {
+        "description": "",
+        "category": "System & Interface"
+    },
+    "Dark Theme": {
+        "description": "Appearance",
+        "category": "System & Interface"
+    },
+    "Extension": {
+        "description": "Puzzle",
+        "category": "System & Interface"
+    },
+    "Menu": {
+        "description": "",
+        "category": "System & Interface"
+    },
+    "Settings": {
+        "description": "",
+        "category": "System & Interface"
+    },
+    "Zoom In": {
+        "description": "",
+        "category": "System & Interface"
+    },
+    "Zoom Out": {
+        "description": "",
+        "category": "System & Interface"
+    },
+    "Airplane": {
+        "description": "Aircraft, Plane, Aviation, Jet, Boeing, Airbus, Flight, Aeroplane, Airplane Mode, Flight Mode, Fly",
+        "category": "Places & Transportation"
+    },
+    "Airplane Landing": {
+        "description": "Aircraft, Plane, Aviation, Jet, Boeing, Airbus, Flight, Aeroplane, Airplane Mode, Flight Mode, Fly, TO, Climb",
+        "category": "Places & Transportation"
+    },
+    "Airplane Takeoff": {
+        "description": "Aircraft, Plane, Aviation, Jet, Boeing, Airbus, Flight, Aeroplane, Airplane Mode, Flight Mode, Fly, TO, Climb",
+        "category": "Places & Transportation"
+    },
+    "Beach": {
+        "description": "",
+        "category": "Places & Transportation"
+    },
+    "Building Multiple": {
+        "description": "",
+        "category": "Places & Transportation"
+    },
+    "Component": {
+        "description": "Symbol, Figma, Sketch, Icon, Asset",
+        "category": "Places & Transportation"
+    },
+    "Directions": {
+        "description": "",
+        "category": "Places & Transportation"
+    },
+    "Home": {
+        "description": "House",
+        "category": "Places & Transportation"
+    },
+    "Home 2": {
+        "description": "House",
+        "category": "Places & Transportation"
+    },
+    "Location": {
+        "description": "",
+        "category": "Places & Transportation"
+    },
+    "Map": {
+        "description": "",
+        "category": "Places & Transportation"
+    },
+    "Museum": {
+        "description": "",
+        "category": "Places & Transportation"
+    },
+    "Vehicle Car": {
+        "description": "",
+        "category": "Places & Transportation"
+    },
+    "Bar Graph": {
+        "description": "Stats, Statistics, Data, Graph, Chart",
+        "category": "Layout"
+    },
+    "Box Margins": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Clipboard": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Clipboard Paste": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Clipboard Search": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Compare Size": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Grid": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Grid Dots": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Layout": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Page Margins": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Panel Left": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Panel Left Contract": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Panel Left Expand": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Panel Left Open": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Panel Right": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Panel Right Contract": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Panel Right Expand": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Table": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Table Simple": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Background Color": {
+        "description": "House, Home Samsung",
+        "category": "Design"
+    },
+    "Border All": {
+        "description": "Not to be confused with 'Microsoft'",
+        "category": "Design"
+    },
+    "Color Palette": {
+        "description": "House, Home Samsung",
+        "category": "Design"
+    },
+    "Mask": {
+        "description": "",
+        "category": "Design"
+    },
+    "Paint Bucket": {
+        "description": "House, Home Samsung",
+        "category": "Design"
+    },
+    "Paintbrush": {
+        "description": "",
+        "category": "Design"
+    },
+    "Paintbrush 2": {
+        "description": "",
+        "category": "Design"
+    },
+    "Shape Difference": {
+        "description": "",
+        "category": "Design"
+    },
+    "Shape Intersect": {
+        "description": "",
+        "category": "Design"
+    },
+    "Shape Subtract": {
+        "description": "",
+        "category": "Design"
+    },
+    "Shape Union": {
+        "description": "",
+        "category": "Design"
+    },
+    "Stroke Thickness": {
+        "description": "Line Thickness, Border, Weight, Outline",
+        "category": "Design"
+    },
+    "Arrow Maximize": {
+        "description": "",
+        "category": "Window"
+    },
+    "Arrow Minimize": {
+        "description": "",
+        "category": "Window"
+    },
+    "Chrome Restore": {
+        "description": "",
+        "category": "Window"
+    },
+    "Chrome Restore -Var": {
+        "description": "",
+        "category": "Window"
+    },
+    "Contract Down": {
+        "description": "",
+        "category": "Window"
+    },
+    "Expand": {
+        "description": "",
+        "category": "Window"
+    },
+    "Full Screen Maximize": {
+        "description": "",
+        "category": "Window"
+    },
+    "Full Screen Minimize": {
+        "description": "",
+        "category": "Window"
+    },
+    "Open": {
+        "description": "",
+        "category": "Window"
+    },
+    "Picture in Picture": {
+        "description": "",
+        "category": "Window"
+    },
+    "Picture in Picture 2": {
+        "description": "",
+        "category": "Window"
+    },
+    "Picture in Picture Enter": {
+        "description": "",
+        "category": "Window"
+    },
+    "Picture in Picture Exit": {
+        "description": "",
+        "category": "Window"
+    },
+    "Window": {
+        "description": "",
+        "category": "Window"
+    },
+    "Window Multiple": {
+        "description": "",
+        "category": "Window"
+    },
+    "Window Multiple -Var": {
+        "description": "",
+        "category": "Window"
+    },
+    "Beaker": {
+        "description": "Flask, Test, Lab, Experiment",
+        "category": "Development"
+    },
+    "Braces": {
+        "description": "",
+        "category": "Development"
+    },
+    "Braces Variable": {
+        "description": "",
+        "category": "Development"
+    },
+    "Branch ": {
+        "description": "",
+        "category": "Development"
+    },
+    "Branch Compare": {
+        "description": "Git",
+        "category": "Development"
+    },
+    "Branch Fork": {
+        "description": "Git",
+        "category": "Development"
+    },
+    "Branch Fork 2": {
+        "description": "Git",
+        "category": "Development"
+    },
+    "Bug": {
+        "description": "",
+        "category": "Development"
+    },
+    "Code": {
+        "description": "",
+        "category": "Development"
+    },
+    "Git Commit": {
+        "description": "",
+        "category": "Development"
+    },
+    "Script": {
+        "description": "Macro",
+        "category": "Development"
+    },
+    "Script 2": {
+        "description": "Macro",
+        "category": "Development"
+    },
+    "Terminal": {
+        "description": "Cmd, Command Prompt, Bash, Powershell, Ps",
+        "category": "Development"
+    },
+    "Video Clip": {
+        "description": "",
+        "category": "Development"
+    },
+    "Arc": {
+        "description": "",
+        "category": "Shapes"
+    },
+    "Circle": {
+        "description": "",
+        "category": "Shapes"
+    },
+    "Circle Small": {
+        "description": "",
+        "category": "Shapes"
+    },
+    "Corner Radius": {
+        "description": "",
+        "category": "Shapes"
+    },
+    "Hexagon": {
+        "description": "",
+        "category": "Shapes"
+    },
+    "Line Diagonal": {
+        "description": "",
+        "category": "Shapes"
+    },
+    "Octagon": {
+        "description": "Stop, Sign",
+        "category": "Shapes"
+    },
+    "Pentagon": {
+        "description": "",
+        "category": "Shapes"
+    },
+    "Rectangle Wide": {
+        "description": "",
+        "category": "Shapes"
+    },
+    "Rhombus": {
+        "description": "Diamond",
+        "category": "Shapes"
+    },
+    "Square": {
+        "description": "",
+        "category": "Shapes"
+    },
+    "Triangle": {
+        "description": "",
+        "category": "Shapes"
+    },
+    "Background Color Accent": {
+        "description": "House, Home Samsung",
+        "category": "Accents"
+    },
+    "Eyedropper Color Accent": {
+        "description": "Eyedropper 2",
+        "category": "Accents"
+    },
+    "Highlighter Accent": {
+        "description": "Marker",
+        "category": "Accents"
+    },
+    "Paint Bucket Accent": {
+        "description": "House, Home Samsung",
+        "category": "Accents"
+    },
+    "Tag Accent": {
+        "description": "Label",
+        "category": "Accents"
+    },
+    "Text Color Accent": {
+        "description": "",
+        "category": "Accents"
+    },
+    "Text Highlight Color Accent": {
+        "description": "",
+        "category": "Accents"
+    },
+    "Amazon": {
+        "description": "Shopping, Delivery, Prime",
+        "category": "Logos & Brands"
+    },
+    "App Store": {
+        "description": "Apple, Mac App Store, Apple App Store, iOS, iPadOs, macOS",
+        "category": "Logos & Brands"
+    },
+    "Apple": {
+        "description": "iPhone, iPad, Mac, iOS, iPadOS, watchOS, Watch, Tablet, Phone, Tim Cook, Steve Jobs, macOS, Cupertino",
+        "category": "Logos & Brands"
+    },
+    "Bluetooth": {
+        "description": "BT, Wireless",
+        "category": "Logos & Brands"
+    },
+    "CSS": {
+        "description": "CSS3, Stylesheet, Programming, Web",
+        "category": "Logos & Brands"
+    },
+    "Facebook": {
+        "description": "Meta, Social Media, Mark Zuckerburg, Messenger",
+        "category": "Logos & Brands"
+    },
+    "Figma": {
+        "description": "Design, Dylan Field, Sketch, Icons, Prototype, Prototyping, Adobe",
+        "category": "Logos & Brands"
+    },
+    "GitHub": {
+        "description": "Open Source, Code, Microsoft, Git",
+        "category": "Logos & Brands"
+    },
+    "Google": {
+        "description": "Pixel, Sundar Pichai, Search, Android",
+        "category": "Logos & Brands"
+    },
+    "Google 2": {
+        "description": "Google Color, Pixel, Sundar Pichai, Search, Android",
+        "category": "Logos & Brands"
+    },
+    "Google Chrome": {
+        "description": "Browser, Chromium, Microsoft, MS Edge",
+        "category": "Logos & Brands"
+    },
+    "Google Play": {
+        "description": "App Store, Android, Google, Google Play Store",
+        "category": "Logos & Brands"
+    },
+    "HTML": {
+        "description": "HTML5, Markup, Programming, Web",
+        "category": "Logos & Brands"
+    },
+    "Instagram": {
+        "description": "Social",
+        "category": "Logos & Brands"
+    },
+    "JavaScript": {
+        "description": "Programming, Web, Electron",
+        "category": "Logos & Brands"
+    },
+    "Microsoft": {
+        "description": "Windows, Win11, Windows 11, Satya Nadella, Steve Ballmer, Bill Gates",
+        "category": "Logos & Brands"
+    },
+    "Microsoft Edge": {
+        "description": "Browser, Chromium, Microsoft, MS Edge",
+        "category": "Logos & Brands"
+    },
+    "Python": {
+        "description": "Programming",
+        "category": "Logos & Brands"
+    },
+    "Roblox": {
+        "description": "Gaming, Studio, Bloxy, Player",
+        "category": "Logos & Brands"
+    },
+    "TikTok": {
+        "description": "ByteDance, Now, Shorts, Social, Videos",
+        "category": "Logos & Brands"
+    },
+    "Visual Studio Code": {
+        "description": "VSCode, VS Code, IDE, Text Editor, Microsoft",
+        "category": "Logos & Brands"
+    },
+    "X (Twitter)": {
+        "description": "Twitter, X/Twitter, X Corp., Elon Musk, Bird, Tweet, Post, Social Media",
+        "category": "Logos & Brands"
+    },
+    "YouTube": {
+        "description": "Social, Shorts, Watch, Videos",
+        "category": "Logos & Brands"
+    },
+    "YouTube Shorts": {
+        "description": "YT Shorts, Watch, YouTube, Vertical, TikTok",
+        "category": "Logos & Brands"
+    },
+    "Book": {
+        "description": "Reading",
+        "category": "Activities"
+    },
+    "Book 2": {
+        "description": "",
+        "category": "Activities"
+    },
+    "Book Add": {
+        "description": "",
+        "category": "Activities"
+    },
+    "Book Add 2": {
+        "description": "",
+        "category": "Activities"
+    },
+    "Book Info": {
+        "description": "",
+        "category": "Activities"
+    },
+    "Book Open": {
+        "description": "Reading",
+        "category": "Activities"
+    },
+    "Box": {
+        "description": "Package, Amazon, Delivery",
+        "category": "Activities"
+    },
+    "Broom": {
+        "description": "Sweep, Clean",
+        "category": "Activities"
+    },
+    "Calligraphy Pen": {
+        "description": "Sketch",
+        "category": "Activities"
+    },
+    "Cart": {
+        "description": "Shopping, Trolley, Amazon, Shopping Cart",
+        "category": "Activities"
+    },
+    "Compass": {
+        "description": "Direction, Explore, Safari",
+        "category": "Activities"
+    },
+    "Flag": {
+        "description": "Report, Checkpoint",
+        "category": "Activities"
+    },
+    "Library": {
+        "description": "Book, Bookshelf",
+        "category": "Activities"
+    },
+    "Photo Filter": {
+        "description": "Color Filter, Tint",
+        "category": "Activities"
+    },
+    "Ribbon": {
+        "description": "",
+        "category": "Activities"
+    },
+    "Ribbon Star": {
+        "description": "",
+        "category": "Activities"
+    },
+    "Video": {
+        "description": "",
+        "category": "Activities"
+    },
+    "Briefcase": {
+        "description": "Suitcase",
+        "category": "Business"
+    },
+    "Briefcase 2": {
+        "description": "Suitcase, Work",
+        "category": "Business"
+    },
+    "Cent": {
+        "description": "$, Money, Coin, Dollar, ¢",
+        "category": "Business"
+    },
+    "Dollar": {
+        "description": "$, Money, Cash, Bill, Currency",
+        "category": "Business"
+    },
+    "Graph": {
+        "description": "Stocks, Data",
+        "category": "Business"
+    },
+    "Toolbox": {
+        "description": "Suitcase, Work",
+        "category": "Business"
+    },
+    "Cake": {
+        "description": "Birthday, Party",
+        "category": "Food & Drink"
+    },
+    "Coffee Hot": {
+        "description": "",
+        "category": "Food & Drink"
+    },
+    "Cookies": {
+        "description": "",
+        "category": "Food & Drink"
+    },
+    "Drop": {
+        "description": "Water, Fill, Transparency, Transparent, Droplet",
+        "category": "Food & Drink"
+    },
+    "Hamburger": {
+        "description": "",
+        "category": "Food & Drink"
+    },
+    "Box Drag": {
+        "description": "Grab, Hand, Drop, Grabber, Draging",
+        "category": "Gestures"
+    },
+    "Cursor Drag": {
+        "description": "Grab, Hand, Drop, Grabber",
+        "category": "Gestures"
+    },
+    "Hand": {
+        "description": "",
+        "category": "Gestures"
+    },
+    "Thumbs Down": {
+        "description": "Dislike",
+        "category": "Gestures"
+    },
+    "Thumbs Up": {
+        "description": "Like",
+        "category": "Gestures"
+    },
+    "Angle": {
+        "description": "",
+        "category": "Math & Numbers"
+    },
+    "Calculator": {
+        "description": "Solve, Math",
+        "category": "Math & Numbers"
+    },
+    "Hash": {
+        "description": "Hashtag, Tag, Category, Number, Count, Pound",
+        "category": "Math & Numbers"
+    },
+    "Ruler": {
+        "description": "Measure, Length, Meter, Foot, Metre, Feet, Yard",
+        "category": "Math & Numbers"
+    },
+    "Screen Size": {
+        "description": "Aspect Ratio",
+        "category": "Math & Numbers"
+    },
+    "Headphones": {
+        "description": "",
+        "category": "Media"
+    },
+    "Movie": {
+        "description": "Video, Film",
+        "category": "Media"
+    },
+    "Music Note": {
+        "description": "Song, Double",
+        "category": "Media"
+    },
+    "Music Note 2": {
+        "description": "Song, Single",
+        "category": "Media"
+    },
+    "Soundwave": {
+        "description": "Audio, EQ, Waveform, mp3",
+        "category": "Media"
+    },
+    "Volume": {
+        "description": "",
+        "category": "Media"
+    },
+    "Volume 0": {
+        "description": "",
+        "category": "Media"
+    },
+    "Volume 1": {
+        "description": "",
+        "category": "Media"
+    },
+    "Volume Mute": {
+        "description": "",
+        "category": "Media"
+    },
+    "Leaf": {
+        "description": "Leaf One, 1",
+        "category": "Nature"
+    },
+    "Leaf Three": {
+        "description": "Leaf 3",
+        "category": "Nature"
+    },
+    "Leaf Two": {
+        "description": "Leaf One",
+        "category": "Nature"
+    },
+    "History": {
+        "description": "",
+        "category": "Miscellaneous"
+    },
+    "Question": {
+        "description": "",
+        "category": "Miscellaneous"
+    },
+    "Question Circle": {
+        "description": "Help, Support",
+        "category": "Miscellaneous"
+    },
+    "Sparkle": {
+        "description": "Flare, Gemini",
+        "category": "Miscellaneous"
+    },
+    "Align Bottom": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Align Horizontal Centers": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Align Left": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Align Right": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Align Top": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Align Vertical Centers": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Apps List": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Archive": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Archive Add 2": {
+        "description": "UPDATE",
+        "category": "Organization"
+    },
+    "Board": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Bookmark": {
+        "description": "Favorite",
+        "category": "Organization"
+    },
+    "Bookmark Add": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Bookmark Multiple": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Bookmark Multiple -Var": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Center Horizontal": {
+        "description": "Stats, Statistics, Data, Graph, Chart",
+        "category": "Organization"
+    },
+    "Center Vertical": {
+        "description": "Stats, Statistics, Data, Graph, Chart",
+        "category": "Organization"
+    },
+    "Filter": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Filter 2": {
+        "description": "Funnel",
+        "category": "Organization"
+    },
+    "Filter Cancel": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Filter Cancel 2": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Section Break": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Tag": {
+        "description": "Label",
+        "category": "Organization"
+    },
+    "Tag Multiple": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Tag Multiple -Var": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Task List": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Text Bullet List": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Text Bullet List Square": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Text Bullet List Square Add": {
+        "description": "",
+        "category": "Organization"
+    },
+    "Camera": {
+        "description": "Photo, Picture, Photography, Shot, Shoot",
+        "category": "Technology"
+    },
+    "Computer": {
+        "description": "All-in-one, AIO, Desktop, PC",
+        "category": "Technology"
+    },
+    "Computer Mac": {
+        "description": "iMac, All-in-one, AIO, Desktop, Apple, Mac",
+        "category": "Technology"
+    },
+    "Foldable Horizontal": {
+        "description": "Folding Phone, Z Fold, Dual Screen",
+        "category": "Technology"
+    },
+    "Foldable Horizontal Half": {
+        "description": "Folding Phone, Z Fold, Dual Screen",
+        "category": "Technology"
+    },
+    "Foldable Vertical": {
+        "description": "Folding Phone, Z Flip, Dual Screen",
+        "category": "Technology"
+    },
+    "Foldable Vertical Half": {
+        "description": "Folding Phone, Z Flip, Dual Screen",
+        "category": "Technology"
+    },
+    "Game": {
+        "description": "Controller, Xbox, PlayStation, Arcade, Gaming, Steam",
+        "category": "Technology"
+    },
+    "Keyboard": {
+        "description": "Peripheral",
+        "category": "Technology"
+    },
+    "Laptop": {
+        "description": "Computer, PC",
+        "category": "Technology"
+    },
+    "Motherboard": {
+        "description": "Computer Board, Chip, Components, Transistor, Silicon, PC, CPU",
+        "category": "Technology"
+    },
+    "Phone": {
+        "description": "iPhone, Samsung Galaxy, Mobile, Android, iOS, Smartphone",
+        "category": "Technology"
+    },
+    "Printer": {
+        "description": "",
+        "category": "Technology"
+    },
+    "TV": {
+        "description": "Television",
+        "category": "Technology"
+    },
+    "Tablet": {
+        "description": "iPad",
+        "category": "Technology"
+    },
+    "Watch": {
+        "description": "Apple Watch, Watch, Samsung Galaxy, Clock, Time, Smartwatch, Tracker",
+        "category": "Technology"
+    },
+    "Brightness": {
+        "description": "Weather Sunny",
+        "category": "Weather"
+    },
+    "Moon": {
+        "description": "Crescent, Dark, Dark Mode, Dark Theme",
+        "category": "Weather"
+    },
+    "Weather Cloudy": {
+        "description": "",
+        "category": "Weather"
+    }
+}
