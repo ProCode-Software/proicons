@@ -1,12 +1,11 @@
-import fs from 'fs'
-import path from "path"
-import config from '../src/configs/tags.json'
-import rename from './rename'
-
+const fs = require('fs')
+const path = require('path')
+const config = require('../src/configs/tags.json')
+const rename = require('./rename')
 
 // Move and rename SVGs
-const inDir = path.join('/', 'in')
-const outDir = path.join('/', 'icons/svg')
+const inDir = path.join('in')
+const outDir = path.join('icons/svg')
 let variableIcons = []
 
 fs.readdir(inDir, (err, files) => {
@@ -38,7 +37,7 @@ fs.readdir(outDir, (err, files) => {
             return data
         })
     });
-    fs.writeFile(path.join('/', 'src/configs/icons.json'), JSON.stringify(dict), err => {
+    fs.writeFile(path.join('src/configs/icons.json'), JSON.stringify(dict), err => {
         if (err) throw err
         console.log('Done building SVG list!')
     })

@@ -4,4 +4,4 @@ function camelCase(str) {
 function kebabCase(str) {
     return str.replace(/[A-Z]/g, function (g) { return '-' + g[0].toLowerCase(); });
 }
-export default { camelCase, kebabCase }
+module.exports = { camelCase, kebabCase }
