@@ -30,22 +30,27 @@ fs.readdir(inDir, (err, files) => {
 })
 
 // Build SVG list
-function buildSvgList() {
+async function buildSvgList() {
     const dict = {}
-    fs.readdir(outDir, (err, files) => {
-        if (err) throw err
-        files.forEach(file => {
-            const name = rename.camelCase(file)
-            dict[name] = fs.readFile(path.join(outDir, file), 'utf8', (err, data) => {
-                if (err) throw err
-                return data
-            })
+    try {
+        const readPromises = Object.keys(config).forEach(async icn => {
+            const name = rename.camelCase(icn)
+            const fn = rename.kebabCase(icn.trimEnd())
+
+            try {
+                const data = await fs.readFile(path.join(outDir, `${fn}.svg`), 'utf8')
+                dict[name] = data
+            } catch (error) {
+                console.error(chalk.red(`Error reading file ${fn}.svg:`, error));
+            }
         });
-    })
-    fs.writeFile(path.join('src/configs/icons.json'), JSON.stringify(dict), err => {
-        if (err) throw err
-        console.log('Done building SVG list!')
-        console.log(chalk.green('Build complete!'));
-        console.log(chalk.cyan('Variable icons:', variableIcons || 'none'))
-    })
+        fs.writeFile(path.join('src/configs/icons.json'), JSON.stringify(dict), err => {
+            if (err) throw err
+            console.log('Done building SVG list!')
+            console.log(chalk.green('Build complete!'));
+            console.log(chalk.cyan('Variable icons:', variableIcons || 'none'))
+        })
+    } catch (error) {
+        console.error(chalk.red('Error building SVG list:', error));
+    }
 }
