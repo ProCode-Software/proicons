@@ -2,11 +2,7 @@ function removeParenthesis(str) {
     return str.replace(/[()]/g, '')
 }
 function camelCase(str) {
-    return removeParenthesis(str).toLowerCase()
-        .replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) =>
-            index === 0 ? match.toLowerCase() : match.toUpperCase().trim()
-        )
-        .replace(/\s+/g, "");
+    return str.split(' ').map((word, i) => i == 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1)).join('')
 }
 function kebabCase(str) {
     return removeParenthesis(str).replaceAll(' ', '-').toLowerCase()
