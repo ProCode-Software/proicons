@@ -1,11 +1,11 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="12" r="4.25" stroke="#212325" stroke-width="1.5"/>
-<path d="M12 2.75L12 4.25" stroke="#212325" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M5.45926 5.45923L6.51992 6.51989" stroke="#212325" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M12 19.75L12 21.25" stroke="#212325" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M17.4801 17.48L18.5407 18.5406" stroke="#212325" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M2.75 12L4.25 12" stroke="#212325" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M5.45926 18.5408L6.51992 17.4801" stroke="#212325" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M19.75 12L21.25 12" stroke="#212325" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M17.4801 6.52002L18.5407 5.45936" stroke="#212325" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="12" cy="12" r="4.25" stroke="currentColor" stroke-width="1.5"/>
+<path d="M12 2.75L12 4.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M5.45926 5.45923L6.51992 6.51989" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M12 19.75L12 21.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M17.4801 17.48L18.5407 18.5406" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M2.75 12L4.25 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M5.45926 18.5408L6.51992 17.4801" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M19.75 12L21.25 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M17.4801 6.52002L18.5407 5.45936" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
 </svg>

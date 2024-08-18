@@ -1,4 +1,4 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6.33624" y="2.19" width="16.0197" height="16.0197" rx="2.5" transform="rotate(15 6.33624 2.19)" stroke="#212325" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="10.1121" y="8.72998" width="5.33989" height="5.33989" rx="0.8" transform="rotate(15 10.1121 8.72998)" stroke="#212325" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="6.33624" y="2.19" width="16.0197" height="16.0197" rx="2.5" transform="rotate(15 6.33624 2.19)" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="10.1121" y="8.72998" width="5.33989" height="5.33989" rx="0.8" transform="rotate(15 10.1121 8.72998)" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

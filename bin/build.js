@@ -1,8 +1,11 @@
 const fs = require('fs')
 const path = require('path')
+const prettier = require('prettier')
 const config = require('../src/configs/tags.json')
 const rename = require('./rename')
 const chalk = require('cli-color')
+
+const strokeColors = ['#212325', 'black', '#000000']
 
 // Move and rename SVGs
 const inDir = path.join('in')
@@ -19,7 +22,12 @@ files.filter(file => file.endsWith('.svg')).forEach(file => {
     const newPath = path.join(outDir, newName);
 
     try {
-        fs.renameSync(oldPath, newPath);
+        let ct = fs.readFileSync(oldPath, 'utf8')
+        strokeColors.forEach(color => {
+            ct = ct.replaceAll(color, 'currentColor')
+        })
+        fs.writeFileSync(newPath, ct)
+        fs.unlinkSync(oldPath)
     } catch (error) {
         console.error(chalk.red(`Error moving file ${file}:`, error));
     }
@@ -39,17 +47,25 @@ Object.keys(config).forEach(friendlyName => {
         console.error(chalk.red(`Error reading file ${fn}.svg:`, error));
     }
 });
-try {
-    fs.writeFileSync(path.join('src/configs/icons.json'), JSON.stringify(dict))
+buildSvgList()
 
-    console.log('Done building SVG list!')
-    console.log(chalk.green('Build complete!'));
+async function buildSvgList() {
+    try {
+        const options = await prettier.resolveConfig(path.join(__dirname, '../.prettierrc'))
+        options.parser = 'json'
+        const formatted = await prettier.format(JSON.stringify(dict), options)
 
-    if (variableIcons.length > 0) {
-        console.log(chalk.cyan('Variable icons:', variableIcons))
-    } else {
-        console.log(chalk.green('No newly added variable icons!'))
+        fs.writeFileSync(path.join('src/configs/icons.json'), formatted)
+
+        console.log('Done building SVG list!')
+        console.log(chalk.green('Build complete!'));
+
+        if (variableIcons.length > 0) {
+            console.log(chalk.cyan('Variable icons:', variableIcons))
+        } else {
+            console.log(chalk.green('No newly added variable icons!'))
+        }
+    } catch (error) {
+        console.error(chalk.red('Error writing icons.json:', error));
     }
-} catch (error) {
-    console.error(chalk.red('Error writing icons.json:', error));
 }

@@ -1,7 +1,7 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M4.25 13.25C4.25 11.8693 5.36929 10.75 6.75 10.75H17.25C18.6307 10.75 19.75 11.8693 19.75 13.25V16V21.25H12H4.25V16V13.25Z" stroke="#212325" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4.25 14.87L6.49862 16.3207C7.48878 16.9595 8.76122 16.9595 9.75138 16.3207L10.3736 15.9193C11.3638 15.2805 12.6362 15.2805 13.6264 15.9193L14.2486 16.3207C15.2388 16.9595 16.5112 16.9595 17.5014 16.3207L19.75 14.87" stroke="#212325" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M21.25 21.245H2.75" stroke="#212325" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 2.75L13.4142 4.16421C14.1953 4.94526 14.1953 6.21159 13.4142 6.99264C13.0237 7.38316 12.5118 7.57843 12 7.57843C11.4882 7.57843 10.9763 7.38316 10.5858 6.99264C9.80474 6.21159 9.80474 4.94526 10.5858 4.16421L12 2.75Z" stroke="#212325" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 7.58002V10.75" stroke="#212325" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.25 13.25C4.25 11.8693 5.36929 10.75 6.75 10.75H17.25C18.6307 10.75 19.75 11.8693 19.75 13.25V16V21.25H12H4.25V16V13.25Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.25 14.87L6.49862 16.3207C7.48878 16.9595 8.76122 16.9595 9.75138 16.3207L10.3736 15.9193C11.3638 15.2805 12.6362 15.2805 13.6264 15.9193L14.2486 16.3207C15.2388 16.9595 16.5112 16.9595 17.5014 16.3207L19.75 14.87" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21.25 21.245H2.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 2.75L13.4142 4.16421C14.1953 4.94526 14.1953 6.21159 13.4142 6.99264C13.0237 7.38316 12.5118 7.57843 12 7.57843C11.4882 7.57843 10.9763 7.38316 10.5858 6.99264C9.80474 6.21159 9.80474 4.94526 10.5858 4.16421L12 2.75Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 7.58002V10.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
