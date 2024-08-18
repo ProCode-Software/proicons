@@ -1,16 +1,22 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
 
 const config = {
     entry: {
-        proicons: './src/proicons.ts'
+        proicons: './src/proicons.ts',
     },
     output: {
         chunkFilename: '[name].js',
         filename: '[name].js',
-        clean: true
+        clean: true,
+        library: {
+            name: 'proicons',
+            type: 'umd',
+            export: 'default',
+        }
     },
     plugins: [
         // Add your plugins here
@@ -26,7 +32,7 @@ const config = {
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
                 type: 'asset',
-            }
+            },
         ],
     },
     resolve: {
@@ -38,10 +44,21 @@ const config = {
 module.exports = () => {
     if (isProduction) {
         config.mode = 'production';
-        
-        
     } else {
         config.mode = 'development';
+
+        config.devServer = {
+            static: {
+                directory: path.join(__dirname, 'dist'),
+            },
+            compress: true,
+        };
+        config.plugins.push(
+            new HtmlWebpackPlugin({
+                title: 'ProIcons Test',
+                template: './src/test.html'
+            })
+        );
     }
     return config;
 };
