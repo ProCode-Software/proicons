@@ -1,6 +1,7 @@
 // @ts-nocheck
 import icons from './configs/icons.json';
 import tags from './configs/tags.json';
+import categories from './categories'
 const rename = require('../bin/rename');
 class ProIconInfo {
     /**
@@ -86,14 +87,17 @@ interface ProIconReplaceConfig {
      * @example If `strokeWidth` is set to `2`, filled SVG elements will have an additional `0.5`px stroke
      */
     strokeFilledElements: boolean
+    /** Defaults to `round` */
     strokeCaps: 'round' | 'square' | 'butt',
+    /** Defaults to `round` */
     strokeJoin: 'round' | 'miter' | 'bevel',
+    /** Determines the corner radius of SVG elements. Does not apply to all rounded elements. */
     cornerRadius: number,
     /** The attribute name that is checked for when converting elements to icons. Defaults to `proicon`. */
     attributeName: string,
     /** Determines whether to overwrite elements when converting to icons. Setting this to `auto` will overwrite only if the element does not have any children. Defaults to `auto`. */
     overwrite: boolean | 'auto',
-    /** Determines whether to apply existing HTMl attributes such as styles to the converted SVGs.nnnnnnnn */
+    /** Determines whether to apply existing HTMl attributes such as styles to the converted SVGs. Defaults to `true` */
     useAttributes: false
 }
 function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
@@ -109,14 +113,45 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
         }
 
         let iconName = element.getAttribute(attr).trim()
-        let icon = getIconInfo(iconName).element
+        let icon: SVGElement = getIconInfo(iconName).element
+
+        const attributeList = {
+            // HtmlAttribute, configKey, svgAttr
+            "color": ["fill", ["stroke", 'fill']],
+            "stroke-width": ["strokeWidth", ["stroke-width"]],
+            "stroke": ["color", ["fill", "stroke"]],
+            "join": ["strokeCaps", ["stroke-linejoin"]],
+            "caps": ["strokeJoin", ["stroke-linecap"]],
+            "corner-radius": ["corner-radius", ["rx"]],
+            "outline": ["strokeFilledElements", undefined]
+        }
+        if (config) {
+            
+        }
+        for (const attr of element.attributes) {
+            const name = attr.name.toLowerCase()
+            const value = attr.value
+
+            if (Object.hasOwn(attributeList, name)) {
+                if (name != 'outline') {
+                    if (!value) continue
+                    const n = attributeList[name][1]
+                    n.forEach(x => {
+                        icon.querySelectorAll(`[${x}]`).forEach(b => {
+                            b.setAttribute(x, value)
+                        })
+                    })
+                } else {
+
+                }
+            }
+        }
+
+
 
         toReplace == true ? element.replaceWith(icon)
             : element.insertBefore(icon, element.childNodes[0])
-
-        const supportedHtmlAttributes = ['color', 'stroke-width', 'stroke', 'join', 'caps', 'corner-radius', 'outlines']
-        const attributesConfigMap = ['color', 'strokeWidth', 'color', 'strokeCaps', 'strokeJoin', 'corner-radius', 'strokeFilledElements']
     });
 }
 
-export default { icons, replace, getIconInfo };
+export default { icons, replace, getIconInfo, categories };

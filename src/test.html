@@ -6,10 +6,11 @@
 </head>
 
 <body>
-    <i proicon="photo"></i>
+    <i proicon="addSquare" corner-radius="1" stroke-width="2" stroke="rgb(255,255,0)"></i>
     <script src="proicons.js"></script>
     <script>
         proicons.replace()
+        console.log(proicons.categories)
         console.log(proicons.getIconInfo('x (twitter)'))
         document.write(proicons.icons.addSquare)
         document.body.appendChild(proicons.getIconInfo('x (twitter)').element)
