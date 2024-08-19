@@ -76,6 +76,47 @@ function getIconInfo(key: string) {
     return info;
 }
 
-function replace(rootElm: Element, config): void { }
+
+interface ProIconReplaceConfig {
+    /** Determines the color of the icons. Defaults to `currentColor`. */
+    color: string,
+    /** Determines the default stroke width of the icon. Defaults to `1.5`. This only works on SVG elements with existing strokes; add `strokeFilledElements` for this property to affect such elements. */
+    strokeWidth: number,
+    /** Apply strokes to filled SVG elements, such as circles, by the provided amount with `1.5` (default stroke value) subtracted, if `strokeWidth` is set to a value above `1.5`. Defaults to `false`
+     * @example If `strokeWidth` is set to `2`, filled SVG elements will have an additional `0.5`px stroke
+     */
+    strokeFilledElements: boolean
+    strokeCaps: 'round' | 'square' | 'butt',
+    strokeJoin: 'round' | 'miter' | 'bevel',
+    cornerRadius: number,
+    /** The attribute name that is checked for when converting elements to icons. Defaults to `proicon`. */
+    attributeName: string,
+    /** Determines whether to overwrite elements when converting to icons. Setting this to `auto` will overwrite only if the element does not have any children. Defaults to `auto`. */
+    overwrite: boolean | 'auto',
+    /** Determines whether to apply existing HTMl attributes such as styles to the converted SVGs.nnnnnnnn */
+    useAttributes: false
+}
+function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
+    if (!rootElm) rootElm = document.body;
+    const attr = config?.attributeName || 'proicon';
+    rootElm.querySelectorAll(`[${attr}]`).forEach((element) => {
+        let toReplace;
+        switch (config?.overwrite) {
+            case true: toReplace = true; break;
+            case false: toReplace = false; break;
+            case 'auto': toReplace = !element.hasChildNodes(); break;
+            default: toReplace = !element.hasChildNodes(); break;
+        }
+
+        let iconName = element.getAttribute(attr).trim()
+        let icon = getIconInfo(iconName).element
+
+        toReplace == true ? element.replaceWith(icon)
+            : element.insertBefore(icon, element.childNodes[0])
+
+        const supportedHtmlAttributes = ['color', 'stroke-width', 'stroke', 'join', 'caps', 'corner-radius', 'outlines']
+        const attributesConfigMap = ['color', 'strokeWidth', 'color', 'strokeCaps', 'strokeJoin', 'corner-radius', 'strokeFilledElements']
+    });
+}
 
 export default { icons, replace, getIconInfo };

@@ -6,10 +6,12 @@
 </head>
 
 <body>
+    <i proicon="photo"></i>
     <script src="proicons.js"></script>
     <script>
+        proicons.replace()
         console.log(proicons.getIconInfo('x (twitter)'))
-        document.write(proicons.icons.xTwitter)
+        document.write(proicons.icons.addSquare)
         document.body.appendChild(proicons.getIconInfo('x (twitter)').element)
     </script>
 </body>
