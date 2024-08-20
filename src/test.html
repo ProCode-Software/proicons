@@ -2,20 +2,35 @@
 <html>
 
 <head>
-    <title>Test</title>
+    <title>ProIcons Test</title>
 </head>
 
 <body>
-    <i proicon="addSquare" color="rgb(255,0,0)"></i>
+    <style>
+        /* Generated ProIcons automatically get a class and icon ID, which is helpful for styling */
+        .proicon[data-proicon-id="photo"] {
+            color: dodgerblue;
+        }
+    </style>
+    <!-- Add an icon with 100px size -->
+    <i proicon="photo" width="100" height="100"></i>
+
+    <!-- Required ProIcons script -->
     <script src="proicons.js"></script>
     <script>
-        proicons.replace(undefined, {
-            color: 'rgb(255,255,0)',
-            cornerRadius: 1
-        })
+        // Replace icons
+        proicons.replace()
+
+        // List all categories
         console.log(proicons.categories)
-        console.log(proicons.getIconInfo('x (twitter)'))
+
+        // Log an icon's information
+        console.log(proicons.getIconInfo('Code'))
+
+        // Another way to add an icon
         document.write(proicons.icons.addSquare)
+
+        // Also another way to add an icon
         document.body.appendChild(proicons.getIconInfo('x (twitter)').element)
     </script>
 </body>

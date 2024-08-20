@@ -399,8 +399,8 @@
         "description": "Information",
         "category": "Status"
     },
-    "Probited": {
-        "description": "",
+    "Prohibited": {
+        "description": "Not Allowed",
         "category": "Status"
     },
     "Spinner": {
@@ -972,7 +972,6 @@
         "category": "Design"
     },
     "Border All": {
-        "description": "Not to be confused with 'Microsoft'",
         "category": "Design"
     },
     "Color Palette": {

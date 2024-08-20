@@ -4,13 +4,14 @@
 		"moduleResolution": "Bundler",
 		"target": "ES2022",
 		"jsx": "react",
-		"strictNullChecks": true,
-		"strictFunctionTypes": true,
+		"strictNullChecks": false,
+		"strictFunctionTypes": false,
 		"sourceMap": true,
-        "noImplicitAny": true,
 		"outDir": "./dist",
 		"rootDir": ".",
-		"declaration": true
+		"declaration": true,
+		"pretty": true,
+		"removeComments": true
 	},
 	"exclude": ["node_modules", "**/node_modules/*"]
 }
