@@ -102,6 +102,8 @@ interface ProIconReplaceConfig {
 }
 function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
     if (!rootElm) rootElm = document.body;
+    config?.useAttributes ??= true
+
     const attr = config?.attributeName || 'proicon';
     rootElm.querySelectorAll(`[${attr}]`).forEach((element) => {
         let toReplace;
@@ -126,7 +128,13 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
             "outline": ["strokeFilledElements", undefined]
         }
         if (config) {
-            
+            Object.values(attributeList).map(v => v[0]).forEach((c, i) => {
+                const htmlAttr = Object.keys(attributeList)[i]
+
+                if (config.useAttributes && element.hasAttribute(htmlAttr)) return
+
+                element.setAttribute(htmlAttr, config[c])
+            })
         }
         for (const attr of element.attributes) {
             const name = attr.name.toLowerCase()
