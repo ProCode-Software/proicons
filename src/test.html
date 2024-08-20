@@ -6,10 +6,13 @@
 </head>
 
 <body>
-    <i proicon="addSquare" corner-radius="1" stroke-width="2" stroke="rgb(255,255,0)"></i>
+    <i proicon="addSquare" color="rgb(255,0,0)"></i>
     <script src="proicons.js"></script>
     <script>
-        proicons.replace()
+        proicons.replace(undefined, {
+            color: 'rgb(255,255,0)',
+            cornerRadius: 1
+        })
         console.log(proicons.categories)
         console.log(proicons.getIconInfo('x (twitter)'))
         document.write(proicons.icons.addSquare)
