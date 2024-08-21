@@ -2,4 +2,5 @@
 A collection of 400+ modern and open-source icons
 
 ## Credits
-- Pixelfix script from https://github.com/Corecii/Transparent-Pixel-Fix
+- Icon design and guidelines inspired by Microsoft's [Fluent System Icons](https://github.com/microsoft/fluentui-system-icons)
+- Alpha bleeding script from https://github.com/Corecii/Transparent-Pixel-Fix

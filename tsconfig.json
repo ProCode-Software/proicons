@@ -8,10 +8,11 @@
 		"strictFunctionTypes": false,
 		"sourceMap": true,
 		"outDir": "./dist",
-		"rootDir": ".",
+		"rootDir": "./src",
 		"declaration": true,
 		"pretty": true,
-		"removeComments": true
+		"removeComments": true,
+		"declarationDir": "./lib",
 	},
 	"exclude": ["node_modules", "**/node_modules/*"]
 }

@@ -3,7 +3,8 @@ const path = require('path')
 const prettier = require('prettier')
 const config = require('../src/configs/tags.json')
 const rename = require('./rename')
-const chalk = require('cli-color')
+const c = require('ansi-colors')
+
 
 const strokeColors = ['#212325', 'black', '#000000']
 
@@ -29,11 +30,11 @@ files.filter(file => file.endsWith('.svg')).forEach(file => {
         fs.writeFileSync(newPath, ct)
         fs.unlinkSync(oldPath)
     } catch (error) {
-        console.error(chalk.red(`Error moving file ${file}:`, error));
+        console.error(c.red(`Error moving file ${file}:`, error));
     }
 });
 
-console.log(chalk.green('Done renaming files!'))
+console.log(c.green('Done renaming files!'))
 
 // Build SVG list
 const dict = {}
@@ -44,7 +45,7 @@ Object.keys(config).forEach(friendlyName => {
     try {
         dict[name] = fs.readFileSync(path.join(outDir, `${fn}.svg`), 'utf8')
     } catch (error) {
-        console.error(chalk.red(`Error reading file ${fn}.svg:`, error));
+        console.error(c.red(`Error reading file ${fn}.svg:`, error));
     }
 });
 buildSvgList()
@@ -58,14 +59,14 @@ async function buildSvgList() {
         fs.writeFileSync(path.join('src/configs/icons.json'), formatted)
 
         console.log('Done building SVG list!')
-        console.log(chalk.green('Build complete!'));
+        console.log(c.green('Build complete!'));
 
         if (variableIcons.length > 0) {
-            console.log(chalk.cyan('Variable icons:', variableIcons))
+            console.log(c.cyan('Variable icons:', variableIcons))
         } else {
-            console.log(chalk.green('No newly added variable icons!'))
+            console.log(c.green('No newly added variable icons!'))
         }
     } catch (error) {
-        console.error(chalk.red('Error writing icons.json:', error));
+        console.error(c.red('Error writing icons.json:', error));
     }
 }
