@@ -1,5 +1,5 @@
 # ProIcons
-![Cover](./.github/cover.png)
+![Cover](./.github/images/cover.png)
 A collection of 400+ modern and open-source icons
 
 ## Credits
