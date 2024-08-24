@@ -1,6 +1,6 @@
 {
     "name": "proicons",
-    "version": "4.8.0.1",
+    "version": "4.8.1",
     "description": "A collection of 400+ modern and open-source icons",
     "main": "dist/proicons.js",
     "files": [
