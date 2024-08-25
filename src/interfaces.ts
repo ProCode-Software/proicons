@@ -25,7 +25,7 @@ export class ProIconInfo {
     name: string;
     kebabCase: string;
     camelCase: string;
-    element: SVGElement;
+    element: SVGSVGElement;
     category: string;
     tags: string[];
     /**
@@ -33,7 +33,7 @@ export class ProIconInfo {
      * @param name The name of the icon in Friendly Form
      * @param kebabCase The name of the icon in kebab-case
      * @param camelCase The name of the icon in camelCase
-     * @param element The icon as an `SVGElement`. Use the `outerHTML` property on this to return the icon as a string.
+     * @param element The icon as an `SVGSVGElement`. Use the `outerHTML` property on this to return the icon as a string.
      * @param category The category of the icon.
      * @param tags An array of the icon's tags.
      */
@@ -41,7 +41,7 @@ export class ProIconInfo {
         name: string,
         kebabCase: string,
         camelCase: string,
-        element: SVGElement,
+        element: SVGSVGElement,
         tags: string[],
         category: string
     ) {

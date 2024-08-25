@@ -10,7 +10,7 @@
 ## Usage
 ### Node.js
 1. Install the ProIcons package via [NPM](https://https://www.npmjs.com/package/proicons):
-```console
+```
 npm install proicons
 ```
 2. Use ProIcons inside JavaScript
