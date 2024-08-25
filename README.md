@@ -1,7 +1,7 @@
 # ProIcons
 <img src="./.github/images/cover.png">
 
-  [![Version](https://img.shields.io/npm/v/proicons?style=for-the-badge)](https://github.com/ProCode-Software/proicons/releases)
+  [![NPM Version](https://img.shields.io/npm/v/proicons?style=for-the-badge)](https://github.com/ProCode-Software/proicons/releases)
 [![Stars](https://img.shields.io/github/stars/ProCode-Software/proicons?style=for-the-badge&color=edd311)]()
 [![NPM Package](https://img.shields.io/npm/dm/proicons?color=98E8F3&label=downloads&style=for-the-badge)](https://www.npmjs.com/package/proicons)
 
@@ -44,13 +44,6 @@ If you are not inside a Node environment, you can import the ProIcons script via
 <!-- Replace icons with SVG -->
 <script>proicons.replace()</script>
 ```
-
-## Roadmap
-- [x] NPM package
-- [ ] Write documentation and guidelines
-- [ ] PNG source code
-- [ ] Figma plugin
-
 
 ## License
 ProIcons is MIT-licensed, giving you peace of mind using these icons in your project. Learn more [here](./LICENSE)
