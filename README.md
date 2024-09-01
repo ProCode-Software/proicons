@@ -4,7 +4,7 @@
 
 <p align="center">
     <a href="https://github.com/ProCode-Software/proicons/releases">
-        <img src="https://img.shields.io/npm/v/proicons?style=for-the-badge&amp;color=orange"
+        <img src="https://img.shields.io/npm/v/proicons?style=for-the-badge&amp;color=rgb(235, 44, 6)"
             alt="NPM Version">
     </a>
     <a href="">
@@ -18,14 +18,15 @@
 </p>
 
 <p align="center">
-<b>A collection of 400+ modern and open-source icons and logos</b>
+    <b>A collection of 400+ modern and open-source icons and logos</b>
+    <a href="https://github.com/ProCode-Software/proicons/wiki">Documentation</a> | <a href="https://github.com/ProCode-Software/proicons">GitHub</a> | <a href="https://www.npmjs.com/package/proicons">NPM Package</a>
 </p>
 
 ## Usage
 
 ### Node.js
 
-1. Install the ProIcons package via [NPM](https://https://www.npmjs.com/package/proicons):
+1. Install the ProIcons package via [NPM](https://www.npmjs.com/package/proicons):
 
 ```
 npm install proicons
