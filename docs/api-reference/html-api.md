@@ -1,3 +1,4 @@
+# HTML ProIcons API
 ProIcons are designed to be easy to use inside of HTML. Similar to [Feather Icons](https://github.com/feathericons/feather), ProIcons can be inserted through elements with a `proicon` attribute.
 
 To insert an `Add` icon inside HTML:
@@ -45,7 +46,7 @@ To insert an `Add` icon inside HTML:
 ```
 
 > [!TIP]
-> The `i` element isn't mandatory, though the `proicon` attribute is, unless you [customize](./Configuration) the configuration.
+> The `i` element isn't mandatory, though the `proicon` attribute is, unless you [customize](./configuration) the configuration.
 
 Next, add a script to replace these elements.
 
@@ -105,6 +106,6 @@ All of the available HTML attributes are shown below:
 </table>
 
 ## See also
-- [ProIcons Configuration](./Configuration)
-- [JavaScript ProIcons API](./JavaScript-ProIcons-API)
+- [ProIcons Configuration](./configuration)
+- [JavaScript ProIcons API](./javascript-api)
 - [NPM Package](https://npmjs.com/package/proicons)

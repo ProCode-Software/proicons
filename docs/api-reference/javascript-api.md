@@ -1,4 +1,5 @@
-Along with the [HTML API](./HTML-ProIcons-API), ProIcons can also be accessed though JavaScript with not much extra work needed. To add an icon, such as `Add`:
+# JavaScript ProIcons API
+Along with the [HTML API](./javascript-api), ProIcons can also be accessed though JavaScript with not much extra work needed. To add an icon, such as `Add`:
 
 ```javascript
 proicons.icons.add;
@@ -59,7 +60,7 @@ Converts all elements with the `proicon` attribute (can set to your own using `c
 
 The element to search inside for children with the `proicon` attribute. Defaults to `document.body`.
 
-#### `config`: [ProIconReplaceConfig](./Configuration) (optional)
+#### `config`: [ProIconReplaceConfig](./configuration) (optional)
 
 An optional configuration to customise the behaviour of the replace method
 
@@ -187,10 +188,10 @@ An array of the icon's tags.
 
 ### Interface `ProIconReplaceConfig`
 
-See [Configuration](./Configuration)
+See [Configuration](./configuration)
 
 ## See also
 
--   [ProIcons Configuration](./Configuration)
--   [HTML ProIcon API](./HTML-ProIcons-API)
+-   [ProIcons Configuration](./configuration)
+-   [HTML ProIcon API](./javascript-api)
 -   [NPM Package](https://npmjs.com/package/proicons)

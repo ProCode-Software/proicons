@@ -1,28 +1,38 @@
 import { defineConfig } from 'vitepress'
+import { sidebar } from './sidebar.mts'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "ProIcons",
-  description: "A collection of 400+ modern and open-source icons",
-  themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
+    title: "ProIcons",
+    description: "A collection of 400+ modern and open-source icons",
+    outDir: '../site/dist/docs',
+    cleanUrls: true,
+    lastUpdated: true,
+    lang: 'en-US',
+    ignoreDeadLinks: true,
+    themeConfig: {
+        // https://vitepress.dev/reference/default-theme-config
+        nav: [
+            { text: 'Icons', link: '../icons' },
+            {
+                text: 'API Reference',
+                items: [
+                    {
+                        text: 'HTML',
+                        link: '/api-reference/html-api'
+                    },
+                    {
+                        text: 'JavaScript',
+                        link: '/api-reference/javascript-api'
+                    }
+                ]
+            },
+        ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+        sidebar: sidebar(),
+
+        socialLinks: [
+            { icon: 'github', link: 'https://github.com/ProCode-Software/proicon' }
         ]
-      }
-    ],
-
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/ProCode-Software/proicon' }
-    ]
-  }
+    }
 })

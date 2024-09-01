@@ -133,3 +133,7 @@ dist
 /dist
 /wiki
 /lib
+
+# VitePress
+./docs/.vitepress/cache/
+./site/dist/docs/

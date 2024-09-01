@@ -1,4 +1,5 @@
-A configuration can be used to customize the [`proicons.replace()`](./JavaScript-ProIcons-API#proiconsreplacerootelm-element-config-proiconreplaceconfig-void) method.
+# Configuration
+A configuration can be used to customize the [`proicons.replace()`](./javascript-api#proiconsreplacerootelm-element-config-proiconreplaceconfig-void) method.
 To use a configuration, pass the configuration as the second argument when calling `proicons.replace()`.
 
 ```javascript
@@ -39,6 +40,6 @@ Determines whether to overwrite elements when converting to icons. Setting this 
 Determines whether to apply existing HTML attributes such as styles to the converted SVGs. Defaults to `true`
 
 ## See also
--   [proicons.replace()](./JavaScript-ProIcons-API#proiconsreplacerootelm-element-config-proiconreplaceconfig-void)
--   [JavaScript ProIcons API](./JavaScript-ProIcons-API)
--   [HTML Attributes](./HTML-ProIcons-API#attributes)
+-   [proicons.replace()](./javascript-api#proiconsreplacerootelm-element-config-proiconreplaceconfig-void)
+-   [JavaScript ProIcons API](./javascript-api)
+-   [HTML Attributes](./html-api#attributes)
