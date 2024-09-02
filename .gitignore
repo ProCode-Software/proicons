@@ -135,3 +135,4 @@ out
 
 # VitePress
 .vitepress/cache/
+site/dist/docs/

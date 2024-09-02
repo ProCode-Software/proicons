@@ -29,6 +29,10 @@ export default defineConfig({
                 ]
             },
         ],
+        logo: {
+            light: 'https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/logo_light.svg',
+            dark: 'https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/logo_dark.svg',
+        },
 
         sidebar: sidebar(),
 

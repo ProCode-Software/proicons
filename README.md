@@ -1,7 +1,7 @@
 # ProIcons
 
-<img src="./.github/images/github-cover_light.png#gh-light-mode-only">
-<img src="./.github/images/github-cover_dark.png#gh-dark-mode-only">
+<img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover_light.png#gh-light-mode-only">
+<img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover_dark.png#gh-dark-mode-only">
 
 <p align="center">
     <a href="https://github.com/ProCode-Software/proicons/releases">

@@ -1,3 +1,7 @@
+---
+title: JavaScript ProIcons API
+editLink: true
+---
 # JavaScript ProIcons API
 Along with the [HTML API](./javascript-api), ProIcons can also be accessed though JavaScript with not much extra work needed. To add an icon, such as `Add`:
 

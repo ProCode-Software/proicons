@@ -1,3 +1,7 @@
+---
+title: HTML ProIcons API
+editLink: true
+---
 # HTML ProIcons API
 ProIcons are designed to be easy to use inside of HTML. Similar to [Feather Icons](https://github.com/feathericons/feather), ProIcons can be inserted through elements with a `proicon` attribute.
 
