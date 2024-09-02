@@ -134,5 +134,5 @@ out
 /lib/
 
 # VitePress
-docs/.vitepress/cache/
+.vitepress/cache/
 site/dist/docs/

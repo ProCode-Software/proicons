@@ -12,8 +12,8 @@
     "dev": "webpack serve --mode=development --open",
     "build-files": "node ./bin/build.js",
     "dev-build": "webpack --mode=development",
-    "prepare": "node ./bin/publish.js",
-    "docs:dev": "vitepress dev docs",
+    "prepack": "node ./bin/publish.js",
+    "docs:dev": "vitepress dev docs --port 9000",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
