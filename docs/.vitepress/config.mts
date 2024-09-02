@@ -10,6 +10,7 @@ export default defineConfig({
     lastUpdated: true,
     lang: 'en-US',
     ignoreDeadLinks: true,
+    base: '/proicons/docs/',
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [
