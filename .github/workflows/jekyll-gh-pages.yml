@@ -39,13 +39,13 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install dependencies
         run: npm ci
-      - name: Build with VitePress
-        run: npm run docs:build
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./site/dist
           destination: ./_site
+      - name: Build with VitePress
+        run: npm run docs:build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
