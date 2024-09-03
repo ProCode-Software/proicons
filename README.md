@@ -33,7 +33,7 @@
 
 > **Work in progress**
 > 
-> Most of the website and planned packages aren't currently finished, but you can start using the beta package right now on NPM.
+> Most of the website and planned packages aren't currently finished, but you can start using the beta package right now on NPM. See [ROADMAP.md](/ROADMAP.md) to learn more.
 
 ## Usage
 
