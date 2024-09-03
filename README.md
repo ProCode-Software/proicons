@@ -31,6 +31,10 @@
     <a href="https://www.npmjs.com/package/proicons">NPM Package</a>
 </p>
 
+> **Work in progress**
+> 
+> Most of the website and planned packages aren't currently finished, but you can start using the beta package right now on NPM.
+
 ## Usage
 
 ### Node.js
