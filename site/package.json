@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Main website for ProIcons",
   "main": "index.js",
-  "devDependencies": {},
+  "dependencies": {
+    "proicons": "^4.8.1"
+  },
   "scripts": {
     "docs:dev": "vitepress dev src --port 9000",
     "docs:build": "vitepress build src",
