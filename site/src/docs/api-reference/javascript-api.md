@@ -99,18 +99,6 @@ icons.forEach((icon) => {
 
 Lists all icon categories.
 
-<script setup>
-import proicons from 'proicons'
-
-const categories = proicons.categories.join('", ')
-const catCount = proicons.categories.length
-</script>
-Right now there are {{ catCount }} icon categories:
-```js-vue
-[ "{{ categories }}" ]
-
-```
-
 ### `icons`
 
 An object containing all icons as SVG strings with camelCase keys
