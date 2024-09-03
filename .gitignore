@@ -136,3 +136,7 @@ out
 # VitePress
 .vitepress/cache/
 site/dist/docs/
+
+# Temporary
+markdown-examples.md
+api-examples.md

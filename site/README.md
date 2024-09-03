@@ -1,2 +1,2 @@
-# ProIcons
-A collection of 400+ modern and open-source icons
+# ProIcons Website
+ProIcons [website](https://procode-software.github.io/proicons) powered by [VitePress](https://vitepress.dev)
