@@ -3,6 +3,7 @@
   "version": "4.9.0",
   "description": "A collection of 400+ modern and open-source icons",
   "main": "dist/proicons.js",
+  "typings": "lib/",
   "files": [
     "dist",
     "lib"
@@ -41,6 +42,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "declaration-bundler-webpack-plugin": "^1.0.3",
     "proicons": "^4.8.1"
   }
 }

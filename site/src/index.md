@@ -6,7 +6,7 @@ markdownStyles: true
 hero:
   name: "ProIcons"
   text: "Friendly and modern icons"
-  tagline: Free and open-source
+  tagline: 100% free and open-source
   image:
     light: https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover_light.png
     dark: https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover_dark.png
@@ -24,7 +24,7 @@ hero:
 
 features:
   - title: Beautiful
-    icon: '<div class="vp-icon" style="--icon: url(https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/chevron-right.svg)"></div>'
+    icon: '<div class="vp-icon" style="--icon: url(https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/sparkle.svg)"></div>'
     details: ProIcons were designed with simplicity and minimalism in mind.
 
   - title: Customisable

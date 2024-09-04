@@ -23,6 +23,7 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             { text: 'Icons', link: 'icons' },
+            { text: 'Guide', link: '/docs/introduction/about' },
             {
                 text: 'API Reference',
                 items: [

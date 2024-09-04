@@ -281,3 +281,8 @@ p.custom-block-title {
     background: var(--vp-c-gray-soft);
     color: var(--vp-c-text-2);
 }
+.top[data-v-634094e0],
+.middle[data-v-634094e0],
+.bottom[data-v-634094e0] {
+    height: 1.5px;
+}

@@ -13,8 +13,8 @@ export declare class ProIconInfo {
     name: string;
     kebabCase: string;
     camelCase: string;
-    element: SVGElement;
+    element: SVGSVGElement;
     category: string;
     tags: string[];
-    constructor(name: string, kebabCase: string, camelCase: string, element: SVGElement, tags: string[], category: string);
+    constructor(name: string, kebabCase: string, camelCase: string, element: SVGSVGElement, tags: string[], category: string);
 }
