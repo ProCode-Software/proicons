@@ -36,6 +36,9 @@ files.filter(file => file.endsWith('.svg')).forEach(file => {
 
 console.log(c.green('Done renaming files!'))
 
+// Build PNGs
+
+
 // Build SVG list
 const dict = {}
 Object.keys(config).forEach(friendlyName => {
