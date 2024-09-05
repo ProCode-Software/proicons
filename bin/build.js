@@ -4,7 +4,7 @@ const prettier = require('prettier')
 const config = require('../src/configs/tags.json')
 const rename = require('./rename')
 const c = require('ansi-colors')
-
+const sharp = require('sharp');
 
 const strokeColors = ['#212325', 'black', '#000000']
 
@@ -37,7 +37,16 @@ files.filter(file => file.endsWith('.svg')).forEach(file => {
 console.log(c.green('Done renaming files!'))
 
 // Build PNGs
-
+const pngSizes = [24, 72, 120]
+fs.readdirSync(outDir)
+    .filter(file => file.endsWith('.svg')).forEach(file => {
+        
+    pngSizes.forEach(size => {
+        const scale = size / 24
+        const newPath = path.join(`icons/png`.concat())
+    })
+        sharp(path.join(outDir, file))
+})
 
 // Build SVG list
 const dict = {}
