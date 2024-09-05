@@ -5,6 +5,9 @@ const config = require('../src/configs/tags.json')
 const rename = require('./rename')
 const c = require('ansi-colors')
 const sharp = require('sharp');
+const pixelfix = require('./pixelfix')
+
+pixelfix()
 
 const strokeColors = ['#212325', 'black', '#000000']
 
@@ -40,13 +43,24 @@ console.log(c.green('Done renaming files!'))
 const pngSizes = [24, 72, 120]
 fs.readdirSync(outDir)
     .filter(file => file.endsWith('.svg')).forEach(file => {
-        
-    pngSizes.forEach(size => {
-        const scale = size / 24
-        const newPath = path.join(`icons/png`.concat())
+
+        pngSizes.forEach(size => {
+            const colors = ['black', 'white']
+            const scale = size / 24
+            const newPath = path.join(`icons/png${scale == 1 ? '' : `@${scale}x`}`)
+
+            colors.forEach(color => {
+                const fileStr = fs.readFileSync(path.join(outDir, file), 'utf-8')
+                    .replaceAll('currentColor', color)
+                
+                sharp(fileStr)
+                    .resize(size, size)
+                    .png().toFile()
+            })
+
+        })
+
     })
-        sharp(path.join(outDir, file))
-})
 
 // Build SVG list
 const dict = {}
