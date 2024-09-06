@@ -6,8 +6,7 @@ const rename = require('./rename')
 const c = require('ansi-colors')
 const sharp = require('sharp');
 const pixelfix = require('./pixelfix')
-
-pixelfix()
+const { default: fixImage } = require("./pixelfix")
 
 const strokeColors = ['#212325', 'black', '#000000']
 
@@ -41,26 +40,30 @@ console.log(c.green('Done renaming files!'))
 
 // Build PNGs
 const pngSizes = [24, 72, 120]
-fs.readdirSync(outDir)
-    .filter(file => file.endsWith('.svg')).forEach(file => {
+const svgFiles = fs.readdirSync(outDir)
+    .filter(file => file.endsWith('.svg'))
+for (const file of svgFiles) {
+    for (const size of pngSizes) {
+        const colors = ['black', 'white']
+        const scale = size / 24
+        const newPath = path.join(`icons/png${scale == 1 ? '' : `@${scale}x`}`)
 
-        pngSizes.forEach(size => {
-            const colors = ['black', 'white']
-            const scale = size / 24
-            const newPath = path.join(`icons/png${scale == 1 ? '' : `@${scale}x`}`)
+        for (const color of colors) {
+            const fileStr = fs.readFileSync(path.join(outDir, file), 'utf-8')
+                .replaceAll('currentColor', color)
 
-            colors.forEach(color => {
-                const fileStr = fs.readFileSync(path.join(outDir, file), 'utf-8')
-                    .replaceAll('currentColor', color)
-                
-                sharp(fileStr)
-                    .resize(size, size)
-                    .png().toFile()
-            })
+            const fp = path.join(outDir, newPath, `${file.slice(0, -4)}.png`)
 
-        })
+            await sharp(fileStr)
+                .resize(size, size)
+                .png().toFile(fp)
 
-    })
+            await fixImage(fp)
+        }
+
+    }
+
+}
 
 // Build SVG list
 const dict = {}
