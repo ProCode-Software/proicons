@@ -5,7 +5,6 @@ const config = require('../src/configs/tags.json')
 const rename = require('./rename')
 const c = require('ansi-colors')
 const sharp = require('sharp');
-const pixelfix = require('./pixelfix')
 const { default: fixImage } = require("./pixelfix")
 
 const strokeColors = ['#212325', 'black', '#000000']
@@ -39,7 +38,7 @@ files.filter(file => file.endsWith('.svg')).forEach(file => {
 console.log(c.green('Done renaming files!'))
 
 // Build PNGs
-async function buildPng() {
+(async () => {
     const pngSizes = [24, 72, 120]
     const svgFiles = fs.readdirSync(outDir)
         .filter(file => file.endsWith('.svg'))
@@ -64,12 +63,7 @@ async function buildPng() {
         }
 
     }
-}
-try {
-    await buildPng()
-} catch (error) {
-    console.error(error);
-}
+})()
 
 // Build SVG list
 const dict = {}

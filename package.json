@@ -13,7 +13,7 @@
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
     "dev": "webpack serve --mode=development --open",
-    "build-files": "node ./bin/build.js",
+    "build-files": "node ./bin/build.cjs",
     "dev-build": "webpack --mode=development",
     "prepack": "node ./bin/publish.js",
     "docs:dev": "vitepress dev site/src --port 9000",
