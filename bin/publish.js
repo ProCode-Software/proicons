@@ -1,9 +1,9 @@
-const fs = require('fs')
-const path = require('path')
+import { readdirSync, copyFileSync } from 'fs'
+import { join } from 'path'
 
-const inDir = path.join('src/configs')
-const outDir = path.join('dist')
+const inDir = join('src/configs')
+const outDir = join('dist')
 
-fs.readdirSync(inDir).forEach(file => {
-    fs.copyFileSync(path.join(inDir, file), path.join(outDir, file))
+readdirSync(inDir).forEach(file => {
+    copyFileSync(join(inDir, file), join(outDir, file))
 })

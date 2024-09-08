@@ -7,4 +7,4 @@ function camelCase(str) {
 function kebabCase(str) {
     return removeParenthesis(str).replaceAll(' ', '-').toLowerCase()
 }
-module.exports = { camelCase, kebabCase };
+export default { camelCase, kebabCase };

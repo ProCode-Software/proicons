@@ -1,8 +1,8 @@
 // Derived from https://github.com/Corecii/Transparent-Pixel-Fix
 "use strict";
 
-const jimp = require("jimp");
-const Delaunay = require("d3-delaunay").Delaunay;
+import { Jimp as jimp } from "jimp";
+import { Delaunay } from "d3-delaunay";
 
 const neighborLocations = [
     [-1, -1],
@@ -15,9 +15,8 @@ const neighborLocations = [
     [-1, 0]
 ];
 
-export default async function fixImage(filePath) {
-    let promises = [];
-    promises.push((async function () {
+async function fixImage(filePath) {
+    return new Promise(async (resolve) => {
         let image = await jimp.read(filePath);
 
         let voronoiPoints = [];
@@ -54,11 +53,9 @@ export default async function fixImage(filePath) {
                     }
                 }
             });
-            await image.writeAsync(filePath);
+            await image.write(filePath);
         }
-    })());
-
-    Promise.all(promises).then(() => {
-        return
-    });
+        resolve()
+    })
 }
+export default fixImage;

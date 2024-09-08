@@ -1,5 +1,5 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import { join } from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -41,7 +41,7 @@ const config = {
     devtool: 'source-map',
 };
 
-module.exports = () => {
+export default () => {
     if (isProduction) {
         config.mode = 'production';
     } else {
@@ -49,7 +49,7 @@ module.exports = () => {
 
         config.devServer = {
             static: {
-                directory: path.join(__dirname, 'dist'),
+                directory: join(__dirname, 'dist'),
             },
             compress: true,
         };

@@ -1,7 +1,7 @@
 import icons from './configs/icons.json';
 import tags from './configs/tags.json';
 import { ProIconInfo } from './interfaces';
-const rename = require('../bin/rename');
+import rename from '../bin/rename';
 
 /**
  * Returns information about an icon from the provided key.
