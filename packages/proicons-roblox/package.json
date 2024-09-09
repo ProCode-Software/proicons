@@ -1,0 +1,20 @@
+{
+  "name": "proicons-roblox",
+  "version": "4.9.0",
+  "description": "ProIcons package for Roblox",
+  "main": "index.js",
+  "scripts": {
+    "build": "rbxtsc",
+    "dev": "rbxtsc -w"
+  },
+  "keywords": [],
+  "author": "ProCode Software",
+  "license": "MIT",
+  "devDependencies": {
+    "@rbxts/compiler-types": "^2.3.0-types.2",
+    "@rbxts/types": "^1.0.805",
+    "prettier": "^3.3.3",
+    "roblox-ts": "^2.3.0",
+    "typescript": "^5.5.4"
+  }
+}

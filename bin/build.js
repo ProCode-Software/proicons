@@ -152,6 +152,8 @@ async function buildPngs() {
     console.log(chalk.green('Done building PNGs!'));
 }
 buildPngs().then(() => {
+    // Build fonts
+    
     console.log(chalk.green('Build complete!'));
 
     if (newIcons > 0) {
