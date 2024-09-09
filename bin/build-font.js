@@ -5,8 +5,8 @@ const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
 const lockfile = JSON.parse(readFileSync('icons/icons.lock.json', 'utf-8'))
 
 const codepoints = {}
-Object.keys(lockfile).forEach((icName, index) => {
-    codepoints[icName] = 57344 + index
+lockfile.forEach((obj, index) => {
+    codepoints[obj.name] = 57344 + index
 })
 
 export async function buildFont() {
