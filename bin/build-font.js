@@ -1,5 +1,6 @@
 import { ASSET_TYPES, generateFonts, OtherAssetType } from 'fantasticon';
 import { readFileSync } from "fs";
+import path from "path";
 
 const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
 const lockfile = JSON.parse(readFileSync('icons/icons.lock.json', 'utf-8'))
@@ -10,10 +11,10 @@ lockfile.forEach((obj, index) => {
 })
 
 export async function buildFont() {
-    generateFonts({
+    await generateFonts({
         name: 'ProIcons',
-        outputDir: 'icons/fonts',
-        inputDir: 'icons/svg',
+        outputDir: path.resolve('icons/fonts/'),
+        inputDir: path.resolve('icons/svg/'),
         normalize: true,
         fontHeight: 500,
         codepoints: codepoints,
@@ -30,12 +31,19 @@ export async function buildFont() {
         ],
         formatOptions: {
             ttf: {
-                description: '',
-                version: version
+                description: 'Modern and open-source icons, designed by ProCode-Software',
+                version: version.slice(0,-2),
+                url: 'https://procode-software.github.io/proicons',
+                copyright: '©2024 ProCode Software',
+            },
+            woff: {
+                metadata: readFileSync('icons/fonts/metadata.xml', 'utf-8'),
             },
             json: {
                 indent: 4
-            }
+            },
         },
     })
 }
+
+buildFont()

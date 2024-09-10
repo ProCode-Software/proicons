@@ -8,6 +8,7 @@ import chalk from 'ansi-colors';
 import sharp from 'sharp';
 import { optimize } from 'svgo';
 import progress from 'progress';
+import { buildFont } from "./build-font.js";
 
 const strokeColors = ['#212325', 'black', '#000000'];
 const svgoConfig = {
@@ -151,9 +152,10 @@ async function buildPngs() {
     progresBar.terminate();
     console.log(chalk.green('Done building PNGs!'));
 }
-buildPngs().then(() => {
+buildPngs().then(async () => {
     // Build fonts
-    
+    await buildFont()
+
     console.log(chalk.green('Build complete!'));
 
     if (newIcons > 0) {
