@@ -27,13 +27,12 @@ export async function buildFont() {
         assetTypes: [
             OtherAssetType.HTML,
             OtherAssetType.CSS,
-            OtherAssetType.TS,
             OtherAssetType.JSON,
         ],
         formatOptions: {
             ttf: {
                 description: 'Modern and open-source icons, designed by ProCode-Software',
-                version: version.slice(0,-2),
+                version: version.slice(0, -2),
                 url: 'https://procode-software.github.io/proicons',
                 copyright: '©2024 ProCode Software',
             },
@@ -42,11 +41,16 @@ export async function buildFont() {
             },
             json: {
                 indent: 4
-            }
+            },
         },
         getIconId: ({
-            basename,
-        }) => rename.kebabCase(basename)
+            basename, // `string` - Example: 'foo';
+            relativeDirPath, // `string` - Example: 'sub/dir/foo.svg'
+            absoluteFilePath, // `string` - Example: '/var/icons/sub/dir/foo.svg'
+            relativeFilePath, // `string` - Example: 'foo.svg'
+            index // `number` - Example: `0`
+        }) => rename.kebabCase(basename),
+        prefix: 'proicon'
     })
 }
 
