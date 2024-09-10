@@ -1,6 +1,7 @@
 import { ASSET_TYPES, generateFonts, OtherAssetType } from 'fantasticon';
 import { readFileSync } from "fs";
 import path from "path";
+import rename from './rename.js'
 
 const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
 const lockfile = JSON.parse(readFileSync('icons/icons.lock.json', 'utf-8'))
@@ -13,8 +14,8 @@ lockfile.forEach((obj, index) => {
 export async function buildFont() {
     await generateFonts({
         name: 'ProIcons',
-        outputDir: path.resolve('icons/fonts/'),
-        inputDir: path.resolve('icons/svg/'),
+        outputDir: path.resolve('./icons/fonts/'),
+        inputDir: path.resolve('./icons/svg/'),
         normalize: true,
         fontHeight: 500,
         codepoints: codepoints,
@@ -41,8 +42,11 @@ export async function buildFont() {
             },
             json: {
                 indent: 4
-            },
+            }
         },
+        getIconId: ({
+            basename,
+        }) => rename.kebabCase(basename)
     })
 }
 
