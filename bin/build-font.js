@@ -50,7 +50,7 @@ export async function buildFont() {
             relativeFilePath, // `string` - Example: 'foo.svg'
             index // `number` - Example: `0`
         }) => rename.kebabCase(basename),
-        prefix: 'proicon'
+        prefix: 'proicon',
     })
 }
 
