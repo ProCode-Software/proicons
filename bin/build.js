@@ -121,50 +121,53 @@ async function buildPngs() {
         total: svgFiles.length * 3 * 2,
     });
 
+    const promises = []
     for (const file of svgFiles) {
-        for (const size of pngSizes) {
-            const colors = ['black', 'white'];
-            const scale = size / 24;
-            const newFolder = path.join(`icons/png${scale == 1 ? '' : `@${scale}x`}`);
+        promises.push((async () => {
+            for (const size of pngSizes) {
+                const colors = ['black', 'white'];
+                const scale = size / 24;
+                const newFolder = path.join(`icons/png${scale == 1 ? '' : `@${scale}x`}`);
 
-            for (const color of colors) {
-                const newColorFolder = path.join(newFolder, color);
+                for (const color of colors) {
+                    const newColorFolder = path.join(newFolder, color);
 
-                if (!fs.existsSync(newColorFolder)) fs.mkdirSync(newColorFolder, { recursive: true });
+                    if (!fs.existsSync(newColorFolder)) fs.mkdirSync(newColorFolder, { recursive: true });
 
-                const fileStr = fs.readFileSync(path.join(outDir, file), 'utf-8').replaceAll('currentColor', color);
+                    const fileStr = fs.readFileSync(path.join(outDir, file), 'utf-8').replaceAll('currentColor', color);
 
-                const newFilePath = path.join(newFolder, color, `${file.slice(0, -4)}.png`);
+                    const newFilePath = path.join(newFolder, color, `${file.slice(0, -4)}.png`);
 
-                progresBar.tick(1, {
-                    item: newFilePath,
-                });
+                    progresBar.tick(1, {
+                        item: newFilePath,
+                    });
 
-                try {
-                    await sharp(Buffer.from(fileStr)).resize(size, size).png().toFile(newFilePath);
-                    await pixelfix(newFilePath);
-                } catch (error) {
-                    console.error(`Failed to generate ${file}`, error);
+                    try {
+                        await sharp(Buffer.from(fileStr)).resize(size, size).png().toFile(newFilePath);
+                        await pixelfix(newFilePath);
+                    } catch (error) {
+                        console.error(`Failed to generate ${file}`, error);
+                    }
                 }
             }
-        }
+        })());
     }
+    Promise.all(promises)
     progresBar.terminate();
     console.log(chalk.green('Done building PNGs!'));
 }
-buildPngs().then(async () => {
-    // Build fonts
-    await buildFont()
+buildPngs();
+// Build fonts
+(async () => await buildFont())();
 
-    console.log(chalk.green('Build complete!'));
+console.log(chalk.green('Build complete!'));
 
-    if (newIcons > 0) {
-        console.log(chalk.cyan('New icons:', newIcons));
+if (newIcons > 0) {
+    console.log(chalk.cyan('New icons:', newIcons));
 
-        if (variableIcons.length > 0) {
-            console.log(chalk.cyan('\tVariable:', variableIcons));
-        }
-    } else {
-        console.log(chalk.green('No newly added icons!'));
+    if (variableIcons.length > 0) {
+        console.log(chalk.cyan('\tVariable:', variableIcons));
     }
-});
+} else {
+    console.log(chalk.green('No newly added icons!'));
+}

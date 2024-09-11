@@ -1,7 +1,7 @@
-import { ASSET_TYPES, generateFonts, OtherAssetType } from 'fantasticon';
-import { readFileSync } from "fs";
+import { readFileSync, writeFileSync } from "fs";
 import path from "path";
 import rename from './rename.js'
+import { ASSET_TYPES, generateFonts, OtherAssetType } from '@twbs/fantasticon';
 
 const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
 const lockfile = JSON.parse(readFileSync('icons/icons.lock.json', 'utf-8'))
