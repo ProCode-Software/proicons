@@ -7,6 +7,7 @@ export default defineConfig({
     description: "A collection of 400+ modern and open-source icons",
     outDir: '../dist',
     cleanUrls: true,
+    
     lastUpdated: true,
     lang: 'en-US',
     ignoreDeadLinks: true,
@@ -21,6 +22,7 @@ export default defineConfig({
     },
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
+        
         nav: [
             { text: 'Icons', link: 'icons' },
             { text: 'Guide', link: '/docs/introduction/about' },
@@ -52,6 +54,9 @@ export default defineConfig({
         footer: {
             message: 'Released under the MIT License.',
             copyright: 'Copyright © 2024 ProCode Software'
+        },
+        search: {
+            provider: "local"   
         }
     }
 })
