@@ -56,7 +56,7 @@ export default defineConfig({
             copyright: 'Copyright © 2024 ProCode Software'
         },
         search: {
-            provider: "local"   
+            provider: "local"  
         }
     }
 })

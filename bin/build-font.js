@@ -44,11 +44,7 @@ export async function buildFont() {
             },
         },
         getIconId: ({
-            basename, // `string` - Example: 'foo';
-            relativeDirPath, // `string` - Example: 'sub/dir/foo.svg'
-            absoluteFilePath, // `string` - Example: '/var/icons/sub/dir/foo.svg'
-            relativeFilePath, // `string` - Example: 'foo.svg'
-            index // `number` - Example: `0`
+            basename
         }) => rename.kebabCase(basename),
         prefix: 'proicon',
     })
