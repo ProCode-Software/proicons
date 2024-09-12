@@ -91,7 +91,6 @@ Object.keys(config).forEach((friendlyName) => {
         throw new Error(`Error reading file ${fn}.svg:`, error);
     }
 });
-buildSvgList();
 
 async function buildSvgList() {
     try {
@@ -152,22 +151,28 @@ async function buildPngs() {
             }
         })());
     }
-    Promise.all(promises)
-    progresBar.terminate();
-    console.log(chalk.green('Done building PNGs!'));
+    Promise.all(promises).then(() => {
+        progresBar.terminate();
+        console.log(chalk.green('Done building PNGs!'));
+    })
 }
-buildPngs();
-// Build fonts
-(async () => await buildFont())();
+(async () => {
+    await buildSvgList();
+    await buildPngs();
+    await buildFont();
+})().then(() => {
+    console.log(chalk.green('Build complete!'));
 
-console.log(chalk.green('Build complete!'));
+    if (newIcons > 0) {
+        console.log(chalk.cyan('New icons:', newIcons));
 
-if (newIcons > 0) {
-    console.log(chalk.cyan('New icons:', newIcons));
-
-    if (variableIcons.length > 0) {
-        console.log(chalk.cyan('\tVariable:', variableIcons));
+        if (variableIcons.length > 0) {
+            console.log(chalk.cyan('\tVariable:', variableIcons));
+        }
+    } else {
+        console.log(chalk.green('No newly added icons!'));
     }
-} else {
-    console.log(chalk.green('No newly added icons!'));
-}
+    process.exit(0);
+}).catch(error => {
+    throw new Error(error)
+});
