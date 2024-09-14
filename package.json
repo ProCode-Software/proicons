@@ -10,6 +10,7 @@
     "dist",
     "lib"
   ],
+  "workspaces": ["packages/*"],
   "scripts": {
     "dev": "webpack serve --mode=development --open",
     "build-icons": "node ./bin/build.js",
