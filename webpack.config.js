@@ -1,4 +1,4 @@
-import { join } from 'path';
+import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const isProduction = process.env.NODE_ENV == 'production';
@@ -49,7 +49,7 @@ export default () => {
 
         config.devServer = {
             static: {
-                directory: join(__dirname, 'dist'),
+                directory: path.join(__dirname, 'dist'),
             },
             compress: true,
         };
