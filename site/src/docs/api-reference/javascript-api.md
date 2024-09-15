@@ -59,7 +59,7 @@ proicons.replace(demoElement, {
 });
 ```
 
-### `proicons.getIconInfo(key: string)`: [ProIconInfo](#proiconinfo)
+### `proicons.getIconInfo(key: string)`: [ProIconInfo](./javascript-api.md#proiconinfo)[]
 
 Returns information about an icon from the provided key.
 
@@ -80,7 +80,7 @@ console.log(iconInfo.tags);
 // ['Plus', 'Create', 'New', 'Addition']
 ```
 
-### `proicons.search(key: string)`: [ProIconInfo](#proiconinfo)[]
+### `proicons.search(key: string)`: [ProIconInfo](./javascript-api.md#proiconinfo)[]
 
 Searches for icons with names or tags that contain `key` and returns them as `ProIconInfo`. Unlike [`proicons.getIconInfo()`](#proiconsgeticoninfokey-string-proiconinfo), you can search for icons via tags without throwing an error.
 
