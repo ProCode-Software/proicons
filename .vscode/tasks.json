@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev",
+			"problemMatcher": [],
+			"label": "proicons dev",
+			"detail": "webpack serve --mode=development --open",
+			"group": "build"
+		},
+		{
+			"type": "npm",
+			"script": "docs:dev",
+			"path": "site",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "docs dev",
+			"detail": "vitepress dev src --port 9000"
+		},
+		{
+			"type": "npm",
+			"script": "build-icons",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "Build icons",
+			"detail": "node ./bin/build.js"
+		}
+	]
+}
