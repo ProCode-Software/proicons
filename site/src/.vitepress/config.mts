@@ -22,7 +22,9 @@ export default defineConfig({
     },
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
-        
+        editLink: {
+            pattern: 'https://github.com/ProCode-Software/proicons/edit/main/site/:path'
+        },
         nav: [
             { text: 'Icons', link: 'icons' },
             { text: 'Guide', link: '/docs/introduction/about' },
