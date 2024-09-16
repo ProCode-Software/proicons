@@ -2,19 +2,29 @@
   "name": "proicons",
   "version": "4.9.0",
   "description": "A collection of 400+ modern and open-source icons",
-  "main": "dist/proicons.js",
-  "typings": "lib/proicons.d.ts",
   "type": "module",
+  "main": "dist/cjs/proicons.js",
+  "main:umd": "dist/umd/proicons.js",
+  "unpkg": "dist/umd/proicons.js",
   "module": "dist/proicons.js",
+  "typings": "lib/proicons.d.ts",
   "files": [
     "dist",
     "lib"
   ],
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": {
+    "url": "ProCode-Software/proicons"
+  },
+  "homepage": "https://github.com/ProCode-Software/proicons",
+  "bugs": "https://github.com/ProCode-Software/proicons/issues",
   "scripts": {
-    "dev": "webpack serve --mode=development --open",
+    "dev": "vite",
     "build-icons": "node ./bin/build.js",
-    "build": "webpack --mode=production --node-env=production",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "docs:dev": "vitepress dev site/src --port 9000",
     "docs:build": "vitepress build site/src",
     "docs:preview": "vitepress preview site/src",
@@ -24,13 +34,21 @@
   "keywords": [
     "icons",
     "icon-pack",
-    "js"
+    "js",
+    "feather",
+    "lucide",
+    "fluent",
+    "font awesome",
+    "svg",
+    "proicons",
+    "procode"
   ],
   "author": "ProCode Software",
   "license": "MIT",
   "devDependencies": {
     "@twbs/fantasticon": "^3.0.0",
     "@types/node": "^22.3.0",
+    "@types/rollup": "^0.54.0",
     "@types/webpack": "^5.28.5",
     "@webpack-cli/generators": "^3.0.7",
     "ansi-colors": "^4.1.3",
@@ -40,11 +58,14 @@
     "jimp": "^1.4.0",
     "prettier": "^3.3.3",
     "progress": "^2.0.3",
+    "rollup-plugin-dts": "^6.1.1",
     "sharp": "^0.33.5",
     "svg2ttf": "^6.0.3",
     "svgo": "^3.3.2",
     "ts-loader": "^9.5.1",
     "typescript": "^5.5.4",
+    "vite": "^5.4.5",
+    "vite-plugin-html": "^3.2.2",
     "vitepress": "^1.3.4",
     "webpack": "^5.93.0",
     "webpack-dev-server": "^5.0.4"

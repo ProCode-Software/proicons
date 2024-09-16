@@ -1,19 +1,27 @@
 {
-	"compilerOptions": {
-		"module": "ESNext",
-		"moduleResolution": "Bundler",
-		"target": "ES6",
-		"jsx": "react",
-		"strictNullChecks": false,
-		"strictFunctionTypes": false,
-		"sourceMap": true,
-		"outDir": "./dist",
-		"rootDir": "./src",
-		"declaration": true,
-		"pretty": true,
-		"removeComments": true,
-		"declarationDir": "./lib",
-		"isolatedDeclarations": false
-	},
-	"exclude": ["node_modules", "**/node_modules/*", "**/BuildIconList/*"]
+    "compilerOptions": {
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "target": "ES6",
+        "jsx": "react",
+        "sourceMap": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "declaration": true,
+        "pretty": true,
+        "declarationDir": "./lib",
+        "isolatedDeclarations": false,
+        "moduleDetection": "force",
+
+        // Emit only declarations
+        "emitDeclarationOnly": true,
+
+        // Lint
+        "strictNullChecks": false,
+        "strictFunctionTypes": false,
+        "strict": false,
+        "noUnusedParameters": false
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", "**/node_modules/*", "**/BuildIconList/*"]
 }
