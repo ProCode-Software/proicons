@@ -23,17 +23,19 @@ document.write(proicons.icons.add);
 This returns the icon as an SVG string. If you want to return the metadata of an icon, including the actual element, use [`proicons.getIconInfo()`]()
 :::
 
-## All Methods
+## Methods
 
-### `proicons.replace(rootElm?: Element, config?: ProIconReplaceConfig)`: void
+### replace
+* **Parameters:** `rootElm?: Element`, `config?: ProIconReplaceConfig`
+* **Returns:** `void`
 
 Converts all elements with the `proicon` attribute (can set to your own using `config.attributeName`) on the page to an icon corresponding to the attribute value.
 
-#### `rootElm`: Element (optional)
+#### rootElm: `Element` (optional)
 
 The element to search inside for children with the `proicon` attribute. Defaults to `document.body`.
 
-#### `config`: [ProIconReplaceConfig](./configuration) (optional)
+#### config: [`ProIconReplaceConfig`](./configuration) (optional)
 
 An optional configuration to customise the behaviour of the replace method
 
@@ -59,15 +61,17 @@ proicons.replace(demoElement, {
 });
 ```
 
-### `proicons.getIconInfo(key: string)`: [ProIconInfo](./javascript-api.md#proiconinfo)[]
+### getIconInfo
+* **Parameters:** `key: string`
+* **Returns:** [`ProIconInfo[]`](./javascript-api.md#proiconinfo)
 
 Returns information about an icon from the provided key.
 
-::: warning
-This method throws an error if the provided key does not match an icon name in Friendly Form, camelCase or kebab-case. Use [`proicons.search()`](#proiconssearchkey-string-proiconinfo) instead to return icons that contain a keyword inside its name or tags.
+::: tip
+This method throws an error if the provided key does not match an icon name in Friendly Form, camelCase or kebab-case. Use [`proicons.search()`](#search) instead to return icons that contain a keyword inside its name or tags.
 :::
 
-#### `key`: string
+#### key: `string`
 
 The icon name in Friendly Form, camelCase or kebab-case. Throws an error if the provided key is invalid. Case-insensitive
 
@@ -80,9 +84,11 @@ console.log(iconInfo.tags);
 // ['Plus', 'Create', 'New', 'Addition']
 ```
 
-### `proicons.search(key: string)`: [ProIconInfo](./javascript-api.md#proiconinfo)[]
+### search
+* **Parameters:** `key: string`
+* **Returns:** [`ProIconInfo[]`](./javascript-api.md#proiconinfo)
 
-Searches for icons with names or tags that contain `key` and returns them as `ProIconInfo`. Unlike [`proicons.getIconInfo()`](#proiconsgeticoninfokey-string-proiconinfo), you can search for icons via tags without throwing an error.
+Searches for icons with names or tags that contain `key` and returns them as `ProIconInfo`. Unlike [`proicons.getIconInfo()`](#geticoninfo), you can search for icons via tags without throwing an error.
 
 #### Example
 
@@ -95,11 +101,12 @@ icons.forEach((icon) => {
 ```
 ## Properties
 
-### `categories`: string[]
+### categories
+* **Returns:** `string`
 
 Lists all icon categories.
 
-### `icons`
+### icons
 
 An object containing all icons as SVG strings with camelCase keys
 
@@ -112,7 +119,7 @@ console.log(proicons.icons.add);
 
 ## Classes
 
-### `ProIconInfo`
+### ProIconInfo
 
 Contains the information about an icon
 
@@ -129,30 +136,31 @@ Contains the information about an icon
 }
 ```
 
-#### `name`: string
+#### name: `string`
 
 The name of the icon in Friendly Form
 
-#### `kebabCase`: string
+#### kebabCase: `string`
 
 The name of the icon in kebab-case
 
-#### `camelCase`: string
+#### camelCase: `string`
 
 The name of the icon in camelCase
 
-#### `element`: SVGSVGElement
+#### element: `SVGSVGElement`
 
 The icon as an `SVGElement`. Use the `outerHTML` property on this to return the icon as a string.
 
-#### `category`: string
+#### category: `string`
 
 The category of the icon.
 
-#### `tags`: string[]
+#### tags: `string[]`
 
 An array of the icon's tags.
 
-### Interface `ProIconReplaceConfig`
+## Interfaces 
+### ProIconReplaceConfig
 
 See [Configuration](./configuration)
