@@ -89,7 +89,7 @@ If you are not inside a Node environment, you can import the ProIcons script via
 ProIcons is MIT-licensed, giving you peace of mind using these icons in your project. Learn more [here](./LICENSE)
 
 > [!WARNING]
-> I do not own any of the logos used in the icon pack nor am I affiliated with their companies. Please use these logos under their respective company's terms and guidelines.
+> This library contains brand icons that may not be MIT-licensed and may have additional terms and guidelines. Learn more [here](https://procode-software.github.io/proicons/docs/introduction/about#usage-of-brand-icons)
 
 ## Credits
 
