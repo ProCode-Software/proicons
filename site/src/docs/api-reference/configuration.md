@@ -3,7 +3,7 @@ title: Configuration API
 editLink: true
 ---
 # Configuration API
-A configuration can be used to customize the [`proicons.replace()`](./javascript-api#proiconsreplacerootelm-element-config-proiconreplaceconfig-void) method.
+A configuration can be used to customize the [`proicons.replace()`](./javascript-api#replace) method.
 To use a configuration, pass the configuration as the second argument when calling `proicons.replace()`.
 
 ```javascript
