@@ -3,6 +3,7 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
+import './icons.css'
 import navTitleAfter from './components/navTitleAfter.vue'
 
 export default {

@@ -1,0 +1,54 @@
+/* Custom block */
+.warning.custom-block .custom-block-title {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/alert-triangle.svg")
+}
+
+.danger.custom-block .custom-block-title {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/alert-circle.svg")
+}
+
+.tip.custom-block .custom-block-title {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/lightbulb.svg")
+}
+
+.info.custom-block .custom-block-title,
+.note.custom-block .custom-block-title {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/info.svg")
+}
+
+/* Icons */
+:root {
+    --vp-icon-copy: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/clipboard.svg");
+    --vp-icon-copied: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/checkmark.svg");
+}
+
+.vpi-align-left {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/menu.svg");
+}
+
+.vpi-social-github {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/github.svg");
+}
+
+.vpi-more-horizontal {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/more.svg");
+}
+
+.vpi-chevron-right,
+.vpi-chevron-down,
+.vpi-chevron-left,
+.vpi-chevron-up {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/chevron-right.svg");
+}
+
+.vpi-square-pen {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/pencil.svg");
+}
+
+.vpi-search {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/search.svg");
+}
+
+.vpi-social-x, .vpi-social-twitter {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/x-twitter.svg");
+}
