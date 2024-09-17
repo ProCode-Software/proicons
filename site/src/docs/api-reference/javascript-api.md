@@ -1,8 +1,8 @@
 ---
-title: JavaScript ProIcons API
+title: JavaScript API
 editLink: true
 ---
-# JavaScript ProIcons API
+# JavaScript API
 
 ## Installation & Setup
 <!--@include: ../introduction/installation.md#install-node-->
