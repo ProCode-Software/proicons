@@ -49,6 +49,47 @@
     --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/search.svg");
 }
 
-.vpi-social-x, .vpi-social-twitter {
+.vpi-social-x,
+.vpi-social-twitter {
     --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/x-twitter.svg");
+}
+
+.vpi-square-pen {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/pencil.svg");
+}
+
+.vpi-plus {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/add.svg");
+}
+
+.vpi-sun {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/brightness.svg");
+}
+
+.vpi-moon {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/moon.svg");
+}
+
+.vpi-arrow-right,
+.vpi-arrow-down,
+.vpi-arrow-left,
+.vpi-arrow-up {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/arrow-up.svg");
+
+}
+
+.vpi-heart {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/heart.svg");
+}
+
+.vpi-layout-list {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/apps-list.svg");
+}
+
+.vpi-delete {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/delete.svg");
+}
+
+.vpi-corner-down-left {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/arrow-enter.svg");
 }
