@@ -25,6 +25,11 @@ export default defineConfig({
         editLink: {
             pattern: 'https://github.com/ProCode-Software/proicons/edit/main/site/src/:path'
         },
+        externalLinkIcon: true,
+        outline: 'deep',
+        notFound: {
+            linkText: 'Go home'
+        },
         nav: [
             { text: 'Icons', link: 'icons' },
             { text: 'Guide', link: '/docs/introduction/about' },

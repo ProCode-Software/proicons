@@ -134,8 +134,8 @@ out
 /lib/
 
 # VitePress
-.vitepress/cache/
-site/dist/docs/
+**/.vitepress/cache/
+site/dist/
 
 # Temporary
 markdown-examples.md
