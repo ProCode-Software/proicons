@@ -38,20 +38,25 @@ Defines the shape to be used for stroke caps. Defaults to `round`
 
 ### strokeJoin
 * Type: `'round'` | `'miter'` | `'bevel'`
+
 Defines the shape to be used for stroke joins. Defaults to `round`
 
 ### cornerRadius
 * Type: `number`
+
 Determines the corner radius of SVG elements. Does not apply to all rounded elements.
 
 ### attributeName
 * Type: `string`
+
 The attribute name that is checked for when converting elements to icons. Defaults to `proicon`
 
 ### overwrite
 * Type: `boolean` | `'auto'`
+
 Determines whether to overwrite elements when converting to icons. Setting this to `auto` will overwrite only if the element does not have any children. Defaults to `auto`.
 
 ### useAttributes
 * Type: `boolean`
+
 Determines whether to apply existing HTML attributes such as styles to the converted SVGs. Defaults to `true`
