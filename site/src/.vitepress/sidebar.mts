@@ -16,8 +16,8 @@ export function sidebar(): DefaultTheme.SidebarItem[] {
             collapsed: false,
             base: '/docs/api-reference/',
             items: [
-                { text: 'HTML ProIcons API', link: 'html-api' },
-                { text: 'JavaScript ProIcons API', link: 'javascript-api' },
+                { text: 'HTML API', link: 'html-api' },
+                { text: 'JavaScript API', link: 'javascript-api' },
                 { text: 'Configuration', link: 'configuration' },
             ]
         },
