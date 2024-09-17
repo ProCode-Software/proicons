@@ -41,17 +41,12 @@ An optional configuration to customise the behaviour of the replace method
 
 #### Example
 
-**HTML:**
-
 ```html
 <div class="demo">
     <i proicon="add"></i>
     <i proicon="delete"></i>
 </div>
 ```
-
-**JS:**
-
 ```javascript
 const demoElement = document.querySelector('.demo');
 

@@ -38,47 +38,38 @@ Next, add a script to replace these elements.
 
 ## Attributes
 
-ProIcons also can be customized via attributes.
+ProIcons also can be customized via attributes. These can be applied to individual icon elements and are available in the JavaScript [configuration](./configuration).
 
 ```html
 <i proicon="add" color="red"></i>
 ```
-All of the available HTML attributes are shown below:
 
-<table>
-    <tr>
-        <th>Attribute</th>
-        <th>Type</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td><code>color</code></td>
-        <td>Color</td>
-        <td>Determines the color of the icon</td>
-    </tr>
-    <tr>
-        <td><code>stroke-width</code></td>
-        <td>Number</td>
-        <td>Defines the thickness of the icon's stroke</td>
-    </tr>
-    <tr>
-        <td><code>join</code></td>
-        <td><code>round</code> | <code>miter</code> | <code>bevel</code></td>
-        <td>Defines the shape to be used for stroke joins.</td>
-    </tr>
-    <tr>
-        <td><code>caps</code></td>
-        <td><code>round</code> | <code>square</code> | <code>butt</code></td>
-        <td>Defines the shape to be used for stroke caps.</td>
-    </tr>
-    <tr>
-        <td><code>corner-radius</code></td>
-        <td>Number</td>
-        <td>Determines the corner radius of the icon. May not work with all icons.</td>
-    </tr>
-    <tr>
-        <td><code>outline</code></td>
-        <td>Boolean</td>
-        <td>Determines whether to add additional strokes to filled SVG elements.</td>
-    </tr>
-</table>
+### color
+* **Type:** `number`
+
+Determines the color of the icon
+
+### stroke-width
+* **Type:** `number`
+
+Defines the thickness of the icon's stroke
+
+### join
+* **Type:** <code>round</code> | <code>miter</code> | <code>bevel</code>
+
+Defines the shape to be used for stroke joins.
+
+### caps
+* **Type:** <code>round</code> | <code>square</code> | <code>butt</code>
+
+Defines the shape to be used for stroke caps.
+
+### corner-radius
+* **Type:** `number`
+
+Determines the corner radius of the icon. May not work with all icons.
+
+### outline
+* **Type:** `boolean`
+
+Determines whether to add additional strokes to filled SVG elements.
