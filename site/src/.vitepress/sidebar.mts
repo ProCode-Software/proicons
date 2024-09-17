@@ -18,7 +18,7 @@ export function sidebar(): DefaultTheme.SidebarItem[] {
             items: [
                 { text: 'HTML API', link: 'html-api' },
                 { text: 'JavaScript API', link: 'javascript-api' },
-                { text: 'Configuration', link: 'configuration' },
+                { text: 'Configuration API', link: 'configuration' },
             ]
         },
         {
