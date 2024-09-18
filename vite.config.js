@@ -24,11 +24,7 @@ export default defineConfig(({ mode }) => {
             sourcemap: true,
             rollupOptions: {
                 // https://rollupjs.org/configuration-options/
-                input: {
-                    proicons: resolve('src/proicons.ts'),
-                },
-                output: outputs,
-                treeshake: false,
+
 
                 plugins: isProduction ? [] : [createHtmlPlugin({
                     template: resolve('src/test.html'),
@@ -36,8 +32,10 @@ export default defineConfig(({ mode }) => {
                 })]
             },
             lib: {
-                entry: resolve(__dirname, 'src/proicons.js'),
+                entry: resolve(__dirname, 'src/proicons.ts'),
                 name: 'proicons',
+                formats: ['es', 'umd', 'cjs'],
+                fileName: resolve('dist/[format]/proicons')
             },
         },
         server: {
