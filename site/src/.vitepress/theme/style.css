@@ -241,3 +241,10 @@ p.custom-block-title {
 .bottom[data-v-634094e0] {
     height: 1.5px;
 }
+
+.search-keyboard-shortcuts kbd[data-v-5b749456] {
+    box-shadow: none;
+    background: none;
+    background-color: rgba(100,100,100,.3) !important;
+    font-family: inherit;
+}
