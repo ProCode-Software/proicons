@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { withBase } from 'vitepress'
+// vitepress/dist/client/theme-default/composables/data
 import { useData } from './composables/data'
 import { useLangs } from './composables/langs'
 
@@ -51,7 +52,6 @@ const { currentLang } = useLangs()
 
 .title {
   padding-top: 12px;
-  letter-spacing: 2px;
   line-height: 20px;
   font-size: 20px;
   font-weight: 700;
