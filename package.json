@@ -3,15 +3,22 @@
   "version": "4.9.0",
   "description": "A collection of 400+ modern and open-source icons",
   "type": "module",
-  "main": "dist/cjs/proicons.js",
-  "main:umd": "dist/umd/proicons.js",
-  "unpkg": "dist/umd/proicons.js",
+  "main": "dist/cjs/proicons.cjs",
+  "main:umd": "dist/umd/proicons.cjs",
+  "unpkg": "dist/umd/proicons.cjs",
   "module": "dist/proicons.js",
   "typings": "lib/proicons.d.ts",
+  "amdName": "proicons",
   "files": [
     "dist",
     "lib"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/esm/proicons.js",
+      "require": "./dist/cjs/proicons.cjs"
+    }
+  },
   "workspaces": [
     "packages/*",
     "tools/BuildIconList/"

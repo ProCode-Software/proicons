@@ -1,13 +1,14 @@
 import { resolve } from "path"
+import { ModuleFormat, OutputOptions } from "rollup"
 import { defineConfig } from "vite"
 import { createHtmlPlugin } from "vite-plugin-html"
 
-const outputs = ['umd', 'esm', 'cjs'].map((output) => {
-    /** @type {import("rollup").OutputOptions} */
-    const config = {
+const types: ModuleFormat[] = ['umd', 'esm', 'cjs']
+const outputs = types.map((output) => {
+    const config: OutputOptions = {
         format: output,
         dir: `dist/${output}`,
-        entryFileNames: '[name].js',
+        entryFileNames: `[name].${output !== 'esm' ? 'c' : ''}js`,
         exports: 'named'
     }
     if (output === 'umd') {
@@ -24,8 +25,10 @@ export default defineConfig(({ mode }) => {
             sourcemap: true,
             rollupOptions: {
                 // https://rollupjs.org/configuration-options/
-
-
+                input: {
+                    proicons: resolve('src/proicons.ts'),
+                },
+                output: outputs,
                 plugins: isProduction ? [] : [createHtmlPlugin({
                     template: resolve('src/test.html'),
                     entry: resolve('src/proicons.ts'),
@@ -35,7 +38,6 @@ export default defineConfig(({ mode }) => {
                 entry: resolve(__dirname, 'src/proicons.ts'),
                 name: 'proicons',
                 formats: ['es', 'umd', 'cjs'],
-                fileName: resolve('dist/[format]/proicons')
             },
         },
         server: {
