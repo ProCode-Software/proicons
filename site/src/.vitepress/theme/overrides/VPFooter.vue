@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useData } from '../composables/data'
 import { useSidebar } from '../composables/sidebar'
+import VPSocialLinks from './VPSocialLinks.vue'
 
 const { theme, frontmatter } = useData()
 const { hasSidebar } = useSidebar()
@@ -11,6 +12,7 @@ const { hasSidebar } = useSidebar()
     <div class="container">
       <p v-if="theme.footer.message" class="message" v-html="theme.footer.message"></p>
       <p v-if="theme.footer.copyright" class="copyright" v-html="theme.footer.copyright"></p>
+      <VPSocialLinks class="social-links-list" :links="theme.socialLinks" />
     </div>
   </footer>
 </template>

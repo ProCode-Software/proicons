@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { normalizeLink } from '../support/utils'
-import { EXTERNAL_URL_RE } from '../../shared'
+import { normalizeLink } from 'vitepress/dist/client/theme-default/support/utils'
+import { EXTERNAL_URL_RE } from 'vitepress/dist/client/shared'
 
 interface Props {
   tag?: string
@@ -39,7 +39,7 @@ const component = computed(() => {
   </component>
 </template>
 
-<style scoped>
+<style>
 .VPButton {
   display: inline-block;
   border: 1px solid transparent;

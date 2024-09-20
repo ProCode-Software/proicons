@@ -22,7 +22,7 @@ const { currentLang } = useLangs()
 
     <div class="action">
       <a
-        class="link"
+        class="link VPButton brand"
         :href="withBase(currentLang.link)"
         :aria-label="theme.notFound?.linkLabel ?? 'go to home'"
       >
@@ -45,8 +45,8 @@ const { currentLang } = useLangs()
 }
 
 .code {
-  line-height: 64px;
-  font-size: 64px;
+  font-size: 100px;
+  color: var(--vp-c-brand-1);
   font-weight: 600;
 }
 
@@ -74,23 +74,5 @@ const { currentLang } = useLangs()
 
 .action {
   padding-top: 20px;
-}
-
-.link {
-  display: inline-block;
-  border: 1px solid var(--vp-c-brand-1);
-  border-radius: 16px;
-  padding: 3px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--vp-c-brand-1);
-  transition:
-    border-color 0.25s,
-    color 0.25s;
-}
-
-.link:hover {
-  border-color: var(--vp-c-brand-2);
-  color: var(--vp-c-brand-2);
 }
 </style>

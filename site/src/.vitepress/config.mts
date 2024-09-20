@@ -27,7 +27,8 @@ export default defineConfig({
         },
         outline: 'deep',
         notFound: {
-            linkText: 'Go home'
+            linkText: 'Go home',
+            title: 'We couldn\'t find the page you were looking for'
         },
         nav: [
             { text: 'Icons', link: 'icons' },
