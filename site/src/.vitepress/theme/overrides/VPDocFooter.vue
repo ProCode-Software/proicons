@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useData } from '../composables/data'
-import { useEditLink } from '../composables/edit-link'
-import { usePrevNext } from '../composables/prev-next'
+import { useData } from 'vitepress/dist/client/theme-default/composables/data'
+import { useEditLink } from 'vitepress/dist/client/theme-default/composables/edit-link'
+import { usePrevNext } from 'vitepress/dist/client/theme-default/composables/prev-next'
 import VPLink from './VPLink.vue'
-import VPDocFooterLastUpdated from './VPDocFooterLastUpdated.vue'
+import VPDocFooterLastUpdated from 'vitepress/dist/client/theme-default/components/VPDocFooterLastUpdated.vue'
 
 const { theme, page, frontmatter } = useData()
 
@@ -101,7 +101,7 @@ const showFooter = computed(
   align-items: center;
   border: 0;
   line-height: 32px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--vp-c-brand-1);
   transition: color 0.25s;
