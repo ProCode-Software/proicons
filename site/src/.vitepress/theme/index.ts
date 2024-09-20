@@ -5,13 +5,15 @@ import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import './icons.css'
 import navTitleAfter from './components/navTitleAfter.vue'
+import notFound from './overrides/NotFound.vue'
 
 export default {
   extends: DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
-      'nav-bar-title-after': () => h(navTitleAfter)
+      'nav-bar-title-after': () => h(navTitleAfter),
+      'not-found': () => h(notFound)
     })
   },
   enhanceApp({ app, router, siteData }) {

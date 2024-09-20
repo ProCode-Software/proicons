@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { withBase } from 'vitepress'
 // vitepress/dist/client/theme-default/composables/data
-import { useData } from './composables/data'
-import { useLangs } from './composables/langs'
+import { useData } from 'vitepress/dist/client/theme-default/composables/data'
+import { useLangs } from 'vitepress/dist/client/theme-default/composables/langs'
 
 const { theme } = useData()
 const { currentLang } = useLangs()
