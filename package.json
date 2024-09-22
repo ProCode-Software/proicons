@@ -33,6 +33,9 @@
     "build-icons": "node ./bin/build.js",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "docs:dev": "vitepress dev site/src --port 9000",
+    "docs:build": "vitepress build site/src",
+    "docs:preview": "vitepress preview site/src",
     "dev-build": "webpack --mode=development",
     "prepack": "node ./bin/publish.js"
   },
