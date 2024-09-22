@@ -707,7 +707,6 @@ function formMarkRegex(terms: Set<string>) {
   text-align: center;
   vertical-align: middle;
   border: 1px solid rgba(128, 128, 128, 0.15);
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .results {
