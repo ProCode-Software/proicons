@@ -426,5 +426,6 @@
     { "name": "Watch", "added": "4.8.0" },
     { "name": "Brightness", "added": "4.8.0" },
     { "name": "Moon", "added": "4.8.0" },
-    { "name": "Weather Cloudy", "added": "4.8.0" }
+    { "name": "Weather Cloudy", "added": "4.8.0" },
+    { "name": "Search Cancel", "added": "4.9.0" }
 ]

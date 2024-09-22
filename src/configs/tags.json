@@ -7,6 +7,10 @@
         "description": "Add Circle, Plus",
         "category": "Actions"
     },
+    "Search Cancel": {
+        "description": "No Results, Clear Search",
+        "category": "Actions"
+    },
     "Add Rhombus": {
         "description": "Add Diamond, Plus, Keyframe, Component",
         "category": "Actions"

@@ -47,7 +47,7 @@ files
         const newPath = path.join(outDir, newName);
 
         try {
-            let ct = optimize(fs.readFileSync(oldPath, 'utf8'), svgoConfig);
+            let ct = optimize(fs.readFileSync(oldPath, 'utf8'), svgoConfig).data;
             strokeColors.forEach((color) => {
                 ct = ct.replaceAll(color, 'currentColor');
             });
@@ -82,7 +82,7 @@ Object.keys(config).forEach((friendlyName) => {
                 added: JSON.parse(fs.readFileSync('package.json', 'utf-8')).version,
             };
             lockfile.push(lfItem);
-        } else if (newIcons.indexOf(`${friendlyName}.svg`)) {
+        } else if (newIcons.includes(`${friendlyName}.svg`)) {
             lockfile.find((z) => z.name == friendlyName).updated = JSON.parse(
                 fs.readFileSync('package.json', 'utf-8'),
             ).version;
@@ -120,8 +120,9 @@ async function buildPngs() {
         total: svgFiles.length * 3 * 2,
     });
 
+    const newSvgsOnly = svgFiles.filter((file) => newIcons.includes(file))
     const promises = []
-    for (const file of svgFiles) {
+    for (const file of newSvgsOnly) {
         promises.push((async () => {
             for (const size of pngSizes) {
                 const colors = ['black', 'white'];
