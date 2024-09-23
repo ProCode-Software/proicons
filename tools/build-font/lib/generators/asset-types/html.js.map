@@ -1,0 +1,1 @@
+{"version":3,"file":"html.js","sourceRoot":"","sources":["../../../src/generators/asset-types/html.ts"],"names":[],"mappings":";;AACA,mDAAsD;AAEtD,MAAM,SAAS,GAAkB;IAC/B,QAAQ,EAAE,KAAK,EAAC,OAAO,EAAC,EAAE;QACxB,OAAO,IAAA,yBAAc,EAAC,OAAO,CAAC,SAAS,CAAC,IAAI,EAAE,OAAO,CAAC,CAAC;IACzD,CAAC;CACF,CAAC;AAEF,kBAAe,SAAS,CAAC"}

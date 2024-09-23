@@ -48,10 +48,12 @@ npm install proicons
 2. Use ProIcons inside JavaScript
 
 ```javascript
-import proicons from 'proicons';
+import { icons } from 'proicons';
+// or
+const { icons } = require('proicons')
 
 // Refer to the icon
-proicons.icons.add;
+icons.add;
 ```
 
 _or_
@@ -60,7 +62,7 @@ _or_
 <!-- Insert the icon -->
 <i proicon="add"></i>
 
-<script src="path/to/proicons/dist/proicons.js"></script>
+<script src="path/to/proicons/dist/umd/proicons.cjs"></script>
 
 <!-- Replace icons with SVG -->
 <script>
@@ -69,8 +71,7 @@ _or_
 ```
 
 ### HTML
-
-If you are not inside a Node environment, you can import the ProIcons script via a CDN provider
+You can import the ProIcons package via a CDN provider
 
 ```html
 <!-- Insert the icon -->
@@ -91,10 +92,11 @@ ProIcons is MIT-licensed, giving you peace of mind using these icons in your pro
 > [!WARNING]
 > This library contains brand icons that may not be MIT-licensed and may have additional terms and guidelines. Learn more [here](https://procode-software.github.io/proicons/docs/introduction/about#usage-of-brand-icons)
 
+## Contributing
+For more info on how to contribute, please see our [contributing guide](https://github.com/ProCode-Software/proicons/blob/main/CONTRIBUTING.md).
+
 ## Credits
 
 -   Icon design and guidelines inspired by Microsoft's [Fluent System Icons](https://github.com/microsoft/fluentui-system-icons)
 -   Alpha bleeding script from https://github.com/Corecii/Transparent-Pixel-Fix
 -   API based on [Feather Icons](https://github.com/feathericons/feather)
-
-<img src="https://img.shields.io/badge/dynamic/json?label=icons&style=for-the-badge&prefix=%20&query=%24%5B%3F(%40.length)%5D&url=https://raw.githubusercontent.com/ProCode-Software/proicons/main/src/configs/icons.json" alt="Number of icons currently in the library"/>
