@@ -227,15 +227,7 @@ p.custom-block-title {
     gap: 5px;
     align-items: center;
 }
-.titleAfter {
-    font-size: 14px;
-    font-weight: 500;
-    padding: 4px 6px;
-    border-radius: 6px;
-    margin-left: 6px;
-    background: var(--vp-c-gray-soft);
-    color: var(--vp-c-text-2);
-}
+
 .top[data-v-634094e0],
 .middle[data-v-634094e0],
 .bottom[data-v-634094e0] {
