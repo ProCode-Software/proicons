@@ -79,19 +79,30 @@
     --vp-custom-block-info-text: var(--vp-c-info-1);
 }
 
-/* 82 63 55 */
 .dark {
     --procode-blue: hsl(227, 92%, 78%);
     --procode-blue-2: hsl(227, 70%, 60%);
     --procode-blue-3: hsl(227, 63%, 50%);
+
+    --vp-c-tip-1: hsl(208, 90%, 52%);
+    --vp-c-tip-2: hsl(208, 90%, 62%);
+    --vp-c-tip-3: hsl(208, 90%, 70%);
+    --vp-c-tip-soft: hsla(208, 95%, 50%, .14);
 }
 
 :root {
     --vp-font-family-mono: 'JetBrains Mono', 'SF Mono', monospace;
 }
-h1,h2,h3,h4,h5,h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--vp-font-family-heading);
 }
+
 /**
  * Component: Button
  * -------------------------------------------------------------------------- */
@@ -116,7 +127,7 @@ h1,h2,h3,h4,h5,h6 {
     --vp-home-hero-name-color: transparent;
     --vp-home-hero-name-background: var(--vp-c-brand-1);
 
-    --vp-home-hero-image-background-image: linear-gradient(rgba(0,0,0,.1), rgba(0, 0, 0, .1));
+    --vp-home-hero-image-background-image: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1));
     --vp-home-hero-image-filter: blur(44px);
 }
 
@@ -237,6 +248,6 @@ p.custom-block-title {
 .search-keyboard-shortcuts kbd[data-v-5b749456] {
     box-shadow: none;
     background: none;
-    background-color: rgba(100,100,100,.3) !important;
+    background-color: rgba(100, 100, 100, .3) !important;
     font-family: inherit;
 }

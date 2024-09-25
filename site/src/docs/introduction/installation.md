@@ -37,12 +37,13 @@ Install ProIcons from NPM:
 npm install proicons
 ```
 
-Then import ProIcons using an `import` statement in your script:
+Then import ProIcons in your script:
 
 ```javascript
-import proicons from 'proicons';
+import * as proicons from 'proicons';
 ```
-::: info Note
-ProIcons is ESM-only and cannot be imported via `require()`. To import in asynchorous CommonJS contexts, use `await import('proicons')`.
-:::
+Or with CommonJS
+```javascript
+const proicons = require('proicons');
+```
 <!-- #endregion install-node -->

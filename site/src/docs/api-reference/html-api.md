@@ -23,8 +23,9 @@ To insert an `Add` icon inside HTML:
 <i proicon="add"></icon>
 ```
 
-> [!TIP]
-> The `i` element isn't mandatory, though the `proicon` attribute is, unless you [customize](./configuration) the configuration.
+::: tip
+The `i` element isn't mandatory, though the `proicon` attribute is. This can be [customized](./configuration) in the configuration.
+:::
 
 Next, add a script to replace these elements.
 
