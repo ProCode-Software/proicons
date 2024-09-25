@@ -1,17 +1,38 @@
 import { defineConfig } from 'vitepress'
 import { sidebar } from './sidebar.mts'
 
+const icon = ''
+const name = 'ProIcons'
+const description = "A collection of 400+ modern and open-source icons"
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    title: "ProIcons",
-    description: "A collection of 400+ modern and open-source icons",
+    title: name,
+    description: description,
     outDir: '../dist',
     cleanUrls: true,
-    
+
     lastUpdated: true,
     lang: 'en-US',
     ignoreDeadLinks: true,
     base: '/proicons/',
+    head: [
+        [ 'meta', { property: 'og:locale', content: 'en_US', }, ],
+        [ 'meta', { property: 'og:type', content: 'website',}, ],
+        [ 'meta', { property: 'og:site_name', content: name, }, ],
+        [ 'meta', { property: 'og:title', content: name, }, ],
+        [ 'meta', { property: 'og:description', content: description, }, ],
+        [ 'meta', { property: 'og:url', content: 'https://procode-software.github.io/proicons', }, ],
+        [ 'meta', { property: 'og:image', content: 'imageurl', }, ],
+        // [ 'meta', { property: 'og:image:width', content: '1200', }, ],
+        // [ 'meta', { property: 'og:image:height', content: '630', }, ],
+        [ 'meta', { property: 'og:image:type', content: 'image/png', }, ],
+        [ 'meta', { property: 'twitter:card', content: 'summary_large_image', }, ],
+        [ 'meta', { property: 'twitter:title', content: name, }, ],
+        [ 'meta', { property: 'twitter:description', content: description, }, ],
+        [ 'meta', { property: 'twitter:image', content: 'imageurl', }, ],
+        ['link', { rel: 'icon', href: 'favicon' }]
+    ],
     markdown: {
         container: {
             tipLabel: 'Tip',
