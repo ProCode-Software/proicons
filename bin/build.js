@@ -9,6 +9,10 @@ import sharp from 'sharp';
 import { optimize } from 'svgo';
 import progress from 'progress';
 import { buildFont } from "./build-font.js";
+import { patch } from "../tools/dep-patch/index.js";
+
+// Patch dependencies
+patch()
 
 const strokeColors = ['#212325', 'black', '#000000'];
 const svgoConfig = {

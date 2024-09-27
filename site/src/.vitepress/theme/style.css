@@ -251,3 +251,7 @@ p.custom-block-title {
     background-color: rgba(100, 100, 100, .3) !important;
     font-family: inherit;
 }
+
+span[data-v-7dd8fa25] {
+    letter-spacing: -0.3px;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@proicons/dep-patch",
+  "version": "1.0.0",
+  "description": "Internal tool to patch node node modules",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node ./index.js"
+  },
+  "keywords": [],
+  "author": "ProCode Software",
+  "license": "MIT"
+}

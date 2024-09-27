@@ -1,10 +1,8 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-
 import { readFileSync, writeFileSync } from "fs";
 import path from "path";
 import rename from './rename.js'
-const { ASSET_TYPES, generateFonts, OtherAssetType } = require('../tools/build-font');
+import { ASSET_TYPES, generateFonts, OtherAssetType } from '@twbs/fantasticon';
+import { patch } from "../tools/dep-patch/index.js";
 
 const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
 const lockfile = JSON.parse(readFileSync('icons/icons.lock.json', 'utf-8'))
@@ -52,5 +50,5 @@ export async function buildFont() {
         prefix: 'proicon',
     })
 }
-
+patch()
 buildFont()
