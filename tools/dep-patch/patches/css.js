@@ -14,13 +14,16 @@ function kebabCase(str) {
 const generator = {
     dependsOn: misc_1.FontAssetType.SVG,
     generate: (options, svg) => {
-        let newOptions = {};
-        for (const item of Object.keys(options.codepoints)) {
-            const newKey = kebabCase(item)
-            newOptions[newKey] = options.codepoints[item];
-        }
+        console.log(options.codepoints);
+        
+        options.codepoints = Object.fromEntries(
+            Object.entries(options.codepoints)
+                .map(([k, v]) => [kebabCase(k), v])
+        );
+        
+
         (0, template_1.renderTemplate)(options.templates.css, {
-            newOptions,
+            ...options,
             fontSrc: (0, css_1.renderSrcAttribute)(options, svg)
         })
     }

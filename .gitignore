@@ -130,13 +130,9 @@ out
 
 /in/
 /dist/
-/wiki/
 /lib/
+/_outlined/
 
 # VitePress
 **/.vitepress/cache/
 site/dist/
-
-# Temporary
-markdown-examples.md
-api-examples.md

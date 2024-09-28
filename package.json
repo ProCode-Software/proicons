@@ -63,6 +63,7 @@
     "chalk": "^5.3.0",
     "d3-delaunay": "^6.0.4",
     "jimp": "^1.4.0",
+    "oslllo-svg-fixer": "^5.0.0",
     "prettier": "^3.3.3",
     "progress": "^2.0.3",
     "sass-embedded": "^1.79.3",
