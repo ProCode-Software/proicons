@@ -20,9 +20,28 @@ The easiest way to install ProIcons is via a CDN provider such as [UNPKG](https:
 
 If you want to use ProIcons locally, you can also install ProIcons via [NPM](https://npmjs.com/package/proicons).
 
-```
+<!-- #region install-general -->
+::: code-group
+
+```console [NPM]
 npm install proicons
 ```
+
+```console [Yarn]
+yarn add proicons
+```
+
+```console [PNPM]
+pnpm add proicons
+```
+
+```console [Bun]
+bun add proicons
+```
+
+:::
+<!-- #endregion install-general -->
+
 Then import your `proicons.js` file in your HTML
 ```html
 <script src="path/to/proicons/dist/proicons.js"></script>
@@ -33,9 +52,7 @@ Replace `path/to/` with the actual path to your `node_modules` folder (relative 
 <!-- #region install-node -->
 Install ProIcons from NPM:
 
-```
-npm install proicons
-```
+<!--@include: #install-general-->
 
 Then import ProIcons in your script:
 

@@ -22,6 +22,14 @@ export function sidebar(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
+            text: 'Packages',
+            collapsed: false,
+            base: '/docs/packages/',
+            items: [
+                { text: 'ProIcons Webfont', link: 'webfont' },
+            ]
+        },
+        {
             text: 'Contributing',
             collapsed: false,
             base: '/docs/contributing/',

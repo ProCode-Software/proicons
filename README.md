@@ -5,8 +5,8 @@
 
 <p align="center">
     <a href="https://github.com/ProCode-Software/proicons/releases">
-        <img src="https://img.shields.io/npm/v/proicons?style=for-the-badge&color=orange"
-            alt="NPM Version">
+        <img src="https://img.shields.io/github/v/release/ProCode-Software/proicons?style=for-the-badge&color=orange"
+            alt="Version">
     </a>
     <a href="">
         <img src="https://img.shields.io/github/stars/ProCode-Software/proicons?style=for-the-badge"
@@ -26,7 +26,7 @@
     <b>A collection of 400+ modern and open-source icons and logos</b>
     <br>
     <a href="https://procode-software.github.io/proicons">Icons</a> | 
-    <a href="https://github.com/ProCode-Software/proicons/wiki">Documentation</a> | 
+    <a href="https://procode-software.github.io/proicons/docs/introduction/about">Documentation</a> | 
     <a href="https://github.com/ProCode-Software/proicons">GitHub</a> | 
     <a href="https://www.npmjs.com/package/proicons">NPM Package</a>
 </p>
