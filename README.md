@@ -100,3 +100,4 @@ For more info on how to contribute, please see our [contributing guide](https://
 -   Icon design and guidelines inspired by Microsoft's [Fluent System Icons](https://github.com/microsoft/fluentui-system-icons)
 -   Alpha bleeding script from https://github.com/Corecii/Transparent-Pixel-Fix
 -   API based on [Feather Icons](https://github.com/feathericons/feather)
+-   Website design inspired by [Lucide](https://github.com/lucide-icons/lucide) and built using [VitePress](https://github.com/vuejs/vitepress)

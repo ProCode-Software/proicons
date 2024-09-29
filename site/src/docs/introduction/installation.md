@@ -52,7 +52,7 @@ Replace `path/to/` with the actual path to your `node_modules` folder (relative 
 <!-- #region install-node -->
 Install ProIcons from NPM:
 
-<!--@include: #install-general-->
+<!--@include: ./installation.md#install-general-->
 
 Then import ProIcons in your script:
 
@@ -64,3 +64,6 @@ Or with CommonJS
 const proicons = require('proicons');
 ```
 <!-- #endregion install-node -->
+## HTML Webfont
+If you prefer not to use any scripts, you can also install ProIcons as a [webfont](../packages/webfont) on your site.
+<!-- @include: ../packages/webfont.md#install-webfont -->

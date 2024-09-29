@@ -8,6 +8,7 @@ Use ProIcons as a webfont on your site without the need of using scripts. Contai
 [View on NPM](https://npmjs.com/package/@proicons/webfont)
 
 ## Installation
+<!-- #region install-webfont -->
 ### Import via UNPKG
 ```html
 <link rel="stylesheet" href="https://unpkg.com/@proicons/webfont">
@@ -35,6 +36,7 @@ bun add @proicons/webfont
 ```html
 <link rel="stylesheet" href="path/to/@proicons/webfont/ProIcons.css">
 ```
+<!-- #endregion install-webfont -->
 ## Usage
 Import a ProIcon by creating an `<i>` element with the class `proicon-[icon name]`. Make sure the icon name is in kebab-case.
 
