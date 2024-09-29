@@ -1,0 +1,21 @@
+{
+  "name": "@proicons/webfont",
+  "version": "4.9.0",
+  "description": "ProIcons webfont",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./bin/build.js"
+  },
+  "keywords": [
+    "font",
+    "webfont",
+    "proicons",
+    "icons",
+    "ttf",
+    "otf",
+    "woff",
+    "woff2"
+  ],
+  "author": "ProCode Software",
+  "license": "MIT"
+}

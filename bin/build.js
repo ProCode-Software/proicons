@@ -4,7 +4,7 @@ import { resolveConfig, format } from 'prettier';
 import config from '../src/configs/tags.json' with { type: 'json' };
 import rename from './rename.js';
 import pixelfix from './pixelfix.js';
-import chalk from 'ansi-colors';
+import ansiColors from 'ansi-colors';
 import sharp from 'sharp';
 import { optimize } from 'svgo';
 import progress from 'progress';
@@ -62,7 +62,7 @@ files
         }
     });
 
-console.log(chalk.green('Done renaming files!'));
+console.log(ansiColors.green('Done renaming files!'));
 
 // Build SVG list and lockfile
 const dict = {};
@@ -105,7 +105,7 @@ async function buildSvgList() {
             const location = doc == dict ? 'src/configs/icons.json' : 'icons/icons.lock.json';
 
             fs.writeFileSync(path.join(location), formatted);
-            console.log(chalk.green(`Done building ${doc == dict ? 'SVG list' : 'lockfile'}!`));
+            console.log(ansiColors.green(`Done building ${doc == dict ? 'SVG list' : 'lockfile'}!`));
         }
     } catch (error) {
         console.error('Error writing icons.json:', error);
@@ -158,7 +158,7 @@ async function buildPngs() {
     }
     Promise.all(promises).then(() => {
         progresBar.terminate();
-        console.log(chalk.green('Done building PNGs!'));
+        console.log(ansiColors.green('Done building PNGs!'));
     })
 }
 (async () => {
@@ -166,16 +166,16 @@ async function buildPngs() {
     await buildPngs();
     await buildFont();
 })().then(() => {
-    console.log(chalk.green('Build complete!'));
+    console.log(ansiColors.green('Build complete!'));
 
     if (newIcons > 0) {
-        console.log(chalk.cyan('New icons:', newIcons));
+        console.log(ansiColors.cyan('New icons:', newIcons));
 
         if (variableIcons.length > 0) {
-            console.log(chalk.cyan('\tVariable:', variableIcons));
+            console.log(ansiColors.cyan('\tVariable:', variableIcons));
         }
     } else {
-        console.log(chalk.green('No newly added icons!'));
+        console.log(ansiColors.green('No newly added icons!'));
     }
     process.exit(0);
 }).catch(error => {

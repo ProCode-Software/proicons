@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ name }}</title>
+
+  <style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+      font-family: "Inter", "Inter V", system-ui;
+      margin: 0;
+      padding: 15px 5vw;
+      color: #212325;
+      text-align: center;
+      font-size: 16px;
+    }
+    .item {
+      width: 120px;
+      display: inline-block;
+      margin: 10px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .item .preview {
+      display: flex;
+      text-align: center;
+      background: #fafafa;
+      border-radius: 10px;
+      padding: 15px;
+    }
+    .item .preview > * {
+      font-size: 32px;
+      display: inline-flex;
+    }
+    .label {
+      font-weight: 500;
+    }
+    h1 {
+        font-weight: 600;
+    }
+    .item .unicode {
+        color: #666;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+    a {
+        color: hsl(227, 80%, 52%);
+        text-decoration: none;
+    }
+    a:hover {
+        border-bottom: 1.5px solid hsl(227, 80%, 52%);
+    }
+  </style>
+
+  <link rel="stylesheet" href="{{ name }}.css">
+</head>
+<body>
+  <h1>{{ name }}</h1>
+
+  <p class="links">
+    <a href="https://procode-software.github.io/proicons/icons">Icons</a> &bullet;
+    <a href="https://github.com/ProCode-Software/proicons">GitHub</a> &bullet;
+    <a href="https://npmjs.com/package/@proicons/webfont">NPM</a>
+  </p>
+
+  {{# each assets }}
+  <div class="item">
+    <span class="preview">
+      <{{ ../tag }} class="{{ ../prefix }} {{ ../prefix }}-{{ @key }}"></{{ ../tag }}>
+    </span>
+    <span class="label">{{ @key }}</span>
+    <span class="unicode">U+{{ codepoint (lookup ../codepoints @key) }}</span>
+  </div>
+  {{/ each }}
+  <p>Created by <a href="https://github.com/ProCode-Software" target="_blank">ProCode Software</a></p>
+</body>
+</html>

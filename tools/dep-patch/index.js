@@ -10,17 +10,23 @@ const __dirname = dirname(__filename);
 /** Patches dependencies from config */
 export function patch() {
     const patches = config.patches
-    for (const patchItem of patches) {
-        const inputUrl = resolve(__dirname, 'patches', patchItem.input)
-        try {
-            const fileText = readFileSync(inputUrl, 'utf-8')
-            const target = resolve(__dirname, '../../node_modules', patchItem.output)
+    if (!patches.filter((p) => p.enabled).length) {
+        console.log(ansiColors.yellow('No patches defined'));
+    } else {
+        for (const patchItem of patches) {
+            if (patchItem.enabled) {
+                const inputUrl = resolve(__dirname, 'patches', patchItem.input)
+                try {
+                    const fileText = readFileSync(inputUrl, 'utf-8')
+                    const target = resolve(__dirname, '../../node_modules', patchItem.output)
 
-            writeFileSync(target, fileText)
+                    writeFileSync(target, fileText)
 
-            console.log(ansiColors.green(`Successfully patched file ${ansiColors.yellow(inputUrl)} in ${ansiColors.yellow(target)}`));
-        } catch (err) {
-            throw new Error(`dep-patch: Couldn't patch file '${inputUrl}'`, err);
+                    console.log(ansiColors.green(`Successfully patched file ${ansiColors.yellow(inputUrl)} in ${ansiColors.yellow(target)}`));
+                } catch (err) {
+                    throw new Error(`dep-patch: Couldn't patch file '${inputUrl}'`, err);
+                }
+            }
         }
     }
 }

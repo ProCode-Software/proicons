@@ -1,11 +1,12 @@
 {
-  "name": "proicons-roblox",
+  "name": "@proicons/roblox",
   "version": "4.9.0",
   "description": "ProIcons package for Roblox",
   "main": "index.js",
   "scripts": {
     "build": "rbxtsc",
-    "dev": "rbxtsc -w"
+    "dev": "rbxtsc -w",
+    "serve": "rojo serve"
   },
   "keywords": [],
   "author": "ProCode Software",
