@@ -85,6 +85,11 @@ You can import the ProIcons package via a CDN provider
 </script>
 ```
 
+### Packages
+ProIcons is also available in the following packages:
+
+- **[Webfont](https://procode-software.github.io/proicons/docs/packages/webfont):** Use ProIcons on your website as a webfont, similar to Font Awesome, without the need of scripts.
+
 ## License
 
 ProIcons is MIT-licensed, giving you peace of mind using these icons in your project. Learn more [here](./LICENSE)
