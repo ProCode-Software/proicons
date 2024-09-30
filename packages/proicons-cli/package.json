@@ -1,0 +1,20 @@
+{
+  "name": "@proicons/cli",
+  "version": "1.0.0",
+  "description": "Internal CLI tool for building ProIcons",
+  "main": "bin/proicons.js",
+  "type": "module",
+  "scripts": {
+    "test": "node ."
+  },
+  "bin": {
+    "proicons": "bin/proicons.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "prettier": "^3.3.3"
+  }
+}

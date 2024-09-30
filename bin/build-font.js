@@ -10,7 +10,7 @@ const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
 const lockfile = JSON.parse(readFileSync('icons/icons.lock.json', 'utf-8'))
 
 const codepoints = {}
-lockfile.forEach((obj, index) => {
+lockfile.icons.forEach((obj, index) => {
     codepoints[rename.kebabCase(obj.name)] = 57344 + index
 })
 

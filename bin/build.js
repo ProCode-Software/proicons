@@ -70,7 +70,7 @@ const existingLockFile =
     fs.existsSync(path.join('icons/icons.lock.json')) && fs.readFileSync(path.join('icons/icons.lock.json'));
 
 /**
- * @type {Array} lockfile
+ * @type {import('../icons/icons.lock.json')} lockfile
  */
 const lockfile = existingLockFile ? JSON.parse(existingLockFile, 'utf8') : [];
 Object.keys(config).forEach((friendlyName) => {
@@ -80,14 +80,14 @@ Object.keys(config).forEach((friendlyName) => {
     try {
         dict[name] = fs.readFileSync(path.join(outDir, `${fn}.svg`), 'utf8');
 
-        if (!lockfile.some((z) => z.name == friendlyName)) {
+        if (!lockfile.icons.some((z) => z.name == friendlyName)) {
             const lfItem = {
                 name: friendlyName,
                 added: JSON.parse(fs.readFileSync('package.json', 'utf-8')).version,
             };
-            lockfile.push(lfItem);
+            lockfile.icons.push(lfItem);
         } else if (newIcons.includes(`${friendlyName}.svg`)) {
-            lockfile.find((z) => z.name == friendlyName).updated = JSON.parse(
+            lockfile.icons.find((z) => z.name == friendlyName).updated = JSON.parse(
                 fs.readFileSync('package.json', 'utf-8'),
             ).version;
         }

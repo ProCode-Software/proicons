@@ -8,11 +8,9 @@
     "module": "dist/proicons.js",
     "typings": "lib/proicons.d.ts",
     "amdName": "proicons",
-
     "unpkg": "dist/umd/proicons.cjs",
     "jsdelivr": "dist/umd/proicons.cjs",
     "browser": "dist/umd/proicons.cjs",
-    
     "files": [
         "dist",
         "lib"
@@ -43,7 +41,8 @@
         "docs:dev": "vitepress dev site/src --port 9000",
         "docs:build": "vitepress build site/src",
         "docs:preview": "vitepress preview site/src",
-        "prepack": "node ./bin/publish.js"
+        "prepack": "node ./bin/publish.js",
+        "cli": "npm run test -w @proicons/cli"
     },
     "keywords": [
         "icons",
@@ -60,6 +59,7 @@
     "author": "ProCode Software",
     "license": "MIT",
     "devDependencies": {
+        "@proicons/cli": "^1.0.0",
         "@twbs/fantasticon": "^3.0.0",
         "@types/node": "^22.3.0",
         "@types/rollup": "^0.54.0",
