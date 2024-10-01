@@ -61,6 +61,7 @@
     "devDependencies": {
         "@proicons/cli": "^1.0.0",
         "@twbs/fantasticon": "^3.0.0",
+        "@types/bun": "^1.1.10",
         "@types/node": "^22.3.0",
         "@types/rollup": "^0.54.0",
         "ansi-colors": "^4.1.3",
