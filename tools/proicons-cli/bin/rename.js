@@ -1,9 +1,11 @@
-#! /usr/bin/env node
 import { readFileSync } from "fs";
 import { exec } from "./tools.js";
 import { resolve } from "path";
 
-export function rename() {
+/** @param {any[]} args */
+export function rename(...args) {
+    console.log(args);
+    
     const iconsPath = resolve('icons')
     const imgDirs = ['svg', 'png']
     const lockFilePath = resolve(iconsPath, 'icons.lock.json')

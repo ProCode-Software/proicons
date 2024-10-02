@@ -59,7 +59,6 @@
     "author": "ProCode Software",
     "license": "MIT",
     "devDependencies": {
-        "@proicons/cli": "^1.0.0",
         "@twbs/fantasticon": "^3.0.0",
         "@types/bun": "^1.1.10",
         "@types/node": "^22.3.0",
