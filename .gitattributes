@@ -1,0 +1,3 @@
+**/.vitepress/theme/** -linguist-detectable
+icons/fonts/* -linguist-detectable
+*.html -linguist-detectable
