@@ -4,9 +4,9 @@
   "description": "Main website for ProIcons",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vitepress dev src --port 9000",
-    "docs:build": "vitepress build src",
-    "docs:preview": "vitepress preview src"
+    "docs:dev": "pnpm vitepress dev src --port 9000",
+    "docs:build": "pnpm vitepress build src",
+    "docs:preview": "pnpm vitepress preview src"
   },
   "author": "ProCode Software",
   "license": "MIT"

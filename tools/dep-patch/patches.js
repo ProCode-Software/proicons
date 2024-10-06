@@ -1,4 +1,4 @@
-{
+export default {
     "patches": [
         {
             "name": "fantasticon css.js",

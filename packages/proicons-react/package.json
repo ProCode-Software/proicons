@@ -4,9 +4,9 @@
   "description": "ProIcons ReactJS package",
   "main": "src/proicons-react.ts",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "pnpm vite",
+    "build": "pnpm vite build",
+    "preview": "pnpm vite preview"
   },
   "author": "ProCode Software",
   "license": "MIT",

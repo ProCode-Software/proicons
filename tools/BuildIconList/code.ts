@@ -1,24 +1,56 @@
-const dict: Record<string, { description: string, category: string }> = {}
+const dict: Record<string, { description: string, category?: string, icon: string }> = {}
 
-const frames = figma.currentPage.selection
 // @ts-ignore
-frames.forEach((node: FrameNode | ComponentNode) => {
-    if (node.type == 'COMPONENT') {
-        dict[node.name] = {
-            description: node.description,
-            // @ts-ignore
-            category: node.parent?.type != 'PAGE' ? node.parent?.name : 'NO CATEGORY'
-        }
+const frames: (ComponentNode | FrameNode)[] = figma.currentPage.selection
+let iconsWithoutCategories = 0
 
-    } else if (node.type == 'FRAME') {
-        node.children.forEach(child => {
-            if (child.type == 'COMPONENT') {
-                dict[child.name] = { description: child.description, category: node.name }
+const exportIcon = async (iconNode: ComponentNode) => {
+    const buffer = await iconNode.exportAsync({ format: 'SVG_STRING' })
+    return buffer
+}
+const addIcon = async (iconNode: ComponentNode) => {
+    let category
+    if (iconNode.parent?.type == 'PAGE') {
+        category = 'NO CATEGORY'
+        iconsWithoutCategories++
+    } else {
+        category = iconNode.parent?.name
+    }
+
+    dict[iconNode.name] = {
+        description: iconNode.description,
+        category,
+        icon: await exportIcon(iconNode)
+    }
+    console.log(dict[iconNode.name].icon);
+}
+
+(async () => {
+    if (frames.length == 0) {
+        figma.notify('No components selected')
+        return
+    }
+    for (const node of frames) {
+        if (node.type == 'COMPONENT') {
+            await addIcon(node)
+
+        } else if (node.type == 'FRAME') {
+            for (const child of node.children) {
+                if (child.type == 'COMPONENT') {
+                    await addIcon(child)
+                }
             }
+        }
+    }
+    figma.notify(`Successfully built file for ${frames.length} icon${frames.length == 1 ? '' : 's'}`)
+
+    if (iconsWithoutCategories > 0) {
+        figma.notify(`${iconsWithoutCategories} icon${iconsWithoutCategories > 1 ? 's do not have categories' : ' does not have a category'}`, {
+            error: true
         })
     }
+})().then(() => {
+    figma.showUI(__html__);
+
+    figma.ui.postMessage(JSON.stringify(dict))
 })
-
-figma.showUI(__html__);
-
-figma.ui.postMessage(JSON.stringify(dict))

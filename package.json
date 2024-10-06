@@ -34,15 +34,18 @@
     "homepage": "https://github.com/ProCode-Software/proicons",
     "bugs": "https://github.com/ProCode-Software/proicons/issues",
     "scripts": {
-        "dev": "vite",
-        "icons:build": "node ./bin/build.js",
-        "build": "tsc && vite build",
-        "preview": "vite preview",
-        "docs:dev": "vitepress dev site/src --port 9000",
-        "docs:build": "vitepress build site/src",
-        "docs:preview": "vitepress preview site/src",
-        "prepack": "node ./bin/publish.js",
-        "cli": "npm run test -w @proicons/cli"
+        "dev": "pnpm vite",
+        "icons:build": "node --no-deprecation ./bin/build.js",
+        "icons:build-frozen": "node --no-deprecation ./bin/build.js -l",
+        "icons:build-rebuild": "node --no-deprecation ./bin/build.js -r",
+        "font:build": "node --no-deprecation ./bin/build.js -f",
+
+        "build": "pnpm tsc && pnpm vite build",
+        "preview": "pnpm vite preview",
+        "docs:dev": "pnpm vitepress dev site/src --port 9000",
+        "docs:build": "pnpm vitepress build site/src",
+        "docs:preview": "pnpm vitepress preview site/src",
+        "prepack": "node ./bin/publish.js"
     },
     "keywords": [
         "icons",
@@ -59,6 +62,7 @@
     "author": "ProCode Software",
     "license": "MIT",
     "devDependencies": {
+        "@proicons/cli": "workspace:*",
         "@twbs/fantasticon": "^3.0.0",
         "@types/node": "^22.3.0",
         "ansi-colors": "^4.1.3",
@@ -66,6 +70,7 @@
         "d3-delaunay": "^6.0.4",
         "jimp": "^1.4.0",
         "oslllo-svg-fixer": "^5.0.0",
+        "piscina": "^4.7.0",
         "prettier": "^3.3.3",
         "progress": "^2.0.3",
         "sass-embedded": "^1.79.3",
@@ -77,8 +82,5 @@
         "vite-plugin-html": "^3.2.2",
         "vitepress": "^1.3.4"
     },
-    "packageManager": "pnpm@9.12.0+sha512.4abf725084d7bcbafbd728bfc7bee61f2f791f977fd87542b3579dcb23504d170d46337945e4c66485cd12d588a0c0e570ed9c477e7ccdd8507cf05f3f92eaca",
-    "dependencies": {
-        "@proicons/cli": "^1.0.0"
-    }
+    "packageManager": "pnpm@9.12.0+sha512.4abf725084d7bcbafbd728bfc7bee61f2f791f977fd87542b3579dcb23504d170d46337945e4c66485cd12d588a0c0e570ed9c477e7ccdd8507cf05f3f92eaca"
 }

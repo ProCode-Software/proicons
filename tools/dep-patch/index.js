@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from "fs"
-import config from './patches.json' assert { type: 'json' }
+import config from './patches.js'
 import { resolve, dirname } from "path"
 import { fileURLToPath } from "url"
 import ansiColors from "ansi-colors";
@@ -30,4 +30,3 @@ export function patch() {
         }
     }
 }
-patch()

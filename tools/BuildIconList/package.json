@@ -4,10 +4,10 @@
   "description": "Your Figma Plugin",
   "main": "code.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "lint": "eslint --ext .ts,.tsx --ignore-pattern node_modules .",
-    "lint:fix": "eslint --ext .ts,.tsx --ignore-pattern node_modules --fix .",
-    "watch": "npm run build -- --watch"
+    "build": "pnpm tsc -p tsconfig.json",
+    "lint": "pnpm eslint --ext .ts,.tsx --ignore-pattern node_modules .",
+    "lint:fix": "pnpm eslint --ext .ts,.tsx --ignore-pattern node_modules --fix .",
+    "watch": "pnpm run build --watch"
   },
   "author": "",
   "license": "",

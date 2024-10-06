@@ -20,7 +20,7 @@
 		},
 		{
 			"type": "npm",
-			"script": "build-icons",
+			"script": "icons:build",
 			"group": "build",
 			"problemMatcher": [],
 			"label": "Build icons",

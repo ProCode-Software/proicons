@@ -25,14 +25,14 @@ const metadata = `<?xml-model href="https://www.w3.org/TR/WOFF/metadata/woffmeta
     <vendor name="ProCode Software" url="https://procode-software.github.io/proicons"></vendor>
 </metadata>`
 
-// Patch dependencies if needed
-patch()
+async function outlineSvgs(rebuild) {
+    const inputDir = path.resolve('./icons/svg')
+    const outputDir = path.resolve('./_outlined')
+    const needsBuilding = rebuild || !existsSync(outputDir)
 
-async function outlineSvgs() {
-    const inputDir = path.resolve('./icons/svg'), outputDir = path.resolve('./_outlined')
     try {
-        if (!existsSync(outputDir)) {
-            mkdirSync(outputDir)
+        if (needsBuilding) {
+            if (!existsSync(outputDir)) mkdirSync(outputDir)
 
             await SVGFixer(inputDir, outputDir, {
                 showProgressBar: true,
@@ -49,9 +49,10 @@ async function outlineSvgs() {
     }
 }
 
-export async function buildFont() {
+/** @param {boolean} rebuild If --rebuild flag was used */
+export async function buildFont(rebuild) {
     try {
-        await outlineSvgs()
+        await outlineSvgs(rebuild)
 
         await generateFonts({
             name: 'ProIcons',
@@ -94,5 +95,3 @@ export async function buildFont() {
         throw new Error(err);
     }
 }
-
-buildFont()

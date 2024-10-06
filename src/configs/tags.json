@@ -523,6 +523,10 @@
         "description": "Up-Down, Bidirectional, Vertical, Height, Size",
         "category": "Arrows"
     },
+    "Arrow Left Right": {
+        "description": "Left Right, Bidirectional, Horizontal, Width, Size, Wide",
+        "category": "Arrows"
+    },
     "Arrow Upload": {
         "description": "",
         "category": "Arrows"
@@ -948,6 +952,10 @@
         "category": "Layout"
     },
     "Panel Left Open": {
+        "description": "",
+        "category": "Layout"
+    },
+    "Panel Right Open": {
         "description": "",
         "category": "Layout"
     },

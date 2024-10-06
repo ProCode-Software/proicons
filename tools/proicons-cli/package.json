@@ -4,6 +4,7 @@
   "description": "Internal CLI tool for building ProIcons",
   "main": "bin/proicons.js",
   "type": "module",
+  "private": "true",
   "scripts": {
     "test": "node ."
   },
