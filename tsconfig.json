@@ -7,7 +7,7 @@
         "jsx": "react",
         "sourceMap": true,
         "outDir": "./dist",
-        "rootDir": "./src",
+        "rootDir": ".",
         "declaration": true,
         "pretty": true,
         "declarationDir": "./lib",

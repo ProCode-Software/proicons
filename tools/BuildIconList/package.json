@@ -1,5 +1,5 @@
 {
-  "name": "BuildIconList",
+  "name": "@proicons/build-icon-list",
   "version": "1.0.0",
   "description": "Your Figma Plugin",
   "main": "code.js",
