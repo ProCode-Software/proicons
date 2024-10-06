@@ -1,4 +1,1 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M21.25 16.75V19.25C21.25 20.3546 20.3546 21.25 19.25 21.25H4.75C3.64543 21.25 2.75 20.3546 2.75 19.25V16.75M21.25 16.75C21.25 15.6454 20.3546 14.75 19.25 14.75H4.75C3.64543 14.75 2.75 15.6454 2.75 16.75M21.25 16.75V15.1193C21.25 14.874 21.2199 14.6297 21.1604 14.3917L18.8181 5.02239C18.4842 3.68689 17.2843 2.75 15.9077 2.75H8.09233C6.71573 2.75 5.51578 3.68689 5.1819 5.02239L2.83957 14.3917C2.78008 14.6297 2.75 14.874 2.75 15.1193V16.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="18" cy="18" r="1" fill="currentColor"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.25 16.75v2.5a2 2 0 0 1-2 2H4.75a2 2 0 0 1-2-2v-2.5m18.5 0a2 2 0 0 0-2-2H4.75a2 2 0 0 0-2 2m18.5 0v-1.63a3 3 0 0 0-.09-.728l-2.342-9.37a3 3 0 0 0-2.91-2.272H8.092a3 3 0 0 0-2.91 2.272l-2.342 9.37a3 3 0 0 0-.09.727v1.631"/><circle cx="18" cy="18" r="1" fill="currentColor"/></svg>

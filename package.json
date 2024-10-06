@@ -36,6 +36,7 @@
     "scripts": {
         "dev": "pnpm vite",
         "icons:build": "node --no-deprecation ./bin/build.js",
+        "icons:optimize": "node --no-deprecation ./bin/build.js -o",
         "icons:build-frozen": "node --no-deprecation ./bin/build.js -l",
         "icons:build-rebuild": "node --no-deprecation ./bin/build.js -r",
         "font:build": "node --no-deprecation ./bin/build.js -f",

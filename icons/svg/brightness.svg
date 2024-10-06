@@ -1,11 +1,1 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="12" r="4.25" stroke="currentColor" stroke-width="1.5"/>
-<path d="M12 2.75L12 4.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M5.45926 5.45923L6.51992 6.51989" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M12 19.75L12 21.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M17.4801 17.48L18.5407 18.5406" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M2.75 12L4.25 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M5.45926 18.5408L6.51992 17.4801" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M19.75 12L21.25 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M17.4801 6.52002L18.5407 5.45936" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.25" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M12 2.75v1.5M5.46 5.46l1.06 1.06M12 19.75v1.5m5.48-3.77 1.06 1.06M2.75 12h1.5m1.21 6.54 1.06-1.06M19.75 12h1.5m-3.77-5.48 1.06-1.06"/></svg>

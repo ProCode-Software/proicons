@@ -1,6 +1,1 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M4.49997 4.74854C4.49997 3.64397 5.3954 2.74854 6.49997 2.74854H17.5C18.6046 2.74854 19.5 3.64397 19.5 4.74854V17.7485H4.49997V4.74854Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12.0002 10.0704L12.0002 14.86" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-<ellipse cx="12.0001" cy="6.83741" rx="1.1974" ry="1.1974" fill="currentColor"/>
-<path d="M4.49997 17.7485V19.2516C4.49997 20.3561 5.3954 21.2516 6.49997 21.2516H19.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 4.749a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v13h-15z"/><path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M12 10.07v4.79"/><circle cx="12" cy="6.837" r="1.197" fill="currentColor"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 17.749v1.503a2 2 0 0 0 2 2h13"/></svg>

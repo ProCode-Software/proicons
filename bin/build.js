@@ -22,6 +22,10 @@ const args = {
     fontOnly: argChoice('--font-only', '-f'),
     // Don't update the lockfile
     frozenLockfile: argChoice('--no-update-lockfile', '-l'),
+    // Use legacy build
+    legacy: argChoice('--legacy', '-L'),
+    // Only optimize icons
+    optimizeOnly: argChoice('--optimize-only', '-o'),
 }
 
 // Patch dependencies
@@ -46,8 +50,8 @@ const svgoConfig = {
 };
 
 // Move and rename SVGs
-const inDir = path.join('in');
-const outDir = path.join('icons/svg');
+const inDir = path.resolve('in');
+const outDir = path.resolve('icons/svg');
 let variableIcons = [];
 
 if (!fs.existsSync(inDir)) fs.mkdirSync(inDir)
@@ -55,7 +59,19 @@ if (!fs.existsSync(inDir)) fs.mkdirSync(inDir)
 const files = fs.readdirSync(inDir);
 const newIcons = files.slice();
 
-function makeFiles() {
+// Only optimize icons
+function optimizeIcons() {
+    for (const iconPath of fs.readdirSync(outDir)) {
+        const p = path.resolve(outDir, iconPath)
+        const iconData = fs.readFileSync(p, 'utf-8')
+
+        fs.writeFileSync(p, optimize(iconData, svgoConfig).data)
+    }
+
+    console.log(ansiColors.green('Optimized icons!'));
+}
+
+function makeFilesLegacy() {
     files
         .filter((file) => file.endsWith('.svg'))
         .forEach((file) => {
@@ -79,6 +95,37 @@ function makeFiles() {
         });
 
     console.log(ansiColors.green('Done renaming files!'));
+}
+function makeFiles() {
+    /** @type {import('../in/in.json')} */
+    let inIcons
+    try {
+        inIcons = JSON.parse(
+            fs.readFileSync(
+                path.resolve(inDir, files.find((f) => f.toLowerCase().endsWith('.json'))),
+                'utf-8'
+            )
+        )
+    } catch (e) {
+        console.log(ansiColors.red('No JSON file found, using legacy method'));
+        makeFilesLegacy()
+    }
+    for (const [name, data] of Object.entries(inIcons)) {
+        let optimized = optimize(fs.readFileSync(data.icon, 'utf8'), svgoConfig).data;
+
+        strokeColors.forEach((color) => {
+            optimized = optimized.replaceAll(color, 'currentColor');
+        });
+
+        fs.writeFileSync(
+            path.resolve(outDir, `${rename.kebabCase(name)}.svg`),
+            optimized
+        )
+
+        if (name.endsWith(' Variable')) {
+            variableIcons.push(name)
+        }
+    }
 }
 
 // Build SVG list and lockfile
@@ -168,14 +215,24 @@ async function buildPngs() {
     console.log(ansiColors.green('Done building PNGs!'));
 }
 (async () => {
+    console.time('Build time')
+    if (args.optimizeOnly) {
+        optimizeIcons()
+        return
+    }
     if (!args.fontOnly) {
-        makeFiles()
+        if (args.legacy) {
+            makeFilesLegacy()
+        } else {
+            makeFiles()
+        }
         createDocs()
         await buildSvgList();
         await buildPngs();
     }
     await buildFont(args.shouldRebuildAll);
 })().then(() => {
+    console.timeEnd('Build time')
     console.log(ansiColors.green(ansiColors.bold('\nBuild complete!')));
 
     if (newIcons > 0) {

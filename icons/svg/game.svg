@@ -1,6 +1,1 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M16.0311 3.88745H7.96888C5.08657 3.88745 2.75 6.22402 2.75 9.10633V17.372C2.75 19.4465 5.28306 20.4575 6.71154 18.9531L9.6875 15.8189H14.3125L17.1874 19.2793C18.561 20.9325 21.25 19.9612 21.25 17.8118V9.10633C21.25 6.22402 18.9134 3.88745 16.0311 3.88745Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8.13794 8.39001V12.39M6.13794 10.39H10.1379" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="14.6621" cy="9.39001" r="1" fill="currentColor"/>
-<circle cx="16.8621" cy="11.5901" r="1" fill="currentColor"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.031 3.887H7.97a5.22 5.22 0 0 0-5.219 5.22v8.265c0 2.075 2.533 3.085 3.962 1.581l2.976-3.134h4.624l2.875 3.46c1.374 1.654 4.063.682 4.063-1.467V9.106a5.22 5.22 0 0 0-5.219-5.219M8.138 8.39v4m-2-2h4"/><circle cx="14.662" cy="9.39" r="1" fill="currentColor"/><circle cx="16.862" cy="11.59" r="1" fill="currentColor"/></svg>
