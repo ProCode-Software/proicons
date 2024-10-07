@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import { resolveConfig, format } from 'prettier';
-import config from '../icons/icons.json' with { type: 'json' };
 import rename from './rename.js';
 import ansiColors from 'ansi-colors';
 import { optimize } from 'svgo';
@@ -72,7 +71,7 @@ async function prettierFormat(data) {
 
 // Only optimize icons
 async function optimizeIcons() {
-    /** @type {config} */
+    /** @type {import('../icons/icons.json')} */
     const iconsJson = JSON.parse(
         fs.readFileSync(iconsJsonPath, 'utf-8')
     )
@@ -93,7 +92,7 @@ async function optimizeIcons() {
         iconsJson[camelName].icon = optimized
     }
 
-    const formatted = await prettierFormat(JSON.stringify(iconsJson))
+    const formatted = await prettierFormat(iconsJson)
     fs.writeFileSync(iconsJsonPath, formatted)
 
     console.log(ansiColors.green('Optimized icons!'));
@@ -103,7 +102,7 @@ async function createSvgFiles() {
     /** @type {import('../in/in.json')} */
     let inIcons
 
-    /** @type {config} */
+    /** @type {import('../icons/icons.json')} */
     const iconsJson = JSON.parse(
         fs.readFileSync(iconsJsonPath, 'utf-8')
     )
@@ -121,7 +120,7 @@ async function createSvgFiles() {
     for (const [name, data] of Object.entries(inIcons)) {
         newIcons.push(name)
 
-        let optimized = optimize(fs.readFileSync(data.icon, 'utf8'), svgoConfig).data;
+        let optimized = optimize(data.icon, svgoConfig).data;
 
         strokeColors.forEach((color) => {
             optimized = optimized.replaceAll(color, 'currentColor');
@@ -143,7 +142,7 @@ async function createSvgFiles() {
 
         iconsJson[name] = data
     }
-    const formatted = await prettierFormat(JSON.stringify(iconsJson))
+    const formatted = await prettierFormat(iconsJson)
     fs.writeFileSync(iconsJsonPath, formatted)
 
     console.log(ansiColors.green('Done creating SVG files!'));
@@ -154,31 +153,28 @@ async function createSvgFiles() {
 /**
  * @type {import('../icons/icons.lock.json')} lockfile
  */
-const lockfile =
-    fs.existsSync(path.join('icons/icons.lock.json'))
-        ? JSON.parse(fs.readFileSync(path.join('icons/icons.lock.json'), 'utf-8'))
-        : [];
+const lockfile = fs.existsSync(path.resolve('icons/icons.lock.json'))
+    ? JSON.parse(fs.readFileSync(path.resolve('icons/icons.lock.json'), 'utf-8'))
+    : [];
 
 function createLockfile() {
-    Object.keys(config).forEach((friendlyName) => {
-        const fn = rename.kebabCase(friendlyName.trimEnd());
+    /** @type {import('../icons/icons.json')} */
+    const config = JSON.parse(
+        fs.readFileSync(iconsJsonPath, 'utf-8')
+    )
 
+    Object.keys(config).forEach((friendlyName) => {
         const iconInLockfile = (z) => z.name == friendlyName
 
-        try {
-            if (!lockfile.icons.some(iconInLockfile)) {
-                const lfItem = {
-                    name: friendlyName,
-                    added: version,
-                };
-                lockfile.icons.push(lfItem);
+        if (!lockfile.icons.some(iconInLockfile)) {
+            const lfItem = {
+                name: friendlyName,
+                added: version,
+            };
+            lockfile.icons.push(lfItem);
 
-            } else if (lockfile.icons.some(iconInLockfile)) {
-
-                lockfile.icons.find(iconInLockfile).updated = version;
-            }
-        } catch (error) {
-            throw new Error(`Error reading file ${fn}.svg:`, error);
+        } else if (newIcons.some(iconInLockfile) && lockfile.icons.some(iconInLockfile)) {
+            lockfile.icons.find(iconInLockfile).updated = version;
         }
     });
 }
@@ -188,7 +184,7 @@ async function writeLockfile() {
         const formatted = await prettierFormat(lockfile)
         const location = 'icons/icons.lock.json';
 
-        fs.writeFileSync(path.join(location), formatted);
+        fs.writeFileSync(path.resolve(location), formatted);
 
         console.log(ansiColors.green(`Done building lockfile!`));
 
@@ -261,5 +257,5 @@ async function buildPngs() {
     }
     process.exit(0);
 }).catch(error => {
-    throw new Error(error)
+    throw new Error(error.message.slice(0, 500))
 });

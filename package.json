@@ -1,6 +1,6 @@
 {
     "name": "proicons",
-    "version": "4.9.0",
+    "version": "4.10.0",
     "description": "A collection of 400+ modern and open-source icons",
     "type": "module",
     "main": "dist/cjs/proicons.cjs",

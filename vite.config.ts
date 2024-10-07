@@ -1,22 +1,23 @@
 import { resolve } from "path"
-import { ModuleFormat, OutputOptions } from "rollup"
 import { defineConfig } from "vite"
 import { createHtmlPlugin } from "vite-plugin-html"
 
-const types: ModuleFormat[] = ['umd', 'esm', 'cjs']
+const types = ['umd', 'esm', 'cjs']
 const outputs = types.map((output) => {
-    const config: OutputOptions = {
+    const config = {
         format: output,
         dir: `dist/${output}`,
         entryFileNames: `[name].${output !== 'esm' ? 'c' : ''}js`,
         exports: 'named'
     }
     if (output === 'umd') {
+        // @ts-ignore
         config.name = 'proicons'
     }
     return config
 })
 
+// @ts-ignore
 export default defineConfig(({ mode }) => {
     const isProduction = mode === 'production';
     return {
