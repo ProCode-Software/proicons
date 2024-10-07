@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { resolveConfig, format } from 'prettier';
-import config from '../src/configs/tags.json' with { type: 'json' };
+import config from '../icons/icons.json' with { type: 'json' };
 import rename from './rename.js';
 import ansiColors from 'ansi-colors';
 import { optimize } from 'svgo';
@@ -27,6 +27,7 @@ const args = {
     // Only optimize icons
     optimizeOnly: argChoice('--optimize-only', '-o'),
 }
+const version = JSON.parse(fs.readFileSync('package.json', 'utf-8')).version
 
 // Patch dependencies
 patch()
@@ -52,53 +53,61 @@ const svgoConfig = {
 // Move and rename SVGs
 const inDir = path.resolve('in');
 const outDir = path.resolve('icons/svg');
+const iconsJsonPath = path.resolve('icons/icons.json')
+
 let variableIcons = [];
+let newIcons = []
 
 if (!fs.existsSync(inDir)) fs.mkdirSync(inDir)
-
 const files = fs.readdirSync(inDir);
-const newIcons = files.slice();
+
+
+async function prettierFormat(data) {
+    const options = await resolveConfig('.prettierrc');
+    options.parser = 'json';
+    const formatted = await format(JSON.stringify(data), options);
+
+    return formatted
+}
 
 // Only optimize icons
-function optimizeIcons() {
+async function optimizeIcons() {
+    /** @type {config} */
+    const iconsJson = JSON.parse(
+        fs.readFileSync(iconsJsonPath, 'utf-8')
+    )
+
     for (const iconPath of fs.readdirSync(outDir)) {
         const p = path.resolve(outDir, iconPath)
         const iconData = fs.readFileSync(p, 'utf-8')
 
-        fs.writeFileSync(p, optimize(iconData, svgoConfig).data)
+        const optimized = optimize(iconData, svgoConfig).data
+        fs.writeFileSync(p, optimized)
+
+
+        const camelName = Object.keys(iconsJson)
+            .find((z) => rename.camelCase(z)
+                == iconPath.slice(0, -4)
+            )
+
+        iconsJson[camelName].icon = optimized
     }
+
+    const formatted = await prettierFormat(JSON.stringify(iconsJson))
+    fs.writeFileSync(iconsJsonPath, formatted)
 
     console.log(ansiColors.green('Optimized icons!'));
 }
 
-function makeFilesLegacy() {
-    files
-        .filter((file) => file.endsWith('.svg'))
-        .forEach((file) => {
-            const oldPath = path.join(inDir, file);
-            if (file.includes(' -Var')) {
-                variableIcons.push(file.slice(0, -4));
-            }
-            const newName = rename.kebabCase(file);
-            const newPath = path.join(outDir, newName);
-
-            try {
-                let ct = optimize(fs.readFileSync(oldPath, 'utf8'), svgoConfig).data;
-                strokeColors.forEach((color) => {
-                    ct = ct.replaceAll(color, 'currentColor');
-                });
-                fs.writeFileSync(newPath, ct);
-                fs.unlinkSync(oldPath);
-            } catch (error) {
-                console.error(`Error moving file ${file}:`, error);
-            }
-        });
-
-    console.log(ansiColors.green('Done renaming files!'));
-}
-function makeFiles() {
+async function createSvgFiles() {
     /** @type {import('../in/in.json')} */
     let inIcons
+
+    /** @type {config} */
+    const iconsJson = JSON.parse(
+        fs.readFileSync(iconsJsonPath, 'utf-8')
+    )
+
     try {
         inIcons = JSON.parse(
             fs.readFileSync(
@@ -107,55 +116,66 @@ function makeFiles() {
             )
         )
     } catch (e) {
-        console.log(ansiColors.red('No JSON file found, using legacy method'));
-        makeFilesLegacy()
+        return
     }
     for (const [name, data] of Object.entries(inIcons)) {
+        newIcons.push(name)
+
         let optimized = optimize(fs.readFileSync(data.icon, 'utf8'), svgoConfig).data;
 
         strokeColors.forEach((color) => {
             optimized = optimized.replaceAll(color, 'currentColor');
         });
 
-        fs.writeFileSync(
-            path.resolve(outDir, `${rename.kebabCase(name)}.svg`),
-            optimized
-        )
+        try {
+            fs.writeFileSync(
+                path.resolve(outDir, `${rename.kebabCase(name)}.svg`),
+                optimized
+            )
+        } catch (e) {
+            console.log(ansiColors.red('Error making files:'));
+            throw new Error(e)
+        }
 
         if (name.endsWith(' Variable')) {
             variableIcons.push(name)
         }
+
+        iconsJson[name] = data
     }
+    const formatted = await prettierFormat(JSON.stringify(iconsJson))
+    fs.writeFileSync(iconsJsonPath, formatted)
+
+    console.log(ansiColors.green('Done creating SVG files!'));
+
 }
 
-// Build SVG list and lockfile
-const dict = {};
-const existingLockFile =
-    fs.existsSync(path.join('icons/icons.lock.json')) && fs.readFileSync(path.join('icons/icons.lock.json'));
-
+// Build lockfile
 /**
  * @type {import('../icons/icons.lock.json')} lockfile
  */
-const lockfile = existingLockFile ? JSON.parse(existingLockFile, 'utf8') : [];
+const lockfile =
+    fs.existsSync(path.join('icons/icons.lock.json'))
+        ? JSON.parse(fs.readFileSync(path.join('icons/icons.lock.json'), 'utf-8'))
+        : [];
 
-function createDocs() {
+function createLockfile() {
     Object.keys(config).forEach((friendlyName) => {
-        const name = rename.camelCase(friendlyName.trimEnd());
         const fn = rename.kebabCase(friendlyName.trimEnd());
 
-        try {
-            dict[name] = fs.readFileSync(path.join(outDir, `${fn}.svg`), 'utf8');
+        const iconInLockfile = (z) => z.name == friendlyName
 
-            if (!lockfile.icons.some((z) => z.name == friendlyName)) {
+        try {
+            if (!lockfile.icons.some(iconInLockfile)) {
                 const lfItem = {
                     name: friendlyName,
-                    added: JSON.parse(fs.readFileSync('package.json', 'utf-8')).version,
+                    added: version,
                 };
                 lockfile.icons.push(lfItem);
-            } else if (newIcons.includes(`${friendlyName}.svg`)) {
-                lockfile.icons.find((z) => z.name == friendlyName).updated = JSON.parse(
-                    fs.readFileSync('package.json', 'utf-8'),
-                ).version;
+
+            } else if (lockfile.icons.some(iconInLockfile)) {
+
+                lockfile.icons.find(iconInLockfile).updated = version;
             }
         } catch (error) {
             throw new Error(`Error reading file ${fn}.svg:`, error);
@@ -163,20 +183,18 @@ function createDocs() {
     });
 }
 
-async function buildSvgList() {
+async function writeLockfile() {
     try {
-        const docsToUpdate = args.frozenLockfile ? [dict] : [dict, lockfile]
-        for (const doc of docsToUpdate) {
-            const options = await resolveConfig('.prettierrc');
-            options.parser = 'json';
-            const formatted = await format(JSON.stringify(doc), options);
-            const location = doc == dict ? 'src/configs/icons.json' : 'icons/icons.lock.json';
+        const formatted = await prettierFormat(lockfile)
+        const location = 'icons/icons.lock.json';
 
-            fs.writeFileSync(path.join(location), formatted);
-            console.log(ansiColors.green(`Done building ${doc == dict ? 'SVG list' : 'lockfile'}!`));
-        }
+        fs.writeFileSync(path.join(location), formatted);
+
+        console.log(ansiColors.green(`Done building lockfile!`));
+
     } catch (error) {
-        console.error('Error writing icons.json:', error);
+        console.error('Error writing lockfile:');
+        throw new Error(error)
     }
 }
 
@@ -214,20 +232,17 @@ async function buildPngs() {
     progressBar.terminate();
     console.log(ansiColors.green('Done building PNGs!'));
 }
+
 (async () => {
     console.time('Build time')
     if (args.optimizeOnly) {
-        optimizeIcons()
+        await optimizeIcons()
         return
     }
     if (!args.fontOnly) {
-        if (args.legacy) {
-            makeFilesLegacy()
-        } else {
-            makeFiles()
-        }
-        createDocs()
-        await buildSvgList();
+        await createSvgFiles()
+        createLockfile()
+        await writeLockfile();
         await buildPngs();
     }
     await buildFont(args.shouldRebuildAll);
