@@ -1,6 +1,5 @@
-import fs from 'fs';
-import path from 'path';
-import { resolveConfig, format } from 'prettier';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'fs'
+import { resolve } from 'path';
 import rename from './rename.js';
 import ansiColors from 'ansi-colors';
 import { optimize } from 'svgo';
@@ -8,25 +7,9 @@ import progress from 'progress';
 import { buildFont } from "./build-font.js";
 import { patch } from "../tools/dep-patch/index.js";
 import { Piscina } from 'piscina'
+import { prettierFormat, getIconsJson, args } from "./build/utils.js";
 
-const argChoice = (c1, c2) => {
-    const argv = process.argv.slice(2)
-    return argv.includes(c1) || argv.includes(c2)
-}
-
-const args = {
-    // Should rebuild all images
-    shouldRebuildAll: argChoice('--rebuild', '-r'),
-    // Only build font
-    fontOnly: argChoice('--font-only', '-f'),
-    // Don't update the lockfile
-    frozenLockfile: argChoice('--no-update-lockfile', '-l'),
-    // Use legacy build
-    legacy: argChoice('--legacy', '-L'),
-    // Only optimize icons
-    optimizeOnly: argChoice('--optimize-only', '-o'),
-}
-const version = JSON.parse(fs.readFileSync('package.json', 'utf-8')).version
+const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
 
 // Patch dependencies
 patch()
@@ -50,74 +33,31 @@ const svgoConfig = {
 };
 
 // Move and rename SVGs
-const inDir = path.resolve('in');
-const outDir = path.resolve('icons/svg');
-const iconsJsonPath = path.resolve('icons/icons.json')
+const inDir = resolve('in');
+const outDir = resolve('icons/svg');
+export const iconsJsonPath = resolve('icons/icons.json')
 
 let variableIcons = [];
 let newIcons = []
 
-if (!fs.existsSync(inDir)) fs.mkdirSync(inDir)
-const files = fs.readdirSync(inDir);
-
-
-async function prettierFormat(data) {
-    const options = await resolveConfig('.prettierrc');
-    options.parser = 'json';
-    const formatted = await format(JSON.stringify(data), options);
-
-    return formatted
-}
+if (!existsSync(inDir)) mkdirSync(inDir)
+const files = readdirSync(inDir);
 
 // Only optimize icons
 async function optimizeIcons() {
-    /** @type {import('../icons/icons.json')} */
-    const iconsJson = JSON.parse(
-        fs.readFileSync(iconsJsonPath, 'utf-8')
-    )
-
-    for (const iconPath of fs.readdirSync(outDir)) {
-        const p = path.resolve(outDir, iconPath)
-        const iconData = fs.readFileSync(p, 'utf-8')
-
-        const optimized = optimize(iconData, svgoConfig).data
-        fs.writeFileSync(p, optimized)
-
-
-        const camelName = Object.keys(iconsJson)
-            .find((z) => rename.camelCase(z)
-                == iconPath.slice(0, -4)
-            )
-
-        iconsJson[camelName].icon = optimized
-    }
-
-    const formatted = await prettierFormat(iconsJson)
-    fs.writeFileSync(iconsJsonPath, formatted)
-
-    console.log(ansiColors.green('Optimized icons!'));
-}
-
-async function createSvgFiles() {
-    /** @type {import('../in/in.json')} */
-    let inIcons
-
-    /** @type {import('../icons/icons.json')} */
-    const iconsJson = JSON.parse(
-        fs.readFileSync(iconsJsonPath, 'utf-8')
-    )
+    const iconsJson = getIconsJson()
 
     try {
-        inIcons = JSON.parse(
-            fs.readFileSync(
-                path.resolve(inDir, files.find((f) => f.toLowerCase().endsWith('.json'))),
-                'utf-8'
-            )
-        )
-    } catch (e) {
-        return
-    }
-    for (const [name, data] of Object.entries(inIcons)) {
+        writeSvgFilesFromData(iconsJson)
+
+        console.log(ansiColors.bold(ansiColors.green('Optimized icons!')));
+    } catch (e) { throw e }
+}
+
+async function writeSvgFilesFromData(jsonData) {
+    const iconsJson = getIconsJson()
+
+    for (const [name, data] of Object.entries(jsonData)) {
         newIcons.push(name)
 
         let optimized = optimize(data.icon, svgoConfig).data;
@@ -127,13 +67,13 @@ async function createSvgFiles() {
         });
 
         try {
-            fs.writeFileSync(
-                path.resolve(outDir, `${rename.kebabCase(name)}.svg`),
+            writeFileSync(
+                resolve(outDir, `${rename.kebabCase(name)}.svg`),
                 optimized
             )
         } catch (e) {
             console.log(ansiColors.red('Error making files:'));
-            throw new Error(e)
+            throw e
         }
 
         if (name.endsWith(' Variable')) {
@@ -143,7 +83,25 @@ async function createSvgFiles() {
         iconsJson[name] = data
     }
     const formatted = await prettierFormat(iconsJson)
-    fs.writeFileSync(iconsJsonPath, formatted)
+    writeFileSync(iconsJsonPath, formatted)
+}
+
+// Transform JSON data into files
+async function createSvgFiles() {
+    /** @type {import('../in/in.json')} */
+    let inIcons
+
+    try {
+        inIcons = JSON.parse(
+            readFileSync(
+                resolve(inDir, files.find((f) => f.toLowerCase().endsWith('.json'))),
+                'utf-8'
+            )
+        )
+    } catch (e) {
+        return
+    }
+    await writeSvgFilesFromData(inIcons)
 
     console.log(ansiColors.green('Done creating SVG files!'));
 
@@ -153,14 +111,14 @@ async function createSvgFiles() {
 /**
  * @type {import('../icons/icons.lock.json')} lockfile
  */
-const lockfile = fs.existsSync(path.resolve('icons/icons.lock.json'))
-    ? JSON.parse(fs.readFileSync(path.resolve('icons/icons.lock.json'), 'utf-8'))
+const lockfile = existsSync(resolve('icons/icons.lock.json'))
+    ? JSON.parse(readFileSync(resolve('icons/icons.lock.json'), 'utf-8'))
     : [];
 
 function createLockfile() {
     /** @type {import('../icons/icons.json')} */
     const config = JSON.parse(
-        fs.readFileSync(iconsJsonPath, 'utf-8')
+        readFileSync(iconsJsonPath, 'utf-8')
     )
 
     Object.keys(config).forEach((friendlyName) => {
@@ -173,7 +131,7 @@ function createLockfile() {
             };
             lockfile.icons.push(lfItem);
 
-        } else if (newIcons.some(iconInLockfile) && lockfile.icons.some(iconInLockfile)) {
+        } else if (newIcons.includes(friendlyName) && lockfile.icons.some(iconInLockfile)) {
             lockfile.icons.find(iconInLockfile).updated = version;
         }
     });
@@ -182,22 +140,22 @@ function createLockfile() {
 async function writeLockfile() {
     try {
         const formatted = await prettierFormat(lockfile)
-        const location = 'icons/icons.lock.json';
+        const location = resolve('icons/icons.lock.json');
 
-        fs.writeFileSync(path.resolve(location), formatted);
+        writeFileSync(location, formatted);
 
         console.log(ansiColors.green(`Done building lockfile!`));
 
     } catch (error) {
         console.error('Error writing lockfile:');
-        throw new Error(error)
+        throw error
     }
 }
 
-// Build PNGs
+// Convert to PNGs
 async function buildPngs() {
 
-    const svgFiles = fs.readdirSync(outDir).filter((file) => file.endsWith('.svg'));
+    const svgFiles = readdirSync(outDir).filter((file) => file.endsWith('.svg'));
 
     const progressBar = new progress('  Build PNGs [:bar] :item :percent :etas', {
         complete: '=',
@@ -257,5 +215,5 @@ async function buildPngs() {
     }
     process.exit(0);
 }).catch(error => {
-    throw new Error(error.message.slice(0, 500))
+    throw error
 });
