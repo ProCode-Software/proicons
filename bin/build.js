@@ -1,18 +1,30 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'fs'
 import { resolve } from 'path';
+import { resolveConfig, format } from 'prettier';
 import rename from './rename.js';
 import ansiColors from 'ansi-colors';
 import { optimize } from 'svgo';
 import progress from 'progress';
 import { buildFont } from "./build-font.js";
-import { patch } from "../tools/dep-patch/index.js";
 import { Piscina } from 'piscina'
-import { prettierFormat, getIconsJson, args } from "./build/utils.js";
 
+
+const argChoice = (c1, c2) => {
+    const argv = process.argv.slice(2)
+    return argv.includes(c1) || argv.includes(c2)
+}
+
+const args = {
+    // Should rebuild all images
+    shouldRebuildAll: argChoice('--rebuild', '-r'),
+    // Only build font
+    fontOnly: argChoice('--font-only', '-f'),
+    // Don't update the lockfile
+    frozenLockfile: argChoice('--no-update-lockfile', '-l'),
+    // Only optimize icons
+    optimizeOnly: argChoice('--optimize-only', '-o'),
+}
 const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
-
-// Patch dependencies
-patch()
 
 const strokeColors = ['#212325', 'black', '#000000'];
 const svgoConfig = {
@@ -35,13 +47,29 @@ const svgoConfig = {
 // Move and rename SVGs
 const inDir = resolve('in');
 const outDir = resolve('icons/svg');
-export const iconsJsonPath = resolve('icons/icons.json')
+const iconsJsonPath = resolve('icons/icons.json')
 
 let variableIcons = [];
 let newIcons = []
 
 if (!existsSync(inDir)) mkdirSync(inDir)
 const files = readdirSync(inDir);
+
+function getIconsJson() {
+    /** @type {import('../icons/icons.json')} */
+    const iconsJson = JSON.parse(
+        readFileSync(iconsJsonPath, 'utf-8')
+    )
+    return iconsJson
+}
+
+async function prettierFormat(data) {
+    const options = await resolveConfig('.prettierrc');
+    options.parser = 'json';
+    const formatted = await format(JSON.stringify(data), options);
+
+    return formatted
+}
 
 // Only optimize icons
 async function optimizeIcons() {
@@ -54,6 +82,7 @@ async function optimizeIcons() {
     } catch (e) { throw e }
 }
 
+// Transform JSON data into files
 async function writeSvgFilesFromData(jsonData) {
     const iconsJson = getIconsJson()
 
@@ -67,8 +96,10 @@ async function writeSvgFilesFromData(jsonData) {
         });
 
         try {
+            const fn = rename.kebabCase(name.trim())
+
             writeFileSync(
-                resolve(outDir, `${rename.kebabCase(name)}.svg`),
+                resolve(outDir, `${fn}.svg`),
                 optimized
             )
         } catch (e) {
@@ -86,7 +117,6 @@ async function writeSvgFilesFromData(jsonData) {
     writeFileSync(iconsJsonPath, formatted)
 }
 
-// Transform JSON data into files
 async function createSvgFiles() {
     /** @type {import('../in/in.json')} */
     let inIcons
