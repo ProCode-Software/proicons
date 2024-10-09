@@ -1,23 +1,35 @@
 {
-  "name": "@proicons/react",
-  "version": "4.9.0",
-  "description": "ProIcons ReactJS package",
-  "main": "src/proicons-react.ts",
-  "scripts": {
-    "dev": "pnpm vite",
-    "build": "pnpm vite build",
-    "preview": "pnpm vite preview"
-  },
-  "author": "ProCode Software",
-  "license": "MIT",
-  "keywords": ["react", "icons"],
-  "devDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "typescript": "^5.5.3",
-    "vite": "^5.4.1"
-  }
+    "name": "@proicons/react",
+    "version": "4.9.0",
+    "description": "ProIcons ReactJS package",
+    "main": "src/proicons-react.ts",
+    "scripts": {
+        "dev": "pnpm vite",
+        "build": "pnpm vite build",
+        "preview": "pnpm vite preview"
+    },
+    "author": "ProCode Software",
+    "license": "MIT",
+    "keywords": [
+        "icons",
+        "icon-pack",
+        "js",
+        "feather",
+        "lucide",
+        "fluent",
+        "font awesome",
+        "svg",
+        "proicons",
+        "procode",
+        "react"
+    ],
+    "devDependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
+        "@vitejs/plugin-react-swc": "^3.5.0",
+        "typescript": "^5.5.3",
+        "vite": "^5.4.1"
+    }
 }

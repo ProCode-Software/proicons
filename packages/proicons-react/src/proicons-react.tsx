@@ -1,7 +1,3 @@
-import * as React from 'react'
+import { ProIcon } from './ProIcon.tsx'
 
-export function ProIcon() {
-    return (
-        <p>Hello, world!</p>
-    )
-}
+export { ProIcon }
