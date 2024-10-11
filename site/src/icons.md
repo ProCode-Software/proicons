@@ -1,4 +1,5 @@
 ---
 name: Icons
-layout: icons
+layout: page
+sidebar: true
 ---
