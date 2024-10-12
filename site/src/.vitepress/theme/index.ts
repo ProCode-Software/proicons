@@ -16,7 +16,6 @@ export default {
       'nav-bar-title-after': () => h(navTitleAfter),
       'not-found': () => h(notFound),
 
-      'aside-top': () => h(notFound),
       'sidebar-nav-before': () => h(IconsSidebar),
     })
   },

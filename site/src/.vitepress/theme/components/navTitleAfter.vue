@@ -2,8 +2,6 @@
 import { useData } from 'vitepress/dist/client/theme-default/composables/data';
 //@ts-ignore
 import { data } from './fetchVersion.data'
-
-console.log(useData())
 </script>
 
 <template>

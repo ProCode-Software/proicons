@@ -6,6 +6,8 @@ import { useSidebar } from '../composables/sidebar'
 import VPSidebarGroup from './VPSidebarGroup.vue'
 
 const { sidebarGroups, hasSidebar } = useSidebar()
+console.log(sidebarGroups);
+
 
 const props = defineProps<{
   open: boolean

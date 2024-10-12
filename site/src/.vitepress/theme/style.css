@@ -255,3 +255,8 @@ p.custom-block-title {
     letter-spacing: -0.3px;
     font-size: 18px;
 }
+
+.VPSidebarItem.level-0 h2.text {
+    color: var(--vp-c-text-3) !important;
+    font-weight: 500 !important;
+}
