@@ -15,14 +15,14 @@ const type: 'color' | 'slider' = 'color'
 
         <div class="IconsCustomizer">
             <CustomizerField type="slider" label="Size"
-                :defaultValue="24" :min="16" :max="48" />
+                :defaultValue="24" :min="16" :max="48" bind="size" />
 
             <CustomizerField type="slider"
                 label="Stroke width" :defaultValue="1.5"
-                :min="1" :max="3" :step="0.05" suffix="px" />
+                :min="1" :max="3" :step="0.05" suffix="px" bind="width" />
 
             <CustomizerField type="color" label="Color"
-                defaultValue="currentColor" />
+                defaultValue="currentColor" bind="color" />
 
             <details>
                 <summary>Advanced options</summary>
