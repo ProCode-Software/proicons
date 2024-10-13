@@ -8,7 +8,7 @@ const type: 'color' | 'slider' = 'color'
 </script>
 
 <template>
-    <div class="group">
+    <div class="group customizerSbGroup">
         <VPSidebarItem
             :item="{ text: 'Customize', collapsed: false, items: [{}] }"
             :depth="0" class="customizeLabel" />
@@ -19,10 +19,10 @@ const type: 'color' | 'slider' = 'color'
 
             <CustomizerField type="slider"
                 label="Stroke width" :defaultValue="1.5"
-                :min="1" :max="3" :step="0.05" />
+                :min="1" :max="3" :step="0.05" suffix="px" />
 
             <CustomizerField type="color" label="Color"
-                defaultValue="#000" />
+                defaultValue="currentColor" />
 
             <details>
                 <summary>Advanced options</summary>
@@ -30,10 +30,11 @@ const type: 'color' | 'slider' = 'color'
                     <CustomizerField type="slider"
                         label="Corner radius"
                         :defaultValue="24" :min="16"
-                        :max="48" />
+                        :max="48" suffix="px" tooltip="May not apply to all icons" />
+
                     <CustomizerField type="toggle"
                         label="Outline fills"
-                        :defaultValue="false" />
+                        :defaultValue="false" tooltip="Add strokes to filled SVG elements for balance" />
                 </div>
             </details>
         </div>
@@ -48,6 +49,13 @@ const type: 'color' | 'slider' = 'color'
     }
 }
 
+@media (min-width: 960px) {
+    .customizerSbGroup {
+        padding-top: 10px;
+        width: calc(var(--vp-sidebar-width) - 64px);
+    }
+}
+
 .IconsCustomizer {
     font-size: 14px;
 
@@ -56,8 +64,7 @@ const type: 'color' | 'slider' = 'color'
     }
 }
 
-.IconsCustomizer,
-.IconsCustomizer div {
+.IconsCustomizer, .IconsCustomizer details > div {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -65,7 +72,6 @@ const type: 'color' | 'slider' = 'color'
 
 .customizeLabel {
     padding-bottom: 0 !important;
-    padding-top: 10px;
 
     &.collapsed+.IconsCustomizer {
         display: none;
