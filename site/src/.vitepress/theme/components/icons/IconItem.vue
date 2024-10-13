@@ -1,12 +1,14 @@
 <script setup lang="ts">
-interface Properties {
-    color: string,
-    strokeWidth: number,
-    outline: boolean,
-    cornerRadius: number
-}
-const { element, properties } = defineProps<{ element: string, properties: Properties }>()
+const { icon } = defineProps<{ icon }>()
+
+const [key, value] = icon
+
+const svg = value.icon
 </script>
+
 <template>
-    
+    <div class="IconListItem">
+        <component is="div" v-html="svg" />
+        <span class="iconLabel">{{ key }}</span>
+    </div>
 </template>
