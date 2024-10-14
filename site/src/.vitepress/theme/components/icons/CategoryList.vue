@@ -17,7 +17,7 @@ const categoryGroup = [{
     items: [
         {
             text: '',
-            items: categories.map(c => { return { text: c, link: `#${kebabCase(c)}` } })
+            items: categories.sort().map(c => { return { text: c, link: `#${kebabCase(c)}` } })
         }
     ]
 }]

@@ -32,6 +32,9 @@ importers:
       jimp:
         specifier: ^1.6.0
         version: 1.6.0
+      minisearch:
+        specifier: ^7.1.0
+        version: 7.1.0
       oslllo-svg-fixer:
         specifier: ^5.0.0
         version: 5.0.0(encoding@0.1.13)

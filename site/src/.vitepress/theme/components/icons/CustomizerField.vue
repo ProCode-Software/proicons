@@ -174,6 +174,10 @@ input[type="range"] {
     border-radius: 100px;
     height: 5px;
     margin-block: 6px;
+
+    &:focus-visible {
+        box-shadow: 0 0 0 2px currentColor
+    }
 }
 
 ::-webkit-slider-runnable-track {}
