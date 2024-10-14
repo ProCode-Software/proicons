@@ -1,30 +1,43 @@
 <script setup lang="ts">
 import IconItem from "./IconItem.vue";
-import { getCategories } from '../../composables/categories'
+import { getCategories, sortCategoryEntries, sortSearchResults } from '../../composables/categories'
 import { kebabCase } from "../../composables/rename";
-
-const isDevelopment = import.meta.env.DEV
+import { computed} from 'vue'
 
 interface Icon {
     icon: string,
     category: string,
-    tags: string[]
+    tags: string[],
+    score?: number
 }
-const { icons } = defineProps<{ icons: Record<string, Icon> }>()
+const { icons, query } = defineProps<{ icons: Record<string, Icon>, query?: string }>()
+
+const iconsSearch = computed(() => {
+    return query ?
+        [[
+            `Results for "${query}"`,
+            sortSearchResults(Object.entries(icons))
+        ]]
+        : sortCategoryEntries(
+            Object.entries(getCategories(icons))
+        )
+})
+
 </script>
 <template>
     <div class="IconList">
-        <p :hidden="isDevelopment">Coming Soon</p>
-
-        <section :hidden="!isDevelopment"
-            v-for="[category, iconsInCategory] in Object.entries(getCategories(icons))"
+        <section
+            v-for="[category, iconsInCategory] in iconsSearch"
             :id="kebabCase(category)">
 
-            <h2 class="categoryTitle"><a :href="`#${kebabCase(category)}`">{{ category }}</a></h2>
+            <h2 class="categoryTitle">
+                <a :href="`#${kebabCase(category)}`">{{
+                    category }}</a>
+            </h2>
 
-            <div class="categoryIconsList">
+            <div class="categoryIconsList" :key="category">
                 <IconItem v-for="icon in iconsInCategory"
-                    :icon="icon" />
+                    :icon="icon" :key="icon[0]" @select-icon="(ic) => $emit('fowardIcon', ic)" />
             </div>
         </section>
     </div>

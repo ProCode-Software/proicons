@@ -93,3 +93,7 @@
 .vpi-corner-down-left {
     --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/arrow-enter.svg");
 }
+
+.vpi-no-results {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/search-cancel.svg");
+}

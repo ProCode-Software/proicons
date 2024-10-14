@@ -8,7 +8,8 @@ const svg = value.icon
 
 <template>
     <div class="IconListItem">
-        <button v-html="svg" tabindex="0" role="button" />
+        <button v-html="svg" tabindex="0" role="button"
+            @click="$emit('selectIcon', icon)" />
         <span class="iconLabel">{{ key }}</span>
     </div>
 </template>
@@ -22,7 +23,7 @@ const svg = value.icon
     justify-content: center;
     font-size: 14px;
 
-    & > button {
+    &>button {
         aspect-ratio: 1 / 1;
         width: 100%;
         display: flex;
@@ -34,9 +35,10 @@ const svg = value.icon
         cursor: pointer;
     }
 
-    &:hover > button {
+    &:hover>button {
         background: var(--vp-c-bg-alt);
     }
+
     .iconLabel {
         line-height: 140%;
         font-size: 13px;

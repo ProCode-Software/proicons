@@ -1,0 +1,51 @@
+title: "[Icon Request]: "
+labels: ["icon request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank's for your interest in this project! Before submitting your request, [please check](https://github.com/ProCode-Software/proicons/discussions/categories/icon-requests) if it has already been requested. To keep requests organized, please request only one icon at a time.
+
+        Already designed an icon? Send it in as a [pull request](https://github.com/ProCode-Software/proicons/pulls).
+
+        > [!IMPORTANT]
+        > We are not accepting requests for new brand icons or logos. If you need a new brand icon, consider using [Simple Icons](https://github.com/simple-icons/simple-icons).
+  
+  - type: input
+    attributes:
+      label: Icon name
+      placeholder: e.g. Book
+      description: What should this icon depict?
+    validations:
+      required: true
+
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: Why do you need this icon?
+      description: Please describe your use case for this icon
+      placeholder: e.g. I need a book icon for a library website
+
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: Design ideas
+      description: Please attatch screenshots of icons from other libraries to help us visualize your icon.
+      placeholder: e.g. [Screenshot of similar icon](https://example.com/image.png)
+  - type: checkboxes
+    validations:
+      required: true
+    attributes:
+      label: Checklist
+      description: Please read and check the following items before submitting your request. If your request fails to meet these guidelines, it may be closed.
+      options:
+        - label: I have searched the existing icons to make sure this icon hasn't already been added.
+          required: true
+        - label: I have searched the existing requests, including closed ones, to make sure this icon hasn't already been requested.
+          required: true
+        - label: This icon is not a logo or is protected by copyright.
+          required: true
+        - label: This icon follows our [code of conduct](https://github.com/ProCode-Software/proicons/blob/main/CODE_OF_CONDUCT.md)
+          required: true

@@ -4,14 +4,25 @@ function sortIcons(entries) {
     })
 }
 
-function sortCategories(icons) {
+function sortCategories(icons: Object) {
     const entries = Object.entries(icons)
-    entries.sort((a, b) => {
-        return a[1].category.localeCompare(b[1].category)
-    })
+
     return sortIcons(entries)
 }
 
-export function getCategories(icons) {
+export function getCategories(icons): Record<string, [string, Object][]> {
+    // @ts-ignore
     return Object.groupBy(sortCategories(icons), ([k, v]) => v.category)
+}
+
+export function sortCategoryEntries(entries: [string, [string, Object][]][]) {
+    return entries.sort((a, b) => {
+        return a[0].localeCompare(b[0])
+    })
+}
+
+export function sortSearchResults(results: [string, { score: number }]) {
+    return results.sort((a, b) => {
+        return b[1].score - a[1].score
+    })
 }
