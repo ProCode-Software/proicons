@@ -43,7 +43,7 @@ function selectIcon(ic) {
     padding: 20px;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 40px;
     align-items: flex-start;
 
     &>main {

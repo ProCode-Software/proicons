@@ -31,7 +31,7 @@ const iconsSearch = computed(() => {
             :id="kebabCase(category)">
 
             <h2 class="categoryTitle">
-                <a :href="`#${kebabCase(category)}`">{{
+                <a :href="query ? undefined : `#${kebabCase(category)}`">{{
                     category }}</a>
             </h2>
 
