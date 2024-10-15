@@ -4,7 +4,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank's for your interest in this project! Before submitting your request, [please check](https://github.com/ProCode-Software/proicons/discussions/categories/icon-requests) if it has already been requested. To keep requests organized, please request only one icon at a time.
+        # Icon Request
+        Thanks for your interest in this project! Before submitting your request, [please check](https://github.com/ProCode-Software/proicons/discussions/categories/icon-requests) if it has already been requested. To keep requests organized, please request only one icon at a time.
 
         Already designed an icon? Send it in as a [pull request](https://github.com/ProCode-Software/proicons/pulls).
 
