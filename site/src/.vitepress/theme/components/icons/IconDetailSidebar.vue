@@ -53,6 +53,11 @@ const { icon } = defineProps<{ icon?: [string, Icon] }>()
         inset: 20px;
         border: 1px solid var(--vp-c-divider);
         top: auto;
+
+        .iconPreviewGrid {
+            border-radius: 20px 0 0 20px;
+            border-bottom: none;
+        }
     }
 }
 
@@ -80,13 +85,16 @@ const { icon } = defineProps<{ icon?: [string, Icon] }>()
     }
 }
 
+.dark .iconPreviewGrid {
+    --fade-gradient: radial-gradient(color-mix(in srgb, var(--vp-c-bg), rgb(0,0,0, 0.4)), var(--vp-c-bg-alt));
+}
 .iconPreviewGrid {
     --grid-gradient: var(--vp-c-divider),
         var(--vp-c-divider) 1px,
         transparent 1px,
         transparent calc(100% / 24);
 
-    --fade-gradient: radial-gradient(transparent, var(--vp-c-bg-alt));
+    --fade-gradient: radial-gradient(color-mix(in srgb, var(--vp-c-bg), rgb(255, 255, 255, 0.3)), var(--vp-c-bg-alt));
 
     width: 100%;
     aspect-ratio: 1/1;
@@ -99,6 +107,7 @@ const { icon } = defineProps<{ icon?: [string, Icon] }>()
     align-items: center;
     justify-content: center;
     max-width: 240px;
+    border-radius: 20px 20px 0 0;
 }
 
 .tagList {
