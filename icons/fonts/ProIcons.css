@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?fe9ac65737d65035a58fcc63220c4d10") format("truetype"),
-url("./ProIcons.woff?fe9ac65737d65035a58fcc63220c4d10") format("woff"),
-url("./ProIcons.woff2?fe9ac65737d65035a58fcc63220c4d10") format("woff2"),
-url("./ProIcons.eot?fe9ac65737d65035a58fcc63220c4d10#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?2fd60d13a535d38101c3f1eb296902f3") format("truetype"),
+url("./ProIcons.woff?2fd60d13a535d38101c3f1eb296902f3") format("woff"),
+url("./ProIcons.woff2?2fd60d13a535d38101c3f1eb296902f3") format("woff2"),
+url("./ProIcons.eot?2fd60d13a535d38101c3f1eb296902f3#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -1314,24 +1314,69 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-add-square-multiple-var::before {
   content: "\f101";
 }
-.proicon-bookmark-multiple-var::before {
+.proicon-bolt::before {
   content: "\f102";
 }
-.proicon-branch::before {
+.proicon-bookmark-multiple-var::before {
   content: "\f103";
 }
-.proicon-chrome-restore-var::before {
+.proicon-branch-pull-request::before {
   content: "\f104";
 }
-.proicon-comment-multiple-var::before {
+.proicon-branch::before {
   content: "\f105";
 }
-.proicon-copy-var::before {
+.proicon-candy::before {
   content: "\f106";
 }
-.proicon-tag-multiple-var::before {
+.proicon-chrome-restore-var::before {
   content: "\f107";
 }
-.proicon-window-multiple-var::before {
+.proicon-comment-multiple-var::before {
   content: "\f108";
+}
+.proicon-copy-var::before {
+  content: "\f109";
+}
+.proicon-door-open::before {
+  content: "\f10a";
+}
+.proicon-door::before {
+  content: "\f10b";
+}
+.proicon-linux::before {
+  content: "\f10c";
+}
+.proicon-nodejs::before {
+  content: "\f10d";
+}
+.proicon-npm::before {
+  content: "\f10e";
+}
+.proicon-open-source::before {
+  content: "\f10f";
+}
+.proicon-record-stop::before {
+  content: "\f110";
+}
+.proicon-record::before {
+  content: "\f111";
+}
+.proicon-svelte::before {
+  content: "\f112";
+}
+.proicon-tag-multiple-var::before {
+  content: "\f113";
+}
+.proicon-ubuntu::before {
+  content: "\f114";
+}
+.proicon-vuejs::before {
+  content: "\f115";
+}
+.proicon-webpack::before {
+  content: "\f116";
+}
+.proicon-window-multiple-var::before {
+  content: "\f117";
 }

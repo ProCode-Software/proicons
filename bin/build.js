@@ -5,9 +5,10 @@ import rename from './rename.js';
 import ansiColors from 'ansi-colors';
 import { optimize } from 'svgo';
 import progress from 'progress';
-import { buildFont } from "./build-font.js";
+import { buildFont } from "./build/build-font.js";
 import { Piscina } from 'piscina'
 
+const __rootdir = process.cwd()
 
 const argChoice = (c1, c2) => {
     const argv = process.argv.slice(2)
@@ -195,16 +196,19 @@ async function buildPngs() {
     });
 
     const worker = new Piscina({
-        filename: new URL('./fix-image.js', import.meta.url).href
+        filename: new URL('./build/fix-image.js', import.meta.url).href
     })
 
-    const newSvgsOnly = svgFiles.filter((file) => newIcons.includes(file))
+    const newSvgsOnly = newIcons.map(i => rename.kebabCase(i.trim()) + '.svg')
+
     console.time('Build PNGs')
 
     const promises = []
     for (const file of (args.shouldRebuildAll ? svgFiles : newSvgsOnly)) {
         promises.push((async () => {
-            await worker.run({ file })
+            
+            await worker.run({ file, root: __rootdir })
+
             progressBar.tick(1, {
                 item: file.slice(0, -4),
             });
@@ -229,7 +233,7 @@ async function buildPngs() {
         await writeLockfile();
         await buildPngs();
     }
-    await buildFont(args.shouldRebuildAll);
+    await buildFont(newIcons.length > 0 || args.shouldRebuildAll);
 })().then(() => {
     console.timeEnd('Build time')
     console.log(ansiColors.green(ansiColors.bold('\nBuild complete!')));

@@ -1,8 +1,8 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, writeFileSync } from "fs";
 import path from "path";
-import rename from './rename.js'
+import rename from '../rename.js'
 import { FontAssetType, generateFonts, OtherAssetType } from '@twbs/fantasticon';
-import { patch } from "../tools/dep-patch/index.js";
+import { patch } from "../../tools/dep-patch/index.js";
 import ansiColors from "ansi-colors";
 import SVGFixer from 'oslllo-svg-fixer';
 
