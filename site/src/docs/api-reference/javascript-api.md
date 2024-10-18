@@ -80,10 +80,10 @@ console.log(iconInfo.tags);
 ```
 
 ### search
-* **Parameters:** `key: string`
+* **Parameters:** `query: string`
 * **Returns:** [`ProIconInfo[]`](./javascript-api.md#proiconinfo)
 
-Searches for icons with names or tags that contain `key` and returns them as `ProIconInfo`. Unlike [`proicons.getIconInfo()`](#geticoninfo), you can search for icons via tags without throwing an error.
+Searches for icons with names or tags that contain `key` and returns them as `ProIconInfo`. Unlike [`proicons.getIconInfo()`](#geticoninfo), you can search for icons via tags without throwing an error. Note that the results are in alphabetical order, not the result score.
 
 #### Example
 

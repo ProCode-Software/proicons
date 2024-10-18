@@ -1,5 +1,4 @@
-import icons from './configs/icons.json';
-import tags from './configs/tags.json';
+import icons from '../icons/icons.json';
 import { ProIconInfo } from './interfaces';
 import rename from '../bin/rename';
 
@@ -19,11 +18,11 @@ function getIconInfo(key: string): ProIconInfo {
     const isKebab = (t: string) => rename.kebabCase(t.toLowerCase()) == rename.kebabCase(key.toLowerCase());
     const isCamel = isFriendly
 
-    if (Object.keys(tags).some(isFriendly)) {
-        prop = rename.camelCase(Object.keys(tags).find(isFriendly));
+    if (Object.keys(icons).some(isFriendly)) {
+        prop = rename.camelCase(Object.keys(icons).find(isFriendly));
 
-    } else if (Object.keys(tags).some(isKebab)) {
-        prop = rename.camelCase(Object.keys(tags).find(isKebab));
+    } else if (Object.keys(icons).some(isKebab)) {
+        prop = rename.camelCase(Object.keys(icons).find(isKebab));
 
     } else if (Object.keys(icons).some(isCamel)) {
         // @ts-ignore
@@ -33,21 +32,22 @@ function getIconInfo(key: string): ProIconInfo {
         throw new Error(`Invalid icon key '${key}': Icon not found`);
     }
 
-    const friendlyName = Object.keys(tags).find((t) => {
+    const friendlyName = Object.keys(icons).find((t) => {
         return rename.camelCase(t) == prop;
     });
 
     const domParser = new DOMParser();
-    const parsed = domParser.parseFromString(icons[prop], 'image/svg+xml');
+    const parsed = domParser.parseFromString(icons[friendlyName].icon, 'image/svg+xml');
 
-    const tagItem = tags[friendlyName]
+    const tagItem = icons[friendlyName]
+
     const info = new ProIconInfo(
-        friendlyName, //friendly
-        rename.kebabCase(friendlyName), //kebab
-        prop, //camel
-        parsed.querySelector('svg'), //svg
-        tagItem.description?.split(',').map(m => m.trim()), //desc
-        tagItem.category, //tags
+        friendlyName,
+        rename.kebabCase(friendlyName),
+        prop,
+        parsed.querySelector('svg'),
+        tagItem.description?.split(',').map(m => m.trim()),
+        tagItem.category,
     );
     return info;
 }

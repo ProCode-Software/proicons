@@ -22,12 +22,24 @@ export interface ProIconReplaceConfig {
 }
 
 export class ProIconInfo {
+    /** The name of the icon in Friendly Form */
     name: string;
+
+    /** The name of the icon in kebab-case */
     kebabCase: string;
+
+    /** The name of the icon in camelCase */
     camelCase: string;
+
+    /** The icon as an `SVGSVGElement`. Use the `outerHTML` property on this to return the icon as a string. */
     element: SVGSVGElement;
+
+    /** The category of the icon. */
     category: string;
+
+    /** An array of the icon's tags. */
     tags: string[];
+
     /**
      * 
      * @param name The name of the icon in Friendly Form
