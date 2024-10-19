@@ -14,7 +14,7 @@ const { query } = defineProps<{ query: string }>()
             </p>
         </div>
         <VPButton text="Request on GitHub" theme="alt"
-            href="https://github.com/ProCode-Software/proicons" />
+            href="https://github.com/ProCode-Software/proicons/discussions/categories/icon-requests" />
     </div>
 
 </template>

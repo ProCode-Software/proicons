@@ -29,11 +29,11 @@ const type: 'color' | 'slider' = 'color'
                 <div>
                     <CustomizerField type="slider"
                         label="Corner radius"
-                        :defaultValue="24" :min="16"
+                        :defaultValue="24" :min="16" bind="corner-radius"
                         :max="48" suffix="px" tooltip="May not apply to all icons" />
 
                     <CustomizerField type="toggle"
-                        label="Outline fills"
+                        label="Outline fills" bind="outline"
                         :defaultValue="false" tooltip="Add strokes to filled SVG elements for balance" />
                 </div>
             </details>

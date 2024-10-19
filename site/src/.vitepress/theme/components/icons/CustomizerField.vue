@@ -107,7 +107,6 @@ const updateSwitchValue = inject('update-slider-value', (e) => {
     width: 20px;
     height: 20px;
     display: inline-flex;
-    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/info.svg");
 }
 
 .colorPicker {

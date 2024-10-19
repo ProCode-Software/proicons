@@ -19,8 +19,6 @@ const filteredIcons = computed(() => query.value.length > 1
 
 function selectIcon(ic) {
     selectedIcon.value = ic
-    console.log(ic);
-    
 }
 </script>
 <template>

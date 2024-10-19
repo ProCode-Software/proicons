@@ -260,3 +260,7 @@ p.custom-block-title {
     color: var(--vp-c-text-3) !important;
     font-weight: 500 !important;
 }
+
+input {
+    font-family: inherit;
+}

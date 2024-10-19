@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from "fs";
+import { readFileSync } from "fs";
 import { resolve } from "path";
 
 export function generateChangelog() {
@@ -27,4 +27,4 @@ export function generateChangelog() {
     return changelog
 }
 
-writeFileSync(resolve('CHANGELOG.md'), generateChangelog())
+console.log(generateChangelog())

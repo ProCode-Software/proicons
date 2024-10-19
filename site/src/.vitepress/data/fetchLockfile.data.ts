@@ -4,6 +4,6 @@ export default {
     async load() {
         const icons = await fetch(lockfileUrl).then(res => res.json())
 
-        return { icons }
+        return { ...icons }
     },
 }

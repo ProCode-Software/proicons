@@ -1,11 +1,18 @@
 <script setup lang="ts">
 import { defineProps, defineEmits, ref, watch } from 'vue'
+import { removeParam, setParam } from "../../composables/useUrl";
 const { placeholder } = defineProps<{ placeholder: string }>()
 
 const emit = defineEmits(['update:modelValue'])
 const searchQuery = ref('')
 
 watch(searchQuery, (newValue) => {
+    if (newValue) {
+        setParam('q', newValue)
+    } else {
+        removeParam('q')
+    }
+
     emit('update:modelValue', newValue)
 })
 </script>
@@ -14,7 +21,6 @@ watch(searchQuery, (newValue) => {
         <span class="VPIcon vpi-search"></span>
         <input type="search" class="iconSearchInput"
             :placeholder="placeholder" v-model="searchQuery">
-        <kbd>/</kbd>
     </div>
 </template>
 <style lang="scss" scoped>
@@ -45,15 +51,6 @@ watch(searchQuery, (newValue) => {
         outline: none;
         background: none;
 
-    }
-
-    kbd{
-        padding: 0px 8px;
-        color: var(--vp-c-text-2);
-        border-radius: 6px;
-        font-weight: 500;
-        font-size: 12px;
-        border: 1px solid var(--vp-c-divider);
     }
 }
 
