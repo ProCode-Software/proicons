@@ -31,6 +31,9 @@
     "repository": {
         "url": "ProCode-Software/proicons"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "homepage": "https://github.com/ProCode-Software/proicons",
     "bugs": "https://github.com/ProCode-Software/proicons/issues",
     "scripts": {
