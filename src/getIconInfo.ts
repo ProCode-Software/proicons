@@ -1,6 +1,6 @@
 import icons from '../icons/icons.json';
 import { ProIconInfo } from './interfaces';
-import rename from '../bin/rename';
+import { camelCase, kebabCase } from './rename';
 
 /**
  * Returns information about an icon from the provided key.
@@ -15,14 +15,14 @@ function getIconInfo(key: string): ProIconInfo {
     let prop: string;
 
     const isFriendly = (t: string) => t.toLowerCase() == key.toLowerCase();
-    const isKebab = (t: string) => rename.kebabCase(t.toLowerCase()) == rename.kebabCase(key.toLowerCase());
+    const isKebab = (t: string) => kebabCase(t.toLowerCase()) == kebabCase(key.toLowerCase());
     const isCamel = isFriendly
 
     if (Object.keys(icons).some(isFriendly)) {
-        prop = rename.camelCase(Object.keys(icons).find(isFriendly));
+        prop = camelCase(Object.keys(icons).find(isFriendly));
 
     } else if (Object.keys(icons).some(isKebab)) {
-        prop = rename.camelCase(Object.keys(icons).find(isKebab));
+        prop = camelCase(Object.keys(icons).find(isKebab));
 
     } else if (Object.keys(icons).some(isCamel)) {
         // @ts-ignore
@@ -33,7 +33,7 @@ function getIconInfo(key: string): ProIconInfo {
     }
 
     const friendlyName = Object.keys(icons).find((t) => {
-        return rename.camelCase(t) == prop;
+        return camelCase(t) == prop;
     });
 
     const domParser = new DOMParser();
@@ -43,7 +43,7 @@ function getIconInfo(key: string): ProIconInfo {
 
     const info = new ProIconInfo(
         friendlyName,
-        rename.kebabCase(friendlyName),
+        kebabCase(friendlyName),
         prop,
         parsed.querySelector('svg'),
         tagItem.description?.split(',').map(m => m.trim()),

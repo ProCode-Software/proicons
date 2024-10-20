@@ -1,11 +1,11 @@
 import icons from '../icons/icons.json'
-import rename from '../bin/rename'
+import { camelCase } from './rename'
 
 const iconSvgElements = Object.fromEntries(
     Object.entries(icons)
         .map(entry => {
             return [
-                rename.camelCase(entry[0]),
+                camelCase(entry[0]),
                 entry[1].icon.trim()
             ]
         })

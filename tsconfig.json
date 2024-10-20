@@ -7,13 +7,13 @@
         "jsx": "react",
         "sourceMap": true,
         "outDir": "./dist",
-        "rootDir": ".",
+        "rootDir": "./src",
         "declaration": true,
         "pretty": true,
         "declarationDir": "./lib",
         "isolatedDeclarations": false,
         "moduleDetection": "force",
-        "allowJs": true,
+        
 
         // Emit only declarations
         "emitDeclarationOnly": true,
@@ -24,6 +24,6 @@
         "strict": false,
         "noUnusedParameters": false
     },
-    "include": ["src"],
+    "include": ["./src"],
     "exclude": ["node_modules", "**/node_modules/*", "**/BuildIconList/*"]
 }
