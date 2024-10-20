@@ -48,7 +48,7 @@
         "docs:dev": "pnpm vitepress dev site/src --port 9000",
         "docs:build": "pnpm vitepress build site/src",
         "docs:preview": "pnpm vitepress preview site/src",
-        "publish": "node --env-file=.env ./bin/publish.js"
+        "publishPackages": "node --env-file=.env ./bin/publish.js"
     },
     "keywords": [
         "icons",
