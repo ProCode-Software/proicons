@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineProps, defineEmits, ref, watch } from 'vue'
-import { removeParam, setParam } from "../../composables/useUrl";
+import { getParam, removeParam, setParam } from "../../composables/useUrl";
 const { placeholder } = defineProps<{ placeholder: string }>()
 
 const emit = defineEmits(['update:modelValue'])
@@ -15,12 +15,15 @@ watch(searchQuery, (newValue) => {
 
     emit('update:modelValue', newValue)
 })
+
+getParam('q') && (searchQuery.value = getParam('q'))
 </script>
 <template>
     <div class="IconSearchBar">
         <span class="VPIcon vpi-search"></span>
         <input type="search" class="iconSearchInput"
-            :placeholder="placeholder" v-model="searchQuery">
+            :placeholder="placeholder"
+            v-model="searchQuery">
     </div>
 </template>
 <style lang="scss" scoped>

@@ -30,7 +30,7 @@ const filtered = data.filter(d => d.if ?? true)
     <div class="flyout flyout-group">
         <div class="detail" v-for="item in filtered">
             <div class="key">{{ item.key }}</div>
-            <component :is="item.href ? 'a' : 'div'" class="value" :href="item.href">{{ item.value }}</component>
+            <component :is="item.href ? 'a' : 'div'" class="value" :href="item.value != 'v4.8.0' ? item.href : undefined">{{ item.value }}</component>
         </div>
     </div>
 </template>

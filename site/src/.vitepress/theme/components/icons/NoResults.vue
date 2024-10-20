@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import {computed} from 'vue'
 import VPButton from "vitepress/dist/client/theme-default/components/VPButton.vue";
 
 const { query } = defineProps<{ query: string }>()
+
+const requestUrl = computed(() => `https://github.com/ProCode-Software/proicons/discussions/new?category=icon-requests&title=[Icon%20Request]:%20${encodeURIComponent(query)}`)
+
 </script>
 <template>
     <div class="center">
@@ -14,7 +18,7 @@ const { query } = defineProps<{ query: string }>()
             </p>
         </div>
         <VPButton text="Request on GitHub" theme="alt"
-            href="https://github.com/ProCode-Software/proicons/discussions/categories/icon-requests" />
+            :href="requestUrl" />
     </div>
 
 </template>

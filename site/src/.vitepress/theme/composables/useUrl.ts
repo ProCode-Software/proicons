@@ -8,3 +8,7 @@ export function removeParam(key: string) {
     url.searchParams.delete(key);
     window.history.pushState({}, '', url);
 }
+export function getParam(key: string) {
+    const url = new URL(window.location.href);
+    return url.searchParams.get(key);
+}

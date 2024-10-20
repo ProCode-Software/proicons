@@ -5,25 +5,24 @@ import VPButton from "vitepress/dist/client/theme-default/components/VPButton.vu
 import { data as versionData } from '../fetchVersion.data'
 import { data as lockfile } from '../../../data/fetchLockfile.data'
 import IconDetailFlyout from "./IconDetailFlyout.vue";
-
-interface Icon {
-    category: string,
-    description: string,
-    icon: string
-}
+import { Icon } from '../../composables/types'
+import IconActionFlyout from "./IconActionFlyout.vue";
 
 const { icon } = defineProps<{ icon?: [string, Icon] }>()
+
+const name: string = computed(() => icon[0])
+const iconData: Icon = computed(() => icon[1])
 
 </script>
 <template>
     <aside class="IconDetail" v-if="icon">
-        <div class="iconPreviewGrid" v-html="icon[1].icon">
+        <div class="iconPreviewGrid" v-html="iconData.icon">
         </div>
 
         <div class="iconDetails">
             <div class="body">
                 <h2 class="icon">
-                    {{ icon[0] }}
+                    {{ name }}
 
                     <div class="right">
                         <button
@@ -32,26 +31,44 @@ const { icon } = defineProps<{ icon?: [string, Icon] }>()
                             <span
                                 class="VPIcon vpi-info"></span>
 
-                            <IconDetailFlyout :icon="icon[0]" />
+                            <IconDetailFlyout
+                                :icon="name" />
                         </button>
                     </div>
                 </h2>
                 <a class="categoryName"
-                    :href="`#${kebabCase(icon[1].category)}`">
-                    {{ icon[1].category }}
+                    :href="`#${kebabCase(iconData.category)}`">
+                    {{ iconData.category }}
                 </a>
             </div>
-            <div class="tagList" v-if="icon[1].description">
+            <div class="tagList"
+                v-if="iconData.description">
                 <span
-                    v-for="tag in icon[1].description.split(',')">{{
+                    v-for="tag in iconData.description.split(',')">{{
                         tag.trim() }}</span>
             </div>
-
-            <div class="iconAction">
-                <VPButton text="View code" theme="alt" />
-                <VPButton text="Copy" theme="alt" />
-                <VPButton text="Download" theme="alt" />
-            </div>
+        </div>
+        <div class="iconActions">
+            <button
+                class="VPButton medium alt flyoutButton flyout-left-center">
+                View code
+            </button>
+            <button
+                class="VPButton medium alt flyoutButton flyout-left-center">
+                Copy
+                <span
+                    class="VPIcon vpi-chevron-down"></span>
+                <IconActionFlyout :icon="icon"
+                    mode="copy" />
+            </button>
+            <button
+                class="VPButton medium alt flyoutButton flyout-left-center">
+                Download
+                <span
+                    class="VPIcon vpi-chevron-down"></span>
+                <IconActionFlyout :icon="icon"
+                    mode="download" />
+            </button>
         </div>
     </aside>
 </template>
@@ -161,9 +178,41 @@ const { icon } = defineProps<{ icon?: [string, Icon] }>()
     transition: background .15s, box-shadow .15s;
     border-radius: 100px;
 
-    &:hover {
+    &:hover,
+    &:focus {
         background: var(--vp-c-gray-2);
         box-shadow: 0 0 0 6px var(--vp-c-gray-3);
+    }
+}
+
+.iconActions {
+    padding: 20px;
+    font-size: 14px;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid var(--vp-c-divider);
+
+    .VPButton {
+        background: var(--vp-c-gray-2);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+
+        &:hover {
+            background: var(--vp-c-gray-1)
+        }
+
+        .VPIcon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+        }
     }
 }
 </style>
@@ -182,7 +231,7 @@ const { icon } = defineProps<{ icon?: [string, Icon] }>()
 .flyoutButton {
     position: relative;
 
-    &:focus .flyout {
+    &:focus .flyout, &.focus-within .flyout {
         display: flex;
     }
 
@@ -205,12 +254,49 @@ const { icon } = defineProps<{ icon?: [string, Icon] }>()
     &.flyout-right .flyout {
         right: 0;
     }
+
+    &.flyout-left-center .flyout {
+        right: calc(100% + 10px);
+        top: 50%;
+        transform: translateY(-50%);
+        animation-name: flyoutshow_left;
+    }
 }
 
 @keyframes flyoutshow {
     from {
         opacity: 0;
         transform: translateY(-10px);
+    }
+}
+@keyframes flyoutshow_left {
+    from {
+        opacity: 0;
+        transform: translateX(10px) translateY(-50%)
+    }
+}
+
+.flyout.flyout-context-menu {
+    gap: 4px;
+    padding: 12px;
+
+    .contextItem {
+        line-height: normal;
+        display: block;
+        border-radius: 6px;
+        padding: 0 12px;
+        line-height: 32px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--vp-c-text-1);
+        white-space: nowrap;
+        transition: background-color 0.25s, color 0.25s;
+        text-align: left;
+
+        &:hover {
+            color: var(--vp-c-brand-1);
+            background-color: var(--vp-c-default-soft);
+        }
     }
 }
 </style>
