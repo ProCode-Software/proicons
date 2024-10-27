@@ -78,6 +78,7 @@
         "piscina": "^4.7.0",
         "prettier": "^3.3.3",
         "progress": "^2.0.3",
+        "rollup-plugin-dts": "^6.1.1",
         "sass-embedded": "^1.79.5",
         "sharp": "^0.33.5",
         "svg2ttf": "^6.0.3",

@@ -81,3 +81,5 @@ This is still acceptable in tags. You may also put both variants if you wish, wh
 <div class="sym-img p-20">
     <img src="/guidelines/naming-4.png">
 </div>
+
+## Submitting New Icons
