@@ -4,7 +4,7 @@ editLink: true
 ---
 # Configuration API
 A configuration can be used to customize the [`proicons.replace()`](./javascript-api#replace) method.
-To use a configuration, pass the configuration as the second argument when calling `proicons.replace()`.
+To use a configuration, pass the configuration as the second argument when calling `proicons.replace()`. Most configuation properties can be applied to individual elements in [HTML](html-api#attributes).
 
 ```javascript
 proicons.replace(document.body, {

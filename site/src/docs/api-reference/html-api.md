@@ -8,7 +8,7 @@ ProIcons are designed to be easy to use inside of HTML. Similar to [Feather Icon
 To insert an `Add` icon inside HTML:
 
 ```html
-<i proicon="add"></icon>
+<i proicon="add"></i>
 ```
 ## Installation
 <!--@include: ../introduction/installation.md#install-html-->
@@ -20,7 +20,7 @@ As mentioned earlier, ProIcons can be added via the `proicon` attribute. Set the
 To insert an `Add` icon inside HTML:
 
 ```html
-<i proicon="add"></icon>
+<i proicon="add"></i>
 ```
 
 ::: tip

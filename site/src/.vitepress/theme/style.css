@@ -264,3 +264,20 @@ p.custom-block-title {
 input {
     font-family: inherit;
 }
+
+.sym-img {
+    background: var(--vp-c-bg-alt);
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+.sym-img.sh img {
+    --shadow: 0px 20px 20px rgba(0, 0, 0, .2);
+    filter: drop-shadow(var(--shadow));
+}
+.dark .sym-img.sh img {
+    --shadow: 0px 20px 10px rgb(0, 0, 0);
+}

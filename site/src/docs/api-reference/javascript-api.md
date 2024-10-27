@@ -29,7 +29,7 @@ This returns the icon as an SVG string. If you want to return the metadata of an
 * **Parameters:** `rootElm?: Element`, `config?: ProIconReplaceConfig`
 * **Returns:** `void`
 
-Converts all elements with the `proicon` attribute (can set to your own using `config.attributeName`) on the page to an icon corresponding to the attribute value.
+Converts all elements with the `proicon` attribute (can be changed with `config.attributeName`) on the page to an icon corresponding to the attribute value.
 
 #### rootElm: `Element` (optional)
 
@@ -58,7 +58,7 @@ proicons.replace(demoElement, {
 
 ### getIconInfo
 * **Parameters:** `key: string`
-* **Returns:** [`ProIconInfo[]`](./javascript-api.md#proiconinfo)
+* **Returns:** [`ProIconInfo`](./javascript-api.md#proiconinfo)
 
 Returns information about an icon from the provided key.
 
