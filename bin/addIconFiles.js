@@ -15,7 +15,7 @@ for (const inFile of readdirSync(inDir)) {
     const fileContent = readFileSync(resolve(inDir, inFile), 'utf-8');
     const svgNodes = createSvgNodes(fileContent)
 
-    import('./build/iconTemplate.js').then(({ template }) => {
+    import(templateDir).then(({ template }) => {
         template(
             moduleName,
             fileContent,
