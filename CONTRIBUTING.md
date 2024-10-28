@@ -19,7 +19,7 @@ To keep things organized, **please include only one icon per pull request** unle
 
 ## Contributing to packages
 
-The main ProIcons package is inside of the root `src` folder. Other packages are available in the `packages` folder. We use [NPM workspaces](https://docs.npmjs.com/cli/v10/using-npm/workspaces) to manage and distribute multiple packages in a single monorepo.
+The main ProIcons package is inside of the root `src` folder. Other packages are available in the `packages` folder. We use [PNPM workspaces](https://pnpm.io/workspaces) to manage and distribute multiple packages in a single monorepo.
 
 ## Contributing to documentation
 
@@ -28,6 +28,9 @@ The ProIcons documentation is built using [VitePress](https://vitepress.dev). Th
 ## Development Guide
 
 ### Getting the repo
+#### Prerequisites
+- [Node.js](https://nodejs.org) 18+
+- [PNPM](https://pnpm.io)
 
 First, clone the repository:
 
@@ -38,28 +41,51 @@ git clone https://github.com/ProCode-Software/proicons.git
 Then install dependencies
 
 ```
-npm install
+pnpm install
 ```
 
-The command above will install dependencies for all packages. If you want to install dependencies for a specific package, use the flag `-w [package name]`.
+The command above will install dependencies for all packages. If you want to install dependencies for a specific package, run `pnpm --filter [package] install`.
+
+Note that you will need to install all dependencies if you want to build the icon set.
 
 ### Adding an icon
+The [Figma desktop app](https://www.figma.com/downloads/) is recommended, along with our [Build Icon List](https://github.com/ProCode-Software/proicons/tree/main/tools/BuildIconList) plugin cloned and [imported](#installing-the-figma-plugin) into Figma.
 
-The [Figma desktop app](https://www.figma.com/downloads/) is required for these steps. Please also make sure you have our [Build Icon List](https://github.com/ProCode-Software/proicons/tree/main/tools/BuildIconList) plugin cloned and imported into Figma.
+#### Installing the Figma plugin *(Recommended if using Figma)*
+1. Make sure you have cloned the ProIcons repository
+2. Select the dropdown in the title bar or right click in a file > *Plugins > Development > Import plugin from manifest...*
+3. Upload the `manifest.json` file located in `proicons/tools/BuildIconList/`.
 
-1. Export your icon into the `proicons/in` folder and name it in Friendly Form. Make sure the icon is colored black and the strokes aren't outlined.
-2. Run the Build Icon List plugin. Make sure the following criteria is met before running the plugin.
+#### Using Build Icon List plugin in Figma
+1. After designing your icon, make it a component by pressing `Ctrl + Alt + K` or `Cmd + Option + K`
 
-    - Make your icon into a component
-    - Press `Ctrl + Alt + G` or `Option + Cmd + G` to put your component into another frame
-    - Run the plugin on the newly created frame, which should already be selected.
-        > [!NOTE]
-        > We are working on making this workflow easier in the future
+2. In `Component configuration` in the sidebar, add a description
 
-3. Copy the generated JSON and add it into the `src/configs/tags.json`
-    > [!CAUTION]
-    > Please make sure you are adding it into `tags.json` instead of `icons.json` or `icons.lock.json`. These files are auto-generated during build.
-4. Run `npm run icons:build` to automatically add it into the `icons` folder as SVGs and PNGs and into the files mentioned above.
+3. Run the Build Icon List plugin by right-clicking and selecting *Plugins > Development > Build Icon List*. A popup will show with your generated JSON.
+
+> [!NOTE]
+> You may see a warning saying `1 icon doesn't have a category` or similar. If you see this, replace `NO CATEGORY` in your JSON data with a category that is [already in the set](https://procode-software.github.io/proicons/icons) (case-sensitive).
+>
+> This can be avoided by putting your icon in a frame (`Ctrl + Alt + G`/`Cmd + Option + G`) (**Do not make this new frame into a component**) and naming it your category before running the plugin.
+
+4. Paste the generated JSON into a new file at `proicons/in/in.json`
+
+#### Using other software
+1. Create a new file at `proicons/in/in.json` with the following content:
+
+```json
+{
+    "Icon Name": {
+        "description": "Icon description",
+        "category": "Icon category",
+        "icon": "Paste your icon's escaped SVG code"
+    },
+    // ...other icons
+}
+```
+
+#### Building the icon set
+Run `pnpm run icons:build` in the `proicons` folder to create PNG and SVG files from your icons in `proicons/icons` and add them to `icons.json` and `icons.lock.json`
 
 ### Testing packages
 
@@ -70,9 +96,9 @@ To ensure your changes work, test your changes. This can be done by creating a s
 cd proicons
 
 # It is important to build your package when testing!
-npm run build
+pnpm run build
 
-npm link
+pnpm link
 
 # Create a testing folder and initialize a package
 mkdir test
