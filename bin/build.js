@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'fs'
 import { resolve } from 'path';
 import { resolveConfig, format } from 'prettier';
-import rename from './rename.js';
+import * as rename from './rename.js';
 import ansiColors from 'ansi-colors';
 import { optimize } from 'svgo';
 import progress from 'progress';
@@ -206,7 +206,7 @@ async function buildPngs() {
     const promises = []
     for (const file of (args.shouldRebuildAll ? svgFiles : newSvgsOnly)) {
         promises.push((async () => {
-            
+
             await worker.run({ file, root: __rootdir })
 
             progressBar.tick(1, {

@@ -1,7 +1,7 @@
 import { fstat, readFileSync, renameSync, writeFileSync } from "fs";
 import { formatJson } from "./utils.js";
 import { resolve } from "path";
-import renameText from '../../../bin/rename.js'
+import * as renameText from '../../../bin/rename.js'
 import ansiColors from "ansi-colors";
 const kebabCase = renameText.kebabCase
 

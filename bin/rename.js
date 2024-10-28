@@ -1,10 +1,20 @@
-function removeParenthesis(str) {
-    return str.replace(/[()]/g, '')
+export function format(str) {
+    return str.replace(/[-_()]/g, ' ').replace(/\s\s+/g, ' ')
 }
-function camelCase(str) {
-    return removeParenthesis(str).split(' ').map((word, i) => i == 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1)).join('')
+export function camelCase(str) {
+    return format(str).split(' ').map((word, i) => i == 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1)).join('')
 }
-function kebabCase(str) {
-    return removeParenthesis(str).replaceAll(' ', '-').toLowerCase()
+export function kebabCase(str) {
+    return format(str).replaceAll(' ', '-').toLowerCase()
 }
-export default { camelCase, kebabCase };
+export function pascalCase(str) {
+    return format(str).replaceAll(' ', '')
+}
+
+export function kebabToPascalCase(str) {
+    return format(str)
+        .replace(/(?<!\-)\-/g, ' ')
+        .split(' ')
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join('')
+}
