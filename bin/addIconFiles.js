@@ -6,7 +6,7 @@ import { getCliParams } from "./build/getCliParam.js";
 
 const outDirParam = getCliParams(process, 'out')
 const templateDirParam = getCliParams(process, 't', 'template')
-const formatParam = getCliParams(process, 'format')
+const formatParam = getCliParams(process, 'format', 'f')
 
 const templateDir = resolve(process.cwd(), templateDirParam)
 const outDir = resolve(process.cwd(), outDirParam)
@@ -25,6 +25,7 @@ const inDir = resolve('icons/svg');
         const renderTemplate = (await import(templateDir)).default
 
         const result = renderTemplate(moduleName, svgContent, svgNodes)
+        
 
         /* writeFileSync(
             resolve(outDir, `${moduleName}.${formatParam}`),
