@@ -136,3 +136,6 @@ out
 # VitePress
 **/.vitepress/cache/
 site/dist/
+
+# Icon modules
+**/src/icons/

@@ -39,6 +39,7 @@
     "scripts": {
         "dev": "pnpm vite",
         "icons:build": "node --no-deprecation ./bin/build.js",
+        "icons:build-modules": "node ./bin/addIconFiles.js -t './bin/build/iconTemplate.js' -out './src/icons' --format ts",
         "icons:optimize": "pnpm run icons:build -o",
         "icons:build-frozen": "pnpm run icons:build -l",
         "icons:build-rebuild": "pnpm run icons:build -r",
