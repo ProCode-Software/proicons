@@ -8,6 +8,9 @@ import { ProIconReplaceConfig, ProIconInfo } from './interfaces';
  * @param config An optional configuration to customise the behaviour of the replace method
  */
 function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
+    if (!'document' in window) {
+        throw new Error("proicons.replace() only works in a browser environment")
+    }
     if (!rootElm) rootElm = document.body;
     const useAttrs = config?.useAttributes ?? true
 

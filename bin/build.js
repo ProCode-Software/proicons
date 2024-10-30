@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'fs'
 import { resolve } from 'path';
-import { resolveConfig, format } from 'prettier';
+import { prettierFormat } from './build/prettierFormat.js'
 import * as rename from './rename.js';
 import ansiColors from 'ansi-colors';
 import { optimize } from 'svgo';
@@ -62,14 +62,6 @@ function getIconsJson() {
         readFileSync(iconsJsonPath, 'utf-8')
     )
     return iconsJson
-}
-
-async function prettierFormat(data) {
-    const options = await resolveConfig('.prettierrc');
-    options.parser = 'json';
-    const formatted = await format(JSON.stringify(data), options);
-
-    return formatted
 }
 
 // Only optimize icons

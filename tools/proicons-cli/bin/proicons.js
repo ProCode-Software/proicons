@@ -13,7 +13,7 @@ program.command('rename')
 
 program.command('deprecate')
     .description('Deprecate an icon')
-    .argument('iconName', 'The icon name to deprecate')
+    .argument('iconName', 'The icon name to deprecate (friendly case)')
     .argument('[alternative]')
     .action(deprecate)
 

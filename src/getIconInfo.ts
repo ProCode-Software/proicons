@@ -11,7 +11,7 @@ import { camelCase, kebabCase } from './rename';
  * getIconInfo('addSquare')
  * getIconInfo('add-square')
  */
-function getIconInfo(key: string): ProIconInfo {
+function getIconInfo(key: string): ProIconInfo | undefined {
     let prop: string;
 
     const isFriendly = (t: string) => t.toLowerCase() == key.toLowerCase();
@@ -29,27 +29,14 @@ function getIconInfo(key: string): ProIconInfo {
         prop = Object.keys(icons).find(isCamel);
 
     } else {
-        throw new Error(`Invalid icon key '${key}': Icon not found`);
+        return
     }
 
     const friendlyName = Object.keys(icons).find((t) => {
         return camelCase(t) == prop;
     });
 
-    const domParser = new DOMParser();
-    const parsed = domParser.parseFromString(icons[friendlyName].icon, 'image/svg+xml');
-
-    const tagItem = icons[friendlyName]
-
-    const info = new ProIconInfo(
-        friendlyName,
-        kebabCase(friendlyName),
-        prop,
-        parsed.querySelector('svg'),
-        tagItem.description?.split(',').map(m => m.trim()),
-        tagItem.category,
-    );
-    return info;
+    return icons[friendlyName]
 }
 
 export default getIconInfo

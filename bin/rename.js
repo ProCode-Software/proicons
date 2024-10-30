@@ -18,3 +18,7 @@ export function kebabToPascalCase(str) {
         .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
         .join('')
 }
+
+export function pascalToCamelCase(str) {
+    return str.charAt(0).toLowerCase() + str.slice(1)
+}
