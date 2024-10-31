@@ -8,5 +8,5 @@ import { ProIconInfo } from './interfaces';
  * getIconInfo('addSquare')
  * getIconInfo('add-square')
  */
-declare function getIconInfo(key: string): ProIconInfo;
+declare function getIconInfo(key: string): ProIconInfo | undefined;
 export default getIconInfo;
