@@ -39,7 +39,6 @@ export default (moduleName, nodes) => {
 
     return `
 import { createIcon } from '../createIcon'
-import { ProIconInfo } from '../interfaces'
     
 /**
  * @description ${iconData.description}

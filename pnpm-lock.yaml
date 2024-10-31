@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      jsdom:
-        specifier: ^25.0.1
-        version: 25.0.1
     devDependencies:
       '@proicons/cli':
         specifier: workspace:*
@@ -36,6 +32,9 @@ importers:
       jimp:
         specifier: ^1.6.0
         version: 1.6.0
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
       minisearch:
         specifier: ^7.1.0
         version: 7.1.0
