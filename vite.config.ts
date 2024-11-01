@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => {
                 entry: resolve(__dirname, 'src/proicons.ts'),
                 name: 'proicons',
                 formats: ['es', 'umd', 'cjs'],
-                fileName: (format) => `${format}/proicons.${format == 'es' ? 'js' : 'cjs'}`
+                fileName: (format) => `${format == 'es' ? 'esm' : format}/proicons.${format == 'es' ? 'js' : 'cjs'}`
             },
         },
         server: {
