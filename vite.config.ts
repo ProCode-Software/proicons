@@ -1,16 +1,31 @@
 import { resolve } from "path"
 import { defineConfig } from "vite"
 import { createHtmlPlugin } from "vite-plugin-html"
+import license from 'rollup-plugin-license'
+import { dts } from 'rollup-plugin-dts'
 
 // @ts-ignore
-export default defineConfig(({ mode }) => {
+const config = defineConfig(({ mode }) => {
     const isProduction = mode === 'production';
     return {
         build: {
             target: 'es2015',
             sourcemap: true,
             rollupOptions: {
-                plugins: isProduction ? [] : [createHtmlPlugin({
+                plugins: isProduction
+                    ? [license({
+                        sourcemap: true,
+                        cwd: process.cwd(),
+
+                        banner: {
+                            commentStyle: 'regular',
+
+                            content: {
+                                file: resolve('./LICENSE'),
+                            }
+                        }
+                    })]
+                    : [createHtmlPlugin({
                     template: resolve('src/test.html'),
                     entry: resolve('src/proicons.ts'),
                 })]
@@ -28,3 +43,11 @@ export default defineConfig(({ mode }) => {
         }
     }
 })
+
+const types = {
+    input: resolve("./lib/proicons.d.ts"),
+    output: [{ file: resolve("./lib/index.d.ts"), format: "es" }],
+    plugins: [dts()],
+}
+
+export default [config, types]
