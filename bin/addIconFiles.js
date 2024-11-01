@@ -10,12 +10,12 @@ const outDirParam = getCliParams(process, 'out')
 const templateDirParam = getCliParams(process, 't', 'template')
 const formatParam = getCliParams(process, 'format', 'f')
 const indexDirParam = getCliParams(process, 'index-dir', 'i')
+const iconListDirParam = getCliParams(process, 'icon-list')
 
 const shouldCleanDir = process.argv.slice(2).includes('--clean')
 
 const templateDir = resolve(process.cwd(), templateDirParam)
 const outDir = resolve(process.cwd(), outDirParam)
-const indexOutDir = resolve(process.cwd(), indexDirParam)
 
 const inDir = resolve('icons/svg');
 // const outDir = resolve('src/icons');
@@ -56,10 +56,18 @@ const modules = [];
 
     console.log(ansiColors.green(`Successfully created .${formatParam} files for ${files.length} files in ${outDir}!`));
 
-    const indexTemplate = modules.map(
-        ({ name, path }) => `export { default as ${name} } from '${path}'`)
-        .join('\n')
+    if (indexDirParam) {
+        const indexOutDir = resolve(process.cwd(), indexDirParam)
 
-    writeFileSync(indexOutDir, indexTemplate)
-    console.log(ansiColors.green(`Successfully created icons index at ${indexOutDir}!`));
+        const indexTemplate = modules.map(
+            ({ name, path }) => `export { default as ${name} } from '${path}'`)
+            .join('\n')
+
+        writeFileSync(indexOutDir, indexTemplate)
+        console.log(ansiColors.green(`Successfully created icons index at ${indexOutDir}!`));
+    }
+    if (iconListDirParam) {
+        const iconListDir = resolve(process.cwd(), iconListDirParam)
+        // TODO: add icon list
+    }
 })()
