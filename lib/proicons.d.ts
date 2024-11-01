@@ -1,4 +1,4 @@
-import icons from './icons';
+import * as icons from './icons';
 import categories from './categories';
 import replace from './replace';
 import getIconInfo from './getIconInfo';

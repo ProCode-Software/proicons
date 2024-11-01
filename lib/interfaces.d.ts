@@ -55,6 +55,7 @@ export declare class ProIconInfo {
     constructor(name: string, tags: string[], category: string, nodes: IconNode[]);
     /**
      * Returns an SVG string from the icon with the provided options
+     * Note that this also works outside of a browser environment
      * @param options Customization options for the icon
      */
     toSvg(options?: ProIconsOptions): string;
