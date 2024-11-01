@@ -1,10 +1,10 @@
-import lockfile from '../../icons/icons.lock.json' with {type: 'json'}
-import icons from '../../icons/icons.json' with {type: 'json'}
-import { camelCase, kebabCase, pascalToCamelCase } from "../rename.js"
+import lockfile from '../../../icons/icons.lock.json' with {type: 'json'}
+import icons from '../../../icons/icons.json' with {type: 'json'}
+import { camelCase, kebabCase, pascalToCamelCase } from "../../rename.js"
 
 /**
  * @param {string} moduleName
- * @param {import("./createSvgNodes").IconNode[]} nodes
+ * @param {import("../createSvgNodes.js").IconNode[]} nodes
  * @returns {string}
  */
 export default (moduleName, nodes) => {

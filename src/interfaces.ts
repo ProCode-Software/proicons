@@ -1,6 +1,6 @@
 import { IconNode } from './createIcon';
 import * as rename from './rename'
-import { renderNodeWithRoot } from './renderNodes';
+import { renderNodeWithRoot, rootNode } from './renderNodes';
 
 export interface ProIconsOptions {
     /** Determines the color of the icons. Defaults to `currentColor`. */
@@ -84,9 +84,17 @@ export class ProIconInfo {
 
     /**
      * Returns an SVG string from the icon with the provided options
+     * Note that this also works outside of a browser environment
      * @param options Customization options for the icon
      */
     toSvg(options?: ProIconsOptions): string {
-        return renderNodeWithRoot(this.#nodes)
+        const newRootNode = structuredClone(rootNode)
+
+        if (options?.size) {
+            rootNode[1].width = options.size.toString()
+            rootNode[1].height = options.size.toString()
+        } 
+        
+        return renderNodeWithRoot(this.#nodes, newRootNode)
     }
 }
