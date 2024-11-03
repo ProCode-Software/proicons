@@ -10,10 +10,9 @@
         "rootDir": "./src",
         "declaration": true,
         "pretty": true,
-        "declarationDir": "./lib",
+        "declarationDir": "./_lib",
         "moduleDetection": "force",
         
-
         // Emit only declarations
         "emitDeclarationOnly": true,
 
@@ -24,5 +23,5 @@
         "noUnusedParameters": false
     },
     "include": ["./src"],
-    "exclude": ["node_modules", "**/node_modules/*", "**/BuildIconList/*", "**/src/icons"]
+    "exclude": ["node_modules", "**/node_modules/*", "**/BuildIconList/*", "**/src/icons/*"]
 }

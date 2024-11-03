@@ -39,7 +39,7 @@
     "scripts": {
         "dev": "pnpm vite",
         "icons:build": "node --no-deprecation ./bin/build.js",
-        "icons:build-modules": "node ./bin/addIconFiles.js -t './bin/build/templates/iconTemplate.js' -out './src/icons' -i './src/icons.ts' --icon-list './src/icons-list.ts' --format ts --clean",
+        "icons:build-modules": "node ./bin/addIconFiles.js -t './bin/build/templates/iconTemplate.js' -out './src/icons' -i './src/icons.ts' -d --format ts --clean",
         "icons:optimize": "pnpm run icons:build -o",
         "icons:build-frozen": "pnpm run icons:build -l",
         "icons:build-rebuild": "pnpm run icons:build -r",
@@ -82,7 +82,8 @@
         "prettier": "^3.3.3",
         "progress": "^2.0.3",
         "rollup": "^4.24.3",
-        "rollup-plugin-license": "^3.5.3",
+        "rollup-plugin-dts": "^6.1.1",
+        "rollup-plugin-esbuild": "^6.1.1",
         "sass-embedded": "^1.80.5",
         "sharp": "^0.33.5",
         "svg2ttf": "^6.0.3",

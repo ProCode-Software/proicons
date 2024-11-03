@@ -1,6 +1,6 @@
-import lockfile from '../../../icons/icons.lock.json' with {type: 'json'}
-import icons from '../../../icons/icons.json' with {type: 'json'}
-import { camelCase, kebabCase, pascalToCamelCase } from "../../rename.js"
+import icons from '../../../icons/icons.json' with { type: 'json' }
+import lockfile from '../../../icons/icons.lock.json' with { type: 'json' }
+import { camelCase, pascalToCamelCase } from "../../rename.js"
 
 /**
  * @param {string} moduleName
@@ -8,7 +8,8 @@ import { camelCase, kebabCase, pascalToCamelCase } from "../../rename.js"
  * @returns {string}
  */
 export default (moduleName, nodes) => {
-    const camelName = pascalToCamelCase(moduleName)
+    const realName = moduleName.slice(0, -4)
+    const camelName = pascalToCamelCase(realName)
     const friendlyName = Object.keys(icons).find(key => camelCase(key) == camelName)
 
     if (!friendlyName) {
@@ -45,8 +46,8 @@ import { createIcon } from '../createIcon'
  * @preview ![Icon preview](data:image/svg+xml;base64,${rawSvgData})
  * @added v${lockfileItem.added}${lockfileItem.updated ? `\n * @updated v${lockfileItem.updated}` : ''}${deprecationData ? `\n * @deprecated Use ${deprecationData.alternative} instead` : ''}
  */
-const ${moduleName}Icon = createIcon(${JSON.stringify(iconInfo)}, ${JSON.stringify(nodes)})
+const ${moduleName} = createIcon(${JSON.stringify(iconInfo)}, ${JSON.stringify(nodes)})
 
-export default ${moduleName}Icon
+export default ${moduleName}
 `.trim()
 }

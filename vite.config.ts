@@ -1,7 +1,6 @@
 import { format, resolve } from 'path';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
-import license from 'rollup-plugin-license';
 import dts from 'vite-plugin-dts';
 import { ModuleFormat } from 'module';
 import { UserConfig } from 'vite';

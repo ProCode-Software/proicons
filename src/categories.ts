@@ -1,8 +1,31 @@
-import icons from '../icons/icons.json'
-
-/** List of all icon categories */
-const categories = Object.values(icons)
-    .map((item) => item.category)
-    .filter((value, index, self) => self.indexOf(value) === index)
-
-export default categories
+export default [
+    'Actions',
+    'Security',
+    'Communication & Cloud',
+    'Objects',
+    'Status',
+    'Emojis',
+    'Arrows',
+    'Text',
+    'Files',
+    'System & Interface',
+    'Places & Transportation',
+    'Layout',
+    'Design',
+    'Window',
+    'Development',
+    'Shapes',
+    'Accents',
+    'Logos & Brands',
+    'Activities',
+    'Business',
+    'Food & Drink',
+    'Gestures',
+    'Math & Numbers',
+    'Media',
+    'Nature',
+    'Miscellaneous',
+    'Organization',
+    'Technology',
+    'Weather',
+];

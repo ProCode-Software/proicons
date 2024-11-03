@@ -132,6 +132,7 @@ out
 /dist/
 /lib/
 /_outlined/
+/_lib/
 
 # VitePress
 **/.vitepress/cache/

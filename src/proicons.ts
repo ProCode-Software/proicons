@@ -1,11 +1,18 @@
-import * as icons from './icons';
+import * as icons from './icons'
 import categories from './categories'
-import replace from './replace'
-import getIconInfo from './getIconInfo'
-import search from './search'
+import iconList from './iconList'
 
 export {
-    /** List of all available icons with camelCase keys and SVG strings as values. */
+    /** List of all available icons with PascalCase keys and `ProIconInfo` values. */
     icons,
-    replace, getIconInfo, categories, search
-};
+    /** List of all categories */
+    categories,
+    /** List of all icon names as strings */
+    iconList
+}
+
+export { default as replace } from './replace'
+export { default as getIconInfo } from './getIconInfo'
+export { default as search } from './search'
+
+export * from './icons'
