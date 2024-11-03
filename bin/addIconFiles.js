@@ -4,7 +4,7 @@ import { resolve } from 'path';
 import { createSvgNodes } from './build/createSvgNodes.js';
 import { getCliParams } from './build/getCliParam.js';
 import { prettierFormat } from './build/prettierFormat.js';
-import { kebabToPascalCase } from './rename.js';
+import { kebabToPascalCase, pascalToCamelCase } from './rename.js';
 import icons from '../icons/icons.json' with { type: 'json' };
 
 const outDirParam = getCliParams(process, 'out');
@@ -61,7 +61,12 @@ const modules = [];
         const indexOutDir = resolve(process.cwd(), indexDirParam);
 
         const indexTemplate = modules
-            .map(({ name, path }) => `export { default as ${name} } from '${path}'`)
+            .map(({ name, path }) => {
+                // For backwards compatibility
+                const camelModuleName = pascalToCamelCase(name.slice(0, -4))
+
+                return `export { ${name}, ${name} as ${camelModuleName} } from '${path}'`
+            })
             .join('\n');
 
         writeFileSync(indexOutDir, indexTemplate);

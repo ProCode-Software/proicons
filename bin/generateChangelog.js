@@ -26,5 +26,3 @@ export function generateChangelog() {
 
     return changelog
 }
-
-console.log(generateChangelog())

@@ -28,4 +28,4 @@ export default [
     'Organization',
     'Technology',
     'Weather',
-];
+]

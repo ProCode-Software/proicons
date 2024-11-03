@@ -2,7 +2,10 @@
     "compilerOptions": {
         "module": "ESNext",
         "moduleResolution": "Bundler",
-        "lib": ["ESNext", "DOM"],
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
         "target": "ES6",
         "jsx": "react",
         "sourceMap": true,
@@ -12,16 +15,20 @@
         "pretty": true,
         "declarationDir": "./_lib",
         "moduleDetection": "force",
-        
         // Emit only declarations
         "emitDeclarationOnly": true,
-
         // Lint
         "strictNullChecks": false,
         "strictFunctionTypes": false,
         "strict": false,
         "noUnusedParameters": false
     },
-    "include": ["./src"],
-    "exclude": ["node_modules", "**/node_modules/*", "**/BuildIconList/*", "**/src/icons/*"]
+    "include": [
+        "./src"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*",
+        "**/BuildIconList/*",
+    ]
 }

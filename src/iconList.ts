@@ -446,4 +446,4 @@ export default [
     'Branch Pull Request',
     'Candy',
     'Svelte',
-];
+]

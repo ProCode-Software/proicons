@@ -3,6 +3,7 @@
     "version": "4.9.0",
     "description": "ProIcons package for Roblox",
     "main": "out/init.lua",
+    "private": true,
     "scripts": {
         "build": "rbxtsc",
         "watch": "rbxtsc -w",

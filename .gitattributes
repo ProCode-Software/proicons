@@ -1,3 +1,4 @@
 **/.vitepress/theme/** -linguist-detectable
+tools/data/* -linguist-detectable
 icons/fonts/** -linguist-detectable
 *.html -linguist-detectable

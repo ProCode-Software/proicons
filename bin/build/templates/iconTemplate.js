@@ -48,6 +48,6 @@ import { createIcon } from '../createIcon'
  */
 const ${moduleName} = createIcon(${JSON.stringify(iconInfo)}, ${JSON.stringify(nodes)})
 
-export default ${moduleName}
+export { ${moduleName} }
 `.trim()
 }
