@@ -13,13 +13,7 @@ export const rootNode: IconNode = [
     [],
 ];
 
-export const defaultProperties: ProIconsOptions = {
-    color: 'currentColor',
-    size: 24,
-    strokeWidth: 1.5,
-};
-
-export function convertNodesWithConfig(nodes: IconNode[], options: ProIconsOptions): IconNode[] {
+export function convertNodesWithConfig(nodes: IconNode[], options?: ProIconsOptions): IconNode[] {
     const attributeKey: Partial<Record<keyof ProIconsOptions, string[]>> = {
         // configKey, svgAttr
         color: ["stroke", "fill"],
@@ -29,16 +23,16 @@ export function convertNodesWithConfig(nodes: IconNode[], options: ProIconsOptio
         cornerRadius: ["rx"],
         strokeFilledElements: undefined,
     }
+
+    if (!options) return nodes
     
     return nodes.map(node => {
         const children = node[2]
 
-        for (const a of Object.entries(attributeKey)) {
-            const [optionK, svgAttrs] = a
-
+        for (const [optionK, svgAttrs] of Object.entries(attributeKey)) {
             if (svgAttrs) {
                 for (const s of svgAttrs) {
-                    if (node[1][s]) {
+                    if (node[1][s] && options[optionK]) {
                         node[1][s] = options[optionK]
                     }
                 }
@@ -52,8 +46,20 @@ export function convertNodesWithConfig(nodes: IconNode[], options: ProIconsOptio
     })
 }
 
-export function renderNodeWithRoot(nodes: IconNode[], root: IconNode): string {
+export function renderNodeWithRoot(nodes: IconNode[], rootNode: IconNode, options: ProIconsOptions): string {
+    const root = structuredClone(rootNode)
     root[2].push(...nodes)
+
+    if (options?.size) {
+        root[1].width = options.size.toString()
+        root[1].height = options.size.toString()
+    }
+
+    if (options?.attributes) {
+        for (const [k, v] of Object.entries(options.attributes)) {
+            root[1][k] = v
+        }
+    }
 
     return renderNodes([root])
 }

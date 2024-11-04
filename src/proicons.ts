@@ -3,7 +3,10 @@ import categories from './categories'
 import iconList from './iconList'
 
 export {
-    /** List of all available icons with PascalCase keys and `ProIconInfo` values. */
+    /** List of all available icons as `ProIconInfo`.
+     * 
+     * Note: This will imports all icons and breaks tree-shaking
+     */
     icons,
     /** List of all categories */
     categories,

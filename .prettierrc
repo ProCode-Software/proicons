@@ -2,8 +2,10 @@
     "semi": false,
     "arrowParens": "avoid",
     "singleQuote": true,
-    "trailingComma": "all",
-    "printWidth": 120,
+    "trailingComma": "es5",
+    "printWidth": 85,
     "endOfLine": "lf",
-    "tabWidth": 4
+    "tabWidth": 4,
+    "vueIndentScriptAndStyle": false,
+    "svelteIndentScriptAndStyle": false
 }

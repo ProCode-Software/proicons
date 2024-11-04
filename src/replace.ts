@@ -1,14 +1,16 @@
 // @ts-nocheck
 import getIconInfo from './getIconInfo'
 import { ProIconReplaceConfig, ProIconInfo } from './interfaces';
+import { icons } from './proicons';
 
 /**
  * Converts all elements with the `proicon` attribute (which can be customised in the config) on the page to an icon corresponding to the attribute value.
- * Note that this only works in a browser environment.
+ * Note that this only works in a browser environment. This also breaks tree-shaking.
  * @param rootElm The element to search inside for children with the `proicon` attribute. Defaults to `document.body`.
  * @param config An optional configuration to customise the behaviour of the replace method
  */
 function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
+    // TODO: fix
     if (!window?.document) {
         throw new Error("proicons.replace() only works in a browser environment")
     }
@@ -17,6 +19,7 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
 
     const attr = config?.attributeName ?? 'proicon';
     rootElm.querySelectorAll(`[${attr}]`).forEach((element) => {
+
         let toReplace;
         switch (config?.overwrite) {
             case true: toReplace = true; break;
@@ -26,9 +29,13 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
         }
 
         let iconName = element.getAttribute(attr).trim()
-        let icon: SVGElement = getIconInfo(iconName).element
 
-        const attributeList = {
+
+        let icon: SVGElement = document.createElement('svg')
+        icon.innerHTML = getIconInfo(iconName).toSvg(config)
+        icon = icon.children[0]
+
+        const attributeList: Record<string, [keyof ProIconReplaceConfig, (keyof SVGElement | undefined)[]]> = {
             // HtmlAttribute, configKey, svgAttr
             "color": ["color", ["stroke", 'fill']],
             "stroke-width": ["strokeWidth", ["stroke-width"]],
@@ -88,7 +95,11 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
                 icon.setAttribute(name, value)
             }
         }
-
+        if (config?.attributes) {
+            for (const [k, v] of Object.entries(config.attributes)) {
+                icon.setAttribute(k, v)
+            }
+        }
 
         icon.classList.add('proicon')
         icon.setAttribute('data-proicon-id', getIconInfo(iconName).kebabCase)
