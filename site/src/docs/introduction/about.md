@@ -20,14 +20,3 @@ ProIcons is currently a work in progress with new features and libraries coming 
 
 ## License
 The ProIcons library is MIT-licensed, giving you the freedom to use, share, modify and distribute the library. Learn more [here](https://github.com/ProCode-Software/proicons/?tab=MIT-1-ov-file).
-
-## Usage of Brand Icons
-ProIcons contains brand icons that may be trademarked by other brands and may have additional terms and guidelines associated with the use of their logo. These may also be licensed under licenses that may not align with ProIcons' MIT license. We will provide licensing information and guidelines for these icons if possible.
-
-ProCode Software cannot be held responsible for any legal action from brands or users of the library.
-and may also request to have them removed at any time.
-
-### Update or Removal of Brands
-If an icon or its information is outdated or should a brand wish for an update, please submit an issue on GitHub.
-
-Brands may wish for their icon to be removed from the library by opening an issue on GitHub or contacting procodehello@gmail.com explaining their affiliation with their company.

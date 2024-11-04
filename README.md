@@ -94,9 +94,6 @@ ProIcons is also available in the following packages:
 
 ProIcons is MIT-licensed, giving you peace of mind using these icons in your project. Learn more [here](./LICENSE)
 
-> [!WARNING]
-> This library contains brand icons that may not be MIT-licensed and may have additional terms and guidelines. Learn more [here](https://procode-software.github.io/proicons/docs/introduction/about#usage-of-brand-icons)
-
 ## Contributing
 For more info on how to contribute, please see our [contributing guide](https://github.com/ProCode-Software/proicons/blob/main/CONTRIBUTING.md).
 
