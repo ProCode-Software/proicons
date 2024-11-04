@@ -14,14 +14,17 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
     if (!window?.document) {
         throw new Error("proicons.replace() only works in a browser environment")
     }
-    if (!rootElm) rootElm = document.body;
+    
+    // Default properties
+    rootElm ??= document.body;
     const useAttrs = config?.useAttributes ?? true
-
     const attr = config?.attributeName ?? 'proicon';
-    rootElm.querySelectorAll(`[${attr}]`).forEach((element) => {
 
-        let toReplace;
-        switch (config?.overwrite) {
+
+    for (const element of rootElm.querySelectorAll(`[${attr}]`)) {
+        let toReplace
+
+        switch (config?.overwrite ?? 'auto') {
             case true: toReplace = true; break;
             case false: toReplace = false; break;
             case 'auto': toReplace = !element.hasChildNodes(); break;
@@ -29,6 +32,28 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
         }
 
         let iconName = element.getAttribute(attr).trim()
+        const iconInfo = getIconInfo(iconName)
+        if (!iconInfo) continue
+
+        let iconElement = document.createElement('svg')
+
+        //
+
+        icon.innerHTML = getIconInfo(iconName).toSvg(config)
+        icon = icon.children[0]
+    }
+    rootElm.querySelectorAll(`[${attr}]`).forEach((element) => {
+
+        let toReplace;
+        switch (config?.overwrite) {
+            
+        }
+
+        let iconName = element.getAttribute(attr).trim()
+
+        const iconInfo = getIconInfo(iconName)
+
+        if (!iconInfo) continue
 
 
         let icon: SVGElement = document.createElement('svg')
