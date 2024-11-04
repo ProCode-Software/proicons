@@ -13,6 +13,21 @@ export const rootNode: IconNode = [
     [],
 ];
 
+export function toNodes(elementString: string): IconNode[] {
+    const element = new DOMParser()
+        .parseFromString(elementString, 'image/svg+xml')
+        .querySelector('svg')
+    
+    function renderNodeList(elm: Element) {
+        for (const child of elm.children) {
+            const nodeItem = [
+                
+            ]
+        }
+    }
+    return renderNodeList(element)
+}
+
 export function convertNodesWithConfig(nodes: IconNode[], options?: ProIconsOptions): IconNode[] {
     const attributeKey: Partial<Record<keyof ProIconsOptions, string[]>> = {
         // configKey, svgAttr
@@ -25,7 +40,7 @@ export function convertNodesWithConfig(nodes: IconNode[], options?: ProIconsOpti
     }
 
     if (!options) return nodes
-    
+
     return nodes.map(node => {
         const children = node[2]
 
