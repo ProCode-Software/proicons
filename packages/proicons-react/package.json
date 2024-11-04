@@ -3,6 +3,7 @@
     "version": "4.9.0",
     "description": "ProIcons ReactJS package",
     "main": "src/proicons-react.ts",
+    "private": true,
     "scripts": {
         "dev": "pnpm vite",
         "build": "pnpm vite build",

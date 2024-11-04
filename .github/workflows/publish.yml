@@ -1,0 +1,40 @@
+name: Publish packages to NPM
+
+on:
+#   release:
+#     types: [published]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          cache: pnpm
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@proicons'
+
+      - name: Install dependencies & build
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm -r run build
+
+      - name: Set auth token
+        run: pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.PUBLISH_KEY }}
+
+      - name: Publish to NPM    
+        run: |
+          pnpm publish --no-git-checks
+          for dir in ./packages/*/; do
+            (cd "$dir" && pnpm publish)
+          done

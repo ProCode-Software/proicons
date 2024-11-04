@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Your Figma Plugin",
   "main": "code.js",
+  "private": true,
   "scripts": {
     "build": "pnpm tsc -p tsconfig.json",
     "lint": "pnpm eslint --ext .ts,.tsx --ignore-pattern node_modules .",
