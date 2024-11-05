@@ -37,10 +37,25 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
 
         let iconElement = document.createElement('svg')
 
-        //
+        const iconConfig: Partial<ProIconReplaceConfig> = structuredClone(config)
+        
+        const propMap: Record<string, keyof ProIconInfo> = {
+            
+        }
+        const elementConfig: ProIconReplaceConfig = {}
+        
+        if (useAttrs) {
+            for (const [htmlAttr, optionKey] of Object.entries(propMap)) {
+                
+                if (element.hasAttribute(htmlAttr)) {
+                    elementConfig[optionKey] = element.getAttribute(htmlAttr)
+                }
+            }
+            Object.assign(iconConfig, elementConfig)
+        }
 
-        icon.innerHTML = getIconInfo(iconName).toSvg(config)
-        icon = icon.children[0]
+        iconElement.innerHTML = getIconInfo(iconName).toSvg(iconConfig)
+        iconElement = iconElement.children[0]
     }
     rootElm.querySelectorAll(`[${attr}]`).forEach((element) => {
 
