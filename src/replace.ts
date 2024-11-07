@@ -1,7 +1,7 @@
 // @ts-nocheck
 import getIconInfo from './getIconInfo'
-import { ProIconReplaceConfig, ProIconInfo } from './interfaces';
-import { icons } from './proicons';
+import { ProIconReplaceConfig, ProIconInfo } from './interfaces'
+import { icons } from './proicons'
 
 /**
  * Converts all elements with the `proicon` attribute (which can be customised in the config) on the page to an icon corresponding to the attribute value.
@@ -12,56 +12,74 @@ import { icons } from './proicons';
 function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
     // TODO: fix
     if (!window?.document) {
-        throw new Error("proicons.replace() only works in a browser environment")
+        throw new Error('proicons.replace() only works in a browser environment')
     }
-    
+
     // Default properties
-    rootElm ??= document.body;
+    rootElm ??= document.body
     const useAttrs = config?.useAttributes ?? true
-    const attr = config?.attributeName ?? 'proicon';
+    const attr = config?.attributeName ?? 'proicon'
 
-
-    for (const element of rootElm.querySelectorAll(`[${attr}]`)) {
+    for (const element of rootElm.querySelectorAll(`[${attr}]`) as Element[]) {
         let toReplace
 
         switch (config?.overwrite ?? 'auto') {
-            case true: toReplace = true; break;
-            case false: toReplace = false; break;
-            case 'auto': toReplace = !element.hasChildNodes(); break;
-            default: toReplace = !element.hasChildNodes(); break;
+            case true:
+                toReplace = true
+                break
+            case false:
+                toReplace = false
+                break
+            case 'auto':
+                toReplace = !element.hasChildNodes()
+                break
         }
 
         let iconName = element.getAttribute(attr).trim()
         const iconInfo = getIconInfo(iconName)
-        if (!iconInfo) continue
+        if (!iconInfo) {
+            continue
+        }
 
         let iconElement = document.createElement('svg')
 
-        const iconConfig: Partial<ProIconReplaceConfig> = structuredClone(config)
-        
         const propMap: Record<string, keyof ProIconInfo> = {
-            
+            color: 'color',
+            'stroke-width': 'strokeWidth',
+            join: 'strokeJoin',
+            caps: 'strokeCaps',
+            'corner-radius': 'cornerRadius',
+            outline: 'strokeFilledElements',
+            size: 'size',
         }
         const elementConfig: ProIconReplaceConfig = {}
-        
+
         if (useAttrs) {
             for (const [htmlAttr, optionKey] of Object.entries(propMap)) {
-                
                 if (element.hasAttribute(htmlAttr)) {
                     elementConfig[optionKey] = element.getAttribute(htmlAttr)
+                    element.removeAttribute(htmlAttr)
                 }
             }
-            Object.assign(iconConfig, elementConfig)
+            for (const { name, value } of element.attributes) {
+                elementConfig.attributes[name] = value
+            }
+            Object.assign(structuredClone(config ?? {}), elementConfig)
         }
 
-        iconElement.innerHTML = getIconInfo(iconName).toSvg(iconConfig)
+        iconElement.innerHTML = getIconInfo(iconName).toSvg(elementConfig)
         iconElement = iconElement.children[0]
-    }
-    rootElm.querySelectorAll(`[${attr}]`).forEach((element) => {
 
-        let toReplace;
+        iconElement.classList.add('proicon')
+        iconElement.setAttribute('data-proicon-id', getIconInfo(iconName).kebabCase)
+
+        toReplace == true
+            ? element.replaceWith(iconElement)
+            : element.insertBefore(iconElement, element.childNodes[0])
+    }
+    /* rootElm.querySelectorAll(`[${attr}]`).forEach(element => {
+        let toReplace
         switch (config?.overwrite) {
-            
         }
 
         let iconName = element.getAttribute(attr).trim()
@@ -69,26 +87,28 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
         const iconInfo = getIconInfo(iconName)
 
         if (!iconInfo) continue
-
 
         let icon: SVGElement = document.createElement('svg')
         icon.innerHTML = getIconInfo(iconName).toSvg(config)
         icon = icon.children[0]
 
-        const attributeList: Record<string, [keyof ProIconReplaceConfig, (keyof SVGElement | undefined)[]]> = {
+        const attributeList: Record<
+            string,
+            [keyof ProIconReplaceConfig, (keyof SVGElement | undefined)[]]
+        > = {
             // HtmlAttribute, configKey, svgAttr
-            "color": ["color", ["stroke", 'fill']],
-            "stroke-width": ["strokeWidth", ["stroke-width"]],
-            "join": ["strokeCaps", ["stroke-linejoin"]],
-            "caps": ["strokeJoin", ["stroke-linecap"]],
-            "corner-radius": ["cornerRadius", ["rx"]],
-            "outline": ["strokeFilledElements", undefined]
+            color: ['color', ['stroke', 'fill']],
+            'stroke-width': ['strokeWidth', ['stroke-width']],
+            join: ['strokeCaps', ['stroke-linejoin']],
+            caps: ['strokeJoin', ['stroke-linecap']],
+            'corner-radius': ['cornerRadius', ['rx']],
+            outline: ['strokeFilledElements', undefined],
         }
         if (config) {
             Object.values(attributeList)
-                .map((v) => v[0])
+                .map(v => v[0])
                 .forEach((c, i) => {
-                    const htmlAttr = Object.keys(attributeList)[i];
+                    const htmlAttr = Object.keys(attributeList)[i]
                     let valueToUse
 
                     if (useAttrs && element.hasAttribute(htmlAttr)) {
@@ -98,9 +118,9 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
                     }
 
                     if (valueToUse) {
-                        element.setAttribute(htmlAttr, valueToUse);
+                        element.setAttribute(htmlAttr, valueToUse)
                     }
-                });
+                })
         }
         for (const attr of element.attributes) {
             const name = attr.name.toLowerCase()
@@ -119,15 +139,28 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
                 } else {
                     // Behaviour for outlining
                     const defaultStrokeWidth = 1.5
-                    const unstrokedElms = Array.from(icon.querySelectorAll('*')).filter(f => !f.hasAttribute('stroke'))
+                    const unstrokedElms = Array.from(
+                        icon.querySelectorAll('*')
+                    ).filter(f => !f.hasAttribute('stroke'))
 
                     unstrokedElms.forEach(elm => {
-                        const reducedStroke = +element.getAttribute('stroke-width') - defaultStrokeWidth
+                        const reducedStroke =
+                            +element.getAttribute('stroke-width') -
+                            defaultStrokeWidth
                         if (reducedStroke > 0) {
-                            elm.setAttribute('stroke', element.getAttribute('color') ?? 'currentColor')
+                            elm.setAttribute(
+                                'stroke',
+                                element.getAttribute('color') ?? 'currentColor'
+                            )
                             elm.setAttribute('stroke-width', reducedStroke)
-                            elm.setAttribute('stroke-linejoin', element.getAttribute('strokeJoin') ?? 'round')
-                            elm.setAttribute('stroke-linecap', element.getAttribute('strokeCaps') ?? 'round')
+                            elm.setAttribute(
+                                'stroke-linejoin',
+                                element.getAttribute('strokeJoin') ?? 'round'
+                            )
+                            elm.setAttribute(
+                                'stroke-linecap',
+                                element.getAttribute('strokeCaps') ?? 'round'
+                            )
                         }
                     })
                 }
@@ -144,9 +177,10 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
         icon.classList.add('proicon')
         icon.setAttribute('data-proicon-id', getIconInfo(iconName).kebabCase)
 
-        toReplace == true ? element.replaceWith(icon)
+        toReplace == true
+            ? element.replaceWith(icon)
             : element.insertBefore(icon, element.childNodes[0])
-    });
+    }) */
 }
 
 export default replace

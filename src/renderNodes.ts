@@ -37,6 +37,8 @@ export function toNodes(elementString: string): IconNode[] {
 }
 
 export function convertNodesWithConfig(nodes: IconNode[], options?: ProIconsOptions): IconNode[] {
+    const defaultStroke = 1.5
+
     const attributeKey: Partial<Record<keyof ProIconsOptions, string[]>> = {
         // configKey, svgAttr
         color: ["stroke", "fill"],
@@ -61,6 +63,20 @@ export function convertNodesWithConfig(nodes: IconNode[], options?: ProIconsOpti
                 }
             }
         }
+
+        /* if (
+            !Object.hasOwn(node[1], 'stroke-width') &&
+            Object.hasOwn(node[1], 'fill') &&
+            node[1].fill != 'none' &&
+            node[1].stroke != 'none' &&
+            node[1]['stroke-width'] !== '0' &&
+            options?.strokeWidth > defaultStroke
+        ) {
+            node[1]['stroke-width'] = (options.strokeWidth - defaultStroke).toString()
+            node[1].stroke = node[1].fill
+            node[1]['stroke-linecap'] = options.strokeCaps ?? 'round'
+            node[1]['stroke-linejoin'] = options.strokeJoin ?? 'round'
+        } */
 
         if (children.length) {
             node[2] = convertNodesWithConfig(children, options)
