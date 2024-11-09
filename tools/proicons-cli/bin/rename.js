@@ -27,7 +27,6 @@ export async function rename(oldName, newName, options) {
             throw new Error(`Icon name '${oldName}' does not exist`)
         }
         imgDirs.forEach(dirName => {
-            const isPngDir = dirName.startsWith('png')
             const getDirName = (n) => resolve('icons', dirName, kebabCase(n) + `${dirName == 'svg' ? '.svg' : '.png'}`)
 
             renameSync(getDirName(oldName), getDirName(newName))

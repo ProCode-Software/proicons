@@ -448,6 +448,6 @@
         { "name": "Candy", "added": "4.10.0" },
         { "name": "Svelte", "added": "4.10.0" }
     ],
-    "deprecated": [],
-    "aliases": {}
+    "deprecated": [{ "icon": "Comment Multiple -Var", "version": "4.11.0", "alternative": "Comment Multiple" }],
+    "aliases": { "Comment Multiple -Var": "Comment Multiple" }
 }
