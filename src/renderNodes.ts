@@ -64,7 +64,8 @@ export function convertNodesWithConfig(nodes: IconNode[], options?: ProIconsOpti
             }
         }
 
-        /* if (
+        // Outlining
+        if (
             !Object.hasOwn(node[1], 'stroke-width') &&
             Object.hasOwn(node[1], 'fill') &&
             node[1].fill != 'none' &&
@@ -76,7 +77,7 @@ export function convertNodesWithConfig(nodes: IconNode[], options?: ProIconsOpti
             node[1].stroke = node[1].fill
             node[1]['stroke-linecap'] = options.strokeCaps ?? 'round'
             node[1]['stroke-linejoin'] = options.strokeJoin ?? 'round'
-        } */
+        }
 
         if (children.length) {
             node[2] = convertNodesWithConfig(children, options)

@@ -62,7 +62,10 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
                 }
             }
             for (const { name, value } of element.attributes) {
-                elementConfig.attributes[name] = value
+                if (!Object.hasOwn(propMap, name)) {
+                    elementConfig.attributes ??= {}
+                    elementConfig.attributes[name] = value
+                }
             }
             Object.assign(structuredClone(config ?? {}), elementConfig)
         }
@@ -77,110 +80,6 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
             ? element.replaceWith(iconElement)
             : element.insertBefore(iconElement, element.childNodes[0])
     }
-    /* rootElm.querySelectorAll(`[${attr}]`).forEach(element => {
-        let toReplace
-        switch (config?.overwrite) {
-        }
-
-        let iconName = element.getAttribute(attr).trim()
-
-        const iconInfo = getIconInfo(iconName)
-
-        if (!iconInfo) continue
-
-        let icon: SVGElement = document.createElement('svg')
-        icon.innerHTML = getIconInfo(iconName).toSvg(config)
-        icon = icon.children[0]
-
-        const attributeList: Record<
-            string,
-            [keyof ProIconReplaceConfig, (keyof SVGElement | undefined)[]]
-        > = {
-            // HtmlAttribute, configKey, svgAttr
-            color: ['color', ['stroke', 'fill']],
-            'stroke-width': ['strokeWidth', ['stroke-width']],
-            join: ['strokeCaps', ['stroke-linejoin']],
-            caps: ['strokeJoin', ['stroke-linecap']],
-            'corner-radius': ['cornerRadius', ['rx']],
-            outline: ['strokeFilledElements', undefined],
-        }
-        if (config) {
-            Object.values(attributeList)
-                .map(v => v[0])
-                .forEach((c, i) => {
-                    const htmlAttr = Object.keys(attributeList)[i]
-                    let valueToUse
-
-                    if (useAttrs && element.hasAttribute(htmlAttr)) {
-                        valueToUse = element.getAttribute(htmlAttr)
-                    } else if (config[c]) {
-                        valueToUse = config[c]
-                    }
-
-                    if (valueToUse) {
-                        element.setAttribute(htmlAttr, valueToUse)
-                    }
-                })
-        }
-        for (const attr of element.attributes) {
-            const name = attr.name.toLowerCase()
-            const value = attr.value
-
-            if (Object.hasOwn(attributeList, name)) {
-                if (name != 'outline') {
-                    if (value) {
-                        const n = attributeList[name][1]
-                        n.forEach(x => {
-                            icon.querySelectorAll(`[${x}]`).forEach(b => {
-                                b.setAttribute(x, value)
-                            })
-                        })
-                    }
-                } else {
-                    // Behaviour for outlining
-                    const defaultStrokeWidth = 1.5
-                    const unstrokedElms = Array.from(
-                        icon.querySelectorAll('*')
-                    ).filter(f => !f.hasAttribute('stroke'))
-
-                    unstrokedElms.forEach(elm => {
-                        const reducedStroke =
-                            +element.getAttribute('stroke-width') -
-                            defaultStrokeWidth
-                        if (reducedStroke > 0) {
-                            elm.setAttribute(
-                                'stroke',
-                                element.getAttribute('color') ?? 'currentColor'
-                            )
-                            elm.setAttribute('stroke-width', reducedStroke)
-                            elm.setAttribute(
-                                'stroke-linejoin',
-                                element.getAttribute('strokeJoin') ?? 'round'
-                            )
-                            elm.setAttribute(
-                                'stroke-linecap',
-                                element.getAttribute('strokeCaps') ?? 'round'
-                            )
-                        }
-                    })
-                }
-            } else {
-                icon.setAttribute(name, value)
-            }
-        }
-        if (config?.attributes) {
-            for (const [k, v] of Object.entries(config.attributes)) {
-                icon.setAttribute(k, v)
-            }
-        }
-
-        icon.classList.add('proicon')
-        icon.setAttribute('data-proicon-id', getIconInfo(iconName).kebabCase)
-
-        toReplace == true
-            ? element.replaceWith(icon)
-            : element.insertBefore(icon, element.childNodes[0])
-    }) */
 }
 
 export default replace
