@@ -1,4 +1,4 @@
-import { fstat, readFileSync, renameSync, writeFileSync } from "fs";
+import { readFileSync, renameSync, writeFileSync } from "fs";
 import { formatJson } from "./utils.js";
 import { resolve } from "path";
 import * as renameText from '../../../bin/rename.js'
@@ -12,7 +12,7 @@ const kebabCase = renameText.kebabCase
  * @param {string} newName 
  * @param {{ 'no-alias': boolean }} options 
  */
-export function rename(oldName, newName, options) {
+export async function rename(oldName, newName, options) {
     const imgDirs = ['svg',
         'png/white', 'png@3x/white', 'png@5x/white',
         'png/black', 'png@3x/black', 'png@5x/black']
@@ -35,7 +35,8 @@ export function rename(oldName, newName, options) {
 
         if (!options['no-alias']) {
             lockfile.aliases[oldName] = newName
-            writeFileSync(lockFilePath, formatJson(lockfile))
+            const formatted = await formatJson(lockfile)
+            writeFileSync(lockFilePath, formatted)
         }
 
         console.log(ansiColors.green(`Successfully renamed ${oldName} to ${newName}${!options["no-alias"] ? ' and created alias' : ''}.`));
