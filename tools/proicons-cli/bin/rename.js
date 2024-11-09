@@ -28,7 +28,7 @@ export function rename(oldName, newName, options) {
         }
         imgDirs.forEach(dirName => {
             const isPngDir = dirName.startsWith('png')
-            const getDirName = (n) => resolve('icons', dirName, kebabCase(n) + '.png')
+            const getDirName = (n) => resolve('icons', dirName, kebabCase(n) + `${dirName == 'svg' ? '.svg' : '.png'}`)
 
             renameSync(getDirName(oldName), getDirName(newName))
         })
