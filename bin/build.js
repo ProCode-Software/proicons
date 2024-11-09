@@ -217,7 +217,7 @@ async function buildPngs() {
 function buildModules() {
     try {
         const result = execSync(`pnpm run icons:build-modules`)
-        console.log(result);
+        console.log(result.toString('utf-8'));
     } catch(e) {
         console.log(ansiColors.red('Couldn\'t build modules:'));
         throw e

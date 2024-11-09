@@ -73,9 +73,12 @@ const modules = [];
 
                 const aliases = () => {
                     try {
-                        return Object.entries(lockfile.aliases)
+                        const d = Object.entries(lockfile.aliases)
                             .filter(([k, v]) => v == friendlyName)
                             .map(([k, v]) => k)
+
+                        if (d.length == 0) throw new Error()
+                        return d
                     } catch (e) {
                         return undefined
                     }
@@ -109,7 +112,7 @@ const modules = [];
 
         const categoryData = Object.values(icons)
             .map(({ category }) => category)
-            .filter((item, index, array) => array.indexOf(item) === index);
+            .filter((item, index, array) => array.indexOf(item) === index).sort();
 
         await formatAndWrite(iconListData, `iconList.${formatParam}`);
         console.log(ansiColors.green(`Successfully created icon list!`));

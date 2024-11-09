@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?2a1fff4daa79a205ffa1387a03c4f818") format("truetype"),
-url("./ProIcons.woff?2a1fff4daa79a205ffa1387a03c4f818") format("woff"),
-url("./ProIcons.woff2?2a1fff4daa79a205ffa1387a03c4f818") format("woff2"),
-url("./ProIcons.eot?2a1fff4daa79a205ffa1387a03c4f818#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?22d7de81eccede9f5858387cf279d0d1") format("truetype"),
+url("./ProIcons.woff?22d7de81eccede9f5858387cf279d0d1") format("woff"),
+url("./ProIcons.woff2?22d7de81eccede9f5858387cf279d0d1") format("woff2"),
+url("./ProIcons.eot?22d7de81eccede9f5858387cf279d0d1#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -1359,6 +1359,75 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-svelte::before {
   content: "\e1be";
 }
-.proicon-x-twitter::before {
+.proicon-android::before {
   content: "\f101";
+}
+.proicon-bell-dot::before {
+  content: "\f102";
+}
+.proicon-bell-off::before {
+  content: "\f103";
+}
+.proicon-brackets::before {
+  content: "\f104";
+}
+.proicon-checkbox-checked::before {
+  content: "\f105";
+}
+.proicon-checkbox-indeterminate-2::before {
+  content: "\f106";
+}
+.proicon-checkbox-indeterminate::before {
+  content: "\f107";
+}
+.proicon-comment-exclamation::before {
+  content: "\f108";
+}
+.proicon-copyleft::before {
+  content: "\f109";
+}
+.proicon-copyright::before {
+  content: "\f10a";
+}
+.proicon-dollar-circle::before {
+  content: "\f10b";
+}
+.proicon-flag-2::before {
+  content: "\f10c";
+}
+.proicon-gitlab::before {
+  content: "\f10d";
+}
+.proicon-headphones-off::before {
+  content: "\f10e";
+}
+.proicon-infinity::before {
+  content: "\f10f";
+}
+.proicon-keyboard-command::before {
+  content: "\f110";
+}
+.proicon-math::before {
+  content: "\f111";
+}
+.proicon-reactjs::before {
+  content: "\f112";
+}
+.proicon-regular-expression::before {
+  content: "\f113";
+}
+.proicon-ruler-diagonal::before {
+  content: "\f114";
+}
+.proicon-server::before {
+  content: "\f115";
+}
+.proicon-slash-box::before {
+  content: "\f116";
+}
+.proicon-typescript::before {
+  content: "\f117";
+}
+.proicon-x-twitter::before {
+  content: "\f118";
 }
