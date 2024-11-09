@@ -1,7 +1,7 @@
 import ansiColors from "ansi-colors";
 import { formatJson, getVersion } from "./utils.js";
 import { resolve } from "path";
-import { readFileSync } from "fs";
+import { readFileSync, writeFileSync } from "fs";
 
 const lockFilePath = resolve('icons', 'icons.lock.json')
 const monthsToDeprecated = 6

@@ -1,5 +1,5 @@
 export function format(str) {
-    return str.replace(/[-_()]/g, ' ').replace(/\s\s+/g, ' ')
+    return str.replace(/[-_().]/g, ' ').replace(/\s\s+/g, ' ')
 }
 export function camelCase(str) {
     return format(str).split(' ').map((word, i) => i == 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1)).join('')

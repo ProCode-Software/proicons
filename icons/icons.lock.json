@@ -447,5 +447,7 @@
         { "name": "Branch Pull Request", "added": "4.10.0" },
         { "name": "Candy", "added": "4.10.0" },
         { "name": "Svelte", "added": "4.10.0" }
-    ]
+    ],
+    "deprecated": [],
+    "aliases": {}
 }
