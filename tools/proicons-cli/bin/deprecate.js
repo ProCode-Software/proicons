@@ -9,13 +9,14 @@ const monthsToDeprecated = 6
 /** @type {import('../../../icons/icons.lock.json')} */
 const lockfile = JSON.parse(readFileSync(lockFilePath, 'utf-8'))
 
-export function deprecate(iconName, alternative) {
+export async function deprecate(iconName, alternative) {
     lockfile.deprecated.push({
         icon: iconName,
         version: getVersion(),
         alternative
     })
-    writeFileSync(lockFilePath, formatJson(lockfile))
+    const formatted = await formatJson(lockfile)
+    writeFileSync(lockFilePath, formatted)
 }
 
 export function auditDeprecated() {
