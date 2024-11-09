@@ -34,7 +34,6 @@ export function rename(oldName, newName, options) {
         })
 
         if (!options['no-alias']) {
-            lockfile.aliases ??= {}
             lockfile.aliases[oldName] = newName
             writeFileSync(lockFilePath, formatJson(lockfile))
         }

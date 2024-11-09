@@ -4,8 +4,9 @@ import { resolve } from 'path';
 import { createSvgNodes } from './build/createSvgNodes.js';
 import { getCliParams } from './build/getCliParam.js';
 import { prettierFormat } from './build/prettierFormat.js';
-import { kebabToPascalCase, pascalToCamelCase } from './rename.js';
+import { camelCase, kebabToPascalCase, pascalCase, pascalToCamelCase } from './rename.js';
 import icons from '../icons/icons.json' with { type: 'json' };
+import lockfile from '../icons/icons.lock.json' with { type: 'json' };
 
 const outDirParam = getCliParams(process, 'out');
 const templateDirParam = getCliParams(process, 't', 'template');
@@ -58,19 +59,44 @@ const modules = [];
     console.log(ansiColors.green(`Successfully created .${formatParam} files for ${files.length} files in ${outDir}!`));
 
     if (indexDirParam) {
-        const indexOutDir = resolve(process.cwd(), indexDirParam);
+        const indexOutDir = resolve(process.cwd(), indexDirParam)
 
         const indexTemplate = modules
             .map(({ name, path }) => {
-                // For backwards compatibility
+                // For backwards compatibility (removes Icon from the end)
                 const camelModuleName = pascalToCamelCase(name.slice(0, -4))
 
-                return `export { ${name}, ${name} as ${camelModuleName} } from '${path}'`
-            })
-            .join('\n');
+                // Aliases: Alias -> Icon in friendly form
+                const friendlyName = Object.keys(icons).filter(
+                    n => camelCase(n) == camelModuleName
+                )
 
-        writeFileSync(indexOutDir, indexTemplate);
-        console.log(ansiColors.green(`Successfully created icons index at ${indexOutDir}!`));
+                const aliases = () => {
+                    try {
+                        return Object.entries(lockfile.aliases)
+                            .filter(([k, v]) => v == friendlyName)
+                            .map(([k, v]) => k)
+                    } catch (e) {
+                        return undefined
+                    }
+                }
+
+                const aliasExports = aliases()
+                    ? aliases().map(
+                        alias =>
+                            `${name} as ${pascalCase(alias)}Icon, ${name} as ${camelCase(alias)}`
+                    )
+                    : undefined
+
+                // Name with Icon at end and camel name
+                return `export { ${name}, ${name} as ${camelModuleName}${aliasExports ? ', ' + aliasExports.join(', ') : ''} } from '${path}'`
+            })
+            .join('\n')
+
+        writeFileSync(indexOutDir, indexTemplate)
+        console.log(
+            ansiColors.green(`Successfully created icons index at ${indexOutDir}!`)
+        )
     }
     if (shouldCreateDataFiles) {
         const formatAndWrite = async (data, file) => {
