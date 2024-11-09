@@ -7,6 +7,7 @@ import { optimize } from 'svgo';
 import progress from 'progress';
 import { buildFont } from "./build/build-font.js";
 import { Piscina } from 'piscina'
+import { execSync } from "child_process";
 
 const __rootdir = process.cwd()
 
@@ -213,6 +214,16 @@ async function buildPngs() {
     console.log(ansiColors.green('Done building PNGs!'));
 }
 
+function buildModules() {
+    try {
+        const result = execSync(`pnpm run icons:build-modules`)
+        console.log(result);
+    } catch(e) {
+        console.log(ansiColors.red('Couldn\'t build modules:'));
+        throw e
+    }
+}
+
 (async () => {
     console.time('Build time')
     if (args.optimizeOnly) {
@@ -224,6 +235,7 @@ async function buildPngs() {
         createLockfile()
         await writeLockfile();
         await buildPngs();
+        buildModules()
     }
     await buildFont(newIcons.length > 0 || args.shouldRebuildAll);
 })().then(() => {
