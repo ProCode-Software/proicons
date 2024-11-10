@@ -41,10 +41,8 @@ You can still use any shape.
     3. **Join:** Set this to Round (third option)
 
 ::: tip
-If you want these properties to automatically be applied to new shapes, go to *Figma logo > Edit > Set default properties* or `Ctrl + /`/`Command + /` > `Set default properties` after setting your properties on your shape. Note that this may not always work for all shapes.
+If you want these properties to automatically be applied to new shapes, go to *Figma logo > Edit > Set default properties* or `Ctrl + /`/`Command + /` > `Set default properties` after setting your properties on your shape. Note that this may not work for all shapes.
 :::
 
 ## Step 3: Export your icon
-
-
-## Extra tips
+Once you have your icon designed, follow the steps in our [contributing guide](https://github.com/ProCode-Software/proicons/blob/main/CONTRIBUTING.md#adding-an-icon-1) on how to export your icon.

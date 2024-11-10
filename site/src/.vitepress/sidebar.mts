@@ -1,4 +1,6 @@
 import { type DefaultTheme } from 'vitepress'
+import { categories } from 'proicons'
+import { kebabCase } from './theme/composables/rename'
 
 export function sidebar(): Record<string, DefaultTheme.SidebarItem[]> {
     return {
@@ -40,7 +42,10 @@ export function sidebar(): Record<string, DefaultTheme.SidebarItem[]> {
                         collapsed: true,
                         items: [
                             { text: 'Naming', link: 'naming' },
-                            { text: 'Designing in Figma', link: 'designing-in-figma' }
+                            {
+                                text: 'Designing in Figma',
+                                link: 'designing-in-figma',
+                            },
                         ],
                     },
                     { text: 'Roadmap', link: 'roadmap' },

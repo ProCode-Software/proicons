@@ -65,7 +65,7 @@ const iconsSearch = computed(() => {
 
 .categoryIconsList {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     width: 100%;
     align-items: baseline;
     gap: 15px;

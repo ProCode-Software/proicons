@@ -30,7 +30,6 @@ const svg = value.icon
         align-items: center;
         justify-content: center;
         border-radius: 10px;
-        border: 1px solid var(--vp-c-gray-3);
         transition: background .2s;
         cursor: pointer;
     }
@@ -43,6 +42,7 @@ const svg = value.icon
         line-height: 140%;
         font-size: 13px;
         color: var(--vp-c-text-2);
+        overflow-wrap: anywhere;
     }
 }
 </style>

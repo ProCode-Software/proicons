@@ -6,4 +6,8 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    dependencies:
+      proicons:
+        specifier: workspace:*
+        version: link:..
