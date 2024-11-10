@@ -9,5 +9,8 @@
     "docs:preview": "pnpm vitepress preview src"
   },
   "author": "ProCode Software",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "proicons": "workspace:*"
+  }
 }

@@ -13,7 +13,7 @@ If you're new to pull requests, check out this free [guide](https://egghead.io/c
 
 You can request a new icon to be added to ProIcons via [discussions](https://github.com/ProCode-Software/proicons/discussions/categories/icon-requests).
 
-Or, you can design your own icon and send it in as a pull request. Make sure you follow our [Design Guidelines](https://procode-software.github.io/proicons/docs/contributing/design-guidelines) when designing and naming your icon.
+Or, you can design your own icon and send it in as a pull request. See the [development guide](https://github.com/ProCode-Software/proicons/blob/main/CONTRIBUTING.md#development-guide) to learn how you can add your icon to the set. You can also modify an existing icon in the set.
 
 To keep things organized, **please include only one icon per pull request** unless the icons are related.
 
@@ -50,6 +50,8 @@ Note that you will need to install all dependencies if you want to build the ico
 
 ### Adding an icon
 The [Figma desktop app](https://www.figma.com/downloads/) is recommended, along with our [Build Icon List](https://github.com/ProCode-Software/proicons/tree/main/tools/BuildIconList) plugin cloned and [imported](#installing-the-figma-plugin) into Figma.
+
+Please follow our [design guidelines](https://procode-software.github.io/proicons/docs/contributing/design-guidelines) and [naming conventions](https://procode-software.github.io/proicons/docs/contributing/design-guidelines/naming) when creating your icon.
 
 #### Installing the Figma plugin *(Recommended if using Figma)*
 1. Make sure you have cloned the ProIcons repository

@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?554a8944da94d83180c46d5f77d3de44") format("truetype"),
-url("./ProIcons.woff?554a8944da94d83180c46d5f77d3de44") format("woff"),
-url("./ProIcons.woff2?554a8944da94d83180c46d5f77d3de44") format("woff2"),
-url("./ProIcons.eot?554a8944da94d83180c46d5f77d3de44#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?1ece553d13488cfd2d8edd61ff3f4d74") format("truetype"),
+url("./ProIcons.woff?1ece553d13488cfd2d8edd61ff3f4d74") format("woff"),
+url("./ProIcons.woff2?1ece553d13488cfd2d8edd61ff3f4d74") format("woff2"),
+url("./ProIcons.eot?1ece553d13488cfd2d8edd61ff3f4d74#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
