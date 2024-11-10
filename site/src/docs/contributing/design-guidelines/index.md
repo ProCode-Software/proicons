@@ -62,4 +62,4 @@ Even smaller shapes and lines may use a 0.6px corner radius or no corner radius.
 Before submitting your icons, please make sure to follow our [naming conventions](naming).
 
 ## Submitting New Icons
-When you have your icons designed, please follow our [contributing guide](https://github.com/ProCode-Software/proicons/blob/main/CONTRIBUTING.md#adding-an-icon) on how to add your icon to the set and 
+When you have your icons designed, please follow our [contributing guide](https://github.com/ProCode-Software/proicons/blob/main/CONTRIBUTING.md#adding-an-icon) on how to add your icon to the set and send in your pull request.
