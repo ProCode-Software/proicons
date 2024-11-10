@@ -29,6 +29,7 @@ const args = {
 const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
 
 const strokeColors = ['#212325', 'black', '#000000'];
+/** @type {import("svgo").Config} */
 const svgoConfig = {
     multipass: true,
     plugins: [
@@ -40,6 +41,7 @@ const svgoConfig = {
                     inlineStyles: {
                         onlyMatchedOnce: false,
                     },
+                    convertShapeToPath: false,
                 },
             },
         },
