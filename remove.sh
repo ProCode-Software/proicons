@@ -2,7 +2,7 @@
 
 # Define the folders and items to remove
 folders=("/black" "/white" "@3x/black" "@3x/white" "@5x/black" "@5x/white")
-items=("comment-multiple--var" "copy--var" "tag-multiple--var" "chrome-restore--var" "window-multiple--var" "bookmark-multiple--var" "add-square-multiple--var")
+items=("comment-multiple-var")
 
 # Loop through each folder
 for folder in "${folders[@]}"; do
