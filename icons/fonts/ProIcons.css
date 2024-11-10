@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?22d7de81eccede9f5858387cf279d0d1") format("truetype"),
-url("./ProIcons.woff?22d7de81eccede9f5858387cf279d0d1") format("woff"),
-url("./ProIcons.woff2?22d7de81eccede9f5858387cf279d0d1") format("woff2"),
-url("./ProIcons.eot?22d7de81eccede9f5858387cf279d0d1#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?8d3bee5e3a90eb28d9d1784d213af942") format("truetype"),
+url("./ProIcons.woff?8d3bee5e3a90eb28d9d1784d213af942") format("woff"),
+url("./ProIcons.woff2?8d3bee5e3a90eb28d9d1784d213af942") format("woff2"),
+url("./ProIcons.eot?8d3bee5e3a90eb28d9d1784d213af942#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -1359,75 +1359,75 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-svelte::before {
   content: "\e1be";
 }
-.proicon-android::before {
-  content: "\f101";
-}
-.proicon-bell-dot::before {
-  content: "\f102";
-}
-.proicon-bell-off::before {
-  content: "\f103";
-}
-.proicon-brackets::before {
-  content: "\f104";
-}
-.proicon-checkbox-checked::before {
-  content: "\f105";
-}
 .proicon-checkbox-indeterminate-2::before {
-  content: "\f106";
+  content: "\e1bf";
 }
 .proicon-checkbox-indeterminate::before {
-  content: "\f107";
+  content: "\e1c0";
+}
+.proicon-checkbox-checked::before {
+  content: "\e1c1";
+}
+.proicon-brackets::before {
+  content: "\e1c2";
 }
 .proicon-comment-exclamation::before {
-  content: "\f108";
-}
-.proicon-copyleft::before {
-  content: "\f109";
-}
-.proicon-copyright::before {
-  content: "\f10a";
+  content: "\e1c3";
 }
 .proicon-dollar-circle::before {
-  content: "\f10b";
-}
-.proicon-flag-2::before {
-  content: "\f10c";
-}
-.proicon-gitlab::before {
-  content: "\f10d";
-}
-.proicon-headphones-off::before {
-  content: "\f10e";
-}
-.proicon-infinity::before {
-  content: "\f10f";
-}
-.proicon-keyboard-command::before {
-  content: "\f110";
-}
-.proicon-math::before {
-  content: "\f111";
-}
-.proicon-reactjs::before {
-  content: "\f112";
+  content: "\e1c4";
 }
 .proicon-regular-expression::before {
-  content: "\f113";
+  content: "\e1c5";
 }
 .proicon-ruler-diagonal::before {
-  content: "\f114";
-}
-.proicon-server::before {
-  content: "\f115";
-}
-.proicon-slash-box::before {
-  content: "\f116";
+  content: "\e1c6";
 }
 .proicon-typescript::before {
-  content: "\f117";
+  content: "\e1c7";
+}
+.proicon-slash-box::before {
+  content: "\e1c8";
+}
+.proicon-copyright::before {
+  content: "\e1c9";
+}
+.proicon-copyleft::before {
+  content: "\e1ca";
+}
+.proicon-keyboard-command::before {
+  content: "\e1cb";
+}
+.proicon-bell-off::before {
+  content: "\e1cc";
+}
+.proicon-bell-dot::before {
+  content: "\e1cd";
+}
+.proicon-gitlab::before {
+  content: "\e1ce";
+}
+.proicon-reactjs::before {
+  content: "\e1cf";
+}
+.proicon-infinity::before {
+  content: "\e1d0";
+}
+.proicon-math::before {
+  content: "\e1d1";
+}
+.proicon-headphones-off::before {
+  content: "\e1d2";
+}
+.proicon-android::before {
+  content: "\e1d3";
+}
+.proicon-flag-2::before {
+  content: "\e1d4";
+}
+.proicon-server::before {
+  content: "\e1d5";
 }
 .proicon-x-twitter::before {
-  content: "\f118";
+  content: "\f101";
 }
