@@ -9,7 +9,7 @@
     "browser": "ProIcons.css",
 
     "scripts": {
-        "build": "node ./bin/build.js"
+        "prepare": "node ./bin/build.js"
     },
     "keywords": [
         "font",
