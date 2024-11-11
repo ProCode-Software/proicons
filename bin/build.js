@@ -143,24 +143,25 @@ const lockfile = existsSync(resolve('icons/icons.lock.json'))
 
 function createLockfile() {
     /** @type {import('../icons/icons.json')} */
-    const config = JSON.parse(
-        readFileSync(iconsJsonPath, 'utf-8')
-    )
+    const config = JSON.parse(readFileSync(iconsJsonPath, 'utf-8'))
 
-    Object.keys(config).forEach((friendlyName) => {
-        const iconInLockfile = (z) => z.name == friendlyName
+    Object.keys(config).forEach(friendlyName => {
+        const iconInLockfile = z => z.name == friendlyName
 
         if (!lockfile.icons.some(iconInLockfile)) {
             const lfItem = {
                 name: friendlyName,
                 added: version,
-            };
-            lockfile.icons.push(lfItem);
-
-        } else if (newIcons.includes(friendlyName) && lockfile.icons.some(iconInLockfile)) {
-            lockfile.icons.find(iconInLockfile).updated = version;
+            }
+            lockfile.icons.push(lfItem)
+        } else if (
+            newIcons.includes(friendlyName) &&
+            lockfile.icons.some(iconInLockfile) &&
+            lockfile.icons.some(iconInLockfile).added != version
+        ) {
+            lockfile.icons.find(iconInLockfile).updated = version
         }
-    });
+    })
 }
 
 async function writeLockfile() {

@@ -5,7 +5,7 @@ import iconList from './iconList'
 export {
     /** List of all available icons as `ProIconInfo`.
      * 
-     * Note: This will imports all icons and breaks tree-shaking
+     * Note: This will import all icons and breaks tree-shaking
      */
     icons,
     /** List of all categories */

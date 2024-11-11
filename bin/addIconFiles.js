@@ -1,17 +1,21 @@
 import ansiColors from 'ansi-colors';
 import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'fs';
-import { resolve } from 'path';
+import { dirname, resolve } from "path";
+import { fileURLToPath } from "url";
+import icons from '../icons/icons.json' with { type: 'json' };
+import lockfile from '../icons/icons.lock.json' with { type: 'json' };
 import { createSvgNodes } from './build/createSvgNodes.js';
 import { getCliParams } from './build/getCliParam.js';
 import { prettierFormat } from './build/prettierFormat.js';
 import { camelCase, kebabToPascalCase, pascalCase, pascalToCamelCase } from './rename.js';
-import icons from '../icons/icons.json' with { type: 'json' };
-import lockfile from '../icons/icons.lock.json' with { type: 'json' };
 
+const __dirname = fileURLToPath(dirname(import.meta.url))
+const __rootdir = resolve(__dirname, '../')
 const outDirParam = getCliParams(process, 'out');
 const templateDirParam = getCliParams(process, 't', 'template');
 const formatParam = getCliParams(process, 'format', 'f');
 const indexDirParam = getCliParams(process, 'index-dir', 'i');
+const libParam = getCliParams(process, 'lib') ?? 'vanilla';
 
 const shouldCleanDir = process.argv.slice(2).includes('--clean');
 const shouldCreateDataFiles = process.argv.slice(2).includes('-d');
@@ -19,7 +23,7 @@ const shouldCreateDataFiles = process.argv.slice(2).includes('-d');
 const templateDir = resolve(process.cwd(), templateDirParam);
 const outDir = resolve(process.cwd(), outDirParam);
 
-const inDir = resolve('icons/svg');
+const inDir = resolve(__rootdir, 'icons/svg');
 // const outDir = resolve('src/icons');
 
 if (shouldCleanDir) {
@@ -85,14 +89,26 @@ const modules = [];
                 }
 
                 const aliasExports = aliases()
-                    ? aliases().map(
-                        alias =>
-                            `${name} as ${pascalCase(alias)}Icon, ${name} as ${camelCase(alias)}`
-                    )
+                    ? aliases()
+                        .map(alias => {
+                            const a = [pascalCase(alias) + 'Icon']
+                            if (libParam == 'vanilla') {
+                                a.push(camelCase(alias))
+                            }
+                            return a
+                        })
+                        .flat()
                     : undefined
 
+                const exportNames = [
+                    ...(libParam == 'vanilla' ? [camelModuleName] : []), // Camel name
+                    ...(aliasExports ?? []), // Aliases
+                ].map(e => `${name} as ${e}`)
+
+                exportNames.unshift(name)
+
                 // Name with Icon at end and camel name
-                return `export { ${name}, ${name} as ${camelModuleName}${aliasExports ? ', ' + aliasExports.join(', ') : ''} } from '${path}'`
+                return `export { ${exportNames.join(', ')} } from '${path}'`
             })
             .join('\n')
 

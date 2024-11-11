@@ -4,10 +4,12 @@
     "description": "ProIcons ReactJS package",
     "main": "src/proicons-react.ts",
     "private": true,
+    "type": "module",
     "scripts": {
         "dev": "pnpm vite",
         "build": "pnpm vite build",
-        "preview": "pnpm vite preview"
+        "preview": "pnpm vite preview",
+        "icons:build-modules": "node ../../bin/addIconFiles.js -t './bin/reactIconTemplate.js' -out './src/icons' -i './src/icons.ts' --format ts --clean --lib react"
     },
     "author": "ProCode Software",
     "license": "MIT",
@@ -25,12 +27,13 @@
         "react"
     ],
     "devDependencies": {
+        "@types/react": "^18.3.12",
+        "@types/react-dom": "^18.3.1",
+        "@vitejs/plugin-react-swc": "^3.7.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
-        "@vitejs/plugin-react-swc": "^3.5.0",
-        "typescript": "^5.5.3",
-        "vite": "^5.4.1"
+        "typescript": "^5.6.3",
+        "vite": "^5.4.10",
+        "vite-plugin-dts": "^4.3.0"
     }
 }

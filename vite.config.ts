@@ -4,7 +4,7 @@ import dts from 'vite-plugin-dts'
 import pkg from './package.json' with { type: 'json' }
 
 const licenseNotice = `/**
- * @license MIT
+ * @license ProIcons v${pkg.version} - MIT
  * 
  * This code is licensed under the MIT license.
  * See the LICENSE file in the root directory of the source tree.
@@ -27,6 +27,7 @@ export default defineConfig({
                     banner: licenseNotice,
                     name: 'proicons',
                     dir: `dist/${format}`,
+                    format
                     entryFileNames: ({ name }) => (format == 'esm' ? `${name}.js` : `${name}.cjs`),
                 } as OutputOptions
             }),
