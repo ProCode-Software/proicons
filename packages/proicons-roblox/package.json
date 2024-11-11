@@ -4,8 +4,10 @@
     "version": "4.11.0",
     "description": "ProIcons Roblox package",
     "main": "src/icons.luau",
+    "type": "module",
     "scripts": {
         "dev": "rojo serve",
+        "icons:build": "node ./bin/buildIcons.js",
         "build": "rojo build -o dist/proicons.rbxmx",
         "publish": "rojo build -o dist/proicons.rbxmx",
         "sourcemap": "rojo sourcemap -o sourcemap.json --watch"
