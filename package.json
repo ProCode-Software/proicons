@@ -44,7 +44,7 @@
         "icons:build-frozen": "pnpm run icons:build -l",
         "icons:build-rebuild": "pnpm run icons:build -r",
         "font:build": "pnpm run icons:build -f",
-        "build": "pnpm tsc && pnpm vite build",
+        "build": "pnpm vite build",
         "preview": "pnpm vite preview",
         "docs:dev": "pnpm vitepress dev site/src --port 9000",
         "docs:build": "pnpm vitepress build site/src",

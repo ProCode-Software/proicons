@@ -27,7 +27,7 @@ export default defineConfig({
                     banner: licenseNotice,
                     name: 'proicons',
                     dir: `dist/${format}`,
-                    format
+                    format,
                     entryFileNames: ({ name }) => (format == 'esm' ? `${name}.js` : `${name}.cjs`),
                 } as OutputOptions
             }),

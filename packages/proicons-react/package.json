@@ -3,6 +3,8 @@
     "version": "4.9.0",
     "description": "ProIcons ReactJS package",
     "main": "src/proicons-react.ts",
+    "module": "src/proicons-react.ts",
+    "types": "lib/proicons-react.d.ts",
     "private": true,
     "type": "module",
     "scripts": {

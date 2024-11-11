@@ -130,11 +130,11 @@ out
 
 /in/
 /dist/
-/lib/
 /_outlined/
 **/_lib/
 packages/**/dist/
 packages/**/lib/
+/lib/
 
 # VitePress
 **/.vitepress/cache/
