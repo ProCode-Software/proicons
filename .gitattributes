@@ -4,3 +4,6 @@ icons/fonts/** -linguist-detectable
 *.html -linguist-detectable
 **/ProIcons.css -linguist-detectable
 * linguist-detectable
+*.* linguist-detectable
+*.* -linguist-vendored
+* -linguist-vendored
