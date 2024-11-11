@@ -1,16 +1,17 @@
 {
-    "name": "ProIcons Roblox Testing",
-    "globIgnorePaths": [
-        "**/package.json",
-        "**/tsconfig.json"
-    ],
+    "name": "ProIcons Roblox",
     "tree": {
         "$className": "DataModel",
         "ReplicatedStorage": {
             "$className": "ReplicatedStorage",
             "ProIcons": {
-                "$path": "out"
+                "$className": "Model",
+                "$path": "src"
             }
         }
-    }
+    },
+    "globIgnorePaths": [
+        "**/package.json",
+        "**/tsconfig.json"
+    ]
 }

@@ -1,30 +1,16 @@
 {
     "name": "@proicons/roblox",
-    "version": "4.11.0",
-    "description": "ProIcons package for Roblox",
-    "main": "out/init.lua",
     "private": true,
+    "version": "4.11.0",
+    "description": "ProIcons Roblox package",
+    "main": "src/icons.luau",
     "scripts": {
-        "build": "rbxtsc",
-        "watch": "rbxtsc -w",
-        "serve": "rojo serve",
-        "prepublishOnly": "pnpm run build"
+        "dev": "rojo serve",
+        "build": "rojo build -o dist/proicons.rbxmx",
+        "publish": "rojo build -o dist/proicons.rbxmx",
+        "sourcemap": "rojo sourcemap -o sourcemap.json --watch"
     },
     "keywords": [],
-    "author": "",
-    "license": "MIT",
-    "types": "out/index.d.ts",
-    "files": [
-        "out",
-        "!**/*.tsbuildinfo"
-    ],
-    "publishConfig": {
-        "access": "public"
-    },
-    "devDependencies": {
-        "@rbxts/compiler-types": "3.0.0-types.0",
-        "@rbxts/types": "^1.0.813",
-        "roblox-ts": "^3.0.0",
-        "typescript": "^5.6.3"
-    }
+    "author": "ProCode Software",
+    "license": "MIT"
 }

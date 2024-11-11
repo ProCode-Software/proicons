@@ -40,6 +40,10 @@ function App() {
     )
 }
 ```
+
+::: warning Important
+
+:::
 <!-- #endregion install-react -->
 
 ## Usage
