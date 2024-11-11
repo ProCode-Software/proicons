@@ -4,9 +4,6 @@ import pkg from '../package.json' with { type: 'json' }
 import { getCliParams } from './build/getCliParam.js'
 import ansiColors from 'ansi-colors'
 
-// TODO: remove
-const ignoredPackages = ['@proicons/react', '@proicons/roblox']
-
 const packagePaths = ['package.json']
 const packageNames = []
 
@@ -56,11 +53,14 @@ for (const folderName of readdirSync(resolve('./packages'))) {
         const pn = JSON.parse(packageData).name
         const VERSION_REGEX = /("version":\s*")(\d+\.\d+\.\d+)"/
 
-        if (ignoredPackages.includes(pn)) continue
         packageNames.push(pn)
 
         writeFileSync(path, packageData.replace(VERSION_REGEX, `$1${newVersion}"`))
     }
 
-    console.log(ansiColors.green(`Bumped version to ${newVersion} for ${ansiColors.yellow(packageNames.join(', '))}`))
+    console.log(
+        ansiColors.green(
+            `Bumped version to ${newVersion} for ${ansiColors.yellow(packageNames.join(', '))}`
+        )
+    )
 })()

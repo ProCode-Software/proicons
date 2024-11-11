@@ -1,11 +1,11 @@
 import * as React from 'react'
-import * as icons from './icons'
-import { ProIconsOptions } from './types'
 import { kebabCase } from '../../../src/rename'
+import * as icons from './icons'
+import { ProIconAttributes } from './types'
 
 type IconEnum<T extends string> = T extends `${infer Base}Icon` ? Base : T
 
-interface ProIconComponent extends ProIconsOptions {
+interface ProIconComponent extends ProIconAttributes {
     /**
      * The name of the icon in kebabCase, PascalCase, Friendly Form, or camelCase. Case-insensitive
      * @example These are allowed:

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { kebabToPascalCase, pascalToCamelCase } from '../../../src/rename'
+import { kebabCase, kebabToPascalCase, pascalToCamelCase } from '../../../src/rename'
 import { convertNodesWithConfig } from '../../../src/renderNodes'
-import { ProIconsOptions } from './types'
+import { ProIconAttributes } from './types'
 
 export type IconNode = [string, Record<string, string>, IconNode[]]
 
@@ -33,22 +33,26 @@ export function createIcon(
     if (deprecated) {
         console.warn(`Icon ${name} is deprecated. Use ${alternative} instead.`)
     }
-    const Component = React.forwardRef((props: ProIconsOptions, ref) => {
-        return React.createElement(
-            'svg',
-            {
-                ref,
-                width: props?.size ?? '24',
-                height: props?.size ?? '24',
-                xmlns: 'http://www.w3.org/2000/svg',
-                viewBox: '0 0 24 24',
-                fill: 'none',
-                ...props,
-            },
-            // @ts-ignore
-            ...(convertNodes(convertNodesWithConfig(nodes, props)) ?? [])
-        )
-    })
+    const Component = React.forwardRef<SVGSVGElement, ProIconAttributes>(
+        (props, ref) => {
+            return React.createElement(
+                'svg',
+                {
+                    ref,
+                    width: props?.size ?? '24',
+                    height: props?.size ?? '24',
+                    xmlns: 'http://www.w3.org/2000/svg',
+                    viewBox: '0 0 24 24',
+                    fill: 'none',
+                    ...props,
+                    className: ((props?.className ?? '') + ' proicon').trim(),
+                    'data-proicon-id': kebabCase(name),
+                },
+                // @ts-ignore
+                ...(convertNodes(convertNodesWithConfig(nodes, props)) ?? [])
+            )
+        }
+    )
     Component.displayName = name
 
     return Component

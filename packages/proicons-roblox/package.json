@@ -1,6 +1,6 @@
 {
     "name": "@proicons/roblox",
-    "version": "4.9.0",
+    "version": "4.11.0",
     "description": "ProIcons package for Roblox",
     "main": "out/init.lua",
     "private": true,

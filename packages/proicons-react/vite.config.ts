@@ -28,10 +28,13 @@ export default defineConfig({
                 name: 'proicons',
                 dir: `dist`,
                 format: 'es',
-                entryFileNames: ({ name }) => `${name}.js`,
+                entryFileNames: ({ name }) => `${name.replace('src/', 'utils/')}.js`,
+                globals: {
+                    react: 'React',
+                },
             },
             preserveEntrySignatures: 'exports-only',
-            external: ["react", "react-dom"]
+            external: ['react', 'react-dom'],
         },
     },
     plugins: [

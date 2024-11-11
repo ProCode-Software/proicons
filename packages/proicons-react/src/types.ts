@@ -1,3 +1,5 @@
+import * as React from 'react'
+
 export interface ProIconsOptions {
     /** Determines the color of the icons. Defaults to `currentColor`. */
     color?: string
@@ -16,3 +18,7 @@ export interface ProIconsOptions {
     /** Determines the size of the icon in pixels. Defaults to `24` */
     size?: number
 }
+
+export type ProIconAttributes = React.RefAttributes<SVGSVGElement> &
+    React.SVGProps<SVGSVGElement> &
+    ProIconsOptions
