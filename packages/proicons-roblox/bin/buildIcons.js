@@ -11,6 +11,7 @@ const outputFile = resolve(__dirname, '../src/icons.luau')
 
 const entries = Object.entries(icons).map(
     ([friendlyName, { description, category }]) => {
+        if (category == 'Logos & Brands') return
         const hasTags = description.length
         const tagStrings = description.split(',').map(d => JSON.stringify(d.trim()))
 
