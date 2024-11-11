@@ -2,3 +2,5 @@
 tools/data/* -linguist-detectable
 icons/fonts/** -linguist-detectable
 *.html -linguist-detectable
+**/ProIcons.css -linguist-detectable
+* linguist-detectable
