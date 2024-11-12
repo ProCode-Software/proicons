@@ -1,0 +1,36 @@
+{
+    "name": "@proicons/vue",
+    "description": "ProIcons icon library for Vue",
+    "private": true,
+    "version": "4.11.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc -b && vite build",
+        "preview": "vite preview"
+    },
+    "author": "ProCode Software",
+    "license": "MIT",
+    "keywords": [
+        "icons",
+        "icon-pack",
+        "js",
+        "feather",
+        "lucide",
+        "fluent",
+        "font awesome",
+        "svg",
+        "proicons",
+        "procode",
+        "vue"
+    ],
+    "peerDependencies": {
+        "vue": "^3.5.12"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.1.4",
+        "typescript": "~5.6.2",
+        "vite": "^5.4.10",
+        "vue-tsc": "^2.1.8"
+    }
+}
