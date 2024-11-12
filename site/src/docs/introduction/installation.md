@@ -23,19 +23,19 @@ If you want to use ProIcons locally, you can also install ProIcons via [NPM](htt
 <!-- #region install-general -->
 ::: code-group
 
-```console [NPM]
+```shell [NPM]
 npm install proicons
 ```
 
-```console [Yarn]
+```shell [Yarn]
 yarn add proicons
 ```
 
-```console [PNPM]
+```shell [PNPM]
 pnpm add proicons
 ```
 
-```console [Bun]
+```shell [Bun]
 bun add proicons
 ```
 

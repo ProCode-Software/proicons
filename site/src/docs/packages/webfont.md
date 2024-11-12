@@ -16,19 +16,19 @@ Use ProIcons as a webfont on your site without the need of using scripts. Contai
 ### Install package via NPM
 ::: code-group
 
-```console [NPM]
+```shell [NPM]
 npm install @proicons/webfont
 ```
 
-```console [Yarn]
+```shell [Yarn]
 yarn add @proicons/webfont
 ```
 
-```console [PNPM]
+```shell [PNPM]
 pnpm add @proicons/webfont
 ```
 
-```console [Bun]
+```shell [Bun]
 bun add @proicons/webfont
 ```
 :::

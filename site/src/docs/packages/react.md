@@ -13,24 +13,30 @@ Install via NPM:
 
 ::: code-group
 
-```console [NPM]
+```shell [NPM]
 npm install @proicons/react
 ```
 
-```console [Yarn]
+```shell [Yarn]
 yarn add @proicons/react
 ```
 
-```console [PNPM]
+```shell [PNPM]
 pnpm add @proicons/react
 ```
 
-```console [Bun]
+```shell [Bun]
 bun add @proicons/react
 ```
 :::
+<!-- #endregion install-react -->
+::: warning Important
+This package is ESM only. To use in CommonJS contexts, use `await import('@proicons/react')` (asynchronous) or `require('@proicons/react')` in newer Node.js versions.
+:::
 
-Then import your icon as a JSX component:
+## Usage
+ProIcons can be imported by the icon name in PascalCase, and may end in `Icon`. The icon `Add` can be imported using either `Add` or `AddIcon`.
+
 ```jsx
 import { SearchIcon } from '@proicons/react'
 
@@ -40,19 +46,4 @@ function App() {
     )
 }
 ```
-
-::: warning Important
-
-:::
-<!-- #endregion install-react -->
-
-## Usage
-Import a ProIcon by creating an `<i>` element with the class `proicon-[icon name]`. Make sure the icon name is in kebab-case.
-
-To import the Add icon:
-```html
-<i class="proicon-add"></i>
-```
-::: info Important
-If importing a variable icon such as `add-square-multiple--var`, make sure to only use one hyphen before `var`. This class name woul be replaced with `add-square-multiple-var`.
-:::
+These components get converted into `<svg>` elements, and can be customized using 
