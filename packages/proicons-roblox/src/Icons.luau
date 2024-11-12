@@ -128,7 +128,7 @@ return {
     },
     CheckmarkStarburst = {
         category = "Security",
-        tags = { "Verified", "Twitter Blue", "Trusted", "Safe", "Legitimate", "Real", "X Premium" }
+        tags = { "Verified", "Trusted", "Safe", "Legitimate", "Real" }
     },
     CreditCard = {
         category = "Security",
@@ -384,7 +384,7 @@ return {
     },
     Skull = {
         category = "Emojis",
-        tags = { "Skeleton", "Emoji", "Bones", "Head", "Spooky", "Poison", "Pirate", "Kill", "Blood", "Death", "Die", "" }
+        tags = { "Skeleton", "Emoji", "Bones", "Head", "Spooky", "Poison", "Pirate", "Blood", "" }
     },
     ArrowClockwise = {
         category = "Arrows"
@@ -1012,101 +1012,9 @@ return {
     TextHighlightColorAccent = {
         category = "Accents"
     },
-    Amazon = {
-        category = "Logos & Brands",
-        tags = { "Shopping", "Delivery", "Prime" }
-    },
-    AppStore = {
-        category = "Logos & Brands",
-        tags = { "Apple", "Mac App Store", "Apple App Store", "iOS", "iPadOs", "macOS" }
-    },
-    Apple = {
-        category = "Logos & Brands",
-        tags = { "iPhone", "iPad", "Mac", "iOS", "iPadOS", "watchOS", "Watch", "Tablet", "Phone", "Tim Cook", "Steve Jobs", "macOS", "Cupertino" }
-    },
-    Bluetooth = {
-        category = "Logos & Brands",
-        tags = { "BT", "Wireless" }
-    },
-    CSS = {
-        category = "Logos & Brands",
-        tags = { "CSS3", "Stylesheet", "Programming", "Web" }
-    },
-    Facebook = {
-        category = "Logos & Brands",
-        tags = { "Meta", "Social Media", "Mark Zuckerburg", "Messenger" }
-    },
-    Figma = {
-        category = "Logos & Brands",
-        tags = { "Design", "Dylan Field", "Sketch", "Icons", "Prototype", "Prototyping", "Adobe" }
-    },
-    GitHub = {
-        category = "Logos & Brands",
-        tags = { "Open Source", "Code", "Microsoft", "Git" }
-    },
-    Google = {
-        category = "Logos & Brands",
-        tags = { "Pixel", "Sundar Pichai", "Search", "Android" }
-    },
-    Google2 = {
-        category = "Logos & Brands",
-        tags = { "Google Color", "Pixel", "Sundar Pichai", "Search", "Android" }
-    },
-    GoogleChrome = {
-        category = "Logos & Brands",
-        tags = { "Browser", "Chromium", "Microsoft", "MS Edge" }
-    },
-    GooglePlay = {
-        category = "Logos & Brands",
-        tags = { "App Store", "Android", "Google", "Google Play Store" }
-    },
-    HTML = {
-        category = "Logos & Brands",
-        tags = { "HTML5", "Markup", "Programming", "Web" }
-    },
-    Instagram = {
-        category = "Logos & Brands",
-        tags = { "Social" }
-    },
-    JavaScript = {
-        category = "Logos & Brands",
-        tags = { "Programming", "Web", "Electron", "JS" }
-    },
-    Microsoft = {
-        category = "Logos & Brands",
-        tags = { "Windows", "Win11", "Windows 11", "Satya Nadella", "Steve Ballmer", "Bill Gates" }
-    },
-    MicrosoftEdge = {
-        category = "Logos & Brands",
-        tags = { "Browser", "Chromium", "Microsoft", "MS Edge" }
-    },
-    Python = {
-        category = "Logos & Brands",
-        tags = { "Programming" }
-    },
     Roblox = {
         category = "Logos & Brands",
         tags = { "Gaming", "Studio", "Bloxy", "Player" }
-    },
-    TikTok = {
-        category = "Logos & Brands",
-        tags = { "ByteDance", "Now", "Shorts", "Social", "Videos" }
-    },
-    VisualStudioCode = {
-        category = "Logos & Brands",
-        tags = { "VSCode", "VS Code", "IDE", "Text Editor", "Microsoft" }
-    },
-    XTwitter = {
-        category = "Logos & Brands",
-        tags = { "Twitter", "X/Twitter", "X Corp.", "Elon Musk", "Bird", "Tweet", "Post", "Social Media" }
-    },
-    YouTube = {
-        category = "Logos & Brands",
-        tags = { "Social", "Shorts", "Watch", "Videos" }
-    },
-    YouTubeShorts = {
-        category = "Logos & Brands",
-        tags = { "YT Shorts", "Watch", "YouTube", "Vertical", "TikTok" }
     },
     Book = {
         category = "Activities",
@@ -1467,26 +1375,6 @@ return {
     Branch = {
         category = "Development"
     },
-    Ubuntu = {
-        category = "Logos & Brands",
-        tags = { "Canonical", "Linux", "Mark Shuttleworth", "Open Source" }
-    },
-    Linux = {
-        category = "Logos & Brands",
-        tags = { "Tux", "GNU/Linux", "Penguin", "Operating System", "OS", "Linus Torvalds", "Open Source" }
-    },
-    Webpack = {
-        category = "Logos & Brands",
-        tags = { "Module Bundler", "JavaScript" }
-    },
-    NPM = {
-        category = "Logos & Brands",
-        tags = { "Node Package Manager", "JavaScript", "JS", "Node.js" }
-    },
-    NodeJS = {
-        category = "Logos & Brands",
-        tags = { "Node Package Manager", "JavaScript", "JS", "Node.js" }
-    },
     Bolt = {
         category = "Actions",
         tags = { "Lightning", "Strike", "Flash", "Zap" }
@@ -1494,14 +1382,6 @@ return {
     Door = {
         category = "Places & Transportation",
         tags = { "Closed" }
-    },
-    OpenSource = {
-        category = "Logos & Brands",
-        tags = { "Open Source Initiative", "OSI", "Free Software", "FOSS" }
-    },
-    VueJS = {
-        category = "Logos & Brands",
-        tags = { "JavaScript", "Framework", "Open Source", "Evan You" }
     },
     Record = {
         category = "Actions",
@@ -1521,11 +1401,7 @@ return {
     },
     Candy = {
         category = "Food & Drink",
-        tags = { "Skeleton", "Emoji", "Bones", "Head", "Spooky", "Poison", "Pirate", "Kill", "Blood", "Death", "Die" }
-    },
-    Svelte = {
-        category = "Logos & Brands",
-        tags = { "SvelteKit", "Framework", "JavaScript", "Compiler" }
+        tags = { "Skeleton", "Emoji", "Bones", "Head", "Spooky", "Poison", "Pirate", "Blood" }
     },
     CheckboxIndeterminate2 = {
         category = "System & Interface"
@@ -1556,10 +1432,6 @@ return {
         category = "Math & Numbers",
         tags = { "Measure", "Length", "Meter", "Foot", "Metre", "Feet", "Yard" }
     },
-    TypeScript = {
-        category = "Logos & Brands",
-        tags = { "Programming", "Web", "TS", "Microsoft" }
-    },
     SlashBox = {
         category = "Actions",
         tags = { "Command" }
@@ -1584,14 +1456,6 @@ return {
         category = "Status",
         tags = { "New Notification", "Alert", "Unread" }
     },
-    GitLab = {
-        category = "Logos & Brands",
-        tags = { "Open Source" }
-    },
-    ReactJS = {
-        category = "Logos & Brands",
-        tags = { "Framework", "JavaScript", "Meta", "Facebook" }
-    },
     Infinity = {
         category = "Math & Numbers",
         tags = { "Number", "Infinite" }
@@ -1603,10 +1467,6 @@ return {
     HeadphonesOff = {
         category = "Media",
         tags = { "Audio" }
-    },
-    Android = {
-        category = "Logos & Brands",
-        tags = { "Social" }
     },
     Flag2 = {
         category = "Objects",
