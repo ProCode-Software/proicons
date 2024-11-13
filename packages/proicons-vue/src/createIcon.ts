@@ -34,7 +34,7 @@ export function createIcon(
         console.warn(`Icon ${name} is deprecated. Use ${alternative} instead.`)
     }
 
-    return (props, { slots }) => {
+    return (props,) => {
         return h(
             'svg',
             {
@@ -49,8 +49,7 @@ export function createIcon(
             },
             [
                 // @ts-ignore
-                ...(convertNodes(convertNodesWithConfig(nodes, props)) ?? []),
-                ...(slots.default ? slots.default() : [])
+                ...(convertNodes(convertNodesWithConfig(nodes, props)) ?? [])
             ]
         )
     }
