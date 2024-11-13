@@ -101,7 +101,7 @@ const modules = [];
                     : undefined
 
                 const exportNames = [
-                    ...(libParam == 'vanilla' ? [camelModuleName] : []), // Camel name
+                    ...(libParam == 'vanilla' ? [camelModuleName] : [name.slice(0, -4)]), // Camel name or Camel name without icon
                     ...(aliasExports ?? []), // Aliases
                 ].map(e => `${name} as ${e}`)
 

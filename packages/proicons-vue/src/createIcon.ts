@@ -44,7 +44,7 @@ export function createIcon(
                 viewBox: '0 0 24 24',
                 fill: 'none',
                 class: ['proicon', props.class].flat(),
-                'data-proicon-id': kebabCase(n``ame),
+                'data-proicon-id': kebabCase(name),
                 ...props,
             },
             [

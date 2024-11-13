@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import ProIcon from '../src/ProIcon.vue'
+import { AddSquareMultipleIcon } from "../src/icons";
 </script>
 
 <template>
-    <ProIcon icon="ProIcons Vue" />
+    <AddSquareMultipleIcon :size="32" color="red" />
+    <ProIcon icon="ProIcons Vue" :size="50" />
 </template>
 
 <style scoped>
