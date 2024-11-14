@@ -46,4 +46,21 @@ function App() {
     )
 }
 ```
-These components get converted into `<svg>` elements, and can be customized using 
+Props from [`ProIconOptions`]() can be used to customize icons. These components get converted into `<svg>` elements with your configuration.
+
+## `ProIcon` Component
+This package also includes a generic `ProIcon` component allowing you to import icons by their name. This is equivalent to the [HTML API](../api-reference/html-api).
+
+::: danger
+Using the `<ProIcon>` component imports all icons and breaks tree-shaking, which can increase bundle size when using module bundlers such as Webpack or Rollup.
+:::
+
+```jsx
+<ProIcon icon="Add Square" size={32} />
+
+// Other forms are allowed
+<ProIcon icon="AddSquare" size={32} />
+<ProIcon icon="AddSquareIcon" size={32} />
+<ProIcon icon="addSquare" size={32} />
+<ProIcon icon="add-square" size={32} />
+```
