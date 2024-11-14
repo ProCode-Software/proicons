@@ -43,7 +43,7 @@ export interface ProIconReplaceConfig extends ProIconsOptions {
     useAttributes?: false
 }
 
-export class ProIconInfo {
+export class ProIcon {
     #nodes: IconNode[] = []
 
     /** The name of the icon in Friendly Form */

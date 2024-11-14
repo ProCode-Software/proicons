@@ -1,11 +1,11 @@
 // @ts-nocheck
 import getIconInfo from './getIconInfo'
-import { ProIconReplaceConfig, ProIconInfo } from './types'
+import { ProIconReplaceConfig, ProIcon } from './types'
 import { icons } from './proicons'
 
 /**
  * Converts all elements with the `proicon` attribute (which can be customised in the config) on the page to an icon corresponding to the attribute value.
- * Note that this only works in a browser environment. This also breaks tree-shaking.
+ * Note that this only works in a browser environment, and also breaks tree-shaking.
  * @param rootElm The element to search inside for children with the `proicon` attribute. Defaults to `document.body`.
  * @param config An optional configuration to customise the behaviour of the replace method
  */
@@ -43,7 +43,7 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
 
         let iconElement = document.createElement('svg')
 
-        const propMap: Record<string, keyof ProIconInfo> = {
+        const propMap: Record<string, keyof ProIcon> = {
             color: 'color',
             'stroke-width': 'strokeWidth',
             join: 'strokeJoin',

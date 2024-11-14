@@ -1,15 +1,18 @@
-import getIconInfo from "./getIconInfo"
 import * as icons from './icons'
 
-import { ProIconInfo } from "./types"
+import { ProIcon } from "./types"
 
-/** Searches for icons with names or tags that contain `key` and returns them as `ProIconInfo`. */
-function search(query: string): ProIconInfo[] {
-    const mappedIcons = Object.values(icons)
+/** 
+ * Searches for icons with names or tags that contain `key` and returns them as `ProIcon`.
+ * 
+ * Note: This will import all icons and breaks tree-shaking
+*/
+function search(query: string): ProIcon[] {
+    const mappedIcons = Object.values(icons) as ProIcon[]
 
     const filtered = mappedIcons.filter(item => {
         return Object.entries(item).some(([key, iconValue]) => {
-            if (key == 'element') return
+            if (!Array.isArray(iconValue) || typeof iconValue != 'string') return
 
             return Array.isArray(iconValue) ?
                 iconValue.some(tag => tag.toLowerCase()
