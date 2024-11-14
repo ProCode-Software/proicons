@@ -1,6 +1,6 @@
 // @ts-nocheck
 import getIconInfo from './getIconInfo'
-import { ProIconReplaceConfig, ProIconInfo } from './interfaces'
+import { ProIconReplaceConfig, ProIconInfo } from './types'
 import { icons } from './proicons'
 
 /**

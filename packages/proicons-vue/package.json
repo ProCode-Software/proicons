@@ -4,6 +4,8 @@
     "private": true,
     "version": "4.11.0",
     "type": "module",
+    "main": "dist/proicons-vue.js",
+    "module": "dist/proicons-vue.js",
     "scripts": {
         "dev": "pnpm vite",
         "build": "pnpm vue-tsc -b && pnpm vite build",

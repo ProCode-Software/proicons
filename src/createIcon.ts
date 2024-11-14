@@ -1,4 +1,4 @@
-import { ProIconInfo, ProIconsOptions } from './interfaces';
+import { ProIconInfo, ProIconsOptions } from './types';
 
 export type IconNode = [string, Record<string, string>, IconNode[]];
 

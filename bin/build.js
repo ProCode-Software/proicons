@@ -28,7 +28,7 @@ const args = {
 }
 const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
 
-const strokeColors = ['#212325', 'black', '#000000'];
+const strokeColors = ['#212325', 'black', '#000000', '#000'];
 /** @type {import("svgo").Config} */
 const svgoConfig = {
     multipass: true,
@@ -85,11 +85,12 @@ async function writeSvgFilesFromData(jsonData) {
     for (const [name, data] of Object.entries(jsonData)) {
         newIcons.push(name)
 
-        let optimized = optimize(data.icon, svgoConfig).data;
-
+        let iconData = data.icon
         strokeColors.forEach((color) => {
-            optimized = optimized.replaceAll(color, 'currentColor');
+            iconData = iconData.replaceAll(color, 'currentColor');
         });
+
+        let optimized = optimize(iconData, svgoConfig).data;
 
         try {
             const fn = rename.kebabCase(name.trim())

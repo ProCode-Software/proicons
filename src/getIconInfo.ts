@@ -1,5 +1,5 @@
 import * as icons from './icons'
-import { ProIconInfo } from './interfaces';
+import { ProIconInfo } from './types';
 import { camelCase, kebabCase } from './rename';
 
 /**

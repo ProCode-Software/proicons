@@ -10,9 +10,9 @@ export interface ProIconsOptions {
      */
     outline?: boolean
     /** Defaults to `round` */
-    caps?: 'round' | 'square' | 'butt'
+    strokeCaps?: 'round' | 'square' | 'butt'
     /** Defaults to `round` */
-    join?: 'round' | 'miter' | 'bevel'
+    strokeJoin?: 'round' | 'miter' | 'bevel'
     /** Determines the corner radius of SVG elements. Does not apply to all rounded elements. */
     cornerRadius?: number
     /** Determines the size of the icon in pixels. Defaults to `24` */

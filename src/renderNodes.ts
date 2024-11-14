@@ -1,4 +1,4 @@
-import { type ProIconsOptions } from './interfaces';
+import { type ProIconsOptions } from './types';
 import { type IconNode } from './createIcon';
 
 export const rootNode: IconNode = [
@@ -17,7 +17,7 @@ export function toNodes(elementString: string): IconNode[] {
     const element = new DOMParser()
         .parseFromString(elementString, 'image/svg+xml')
         .querySelector('svg')
-    
+
     function renderNodeList(elm) {
         const nodeArray = []
 

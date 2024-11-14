@@ -16,7 +16,6 @@ interface ProIconComponent extends ProIconAttributes {
      * <ProIcon icon="bookmarkMultiple" />
      * ```
      */
-
     icon: IconEnum<keyof typeof icons> | (string & {})
 }
 
@@ -37,7 +36,7 @@ export function getPascalName(name: string): string | undefined {
                 return true
             }
         }
-    )?.[0]
+    )?.[0] ?? undefined
 }
 
 export const ProIcon = React.forwardRef<SVGSVGElement, ProIconComponent>(

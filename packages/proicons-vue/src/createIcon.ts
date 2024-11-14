@@ -45,6 +45,7 @@ export function createIcon(
                 fill: 'none',
                 class: ['proicon', props.class].flat(),
                 'data-proicon-id': kebabCase(name),
+                name,
                 ...props,
             },
             [

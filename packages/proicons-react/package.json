@@ -2,8 +2,8 @@
     "name": "@proicons/react",
     "version": "4.11.0",
     "description": "ProIcons icon library for ReactJS",
-    "main": "src/proicons-react.ts",
-    "module": "src/proicons-react.ts",
+    "main": "dist/proicons-react.js",
+    "module": "dist/proicons-react.js",
     "types": "lib/proicons-react.d.ts",
     "type": "module",
     "scripts": {
