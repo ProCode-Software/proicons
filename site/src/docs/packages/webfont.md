@@ -1,5 +1,5 @@
 ---
-title: ProIcons Webfont
+title: Webfont
 ---
 
 # ProIcons Webfont
@@ -45,7 +45,7 @@ To import the Add icon:
 <i class="proicon-add"></i>
 ```
 ::: info Important
-If importing a variable icon such as `add-square-multiple--var`, make sure to only use one hyphen before `var`. This class name woul be replaced with `add-square-multiple-var`.
+If importing a variable icon such as `add-square-multiple--var`, make sure to only use one hyphen before `var`. This class name would be replaced with `add-square-multiple-var`.
 :::
 
 ## Caveats

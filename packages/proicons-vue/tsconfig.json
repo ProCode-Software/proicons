@@ -5,7 +5,7 @@
         "useDefineForClassFields": true,
         "module": "ESNext",
         "lib": [
-            "ES2020",
+            "ES2022",
             "DOM",
             "DOM.Iterable"
         ],
@@ -21,11 +21,10 @@
             "vite/client"
         ],
         /* Linting */
-        "strict": true,
+        "strict": false,
         "noUnusedLocals": false,
         "noUnusedParameters": false,
         "noFallthroughCasesInSwitch": true,
-        "noUncheckedSideEffectImports": true,
         "noImplicitAny": false
     },
     "include": [

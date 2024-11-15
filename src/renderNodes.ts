@@ -71,7 +71,7 @@ export function convertNodesWithConfig(nodes: IconNode[], options?: ProIconsOpti
             node[1].fill != 'none' &&
             node[1].stroke != 'none' &&
             node[1]['stroke-width'] !== '0' &&
-            options?.strokeWidth > defaultStroke
+            (options?.strokeWidth ?? 0) > defaultStroke
         ) {
             node[1]['stroke-width'] = (options.strokeWidth - defaultStroke).toString()
             node[1].stroke = node[1].fill

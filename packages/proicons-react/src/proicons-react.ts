@@ -9,4 +9,4 @@ export {
 }
 export { ProIcon } from './ProIcon'
 
-export * from './icons.ts'
+export * from './icons'

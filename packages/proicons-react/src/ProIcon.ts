@@ -39,6 +39,14 @@ export function getPascalName(name: string): string | undefined {
     )
 }
 
+/**
+ * Generic icon component allowing you to import icons by their names
+ * 
+ * Note: This breaks tree-shaking
+ * @example ```jsx
+ * <ProIcon icon="Add Square" />
+ * ```
+ */
 export const ProIcon = React.forwardRef<SVGSVGElement, ProIconComponent>(
     ({ icon, ...props }, ref) => {
         if (!icon) {
