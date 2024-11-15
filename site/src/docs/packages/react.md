@@ -6,7 +6,7 @@ title: React
 Icon library with high-quality, customizable SVGs that can easily be used in [React](https://react.dev) applications, with support for tree-shaking.
 
 [View on NPM](https://npmjs.com/package/@proicons/react) |
-[GitHub](https://github.com/ProCode-Software/proicons)
+[GitHub](https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-react)
 
 ## Installation
 <!-- #region install-react -->
