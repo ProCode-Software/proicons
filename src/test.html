@@ -13,10 +13,10 @@
         }
     </style>
     <!-- Add an icon with 100px size -->
-    <i proicon="photo" width="100" height="100" stroke-width="2" outline></i>
+    <i proicon="photo" size="100" stroke-width="2" outline></i>
 
-    <!-- Add an icon in red -->
-    <i proicon="delete" color="red"></i>
+    <!-- Add an icon in red with a class name -->
+    <i proicon="delete" color="red" class="secondClass"></i>
 
     <script type="module">
         // Required ProIcons script
@@ -27,7 +27,10 @@
         proicons.replace()
 
         // List all categories
-        console.log(proicons.categories)
+        console.log('Categories:', proicons.categories)
+
+        // List all icons
+        console.log('Icons:', proicons.iconList)
 
         // Log an icon's information
         console.log(AddIcon)
@@ -35,7 +38,7 @@
         // Another way to add an icon
         document.body.insertAdjacentHTML('beforeend', record.raw)
 
-        // Also another way to add an icon
+        // Add an icon with a configuration
         document.body.insertAdjacentHTML(
             'beforeend',
             proicons.getIconInfo('computer').toSvg({
@@ -45,7 +48,7 @@
         )
 
         // Search
-        console.log(proicons.search('payment'))
+        console.log('Search results:', proicons.search('add'))
     </script>
 </body>
 

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { kebabCase } from '../../../src/rename'
+import { kebabCase, pascalCase } from '../../../src/rename'
 import * as icons from './icons'
 import { ProIconAttributes } from './types'
 
@@ -20,22 +20,19 @@ interface ProIconComponent extends ProIconAttributes {
 }
 
 export function getPascalName(name: string): string | undefined {
+    const lowerName = name.toLowerCase()
+    
     return (
-        Object.entries(icons).find(([iconName, { displayName: friendlyName }]) => {
-            const lowerName = name.toLowerCase()
-            const lowerIconName = iconName.slice(0, -4).toLowerCase()
+        Object.keys(icons).find(pascalName => {
+            const lowerIconName = pascalName.replace(/Icon$/, '').toLowerCase()
 
-            if (lowerIconName == lowerName || lowerIconName + 'icon' == lowerName) {
-                // Camel or pascal case
-                return true
-            } else if (kebabCase(lowerIconName) == name) {
-                // Kebab case
-                return true
-            } else if (friendlyName.toLowerCase() == lowerName) {
-                // Friendly form
-                return true
-            }
-        })?.[0] ?? undefined
+            return (
+                lowerIconName == lowerName ||
+                lowerIconName + 'icon' == lowerName ||
+                kebabCase(lowerIconName) == lowerName ||
+                lowerIconName == pascalCase(lowerName)
+            )
+        }) ?? undefined
     )
 }
 

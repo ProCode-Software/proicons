@@ -124,7 +124,7 @@ const modules = [];
             writeFileSync(resolve(process.cwd(), 'src', file), formatted);
         };
 
-        const iconListData = Object.keys(icons).map((name) => name);
+        const iconListData = Object.keys(icons).map((name) => name).sort();
 
         const categoryData = Object.values(icons)
             .map(({ category }) => category)

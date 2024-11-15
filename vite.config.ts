@@ -12,12 +12,14 @@ const licenseNotice = `/**
 
 const bundles: import('rollup').ModuleFormat[] = ['esm', 'cjs', 'umd']
 
+const utilityFiles = ['renderNodes', 'rename', 'createIcon']
+const functionFiles = ['replace', 'getIconInfo', 'search']
+
 export default defineConfig({
     build: {
         target: 'es2015',
         sourcemap: false,
         minify: false,
-        
         rollupOptions: {
             input: './src/proicons.ts',
 
@@ -28,7 +30,16 @@ export default defineConfig({
                     name: 'proicons',
                     dir: `dist/${format}`,
                     format,
-                    entryFileNames: ({ name }) => (format == 'esm' ? `${name}.js` : `${name}.cjs`),
+                    entryFileNames: ({ name }) =>
+                        format == 'esm'
+                            ? `${
+                                  utilityFiles.includes(name)
+                                      ? `utils/${name}`
+                                      : functionFiles.includes(name)
+                                        ? `functions/${name}`
+                                        : name
+                              }.js`
+                            : `${name}.cjs`,
                 } as OutputOptions
             }),
             preserveEntrySignatures: 'exports-only',
