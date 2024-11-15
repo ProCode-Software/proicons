@@ -20,8 +20,8 @@ interface ProIconComponent extends ProIconAttributes {
 }
 
 export function getPascalName(name: string): string | undefined {
-    return Object.entries(icons).find(
-        ([iconName, { displayName: friendlyName }]) => {
+    return (
+        Object.entries(icons).find(([iconName, { displayName: friendlyName }]) => {
             const lowerName = name.toLowerCase()
             const lowerIconName = iconName.slice(0, -4).toLowerCase()
 
@@ -35,12 +35,15 @@ export function getPascalName(name: string): string | undefined {
                 // Friendly form
                 return true
             }
-        }
-    )?.[0] ?? undefined
+        })?.[0] ?? undefined
+    )
 }
 
 export const ProIcon = React.forwardRef<SVGSVGElement, ProIconComponent>(
     ({ icon, ...props }, ref) => {
+        if (!icon) {
+            throw new TypeError("An 'icon' attribute is required.")
+        }
         const pascalName = getPascalName(icon)
 
         if (!pascalName) {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { kebabCase } from '../../../src/rename'
+import { kebabCase, pascalCase } from '../../../src/rename'
 import { ProIconAttributes } from './types'
 import * as icons from './icons'
 
@@ -7,7 +7,6 @@ type IconEnum<T extends string> = T extends `${infer Base}Icon` ? Base : T
 type IconProp = IconEnum<keyof typeof icons> | (string & {})
 
 const { icon, ...props } = defineProps<
-    /* @vue-ignore */
     ProIconAttributes & {
         /**
          * The name of the icon in kebabCase, PascalCase, Friendly Form, or camelCase. Case-insensitive
@@ -23,35 +22,35 @@ const { icon, ...props } = defineProps<
     }
 >()
 
-function getPascalName(name: string) {
-    return (
-        Object.entries(icons).find(([iconName, { props: iconProps }]) => {
-            // @ts-ignore
-            const friendlyName = iconProps.name
-            const lowerName = name.toLowerCase()
-            const lowerIconName = iconName.slice(0, -4).toLowerCase()
-
-            if (lowerIconName == lowerName || lowerIconName + 'icon' == lowerName) {
-                // Camel or pascal case
-                return true
-            } else if (kebabCase(lowerIconName) == name) {
-                // Kebab case
-                return true
-            } else if (friendlyName.toLowerCase() == lowerName) {
-                // Friendly form
-                return true
-            }
-        })?.[0] ?? undefined
-    )
+if (!icon) {
+    throw new TypeError("An 'icon' attribute is required.")
 }
 
-const iconName = getPascalName(icon)
+function getPascalName(name: string) {
+    const lowerName = name.toLowerCase()
+    const iconEntries = Object.keys(icons)
+    
+    return iconEntries.find(pascalName => {
+        const lowerIconName = pascalName.replace(/Icon$/, '').toLowerCase()
 
-if (!iconName) {
+        return (
+            lowerIconName == lowerName ||
+            lowerIconName + 'icon' == lowerName ||
+            kebabCase(lowerIconName) == lowerName ||
+            lowerIconName == pascalCase(lowerName)
+        )
+    })
+}
+
+const friendlyName = getPascalName(icon)
+
+if (!friendlyName) {
     throw new Error(`Icon '${icon}' not found.`)
 }
+
+const pascalName = pascalCase(friendlyName) + 'Icon'
 </script>
 
 <template>
-    <component :is="icons[iconName]" v-bind="{ ...props }" />
+    <component :is="icons[pascalName]" v-bind="{ ...props }" />
 </template>

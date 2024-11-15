@@ -6,7 +6,7 @@ import { AddIcon } from '../src/icons'
 function App() {
     return (
         <>
-            <ProIcon icon="Search" size={32} className="myIconClassSearch" />
+            <ProIcon icon="Add Square Multiple" size={32} className="myClass" />
             <AddIcon
                 size={32}
                 color="red"

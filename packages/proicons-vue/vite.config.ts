@@ -20,7 +20,6 @@ export default defineConfig({
 
         rollupOptions: {
             input: './src/proicons-vue.ts',
-
             output: {
                 preserveModules: true,
                 preserveModulesRoot: 'src',

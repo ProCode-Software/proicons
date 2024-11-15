@@ -9,32 +9,21 @@ export const convertNodes = (n: IconNode[]) => {
     return !n.length
         ? []
         : n.map(([tag, attrs, children]) => {
-            return h(
-                tag,
-                Object.fromEntries(
-                    Object.entries(attrs).map(([k, v]) => [
-                        pascalToCamelCase(kebabToPascalCase(k)),
-                        v,
-                    ])
-                ),
-                convertNodes(children)
-            )
-        })
+              return h(tag, attrs, convertNodes(children))
+          })
 }
 
+type CreateAttributes = { name: string; deprecated?: boolean; alternative?: string }
+
 export function createIcon(
-    {
-        name,
-        deprecated,
-        alternative,
-    }: { name: string; deprecated?: boolean; alternative?: string },
+    { name, deprecated, alternative }: CreateAttributes,
     nodes: IconNode[]
 ): FunctionalComponent<ProIconAttributes> {
     if (deprecated) {
         console.warn(`Icon ${name} is deprecated. Use ${alternative} instead.`)
     }
 
-    return (props,) => {
+    return props => {
         return h(
             'svg',
             {
@@ -45,12 +34,11 @@ export function createIcon(
                 fill: 'none',
                 class: ['proicon', props.class].flat(),
                 'data-proicon-id': kebabCase(name),
-                name,
                 ...props,
             },
             [
                 // @ts-ignore
-                ...(convertNodes(convertNodesWithConfig(nodes, props)) ?? [])
+                ...(convertNodes(convertNodesWithConfig(nodes, props)) ?? []),
             ]
         )
     }
