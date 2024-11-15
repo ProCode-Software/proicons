@@ -1,5 +1,4 @@
 import * as icons from './icons'
-
 import { ProIcon } from './types'
 
 /**

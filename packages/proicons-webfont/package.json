@@ -9,7 +9,8 @@
     "browser": "ProIcons.css",
 
     "scripts": {
-        "prepare": "node ./bin/build.js"
+        "prepare": "node ./bin/build.js",
+        "ci": "pnpm run prepare"
     },
     "keywords": [
         "font",

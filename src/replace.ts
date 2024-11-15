@@ -1,7 +1,6 @@
 // @ts-nocheck
 import getIconInfo from './getIconInfo'
-import { ProIconReplaceConfig, ProIcon } from './types'
-import { icons } from './proicons'
+import { type ProIconReplaceConfig, ProIcon } from './types'
 
 /**
  * Converts all elements with the `proicon` attribute (which can be customised in the config) on the page to an icon corresponding to the attribute value.

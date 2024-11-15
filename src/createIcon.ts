@@ -1,4 +1,4 @@
-import { ProIcon, ProIconsOptions } from './types';
+import { ProIcon } from './types';
 
 export type IconNode = [string, Record<string, string>, IconNode[]];
 

@@ -37,7 +37,7 @@ export function getPascalName(name: string): string | undefined {
 }
 
 /**
- * Generic icon component allowing you to import icons by their names
+ * Generic icon component allowing you to import icons by their name
  * 
  * Note: This breaks tree-shaking
  * @example ```jsx

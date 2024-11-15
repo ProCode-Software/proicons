@@ -1,6 +1,7 @@
 import * as icons from './icons'
 import { ProIcon } from './types';
-import { camelCase, kebabCase } from './rename';
+import { camelCase, kebabCase, pascalCase } from './rename';
+import iconList from './iconList';
 
 /**
  * Returns information about an icon from the provided key.
@@ -14,31 +15,19 @@ import { camelCase, kebabCase } from './rename';
  * getIconInfo('add-square')
  */
 function getIconInfo(key: string): ProIcon | undefined {
-    let prop: string;
+    const lowerName = key.toLowerCase()
+    const iconName = Object.keys(icons).find(pascalName => {
+        const lowerIconName = pascalName.replace(/Icon$/, '').toLowerCase()
 
-    const isFriendly = (t: string) => t.toLowerCase() == key.toLowerCase();
-    const isKebab = (t: string) => kebabCase(t.toLowerCase()) == kebabCase(key.toLowerCase());
-    const isCamel = isFriendly
+        return (
+            lowerIconName == lowerName ||
+            lowerIconName + 'icon' == lowerName ||
+            kebabCase(lowerIconName) == lowerName ||
+            lowerIconName == pascalCase(lowerName)
+        )
+    })
 
-    if (Object.keys(icons).some(isFriendly)) {
-        prop = camelCase(Object.keys(icons).find(isFriendly));
-
-    } else if (Object.keys(icons).some(isKebab)) {
-        prop = camelCase(Object.keys(icons).find(isKebab));
-
-    } else if (Object.keys(icons).some(isCamel)) {
-        // @ts-ignore
-        prop = Object.keys(icons).find(isCamel);
-
-    } else {
-        return
-    }
-
-    const friendlyName = Object.keys(icons).find((t) => {
-        return camelCase(t) == prop;
-    });
-
-    return icons[friendlyName]
+    return icons[iconName]
 }
 
 export default getIconInfo

@@ -16,7 +16,8 @@
         "dev": "pnpm vite",
         "build": "pnpm vite build",
         "preview": "pnpm vite preview",
-        "icons:build-modules": "node ../../bin/addIconFiles.js -t './bin/vueIconTemplate.js' -out './src/icons' -i './src/icons.ts' --format ts --clean --lib vue"
+        "icons:build-modules": "node ../../bin/addIconFiles.js -t './bin/vueIconTemplate.js' -out './src/icons' -i './src/icons.ts' --format ts --clean --lib vue",
+        "ci": "pnpm run icons:build-modules && pnpm run build"
     },
     "author": "ProCode Software",
     "license": "MIT",

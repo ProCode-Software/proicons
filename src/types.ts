@@ -1,4 +1,4 @@
-import { IconNode } from './createIcon'
+import { type IconNode } from './createIcon'
 import * as rename from './rename'
 import { convertNodesWithConfig, renderNodeWithRoot, rootNode } from './renderNodes'
 

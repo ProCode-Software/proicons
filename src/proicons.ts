@@ -1,6 +1,6 @@
-import * as icons from './icons'
 import categories from './categories'
 import iconList from './iconList'
+import * as icons from './icons'
 
 export {
     /** List of all available icons as type `ProIcon`.
@@ -14,8 +14,8 @@ export {
     iconList
 }
 
-export { default as replace } from './replace'
 export { default as getIconInfo } from './getIconInfo'
+export { default as replace } from './replace'
 export { default as search } from './search'
 
 export * from './icons'
