@@ -12,7 +12,7 @@ const licenseNotice = `/**
 
 export default defineConfig({
     server: {
-        open: 'test/'
+        open: 'test/',
     },
     build: {
         sourcemap: false,
@@ -27,7 +27,10 @@ export default defineConfig({
                 name: 'proicons',
                 dir: `dist`,
                 format: 'es',
-                entryFileNames: ({ name }) => `${name.replace('src/', 'utils/')}.js`,
+                entryFileNames: ({ name }) => `${
+                    name.replace('src/', 'utils/')
+                    .replace(/\.vue/, '')
+                }.js`,
                 globals: {
                     vue: 'vue',
                 },

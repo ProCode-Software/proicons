@@ -6,6 +6,12 @@
     "type": "module",
     "main": "dist/proicons-vue.js",
     "module": "dist/proicons-vue.js",
+    "types": "lib/proicons-vue.d.ts",
+    "files": [
+        "dist",
+        "lib",
+        "!dist/*2.js"
+    ],
     "scripts": {
         "dev": "pnpm vite",
         "build": "pnpm vite build",

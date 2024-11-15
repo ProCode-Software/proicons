@@ -6,6 +6,10 @@
     "module": "dist/proicons-react.js",
     "types": "lib/proicons-react.d.ts",
     "type": "module",
+    "files": [
+        "dist",
+        "lib"
+    ],
     "scripts": {
         "dev": "pnpm vite",
         "build": "pnpm vite build",

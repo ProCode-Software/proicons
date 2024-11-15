@@ -9,7 +9,7 @@ export {
     icons,
 
     /**
-     * Generic icon component allowing you to import icons by their names
+     * Generic icon component that can be used to import icons by their names
      *
      * Note: This breaks tree-shaking
      * @example ```vue
