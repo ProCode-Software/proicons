@@ -5,7 +5,8 @@ title: React
 # ProIcons for React
 Icon library with high-quality, customizable SVGs that can easily be used in [React](https://react.dev) applications, with support for tree-shaking.
 
-[View on NPM](https://npmjs.com/package/@proicons/react)
+[View on NPM](https://npmjs.com/package/@proicons/react) |
+[GitHub](https://github.com/ProCode-Software/proicons)
 
 ## Installation
 <!-- #region install-react -->
@@ -64,3 +65,5 @@ Using the `<ProIcon>` component imports all icons and breaks tree-shaking, which
 <ProIcon icon="addSquare" size={32} />
 <ProIcon icon="add-square" size={32} />
 ```
+
+All customization attributes on individual icons are also available on the `ProIcon` component.
