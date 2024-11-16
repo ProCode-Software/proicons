@@ -6,6 +6,7 @@
     "module": "dist/proicons-react.js",
     "types": "lib/proicons-react.d.ts",
     "type": "module",
+    "sideEffects": false,
     "files": [
         "dist",
         "lib"

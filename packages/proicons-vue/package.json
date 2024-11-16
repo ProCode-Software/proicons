@@ -4,6 +4,7 @@
     "private": true,
     "version": "4.11.0",
     "type": "module",
+    "sideEffects": false,
     "main": "dist/proicons-vue.js",
     "module": "dist/proicons-vue.js",
     "types": "lib/proicons-vue.d.ts",

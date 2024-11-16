@@ -3,6 +3,7 @@
     "version": "4.11.0",
     "description": "A collection of 400+ modern and open-source icons",
     "type": "module",
+    "sideEffects": false,
     "main": "dist/cjs/proicons.cjs",
     "main:umd": "dist/umd/proicons.cjs",
     "module": "dist/esm/proicons.js",
