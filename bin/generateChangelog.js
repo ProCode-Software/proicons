@@ -24,5 +24,8 @@ export function generateChangelog() {
         changelog += `\n## Updated icons\n${updatedIcons.map(s => `- ${s}`).join('\n')}`
     }
 
+    console.log(changelog)
+
     return changelog
 }
+generateChangelog()

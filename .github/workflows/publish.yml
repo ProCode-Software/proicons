@@ -1,8 +1,8 @@
 name: Publish packages to NPM
 
 on:
-#   release:
-#     types: [published]
+  release:
+    types: [published]
 
   workflow_dispatch:
 
@@ -29,17 +29,19 @@ jobs:
           pnpm install --frozen-lockfile
           pnpm -r run build
 
+      - name: Bump version
+        run: |
+          node ./bin/bumpVersion.js -v ${{ github.event.release.tag_name }}
+
+      - name: Build packages
+        run: |
+          pnpm run ci
+          pnpm --filter \!@proicons/roblox --filter './packages/*' run ci
+
       - name: Set auth token
         run: pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.PUBLISH_KEY }}
 
       - name: Publish to NPM    
         run: |
-          ignore_dirs=("proicons-roblox")
           pnpm publish
-          for dir in ./packages/*/; do
-            dir_name=$(basename "$dir")
-            if [[ " ${ignore_dirs[@]} " =~ " $dir_name " ]]; then
-              continue
-            fi
-            (cd "$dir" && pnpm publish)
-          done
+          pnpm --filter \!@proicons/roblox --filter './packages/*' publish

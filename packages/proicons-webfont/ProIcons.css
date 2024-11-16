@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?1ece553d13488cfd2d8edd61ff3f4d74") format("truetype"),
-url("./ProIcons.woff?1ece553d13488cfd2d8edd61ff3f4d74") format("woff"),
-url("./ProIcons.woff2?1ece553d13488cfd2d8edd61ff3f4d74") format("woff2"),
-url("./ProIcons.eot?1ece553d13488cfd2d8edd61ff3f4d74#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?396b47858887ad033a4ca6e34ea4b051") format("truetype"),
+url("./ProIcons.woff?396b47858887ad033a4ca6e34ea4b051") format("woff"),
+url("./ProIcons.woff2?396b47858887ad033a4ca6e34ea4b051") format("woff2"),
+url("./ProIcons.eot?396b47858887ad033a4ca6e34ea4b051#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -828,7 +828,7 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-braces-variable::before {
   content: "\e10d";
 }
-.proicon-branch-::before {
+.proicon-branch::before {
   content: "\e10e";
 }
 .proicon-branch-compare::before {
@@ -1290,125 +1290,122 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-search-cancel::before {
   content: "\e1a7";
 }
-.proicon-branch::before {
+.proicon-ubuntu::before {
   content: "\e1a8";
 }
-.proicon-ubuntu::before {
+.proicon-linux::before {
   content: "\e1a9";
 }
-.proicon-linux::before {
+.proicon-webpack::before {
   content: "\e1aa";
 }
-.proicon-webpack::before {
+.proicon-npm::before {
   content: "\e1ab";
 }
-.proicon-npm::before {
+.proicon-nodejs::before {
   content: "\e1ac";
 }
-.proicon-nodejs::before {
+.proicon-bolt::before {
   content: "\e1ad";
 }
-.proicon-bolt::before {
+.proicon-door::before {
   content: "\e1ae";
 }
-.proicon-door::before {
+.proicon-open-source::before {
   content: "\e1af";
 }
-.proicon-open-source::before {
+.proicon-vuejs::before {
   content: "\e1b0";
 }
-.proicon-vuejs::before {
+.proicon-record::before {
   content: "\e1b1";
 }
-.proicon-record::before {
+.proicon-record-stop::before {
   content: "\e1b2";
 }
-.proicon-record-stop::before {
+.proicon-door-open::before {
   content: "\e1b3";
 }
-.proicon-door-open::before {
+.proicon-branch-pull-request::before {
   content: "\e1b4";
 }
-.proicon-branch-pull-request::before {
+.proicon-candy::before {
   content: "\e1b5";
 }
-.proicon-candy::before {
+.proicon-svelte::before {
   content: "\e1b6";
 }
-.proicon-svelte::before {
+.proicon-checkbox-indeterminate-2::before {
   content: "\e1b7";
 }
-.proicon-checkbox-indeterminate-2::before {
+.proicon-checkbox-indeterminate::before {
   content: "\e1b8";
 }
-.proicon-checkbox-indeterminate::before {
+.proicon-checkbox-checked::before {
   content: "\e1b9";
 }
-.proicon-checkbox-checked::before {
+.proicon-brackets::before {
   content: "\e1ba";
 }
-.proicon-brackets::before {
+.proicon-comment-exclamation::before {
   content: "\e1bb";
 }
-.proicon-comment-exclamation::before {
+.proicon-dollar-circle::before {
   content: "\e1bc";
 }
-.proicon-dollar-circle::before {
+.proicon-regular-expression::before {
   content: "\e1bd";
 }
-.proicon-regular-expression::before {
+.proicon-ruler-diagonal::before {
   content: "\e1be";
 }
-.proicon-ruler-diagonal::before {
+.proicon-typescript::before {
   content: "\e1bf";
 }
-.proicon-typescript::before {
+.proicon-slash-box::before {
   content: "\e1c0";
 }
-.proicon-slash-box::before {
+.proicon-copyright::before {
   content: "\e1c1";
 }
-.proicon-copyright::before {
+.proicon-copyleft::before {
   content: "\e1c2";
 }
-.proicon-copyleft::before {
+.proicon-keyboard-command::before {
   content: "\e1c3";
 }
-.proicon-keyboard-command::before {
+.proicon-bell-off::before {
   content: "\e1c4";
 }
-.proicon-bell-off::before {
+.proicon-bell-dot::before {
   content: "\e1c5";
 }
-.proicon-bell-dot::before {
+.proicon-gitlab::before {
   content: "\e1c6";
 }
-.proicon-gitlab::before {
+.proicon-reactjs::before {
   content: "\e1c7";
 }
-.proicon-reactjs::before {
+.proicon-infinity::before {
   content: "\e1c8";
 }
-.proicon-infinity::before {
+.proicon-math::before {
   content: "\e1c9";
 }
-.proicon-math::before {
+.proicon-headphones-off::before {
   content: "\e1ca";
 }
-.proicon-headphones-off::before {
+.proicon-android::before {
   content: "\e1cb";
 }
-.proicon-android::before {
+.proicon-flag-2::before {
   content: "\e1cc";
 }
-.proicon-flag-2::before {
+.proicon-server::before {
   content: "\e1cd";
 }
-.proicon-server::before {
-  content: "\e1ce";
-}
 .proicon-comment-multiple-var::before {
-  content: "\e1cf";
+  content: "\e1ce";
 }
 .proicon-x-twitter::before {
   content: "\f101";
