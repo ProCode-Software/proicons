@@ -21,14 +21,18 @@ export function sidebar(): Record<string, DefaultTheme.SidebarItem[]> {
                 items: [
                     { text: 'HTML API', link: 'html-api' },
                     { text: 'JavaScript API', link: 'javascript-api' },
-                    { text: 'Configuration API', link: 'configuration' },
+                    { text: 'Options', link: 'options' },
                 ],
             },
             {
                 text: 'Packages',
                 collapsed: false,
                 base: '/docs/packages/',
-                items: [{ text: 'ProIcons Webfont', link: 'webfont' }],
+                items: [
+                    { text: 'ProIcons Webfont', link: 'webfont' },
+                    { text: 'ProIcons React', link: 'react' },
+                    { text: 'ProIcons Vue', link: 'vue' },
+                ],
             },
             {
                 text: 'Contributing',

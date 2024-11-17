@@ -1,8 +1,9 @@
 ---
-title: HTML API
+title: HTML
 editLink: true
 ---
-# HTML API
+
+# ProIcons HTML
 ProIcons are designed to be easy to use inside of HTML. Similar to [Feather Icons](https://github.com/feathericons/feather), ProIcons can be inserted through elements with a `proicon` attribute.
 
 To insert an `Add` icon inside HTML:
@@ -10,67 +11,45 @@ To insert an `Add` icon inside HTML:
 ```html
 <i proicon="add"></i>
 ```
+
 ## Installation
 <!--@include: ../introduction/installation.md#install-html-->
 
 ## Usage
-
-As mentioned earlier, ProIcons can be added via the `proicon` attribute. Set the attribute value to the name of the icon you want to insert. (You can use any supported case)
+ProIcons can be added via the `proicon` attribute. Set the attribute value to the name of the icon you want to insert.
 
 To insert an `Add` icon inside HTML:
-
 ```html
 <i proicon="add"></i>
 ```
 
+Any case is supported, so all of these will work:
+```html
+<i proicon="Add Square"></i>
+<i proicon="AddSquare"></i>
+<i proicon="AddSquareIcon"></i>
+<i proicon="addSquare"></i>
+<i proicon="add-square"></i>
+```
+
 ::: tip
-The `i` element isn't mandatory, though the `proicon` attribute is. This can be [customized](./configuration) in the configuration.
+The `i` element isn't mandatory, though the `proicon` attribute is. This can be [customized](./options) in the configuration.
 :::
 
-Next, add a script to replace these elements.
+Don't forget to add a script to replace these elements.
 
 ```html
 <script>
-    proicons.replace();
+    proicons.replace()
 </script>
 ```
 
-`proicons.replace()` replaces every element with a `proicon` attribute with their respective icon. It will replace the actual element (in the case shown above `i`) if it doesn't have children, or it will insert the icon inside it as the first element.
+[`proicons.replace()`](javascript-api#replace) replaces every element with a `proicon` attribute with their respective icon. It will replace the actual element (in the case shown above `i`) if it doesn't have children, or it will insert the icon inside it as the first element.
 
 ## Attributes
-
-ProIcons also can be customized via attributes. These can be applied to individual icon elements and are available in the JavaScript [configuration](./configuration).
+ProIcons also can be customized via attributes. These can be applied to individual icon elements.
 
 ```html
-<i proicon="add" color="red"></i>
+<i proicon="add" stroke-width="2" color="red"></i>
 ```
-
-### color
-* **Type:** `number`
-
-Determines the color of the icon
-
-### stroke-width
-* **Type:** `number`
-
-Defines the thickness of the icon's stroke
-
-### join
-* **Type:** <code>round</code> | <code>miter</code> | <code>bevel</code>
-
-Defines the shape to be used for stroke joins.
-
-### caps
-* **Type:** <code>round</code> | <code>square</code> | <code>butt</code>
-
-Defines the shape to be used for stroke caps.
-
-### corner-radius
-* **Type:** `number`
-
-Determines the corner radius of the icon. May not work with all icons.
-
-### outline
-* **Type:** `boolean`
-
-Determines whether to add additional strokes to filled SVG elements.
+See [Options](./options#proiconsoptions) for the list of properties.

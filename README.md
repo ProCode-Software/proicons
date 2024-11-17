@@ -81,11 +81,11 @@ console.log(AddIcon.raw) // Returns SVG string
 ```
 Or if you are using CommonJS:
 ```javascript
-const { addIcon } = require('proicons')
+const { AddIcon } = require('proicons')
 
 // or
 const proicons = require('proicons')
-const { addIcon } = proicons
+const { AddIcon } = proicons
 ```
 
 ### Webfont

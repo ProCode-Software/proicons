@@ -8,7 +8,8 @@ export interface ProIconsOptions {
     /** Determines the default stroke width of the icon. Defaults to `1.5`. This only works on SVG elements with existing strokes; add `strokeFilledElements` for this property to affect such elements. */
     strokeWidth?: number
     /** Apply strokes to filled SVG elements, such as circles, by the provided amount with `1.5` (default stroke value) subtracted, if `strokeWidth` is set to a value above `1.5`. Defaults to `false`
-     * @example If `strokeWidth` is set to `2`, filled SVG elements will have an additional `0.5`px stroke
+     * 
+     * For example, if `strokeWidth` is set to `2`, filled SVG elements will have an additional 0.5px stroke
      */
     strokeFilledElements?: boolean
     /** Defaults to `round` */
@@ -31,7 +32,7 @@ export interface ProIconsOptions {
      *   }
      * }
      */
-    attributes: Record<string, string>
+    attributes: Record<string, any>
 }
 
 export interface ProIconReplaceConfig extends ProIconsOptions {
@@ -54,9 +55,6 @@ export class ProIcon {
 
     /** The name of the icon in camelCase */
     camelCase: string
-
-    /** The icon as an `SVGSVGElement`. Use the `outerHTML` property on this to return the icon as a string. */
-    element: SVGSVGElement
 
     /** The category of the icon. */
     category: string

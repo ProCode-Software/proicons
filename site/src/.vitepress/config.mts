@@ -51,7 +51,15 @@ export default defineConfig({
                     {
                         text: 'JavaScript',
                         link: '/docs/api-reference/javascript-api'
-                    }
+                    },
+                    {
+                        text: 'React',
+                        link: '/docs/packages/react'
+                    },
+                    {
+                        text: 'Vue',
+                        link: '/docs/packages/vue'
+                    },
                 ]
             },
         ],

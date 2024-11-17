@@ -4,7 +4,13 @@ editLink: true
 ---
 
 # Installation
-Getting started with ProIcons doesn't take long. Follow the steps below for your environment
+Getting started with ProIcons doesn't take long. Follow the steps below for your environment:
+
+- [HTML](#html)
+- [HTML Webfont](#html-webfont)
+- [Node.js](#nodejs)
+- [React](#react)
+- [Vue](#vue)
 
 ## HTML
 <!-- #region install-html -->
@@ -44,7 +50,7 @@ bun add proicons
 
 Then import your `proicons.js` file in your HTML
 ```html
-<script src="path/to/proicons/dist/proicons.js"></script>
+<script src="path/to/proicons/dist/umd/proicons.cjs"></script>
 ``` 
 Replace `path/to/` with the actual path to your `node_modules` folder (relative to the HTML file).
 <!-- #endregion install-html -->
@@ -54,16 +60,28 @@ Install ProIcons from NPM:
 
 <!--@include: ./installation.md#install-general-->
 
-Then import ProIcons in your script:
-
 ```javascript
-import * as proicons from 'proicons';
+import { AddIcon } from 'proicons';
 ```
-Or with CommonJS
+Or in CommonJS:
 ```javascript
 const proicons = require('proicons');
+const { AddIcon } = proicons
 ```
 <!-- #endregion install-node -->
 ## HTML Webfont
-If you prefer not to use any scripts, you can also install ProIcons as a [webfont](../packages/webfont) on your site.
+If you prefer not to use any scripts, you can also install ProIcons as a webfont on your site.
+
 <!-- @include: ../packages/webfont.md#install-webfont -->
+
+[Read the documentation](../packages/webfont)
+
+## React
+<!-- @include: ../packages/react.md#install-react -->
+
+[Read the documentation](../packages/react)
+
+## Vue
+<!-- @include: ../packages/vue.md#install-vue -->
+
+[Read the documentation](../packages/vue)
