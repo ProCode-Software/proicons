@@ -30,7 +30,7 @@ jobs:
 
       - name: Bump version
         run: |
-          node ./bin/bumpVersion.js -v 4.11.0
+          node ./bin/bumpVersion.js -v ${{ github.event.release.tag_name }}
 
       - name: Build packages
         run: |
@@ -42,4 +42,5 @@ jobs:
 
       - name: Publish to NPM    
         run: |
+          pnpm publish
           pnpm --filter \!@proicons/roblox --filter './packages/*' publish
