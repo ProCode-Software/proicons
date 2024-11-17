@@ -1,6 +1,6 @@
 {
     "name": "proicons",
-    "version": "4.11.0",
+    "version": "4.11.1",
     "description": "A collection of 400+ modern and open-source icons",
     "type": "module",
     "sideEffects": false,

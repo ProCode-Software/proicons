@@ -1,34 +1,35 @@
 # ProIcons Webfont
 
-<img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover_light.png#gh-light-mode-only">
-<img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover_dark.png#gh-dark-mode-only">
-
-<p align="center">
+<p>
     <a href="https://github.com/ProCode-Software/proicons/releases">
-        <img src="https://img.shields.io/github/v/release/ProCode-Software/proicons?style=for-the-badge&color=orange"
+        <img src="https://img.shields.io/github/v/release/ProCode-Software/proicons?style=for-the-badge&color=rgb(172, 229, 251)"
             alt="Version">
     </a>
     <a href="">
-        <img src="https://img.shields.io/github/stars/ProCode-Software/proicons?style=for-the-badge"
+        <img src="https://img.shields.io/github/stars/ProCode-Software/proicons?style=for-the-badge&color=rgb(255, 215, 142)"
             alt="Stars">
     </a>
     <a href="https://www.npmjs.com/package/@proicons/webfont">
-        <img src="https://img.shields.io/npm/dm/@proicons/webfont?label=downloads&amp;style=for-the-badge"
+        <img src="https://img.shields.io/npm/dm/@proicons/webfont?label=downloads&style=for-the-badge&color=rgb(180, 240, 155)"
             alt="NPM Package">
     </a>
     <a href="https://github.com/ProCode-Software/proicons/blob/main/LICENSE">
-        <img src="https://img.shields.io/github/license/ProCode-Software/proicons?style=for-the-badge"
+        <img src="https://img.shields.io/github/license/ProCode-Software/proicons?style=for-the-badge&color=rgb(252, 197, 232)"
             alt="License">
     </a>
 </p>
 
+<img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover_light.png#gh-light-mode-only">
+<img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover_dark.png#gh-dark-mode-only">
+
 <p align="center">
-    <b>Webfont version of the <a href="https://github.com/ProCode-Software/proicons" target="_blank">ProIcons</a> icon library</b>
-    <br>
-    <a href="https://procode-software.github.io/proicons">Icons</a> | 
-    <a href="https://procode-software.github.io/proicons/docs/packages/webfont">Documentation</a> | 
-    <a href="https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-webfont">GitHub</a> | 
-    <a href="https://www.npmjs.com/package/@proicons/webfont">NPM Package</a>
+<br>
+Use <a href="https://github.com/ProCode-Software/proicons" target="_blank">ProIcons</a> as a webfont on your site without the need of using scripts.
+<br>
+<a href="https://procode-software.github.io/proicons/icons">Browse icons</a> | 
+<a href="https://procode-software.github.io/proicons/docs/packages/webfont">Documentation</a> | 
+<a href="https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-webfont">GitHub</a> | 
+<a href="https://www.npmjs.com/package/@proicons/webfont">NPM</a>
 </p>
 
 ## Features
@@ -43,7 +44,7 @@
 <link rel="stylesheet" href="https://unpkg.com/@proicons/webfont">
 ```
 ### Install via NPM
-```console
+```shell
 npm install @proicons/webfont
 ```
 ```html
@@ -57,5 +58,5 @@ To import the Add icon:
 ```html
 <i class="proicon-add"></i>
 ```
-> [!IMPORTANT]
-> If importing a variable icon such as `add-square-multiple--var`, make sure to only use one hyphen before `var`. This class name woul be replaced with `add-square-multiple-var`.
+## Contributing
+For more info on how to contribute, please see our [contributing guide](https://github.com/ProCode-Software/proicons/blob/main/CONTRIBUTING.md).

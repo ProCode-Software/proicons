@@ -1,6 +1,6 @@
 {
     "name": "@proicons/react",
-    "version": "4.11.0",
+    "version": "4.11.1",
     "description": "ProIcons icon library for ReactJS",
     "main": "dist/proicons-react.js",
     "module": "dist/proicons-react.js",
@@ -23,6 +23,12 @@
     },
     "author": "ProCode Software",
     "license": "MIT",
+    "bugs": "https://github.com/ProCode-Software/proicons/issues",
+    "repository": {
+        "url": "ProCode-Software/proicons",
+        "directory": "packages/proicons-react"
+    },
+    "homepage": "https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-react",
     "keywords": [
         "icons",
         "icon-pack",

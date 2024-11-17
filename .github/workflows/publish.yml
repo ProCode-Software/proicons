@@ -43,4 +43,4 @@ jobs:
       - name: Publish to NPM    
         run: |
           pnpm publish
-          pnpm --filter \!@proicons/roblox --filter './packages/*' publish
+          pnpm --filter \!@proicons/roblox --filter './packages/*' publish --provenance
