@@ -26,8 +26,8 @@ jobs:
 
       - name: Install dependencies & build
         run: |
-          pnpm install --frozen-lockfile --ignore-scripts
-          pnpm -r run build
+          pnpm install --frozen-lockfile
+          pnpm --filter \!@proicons/roblox --filter './packages/*' run build
 
       - name: Bump version
         run: |
