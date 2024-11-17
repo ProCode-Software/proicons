@@ -1,7 +1,6 @@
 {
     "name": "@proicons/vue",
     "description": "ProIcons icon library for Vue",
-    "private": true,
     "version": "4.11.0",
     "type": "module",
     "sideEffects": false,
@@ -13,6 +12,9 @@
         "lib",
         "!dist/*2.js"
     ],
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "dev": "pnpm vite",
         "build": "pnpm vite build",

@@ -8,6 +8,9 @@
     "jsdelivr": "ProIcons.css",
     "browser": "ProIcons.css",
 
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "prepare": "node ./bin/build.js",
         "ci": "pnpm run prepare"

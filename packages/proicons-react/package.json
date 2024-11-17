@@ -11,6 +11,9 @@
         "dist",
         "lib"
     ],
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "dev": "pnpm vite",
         "build": "pnpm vite build",
