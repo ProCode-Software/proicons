@@ -24,10 +24,9 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           scope: '@proicons'
 
-      - name: Install dependencies & build
+      - name: Install dependencies
         run: |
           pnpm install --frozen-lockfile
-          pnpm --filter \!@proicons/roblox --filter './packages/*' run build
 
       - name: Bump version
         run: |
