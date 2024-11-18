@@ -3,13 +3,20 @@ import icons from '../../../icons/icons.json' with { type: 'json' }
 import lockfile from '../../../icons/icons.lock.json' with { type: 'json' }
 import { fileURLToPath } from 'url'
 import { pascalCase } from '../../../bin/rename.js'
-import iconIds from '../dist/assetPaths.json' with {type: 'json'}
+import iconIds from '../dist/assetPaths.json' with { type: 'json' }
 import { readFileSync, writeFileSync } from 'fs'
 
 const __dirname = import.meta.dirname
 
 const includedBrands = ['Roblox'] // All brand icons removed by default
 const removedKeyWords = ['die', 'kill', 'death', 'x premium', 'twitter blue'] // For tags
+
+removedKeyWords.push(
+    ...Object.entries(icons)
+        .filter(([, { category }]) => category == 'Logos & Brands')
+        .map(([friendlyName]) => friendlyName)
+)
+
 const excludedIcons = readFileSync(
     resolve(__dirname, '../removed-icons.txt'),
     'utf-8'
