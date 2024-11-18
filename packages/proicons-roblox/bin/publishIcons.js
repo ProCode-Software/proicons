@@ -12,6 +12,11 @@ import ansiColors from 'ansi-colors'
 const iconAssetsPath = resolve(import.meta.dirname, '../dist/assetPaths.json')
 const assetData = JSON.parse(readFileSync(iconAssetsPath, 'utf-8') ?? '{}')
 
+const removedIcons = readFileSync(
+    resolve(import.meta.dirname, '../removed-icons.txt'),
+    'utf-8'
+).split('\n')
+
 if (!process.env.ROBLOX_PUBLISH_KEY)
     throw new Error(
         'You forgot your Roblox API key. Use `node --env-file=.env ./publishIcons.js`'
@@ -71,6 +76,7 @@ const iconsToPublish = lockfile.icons
     .map(({ name }) => name)
     .filter(i => !Object.keys(assetData).includes(i))
     .filter(i => !(iconsJson[i].category == 'Logos & Brands' && i !== 'Roblox')) // Remove brands
+    .filter(i => !removedIcons.includes(i))
 
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
 
