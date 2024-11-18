@@ -4,4 +4,5 @@
 
 # Output
 !/dist/
-/dist/proicons.rbxmx
+!/dist/assetPaths.json
+/dist/*.rbxmx
