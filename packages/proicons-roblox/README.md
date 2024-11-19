@@ -15,8 +15,8 @@
     </a>
 </p>
 
-<img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover-vue_light.png#gh-light-mode-only">
-<img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover-vue_dark.png#gh-dark-mode-only">
+<img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover-roblox_light.png#gh-light-mode-only">
+<img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover-roblox_dark.png#gh-dark-mode-only">
 
 <p align="center">
 <br>
@@ -50,16 +50,27 @@ wally install
 All icons are available as Vue components named in PascalCase and may end in `Icon`.
 
 To import the Add Square icon:
-```vue
-<script setup lang="ts">
-import { AddSquareIcon } from '@proicons/vue'
-// or
-import { AddSquare } from '@proicons/vue'
-</script>
+```lua
+-- Import the library
+local Icons = require(path.to.ProIcons.Icons)
 
-<template>
-    <AddSquareIcon :size="32" color="red">
-</template>
+local ImageLabel = Instance.new('ImageLabel')
+
+-- Set the icon
+ImageLabel.Image = 'rbxassetid://'..Icons.AddSquare.id
+```
+
+## Properties
+All icons are in the following format:
+```lua
+{
+    AddSquare = {
+        id = 97666464232500, -- Image id
+        category = "Actions",
+        tags = { "Add Box", "Plus" }
+    },
+    -- ... other icons
+}
 ```
 
 ## Removed icons
