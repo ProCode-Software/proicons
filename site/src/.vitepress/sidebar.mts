@@ -29,9 +29,10 @@ export function sidebar(): Record<string, DefaultTheme.SidebarItem[]> {
                 collapsed: false,
                 base: '/docs/packages/',
                 items: [
-                    { text: 'ProIcons Webfont', link: 'webfont' },
                     { text: 'ProIcons React', link: 'react' },
+                    { text: 'ProIcons Roblox', link: 'roblox' },
                     { text: 'ProIcons Vue', link: 'vue' },
+                    { text: 'ProIcons Webfont', link: 'webfont' },
                 ],
             },
             {

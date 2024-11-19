@@ -5,7 +5,7 @@ title: React
 # ProIcons for Roblox
 Icon library with high-quality images for Roblox games. All icons are 120x120px in size and have gone through alpha bleeding.
 
-[View on Wally](https://wally.run/package/@procode/proicons) |
+[View on Wally](https://wally.run/package/procode-software/proicons) |
 [GitHub](https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-roblox)
 
 ## Installation
@@ -13,17 +13,18 @@ Icon library with high-quality images for Roblox games. All icons are 120x120px 
 ### Via Wally
 1. Add to your dependencies
 ```toml
-proicons = 'procode/proicons@version'
+proicons = 'procode-software/proicons@*'
 ```
 2. Install dependencies
 ```shell
 wally install
 ```
 ### Roblox Package
+
 ### Via LoadString
 If you want to always have the latest version available, you can import the script using `loadstring`:
 ```lua
-local Icons = loadstring(game:GetService("HttpService"):GetAsync("https://github.com/ProCode-Software/proicons/blob/main/packages/proicons-roblox/src/Icons.luau", true))()
+local Icons = loadstring(game:GetService("HttpService"):GetAsync("https://github.com/ProCode-Software/proicons/blob/main/packages/proicons-roblox/src/ProIcons.luau", true))()
 ```
 <!-- #endregion install-roblox -->
 

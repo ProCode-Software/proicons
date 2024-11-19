@@ -3,14 +3,14 @@
     "private": true,
     "version": "4.11.1",
     "description": "ProIcons Roblox package",
-    "main": "src/icons.luau",
+    "main": "src/ProIcons.luau",
     "type": "module",
     "scripts": {
         "dev": "rojo serve",
         "icons:build": "node ./bin/buildIcons.js",
         "icons:upload": "node --env-file=../../.env ./bin/publishIcons.js",
-        "build": "rojo build -o dist/proicons.rbxmx",
-        "publish": "rojo build -o dist/proicons.rbxmx",
+        "build": "rojo build -o dist/ProIcons.rbxmx",
+        "publish": "rojo build -o dist/ProIcons.rbxmx",
         "sourcemap": "rojo sourcemap -o sourcemap.json --watch"
     },
     "keywords": [],

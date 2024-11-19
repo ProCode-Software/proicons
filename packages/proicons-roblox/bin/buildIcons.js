@@ -22,7 +22,7 @@ const excludedIcons = readFileSync(
     'utf-8'
 ).split('\n')
 
-const outputFile = resolve(__dirname, '../src/icons.luau')
+const outputFile = resolve(__dirname, '../src/ProIcons.luau')
 
 const entries = Object.entries(icons)
     .map(([friendlyName, { description, category }]) => {

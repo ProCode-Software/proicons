@@ -4,10 +4,7 @@
         "$className": "DataModel",
         "ReplicatedStorage": {
             "$className": "ReplicatedStorage",
-            "ProIcons": {
-                "$className": "Model",
-                "$path": "src"
-            }
+            "$path": "src"
         }
     },
     "globIgnorePaths": [

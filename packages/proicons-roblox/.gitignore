@@ -4,5 +4,3 @@
 
 # Output
 !/dist/
-!/dist/assetPaths.json
-/dist/*.rbxmx

@@ -1,11 +1,12 @@
 [package]
-name = "procode/proicons"
-version = "4.11.0"
+name = "procode-software/proicons"
+version = "4.11.1"
 description = "A collection of 400+ modern and open-source icons"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 license = "MIT"
 authors = ["ProCode (Betabloxis)"]
-include = ["src/icons.luau"]
+exclude = ["**"]
+include = ["src/**", "README.md", "wally.toml", "default.project.json", "src", "src/*"]
 
 [dependencies]
