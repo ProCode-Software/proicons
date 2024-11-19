@@ -45,11 +45,16 @@ wally install
 ```
 
 ### Roblox Package
+### Via LoadString
+If you want to always have the latest version available, you can import the script using `loadstring`:
+```lua
+local Icons = loadstring(game:GetService("HttpService"):GetAsync("https://github.com/ProCode-Software/proicons/blob/main/packages/proicons-roblox/src/Icons.luau", true))()
+```
 
 ## Usage
-All icons are available as Vue components named in PascalCase and may end in `Icon`.
+All icons are inside a table with the icon's asset id and other metadata.
 
-To import the Add Square icon:
+To import the Add Square icon into an `ImageLabel`:
 ```lua
 -- Import the library
 local Icons = require(path.to.ProIcons.Icons)
@@ -59,6 +64,7 @@ local ImageLabel = Instance.new('ImageLabel')
 -- Set the icon
 ImageLabel.Image = 'rbxassetid://'..Icons.AddSquare.id
 ```
+Replace `path.to.` with the path of your library. If you installed the library via Wally, this may be `game.ReplicatedStorage`.
 
 ## Properties
 All icons are in the following format:
@@ -72,6 +78,10 @@ All icons are in the following format:
     -- ... other icons
 }
 ```
+
+- **id:** (`string`) Roblox asset id for the icon
+- **category:** (`string`) The category of the icon. View the list of categories [here](https://github.com/ProCode-Software/proicons/blob/main/src/categories.ts).
+- **tags:** (`{string}?`) The tags of the icon
 
 ## Removed icons
 Due to Roblox moderation, not all icons in the set are available. These icons have been removed from the Roblox package:
