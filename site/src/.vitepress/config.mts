@@ -57,6 +57,10 @@ export default defineConfig({
                         link: '/docs/packages/react'
                     },
                     {
+                        text: 'Roblox',
+                        link: '/docs/packages/roblox'
+                    },
+                    {
                         text: 'Vue',
                         link: '/docs/packages/vue'
                     },

@@ -10,7 +10,7 @@ Icon library with high-quality images for Roblox games. All icons are 120x120px 
 
 ## Installation
 <!-- #region install-roblox -->
-### Via Wally
+### Via [Wally](https://wally.run)
 1. Add to your dependencies
 ```toml
 proicons = 'procode-software/proicons@*'
@@ -19,12 +19,11 @@ proicons = 'procode-software/proicons@*'
 ```shell
 wally install
 ```
-### Roblox Package
 
 ### Via LoadString
 If you want to always have the latest version available, you can import the script using `loadstring`:
 ```lua
-local Icons = loadstring(game:GetService("HttpService"):GetAsync("https://github.com/ProCode-Software/proicons/blob/main/packages/proicons-roblox/src/ProIcons.luau", true))()
+local ProIcons = loadstring(game:GetService("HttpService"):GetAsync("https://github.com/ProCode-Software/proicons/blob/main/packages/proicons-roblox/src/ProIcons.luau", true))()
 ```
 <!-- #endregion install-roblox -->
 
@@ -34,12 +33,12 @@ All icons are inside a table with the icon's asset id and other metadata.
 To import the Add Square icon into an `ImageLabel`:
 ```lua
 -- Import the library
-local Icons = require(path.to.ProIcons.Icons)
+local ProIcons = require(path.to.ProIcons)
 
 local ImageLabel = Instance.new('ImageLabel')
 
 -- Set the icon
-ImageLabel.Image = 'rbxassetid://'..Icons.AddSquare.id
+ImageLabel.Image = 'rbxassetid://'..ProIcons.AddSquare.id
 ```
 Replace `path.to.` with the path of your library. If you installed the library via Wally, this may be `game.ReplicatedStorage`.
 
@@ -52,7 +51,7 @@ All icons are in the following format:
         category = "Actions",
         tags = { "Add Box", "Plus" }
     },
-    -- ... other icons
+    -- ...other icons
 }
 ```
 

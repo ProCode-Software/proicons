@@ -81,6 +81,11 @@ If you prefer not to use any scripts, you can also install ProIcons as a webfont
 
 [Read the documentation](../packages/react)
 
+## Roblox
+<!-- @include: ../packages/roblox.md#install-roblox -->
+
+[Read the documentation](../packages/roblox)
+
 ## Vue
 <!-- @include: ../packages/vue.md#install-vue -->
 

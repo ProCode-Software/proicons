@@ -3,7 +3,7 @@ title: Options
 editLink: true
 ---
 # Options
-Properties can be used to customize ProIcons in HTML and all JavaScript packages, under the `ProIconsOptions` interface. In HTML, Vue and React, these can be applied as attributes of ProIcon components. In JavaScript, these can be used in `ProIcon.toSvg()` and `proicons.replace().`
+Properties can be used to customize ProIcons in HTML and all JavaScript packages, under the `ProIconsOptions` interface. In HTML, Vue and React, these can be applied as attributes of ProIcon components. In JavaScript, these can be used in `ProIcon.toSvg()` and `proicons.replace()`.
 
 ```javascript
 proicons.replace(document.body, {
