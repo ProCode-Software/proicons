@@ -18,7 +18,7 @@
         { "name": "Delete", "added": "4.8.0" },
         { "name": "Eye", "added": "4.8.0" },
         { "name": "Eye Off", "added": "4.8.0" },
-        { "name": "Fast Foward", "added": "4.8.0" },
+        { "name": "Fast Forward", "added": "4.8.0" },
         { "name": "Heart", "added": "4.8.0" },
         { "name": "Heart Stylistic", "added": "4.8.0" },
         { "name": "Keyboard Shift", "added": "4.8.0" },
@@ -110,7 +110,7 @@
         { "name": "Arrow Download", "added": "4.8.0" },
         { "name": "Arrow Enter", "added": "4.8.0" },
         { "name": "Arrow Export", "added": "4.8.0" },
-        { "name": "Arrow Foward", "added": "4.8.0" },
+        { "name": "Arrow Forward", "added": "4.8.0" },
         { "name": "Arrow Import", "added": "4.8.0" },
         { "name": "Arrow Left", "added": "4.8.0" },
         { "name": "Arrow Move", "added": "4.8.0" },
@@ -514,6 +514,8 @@
         "Chrome Restore -Var": "Chrome Restore",
         "Window Multiple -Var": "Window Multiple",
         "Bookmark Multiple -Var": "Bookmark Multiple",
-        "Add Square Multiple -Var": "Add Square Multiple"
+        "Add Square Multiple -Var": "Add Square Multiple",
+        "Arrow Foward": "Arrow Forward",
+        "Fast Foward": "Fast Forward"
     }
 }
