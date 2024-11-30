@@ -32,7 +32,7 @@ export interface ProIconsOptions {
      *   }
      * }
      */
-    attributes: Record<string, any>
+    attributes?: Record<string, any>
 }
 
 export interface ProIconReplaceConfig extends ProIconsOptions {
