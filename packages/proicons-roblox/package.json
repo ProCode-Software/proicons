@@ -17,7 +17,7 @@
     "author": "ProCode Software",
     "license": "MIT",
     "devDependencies": {
-        "axios": "^1.7.7"
+        "axios": "^1.7.8"
     },
     "dependencies": {
         "ansi-colors": "^4.1.3",

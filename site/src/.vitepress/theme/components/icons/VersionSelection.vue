@@ -12,23 +12,24 @@ const open = ref(false)
 const selectedVersion = ref('')
 const emit = defineEmits(['versionChange'])
 
-const dateFormat = {
+const dateFormat: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'short',
     day: 'numeric'
 }
+const baseLink = (v: string) => v == 'Development'
+    ? `https://github.com/ProCode-Software/proicons`
+    : `https://github.com/ProCode-Software/proicons/releases/tag/${v.replace(/^v/, '')}`
+
 const text = (icon, label: string, date: string, latest: boolean) => `
 ${icon.toSvg({ size: 20 })}
 <div class="col">
-    <span>${label}</span>
-    <span>${
-        new Date(date)
-        .toLocaleDateString(
-            undefined, dateFormat
-        )}</span>
+    <a href="${baseLink(label)}" target="_blank">${label}</a>
+    <span>
+        ${new Date(date).toLocaleDateString(undefined, dateFormat)}
+    </span>
 </div>
-${latest ? 
-`<div class="badge">Latest</div>` : ''}`
+${latest ? `<div class="badge">Latest</div>` : ''}`
 
 function set(v: string) {
     selectedVersion.value = v == 'development' ? 'Development' : `v${v}`
@@ -74,7 +75,7 @@ set(latestVersion)
                 <button class="selectionDropdown"
                     @click="toggle">
                     <BranchForkIcon :size="22" />
-                    <span>{{selectedVersion}}</span>
+                    <span>{{ selectedVersion }}</span>
                     <ChevronDownIcon class="dropdownIcon" />
                 </button>
             </template>
@@ -132,15 +133,24 @@ set(latestVersion)
         line-height: normal;
         padding-block: 6px;
 
-        &>span:nth-child(2) {
+        &>a {
+            font-weight: 500;
+            width: fit-content;
+
+            &:hover {
+                color: var(--vp-c-brand-3);
+            }
+        }
+
+        &>span {
             color: var(--vp-c-text-3);
-            font-weight: normal;
             font-size: 13px;
         }
     }
 
-    &:hover, &.active {
-        .col>span:nth-child(2) {
+    &:hover,
+    &.active {
+        .col>span {
             color: var(--vp-c-brand-1);
         }
     }
