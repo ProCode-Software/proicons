@@ -1,6 +1,7 @@
-import {data} from '../../data/fetchCodepoints.data'
 import { kebabCase } from './rename'
+import { Codepoints } from './types'
 
-export function getHex(name: string): string {
-    return data[kebabCase(name)].toString(16).toUpperCase()
+export function getHex(name: string, codepoints: Codepoints): string {
+    return codepoints[kebabCase(name)]
+        .toString(16).toUpperCase()
 }

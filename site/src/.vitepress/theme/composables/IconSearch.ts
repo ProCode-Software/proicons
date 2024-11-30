@@ -1,15 +1,15 @@
-import MiniSearch, { SearchResult } from 'minisearch'
+import MiniSearch, { type SearchResult } from 'minisearch'
 type IconList = Record<string, Object>
 
 export function searchResultsToIcons(results: SearchResult[]): IconList {
-    const newDict = {}
-    for (const result of results) {
-        newDict[result.name] = result
-    }
-    return newDict
+    return Object.fromEntries(
+        results.map(
+            ({ name, ...result }) => [name, result]
+        )
+    )
 }
 
-export function filterIcons(icons: IconList, query: string): IconList {
+export function filterIcons(icons: IconList, query: string): IconList {    
     const dic = Object.entries(icons).map(([name, icon]) => {
         icon.name = name
         icon.id = name

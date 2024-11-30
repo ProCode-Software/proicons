@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { data as versionData } from '../fetchVersion.data'
-import { data as lockfile } from '../../../data/fetchLockfile.data'
-import { getHex } from '../../composables/useGlyphData'
-import { Icon } from "../../composables/types";
 import { computed } from "vue";
-import { copyChar, copyDataUri, copySvg } from "../../composables/copyData";
+import { copyChar, copyDataUri, copySvg } from "../../../composables/copyData";
+import { Icon } from "../../../composables/types";
 
 const { icon, mode } = defineProps<{ icon: [string, Icon], mode: string }>()
 

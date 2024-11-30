@@ -1,0 +1,158 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import { ChevronDownIcon, BranchForkIcon } from "@proicons/vue";
+import { BranchForkIcon as BranchForkIcon2, TagIcon } from "proicons";
+import { fetchLastCommitDate, fetchVersionData } from "../../composables/versionData";
+import Flyout from "./Flyout.vue";
+import { setVersion } from "../../composables/versionSelection";
+
+const versionData = await fetchVersionData()
+const lastCommitDate = await fetchLastCommitDate()
+const open = ref(false)
+const selectedVersion = ref('')
+const emit = defineEmits(['versionChange'])
+
+const dateFormat = {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+}
+const text = (icon, label: string, date: string, latest: boolean) => `
+${icon.toSvg({ size: 20 })}
+<div class="col">
+    <span>${label}</span>
+    <span>${
+        new Date(date)
+        .toLocaleDateString(
+            undefined, dateFormat
+        )}</span>
+</div>
+${latest ? 
+`<div class="badge">Latest</div>` : ''}`
+
+function set(v: string) {
+    selectedVersion.value = v == 'development' ? 'Development' : `v${v}`
+    setVersion(v, emit)
+}
+
+const items = Object.entries(versionData).map(([v, data]) => {
+    return {
+        text: text(
+            TagIcon,
+            'v' + v,
+            data.published_at,
+            data.latest
+        ),
+        action: () => set(v),
+        header: data.latest,
+        default: data.latest,
+        ...data
+    }
+})
+// @ts-ignore
+items.unshift({
+    text: text(
+        BranchForkIcon2,
+        'Development',
+        lastCommitDate,
+        false
+    ),
+    action: () => set('development')
+})
+
+// Set default version
+const latestVersion = Object.entries(versionData)
+    .find(([v, d]) => d.latest)![0]
+set(latestVersion)
+</script>
+<template>
+    <div class="VersionSelection">
+        <Flyout :items="items" v-model:open="open"
+            :position="['bottom', 'right']"
+            :selectMenu="true">
+            <template #trigger="{ toggle }">
+                <button class="selectionDropdown"
+                    @click="toggle">
+                    <BranchForkIcon :size="22" />
+                    <span>{{selectedVersion}}</span>
+                    <ChevronDownIcon class="dropdownIcon" />
+                </button>
+            </template>
+        </Flyout>
+    </div>
+</template>
+<style lang="scss" scoped>
+.VersionSelection {
+    position: relative;
+}
+
+.selectionDropdown {
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 14px;
+    background: var(--vp-c-bg-alt);
+    border-radius: 10px;
+    gap: 8px;
+    font-size: 14px;
+    transition: background .2s;
+    position: sticky;
+    font-weight: 500;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-within {
+        background: var(--vp-c-gray-3);
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: inset 0 0 0 1.5px var(--vp-c-brand-1);
+    }
+
+    span {
+        font-weight: 500;
+    }
+}
+
+.dropdownIcon {
+    width: 20px;
+    height: 20px;
+    color: var(--vp-c-text-3);
+}
+</style>
+<style lang="scss">
+.VersionSelection .contextItem {
+    padding-right: 8px !important;
+
+    .col {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        line-height: normal;
+        padding-block: 6px;
+
+        &>span:nth-child(2) {
+            color: var(--vp-c-text-3);
+            font-weight: normal;
+            font-size: 13px;
+        }
+    }
+
+    &:hover, &.active {
+        .col>span:nth-child(2) {
+            color: var(--vp-c-brand-1);
+        }
+    }
+
+    .badge {
+        line-height: normal;
+        border-radius: 100px;
+        border: 1px solid var(--vp-c-green-3);
+        padding: 3px 8px;
+        color: var(--vp-c-green-1);
+        margin-left: 5px;
+        font-size: 13px;
+    }
+}
+</style>

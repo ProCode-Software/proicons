@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@proicons/vue':
+        specifier: workspace:*
+        version: link:../packages/proicons-vue
       proicons:
         specifier: workspace:*
         version: link:..

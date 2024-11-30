@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {computed} from 'vue'
 import VPButton from "vitepress/dist/client/theme-default/components/VPButton.vue";
+import { SearchCancelIcon } from "@proicons/vue";
 
 const { query } = defineProps<{ query: string }>()
 
@@ -10,7 +11,7 @@ const requestUrl = computed(() => `https://github.com/ProCode-Software/proicons/
 <template>
     <div class="center">
         <div class="NoResultsGraphic">
-            <div class="VPIcon vpi-no-results"></div>
+            <SearchCancelIcon :size="75" />
         </div>
         <div class="text">
             <h2>No results for "{{ query }}"</h2>
@@ -58,7 +59,5 @@ const requestUrl = computed(() => `https://github.com/ProCode-Software/proicons/
     background: var(--vp-c-bg-alt);
     padding: 20px;
     color: var(--vp-c-text-2);
-
-    .VPIcon {}
 }
 </style>

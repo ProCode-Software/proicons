@@ -1,39 +1,78 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { data } from '../../../data/fetchIcons.data'
-import { filterIcons } from '../../composables/IconSearch'
+import { computed, ref } from 'vue';
+import { filterIcons } from '../../composables/IconSearch';
+import { Icon } from "../../composables/types";
+import { fetchCodepoints, fetchIconsFromVersion } from "../../composables/versionData";
+import IconDetails from "./details/IconDetails.vue";
 import IconList from "./IconList.vue";
 import IconSearch from "./IconSearch.vue";
 import NoResults from "./NoResults.vue";
-import IconDetailSidebar from "./IconDetailSidebar.vue";
-import { selectedIcon } from "../../composables/IconInfo";
-
-const { icons } = data
+import VersionSelection from "./VersionSelection.vue";
 
 const query = ref('')
 const selectedIcon = ref(null)
+const selectedIconName = ref('')
+const selectedVersion = ref('')
+const icons = ref({})
+const lockfile = ref({})
+const codepoints = ref({})
+const length = computed(() => Object.entries(icons.value).length)
 
-const filteredIcons = computed(() => query.value.length > 1
-    ? filterIcons(icons, query.value) : icons)
+const filteredIcons = computed(() =>
+    query.value.length > 0
+        ? ref(addEvents(filterIcons(icons.value, query.value)))
+        : icons
+)
 
+function addEvents(ics: Record<string, Icon>) {
+    return Object.fromEntries(
+        Object.entries(ics)
+            .map(([name, data]) => {
+                return [name, {
+                    action: selectIcon,
+                    ...data
+                }]
+            }))
+}
+
+async function updateVersion(v: string) {
+    selectedVersion.value = v
+    const fetchedData = await fetchIconsFromVersion(selectedVersion.value)
+    const fetchedCodepoints = await fetchCodepoints(selectedVersion.value)
+    const fetchedIcons = fetchedData.icons
+
+    icons.value = addEvents(fetchedIcons)
+    lockfile.value = fetchedData.lockfile
+    codepoints.value = fetchedCodepoints
+}
 
 function selectIcon(ic) {
     selectedIcon.value = ic
+    selectedIconName.value = ic[0]
 }
 </script>
 <template>
     <div class="IconPage">
         <main>
-            <IconSearch
-                :placeholder="`Search ${Object.entries(icons).length} icons`"
-                v-model="query" />
+            <div class="group">
+                <IconSearch
+                    :placeholder="`Search ${length} icons`"
+                    v-model="query" />
+                <Suspense>
+                    <VersionSelection
+                        @version-change="updateVersion" />
+                </Suspense>
+            </div>
+
             <IconList
-                v-if="Object.entries(filteredIcons).length"
-                :icons="filteredIcons" :query="query" @foward-icon="selectIcon" />
+                v-if="Object.entries(filteredIcons.value).length > 0"
+                :icons="filteredIcons.value" :query="query"
+                :selectedIcon="selectedIconName" />
 
             <NoResults v-else :query="query" />
         </main>
-        <IconDetailSidebar :icon="selectedIcon" />
+        <IconDetails :icon="selectedIcon"
+            :lockfile="lockfile" :codepoints="codepoints" />
     </div>
 </template>
 <style lang="scss" scoped>
@@ -43,6 +82,14 @@ function selectIcon(ic) {
     flex-direction: row;
     gap: 40px;
     align-items: flex-start;
+    position: relative;
+
+    .group {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
+    }
 
     &>main {
         display: flex;

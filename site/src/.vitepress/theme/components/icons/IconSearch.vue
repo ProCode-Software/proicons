@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { defineProps, defineEmits, ref, watch } from 'vue'
 import { getParam, removeParam, setParam } from "../../composables/useUrl";
+import { SearchIcon } from '@proicons/vue'
 const { placeholder } = defineProps<{ placeholder: string }>()
 
 const emit = defineEmits(['update:modelValue'])
@@ -20,7 +21,7 @@ getParam('q') && (searchQuery.value = getParam('q'))
 </script>
 <template>
     <div class="IconSearchBar">
-        <span class="VPIcon vpi-search"></span>
+        <SearchIcon />
         <input type="search" class="iconSearchInput"
             :placeholder="placeholder"
             v-model="searchQuery">
@@ -38,6 +39,7 @@ getParam('q') && (searchQuery.value = getParam('q'))
     transition: box-shadow .2s;
     position: sticky;
     font-weight: 500;
+    width: 100%;
 
     &:hover {
         box-shadow: inset 0 0 0 1.5px var(--vp-c-gray-3);

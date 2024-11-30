@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import IconItem from "./IconItem.vue";
-import { getCategories, sortCategoryEntries, sortSearchResults } from '../../composables/categories'
+import { computed } from 'vue';
+import { getCategories, sortCategoryEntries, sortSearchResults } from '../../composables/categories';
 import { kebabCase } from "../../composables/rename";
-import { computed} from 'vue'
+import IconItem from "./IconItem.vue";
 
 interface Icon {
     icon: string,
@@ -10,7 +10,7 @@ interface Icon {
     tags: string[],
     score?: number
 }
-const { icons, query } = defineProps<{ icons: Record<string, Icon>, query?: string }>()
+const { icons, query, selectedIcon } = defineProps<{ icons: Record<string, Icon>, query?: string, selectedIcon?: string | undefined }>()
 
 const iconsSearch = computed(() => {
     return query ?
@@ -31,13 +31,15 @@ const iconsSearch = computed(() => {
             :id="kebabCase(category)">
 
             <h2 class="categoryTitle">
-                <a :href="query ? undefined : `#${kebabCase(category)}`">{{
-                    category }}</a>
+                <a :href="query ? undefined : `#${kebabCase(category)}`">
+                    {{category}}
+                    <span class="badge">{{ iconsInCategory.length }}</span>
+                </a>
             </h2>
 
             <div class="categoryIconsList" :key="category">
                 <IconItem v-for="icon in iconsInCategory"
-                    :icon="icon" :key="icon[0]" @select-icon="(ic) => $emit('fowardIcon', ic)" />
+                    :icon="icon" :key="icon[0]" :selected="icon[0] == selectedIcon" />
             </div>
         </section>
     </div>
@@ -61,13 +63,35 @@ const iconsSearch = computed(() => {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
+
+    & > a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .badge {
+        font-size: 13px;
+        padding: 3px 6px;
+        letter-spacing: normal;
+        background: var(--vp-c-gray-3);
+        color: var(--vp-c-text-2);
+        border-radius: 100px;
+        display: inline-flex;
+        font-weight: 600;
+        min-width: 24px;
+        height: 24px;
+        align-items: center;
+        justify-content: center;
+        text-align: center
+    }
 }
 
 .categoryIconsList {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
     width: 100%;
-    align-items: baseline;
-    gap: 15px;
+    align-items: start;
+    gap: 5px;
 }
 </style>

@@ -7,4 +7,6 @@ sidebar: true
     import IconPage from './.vitepress/theme/components/icons/IconPage.vue'
 </script>
 
-<IconPage />
+<Suspense>
+    <IconPage />
+</Suspense>

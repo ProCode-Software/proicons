@@ -6,7 +6,7 @@ import './style.css'
 import './icons.css'
 import navTitleAfter from './components/navTitleAfter.vue'
 import notFound from './overrides/NotFound.vue'
-import IconsSidebar from './components/icons/IconsSidebar.vue'
+import IconsSidebar from './components/icons/sidebar/IconsSidebar.vue'
 
 export default {
   extends: DefaultTheme,
