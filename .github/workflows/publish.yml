@@ -47,3 +47,5 @@ jobs:
         run: |
           pnpm publish --provenance --no-git-checks
           pnpm --filter \!@proicons/roblox --filter './packages/*' publish --provenance --no-git-checks
+        env:
+            NPM_CONFIG_PROVENANCE: true

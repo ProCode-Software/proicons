@@ -33,17 +33,10 @@ const items = {
 <template>
     <div class="iconActions">
         <div style="position: relative; width: 100%;">
-            <Flyout :items="items.ViewCode"
-                v-model:open="viewCodeOpen"
-                :position="['top', 'right']">
-
-                <template #trigger="{ toggle }">
-                    <button class="VPButton medium alt"
-                        @click="toggle">
-                        View code
-                    </button>
-                </template>
-            </Flyout>
+            <button class="VPButton medium alt"
+                @click="$emit('showDrawer')">
+                View code
+            </button>
         </div>
         <div style="position: relative; width: 100%;">
             <Flyout :items="items.Copy"
@@ -110,18 +103,18 @@ const items = {
         }
     }
 
-        @media (max-width: 700px) {
-            & {
-                flex-wrap: wrap;
+    @media (max-width: 700px) {
+        & {
+            flex-wrap: wrap;
 
-                .VPButton {
-                    width: auto;
-                }
+            .VPButton {
+                width: auto;
+            }
 
-                & > div {
-                    width: auto !important;
-                }
+            &>div {
+                width: auto !important;
             }
         }
+    }
 }
 </style>

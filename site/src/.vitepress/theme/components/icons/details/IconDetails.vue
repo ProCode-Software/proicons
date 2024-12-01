@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { kebabCase } from "../../../composables/rename";
 import { Codepoints, Icon, IconEntry, Lockfile } from '../../../composables/types';
 import IconActions from './IconActions.vue';
 import IconSideDetails from "./IconSideDetails.vue";
+import CodeDrawer from "../code/CodeDrawer.vue";
 
 const { icon, lockfile, codepoints } = defineProps<{
     icon?: IconEntry,
@@ -11,12 +12,17 @@ const { icon, lockfile, codepoints } = defineProps<{
     codepoints: Codepoints
 }>()
 
-const name: string = computed(() => icon[0])
-const iconData: Icon = computed(() => icon[1])
+const name = computed<string>(() => icon[0])
+const iconData = computed<Icon>(() => icon[1])
+const codeDrawerShown = ref(false)
 
+
+function toggleDrawer() {
+    codeDrawerShown.value = !codeDrawerShown.value
+}
 </script>
 <template>
-    <aside class="IconDetail" v-if="icon">
+    <aside :class="{ IconDetail: true, withDrawer: codeDrawerShown }" v-if="icon">
         <div class="iconPreviewGrid"
             v-html="iconData.icon" />
 
@@ -24,14 +30,15 @@ const iconData: Icon = computed(() => icon[1])
             <div class="body">
                 <h2 class="icon">{{ name }}</h2>
                 <span class="categoryName">
-                    <a
-                        :href="`#${kebabCase(iconData.category)}`">
+                    <a :href="`#${kebabCase(iconData.category)}`">
                         {{ iconData.category }}
                     </a>
                 </span>
             </div>
             <div class="right">
-                <IconSideDetails :icon="name" :lockfile="lockfile" :codepoints="codepoints" />
+                <IconSideDetails :icon="name" 
+                    :lockfile="lockfile"
+                    :codepoints="codepoints" />
             </div>
         </div>
         <div class="tagList">
@@ -39,7 +46,11 @@ const iconData: Icon = computed(() => icon[1])
                 v-for="tag in iconData.description.split(',')">{{
                     tag.trim() }}</span>
         </div>
-        <IconActions :icon="icon" :codepoints="codepoints" />
+        <IconActions :icon="icon"
+            :codepoints="codepoints"
+            @showDrawer="toggleDrawer" />
+
+        <CodeDrawer :visible="codeDrawerShown" :icon="name" />
     </aside>
 </template>
 <style lang="scss" scoped>
