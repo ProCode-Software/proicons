@@ -43,9 +43,8 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
-        run: |
-            pnpm install --frozen-lockfile
-            pnpm --filter @proicons/site add proicons @proicons/vue
+        run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @proicons/site add proicons @proicons/vue
         
       # - name: Build with Jekyll
       #   uses: actions/jekyll-build-pages@v1
