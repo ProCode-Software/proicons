@@ -11,7 +11,7 @@
   "author": "ProCode Software",
   "license": "MIT",
   "dependencies": {
-    "proicons": "workspace:*",
-    "@proicons/vue": "workspace:*"
+    "proicons": "latest || workspace:*",
+    "@proicons/vue": "latest || workspace:*"
   }
 }
