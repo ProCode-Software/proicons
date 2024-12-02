@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, inject } from 'vue'
 import VPSwitch from "vitepress/dist/client/theme-default/components/VPSwitch.vue";
+import { InfoIcon } from '@proicons/vue'
 
 interface Props {
     type: 'color' | 'slider' | 'toggle';
@@ -33,7 +34,7 @@ const updateSwitchValue = inject('update-slider-value', (e) => {
     <div :class="[
         'CustomizeIconField',
         type + 'CustomizerField',
-        isHorizontal[type] ? 'horizontal' : '',
+        { horizontal: isHorizontal[type] },
         className
     ]">
         <p class="customizeLabel">
@@ -41,8 +42,9 @@ const updateSwitchValue = inject('update-slider-value', (e) => {
             <span class="value" v-if="type == 'slider'">{{
                 value }}{{ suffix ?? '' }}</span>
 
-            <span v-if="tooltip" :title="tooltip"
-                class="VPIcon vpi-info"></span>
+            <InfoIcon color="var(--vp-c-text-3)" :size="20"
+                v-if="tooltip"
+                :title="tooltip" />
         </p>
 
         <input type="range" v-if="type == 'slider'"

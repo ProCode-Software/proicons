@@ -21,7 +21,7 @@ getParam('q') && (searchQuery.value = getParam('q'))
 </script>
 <template>
     <div class="IconSearchBar">
-        <SearchIcon />
+        <SearchIcon style="flex-shrink: 0;" />
         <input type="search" class="iconSearchInput"
             :placeholder="placeholder"
             v-model="searchQuery">

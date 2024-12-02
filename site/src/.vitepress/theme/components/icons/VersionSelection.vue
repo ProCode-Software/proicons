@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { ChevronDownIcon, BranchForkIcon } from "@proicons/vue";
-import { BranchForkIcon as BranchForkIcon2, TagIcon } from "proicons";
+import { BranchForkIcon as BranchForkIcon2, OpenIcon, TagIcon } from "proicons";
 import { fetchLastCommitDate, fetchVersionData } from "../../composables/versionData";
 import Flyout from "./Flyout.vue";
 import { setVersion } from "../../composables/versionSelection";
@@ -24,12 +24,15 @@ const baseLink = (v: string) => v == 'Development'
 const text = (icon, label: string, date: string, latest: boolean) => `
 ${icon.toSvg({ size: 20 })}
 <div class="col">
-    <a href="${baseLink(label)}" target="_blank">${label}</a>
+    <a>${label}</a>
     <span>
         ${new Date(date).toLocaleDateString(undefined, dateFormat)}
     </span>
 </div>
-${latest ? `<div class="badge">Latest</div>` : ''}`
+${latest ? `<div class="badge">Latest</div>` : ''}
+<a class="link" href="${baseLink(label)}" target="_blank">
+    ${OpenIcon.toSvg({ size: 20 })}
+</a>`
 
 function set(v: string) {
     selectedVersion.value = v == 'development' ? 'Development' : `v${v}`
@@ -131,6 +134,7 @@ set(latestVersion)
 <style lang="scss">
 .VersionSelection .contextItem {
     padding-right: 8px !important;
+    position: relative;
 
     .col {
         display: flex;
@@ -142,15 +146,25 @@ set(latestVersion)
         &>a {
             font-weight: 500;
             width: fit-content;
-
-            &:hover {
-                color: var(--vp-c-brand-3);
-            }
         }
 
         &>span {
             color: var(--vp-c-text-3);
             font-size: 13px;
+        }
+    }
+
+    &:hover .link { opacity: 1; }
+    .link {
+        opacity: 0;
+        transition: opacity .15s, background .15s;
+        padding: 5px;
+        position: absolute;
+        right: 8px;
+        border-radius: 8px;
+
+        &:hover {
+            background: var(--vp-c-default-2);
         }
     }
 
@@ -161,6 +175,7 @@ set(latestVersion)
         }
     }
 
+    &:hover .badge { opacity: 0; }
     .badge {
         line-height: normal;
         border-radius: 100px;
@@ -169,6 +184,8 @@ set(latestVersion)
         color: var(--vp-c-green-1);
         margin-left: 5px;
         font-size: 13px;
+        opacity: 1;
+        transition: opacity .15s;
     }
 }
 </style>
