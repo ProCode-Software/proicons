@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { kebabCase } from "../../../composables/rename";
 import { Codepoints, Icon, IconEntry, Lockfile } from '../../../composables/types';
 import IconActions from './IconActions.vue';
 import IconSideDetails from "./IconSideDetails.vue";
 import CodeDrawer from "../code/CodeDrawer.vue";
+import { CancelIcon } from "@proicons/vue";
 
 const { icon, lockfile, codepoints } = defineProps<{
     icon?: IconEntry,
@@ -15,43 +16,52 @@ const { icon, lockfile, codepoints } = defineProps<{
 const name = computed<string>(() => icon[0])
 const iconData = computed<Icon>(() => icon[1])
 const codeDrawerShown = ref(false)
-
+const hidden = ref(!!icon)
 
 function toggleDrawer() {
     codeDrawerShown.value = !codeDrawerShown.value
 }
+watch(() => icon, () => {
+    hidden.value = false
+})
 </script>
 <template>
-    <aside :class="{ IconDetail: true, withDrawer: codeDrawerShown }" v-if="icon">
-        <div class="iconPreviewGrid"
-            v-html="iconData.icon" />
-
-        <div class="iconDetails">
-            <div class="body">
-                <h2 class="icon">{{ name }}</h2>
-                <span class="categoryName">
-                    <a :href="`#${kebabCase(iconData.category)}`">
-                        {{ iconData.category }}
-                    </a>
-                </span>
+    <Transition name="details">
+        <aside :class="{ IconDetail: true, withDrawer: codeDrawerShown }"
+            v-if="icon" v-show="!hidden">
+            <div class="closeButtonWrapper">
+                <button class="closeButton" @click="hidden = true" title="Close">
+                <CancelIcon :size="20" />
+            </button>
             </div>
-            <div class="right">
-                <IconSideDetails :icon="name" 
-                    :lockfile="lockfile"
-                    :codepoints="codepoints" />
+            <div class="iconPreviewGrid"
+                v-html="iconData.icon" />
+            <div class="iconDetails">
+                <div class="body">
+                    <h2 class="icon">{{ name }}</h2>
+                    <span class="categoryName">
+                        <a :href="`#${kebabCase(iconData.category)}`">
+                            {{ iconData.category }}
+                        </a>
+                    </span>
+                </div>
+                <div class="right">
+                    <IconSideDetails :icon="name"
+                        :lockfile="lockfile"
+                        :codepoints="codepoints" />
+                </div>
             </div>
-        </div>
-        <div class="tagList">
-            <span v-if="iconData.description"
-                v-for="tag in iconData.description.split(',')">{{
-                    tag.trim() }}</span>
-        </div>
-        <IconActions :icon="icon"
-            :codepoints="codepoints"
-            @showDrawer="toggleDrawer" />
-
-        <CodeDrawer :visible="codeDrawerShown" :icon="name" />
-    </aside>
+            <div class="tagList">
+                <span v-if="iconData.description"
+                    v-for="tag in iconData.description.split(',')">{{
+                        tag.trim() }}</span>
+            </div>
+            <IconActions :icon="icon"
+                :codepoints="codepoints"
+                @showDrawer="toggleDrawer" />
+            <CodeDrawer :visible="codeDrawerShown" :icon="name" />
+        </aside>
+    </Transition>
 </template>
 <style lang="scss" scoped>
 .IconDetail {
@@ -66,10 +76,26 @@ function toggleDrawer() {
     bottom: 40px;
     border: 1px solid var(--vp-c-divider);
     box-shadow: var(--vp-shadow-3);
-    grid-template-areas: "a b b" "a c c" "a d d";
+    grid-template-areas: "a b b" "a c c" "a d d" "e e e";
     gap: 15px 20px;
-    grid-template-columns: 200px auto auto;
-    animation: showDetails .2s cubic-bezier(0.01, 0.33, 0.33, 0.99);
+    grid-template-columns: 200px 1fr 1fr;
+
+    &.details-enter-active,
+    &.details-leave-active {
+        transition: .2s cubic-bezier(0.01, 0.33, 0.33, 0.99);
+    }
+    &.details-leave-active {
+        transition-duration: .15s;
+    }
+    &.details-enter-from,
+    &.details-leave-to {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    &.details-enter-to,
+    &.details-leave-from {
+        opacity: 1;
+    }
 
     @media (max-width: 700px) {
         & {
@@ -77,21 +103,9 @@ function toggleDrawer() {
             inset: 20px;
             top: auto;
             min-width: auto;
-            grid-template-areas: "a b" "c c" "d d";
-            grid-template-columns: 100px auto;
-            padding: 20px;
-
-            &>* {
-                padding: 0 !important;
-            }
+            grid-template-areas: "a b" "c c" "d d" "e e";
+            grid-template-columns: 120px 1fr;
         }
-    }
-}
-
-@keyframes showDetails {
-    from {
-        opacity: 0;
-        transform: translateY(20%);
     }
 }
 
@@ -181,6 +195,8 @@ function toggleDrawer() {
         & {
             justify-self: center;
             border: none;
+            margin-left: 20px;
+            width: calc(100% - 20px);
         }
     }
 }
@@ -193,6 +209,7 @@ function toggleDrawer() {
     padding-right: 20px;
     font-size: 14px;
     min-height: 30px;
+    align-items: center;
 
     @media (max-width: 700px) {
         & {
@@ -209,7 +226,6 @@ function toggleDrawer() {
     border-radius: 10px;
     padding: 2px 8px;
     font-weight: 500;
-    margin-block: auto;
 }
 
 .infoButton {
@@ -223,6 +239,41 @@ function toggleDrawer() {
     &:focus {
         background: var(--vp-c-gray-2);
         box-shadow: 0 0 0 6px var(--vp-c-gray-3);
+    }
+}
+
+.closeButtonWrapper {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20%;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    &:hover .closeButton {
+        opacity: 1;
+    }
+
+    .closeButton {
+        transition: .15s;
+        border-radius: 8px;
+        padding: 8px;
+        opacity: 0;
+        background: var(--vp-c-bg);
+        border: 1px solid var(--vp-c-divider);
+
+        &:hover {
+            background: var(--vp-c-default-2);
+        }
+
+        @media (max-width: 700px) {
+            & {
+                opacity: 1;
+                background: var(--vp-c-bg-alt);
+            }
+        }
     }
 }
 </style>

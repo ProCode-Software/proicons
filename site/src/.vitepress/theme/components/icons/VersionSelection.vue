@@ -113,12 +113,18 @@ set(latestVersion)
 
     span {
         font-weight: 500;
+
+        @media (max-width: 700px) {
+            & {
+                display: none;
+            }
+        }
     }
 }
 
 .dropdownIcon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     color: var(--vp-c-text-3);
 }
 </style>

@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "proicons": "latest",
-    "@proicons/vue": "latest"
+    "@proicons/vue": "latest",
+    "shiki": "1.24.0"
   }
 }

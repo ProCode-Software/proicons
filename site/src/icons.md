@@ -1,5 +1,5 @@
 ---
-name: Icons
+title: Icons
 layout: page
 sidebar: true
 ---

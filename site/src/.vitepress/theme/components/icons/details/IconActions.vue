@@ -9,6 +9,7 @@ const { icon, codepoints } = defineProps<{ icon: IconEntry, codepoints: Codepoin
 const iconName = computed(() => icon[0])
 const iconData = computed(() => icon[1])
 
+const chevronSize = 18
 const viewCodeOpen = ref(false),
     copyOpen = ref(false),
     downloadOpen = ref(false)
@@ -49,7 +50,7 @@ const items = {
                         Copy
                         <ChevronDownIcon
                             class="dropdownIcon"
-                            :size="20" />
+                            :size="chevronSize" />
                     </button>
                 </template>
             </Flyout>
@@ -65,7 +66,7 @@ const items = {
                         Download
                         <ChevronDownIcon
                             class="dropdownIcon"
-                            :size="20" />
+                            :size="chevronSize" />
                     </button>
                 </template>
             </Flyout>
@@ -74,7 +75,7 @@ const items = {
 </template>
 <style lang="scss" scoped>
 .iconActions {
-    padding: 0 20px 20px 0;
+    padding-right: 20px;
     font-size: 14px;
     display: flex;
     gap: 8px;
@@ -106,6 +107,7 @@ const items = {
     @media (max-width: 700px) {
         & {
             flex-wrap: wrap;
+            padding: 0px 20px;
 
             .VPButton {
                 width: auto;
