@@ -37,7 +37,7 @@ features:
 
   - title: Free and open source
     details: All ProIcons are MIT-licensed and 100% free, with zero premium icons.
-    icon: '<div class="vp-icon" style="--icon: url(https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/chevron-right.svg)"></div>'
+    icon: '<div class="vp-icon" style="--icon: url(https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/open-source.svg)"></div>'
 ---
 <script setup>
 
