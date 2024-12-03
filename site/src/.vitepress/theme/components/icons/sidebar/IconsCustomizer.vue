@@ -2,7 +2,8 @@
 import { useData } from 'vitepress'
 import CustomizerField from './CustomizerField.vue'
 import VPSidebarItem from "vitepress/dist/client/theme-default/components/VPSidebarItem.vue";
-import { customizationData } from "../../../composables/useCustomizations";
+import VPButton from "vitepress/dist/client/theme-default/components/VPButton.vue";
+import { customizationData, resetToDefaults } from "../../../composables/useCustomizations";
 </script>
 
 <template>
@@ -31,10 +32,10 @@ import { customizationData } from "../../../composables/useCustomizations";
                 <div>
                     <CustomizerField type="slider"
                         label="Corner radius"
-                        :defaultValue="-1" :min="-1"
+                        :defaultValue="-0.5" :min="-0.5"
                         bind="cornerRadius"
                         :model="customizationData" :max="5"
-                        suffix="px"
+                        suffix="px" :step="0.5"
                         tooltip="May not apply to all icons. Set to -1 to ignore" />
 
                     <CustomizerField type="toggle"
@@ -44,6 +45,8 @@ import { customizationData } from "../../../composables/useCustomizations";
                         tooltip="Add strokes to filled SVG elements for balance" />
                 </div>
             </details>
+
+            <VPButton size="medium" theme="alt" text="Reset to defaults" @click="resetToDefaults" />
         </div>
     </div>
 </template>

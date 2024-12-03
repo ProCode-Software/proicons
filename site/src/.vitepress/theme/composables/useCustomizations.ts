@@ -1,8 +1,17 @@
 import { reactive } from "vue";
-export const customizationData = reactive({
+
+const customizations = {
     size: 24,
     strokeWidth: 1.5,
     color: 'currentColor',
-    cornerRadius: -1,
+    cornerRadius: -0.5,
     strokeFilledElements: false,
-})
+}
+
+export const customizationData = reactive(structuredClone(customizations))
+
+export function resetToDefaults() {
+    for (const key in customizations) {
+        customizationData[key] = customizations[key]
+    }
+}

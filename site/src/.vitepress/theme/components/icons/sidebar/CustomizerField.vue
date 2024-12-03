@@ -35,6 +35,9 @@ const updateSwitchValue = inject('update-slider-value', (e) => {
 watch(() => value.value, (newValue) => {
     model[bind] = newValue
 })
+watch(() => model[bind], (newValue) => {
+    value.value = newValue
+})
 </script>
 
 <template>
@@ -47,7 +50,7 @@ watch(() => value.value, (newValue) => {
         <p class="customizeLabel">
             {{ label }}{{ type == 'slider' ? ":" : '' }}
             <span class="value" v-if="type == 'slider'">
-                {{ value == -1 ? 'None' : `${value}${suffix ?? ''}` }}
+                {{ value < 0 ? 'None' : `${value}${suffix ?? ''}` }}
             </span>
 
             <InfoIcon :size="20"
