@@ -2,9 +2,7 @@
 import { useData } from 'vitepress'
 import CustomizerField from './CustomizerField.vue'
 import VPSidebarItem from "vitepress/dist/client/theme-default/components/VPSidebarItem.vue";
-
-const item = 0
-const type: 'color' | 'slider' = 'color'
+import { customizationData } from "../../../composables/useCustomizations";
 </script>
 
 <template>
@@ -15,26 +13,35 @@ const type: 'color' | 'slider' = 'color'
 
         <div class="IconsCustomizer">
             <CustomizerField type="slider" label="Size"
-                :defaultValue="24" :min="16" :max="48" bind="size" />
+                :defaultValue="24" :min="16" :max="48"
+                bind="size" :model="customizationData" />
 
             <CustomizerField type="slider"
                 label="Stroke width" :defaultValue="1.5"
-                :min="1" :max="3" :step="0.05" suffix="px" bind="width" />
+                :min="1" :max="3" :step="0.05" suffix="px"
+                bind="strokeWidth"
+                :model="customizationData" />
 
             <CustomizerField type="color" label="Color"
-                defaultValue="currentColor" bind="color" />
+                defaultValue="currentColor" bind="color"
+                :model="customizationData" />
 
             <details>
                 <summary>Advanced options</summary>
                 <div>
                     <CustomizerField type="slider"
                         label="Corner radius"
-                        :defaultValue="24" :min="16" bind="corner-radius"
-                        :max="48" suffix="px" tooltip="May not apply to all icons" />
+                        :defaultValue="-1" :min="-1"
+                        bind="cornerRadius"
+                        :model="customizationData" :max="5"
+                        suffix="px"
+                        tooltip="May not apply to all icons. Set to -1 to ignore" />
 
                     <CustomizerField type="toggle"
-                        label="Outline fills" bind="outline"
-                        :defaultValue="false" tooltip="Add strokes to filled SVG elements for balance" />
+                        label="Outline fills" bind="strokeFilledElements"
+                        :model="customizationData"
+                        :defaultValue="false"
+                        tooltip="Add strokes to filled SVG elements for balance" />
                 </div>
             </details>
         </div>
@@ -84,6 +91,8 @@ details summary {
     align-items: center;
     gap: 3px;
     color: var(--vp-c-text-2);
+    transition: color .25s;
+    cursor: pointer;
 
     &:before {
         content: '';
@@ -101,6 +110,10 @@ details summary {
         color: inherit;
 
         transition: transform .2s ease-out;
+    }
+
+    &:hover {
+        color: var(--vp-c-text-1);
     }
 }
 

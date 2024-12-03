@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, inject } from 'vue'
+import { ref, inject, Ref } from 'vue'
 import VPSwitch from "vitepress/dist/client/theme-default/components/VPSwitch.vue";
 import { InfoIcon } from '@proicons/vue'
+import { watch } from "vue";
 
 interface Props {
     type: 'color' | 'slider' | 'toggle';
@@ -9,13 +10,14 @@ interface Props {
     min?: number;
     max?: number;
     defaultValue: string | number | boolean;
-    bind?: string;
+    model: Record<string, any>,
+    bind: keyof Props['model'],
     className?: string;
     step?: number;
     suffix?: string;
     tooltip?: string;
 }
-const { type, label, min, max, defaultValue, bind, className, step, suffix, tooltip } = defineProps<Props>()
+const { type, label, min, max, defaultValue, bind, className, step, suffix, tooltip, model } = defineProps<Props>()
 
 const isHorizontal: Record<Props['type'], boolean> = {
     color: false,
@@ -23,10 +25,15 @@ const isHorizontal: Record<Props['type'], boolean> = {
     toggle: true
 }
 
-const value = ref(defaultValue)
+const property = model[bind]
+const value = ref(property)
 
 const updateSwitchValue = inject('update-slider-value', (e) => {
     value.value = !value.value
+})
+
+watch(() => value.value, (newValue) => {
+    model[bind] = newValue
 })
 </script>
 
@@ -39,12 +46,13 @@ const updateSwitchValue = inject('update-slider-value', (e) => {
     ]">
         <p class="customizeLabel">
             {{ label }}{{ type == 'slider' ? ":" : '' }}
-            <span class="value" v-if="type == 'slider'">{{
-                value }}{{ suffix ?? '' }}</span>
+            <span class="value" v-if="type == 'slider'">
+                {{ value == -1 ? 'None' : `${value}${suffix ?? ''}` }}
+            </span>
 
-            <InfoIcon color="var(--vp-c-text-3)" :size="20"
+            <InfoIcon :size="20"
                 v-if="tooltip"
-                :title="tooltip" />
+                :title="tooltip" class="infoIcon" />
         </p>
 
         <input type="range" v-if="type == 'slider'"
@@ -72,7 +80,7 @@ const updateSwitchValue = inject('update-slider-value', (e) => {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
 .sliderCustomizerField input {
@@ -83,6 +91,16 @@ const updateSwitchValue = inject('update-slider-value', (e) => {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.infoIcon {
+    transition: color .25s;
+    cursor: pointer;
+    color: var(--vp-c-text-3);
+
+    &:hover {
+        color: var(--vp-c-text-1);
+    }
 }
 
 .customizeLabel {
@@ -175,6 +193,7 @@ input[type="range"] {
     border-radius: 100px;
     height: 5px;
     margin-block: 6px;
+    cursor: pointer;
 
     &:focus-visible {
         box-shadow: 0 0 0 2px currentColor
