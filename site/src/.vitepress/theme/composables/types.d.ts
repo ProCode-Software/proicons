@@ -11,3 +11,5 @@ export interface Lockfile {
 export type IconEntry = [string, Icon]
 
 export type Codepoints = Record<string, number>
+
+export type IconsFile = Record<string, Icon>

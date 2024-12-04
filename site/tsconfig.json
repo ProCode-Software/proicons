@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "moduleDetection": "force",
+        "jsx": "preserve",
+        "jsxImportSource": "vue",
+        "target": "ESNext",
+        "lib": ["ESNext", "DOM", "ESNext.Object"],
+        "strictNullChecks": false,
+        "strictFunctionTypes": false,
+        "strict": false,
+        "noUnusedParameters": false,
+        "sourceMap": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true
+    },
+    "include": ["./src"],
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*"
+    ]
+}

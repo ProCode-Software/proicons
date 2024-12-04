@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { computed } from "vue";
+import { customizationData, useSvgVariables } from "../../composables/useCustomizations";
+
 const { icon, selected } = defineProps<{ icon, selected: boolean }>()
 
 const [key, value] = icon
 
-const svg = value.icon
+const svg = computed(() => useSvgVariables(value.icon, customizationData))
 </script>
 
 <template>
@@ -58,5 +61,10 @@ const svg = value.icon
 <style>
 .dark .IconListItem svg {
     color: #fff;
+}
+.IconListItem svg {
+    color: var(--customize-color, inherit);
+    width: var(--customize-size, 24px);
+    height: var(--customize-size, 24px);
 }
 </style>

@@ -53,9 +53,9 @@ watch(() => model[bind], (newValue) => {
                 {{ value < 0 ? 'None' : `${value}${suffix ?? ''}` }}
             </span>
 
-            <InfoIcon :size="20"
-                v-if="tooltip"
-                :title="tooltip" class="infoIcon" />
+            <abbr v-if="tooltip" :title="tooltip">
+                <InfoIcon :size="20" class="infoIcon" />
+            </abbr>
         </p>
 
         <input type="range" v-if="type == 'slider'"

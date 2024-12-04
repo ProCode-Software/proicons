@@ -1,4 +1,6 @@
-function sortIcons(entries) {
+import { IconsFile } from "./types"
+
+function sortIcons(entries: [string, Object][]) {
     return entries.sort((a, b) => {
         return a[0].localeCompare(b[0])
     })
@@ -11,7 +13,6 @@ function sortCategories(icons: Object) {
 }
 
 export function getCategories(icons): Record<string, [string, Object][]> {
-    // @ts-ignore
     return Object.groupBy(sortCategories(icons), ([k, v]) => v.category)
 }
 
