@@ -64,7 +64,7 @@
         { "name": "Send", "added": "4.8.0" },
         { "name": "Wi-Fi", "added": "4.8.0" },
         { "name": "Anchor", "added": "4.8.0", "updated": "4.11.0" },
-        { "name": "Attatch", "added": "4.8.0" },
+        { "name": "Attach", "added": "4.8.0" },
         { "name": "Book Info 2", "added": "4.8.0" },
         { "name": "Calendar", "added": "4.8.0" },
         { "name": "Diamond", "added": "4.8.0" },
@@ -216,7 +216,7 @@
         { "name": "Home 2", "added": "4.8.0" },
         { "name": "Location", "added": "4.8.0" },
         { "name": "Map", "added": "4.8.0" },
-        { "name": "Museum", "added": "4.8.0" },
+        { "name": "Bank", "added": "4.8.0", "updated": "4.11.2" },
         { "name": "Vehicle Car", "added": "4.8.0" },
         { "name": "Bar Graph", "added": "4.8.0" },
         { "name": "Box Margins", "added": "4.8.0" },
@@ -516,6 +516,8 @@
         "Bookmark Multiple -Var": "Bookmark Multiple",
         "Add Square Multiple -Var": "Add Square Multiple",
         "Arrow Foward": "Arrow Forward",
-        "Fast Foward": "Fast Forward"
+        "Fast Foward": "Fast Forward",
+        "Museum": "Bank",
+        "Attatch": "Attach"
     }
 }
