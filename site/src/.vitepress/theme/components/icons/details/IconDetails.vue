@@ -6,6 +6,7 @@ import IconActions from './IconActions.vue';
 import IconSideDetails from "./IconSideDetails.vue";
 import CodeDrawer from "../code/CodeDrawer.vue";
 import { CancelIcon } from "@proicons/vue";
+import { useSvgVariables, customizationData } from "../../../composables/useCustomizations";
 
 const { icon, lockfile, codepoints } = defineProps<{
     icon?: IconEntry,
@@ -24,6 +25,7 @@ function toggleDrawer() {
 watch(() => icon, () => {
     hidden.value = false
 })
+const svg = computed(() => useSvgVariables(iconData.value.icon, customizationData))
 </script>
 <template>
     <Transition name="details">
@@ -35,7 +37,9 @@ watch(() => icon, () => {
             </button>
             </div>
             <div class="iconPreviewGrid"
-                v-html="iconData.icon" />
+                v-html="svg" :style="{
+                    '--grid-size': customizationData.size
+                }" />
             <div class="iconDetails">
                 <div class="body">
                     <h2 class="icon">{{ name }}</h2>
@@ -174,7 +178,7 @@ watch(() => icon, () => {
     --grid-gradient: var(--vp-c-divider),
         var(--vp-c-divider) 1px,
         transparent 1px,
-        transparent calc(100% / 24);
+        transparent calc(100% / var(--grid-size));
     --fade-gradient: radial-gradient(rgb(255, 255, 255, .1),
             var(--vp-c-bg-alt) 70%);
     background: var(--fade-gradient),
@@ -190,6 +194,7 @@ watch(() => icon, () => {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--customize-color, inherit);
 
     @media (max-width: 700px) {
         & {

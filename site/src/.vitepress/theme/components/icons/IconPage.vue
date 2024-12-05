@@ -8,6 +8,7 @@ import IconList from "./IconList.vue";
 import IconSearch from "./IconSearch.vue";
 import NoResults from "./NoResults.vue";
 import VersionSelection from "./VersionSelection.vue";
+import { customizationData } from "../../composables/useCustomizations";
 
 const query = ref('')
 const selectedIcon = ref(null)
@@ -52,7 +53,20 @@ function selectIcon(ic) {
 }
 </script>
 <template>
-    <div class="IconPage">
+    <div class="IconPage" :style="{
+        '--customize-color': customizationData.color,
+        '--customize-stroke-width': customizationData.strokeWidth,
+        '--customize-radius': +customizationData.cornerRadius > 0.5
+            ? `${customizationData.cornerRadius}px`
+            : undefined,
+        '--customize-size': customizationData.size
+            ? `${customizationData.size}px`
+            : undefined,
+        '--customize-outline-stroke-width': customizationData.strokeFilledElements
+            && +customizationData.strokeWidth > 1.5
+            ? +customizationData.strokeWidth - 1.5
+            : undefined
+    }">
         <main>
             <div class="group">
                 <IconSearch

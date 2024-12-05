@@ -14,7 +14,7 @@ import { customizationData, resetToDefaults } from "../../../composables/useCust
 
         <div class="IconsCustomizer">
             <CustomizerField type="slider" label="Size"
-                :defaultValue="24" :min="16" :max="48"
+                :defaultValue="24" :min="16" :max="48" :step="2"
                 bind="size" :model="customizationData" />
 
             <CustomizerField type="slider"

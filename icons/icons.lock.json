@@ -436,11 +436,7 @@
         { "name": "Branch Pull Request", "added": "4.10.0" },
         { "name": "Candy", "added": "4.10.0" },
         { "name": "Svelte", "added": "4.10.0", "updated": "4.11.0" },
-        {
-            "name": "Checkbox Indeterminate 2",
-            "added": "4.11.0",
-            "updated": "4.11.0"
-        },
+        { "name": "Checkbox Indeterminate 2", "added": "4.11.0", "updated": "4.11.0" },
         { "name": "Checkbox Indeterminate", "added": "4.11.0" },
         { "name": "Checkbox Checked", "added": "4.11.0" },
         { "name": "Brackets", "added": "4.11.0" },
@@ -465,37 +461,14 @@
         { "name": "Server", "added": "4.11.0" }
     ],
     "deprecated": [
-        {
-            "icon": "Comment Multiple -Var",
-            "version": "4.11.0",
-            "alternative": "Comment Multiple"
-        },
+        { "icon": "Comment Multiple -Var", "version": "4.11.0", "alternative": "Comment Multiple" },
         { "icon": "Copy -Var", "version": "4.11.0", "alternative": "Copy" },
-        {
-            "icon": "Tag Multiple -Var",
-            "version": "4.11.0",
-            "alternative": "Tag Multiple"
-        },
-        {
-            "icon": "Chrome Restore -Var",
-            "version": "4.11.0",
-            "alternative": "Chrome Restore"
-        },
-        {
-            "icon": "Window Multiple -Var",
-            "version": "4.11.0",
-            "alternative": "Window Multiple"
-        },
-        {
-            "icon": "Bookmark Multiple -Var",
-            "version": "4.11.0",
-            "alternative": "Bookmark Multiple"
-        },
-        {
-            "icon": "Add Square Multiple -Var",
-            "version": "4.11.0",
-            "alternative": "Add Square Multiple"
-        }
+        { "icon": "Tag Multiple -Var", "version": "4.11.0", "alternative": "Tag Multiple" },
+        { "icon": "Chrome Restore -Var", "version": "4.11.0", "alternative": "Chrome Restore" },
+        { "icon": "Window Multiple -Var", "version": "4.11.0", "alternative": "Window Multiple" },
+        { "icon": "Bookmark Multiple -Var", "version": "4.11.0", "alternative": "Bookmark Multiple" },
+        { "icon": "Add Square Multiple -Var", "version": "4.11.0", "alternative": "Add Square Multiple" },
+        { "icon": "PDF 2", "version": "4.11.2", "alternative": "PDF" }
     ],
     "aliases": {
         "Plus": "Add",

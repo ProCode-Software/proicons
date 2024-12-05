@@ -14,6 +14,15 @@ const viewCodeOpen = ref(false),
     copyOpen = ref(false),
     downloadOpen = ref(false)
 
+const recentlyCopied = ref(false)
+
+function setCopied() {
+    recentlyCopied.value = true
+    setTimeout(() => {
+        recentlyCopied.value = false
+    }, 2000)
+}
+
 const items = {
     ViewCode: [
         { text: 'HTML' },
@@ -21,9 +30,9 @@ const items = {
         { text: 'Vue' }
     ],
     Copy: [
-        { text: 'Copy SVG', action: () => copySvg(iconData) },
-        { text: 'Copy Data URL', action: () => copyDataUri(iconData) },
-        { text: 'Copy Glyph', action: () => copyChar(iconName, codepoints) }
+        { text: 'Copy SVG', action: () => { copySvg(iconData); setCopied() } },
+        { text: 'Copy Data URL', action: () => { copyDataUri(iconData); setCopied() } },
+        { text: 'Copy Glyph', action: () => { copyChar(iconName, codepoints); setCopied() } }
     ],
     Download: [
         { text: 'Download SVG' },
@@ -47,7 +56,7 @@ const items = {
                 <template #trigger="{ toggle }">
                     <button class="VPButton medium alt"
                         @click="toggle">
-                        Copy
+                        {{recentlyCopied ? 'Copied!' : 'Copy'}}
                         <ChevronDownIcon
                             class="dropdownIcon"
                             :size="chevronSize" />

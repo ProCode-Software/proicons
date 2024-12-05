@@ -22,13 +22,14 @@ export function useSvgVariables(svg: string, customizations: CustomizationData):
     let newString = svg
     const STROKE_WIDTH_REGEX = /stroke-width="(.*?)"/g
     const CORNER_RADIUS_REGEX = /rx="(.*?)"/g
+    const OUTLINE_REGEX = /<(\w+)(?:(?!stroke-width)[^>])*?>/g
 
     function replaceRegex(regex: RegExp, varName: string) {
         newString = newString.replace(regex, (m, g1) => {
             return m.replace(g1, `var(--customize-${varName}, ${g1})`)
         })
     }
-    
+
     // Replace stroke-width with variable
     replaceRegex(STROKE_WIDTH_REGEX, 'stroke-width')
 
@@ -40,7 +41,15 @@ export function useSvgVariables(svg: string, customizations: CustomizationData):
         })
     }
 
-    // TODO: Outline strokes
+    // Outline strokes
+    if (customizations.strokeFilledElements && +customizationData.strokeWidth > 1.5) {
+        newString = newString.replace(OUTLINE_REGEX, (match) => {
+            if (!match.includes("stroke-width")) {
+                return match.replace(/<(\w+)/, `<$1 stroke="currentColor" stroke-width="var(--customize-outline-stroke-width)" stroke-linecap="round" stroke-linejoin="round"`);
+            }
+            return match;
+        })
+    }
 
     return newString
 }

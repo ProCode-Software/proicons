@@ -3,7 +3,6 @@ import { computed } from 'vue';
 import { getCategories, sortCategoryEntries, sortSearchResults } from '../../composables/categories';
 import { kebabCase } from "../../composables/rename";
 import IconItem from "./IconItem.vue";
-import { customizationData } from "../../composables/useCustomizations";
 
 interface Icon {
     icon: string,
@@ -26,20 +25,7 @@ const iconsSearch = computed(() => {
 
 </script>
 <template>
-    <div class="IconList" :style="{
-        '--customize-color': customizationData.color,
-        '--customize-stroke-width': customizationData.strokeWidth,
-        '--customize-radius': +customizationData.cornerRadius > 0.5
-            ? `${customizationData.cornerRadius}px`
-            : undefined,
-        '--customize-size': customizationData.size
-            ? `${customizationData.size}px`
-            : undefined,
-        '--customize-outline-stroke-width': customizationData.strokeFilledElements
-            && +customizationData.strokeWidth > 1.5
-            ? +customizationData.strokeWidth - 1.5
-            : undefined
-    }">
+    <div class="IconList">
         <section
             v-for="[category, iconsInCategory] in iconsSearch"
             :id="kebabCase(category)">
