@@ -3,5 +3,5 @@ import { Codepoints } from './types'
 
 export function getHex(name: string, codepoints: Codepoints): string {
     return codepoints[kebabCase(name)]
-        .toString(16).toUpperCase()
+        ?.toString(16)?.toUpperCase() ?? 'Not found'
 }

@@ -26,7 +26,9 @@ const data = computed(() => [
     },
     {
         key: 'Unicode Hex',
-        value: 'U+' + getHex(icon, codepoints)
+        value: getHex(icon, codepoints) == 'Not found'
+            ? 'Not found'
+            : `U+${getHex(icon, codepoints)}`
     },
 ])
 
