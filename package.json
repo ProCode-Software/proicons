@@ -44,6 +44,7 @@
         "icons:optimize": "pnpm run icons:build -o",
         "icons:build-frozen": "pnpm run icons:build -l",
         "icons:build-rebuild": "pnpm run icons:build -r",
+        "icons:prune": "node ./bin/pruneFiles.js",
         "font:build": "pnpm run icons:build -f",
         "build": "pnpm vite build",
         "preview": "pnpm vite preview",
