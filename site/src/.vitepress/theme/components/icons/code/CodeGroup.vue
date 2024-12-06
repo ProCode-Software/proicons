@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useData } from "vitepress";
 import { computed, ref } from "vue";
-import {createHighlighter} from 'shiki'
+import { highlighter } from "../IconPage.vue";
 
 const randomBytes = () => Math.floor(Math.random() * 10 ** 11).toString(36)
 
@@ -17,11 +17,6 @@ const groupId = `group-${randomBytes()}`
 
 const tabs = computed(() => items.map(({ label }) => { return { label, id: `tab-${randomBytes()}` } }))
 const blocks = computed(() => items.map(({ code, language }) => ({ code, language })))
-
-const highlighter = await createHighlighter({
-    themes: ['github-light', 'github-dark'],
-    langs: items.map(({language}) => language)
-})
 
 function highlight(block: { code: string; language: any; }) {
     const highlighted = highlighter.codeToHtml(block.code, {

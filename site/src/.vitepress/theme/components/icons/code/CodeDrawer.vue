@@ -2,6 +2,7 @@
 import { computed } from "vue";
 import CodeGroup from "./CodeGroup.vue";
 import { getCodeExamples } from "../../../composables/useCodeExamples";
+import { customizationData } from "../../../composables/useCustomizations";
 
 const { visible, icon } = defineProps<{ visible: boolean, icon: string }>()
 
@@ -16,7 +17,7 @@ function mapCodeExamples(code: Record<string, CodeExample>) {
     })
 }
 const items = computed(() =>
-    mapCodeExamples(getCodeExamples(icon))
+    mapCodeExamples(getCodeExamples(icon, customizationData))
 )
 </script>
 <template>

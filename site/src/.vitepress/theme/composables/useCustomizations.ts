@@ -7,10 +7,17 @@ const customizations = {
     cornerRadius: -0.5,
     strokeFilledElements: false,
 }
+export { customizations as defaultCustomizations }
+
+export interface CustomizationData {
+    size: number | string,
+    strokeWidth: number | string,
+    color: string,
+    cornerRadius: number | string,
+    strokeFilledElements: boolean
+}
 
 export const customizationData = reactive(structuredClone(customizations))
-
-type CustomizationData = typeof customizationData
 
 export function resetToDefaults() {
     for (const key in customizations) {

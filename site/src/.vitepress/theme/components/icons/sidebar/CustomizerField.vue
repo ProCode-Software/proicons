@@ -50,12 +50,13 @@ watch(() => model[bind], (newValue) => {
         <p class="customizeLabel">
             {{ label }}{{ type == 'slider' ? ":" : '' }}
             <span class="value" v-if="type == 'slider'">
-                {{ value < 0 ? 'None' : `${value}${suffix ?? ''}` }}
-            </span>
+                {{ value < 0 ? 'Default' : `${value}${suffix
+                    ?? '' }` }} </span>
 
-            <abbr v-if="tooltip" :title="tooltip">
-                <InfoIcon :size="20" class="infoIcon" />
-            </abbr>
+                    <abbr v-if="tooltip" :title="tooltip">
+                        <InfoIcon :size="20"
+                            class="infoIcon" />
+                    </abbr>
         </p>
 
         <input type="range" v-if="type == 'slider'"
@@ -70,7 +71,8 @@ watch(() => model[bind], (newValue) => {
         <div :class="['colorPicker', className]"
             v-if="type === 'color'">
             <input type="text" class="colorInput"
-                v-model="value">
+                v-model="value"
+                @blur="() => { if (value == '') value = defaultValue }">
             <div class="colorPreview">
                 <input type="color" v-model="value">
             </div>
