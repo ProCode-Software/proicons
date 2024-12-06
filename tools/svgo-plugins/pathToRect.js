@@ -1,3 +1,4 @@
+/** @type {import("svgo").CustomPlugin} */
 export default {
     name: 'pathToRect',
     description: 'Converts paths to rounded rectangles',

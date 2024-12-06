@@ -8,6 +8,7 @@ import progress from 'progress';
 import { buildFont } from "./build/build-font.js";
 import { Piscina } from 'piscina'
 import { execSync } from "child_process";
+import ellipseToCircle from '@proicons/svgo-plugins/ellipseToCircle'
 
 const __rootdir = process.cwd()
 
@@ -72,7 +73,7 @@ async function optimizeIcons() {
     const iconsJson = getIconsJson()
 
     try {
-        writeSvgFilesFromData(iconsJson)
+        await writeSvgFilesFromData(iconsJson)
 
         console.log(ansiColors.bold(ansiColors.green('Optimized icons!')));
     } catch (e) { throw e }
@@ -81,6 +82,7 @@ async function optimizeIcons() {
 // Transform JSON data into files
 async function writeSvgFilesFromData(jsonData) {
     const iconsJson = getIconsJson()
+    
 
     for (const [name, data] of Object.entries(jsonData)) {
         newIcons.push(name)
@@ -99,6 +101,7 @@ async function writeSvgFilesFromData(jsonData) {
                 resolve(outDir, `${fn}.svg`),
                 optimized
             )
+            data.icon = optimized
         } catch (e) {
             console.log(ansiColors.red('Error making files:'));
             throw e
