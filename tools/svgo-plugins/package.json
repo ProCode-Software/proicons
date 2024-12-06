@@ -1,0 +1,15 @@
+{
+    "name": "@proicons/svgo-plugins",
+    "version": "1.0.0",
+    "description": "Internal SVGO plugins for ProIcons",
+    "type": "module",
+    "private": true,
+    "exports": {
+        "./ellipseToCircle": "./ellipseToCircle.js",
+        "./pathToRect": "./pathToRect.js"
+    },
+    "scripts": {},
+    "keywords": ["svgo"],
+    "author": "ProCode Software",
+    "license": "MIT"
+}
