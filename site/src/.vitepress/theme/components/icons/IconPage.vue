@@ -1,11 +1,3 @@
-<script lang="ts">
-import { createHighlighter } from 'shiki'
-
-export const highlighter = await createHighlighter({
-    themes: ['github-light', 'github-dark'],
-    langs: ['javascript', 'html', 'jsx', 'vue', 'luau']
-})
-</script>
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { filterIcons } from '../../composables/IconSearch';
