@@ -85,12 +85,12 @@
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M4.687 6.213 6.8 18.976a2.5 2.5 0 0 0 2.466 2.092h3.348m6.698-14.855L17.2 18.976a2.5 2.5 0 0 1-2.466 2.092h-3.348m-1.364-9.952v5.049m3.956-5.049v5.049M2.75 6.213h18.5m-6.473 0v-1.78a1.5 1.5 0 0 0-1.5-1.5h-2.554a1.5 1.5 0 0 0-1.5 1.5v1.78z\"/></svg>"
     },
     "Eye": {
-        "description": "Look",
+        "description": "Look, Show",
         "category": "Actions",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M3.182 12.808C4.233 14.613 7.195 18.81 12 18.81c4.813 0 7.77-4.199 8.82-6.002a1.6 1.6 0 0 0-.001-1.615C19.769 9.389 16.809 5.19 12 5.19s-7.768 4.197-8.818 6.001a1.6 1.6 0 0 0 0 1.617Z\"/><path stroke=\"currentColor\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M12 14.625a2.625 2.625 0 1 0 0-5.25 2.625 2.625 0 0 0 0 5.25Z\"/></svg>"
     },
     "Eye Off": {
-        "description": "Invisible, Hidden",
+        "description": "Invisible, Hidden, Hide",
         "category": "Actions",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m3.282 21.782 4.278-4.278M21.782 3.282 17.673 7.39m-3.363 3.363a2.64 2.64 0 0 0-1.063-1.063 2.625 2.625 0 1 0-2.494 4.62m3.557-3.557-3.557 3.557m3.557-3.557 3.363-3.363m-6.92 6.92L7.56 17.504M17.673 7.39c-.38-.319-.791-.621-1.232-.894C15.2 5.726 13.717 5.19 12 5.19c-4.956 0-7.948 4.459-8.91 6.16-.11.196-.165.293-.197.446a1.2 1.2 0 0 0 0 .408c.032.152.088.25.198.445.51.903 1.593 2.582 3.237 3.96.38.319.791.621 1.232.895m12.18-7.925c.528.694.919 1.328 1.17 1.773.11.194.165.292.197.444.023.112.023.296 0 .408-.032.152-.087.25-.197.444-.96 1.702-3.95 6.162-8.91 6.162q-.714-.002-1.374-.117\"/></svg>"
     },
@@ -1665,7 +1665,7 @@
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M5.25 21.25v-6m0 0v-10a1.5 1.5 0 0 1 1.5-1.5h11.086a1 1 0 0 1 .821 1.571L15.75 9.5l2.907 4.179a1 1 0 0 1-.82 1.571z\"/></svg>"
     },
     "Library": {
-        "description": "Book, Bookshelf",
+        "description": "Books, Bookshelf",
         "category": "Activities",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><rect width=\"3.998\" height=\"15\" x=\"2.75\" y=\"4.504\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" rx=\"1.5\"/><rect width=\"3.998\" height=\"15\" x=\"9.201\" y=\"4.504\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" rx=\"1.5\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M15.267 8.378c-.165-.615.2-1.247.814-1.411l1.038-.278c.614-.165 1.245.2 1.41.814l2.681 10.014a1.15 1.15 0 0 1-.814 1.41l-1.038.279a1.15 1.15 0 0 1-1.41-.815z\"/></svg>"
     },
@@ -2170,7 +2170,7 @@
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M8.25 5.5a2.75 2.75 0 1 1-5.5 0 2.75 2.75 0 0 1 5.5 0m13 13a2.75 2.75 0 1 1-5.5 0 2.75 2.75 0 0 1 5.5 0m-13 0a2.75 2.75 0 1 1-5.5 0 2.75 2.75 0 0 1 5.5 0M5.5 8.25v7.5\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M18.5 15.75V8.5a3 3 0 0 0-3-3h-4.336M13.25 8l-1.793-1.793a1 1 0 0 1-.293-.707M13.25 3l-1.793 1.793a1 1 0 0 0-.293.707\"/></svg>"
     },
     "Candy": {
-        "description": "Skeleton, Emoji, Bones, Head, Spooky, Poison, Pirate, Kill, Blood, Death, Die",
+        "description": "Halloween, Trick or Treat",
         "category": "Food & Drink",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M9.02 7.53 7.53 9.02A5.269 5.269 0 0 0 14 17.243M9.02 7.53q.294-.295.62-.533m-.62.532.62-.532m0 0q.177-.128.36-.24m0 11.106V6.757m0 0a5.28 5.28 0 0 1 4.288-.54 5.268 5.268 0 0 1 2.183 8.764l-1.49 1.49a5.3 5.3 0 0 1-.981.772m0-11.106v11.106\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M16.47 7.53a3.16 3.16 0 0 1 0-4.471 1.053 1.053 0 0 1 1.486-.005l2.99 2.99a1.053 1.053 0 0 1-.005 1.486 3.16 3.16 0 0 1-4.47 0M7.53 16.47a3.16 3.16 0 0 0-4.471 0 1.053 1.053 0 0 0-.005 1.486l2.99 2.99a1.053 1.053 0 0 0 1.486-.005 3.16 3.16 0 0 0 0-4.47\"/></svg>"
     },
