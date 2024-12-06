@@ -8,7 +8,6 @@ import progress from 'progress';
 import { buildFont } from "./build/build-font.js";
 import { Piscina } from 'piscina'
 import { execSync } from "child_process";
-import ellipseToCircle from '@proicons/svgo-plugins/ellipseToCircle'
 
 const __rootdir = process.cwd()
 
