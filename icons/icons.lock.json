@@ -569,6 +569,15 @@
         "Bookshelf": "Library",
         "Shop": "Cart",
         "Shopping": "Cart",
-        "Shopping Cart": "Cart"
+        "Shopping Cart": "Cart",
+        "Notification": "Bell",
+        "Dot": "Circle Small",
+        "More Horizontal": "More",
+        "Kebab": "More",
+        "Kebab Vertical": "Kebab Vertical",
+        "Kebab Horizontal": "Kebab Horizontal",
+        "Love": "Heart",
+        "Email": "Mail",
+        "House": "Home"
     }
 }
