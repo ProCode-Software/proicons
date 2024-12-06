@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?daffc3a185461f8914e710cffed655bc") format("truetype"),
-url("./ProIcons.woff?daffc3a185461f8914e710cffed655bc") format("woff"),
-url("./ProIcons.woff2?daffc3a185461f8914e710cffed655bc") format("woff2"),
-url("./ProIcons.eot?daffc3a185461f8914e710cffed655bc#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?76fc985f3cbd3f713b8f95cccdf148e1") format("truetype"),
+url("./ProIcons.woff?76fc985f3cbd3f713b8f95cccdf148e1") format("woff"),
+url("./ProIcons.woff2?76fc985f3cbd3f713b8f95cccdf148e1") format("woff2"),
+url("./ProIcons.eot?76fc985f3cbd3f713b8f95cccdf148e1#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -972,7 +972,7 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-visual-studio-code::before {
   content: "\e13d";
 }
-.proicon-x-twitter-::before {
+.proicon-x-twitter::before {
   content: "\e13e";
 }
 .proicon-youtube::before {
@@ -1398,12 +1398,48 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-attatch::before {
   content: "\f101";
 }
-.proicon-comment-multiple-var::before {
+.proicon-bluesky::before {
   content: "\f102";
 }
-.proicon-museum::before {
+.proicon-comment-add-2::before {
   content: "\f103";
 }
-.proicon-x-twitter::before {
+.proicon-comment-add::before {
   content: "\f104";
+}
+.proicon-comment-multiple-var::before {
+  content: "\f105";
+}
+.proicon-css-2::before {
+  content: "\f106";
+}
+.proicon-file-multiple::before {
+  content: "\f107";
+}
+.proicon-museum::before {
+  content: "\f108";
+}
+.proicon-panel-bottom-open::before {
+  content: "\f109";
+}
+.proicon-panel-bottom::before {
+  content: "\f10a";
+}
+.proicon-parentheses::before {
+  content: "\f10b";
+}
+.proicon-photo-multiple::before {
+  content: "\f10c";
+}
+.proicon-save-multiple::before {
+  content: "\f10d";
+}
+.proicon-split-horizontal::before {
+  content: "\f10e";
+}
+.proicon-split-vertical::before {
+  content: "\f10f";
+}
+.proicon-window-add::before {
+  content: "\f110";
 }
