@@ -979,25 +979,10 @@
         "category": "System & Interface",
         "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect x=\"2.75\" y=\"6.5\" width=\"18.5\" height=\"11\" rx=\"4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n<path d=\"M7 12H17\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n</svg>\n"
     },
-    "Checkbox Intermediate 2": {
-        "description": "",
-        "category": "System & Interface",
-        "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect x=\"2.75\" y=\"2.75\" width=\"18.5\" height=\"18.5\" rx=\"4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n<path d=\"M7.1125 6.25C6.63615 6.25 6.25 6.63615 6.25 7.1125V16.8875C6.25 17.3638 6.63615 17.75 7.1125 17.75H16.8875C17.3638 17.75 17.75 17.3638 17.75 16.8875V7.1125C17.75 6.63615 17.3638 6.25 16.8875 6.25H7.1125Z\" fill=\"currentColor\"/>\n</svg>\n"
-    },
     "Checkbox Unchecked": {
         "description": "",
         "category": "System & Interface",
         "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect x=\"3.75\" y=\"3.75\" width=\"16.5\" height=\"16.5\" rx=\"4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n</svg>\n"
-    },
-    "Checkmark Checked": {
-        "description": "",
-        "category": "System & Interface",
-        "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect x=\"3.75\" y=\"3.75\" width=\"16.5\" height=\"16.5\" rx=\"4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n<path d=\"M16.5118 9.10669L10.7253 14.8932L7.4884 11.6613\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n</svg>\n"
-    },
-    "Checkmark Intermediate": {
-        "description": "",
-        "category": "System & Interface",
-        "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect x=\"3.75\" y=\"3.75\" width=\"16.5\" height=\"16.5\" rx=\"4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n<path d=\"M16.1895 12H7.81061\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n</svg>\n"
     },
     "Closed Captions": {
         "description": "",

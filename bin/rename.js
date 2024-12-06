@@ -3,7 +3,7 @@
  * @returns string
  */
 export function format(str) {
-    return str.replace(/[-_().]/g, ' ').replace(/\s\s+/g, ' ')
+    return str.replace(/[-_()\.\\\/+!@#$%^&*\[\]]/g, ' ').replace(/\s\s+/g, ' ').replace(/^\s+|\s+$/g, '')
 }
 
 /**
