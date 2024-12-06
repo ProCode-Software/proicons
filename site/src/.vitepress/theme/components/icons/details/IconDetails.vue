@@ -29,8 +29,8 @@ const svg = computed(() => useSvgVariables(iconData.value.icon, customizationDat
 </script>
 <template>
     <Transition name="details">
-        <aside :class="{ IconDetail: true, withDrawer: codeDrawerShown }"
-            v-if="icon" v-show="!hidden">
+        <aside :class="['IconDetail', { withDrawer: codeDrawerShown }]"
+            v-if="icon && lockfile.icons.find(({name: i}) => i == name)" v-show="!hidden">
             <div class="closeButtonWrapper">
                 <button class="closeButton" @click="hidden = true" title="Close">
                 <CancelIcon :size="20" />
