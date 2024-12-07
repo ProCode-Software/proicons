@@ -160,7 +160,7 @@ function createLockfile() {
         } else if (
             newIcons.includes(friendlyName) &&
             lockfile.icons.some(iconInLockfile) &&
-            lockfile.icons.some(iconInLockfile).added != version
+            lockfile.icons.find(iconInLockfile).added != version
         ) {
             lockfile.icons.find(iconInLockfile).updated = version
         }

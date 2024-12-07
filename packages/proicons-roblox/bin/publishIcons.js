@@ -73,10 +73,10 @@ async function getOperation(operationId) {
 }
 
 const iconsToPublish = lockfile.icons
+    .filter(({added, updated}) => added == pkg.version || updated == pkg.version) // New icons only
     .map(({ name }) => name)
-    .filter(i => !Object.keys(assetData).includes(i))
     .filter(i => !(iconsJson[i].category == 'Logos & Brands' && i !== 'Roblox')) // Remove brands
-    .filter(i => !removedIcons.includes(i))
+    .filter(i => !removedIcons.includes(i)) // Remove filtered icons
 
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -100,7 +100,6 @@ const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
                         await wait(4_000)
                     }
                 } while (!data2.done)
-
                 return data2
             }
 
@@ -112,7 +111,6 @@ const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
             }
 
             const response = await getAssetId()
-
             assetData[iconName] = response.assetId
             console.log(ansiColors.green(`Published ${iconName}`))
 
