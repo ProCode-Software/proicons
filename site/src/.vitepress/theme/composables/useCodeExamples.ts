@@ -77,7 +77,7 @@ export function getCodeExamples(iconName: string, customizations?: Customization
             language: 'javascript',
             code: [
                 `import { ${pascalCase(iconName)}Icon } from 'proicons'\n`,
-                `document.body.appened(`,
+                `document.write(`,
                 `    ${pascalCase(iconName)}Icon.toSvg(${indent(customizationDataToJS(customizations))})`,
                 `)`
             ].join('\n'),

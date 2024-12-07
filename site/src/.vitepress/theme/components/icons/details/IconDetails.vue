@@ -5,8 +5,9 @@ import { Codepoints, Icon, IconEntry, Lockfile } from '../../../composables/type
 import IconActions from './IconActions.vue';
 import IconSideDetails from "./IconSideDetails.vue";
 import CodeDrawer from "../code/CodeDrawer.vue";
-import { CancelIcon } from "@proicons/vue";
+import { CancelIcon, AlertCircleIcon } from "@proicons/vue";
 import { useSvgVariables, customizationData } from "../../../composables/useCustomizations";
+import { getDeprecationData } from "../../../composables/useDeprecationData";
 
 const { icon, lockfile, codepoints } = defineProps<{
     icon?: IconEntry,
@@ -26,6 +27,11 @@ watch(() => icon, () => {
     hidden.value = false
 })
 const svg = computed(() => useSvgVariables(iconData.value.icon, customizationData))
+const deprecationData = computed(() => getDeprecationData(name.value, lockfile))
+
+const deprecationMessage = (data: typeof deprecationData.value) =>
+    `This icon was deprecated in v${data.version} and will be removed in a later version.`
+        + (data.alternative ? ` Please use ${data.alternative} instead.` : ``)
 </script>
 <template>
     <Transition name="details">
@@ -42,7 +48,14 @@ const svg = computed(() => useSvgVariables(iconData.value.icon, customizationDat
                 }" />
             <div class="iconDetails">
                 <div class="body">
-                    <h2 class="icon">{{ name }}</h2>
+                    <h2 class="icon">
+                        {{ name }}
+                        <div v-if="deprecationData" class="deprecationBanner"
+                            :title="deprecationMessage(deprecationData)">
+                            <AlertCircleIcon :size="20" />
+                            Deprecated
+                        </div>
+                    </h2>
                     <span class="categoryName">
                         <a :href="`#${kebabCase(iconData.category)}`">
                             {{ iconData.category }}
@@ -142,9 +155,8 @@ const svg = computed(() => useSvgVariables(iconData.value.icon, customizationDat
         font-size: 20px;
         font-weight: 600;
         display: flex;
-        gap: 8px;
+        gap: 10px;
         align-items: center;
-        justify-content: space-between;
     }
 
     @media (max-width: 700px) {
@@ -290,5 +302,15 @@ const svg = computed(() => useSvgVariables(iconData.value.icon, customizationDat
 }
 .dark .iconPreviewGrid svg {
     color: #fff;
+}
+
+.deprecationBanner {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--vp-c-warning-1);
+    font-weight: 500;
+    letter-spacing: normal;
 }
 </style>

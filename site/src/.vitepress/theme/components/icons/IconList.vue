@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { getCategories, sortCategoryEntries, sortSearchResults } from '../../composables/categories';
+import { getCategories, sortCategoryEntries, sortSearchResults } from '../../composables/useCategories';
 import { kebabCase } from "../../composables/rename";
 import IconItem from "./IconItem.vue";
 
