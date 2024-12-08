@@ -1,6 +1,7 @@
 {
     "name": "@proicons/webfont",
     "version": "4.11.1",
+    "type": "module",
     "description": "Use ProIcons as a webfont on your site",
     "bugs": "https://github.com/ProCode-Software/proicons/issues",
 

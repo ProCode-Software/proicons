@@ -1,19 +1,19 @@
-const { readdirSync, copyFileSync, existsSync, rmSync } = require("fs")
-const path = require('path')
-const fontsFolder = path.resolve(__dirname, '../../../icons/fonts')
+import { readdirSync, copyFileSync, existsSync, rmSync } from "fs"
+import { resolve, join } from 'path'
+const fontsFolder = resolve(__dirname, '../../../icons/fonts')
 
 const exclude = ['ProIcons.json', 'ProIcons.html']
 
 readdirSync(fontsFolder).forEach(fn => {
-    const outFolder = path.resolve(__dirname, '../')
+    const outFolder = resolve(__dirname, '../')
 
     // Clean folder
-    if (existsSync(path.resolve(outFolder, fn))) {
-        rmSync(path.resolve(outFolder, fn))
+    if (existsSync(resolve(outFolder, fn))) {
+        rmSync(resolve(outFolder, fn))
     }
 
     if (!exclude.includes(fn)) {
-        const fp = path.join(fontsFolder, fn)
-        copyFileSync(fp, path.resolve(outFolder, fn))
+        const fp = join(fontsFolder, fn)
+        copyFileSync(fp, resolve(outFolder, fn))
     }
 })
