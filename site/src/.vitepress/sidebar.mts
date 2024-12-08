@@ -8,7 +8,7 @@ export function sidebar(): Record<string, DefaultTheme.SidebarItem[]> {
             {
                 text: 'Introduction',
                 collapsed: false,
-                base: '/docs/introduction/',
+                base: '/docs/',
                 items: [
                     { text: 'What is ProIcons?', link: 'about' },
                     { text: 'Installation', link: 'installation' },
@@ -17,7 +17,7 @@ export function sidebar(): Record<string, DefaultTheme.SidebarItem[]> {
             {
                 text: 'API Reference',
                 collapsed: false,
-                base: '/docs/api-reference/',
+                base: '/docs/',
                 items: [
                     { text: 'HTML API', link: 'html-api' },
                     { text: 'JavaScript API', link: 'javascript-api' },
@@ -27,7 +27,7 @@ export function sidebar(): Record<string, DefaultTheme.SidebarItem[]> {
             {
                 text: 'Packages',
                 collapsed: false,
-                base: '/docs/packages/',
+                base: '/docs/',
                 items: [
                     { text: 'ProIcons React', link: 'react' },
                     { text: 'ProIcons Roblox', link: 'roblox' },
@@ -38,11 +38,11 @@ export function sidebar(): Record<string, DefaultTheme.SidebarItem[]> {
             {
                 text: 'Contributing',
                 collapsed: false,
-                base: '/docs/contributing/',
+                base: '/docs/',
                 items: [
                     {
                         text: 'Design Guidelines',
-                        base: '/docs/contributing/design-guidelines/',
+                        base: '/docs/design-guidelines/',
                         link: 'index',
                         collapsed: true,
                         items: [

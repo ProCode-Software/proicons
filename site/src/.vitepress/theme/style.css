@@ -127,7 +127,7 @@ h6 {
     --vp-home-hero-name-color: transparent;
     --vp-home-hero-name-background: var(--vp-c-brand-1);
 
-    --vp-home-hero-image-background-image: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1));
+    --vp-home-hero-image-background-image: none;
     --vp-home-hero-image-filter: blur(44px);
 }
 
@@ -280,4 +280,10 @@ input {
 }
 .dark .sym-img.sh img {
     --shadow: 0px 20px 10px rgb(0, 0, 0);
+}
+.VPFooter .copyright .VPIcon {
+    font-size: 24px;
+    display: inline-flex;
+    margin-top: 5px;
+    margin-inline: 3px;
 }

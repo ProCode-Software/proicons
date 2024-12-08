@@ -8,9 +8,9 @@ Use ProIcons in vanilla JavaScript and Node.js.
 
 ## Installation & Setup
 
-<!--@include: ../introduction/installation.md#install-node-->
+<!--@include: ../installation.md#install-node-->
 
-If pairing your JavaScript file with HTML, you can install ProIcons the same way you would with [HTML](../introduction/installation.md#html).
+If pairing your JavaScript file with HTML, you can install ProIcons the same way you would with [HTML](installation#html).
 
 ## Adding an icon
 
@@ -19,9 +19,9 @@ ProIcons can be imported by importing their name from `proicons`.
 Each icon name and alias is in camelCase, PascalCase, and PascalCase ending in Icon. For the 'Add Square' icon, each export would be `AddSquareIcon`, `AddSquare` and `addSquare`.
 
 ::: warning
-Due to reserved names, it is recommended to import icons by either PascalCase variant (for 'Add', `AddIcon` and `Add`).
+Due to reserved names, it is recommended to import icons by their PascalCase variant (for 'Add', `AddIcon`).
 
-This includes reserved JavaScript keywords, and also other functions included in the package, such as `search`, which does not have an export in camelCase.
+This includes reserved JavaScript keywords such as `delete`, which cannot be imported, and also other functions included in the package, such as `search`, which does not have an export in camelCase.
 :::
 
 ```javascript
@@ -151,7 +151,7 @@ If you want only an array of icon names, import `iconList` using `import { iconL
 * **Type:** string[]
 - **Tree-shakable:** Yes
 
-List of all icons in Friendly Case
+List of all icon names in Friendly Case
 
 ## Classes
 
@@ -219,7 +219,7 @@ Customization options for the converted icon.
 ## Interfaces
 
 ### ProIconsOptions
-See [Options](./options)
+See [Options](./options#proiconsoptions)
 
 ### ProIconReplaceConfig
-See [Options](./options)
+See [Options](./options#proiconreplaceconfig)

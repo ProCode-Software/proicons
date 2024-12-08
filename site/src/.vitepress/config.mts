@@ -5,6 +5,21 @@ import head from './head.mts'
 const name = 'ProIcons'
 const description = "A collection of 400+ modern and open-source icons"
 
+const socialLinks = [
+    { name: 'GitHub', icon: 'github', link: 'https://github.com/ProCode-Software/proicons'},
+    { name: 'X (Twitter)', icon: 'x', link: 'https://x.com/ProCode-Software'},
+    { name: 'Bluesky', icon: 'bluesky', link: 'https://bsky.app/profile/procodesoftware.bsky.social'},
+]
+
+function getSocialLinks() {
+    return socialLinks.map(({name, icon, link}) => {
+        return `
+        <a href="${link}" target="_blank" aria-label="${name}" title="${name}">
+            <span class="VPIcon vpi-social-${icon}"></span>
+        </a>`
+    }).join('')
+}
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     title: name,
@@ -25,6 +40,9 @@ export default defineConfig({
             infoLabel: 'Info',
         }
     },
+    rewrites(id) {
+        return id.replace(/^docs\/([^/]+)\//, 'docs/')
+    },
     sitemap: {
         hostname: 'https://procode-software.github.io/proicons'
     },
@@ -40,29 +58,29 @@ export default defineConfig({
         },
         nav: [
             { text: 'Icons', link: 'icons' },
-            { text: 'Guide', link: '/docs/introduction/about' },
+            { text: 'Guide', link: '/docs/about' },
             {
                 text: 'API Reference',
                 items: [
                     {
                         text: 'HTML',
-                        link: '/docs/api-reference/html-api'
+                        link: '/docs/html-api'
                     },
                     {
                         text: 'JavaScript',
-                        link: '/docs/api-reference/javascript-api'
+                        link: '/docs/javascript-api'
                     },
                     {
                         text: 'React',
-                        link: '/docs/packages/react'
+                        link: '/docs/react'
                     },
                     {
                         text: 'Roblox',
-                        link: '/docs/packages/roblox'
+                        link: '/docs/roblox'
                     },
                     {
                         text: 'Vue',
-                        link: '/docs/packages/vue'
+                        link: '/docs/vue'
                     },
                 ]
             },
@@ -80,7 +98,7 @@ export default defineConfig({
         ],
         footer: {
             message: 'Released under the MIT License.',
-            copyright: 'Copyright © 2024 ProCode Software'
+            copyright: `Copyright © 2024 ProCode Software<br>${getSocialLinks()}`
         },
         search: {
             provider: "local"
