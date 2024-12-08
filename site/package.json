@@ -1,18 +1,22 @@
 {
-  "name": "@proicons/site",
-  "version": "1.0.0",
-  "description": "Main website for ProIcons",
-  "main": "index.js",
-  "scripts": {
-    "docs:dev": "pnpm vitepress dev src --port 9000",
-    "docs:build": "pnpm vitepress build src",
-    "docs:preview": "pnpm vitepress preview src"
-  },
-  "author": "ProCode Software",
-  "license": "MIT",
-  "dependencies": {
-    "proicons": "latest",
-    "@proicons/vue": "latest",
-    "shiki": "1.24.0"
-  }
+    "name": "@proicons/site",
+    "version": "1.0.0",
+    "description": "Main website for ProIcons",
+    "main": "index.js",
+    "scripts": {
+        "docs:dev": "pnpm vitepress dev src --port 9000",
+        "docs:build": "pnpm vitepress build src",
+        "docs:preview": "pnpm vitepress preview src"
+    },
+    "author": "ProCode Software",
+    "license": "MIT",
+    "dependencies": {
+        "proicons": "latest",
+        "@proicons/vue": "latest",
+        "shiki": "1.24.0",
+        "minisearch": "^7.1.1",
+        "sass-embedded": "^1.82.0",
+        "vitepress": "^1.5.0",
+        "vue": "^3.5.13"
+    }
 }

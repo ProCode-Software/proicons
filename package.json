@@ -48,9 +48,8 @@
         "font:build": "pnpm run icons:build -f",
         "build": "pnpm vite build",
         "preview": "pnpm vite preview",
-        "docs:dev": "pnpm vitepress dev site/src --port 9000",
-        "docs:build": "pnpm vitepress build site/src",
-        "docs:preview": "pnpm vitepress preview site/src",
+        "docs:dev": "pnpm --filter @proicons/site run docs:dev",
+        "docs:build": "pnpm --filter @proicons/site run docs:build",
         "publishPackages": "node --env-file=.env ./bin/publish.js",
         "ci": "pnpm run icons:build-modules && pnpm run build"
     },
@@ -70,28 +69,23 @@
     "license": "MIT",
     "devDependencies": {
         "@proicons/cli": "workspace:*",
+        "@proicons/pixelfix": "workspace:*",
         "@proicons/svgo-plugins": "workspace:*",
         "@twbs/fantasticon": "^3.0.0",
         "@types/node": "^22.10.1",
         "adm-zip": "^0.5.16",
         "ansi-colors": "^4.1.3",
-        "d3-delaunay": "^6.0.4",
-        "jimp": "^1.6.0",
         "jsdom": "^25.0.1",
-        "minisearch": "^7.1.1",
         "oslllo-svg-fixer": "^5.0.0",
         "piscina": "^4.8.0",
         "prettier": "^3.4.2",
         "progress": "^2.0.3",
         "rollup": "^4.28.1",
-        "sass-embedded": "^1.82.0",
         "sharp": "^0.33.5",
         "svgo": "^3.3.2",
         "typescript": "^5.7.2",
         "vite": "^6.0.3",
-        "vite-plugin-dts": "^4.3.0",
-        "vitepress": "^1.5.0",
-        "vue": "^3.5.13"
+        "vite-plugin-dts": "^4.3.0"
     },
     "packageManager": "pnpm@10.0.0-beta.1+sha512.629de0531b9ae9a3f8e372d014ef8f5a57906d9a48095ced54bbfbd246b4136381478032c8d13819fd1eedde8330517a799ea6756eedd9a136e36524fa3083cf"
 }

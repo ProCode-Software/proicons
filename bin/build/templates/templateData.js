@@ -1,6 +1,6 @@
 import icons from '../../../icons/icons.json' with { type: 'json' }
 import lockfile from '../../../icons/icons.lock.json' with { type: 'json' }
-import { camelCase, pascalToCamelCase } from "../../rename.js"
+import { camelCase, pascalToCamelCase } from "../../helpers/rename.js"
 
 /** 
  * Gets information about an icon

@@ -1,5 +1,6 @@
 import { readdirSync, copyFileSync, existsSync, rmSync } from "fs"
 import { resolve, join } from 'path'
+const __dirname = import.meta.dirname
 const fontsFolder = resolve(__dirname, '../../../icons/fonts')
 
 const exclude = ['ProIcons.json', 'ProIcons.html']

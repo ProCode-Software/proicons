@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, writeFileSync } from "fs";
 import path from "path";
-import * as rename from '../rename.js'
+import * as rename from '../helpers/rename.js'
 import { FontAssetType, generateFonts, OtherAssetType } from '@twbs/fantasticon';
 import ansiColors from "ansi-colors";
 import SVGFixer from 'oslllo-svg-fixer';

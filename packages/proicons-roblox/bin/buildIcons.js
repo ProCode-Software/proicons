@@ -2,7 +2,7 @@ import { resolve } from 'path'
 import icons from '../../../icons/icons.json' with { type: 'json' }
 import lockfile from '../../../icons/icons.lock.json' with { type: 'json' }
 import { fileURLToPath } from 'url'
-import { pascalCase } from '../../../bin/rename.js'
+import { pascalCase } from '../../../bin/helpers/rename.js'
 import iconIds from '../dist/assetPaths.json' with { type: 'json' }
 import { readFileSync, writeFileSync } from 'fs'
 

@@ -5,8 +5,8 @@ import iconsJson from '../../../icons/icons.json' with { type: 'json' }
 import FormData from 'form-data'
 import { createReadStream, writeFileSync, readFileSync } from 'fs'
 import { resolve } from 'path'
-import { kebabCase } from '../../../bin/rename.js'
-import { prettierFormat } from '../../../bin/build/prettierFormat.js'
+import { kebabCase } from '../../../bin/helpers/rename.js'
+import { prettierFormat } from '../../../bin/helpers/prettierFormat.js'
 import ansiColors from 'ansi-colors'
 
 const iconAssetsPath = resolve(import.meta.dirname, '../dist/assetPaths.json')
@@ -73,53 +73,53 @@ async function getOperation(operationId) {
 }
 
 const iconsToPublish = lockfile.icons
-    .filter(({added, updated}) => added == pkg.version || updated == pkg.version) // New icons only
+    .filter(({ added, updated }) => added == pkg.version || updated == pkg.version) // New icons only
     .map(({ name }) => name)
     .filter(i => !(iconsJson[i].category == 'Logos & Brands' && i !== 'Roblox')) // Remove brands
     .filter(i => !removedIcons.includes(i)) // Remove filtered icons
 
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
 
-;(async () => {
-    for (const iconName of iconsToPublish) {
-        try {
-            const data1 = await publishAsset(iconName, kebabCase(iconName))
-            const { operationId } = data1
+    ; (async () => {
+        for (const iconName of iconsToPublish) {
+            try {
+                const data1 = await publishAsset(iconName, kebabCase(iconName))
+                const { operationId } = data1
 
-            await wait(4_000)
+                await wait(4_000)
 
-            async function waitForCompletion() {
-                let data2
-                do {
-                    data2 = await getOperation(operationId)
+                async function waitForCompletion() {
+                    let data2
+                    do {
+                        data2 = await getOperation(operationId)
 
-                    if (!data2.done) {
-                        console.log(
-                            ansiColors.yellow('Waiting for operation to complete...')
-                        )
-                        await wait(4_000)
-                    }
-                } while (!data2.done)
-                return data2
+                        if (!data2.done) {
+                            console.log(
+                                ansiColors.yellow('Waiting for operation to complete...')
+                            )
+                            await wait(4_000)
+                        }
+                    } while (!data2.done)
+                    return data2
+                }
+
+                async function getAssetId() {
+                    const data2 = await waitForCompletion()
+
+                    const { response } = data2
+                    return response
+                }
+
+                const response = await getAssetId()
+                assetData[iconName] = response.assetId
+                console.log(ansiColors.green(`Published ${iconName}`))
+
+                writeFileSync(iconAssetsPath, await prettierFormat(assetData))
+            } catch (err) {
+                console.log(ansiColors.red(`Error publishing ${iconName}:`))
+                throw err
             }
-
-            async function getAssetId() {
-                const data2 = await waitForCompletion()
-
-                const { response } = data2
-                return response
-            }
-
-            const response = await getAssetId()
-            assetData[iconName] = response.assetId
-            console.log(ansiColors.green(`Published ${iconName}`))
-
-            writeFileSync(iconAssetsPath, await prettierFormat(assetData))
-        } catch (err) {
-            console.log(ansiColors.red(`Error publishing ${iconName}:`))
-            throw err
         }
-    }
-})().then(() => {
-    console.log(ansiColors.green(`Done publishing icons!`))
-})
+    })().then(() => {
+        console.log(ansiColors.green(`Done publishing icons!`))
+    })

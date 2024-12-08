@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
 import pkg from '../package.json' with { type: 'json' }
-import { getCliParams } from './build/getCliParam.js'
+import { getCliParams } from './helpers/getCliParam.js'
 import ansiColors from 'ansi-colors'
 
 const packagePaths = ['package.json']

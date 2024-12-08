@@ -5,9 +5,9 @@ import { fileURLToPath } from "url";
 import icons from '../icons/icons.json' with { type: 'json' };
 import lockfile from '../icons/icons.lock.json' with { type: 'json' };
 import { createSvgNodes } from './build/createSvgNodes.js';
-import { getCliParams } from './build/getCliParam.js';
-import { prettierFormat } from './build/prettierFormat.js';
-import { camelCase, kebabToPascalCase, pascalCase, pascalToCamelCase } from './rename.js';
+import { getCliParams } from './helpers/getCliParam.js';
+import { prettierFormat } from './helpers/prettierFormat.js';
+import { camelCase, kebabToPascalCase, pascalCase, pascalToCamelCase } from './helpers/rename.js';
 
 const __dirname = fileURLToPath(dirname(import.meta.url))
 const __rootdir = resolve(__dirname, '../')

@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'fs'
 import { resolve } from 'path';
-import { prettierFormat } from './build/prettierFormat.js'
-import * as rename from './rename.js';
+import { prettierFormat } from './helpers/prettierFormat.js'
+import * as rename from './helpers/rename.js';
 import ansiColors from 'ansi-colors';
 import { optimize } from 'svgo';
 import progress from 'progress';
@@ -81,7 +81,7 @@ async function optimizeIcons() {
 // Transform JSON data into files
 async function writeSvgFilesFromData(jsonData) {
     const iconsJson = getIconsJson()
-    
+
 
     for (const [name, data] of Object.entries(jsonData)) {
         newIcons.push(name)
@@ -224,7 +224,7 @@ function buildModules() {
     try {
         const result = execSync(`pnpm run icons:build-modules`)
         console.log(result.toString('utf-8'));
-    } catch(e) {
+    } catch (e) {
         console.log(ansiColors.red('Couldn\'t build modules:'));
         throw e
     }

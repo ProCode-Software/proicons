@@ -1,5 +1,5 @@
 import fs from 'fs/promises'
-import pixelfix from './pixelfix.js';
+import pixelfix from '@proicons/pixelfix';
 import sharp from 'sharp';
 import path from 'path'
 

@@ -3,7 +3,7 @@ import icons from '../icons/icons.json' with { type: 'json' }
 import { join, resolve } from "path"
 import { readdirSync, unlinkSync } from "fs"
 import ansiColors from "ansi-colors"
-import { kebabCase } from "./rename.js"
+import { kebabCase } from "./helpers/rename.js"
 
 // Audit lockfiles
 const lockfileIconNames = lockfile.icons.map(({name}) => name).sort()

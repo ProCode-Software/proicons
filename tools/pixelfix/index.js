@@ -1,7 +1,7 @@
 // Derived from https://github.com/Corecii/Transparent-Pixel-Fix
 "use strict";
 
-import { Jimp as jimp } from "jimp";
+import { Jimp } from "jimp";
 import { Delaunay } from "d3-delaunay";
 
 const neighborLocations = [
@@ -16,7 +16,7 @@ const neighborLocations = [
 ];
 
 async function fixImage(filePath) {
-    let image = await jimp.read(filePath);
+    let image = await Jimp.read(filePath);
 
     let voronoiPoints = [];
     let voronoiColors = [];
