@@ -51,7 +51,7 @@ Note that you will need to install all dependencies if you want to build the ico
 ### Adding an icon
 The [Figma desktop app](https://www.figma.com/downloads/) is recommended, along with our [Build Icon List](https://github.com/ProCode-Software/proicons/tree/main/tools/BuildIconList) plugin cloned and [imported](#installing-the-figma-plugin) into Figma.
 
-Please follow our [design guidelines](https://procode-software.github.io/proicons/docs/contributing/design-guidelines) and [naming conventions](https://procode-software.github.io/proicons/docs/contributing/design-guidelines/naming) when creating your icon.
+Please follow our [design guidelines](https://procode-software.github.io/proicons/docs/design-guidelines) and [naming conventions](https://procode-software.github.io/proicons/docs/design-guidelines/naming) when creating your icon.
 
 #### Installing the Figma plugin *(Recommended if using Figma)*
 1. Make sure you have cloned the ProIcons repository
