@@ -23,7 +23,7 @@
 An implementation of the <a href="https://github.com/ProCode-Software/proicons" target="_blank">ProIcons</a> icon library for Roblox games.
 <br>
 <a href="https://procode-software.github.io/proicons/icons">Browse icons</a> | 
-<a href="https://procode-software.github.io/proicons/docs/packages/roblox">Documentation</a> | 
+<a href="https://procode-software.github.io/proicons/docs/roblox">Documentation</a> | 
 <a href="https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-roblox">GitHub</a> | 
 <a href="https://wally.run/package/procode-software/proicons">Download on Wally</a>
 </p>
@@ -31,7 +31,7 @@ An implementation of the <a href="https://github.com/ProCode-Software/proicons" 
 ## Features
 - All icons are 120x120px and have gone through alpha blending via Pixelfix
 
-**[Read the full documentation here](https://procode-software.github.io/proicons/docs/packages/roblox)**
+**[Read the full documentation here](https://procode-software.github.io/proicons/docs/roblox)**
 
 ## Installation
 ### Via [Wally](https://wally.run)

@@ -72,21 +72,21 @@ const { AddIcon } = proicons
 ## HTML Webfont
 If you prefer not to use any scripts, you can also install ProIcons as a webfont on your site.
 
-<!-- @include: ../webfont.md#install-webfont -->
+<!-- @include: ../packages/webfont.md#install-webfont -->
 
-[Read the documentation](../webfont)
+[Read the documentation](webfont)
 
 ## React
-<!-- @include: ../react.md#install-react -->
+<!-- @include: ../packages/react.md#install-react -->
 
-[Read the documentation](../react)
+[Read the documentation](react)
 
 ## Roblox
-<!-- @include: ../roblox.md#install-roblox -->
+<!-- @include: ../packages/roblox.md#install-roblox -->
 
-[Read the documentation](../roblox)
+[Read the documentation](roblox)
 
 ## Vue
-<!-- @include: ../vue.md#install-vue -->
+<!-- @include: ../packages/vue.md#install-vue -->
 
-[Read the documentation](../vue)
+[Read the documentation](vue)

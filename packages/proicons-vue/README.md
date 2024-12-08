@@ -27,7 +27,7 @@
 An implementation of the <a href="https://github.com/ProCode-Software/proicons" target="_blank">ProIcons</a> icon library for Vue 3 applications.
 <br>
 <a href="https://procode-software.github.io/proicons/icons">Browse icons</a> | 
-<a href="https://procode-software.github.io/proicons/docs/packages/vue">Documentation</a> | 
+<a href="https://procode-software.github.io/proicons/docs/vue">Documentation</a> | 
 <a href="https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-vue">GitHub</a> | 
 <a href="https://www.npmjs.com/package/@proicons/vue">NPM</a>
 </p>
@@ -36,7 +36,7 @@ An implementation of the <a href="https://github.com/ProCode-Software/proicons" 
 - All icons are available as customizable Vue components
 - Supports ESM tree-shaking
 
-**[Read the full documentation here](https://procode-software.github.io/proicons/docs/packages/vue)**
+**[Read the full documentation here](https://procode-software.github.io/proicons/docs/vue)**
 
 ## Installation
 Install via [NPM](https://npmjs.com/package/@proicons/vue):

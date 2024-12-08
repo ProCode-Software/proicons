@@ -27,7 +27,7 @@
 Use <a href="https://github.com/ProCode-Software/proicons" target="_blank">ProIcons</a> as a webfont on your site without the need of using scripts.
 <br>
 <a href="https://procode-software.github.io/proicons/icons">Browse icons</a> | 
-<a href="https://procode-software.github.io/proicons/docs/packages/webfont">Documentation</a> | 
+<a href="https://procode-software.github.io/proicons/docs/webfont">Documentation</a> | 
 <a href="https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-webfont">GitHub</a> | 
 <a href="https://www.npmjs.com/package/@proicons/webfont">NPM</a>
 </p>
@@ -36,7 +36,7 @@ Use <a href="https://github.com/ProCode-Software/proicons" target="_blank">ProIc
 - Works out of the box, no scripts needed.
 - Contains TTF, WOFF, WOFF2 and EOT formats
 
-**[Read the full documentation here](https://procode-software.github.io/proicons/docs/packages/webfont)**
+**[Read the full documentation here](https://procode-software.github.io/proicons/docs/webfont)**
 
 ## Installation
 ### Import via UNPKG

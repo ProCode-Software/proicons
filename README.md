@@ -34,7 +34,7 @@
 
 ## Features
 - Highly-customizable icons
-- Available for [HTML](https://procode-software.github.io/proicons/docs/api-reference/html-api), [Node.js](https://procode-software.github.io/proicons/docs/api-reference/html-api), [React](https://procode-software.github.io/proicons/docs/packages/react) and [Vue](https://procode-software.github.io/proicons/docs/packages/vue)
+- Available for [HTML](https://procode-software.github.io/proicons/docs/html-api), [Node.js](https://procode-software.github.io/proicons/docs/html-api), [React](https://procode-software.github.io/proicons/docs/react) and [Vue](https://procode-software.github.io/proicons/docs/vue)
 - Tree-shakable for eliminating unused icons when using a bundler
 
 ## Usage
@@ -91,7 +91,7 @@ const { AddIcon } = proicons
 ### Webfont
 ProIcons also has a webfont version, allowing you to use icons from a stylesheet without the need of scripts, similar to Font Awesome.
 
-[Documentation](https://procode-software.github.io/proicons/docs/packages/webfont)
+[Documentation](https://procode-software.github.io/proicons/docs/webfont)
 
 Import via a CDN:
 ```html
@@ -109,7 +109,7 @@ npm install @proicons/webfont
 ### React
 ProIcons can also be imported as customizable React components.
 
-[Documentation](https://procode-software.github.io/proicons/docs/packages/react)
+[Documentation](https://procode-software.github.io/proicons/docs/react)
 
 Install via [NPM](https://npmjs.com/package/@proicons/react):
 ```shell
@@ -130,7 +130,7 @@ function App() {
 ### Vue
 ProIcons is also available as a Vue package, similar to React. This supports Vue 3, and is also ESM-only.
 
-[Documentation](https://procode-software.github.io/proicons/docs/packages/vue)
+[Documentation](https://procode-software.github.io/proicons/docs/vue)
 
 Install via [NPM](https://npmjs.com/package/@proicons/vue):
 

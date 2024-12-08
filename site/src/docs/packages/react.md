@@ -47,10 +47,10 @@ function App() {
     )
 }
 ```
-Props from [`ProIconOptions`]() can be used to customize icons. These components get converted into `<svg>` elements with your configuration.
+Props from [`ProIconsOptions`](options#proiconsoptions) can be used to customize icons. These components get converted into `<svg>` elements with your configuration.
 
 ## `ProIcon` Component
-This package also includes a generic `ProIcon` component allowing you to import icons by their name. This is equivalent to the [HTML API](../api-reference/html-api).
+This package also includes a generic `ProIcon` component allowing you to import icons by their name. This is equivalent to the [HTML API](html-api).
 
 ::: danger
 Using the `<ProIcon>` component imports all icons and breaks tree-shaking, which can increase bundle size when using module bundlers such as Webpack or Rollup.

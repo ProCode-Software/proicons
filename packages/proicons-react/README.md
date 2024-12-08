@@ -27,7 +27,7 @@
 An implementation of the <a href="https://github.com/ProCode-Software/proicons" target="_blank">ProIcons</a> icon library for React applications.
 <br>
 <a href="https://procode-software.github.io/proicons/icons">Browse icons</a> | 
-<a href="https://procode-software.github.io/proicons/docs/packages/react">Documentation</a> | 
+<a href="https://procode-software.github.io/proicons/docs/react">Documentation</a> | 
 <a href="https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-react">GitHub</a> | 
 <a href="https://www.npmjs.com/package/@proicons/react">NPM</a>
 </p>
@@ -36,7 +36,7 @@ An implementation of the <a href="https://github.com/ProCode-Software/proicons" 
 - All icons are available as customizable React components
 - Supports ESM tree-shaking
 
-**[Read the full documentation here](https://procode-software.github.io/proicons/docs/packages/react)**
+**[Read the full documentation here](https://procode-software.github.io/proicons/docs/react)**
 
 ## Installation
 Install via [NPM](https://npmjs.com/package/@proicons/react):

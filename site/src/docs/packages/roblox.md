@@ -22,7 +22,7 @@ wally install
 
 ### Via LoadString
 If you want to always have the latest version available, you can import the script using `loadstring`:
-```lua
+```luau
 local ProIcons = loadstring(game:GetService("HttpService"):GetAsync("https://github.com/ProCode-Software/proicons/blob/main/packages/proicons-roblox/src/ProIcons.luau", true))()
 ```
 <!-- #endregion install-roblox -->
@@ -31,7 +31,7 @@ local ProIcons = loadstring(game:GetService("HttpService"):GetAsync("https://git
 All icons are inside a table with the icon's asset id and other metadata.
 
 To import the Add Square icon into an `ImageLabel`:
-```lua
+```luau
 -- Import the library
 local ProIcons = require(path.to.ProIcons)
 
@@ -44,7 +44,7 @@ Replace `path.to.` with the path of your library. If you installed the library v
 
 ## Properties
 All icons are in the following format:
-```lua
+```luau
 {
     AddSquare = {
         id = 97666464232500, -- Image id
@@ -63,3 +63,6 @@ All icons are in the following format:
 Due to Roblox moderation, not all icons in the set have been included in the Roblox library. The removed icons include:
 - All brand icons, except for Roblox
 - Box Drag
+- Narrator
+
+See [removed-icons.txt](https://github.com/ProCode-Software/proicons/blob/main/packages/proicons-roblox/removed-icons.txt) for the full, up-to-date list.
