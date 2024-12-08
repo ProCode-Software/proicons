@@ -34,6 +34,10 @@
     --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/bluesky.svg");
 }
 
+.vpi-social-npm {
+    --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/npm.svg");
+}
+
 .vpi-more-horizontal {
     --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/more.svg");
 }

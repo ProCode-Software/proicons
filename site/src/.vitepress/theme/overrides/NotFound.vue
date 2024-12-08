@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { withBase } from 'vitepress';
 import { useData } from 'vitepress/dist/client/theme-default/composables/data';
-import { useLangs } from 'vitepress/dist/client/theme-default/composables/langs';
+import { useLangs } from 'vitepress/dist/client/theme-default/composables/langs'
 import VPButton from './VPButton.vue';
 
 const { theme } = useData();
@@ -24,7 +24,7 @@ const { currentLang } = useLangs();
             <VPButton
                 tag="a"
                 size="medium"
-                theme="brand"
+                theme="alt"
                 class="link"
                 :text="theme.notFound?.linkText ?? 'Take me home'"
                 :href="currentLang.link"
@@ -69,10 +69,11 @@ const { currentLang } = useLangs();
 
 .quote {
     margin: 0 auto;
-    max-width: 256px;
     font-size: 14px;
     font-weight: 500;
     color: var(--vp-c-text-2);
+    max-width: 450px;
+    line-height: 1.5;
 }
 
 .action {

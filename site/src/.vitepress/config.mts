@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
-import { sidebar } from './sidebar.mts'
+import sidebar from './sidebar.mts'
 import head from './head.mts'
+import nav from './nav.mts'
 
 const name = 'ProIcons'
 const description = "A collection of 400+ modern and open-source icons"
@@ -56,42 +57,12 @@ export default defineConfig({
             linkText: 'Go home',
             title: 'We couldn\'t find the page you were looking for'
         },
-        nav: [
-            { text: 'Icons', link: 'icons' },
-            { text: 'Guide', link: '/docs/about' },
-            {
-                text: 'API Reference',
-                items: [
-                    {
-                        text: 'HTML',
-                        link: '/docs/html-api'
-                    },
-                    {
-                        text: 'JavaScript',
-                        link: '/docs/javascript-api'
-                    },
-                    {
-                        text: 'React',
-                        link: '/docs/react'
-                    },
-                    {
-                        text: 'Roblox',
-                        link: '/docs/roblox'
-                    },
-                    {
-                        text: 'Vue',
-                        link: '/docs/vue'
-                    },
-                ]
-            },
-        ],
+        nav,
+        sidebar,
         logo: {
             light: 'https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/logo_light.svg',
             dark: 'https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/logo_dark.svg',
         },
-
-        sidebar: sidebar(),
-
         socialLinks: [
             { icon: 'github', link: 'https://github.com/ProCode-Software/proicons' },
             { icon: 'npm', link: 'https://npmjs.com/package/proicons' }
