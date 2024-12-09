@@ -50,8 +50,7 @@ const sidebar: Record<string, DefaultTheme.SidebarItem[]> = {
                         },
                     ],
                 },
-                { text: 'Roadmap', link: 'roadmap' },
-                { text: 'Changelog', link: 'changelog' },
+                { text: 'Roadmap', link: 'roadmap' }
             ],
         },
     ],
