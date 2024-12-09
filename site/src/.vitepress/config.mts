@@ -74,5 +74,14 @@ export default defineConfig({
         search: {
             provider: "local"
         }
+    },
+    vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    api: 'modern-compiler'
+                }
+            }
+        }
     }
 })
