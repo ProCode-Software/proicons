@@ -22,7 +22,8 @@
         "strictFunctionTypes": false,
         "strict": false,
         "noUnusedParameters": false,
-        "noUncheckedSideEffectImports": true
+        "noUncheckedSideEffectImports": true,
+        "skipDefaultLibCheck": true
     },
     "include": [
         "./src"
