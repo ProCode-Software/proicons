@@ -8,8 +8,11 @@ import progress from 'progress';
 import { buildFont } from "./build/build-font.js";
 import { Piscina } from 'piscina'
 import { execSync } from "child_process";
+import pkg from '../package.json' with { type: 'json' }
+import inIcons from '../in/in.json' with { type: 'json' }
 
-const __rootdir = process.cwd()
+const __rootdir = resolve(import.meta.dirname, '../')
+const { version } = pkg
 
 const argChoice = (c1, c2) => {
     const argv = process.argv.slice(2)
@@ -26,9 +29,9 @@ const args = {
     // Only optimize icons
     optimizeOnly: argChoice('--optimize-only', '-o'),
 }
-const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
 
 const strokeColors = ['#212325', 'black', '#000000', '#000'];
+
 /** @type {import("svgo").Config} */
 const svgoConfig = {
     multipass: true,
@@ -49,13 +52,11 @@ const svgoConfig = {
 };
 
 // Move and rename SVGs
-const inDir = resolve('in');
-const outDir = resolve('icons/svg');
-const iconsJsonPath = resolve('icons/icons.json')
+const inDir = resolve(__rootdir, 'in');
+const outDir = resolve(__rootdir, 'icons/svg');
+const iconsJsonPath = resolve(__rootdir, 'icons/icons.json')
 
-let variableIcons = [];
 let newIcons = []
-
 if (!existsSync(inDir)) mkdirSync(inDir)
 const files = readdirSync(inDir);
 
@@ -106,10 +107,6 @@ async function writeSvgFilesFromData(jsonData) {
             throw e
         }
 
-        if (name.endsWith(' Variable')) {
-            variableIcons.push(name)
-        }
-
         iconsJson[name] = data
     }
     const formatted = await prettierFormat(iconsJson)
@@ -117,31 +114,16 @@ async function writeSvgFilesFromData(jsonData) {
 }
 
 async function createSvgFiles() {
-    /** @type {import('../in/in.json')} */
-    let inIcons
-
-    try {
-        inIcons = JSON.parse(
-            readFileSync(
-                resolve(inDir, files.find((f) => f.toLowerCase().endsWith('.json'))),
-                'utf-8'
-            )
-        )
-    } catch (e) {
-        return
-    }
     await writeSvgFilesFromData(inIcons)
-
     console.log(ansiColors.green('Done creating SVG files!'));
-
 }
 
 // Build lockfile
 /**
  * @type {import('../icons/icons.lock.json')} lockfile
  */
-const lockfile = existsSync(resolve('icons/icons.lock.json'))
-    ? JSON.parse(readFileSync(resolve('icons/icons.lock.json'), 'utf-8'))
+const lockfile = existsSync(resolve(__rootdir, 'icons/icons.lock.json'))
+    ? JSON.parse(readFileSync(resolve(__rootdir, 'icons/icons.lock.json'), 'utf-8'))
     : [];
 
 function createLockfile() {
@@ -150,8 +132,9 @@ function createLockfile() {
 
     Object.keys(config).forEach(friendlyName => {
         const iconInLockfile = z => z.name == friendlyName
+        const lockfileItem = lockfile.icons.find(iconInLockfile)
 
-        if (!lockfile.icons.some(iconInLockfile)) {
+        if (!lockfileItem) {
             const lfItem = {
                 name: friendlyName,
                 added: version,
@@ -159,10 +142,10 @@ function createLockfile() {
             lockfile.icons.push(lfItem)
         } else if (
             newIcons.includes(friendlyName) &&
-            lockfile.icons.some(iconInLockfile) &&
-            lockfile.icons.find(iconInLockfile).added != version
+            lockfileItem &&
+            lockfileItem.added != version
         ) {
-            lockfile.icons.find(iconInLockfile).updated = version
+            lockfileItem.updated = version
         }
     })
 }
@@ -170,7 +153,7 @@ function createLockfile() {
 async function writeLockfile() {
     try {
         const formatted = await prettierFormat(lockfile)
-        const location = resolve('icons/icons.lock.json');
+        const location = resolve(__rootdir, 'icons/icons.lock.json');
 
         writeFileSync(location, formatted);
 
@@ -184,8 +167,8 @@ async function writeLockfile() {
 
 // Convert to PNGs
 async function buildPngs() {
-
     const svgFiles = readdirSync(outDir).filter((file) => file.endsWith('.svg'));
+    const newSvgsOnly = newIcons.map(i => rename.kebabCase(i.trim()) + '.svg')
 
     const progressBar = new progress('  Build PNGs [:bar] :item :percent :etas', {
         complete: '=',
@@ -197,8 +180,6 @@ async function buildPngs() {
     const worker = new Piscina({
         filename: new URL('./build/fix-image.js', import.meta.url).href
     })
-
-    const newSvgsOnly = newIcons.map(i => rename.kebabCase(i.trim()) + '.svg')
 
     console.time('Build PNGs')
 
@@ -245,15 +226,11 @@ function buildModules() {
     }
     await buildFont(newIcons.length > 0 || args.shouldRebuildAll);
 })().then(() => {
-    console.timeEnd('Build time')
     console.log(ansiColors.green(ansiColors.bold('\nBuild complete!')));
+    console.timeEnd('Build time')
 
     if (newIcons > 0) {
         console.log(ansiColors.dim('New icons:', newIcons));
-
-        if (variableIcons.length > 0) {
-            console.log(ansiColors.dim('\tVariable icons:', ansiColors.yellow(variableIcons)));
-        }
     } else {
         console.log(ansiColors.dim('No newly added icons'));
     }

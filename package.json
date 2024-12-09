@@ -48,9 +48,9 @@
         "font:build": "pnpm run icons:build -f",
         "build": "pnpm vite build",
         "preview": "pnpm vite preview",
+        "generate-changelog": "node ./bin/generateChangelog.js",
         "docs:dev": "pnpm --filter @proicons/site run docs:dev",
         "docs:build": "pnpm --filter @proicons/site run docs:build",
-        "publishPackages": "node --env-file=.env ./bin/publish.js",
         "ci": "pnpm run icons:build-modules && pnpm run build"
     },
     "keywords": [

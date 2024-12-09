@@ -8,7 +8,7 @@ export default (moduleName, nodes) => {
         iconData,
         lockfileItem,
         rawSvgData,
-        kebabName,
+        pascalName,
     } = getData(moduleName)
 
     const iconInfo = {

@@ -7,8 +7,8 @@ import { camelCase, pascalToCamelCase } from "../../helpers/rename.js"
  * @param {string} moduleName
 */
 export function getData(moduleName) {
-    const kebabName = moduleName.slice(0, -4)
-    const camelName = pascalToCamelCase(kebabName)
+    const pascalName = moduleName.replace(/Icon$/, '')
+    const camelName = pascalToCamelCase(pascalName)
     const friendlyName = Object.keys(icons).find(key => camelCase(key) == camelName)
 
     if (!friendlyName) {
@@ -30,7 +30,7 @@ export function getData(moduleName) {
     ).toString('base64')
 
     return {
-        kebabName,
+        pascalName,
         camelName,
         friendlyName,
         lockfileItem,
@@ -40,3 +40,4 @@ export function getData(moduleName) {
         rawSvgData,
     }
 }
+console.log(getData('AddSquareMultipleIcon'));
