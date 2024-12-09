@@ -2,7 +2,7 @@
 import { withBase } from 'vitepress';
 import { useData } from 'vitepress/dist/client/theme-default/composables/data';
 import { useLangs } from 'vitepress/dist/client/theme-default/composables/langs'
-import VPButton from './VPButton.vue';
+import VPButton from 'vitepress/dist/client/theme-default/components/VPButton.vue';
 
 const { theme } = useData();
 const { currentLang } = useLangs();
