@@ -30,6 +30,6 @@ Names in other English variants are still acceptable in tags. You may also put b
     * "Ruler Diagonal" for Ruler
 
 7. Other icon names containing numbers should be spelled out.
-    * "Leaf Two" is used instead of "Leaf 2"
+    * "**Leaf Two**" is used instead of "Leaf 2"
 
 8. Icon names should not begin with numbers. These names are not allowed to be used for variables in JavaScript and Lua.

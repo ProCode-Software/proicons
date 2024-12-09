@@ -75,7 +75,7 @@ Please follow our [design guidelines](https://procode-software.github.io/proicon
 #### Using other software
 1. Create a new file at `proicons/in/in.json` with the following content:
 
-```json
+```jsonc
 {
     "Icon Name": {
         "description": "Icon description",
@@ -97,8 +97,8 @@ To ensure your changes work, test your changes. This can be done by creating a s
 # In your proicons folder
 cd proicons
 
-# It is important to build your package when testing!
-pnpm run build
+# Make sure to build your package when testing
+pnpm run ci
 
 pnpm link
 
