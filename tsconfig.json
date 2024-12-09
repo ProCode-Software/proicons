@@ -21,7 +21,8 @@
         "strictNullChecks": false,
         "strictFunctionTypes": false,
         "strict": false,
-        "noUnusedParameters": false
+        "noUnusedParameters": false,
+        "noUncheckedSideEffectImports": true
     },
     "include": [
         "./src"
