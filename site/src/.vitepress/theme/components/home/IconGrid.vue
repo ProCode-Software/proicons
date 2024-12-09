@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { fetchIconsFromVersion } from "../../composables/versionData";
+import { onMounted } from "vue"
 const { icons } = await fetchIconsFromVersion('development')
 
 const amount = 60,
@@ -15,7 +16,9 @@ function setRandomIcons() {
 }
 
 setRandomIcons()
-setInterval(setRandomIcons, 1000 * timeout);
+onMounted(() => {
+    setInterval(setRandomIcons, 1000 * timeout);
+})
 </script>
 <template>
     <div class="IconGrid">
