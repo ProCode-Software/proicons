@@ -4,14 +4,10 @@ import * as rename from '../helpers/rename.js'
 import { FontAssetType, generateFonts, OtherAssetType } from '@twbs/fantasticon';
 import ansiColors from "ansi-colors";
 import SVGFixer from 'oslllo-svg-fixer';
+import codepoints from '../../icons/fonts/ProIcons.json' with { type: 'json' }
 
 const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
 const lockfile = JSON.parse(readFileSync('icons/icons.lock.json', 'utf-8'))
-
-const codepoints = {}
-lockfile.icons.forEach((obj, index) => {
-    codepoints[rename.kebabCase(obj.name)] = 57344 + index
-})
 
 const metadata = `<?xml-model href="https://www.w3.org/TR/WOFF/metadata/woffmeta.rng"?>
 <metadata version="1.0">
@@ -59,7 +55,7 @@ export async function buildFont(rebuild) {
             inputDir: path.resolve('./_outlined/'),
             normalize: true,
             fontHeight: 500,
-            codepoints: codepoints,
+            codepoints,
             templates: {
                 html: path.resolve('tools/data/html-font.hbs')
             },
@@ -72,7 +68,6 @@ export async function buildFont(rebuild) {
             assetTypes: [
                 OtherAssetType.HTML,
                 OtherAssetType.CSS,
-                OtherAssetType.JSON
             ],
             formatOptions: {
                 ttf: {
@@ -82,7 +77,6 @@ export async function buildFont(rebuild) {
                     copyright: '©2024 ProCode Software',
                 },
                 woff: { metadata },
-                json: { indent: 4 },
             },
             prefix: 'proicon',
         })

@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?76fc985f3cbd3f713b8f95cccdf148e1") format("truetype"),
-url("./ProIcons.woff?76fc985f3cbd3f713b8f95cccdf148e1") format("woff"),
-url("./ProIcons.woff2?76fc985f3cbd3f713b8f95cccdf148e1") format("woff2"),
-url("./ProIcons.eot?76fc985f3cbd3f713b8f95cccdf148e1#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?4b338e4f9dc713d0d19d5f336f84be67") format("truetype"),
+url("./ProIcons.woff?4b338e4f9dc713d0d19d5f336f84be67") format("woff"),
+url("./ProIcons.woff2?4b338e4f9dc713d0d19d5f336f84be67") format("woff2"),
+url("./ProIcons.eot?4b338e4f9dc713d0d19d5f336f84be67#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -1395,51 +1395,48 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-server::before {
   content: "\e1ca";
 }
+.proicon-parentheses::before {
+  content: "\e1cb";
+}
+.proicon-css-2::before {
+  content: "\e1cc";
+}
+.proicon-bluesky::before {
+  content: "\e1cd";
+}
+.proicon-window-add::before {
+  content: "\e1ce";
+}
+.proicon-file-multiple::before {
+  content: "\e1cf";
+}
+.proicon-photo-multiple::before {
+  content: "\e1d0";
+}
+.proicon-comment-add::before {
+  content: "\e1d1";
+}
+.proicon-comment-add-2::before {
+  content: "\e1d2";
+}
+.proicon-save-multiple::before {
+  content: "\e1d3";
+}
+.proicon-panel-bottom::before {
+  content: "\e1d4";
+}
+.proicon-panel-bottom-open::before {
+  content: "\e1d5";
+}
+.proicon-split-vertical::before {
+  content: "\e1d6";
+}
+.proicon-split-horizontal::before {
+  content: "\e1d7";
+}
 .proicon-attatch::before {
   content: "\f101";
 }
-.proicon-bluesky::before {
-  content: "\f102";
-}
-.proicon-comment-add-2::before {
-  content: "\f103";
-}
-.proicon-comment-add::before {
-  content: "\f104";
-}
 .proicon-comment-multiple-var::before {
-  content: "\f105";
-}
-.proicon-css-2::before {
-  content: "\f106";
-}
-.proicon-file-multiple::before {
-  content: "\f107";
-}
-.proicon-museum::before {
-  content: "\f108";
-}
-.proicon-panel-bottom-open::before {
-  content: "\f109";
-}
-.proicon-panel-bottom::before {
-  content: "\f10a";
-}
-.proicon-parentheses::before {
-  content: "\f10b";
-}
-.proicon-photo-multiple::before {
-  content: "\f10c";
-}
-.proicon-save-multiple::before {
-  content: "\f10d";
-}
-.proicon-split-horizontal::before {
-  content: "\f10e";
-}
-.proicon-split-vertical::before {
-  content: "\f10f";
-}
-.proicon-window-add::before {
-  content: "\f110";
+  content: "\f102";
 }
