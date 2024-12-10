@@ -40,4 +40,3 @@ export function getData(moduleName) {
         rawSvgData,
     }
 }
-console.log(getData('AddSquareMultipleIcon'));

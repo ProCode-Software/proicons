@@ -44,7 +44,7 @@ const modules = [];
 
         modules.push({
             name: moduleName,
-            path: `./icons/${moduleName}`,
+            path: `./icons/${moduleName}${formatParam !== 'ts' ? `.${formatParam}` : ''}`,
         });
 
         const svgContent = readFileSync(resolve(inDir, inFile), 'utf-8');
@@ -55,7 +55,11 @@ const modules = [];
 
         const result = renderTemplate(moduleName, svgNodes);
 
-        const formatted = await prettierFormat(result, 'babel');
+        const formatted = await prettierFormat(result,
+            formatParam == 'svelte'
+                ? 'svelte'
+                : 'babel'
+        );
 
         writeFileSync(outputPath, formatted);
     }
@@ -103,9 +107,9 @@ const modules = [];
                 const exportNames = [
                     ...(libParam == 'vanilla' ? [camelModuleName] : [name.slice(0, -4)]), // Camel name or Camel name without icon
                     ...(aliasExports ?? []), // Aliases
-                ].map(e => `${name} as ${e}`)
+                ].map(e => `${libParam == 'svelte' ? 'default' : name} as ${e}`)
 
-                exportNames.unshift(name)
+                exportNames.unshift(libParam == 'svelte' ? `default as ${name}` : name)
 
                 // Name with Icon at end and camel name
                 return `export { ${exportNames.join(', ')} } from '${path}'`

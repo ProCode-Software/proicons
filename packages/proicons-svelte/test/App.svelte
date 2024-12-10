@@ -1,5 +1,9 @@
 <script lang="ts">
+import { AddSquareMultipleIcon } from '../src/icons'
+import { ProIcon } from '../src/proicons-svelte'
+
 let count: number = $state(0)
+
 const increment = () => {
     count += 1
 }
@@ -14,13 +18,7 @@ const increment = () => {
         </button>
     </div>
 
-    <p>
-        Check out <a
-            href="https://github.com/sveltejs/kit#readme"
-            target="_blank"
-            rel="noreferrer">SvelteKit</a
-        >, the official Svelte app framework powered by Vite!
-    </p>
-
-    <p class="read-the-docs">Click on the Vite and Svelte logos to learn more</p>
+    <p></p>
+    <AddSquareMultipleIcon size={48} strokeWidth={2} />
+    <ProIcon icon="Add" strokeWidth={2} color="red" />
 </main>

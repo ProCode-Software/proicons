@@ -79,6 +79,7 @@
         "oslllo-svg-fixer": "^5.0.0",
         "piscina": "^4.8.0",
         "prettier": "^3.4.2",
+        "prettier-plugin-svelte": "^3.3.2",
         "progress": "^2.0.3",
         "rollup": "^4.28.1",
         "sharp": "^0.33.5",
