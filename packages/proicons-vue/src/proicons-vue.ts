@@ -15,6 +15,7 @@ export {
      * @example ```vue
      * <ProIcon icon="Add Square" />
      * ```
+     * [Documentation](https://procode-software.github.io/proicons/docs/vue#proicon-component)
      */
     ProIcon
 }

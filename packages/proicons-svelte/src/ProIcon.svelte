@@ -1,3 +1,14 @@
+<!--
+@component
+Generic icon component that can be used to import icons by their name.
+
+Note: This breaks tree-shaking
+@example
+```svelte
+<ProIcon icon="Add Square" color="red" strokeWidth={2} />
+```
+[Documentation](https://procode-software.github.io/proicons/docs/svelte#proicon-component)
+-->
 <script lang="ts">
 import type { ProIconAttributes } from './types'
 import * as icons from './icons'

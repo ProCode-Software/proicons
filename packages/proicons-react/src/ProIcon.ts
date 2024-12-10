@@ -15,6 +15,7 @@ interface ProIconComponent extends ProIconAttributes {
      * <ProIcon icon="AddIcon" />
      * <ProIcon icon="bookmarkMultiple" />
      * ```
+     * [Documentation](https://procode-software.github.io/proicons/docs/react#proicon-component)
      */
     icon: IconEnum<keyof typeof icons> | (string & {})
 }
