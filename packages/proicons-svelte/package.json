@@ -1,12 +1,12 @@
 {
-    "name": "proicons-svelte",
+    "name": "@proicons/svelte",
     "private": true,
     "version": "4.11.2",
     "type": "module",
     "license": "MIT",
     "sideEffects": false,
     "files": [
-        "dist", "types"
+        "dist"
     ],
     "scripts": {
         "dev": "vite",
@@ -18,21 +18,21 @@
     },
     "exports": {
         ".": {
-            "types": "./types/proicons-svelte.d.ts",
+            "types": "./dist/types/proicons-svelte.d.ts",
             "svelte": "./dist/proicons-svelte.js",
             "default": "./dist/proicons-svelte.js"
         },
         "./icons": {
-            "types": "./types/proicons-svelte.d.ts",
+            "types": "./dist/types/proicons-svelte.d.ts",
             "svelte": "./dist/proicons-svelte.js"
         },
         "./*": {
-            "types": "./types/icons/*.svelte.d.ts",
+            "types": "./dist/types/icons/*.svelte.d.ts",
             "svelte": "./dist/icons/*.js",
             "default": "./dist/icons/*.js"
         },
         "./icons/*": {
-            "types": "./types/icons/*.svelte.d.ts",
+            "types": "./dist/types/icons/*.svelte.d.ts",
             "svelte": "./dist/icons/*.js",
             "default": "./dist/icons/*.js"
         }

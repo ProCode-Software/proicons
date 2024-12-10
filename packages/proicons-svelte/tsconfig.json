@@ -21,14 +21,13 @@
         "strict": false,
         "noImplicitAny": false,
         "baseUrl": ".",
-        "composite": true,
-        "declarationDir": "./types",
+        "rootDir": "./src",
+        "outDir": "./dist/types",
         "noUnusedLocals": false,
         "types": [
             "vite/client",
             "svelte"
         ],
-        
     },
     "include": [
         "./src/**/*.ts",
@@ -38,8 +37,5 @@
         "./test/main.ts",
         "./test/App.svelte"
     ],
-    "exclude": [
-        "../../src/**",
-        "../../src/*",
-    ]
+    "exclude": ["node_modules", "../../src"]
 }
