@@ -16,22 +16,30 @@
         "checkJs": true,
         "isolatedModules": true,
         "moduleDetection": "force",
-        "noUncheckedSideEffectImports": true,
+        "noUncheckedSideEffectImports": true,        
         "skipLibCheck": true,
         "strict": false,
         "noImplicitAny": false,
+        "baseUrl": ".",
+        "composite": true,
+        "declarationDir": "./types",
         "noUnusedLocals": false,
         "types": [
             "vite/client",
             "svelte"
-        ]
+        ],
+        
     },
     "include": [
-        "src/**/*.ts",
-        "src/**/*.js",
-        "src/**/*.svelte",
-        "test/main.ts",
-        "test/main.ts",
-        "test/App.svelte"
+        "./src/**/*.ts",
+        "./src/**/*.js",
+        "./src/**/*.svelte",
+        "./test/main.ts",
+        "./test/main.ts",
+        "./test/App.svelte"
+    ],
+    "exclude": [
+        "../../src/**",
+        "../../src/*",
     ]
 }

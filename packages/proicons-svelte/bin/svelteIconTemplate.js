@@ -18,18 +18,19 @@ export default (moduleName, nodes) => {
     }
 
     return `
+<!--
+@component ${friendlyName}
+@description ${iconData.description}
+@preview ![Icon preview](data:image/svg+xml;base64,${rawSvgData})
+@added v${lockfileItem.added}${lockfileItem.updated ? `\n * @updated v${lockfileItem.updated}` : ''}${deprecationData ? `\n * @deprecated Use ${deprecationData.alternative} instead` : ''}
+-->
 <script>
 import CreateIcon from '../CreateIcon.svelte'
 
 const ${moduleName} = ${JSON.stringify(iconInfo)}
 const nodes = ${JSON.stringify(nodes)}
 const props = $props()
-    
-/**
- * @description ${iconData.description}
- * @preview ![Icon preview](data:image/svg+xml;base64,${rawSvgData})
- * @added v${lockfileItem.added}${lockfileItem.updated ? `\n * @updated v${lockfileItem.updated}` : ''}${deprecationData ? `\n * @deprecated Use ${deprecationData.alternative} instead` : ''}
- */
+
 </script>
 
 <CreateIcon {...props} icon={${moduleName}} nodes={nodes} />

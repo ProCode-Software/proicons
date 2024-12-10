@@ -6,34 +6,33 @@
     "license": "MIT",
     "sideEffects": false,
     "files": [
-        "dist"
+        "dist", "types"
     ],
     "scripts": {
         "dev": "vite",
         "build": "vite build",
         "package": "svelte-package --input ./src",
         "preview": "vite preview",
-        "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
         "icons:build-modules": "node ../../bin/addIconFiles.js -t './bin/svelteIconTemplate.js' -out './src/icons' -i './src/icons.ts' --format svelte --clean --lib svelte",
         "ci": "pnpm run icons:build-modules && pnpm run build"
     },
     "exports": {
         ".": {
-            "types": "./dist/proicons-svelte.d.ts",
+            "types": "./types/proicons-svelte.d.ts",
             "svelte": "./dist/proicons-svelte.js",
             "default": "./dist/proicons-svelte.js"
         },
         "./icons": {
-            "types": "./dist/proicons-svelte.d.ts",
+            "types": "./types/proicons-svelte.d.ts",
             "svelte": "./dist/proicons-svelte.js"
         },
         "./*": {
-            "types": "./dist/icons/*.svelte.d.ts",
+            "types": "./types/icons/*.svelte.d.ts",
             "svelte": "./dist/icons/*.js",
             "default": "./dist/icons/*.js"
         },
         "./icons/*": {
-            "types": "./dist/icons/*.svelte.d.ts",
+            "types": "./types/icons/*.svelte.d.ts",
             "svelte": "./dist/icons/*.js",
             "default": "./dist/icons/*.js"
         }
@@ -42,7 +41,6 @@
         "@sveltejs/package": "2.3.7",
         "@sveltejs/vite-plugin-svelte": "^5.0.0",
         "@tsconfig/svelte": "^5.0.4",
-        "svelte-check": "^4.1.0",
         "tslib": "^2.8.1",
         "typescript": "~5.6.2",
         "vite": "^6.0.1",
