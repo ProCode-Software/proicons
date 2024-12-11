@@ -5,12 +5,17 @@ import * as icons from './icons'
 export {
     /** List of all available icons as type `ProIcon`.
      * 
+     * [View the list of icons here](https://procode-software.github.io/proicons/icons)
+     * 
      * Note: This will import all icons and breaks tree-shaking
      */
     icons,
     /** List of all categories */
     categories,
-    /** List of all icon names as strings */
+    /** List of all icon names as strings
+     * 
+     * [View the list of icons here](https://procode-software.github.io/proicons/icons)
+     */
     iconList
 }
 
