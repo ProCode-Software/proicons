@@ -75,6 +75,7 @@
         "@types/node": "^22.10.1",
         "adm-zip": "^0.5.16",
         "ansi-colors": "^4.1.3",
+        "esbuild": "0.24.0",
         "jsdom": "^25.0.1",
         "oslllo-svg-fixer": "^5.0.0",
         "piscina": "^4.8.0",

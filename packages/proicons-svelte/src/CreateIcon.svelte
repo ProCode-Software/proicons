@@ -1,6 +1,6 @@
 <script lang="ts">
-import { convertNodesWithConfig, renderNodeWithRoot } from '../../../src/renderNodes'
-import { kebabCase } from '../../../src/rename'
+import { convertNodesWithConfig, renderNodeWithRoot } from './utils'
+import { kebabCase } from './utils'
 import type { ProIconAttributes } from './types'
 
 type IconNode = [string, Record<string, string>, IconNode[]]

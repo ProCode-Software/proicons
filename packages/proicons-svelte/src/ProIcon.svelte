@@ -12,7 +12,7 @@ Note: This breaks tree-shaking
 <script lang="ts">
 import type { ProIconAttributes } from './types'
 import * as icons from './icons'
-import { kebabCase, pascalCase } from '../../../src/rename'
+import { kebabCase, pascalCase } from './utils'
 
 type Props = ProIconAttributes & { icon: string }
 const { icon, ...props }: Props = $props()

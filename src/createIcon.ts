@@ -1,6 +1,6 @@
 import { ProIcon } from './types';
 
-export type IconNode = [string, Record<string, string>, IconNode[]];
+export type IconNode = [string, Record<string, string | number>, IconNode[]];
 
 export interface IconData {
     name: string;

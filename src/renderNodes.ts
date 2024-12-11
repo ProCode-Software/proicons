@@ -18,7 +18,7 @@ export function toNodes(elementString: string): IconNode[] {
         .parseFromString(elementString, 'image/svg+xml')
         .querySelector('svg')
 
-    function renderNodeList(elm) {
+    function renderNodeList(elm: Element) {
         const nodeArray = []
 
         for (const child of elm.children) {

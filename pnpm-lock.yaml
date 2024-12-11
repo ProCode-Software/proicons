@@ -29,6 +29,9 @@ importers:
       ansi-colors:
         specifier: ^4.1.3
         version: 4.1.3
+      esbuild:
+        specifier: 0.24.0
+        version: 0.24.0
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
@@ -1534,8 +1537,8 @@ packages:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
 
-  magic-string@0.30.14:
-    resolution: {integrity: sha512-5c99P1WKTed11ZC0HMJOj6CDIue6F8ySu+bJL+85q1zBEIY8IklrJ1eiKC2NDRh3Ct3FcvmJPyQHb9erXMTJNw==}
+  magic-string@0.30.15:
+    resolution: {integrity: sha512-zXeaYRgZ6ldS1RJJUrMrYgNJ4fdwnyI6tVqoiIhyCyv5IVTK9BU8Ic2l253GGETQHxI4HNUwhJ3fjDhKqEoaAw==}
 
   make-fetch-happen@10.2.1:
     resolution: {integrity: sha512-NgOPbRiaQM10DYXvN3/hhGVI2M5MtITFryzBGxHM5p4wnFxsVCbxkrBrDsk+EZ5OB4jEOT7AjDxtdF+KVEFT7w==}
@@ -3809,7 +3812,7 @@ snapshots:
 
   lru-cache@7.18.3: {}
 
-  magic-string@0.30.14:
+  magic-string@0.30.15:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
 
@@ -4391,7 +4394,7 @@ snapshots:
       esrap: 1.2.3
       is-reference: 3.0.3
       locate-character: 3.0.0
-      magic-string: 0.30.14
+      magic-string: 0.30.15
       zimmerframe: 1.1.2
 
   svg-pathdata@6.0.3: {}
@@ -4548,7 +4551,7 @@ snapshots:
       debug: 4.4.0
       kolorist: 1.8.0
       local-pkg: 0.5.1
-      magic-string: 0.30.14
+      magic-string: 0.30.15
       typescript: 5.7.2
     optionalDependencies:
       vite: 6.0.3(@types/node@22.10.1)(sass-embedded@1.82.0)(terser@5.36.0)

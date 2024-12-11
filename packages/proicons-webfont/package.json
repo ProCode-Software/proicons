@@ -13,7 +13,7 @@
         "access": "public"
     },
     "scripts": {
-        "prepare": "node ./bin/build.js",
+        "prepack": "node ./bin/build.js",
         "ci": "pnpm run prepare"
     },
     "keywords": [

@@ -20,9 +20,6 @@
         "skipLibCheck": true,
         "strict": false,
         "noImplicitAny": false,
-        "baseUrl": ".",
-        "rootDir": "./src",
-        "outDir": "./dist/types",
         "noUnusedLocals": false,
         "types": [
             "vite/client",

@@ -4,7 +4,8 @@
         "moduleResolution": "Bundler",
         "lib": [
             "ESNext",
-            "DOM"
+            "DOM",
+            "DOM.Iterable"
         ],
         "target": "ES6",
         "jsx": "react",

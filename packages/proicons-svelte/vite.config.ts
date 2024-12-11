@@ -6,5 +6,13 @@ export default defineConfig({
     server: {
         open: '/test/'
     },
+    /* build: {
+        emptyOutDir: false,
+        lib: {
+            entry: './src/utils.ts',
+            fileName: 'utils',
+            formats: ['es']
+        },
+    }, */
     plugins: [svelte()],
 })

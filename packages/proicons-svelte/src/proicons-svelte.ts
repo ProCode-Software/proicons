@@ -1,3 +1,9 @@
+/**
+ * @license ProIcons Svelte - MIT
+ * 
+ * This code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of the source tree.
+ */
 import * as icons from './icons'
 import ProIcon from './ProIcon.svelte'
 
