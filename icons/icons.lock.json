@@ -1,7 +1,7 @@
 {
     "icons": [
         { "name": "Add", "added": "4.8.0" },
-        { "name": "Add Circular", "added": "4.8.0" },
+        { "name": "Add Circle", "added": "4.8.0" },
         { "name": "Add Rhombus", "added": "4.8.0" },
         { "name": "Add Square", "added": "4.8.0" },
         { "name": "Add Square Multiple", "added": "4.8.0", "updated": "4.11.0" },
@@ -27,7 +27,7 @@
         { "name": "Pause", "added": "4.8.0" },
         { "name": "Pencil", "added": "4.8.0" },
         { "name": "Play", "added": "4.8.0" },
-        { "name": "Play Circular", "added": "4.8.0" },
+        { "name": "Play Circle", "added": "4.8.0" },
         { "name": "Reverse", "added": "4.8.0" },
         { "name": "Search", "added": "4.8.0" },
         { "name": "Star", "added": "4.8.0" },
@@ -190,7 +190,7 @@
         { "name": "Photo", "added": "4.8.0" },
         { "name": "QR Code", "added": "4.8.0" },
         { "name": "Save", "added": "4.8.0" },
-        { "name": "Save As", "added": "4.8.0", "updated": "4.11.2" },
+        { "name": "Save Pencil", "added": "4.8.0", "updated": "4.11.2" },
         { "name": "Accessibility", "added": "4.8.0" },
         { "name": "Battery", "added": "4.8.0" },
         { "name": "Battery Full", "added": "4.8.0" },
@@ -365,8 +365,8 @@
         { "name": "Music Note 2", "added": "4.8.0" },
         { "name": "Soundwave", "added": "4.8.0" },
         { "name": "Volume", "added": "4.8.0" },
-        { "name": "Volume 0", "added": "4.8.0" },
-        { "name": "Volume 1", "added": "4.8.0" },
+        { "name": "Volume Medium", "added": "4.8.0" },
+        { "name": "Volume Low", "added": "4.8.0" },
         { "name": "Volume Mute", "added": "4.8.0" },
         { "name": "Leaf", "added": "4.8.0" },
         { "name": "Leaf Three", "added": "4.8.0" },
@@ -445,7 +445,7 @@
         { "name": "Regular Expression", "added": "4.11.0" },
         { "name": "Ruler Diagonal", "added": "4.11.0" },
         { "name": "TypeScript", "added": "4.11.0" },
-        { "name": "Slash Box", "added": "4.11.0" },
+        { "name": "Slash Square", "added": "4.11.0" },
         { "name": "Copyright", "added": "4.11.0" },
         { "name": "Copyleft", "added": "4.11.0" },
         { "name": "Keyboard Command", "added": "4.11.0" },
@@ -580,6 +580,13 @@
         "Kebab Horizontal": "Kebab Horizontal",
         "Love": "Heart",
         "Email": "Mail",
-        "House": "Home"
+        "House": "Home",
+        "Slash Box": "Slash Square",
+        "Volume High": "Volume",
+        "Volume 0": "Volume Medium",
+        "Volume 1": "Volume Low",
+        "Add Circular": "Add Circle",
+        "Play Circular": "Play Circle",
+        "Save As": "Save Pencil"
     }
 }
