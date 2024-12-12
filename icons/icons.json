@@ -877,12 +877,12 @@
     "Text Subscript": {
         "description": "",
         "category": "Text",
-        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m3.5 19.25 12-14.5m-12 0 8.586 10.375 2.04 2.465m2.051-1.928a1.912 1.912 0 1 1 3.263 1.352l-2.881 2.854v.382h3.359\"/></svg>"
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m4.75 4.75 10.5 12.5m0-12.5-10.5 12.5m12.677-1.088a1.912 1.912 0 1 1 3.263 1.352l-2.88 3.236h3.359\"/></svg>"
     },
     "Text Superscript": {
-        "description": "",
         "category": "Text",
-        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m4 4.75 12 14.5m-12 0L14.626 6.41m2.051-1.748a1.912 1.912 0 1 1 3.263 1.352l-2.88 2.854v.382h3.359\"/></svg>"
+        "description": "",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m4.75 19.25 10.5-12.5m0 12.5L4.75 6.75m12.677-1.588a1.912 1.912 0 1 1 3.263 1.352L17.81 9.75h3.359\"/></svg>"
     },
     "Text Typography": {
         "description": "",

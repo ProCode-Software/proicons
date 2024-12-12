@@ -4,3 +4,4 @@ icons/fonts/** -linguist-detectable
 *.html -linguist-detectable
 **/ProIcons.css -linguist-detectable
 **/ProIcons.luau linguist-vendored
+**/src/icons.ts linguist-vendored

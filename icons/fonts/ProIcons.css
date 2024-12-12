@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?57ce6ca7ac40e074a63b7d5571e60b93") format("truetype"),
-url("./ProIcons.woff?57ce6ca7ac40e074a63b7d5571e60b93") format("woff"),
-url("./ProIcons.woff2?57ce6ca7ac40e074a63b7d5571e60b93") format("woff2"),
-url("./ProIcons.eot?57ce6ca7ac40e074a63b7d5571e60b93#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?5f394d80dd36338f880ae2d3e9811ec3") format("truetype"),
+url("./ProIcons.woff?5f394d80dd36338f880ae2d3e9811ec3") format("woff"),
+url("./ProIcons.woff2?5f394d80dd36338f880ae2d3e9811ec3") format("woff2"),
+url("./ProIcons.eot?5f394d80dd36338f880ae2d3e9811ec3#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -1434,15 +1434,27 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-split-horizontal::before {
   content: "\e1d7";
 }
-.proicon-attatch::before {
+.proicon-add-circle::before {
   content: "\f101";
 }
 .proicon-cancel-octagon::before {
   content: "\f102";
 }
-.proicon-comment-multiple-var::before {
+.proicon-folder-multiple::before {
   content: "\f103";
 }
-.proicon-folder-multiple::before {
+.proicon-play-circle::before {
   content: "\f104";
+}
+.proicon-save-pencil::before {
+  content: "\f105";
+}
+.proicon-slash-square::before {
+  content: "\f106";
+}
+.proicon-volume-low::before {
+  content: "\f107";
+}
+.proicon-volume-medium::before {
+  content: "\f108";
 }
