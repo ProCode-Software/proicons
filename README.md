@@ -114,7 +114,7 @@
             <code>@proicons/webfont</code>
         </td>
         <td>
-            <a href="https://npmjs.com/package/@proicons/vue">
+            <a href="https://npmjs.com/package/@proicons/webfont">
                 <img src="https://img.shields.io/npm/dm/@proicons/webfont?label=downloads&style=for-the-badge" alt="NPM Package">
             </a>
         </td>
