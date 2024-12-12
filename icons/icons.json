@@ -1422,7 +1422,7 @@
     "Octagon": {
         "description": "Stop, Sign",
         "category": "Shapes",
-        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M7.29 3.629a3 3 0 0 1 2.12-.879h5.178a3 3 0 0 1 2.121.879l3.661 3.66a3 3 0 0 1 .879 2.122v5.178a3 3 0 0 1-.879 2.121l-3.66 3.661a3 3 0 0 1-2.122.879H9.41a3 3 0 0 1-2.121-.879l-3.661-3.66a3 3 0 0 1-.879-2.122V9.41a3 3 0 0 1 .879-2.121z\"/></svg>"
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M7.583 3.336a2 2 0 0 1 1.414-.586h6.006a2 2 0 0 1 1.414.586l4.247 4.247a2 2 0 0 1 .586 1.414v6.006a2 2 0 0 1-.586 1.414l-4.247 4.247a2 2 0 0 1-1.414.586H8.997a2 2 0 0 1-1.414-.586l-4.247-4.247a2 2 0 0 1-.586-1.414V8.997a2 2 0 0 1 .586-1.414z\"/></svg>"
     },
     "Pentagon": {
         "description": "",
@@ -2358,5 +2358,15 @@
         "description": "",
         "category": "Layout",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M20.25 7.25a3.5 3.5 0 0 0-3.5-3.5h-9.5a3.5 3.5 0 0 0-3.5 3.5v9.5a3.5 3.5 0 0 0 3.5 3.5h9.5a3.5 3.5 0 0 0 3.5-3.5zM12 3.75v16.5\"/></svg>"
+    },
+    "Cancel Octagon": {
+        "description": "Stop, Sign",
+        "category": "Status",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M7.583 3.336a2 2 0 0 1 1.414-.586h6.006a2 2 0 0 1 1.414.586l4.247 4.247a2 2 0 0 1 .586 1.414v6.006a2 2 0 0 1-.586 1.414l-4.247 4.247a2 2 0 0 1-1.414.586H8.997a2 2 0 0 1-1.414-.586l-4.247-4.247a2 2 0 0 1-.586-1.414V8.997a2 2 0 0 1 .586-1.414z\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-width=\"1.5\" d=\"m8.75 8.75 6.5 6.5m0-6.5-6.5 6.5\"/></svg>"
+    },
+    "Folder Multiple": {
+        "description": "",
+        "category": "Files",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M2.75 7.624v6.127a3.5 3.5 0 0 0 3.5 3.5h8.5a3.5 3.5 0 0 0 3.5-3.5V9.187a3.5 3.5 0 0 0-3.5-3.5l-4.25.001M2.75 7.624V5.749a2 2 0 0 1 2-2h2.775a2.5 2.5 0 0 1 1.768.732L10.5 5.688M2.75 7.624h4.779a2.5 2.5 0 0 0 1.767-.732L10.5 5.688\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M21.25 9.687v4.064a6.5 6.5 0 0 1-6.5 6.5h-8\"/></svg>"
     }
 }

@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?4b338e4f9dc713d0d19d5f336f84be67") format("truetype"),
-url("./ProIcons.woff?4b338e4f9dc713d0d19d5f336f84be67") format("woff"),
-url("./ProIcons.woff2?4b338e4f9dc713d0d19d5f336f84be67") format("woff2"),
-url("./ProIcons.eot?4b338e4f9dc713d0d19d5f336f84be67#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?57ce6ca7ac40e074a63b7d5571e60b93") format("truetype"),
+url("./ProIcons.woff?57ce6ca7ac40e074a63b7d5571e60b93") format("woff"),
+url("./ProIcons.woff2?57ce6ca7ac40e074a63b7d5571e60b93") format("woff2"),
+url("./ProIcons.eot?57ce6ca7ac40e074a63b7d5571e60b93#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -1437,6 +1437,12 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-attatch::before {
   content: "\f101";
 }
-.proicon-comment-multiple-var::before {
+.proicon-cancel-octagon::before {
   content: "\f102";
+}
+.proicon-comment-multiple-var::before {
+  content: "\f103";
+}
+.proicon-folder-multiple::before {
+  content: "\f104";
 }

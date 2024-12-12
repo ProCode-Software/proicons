@@ -284,7 +284,7 @@
         { "name": "Corner Radius", "added": "4.8.0" },
         { "name": "Hexagon", "added": "4.8.0" },
         { "name": "Line Diagonal", "added": "4.8.0" },
-        { "name": "Octagon", "added": "4.8.0" },
+        { "name": "Octagon", "added": "4.8.0", "updated": "4.11.2" },
         { "name": "Pentagon", "added": "4.8.0" },
         { "name": "Rectangle Wide", "added": "4.8.0" },
         { "name": "Rhombus", "added": "4.8.0" },
@@ -471,7 +471,9 @@
         { "name": "Panel Bottom", "added": "4.11.2" },
         { "name": "Panel Bottom Open", "added": "4.11.2" },
         { "name": "Split Vertical", "added": "4.11.2" },
-        { "name": "Split Horizontal", "added": "4.11.2" }
+        { "name": "Split Horizontal", "added": "4.11.2" },
+        { "name": "Cancel Octagon", "added": "4.11.2" },
+        { "name": "Folder Multiple", "added": "4.11.2" }
     ],
     "deprecated": [
         {
