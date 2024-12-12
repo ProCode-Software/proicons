@@ -39,6 +39,7 @@
     "bugs": "https://github.com/ProCode-Software/proicons/issues",
     "scripts": {
         "dev": "pnpm vite",
+        "build": "pnpm vite build",
         "icons:build": "node --no-deprecation ./bin/build.js",
         "icons:build-modules": "node ./bin/addIconFiles.js -t './bin/build/templates/iconTemplate.js' -out './src/icons' -i './src/icons.ts' -d --format ts --clean",
         "icons:optimize": "pnpm run icons:build -o",
@@ -46,8 +47,6 @@
         "icons:build-rebuild": "pnpm run icons:build -r",
         "icons:prune": "node ./bin/pruneFiles.js",
         "font:build": "pnpm run icons:build -f",
-        "build": "pnpm vite build",
-        "preview": "pnpm vite preview",
         "generate-changelog": "node ./bin/generateChangelog.js",
         "docs:dev": "pnpm --filter @proicons/site run docs:dev",
         "docs:build": "pnpm --filter @proicons/site run docs:build",

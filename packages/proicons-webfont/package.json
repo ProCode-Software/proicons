@@ -13,7 +13,7 @@
         "access": "public"
     },
     "scripts": {
-        "prepack": "node ./bin/build.js",
+        "prepack": "rsync -av --exclude='ProIcons.json' --exclude='ProIcons.html' ../../icons/fonts/ .",
         "ci": "pnpm run prepare"
     },
     "keywords": [
