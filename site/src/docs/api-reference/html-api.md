@@ -4,19 +4,13 @@ editLink: true
 ---
 
 # ProIcons HTML
-ProIcons are designed to be easy to use inside of HTML. Similar to [Feather Icons](https://github.com/feathericons/feather), ProIcons can be inserted through elements with a `proicon` attribute.
-
-To insert an `Add` icon inside HTML:
-
-```html
-<i proicon="add"></i>
-```
+ProIcons are designed to be easy to use inside of HTML.
 
 ## Installation
 <!--@include: ../introduction/installation.md#install-html-->
 
 ## Usage
-ProIcons can be added via the `proicon` attribute. Set the attribute value to the name of the icon you want to insert.
+ProIcons can be added via elements with the `proicon` attribute. Set the attribute value to the name of the icon you want to insert.
 
 To insert an `Add` icon inside HTML:
 ```html
@@ -36,7 +30,7 @@ Any case is supported, so all of these will work:
 The `i` element isn't mandatory, though the `proicon` attribute is. This can be [customized](./options) in the configuration.
 :::
 
-Don't forget to add a script to replace these elements.
+Then, add a script to replace these elements with SVGs.
 
 ```html
 <script>

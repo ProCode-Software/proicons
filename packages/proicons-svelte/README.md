@@ -5,7 +5,7 @@
         <img src="https://img.shields.io/github/v/release/ProCode-Software/proicons?style=for-the-badge"
             alt="Version">
     </a>
-    <a href="">
+    <a href="https://github.com/ProCode-Software/proicons">
         <img src="https://img.shields.io/github/stars/ProCode-Software/proicons?style=for-the-badge"
             alt="Stars">
     </a>
@@ -33,21 +33,26 @@ An implementation of the <a href="https://github.com/ProCode-Software/proicons" 
 </p>
 
 ## Features
+
 - All icons are available as customizable Svelte components
 - Supports ESM tree-shaking
 
 **[Read the full documentation here](https://procode-software.github.io/proicons/docs/svelte)**
 
 ## Installation
+
 Install via [NPM](https://npmjs.com/package/@proicons/svelte):
+
 ```shell
 npm install @proicons/svelte
 ```
 
 ## Usage
+
 All icons are available as Svelte components named in PascalCase and may end in `Icon`.
 
 To import the Add Square icon:
+
 ```svelte
 <script>
 import { SearchIcon } from '@proicons/svelte'
@@ -58,6 +63,7 @@ import { SearchIcon } from '@proicons/svelte'
 ```
 
 There are several ways to import an icon into your Svelte component. These are all the same:
+
 ```typescript
 import { AddIcon } from '@proicons/svelte'
 import { AddIcon } from '@proicons/svelte/icons'
@@ -65,4 +71,5 @@ import AddIcon from '@proicons/svelte/AddIcon'
 ```
 
 ## Contributing
+
 For more info on how to contribute, please see our [contributing guide](https://github.com/ProCode-Software/proicons/blob/main/CONTRIBUTING.md).

@@ -2,19 +2,19 @@
 
 <p>
     <a href="https://github.com/ProCode-Software/proicons/releases">
-        <img src="https://img.shields.io/github/v/release/ProCode-Software/proicons?style=for-the-badge&color=rgb(172, 229, 251)"
+        <img src="https://img.shields.io/github/v/release/ProCode-Software/proicons?style=for-the-badge"
             alt="Version">
     </a>
-    <a href="">
-        <img src="https://img.shields.io/github/stars/ProCode-Software/proicons?style=for-the-badge&color=rgb(255, 215, 142)"
+    <a href="https://github.com/ProCode-Software/proicons">
+        <img src="https://img.shields.io/github/stars/ProCode-Software/proicons?style=for-the-badge"
             alt="Stars">
     </a>
     <a href="https://www.npmjs.com/package/@proicons/vue">
-        <img src="https://img.shields.io/npm/dm/@proicons/vue?label=downloads&style=for-the-badge&color=rgb(180, 240, 155)"
+        <img src="https://img.shields.io/npm/dm/@proicons/vue?label=downloads&style=for-the-badge"
             alt="NPM Package">
     </a>
     <a href="https://github.com/ProCode-Software/proicons/blob/main/LICENSE">
-        <img src="https://img.shields.io/github/license/ProCode-Software/proicons?style=for-the-badge&color=rgb(252, 197, 232)"
+        <img src="https://img.shields.io/github/license/ProCode-Software/proicons?style=for-the-badge"
             alt="License">
     </a>
 </p>
@@ -33,23 +33,29 @@ An implementation of the <a href="https://github.com/ProCode-Software/proicons" 
 </p>
 
 ## Features
+
 - All icons are available as customizable Vue components
 - Supports ESM tree-shaking
 
 **[Read the full documentation here](https://procode-software.github.io/proicons/docs/vue)**
 
 ## Installation
+
 Install via [NPM](https://npmjs.com/package/@proicons/vue):
+
 ```shell
 npm install @proicons/vue
 ```
+
 > [!IMPORTANT]
 > This package is ESM-only. To use in CommonJS contexts, use `await import('@proicons/vue')` (asynchronous) or `require('@proicons/vue')` in newer Node.js versions.
 
 ## Usage
+
 All icons are available as Vue components named in PascalCase and may end in `Icon`.
 
 To import the Add Square icon:
+
 ```vue
 <script setup lang="ts">
 import { AddSquareIcon } from '@proicons/vue'
@@ -63,4 +69,5 @@ import { AddSquare } from '@proicons/vue'
 ```
 
 ## Contributing
+
 For more info on how to contribute, please see our [contributing guide](https://github.com/ProCode-Software/proicons/blob/main/CONTRIBUTING.md).

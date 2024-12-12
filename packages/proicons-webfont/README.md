@@ -2,19 +2,19 @@
 
 <p>
     <a href="https://github.com/ProCode-Software/proicons/releases">
-        <img src="https://img.shields.io/github/v/release/ProCode-Software/proicons?style=for-the-badge&color=rgb(172, 229, 251)"
+        <img src="https://img.shields.io/github/v/release/ProCode-Software/proicons?style=for-the-badge"
             alt="Version">
     </a>
-    <a href="">
-        <img src="https://img.shields.io/github/stars/ProCode-Software/proicons?style=for-the-badge&color=rgb(255, 215, 142)"
+    <a href="https://github.com/ProCode-Software/proicons">
+        <img src="https://img.shields.io/github/stars/ProCode-Software/proicons?style=for-the-badge"
             alt="Stars">
     </a>
     <a href="https://www.npmjs.com/package/@proicons/webfont">
-        <img src="https://img.shields.io/npm/dm/@proicons/webfont?label=downloads&style=for-the-badge&color=rgb(180, 240, 155)"
+        <img src="https://img.shields.io/npm/dm/@proicons/webfont?label=downloads&style=for-the-badge"
             alt="NPM Package">
     </a>
     <a href="https://github.com/ProCode-Software/proicons/blob/main/LICENSE">
-        <img src="https://img.shields.io/github/license/ProCode-Software/proicons?style=for-the-badge&color=rgb(252, 197, 232)"
+        <img src="https://img.shields.io/github/license/ProCode-Software/proicons?style=for-the-badge"
             alt="License">
     </a>
 </p>
@@ -33,30 +33,40 @@ Use <a href="https://github.com/ProCode-Software/proicons" target="_blank">ProIc
 </p>
 
 ## Features
+
 - Works out of the box, no scripts needed.
 - Contains TTF, WOFF, WOFF2 and EOT formats
 
 **[Read the full documentation here](https://procode-software.github.io/proicons/docs/webfont)**
 
 ## Installation
+
 ### Import via UNPKG
+
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@proicons/webfont">
+<link rel="stylesheet" href="https://unpkg.com/@proicons/webfont" />
 ```
+
 ### Install via NPM
+
 ```shell
 npm install @proicons/webfont
 ```
+
 ```html
-<link rel="stylesheet" href="path/to/@proicons/webfont/ProIcons.css">
+<link rel="stylesheet" href="path/to/@proicons/webfont/ProIcons.css" />
 ```
 
 ## Usage
+
 Import a ProIcon by creating an `<i>` element with the class `proicon-[icon name]`. Make sure the icon name is in kebab-case.
 
 To import the Add icon:
+
 ```html
 <i class="proicon-add"></i>
 ```
+
 ## Contributing
+
 For more info on how to contribute, please see our [contributing guide](https://github.com/ProCode-Software/proicons/blob/main/CONTRIBUTING.md).

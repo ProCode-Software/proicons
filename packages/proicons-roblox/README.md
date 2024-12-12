@@ -2,15 +2,15 @@
 
 <p>
     <a href="https://github.com/ProCode-Software/proicons/releases">
-        <img src="https://img.shields.io/github/v/release/ProCode-Software/proicons?style=for-the-badge&color=rgb(172, 229, 251)"
+        <img src="https://img.shields.io/github/v/release/ProCode-Software/proicons?style=for-the-badge"
             alt="Version">
     </a>
-    <a href="">
-        <img src="https://img.shields.io/github/stars/ProCode-Software/proicons?style=for-the-badge&color=rgb(255, 215, 142)"
+    <a href="https://github.com/ProCode-Software/proicons">
+        <img src="https://img.shields.io/github/stars/ProCode-Software/proicons?style=for-the-badge"
             alt="Stars">
     </a>
     <a href="https://github.com/ProCode-Software/proicons/blob/main/LICENSE">
-        <img src="https://img.shields.io/github/license/ProCode-Software/proicons?style=for-the-badge&color=rgb(252, 197, 232)"
+        <img src="https://img.shields.io/github/license/ProCode-Software/proicons?style=for-the-badge"
             alt="License">
     </a>
 </p>
@@ -29,31 +29,41 @@ An implementation of the <a href="https://github.com/ProCode-Software/proicons" 
 </p>
 
 ## Features
+
 - All icons are 120x120px and have gone through alpha blending via Pixelfix
 
 **[Read the full documentation here](https://procode-software.github.io/proicons/docs/roblox)**
 
 ## Installation
+
 ### Via [Wally](https://wally.run)
+
 1. Add to your dependencies
+
 ```toml
 proicons = "procode-software/proicons@*"
 ```
+
 2. Install dependencies
+
 ```shell
 wally install
 ```
 
 ### Via LoadString
+
 If you want to always have the latest version available, you can import the script using `loadstring`:
+
 ```lua
 local Icons = loadstring(game:GetService("HttpService"):GetAsync("https://github.com/ProCode-Software/proicons/blob/main/packages/proicons-roblox/src/ProIcons.luau", true))()
 ```
 
 ## Usage
+
 All icons are inside a table with the icon's asset id and other metadata.
 
 To import the Add Square icon into an `ImageLabel`:
+
 ```lua
 -- Import the library
 local ProIcons = require(path.to.ProIcons.ProIcons)
@@ -63,10 +73,13 @@ local ImageLabel = Instance.new('ImageLabel')
 -- Set the icon
 ImageLabel.Image = 'rbxassetid://'..ProIcons.AddSquare.id
 ```
+
 Replace `path.to.` with the path of your library. If you installed the library via Wally, this may be `game.ReplicatedStorage`.
 
 ## Properties
+
 All icons are in the following format:
+
 ```lua
 {
     AddSquare = {
@@ -83,11 +96,14 @@ All icons are in the following format:
 - **tags:** (`{string}?`) The tags of the icon
 
 ## Removed icons
+
 Due to Roblox moderation, not all icons in the set are available. These icons have been removed from the Roblox package:
+
 - All brand icons, except Roblox
 - Box Drag
 
 If any other icon is not working, please create an issue.
 
 ## Contributing
+
 For more info on how to contribute, please see our [contributing guide](https://github.com/ProCode-Software/proicons/blob/main/CONTRIBUTING.md).
