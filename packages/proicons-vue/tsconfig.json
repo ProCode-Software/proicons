@@ -25,8 +25,7 @@
         "noUnusedLocals": false,
         "noUnusedParameters": false,
         "noFallthroughCasesInSwitch": true,
-        "noImplicitAny": false,
-        "noUncheckedSideEffectImports": true
+        "noImplicitAny": false
     },
     "include": [
         "**/*.ts",

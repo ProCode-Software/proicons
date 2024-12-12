@@ -23,7 +23,6 @@
         "strictFunctionTypes": false,
         "strict": false,
         "noUnusedParameters": false,
-        "noUncheckedSideEffectImports": true,
         "skipDefaultLibCheck": true
     },
     "include": [
