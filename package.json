@@ -7,20 +7,19 @@
     "main": "dist/cjs/proicons.cjs",
     "main:umd": "dist/umd/proicons.cjs",
     "module": "dist/esm/proicons.js",
-    "typings": "lib/proicons.d.ts",
+    "typings": "dist/proicons.d.ts",
     "amdName": "proicons",
     "unpkg": "dist/umd/proicons.cjs",
     "jsdelivr": "dist/umd/proicons.cjs",
     "browser": "dist/umd/proicons.cjs",
     "files": [
-        "dist",
-        "lib"
+        "dist"
     ],
     "exports": {
         ".": {
+            "types": "./dist/proicons.d.ts",
             "import": "./dist/esm/proicons.js",
             "require": "./dist/cjs/proicons.cjs",
-            "types": "./lib/proicons.d.ts",
             "default": "./dist/umd/proicons.cjs"
         }
     },

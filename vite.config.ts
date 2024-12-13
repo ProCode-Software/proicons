@@ -54,7 +54,7 @@ export default defineConfig({
     plugins: [
         dts({
             rollupTypes: true,
-            outDir: 'lib',
+            outDir: 'dist',
             copyDtsFiles: true,
             exclude: [],
         }),
