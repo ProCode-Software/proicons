@@ -6,16 +6,27 @@ editLink: true
 ProIcons is an open-source icon library of over 400+ icons, free for anyone to use in their project.
 
 ## Icons
-The entire list of ProIcons is available [here](../icons).
+The entire list of icons in the set is available [here](../icons).
 
-If you don't see an icon you wanted, you can always request an icon or add your own icon on [GitHub](https://github.com/ProCode-Software/proicons).
+Can't find the icon you wanted? You can always request an icon or add your own icon on [GitHub](https://github.com/ProCode-Software/proicons).
+
+### Icon Design
+ProIcons are designed to be modern, friendly, and consistent. Icons are designed on a 24x24px grid, with 1.5px strokes.
+
+You can learn more about icon design and how to design your own icons for ProIcons [here](design-guidelines/).
 
 ## Packages & Libraries
-ProIcons is currently available for [HTML](html-api), [Node.js/Vanilla JS](javascript-api), [React](react), and [Vue](vue).
+ProIcons is currently available for [HTML](html-api), [Node.js/Vanilla JS](javascript-api), [React](react), [Vue](vue), and [Roblox](roblox).
 
-Packages for additional frameworks including Svelte and Roblox are planned. See the [roadmap](roadmap) for more details.
+## Developer Experience
+ProIcons is built to be simple and easy for developers to use. We have added quality-of-life features to our packages including:
 
-## Tree-shaking
+- **Typings and IDE autocompletion:** Type declarations and code-completion for icon names available in all packages. No more forgetting names of icons.
+- **IDE Icon previews:** We have also included icon previews in IntelliSense for all icons.
+- **Support for several frameworks:** First-class support for 
+- **Tree-shakability:** Include ProIcons in your app without having to sacrifice on performance or disk space.
+
+### Tree-shaking
 ProIcons libraries are compatible with ESM [tree-shaking](https://en.wikipedia.org/wiki/Tree_shaking). This allows you to bundle only the icons you need, rather than the entire set, when using a module bundler such as [Webpack](https://webpack.js.org) or [Rollup](https://rollupjs.org). This becomes more important for performance as the icon set gets bigger.
 
 ## Roadmap

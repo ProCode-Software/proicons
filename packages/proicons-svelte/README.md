@@ -64,7 +64,7 @@ import { SearchIcon } from '@proicons/svelte'
 
 There are several ways to import an icon into your Svelte component. These are all the same:
 
-```typescript
+```javascript
 import { AddIcon } from '@proicons/svelte'
 import { AddIcon } from '@proicons/svelte/icons'
 import AddIcon from '@proicons/svelte/AddIcon'

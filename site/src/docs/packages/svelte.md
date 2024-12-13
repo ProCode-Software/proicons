@@ -44,7 +44,7 @@ import { SearchIcon } from '@proicons/svelte'
 ```
 
 There are several ways to import an icon into your Svelte component. These are all the same:
-```typescript
+```javascript
 import { AddIcon } from '@proicons/svelte'
 import { AddIcon } from '@proicons/svelte/icons'
 import AddIcon from '@proicons/svelte/AddIcon'
@@ -67,7 +67,7 @@ import { ProIcon } from '@proicons/svelte'
 
 <ProIcon icon="Add Square" size={32} />
 
-// Other forms are allowed
+<!-- Other forms are allowed -->
 <ProIcon icon="AddSquare" size={32} />
 <ProIcon icon="AddSquareIcon" size={32} />
 <ProIcon icon="addSquare" size={32} />
