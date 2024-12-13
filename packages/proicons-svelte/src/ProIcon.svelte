@@ -14,7 +14,10 @@ import type { ProIconAttributes } from './types'
 import * as icons from './icons'
 import { kebabCase, pascalCase } from './utils'
 
-type Props = ProIconAttributes & { icon: string }
+type IconEnum<T extends string> = T extends `${infer Base}Icon` ? Base : T
+type IconProp = IconEnum<keyof typeof icons> | (string & {})
+
+type Props = ProIconAttributes & { icon: IconProp }
 const { icon, ...props }: Props = $props()
 
 if (!icon) {
