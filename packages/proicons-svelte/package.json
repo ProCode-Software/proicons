@@ -1,6 +1,5 @@
 {
     "name": "@proicons/svelte",
-    "private": true,
     "version": "4.11.2",
     "description": "ProIcons icon library for Svelte",
     "main": "dist/proicons-svelte.js",
