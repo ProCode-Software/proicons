@@ -23,8 +23,26 @@ wally install
 ### Via LoadString
 If you want to always have the latest version available, you can import the script using `loadstring`:
 ```luau
-local ProIcons = loadstring(game:GetService("HttpService"):GetAsync("https://github.com/ProCode-Software/proicons/blob/main/packages/proicons-roblox/src/ProIcons.luau", true))()
+local ProIcons = loadstring(game:GetService("HttpService"):GetAsync("https://github.com/ProCode-Software/proicons/blob/main/packages/proicons-roblox/dist/ProIcons.luau", true))()
 ```
+
+### Manual Installation
+A Roblox model and Luau script are available in the [`dist`](https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-roblox/dist/) directory of the source code.
+
+#### Via Roblox model
+First, download `ProIcons.rbxmx`.
+
+To upload the model in Roblox Studio:
+1. Right-click in the Explorer window
+2. Click *Insert > Insert from File*
+3. Upload the downloaded model
+
+#### Via ModuleScript
+After downloading, to upload in Roblox Studio:
+1. Right-click in the Explorer window
+2. Click *Insert > Insert from File*
+3. Change the file type to *Script Files*
+4. Upload the downloaded script
 <!-- #endregion install-roblox -->
 
 ## Usage

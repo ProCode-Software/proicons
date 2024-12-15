@@ -10,16 +10,14 @@
         "icons:build": "node ./bin/buildIcons.js",
         "icons:upload": "node --env-file=../../.env ./bin/publishIcons.js",
         "build": "rojo build -o dist/ProIcons.rbxmx",
-        "publish": "rojo build -o dist/ProIcons.rbxmx",
+        "build:all": "pnpm run icons:build && rojo build -o dist/ProIcons.rbxmx",
         "sourcemap": "rojo sourcemap -o sourcemap.json --watch"
     },
     "keywords": [],
     "author": "ProCode Software",
     "license": "MIT",
     "devDependencies": {
-        "axios": "^1.7.9"
-    },
-    "dependencies": {
+        "axios": "^1.7.9",
         "ansi-colors": "^4.1.3",
         "form-data": "^4.0.1"
     }

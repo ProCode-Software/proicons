@@ -36,8 +36,6 @@ An implementation of the <a href="https://github.com/ProCode-Software/proicons" 
 
 ## Installation
 
-### Via [Wally](https://wally.run)
-
 1. Add to your dependencies
 
 ```toml
@@ -55,8 +53,26 @@ wally install
 If you want to always have the latest version available, you can import the script using `loadstring`:
 
 ```lua
-local Icons = loadstring(game:GetService("HttpService"):GetAsync("https://github.com/ProCode-Software/proicons/blob/main/packages/proicons-roblox/src/ProIcons.luau", true))()
+local Icons = loadstring(game:GetService("HttpService"):GetAsync("https://github.com/ProCode-Software/proicons/blob/main/packages/proicons-roblox/dist/ProIcons.luau", true))()
 ```
+
+### Manual Installation
+A Roblox model and Luau script are available in the [`dist`](https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-roblox/dist/) directory of the source code.
+
+#### Via Roblox model
+First, download `ProIcons.rbxmx`.
+
+To upload the model in Roblox Studio:
+1. Right-click in the Explorer window
+2. Click *Insert > Insert from File*
+3. Upload the downloaded model
+
+#### Via ModuleScript
+After downloading, to upload in Roblox Studio:
+1. Right-click in the Explorer window
+2. Click *Insert > Insert from File*
+3. Change the file type to *Script Files*
+4. Upload the downloaded script
 
 ## Usage
 
@@ -107,3 +123,13 @@ If any other icon is not working, please create an issue.
 ## Contributing
 
 For more info on how to contribute, please see our [contributing guide](https://github.com/ProCode-Software/proicons/blob/main/CONTRIBUTING.md).
+
+### Building from source
+[Node.js](https://nodejs.org) and [Aftman](https://github.com/LPGhatguy/aftman) are required to continue. To install it, go to their [releases](https://github.com/LPGhatguy/aftman/releases) page and install the version for your platform. Then run:
+
+```shell
+./aftman self-install
+```
+After installing Aftman and cloning the repo:
+1. Open `/packages/proicons-roblox` and run `aftman install` to install dependencies
+2. Run `pnpm run icons:build` to build the script, or `pnpm run build` to build the Roblox model.

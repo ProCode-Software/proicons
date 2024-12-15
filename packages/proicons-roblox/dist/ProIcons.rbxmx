@@ -7,14 +7,10 @@
       <Properties>
         <string name="Name">ReplicatedStorage</string>
       </Properties>
-      <Item class="Folder" referent="2">
+      <Item class="ModuleScript" referent="2">
         <Properties>
           <string name="Name">ProIcons</string>
-        </Properties>
-        <Item class="ModuleScript" referent="3">
-          <Properties>
-            <string name="Name">ProIcons</string>
-            <string name="Source">return {
+          <string name="Source">return {
     Add = {
         id = 132610420553832,
         category = "Actions",
@@ -1903,8 +1899,7 @@
         tags = { "Internet" }
     }
 }</string>
-          </Properties>
-        </Item>
+        </Properties>
       </Item>
     </Item>
   </Item>
