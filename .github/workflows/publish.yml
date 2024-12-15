@@ -5,6 +5,11 @@ on:
     types: [published]
 
   workflow_dispatch:
+    inputs:
+      version:
+        description: The release version
+        type: string
+        required: true
 
 jobs:
   build:
@@ -12,6 +17,8 @@ jobs:
     permissions:
       contents: read
       id-token: write
+    env:
+      VERSION: ${{github.event.release.tag_name || inputs.version}}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,7 +40,7 @@ jobs:
 
       - name: Bump version
         run: |
-          node ./bin/bumpVersion.js -v ${{ github.event.release.tag_name }}
+          node ./bin/bumpVersion.js -v $VERSION
 
       - name: Build packages
         run: |
