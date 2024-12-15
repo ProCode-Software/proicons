@@ -8,8 +8,12 @@
     "type": "module",
     "sideEffects": false,
     "files": [
-        "dist", "!dist/utils.d.ts"
+        "dist",
+        "!dist/utils.d.ts"
     ],
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "dev": "vite",
         "build": "pnpm run package && pnpm run bundle",
