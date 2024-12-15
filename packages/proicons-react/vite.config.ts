@@ -1,6 +1,5 @@
 import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
-import dts from 'vite-plugin-dts'
 import pkg from './package.json' with { type: 'json' }
 
 const licenseNotice = `/**
@@ -17,6 +16,7 @@ export default defineConfig({
     build: {
         sourcemap: false,
         minify: false,
+        emptyOutDir: false,
 
         rollupOptions: {
             input: './src/proicons-react.ts',
@@ -37,13 +37,5 @@ export default defineConfig({
             external: ['react', 'react-dom'],
         },
     },
-    plugins: [
-        react(),
-        dts({
-            rollupTypes: true,
-            outDir: 'dist',
-            copyDtsFiles: true,
-            exclude: [],
-        }),
-    ],
+    plugins: [react()],
 })

@@ -8,14 +8,15 @@
     "type": "module",
     "sideEffects": false,
     "files": [
-        "dist"
+        "dist", "!dist/types"
     ],
     "publishConfig": {
         "access": "public"
     },
     "scripts": {
         "dev": "pnpm vite",
-        "build": "pnpm vite build",
+        "build": "rm -rf ./dist/* && tsc && pnpm vite build && pnpm run build:types",
+        "build:types": "dts-bundle-generator dist/types/packages/proicons-react/src/proicons-react.d.ts -o dist/proicons.d.ts --no-banner && rm -rf ./dist/types",
         "preview": "pnpm vite preview",
         "icons:build-modules": "node ../../bin/addIconFiles.js -t './bin/reactIconTemplate.js' -out './src/icons' -i './src/icons.ts' --format ts --clean --lib react",
         "ci": "pnpm run icons:build-modules && pnpm run build"
@@ -49,9 +50,13 @@
         "react-dom": "^18.3.1",
         "typescript": "^5.7.2",
         "vite": "^5.4.11",
-        "vite-plugin-dts": "^4.3.0"
+        "vite-plugin-dts": "^4.3.0",
+        "dts-bundle-generator": "^9.5.1"
     },
     "peerDependencies": {
         "react": "^18.3.1"
+    },
+    "dependencies": {
+        "rollup-plugin-dts": "^6.1.1"
     }
 }
