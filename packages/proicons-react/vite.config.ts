@@ -41,7 +41,7 @@ export default defineConfig({
         react(),
         dts({
             rollupTypes: true,
-            outDir: 'lib',
+            outDir: 'dist',
             copyDtsFiles: true,
             exclude: [],
         }),

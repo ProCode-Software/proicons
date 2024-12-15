@@ -4,12 +4,11 @@
     "description": "ProIcons icon library for ReactJS",
     "main": "dist/proicons-react.js",
     "module": "dist/proicons-react.js",
-    "types": "lib/proicons-react.d.ts",
+    "types": "dist/proicons-react.d.ts",
     "type": "module",
     "sideEffects": false,
     "files": [
-        "dist",
-        "lib"
+        "dist"
     ],
     "publishConfig": {
         "access": "public"

@@ -6,10 +6,9 @@
     "sideEffects": false,
     "main": "dist/proicons-vue.js",
     "module": "dist/proicons-vue.js",
-    "types": "lib/proicons-vue.d.ts",
+    "types": "dist/proicons-vue.d.ts",
     "files": [
         "dist",
-        "lib",
         "!dist/*2.js"
     ],
     "publishConfig": {

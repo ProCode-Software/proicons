@@ -43,7 +43,7 @@ export default defineConfig({
         vue(),
         dts({
             rollupTypes: true,
-            outDir: 'lib',
+            outDir: 'dist',
             copyDtsFiles: true,
             exclude: [],
         }),
