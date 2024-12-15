@@ -14,7 +14,7 @@ export default (moduleName, nodes) => {
     const iconInfo = {
         name: friendlyName,
         deprecated: !!deprecationData,
-        alternativeIcon: deprecationData?.alternative ?? undefined,
+        alternative: deprecationData?.alternative ?? undefined,
     }
 
     return `

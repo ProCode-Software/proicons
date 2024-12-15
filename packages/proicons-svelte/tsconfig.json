@@ -33,5 +33,5 @@
         "./test/main.ts",
         "./test/App.svelte"
     ],
-    "exclude": ["node_modules", "../../src"]
+    "exclude": ["node_modules", "../../src", "packages/**", "!packages/proicons-svelte"]
 }

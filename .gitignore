@@ -145,3 +145,4 @@ site/dist/
 
 # Icon modules
 **/src/icons/
+**/src/icons.ts

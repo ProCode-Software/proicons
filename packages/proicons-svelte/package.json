@@ -9,7 +9,7 @@
     "type": "module",
     "sideEffects": false,
     "files": [
-        "dist"
+        "dist", "!dist/utils.d.ts"
     ],
     "scripts": {
         "dev": "vite",
