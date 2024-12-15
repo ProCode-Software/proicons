@@ -52,7 +52,6 @@ jobs:
 
       - name: Publish to NPM    
         run: |
-          pnpm publish --provenance --no-git-checks
           pnpm --filter @proicons/svelte publish --provenance --no-git-checks
         env:
             NPM_CONFIG_PROVENANCE: true

@@ -21,6 +21,10 @@ export default [
                 link: '/docs/roblox'
             },
             {
+                text: 'Svelte',
+                link: '/docs/svelte'
+            },
+            {
                 text: 'Vue',
                 link: '/docs/vue'
             },

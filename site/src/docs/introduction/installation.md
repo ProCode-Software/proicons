@@ -87,6 +87,11 @@ If you prefer not to use any scripts, you can also install ProIcons as a webfont
 
 [Read the documentation](roblox)
 
+## Svelte
+<!-- @include: ../packages/svelte.md#install-svelte -->
+
+[Read the documentation](svelte)
+
 ## Vue
 <!-- @include: ../packages/vue.md#install-vue -->
 

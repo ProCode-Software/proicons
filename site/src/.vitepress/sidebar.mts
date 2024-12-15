@@ -28,6 +28,7 @@ const sidebar: Record<string, DefaultTheme.SidebarItem[]> = {
             items: [
                 { text: 'ProIcons React', link: 'react' },
                 { text: 'ProIcons Roblox', link: 'roblox' },
+                { text: 'ProIcons Svelte', link: 'svelte' },
                 { text: 'ProIcons Vue', link: 'vue' },
                 { text: 'ProIcons Webfont', link: 'webfont' },
             ],
