@@ -19,6 +19,4 @@ export interface ProIconsOptions {
     size?: number
 }
 
-export type ProIconAttributes = React.RefAttributes<SVGSVGElement> &
-    React.SVGProps<SVGSVGElement> &
-    ProIconsOptions
+export type ProIconAttributes = React.SVGProps<SVGSVGElement> & ProIconsOptions

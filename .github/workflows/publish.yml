@@ -45,7 +45,7 @@ jobs:
       - name: Build packages
         run: |
           pnpm run ci
-          pnpm --filter \!@proicons/roblox --filter './packages/*' run ci
+          pnpm --filter \!@proicons/roblox --filter \!@proicons/react --filter './packages/*' run ci
 
       - name: Set auth token
         run: pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.PUBLISH_KEY }}
@@ -53,6 +53,6 @@ jobs:
       - name: Publish to NPM    
         run: |
           pnpm publish --provenance --no-git-checks
-          pnpm --filter \!@proicons/roblox --filter './packages/*' publish --provenance --no-git-checks
+          pnpm --filter \!@proicons/roblox --filter \!@proicons/react --filter './packages/*' publish --provenance --no-git-checks
         env:
             NPM_CONFIG_PROVENANCE: true
