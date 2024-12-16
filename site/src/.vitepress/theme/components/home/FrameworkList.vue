@@ -6,6 +6,7 @@ const frameworks = [
     { name: 'JavaScript', icon: 'javascript.svg', path: 'javascript-api' },
     { name: 'React', icon: 'react.svg', path: 'react' },
     { name: 'Roblox', icon: 'roblox-studio.svg', path: 'roblox' },
+    { name: 'Svelte', icon: 'svelte.svg', path: 'svelte' },
     { name: 'Vue', icon: 'vue.svg', path: 'vue' },
 ]
 </script>

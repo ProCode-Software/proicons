@@ -16,14 +16,14 @@ ProIcons are designed to be modern, friendly, and consistent. Icons are designed
 You can learn more about icon design and how to design your own icons for ProIcons [here](design-guidelines/).
 
 ## Packages & Libraries
-ProIcons is currently available for [HTML](html-api), [Node.js/Vanilla JS](javascript-api), [React](react), [Vue](vue), and [Roblox](roblox).
+ProIcons is currently available for [HTML](html-api), [Node.js/Vanilla JS](javascript-api), [React](react), [Svelte](svelte), [Vue](vue), and [Roblox](roblox).
 
 ## Developer Experience
 ProIcons is built to be simple and easy for developers to use. We have added quality-of-life features to our packages including:
 
-- **Typings and IDE autocompletion:** Type declarations and code-completion for icon names available in all packages. No more forgetting names of icons.
+- **Typings and IDE autocompletion:** Type declarations and code-completion for icon names available in all packages so you don't have to remember the icon names.
 - **IDE Icon previews:** We have also included icon previews in IntelliSense for all icons.
-- **Support for several frameworks:** First-class support for 
+- **Support for several frameworks:** First-class support for the most popular JavaScript frameworks.
 - **Tree-shakability:** Include ProIcons in your app without having to sacrifice on performance or disk space.
 
 ### Tree-shaking

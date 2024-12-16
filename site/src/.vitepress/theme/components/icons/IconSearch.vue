@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 import { getParam, removeParam, setParam } from "../../composables/useUrl";
 import { SearchIcon } from '@proicons/vue'
 const { placeholder } = defineProps<{ placeholder: string }>()

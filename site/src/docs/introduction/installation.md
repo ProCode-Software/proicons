@@ -11,6 +11,7 @@ Getting started with ProIcons doesn't take long. Follow the steps below for your
 - [Node.js](#nodejs)
 - [React](#react)
 - [Roblox](#roblox)
+- [Svelte](#svelte)
 - [Vue](#vue)
 
 ## HTML

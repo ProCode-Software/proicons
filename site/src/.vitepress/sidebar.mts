@@ -16,8 +16,8 @@ const sidebar: Record<string, DefaultTheme.SidebarItem[]> = {
             collapsed: false,
             base: '/docs/',
             items: [
-                { text: 'HTML API', link: 'html-api' },
-                { text: 'JavaScript API', link: 'javascript-api' },
+                { text: 'HTML', link: 'html-api' },
+                { text: 'Vanilla JavaScript', link: 'javascript-api' },
                 { text: 'Options', link: 'options' },
             ],
         },

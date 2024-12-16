@@ -95,6 +95,16 @@ export function getCodeExamples(iconName: string, customizations?: Customization
             ].join('\n'),
             entry: `<${pascalCase(iconName)}Icon />`,
         },
+        Svelte: {
+            language: 'svelte',
+            code: [
+                `<script>`,
+                `import ${pascalCase(iconName)}Icon from '@proicons/svelte'`,
+                `</script>\n`,
+                `<${pascalCase(iconName)}Icon${attrs('jsx', customizations)} />`,
+            ].join('\n'),
+            entry: `<${pascalCase(iconName)}Icon />`,
+        },
         Vue: {
             language: 'vue',
             code: [

@@ -42,13 +42,13 @@ const items = {
 </script>
 <template>
     <div class="iconActions">
-        <div style="position: relative; width: 100%;">
+        <div class="action">
             <button class="VPButton medium alt"
                 @click="$emit('showDrawer')">
                 View code
             </button>
         </div>
-        <div style="position: relative; width: 100%;">
+        <div class="action">
             <Flyout :items="items.Copy"
                 v-model:open="copyOpen"
                 :position="['top', 'right']">
@@ -64,7 +64,7 @@ const items = {
                 </template>
             </Flyout>
         </div>
-        <div style="position: relative; width: 100%;">
+        <div class="action">
             <Flyout :items="items.Download"
                 v-model:open="downloadOpen"
                 :position="['top', 'right']">
@@ -91,6 +91,11 @@ const items = {
     justify-content: center;
     width: 100%;
     grid-area: d;
+
+    .action {
+        position: relative;
+        width: 100%;
+    }
 
     .VPButton {
         background: var(--vp-c-gray-2);

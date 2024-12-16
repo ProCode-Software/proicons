@@ -87,6 +87,25 @@
     </tr>
     <tr>
         <td>
+            <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/refs/heads/main/site/src/public/logos/svelte.svg" width="48">
+        </td>
+        <td>
+            <b>Svelte</b>
+            <br>
+            <code>@proicons/svelte</code>
+        </td>
+        <td>
+            <a href="https://npmjs.com/package/@proicons/svelte">
+                <img src="https://img.shields.io/npm/dm/@proicons/svelte?label=downloads&style=for-the-badge" alt="NPM Package">
+            </a>
+        </td>
+        <td>
+            <a href="https://procode-software.github.io/proicons/docs/svelte">Documentation</a> | 
+            <a href="https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-svelte">GitHub</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
             <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/refs/heads/main/site/src/public/logos/vue.svg" width="48">
         </td>
         <td>
