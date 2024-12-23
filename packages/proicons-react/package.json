@@ -8,7 +8,8 @@
     "type": "module",
     "sideEffects": false,
     "files": [
-        "dist", "!dist/types"
+        "dist",
+        "!dist/types"
     ],
     "publishConfig": {
         "access": "public"
@@ -43,16 +44,16 @@
         "react"
     ],
     "devDependencies": {
-        "@types/react": "^18.3.16",
+        "@types/react": "^18.3.18",
         "@types/react-dom": "^18.3.5",
         "@vitejs/plugin-react-swc": "^3.7.2",
+        "dts-bundle-generator": "^9.5.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
+        "rollup-plugin-dts": "^6.1.1",
         "typescript": "^5.7.2",
         "vite": "^5.4.11",
-        "vite-plugin-dts": "^4.3.0",
-        "dts-bundle-generator": "^9.5.1",
-        "rollup-plugin-dts": "^6.1.1"
+        "vite-plugin-dts": "^4.4.0"
     },
     "peerDependencies": {
         "react": "^18.3.1"

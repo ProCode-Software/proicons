@@ -11,11 +11,11 @@
     "author": "ProCode Software",
     "license": "MIT",
     "dependencies": {
-        "proicons": "latest",
         "@proicons/vue": "latest",
-        "shiki": "1.24.0",
         "minisearch": "^7.1.1",
-        "sass-embedded": "^1.82.0",
+        "proicons": "latest",
+        "sass-embedded": "^1.83.0",
+        "shiki": "1.24.0",
         "vitepress": "^1.5.0",
         "vue": "^3.5.13"
     }

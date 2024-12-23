@@ -6,38 +6,12 @@
   "private": true,
   "scripts": {
     "build": "pnpm tsc -p tsconfig.json",
-    "lint": "pnpm eslint --ext .ts,.tsx --ignore-pattern node_modules .",
-    "lint:fix": "pnpm eslint --ext .ts,.tsx --ignore-pattern node_modules --fix .",
     "watch": "pnpm run build --watch"
   },
   "author": "",
   "license": "",
   "devDependencies": {
-    "@figma/eslint-plugin-figma-plugins": "^0.15.0",
-    "@figma/plugin-typings": "^1.104.0",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
-    "eslint": "^8.57.1",
+    "@figma/plugin-typings": "^1.106.0",
     "typescript": "^5.7.2"
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:@figma/figma-plugins/recommended"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "project": "./tsconfig.json"
-    },
-    "root": true,
-    "rules": {
-      "@typescript-eslint/no-unused-vars": [
-        "error",
-        {
-          "argsIgnorePattern": "^_",
-          "varsIgnorePattern": "^_",
-          "caughtErrorsIgnorePattern": "^_"
-        }
-      ]
-    }
   }
 }
