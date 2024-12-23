@@ -1,6 +1,6 @@
 {
     "name": "@proicons/react",
-    "version": "4.11.1",
+    "version": "4.11.3",
     "description": "ProIcons icon library for ReactJS",
     "main": "dist/proicons-react.js",
     "module": "dist/proicons-react.js",
@@ -51,12 +51,10 @@
         "typescript": "^5.7.2",
         "vite": "^5.4.11",
         "vite-plugin-dts": "^4.3.0",
-        "dts-bundle-generator": "^9.5.1"
+        "dts-bundle-generator": "^9.5.1",
+        "rollup-plugin-dts": "^6.1.1"
     },
     "peerDependencies": {
         "react": "^18.3.1"
-    },
-    "dependencies": {
-        "rollup-plugin-dts": "^6.1.1"
     }
 }

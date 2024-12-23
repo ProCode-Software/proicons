@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?5f394d80dd36338f880ae2d3e9811ec3") format("truetype"),
-url("./ProIcons.woff?5f394d80dd36338f880ae2d3e9811ec3") format("woff"),
-url("./ProIcons.woff2?5f394d80dd36338f880ae2d3e9811ec3") format("woff2"),
-url("./ProIcons.eot?5f394d80dd36338f880ae2d3e9811ec3#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?269faac0afe8935d8d71f5a5bb051fa5") format("truetype"),
+url("./ProIcons.woff?269faac0afe8935d8d71f5a5bb051fa5") format("woff"),
+url("./ProIcons.woff2?269faac0afe8935d8d71f5a5bb051fa5") format("woff2"),
+url("./ProIcons.eot?269faac0afe8935d8d71f5a5bb051fa5#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -1435,26 +1435,26 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
   content: "\e1d7";
 }
 .proicon-add-circle::before {
-  content: "\f101";
-}
-.proicon-cancel-octagon::before {
-  content: "\f102";
-}
-.proicon-folder-multiple::before {
-  content: "\f103";
+  content: "\e001";
 }
 .proicon-play-circle::before {
-  content: "\f104";
+  content: "\e01b";
 }
 .proicon-save-pencil::before {
-  content: "\f105";
-}
-.proicon-slash-square::before {
-  content: "\f106";
-}
-.proicon-volume-low::before {
-  content: "\f107";
+  content: "\e0be";
 }
 .proicon-volume-medium::before {
-  content: "\f108";
+  content: "\e16d";
+}
+.proicon-volume-low::before {
+  content: "\e16e";
+}
+.proicon-slash-square::before {
+  content: "\e1bd";
+}
+.proicon-cancel-octagon::before {
+  content: "\e1d8";
+}
+.proicon-folder-multiple::before {
+  content: "\e1d9";
 }

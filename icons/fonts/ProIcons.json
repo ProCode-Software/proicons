@@ -470,5 +470,13 @@
     "panel-bottom": 57812,
     "panel-bottom-open": 57813,
     "split-vertical": 57814,
-    "split-horizontal": 57815
+    "split-horizontal": 57815,
+    "add-circle": 57345,
+    "play-circle": 57371,
+    "save-pencil": 57534,
+    "volume-medium": 57709,
+    "volume-low": 57710,
+    "slash-square": 57789,
+    "cancel-octagon": 57816,
+    "folder-multiple": 57817
 }
