@@ -58,6 +58,13 @@ Smaller shapes and acute angles can use smaller corner radius, up to 2px.
 
 Even smaller shapes and lines may use a 0.6px corner radius or no corner radius.
 
+#### Filled shapes
+Smaller shapes that would make the icon feel too dense if stroked can be filled. Icons may also have filled dots that are 2.5px * 2.5px in size.
+
+|   Photo   | Cookie |   Board   |
+|:----------:|:---------:|:----------:|
+| <img src="/guidelines/filled-shapes-photo.png" alt="Photo" width="190"> | <img src="/guidelines/filled-shapes-cookie.png" alt="Cookie" width="190"> | <img src="/guidelines/filled-shapes-board.png" alt="Board" width="190"> |
+
 ## Naming
 Before submitting your icons, please make sure to follow our [naming conventions](naming).
 

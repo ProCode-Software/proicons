@@ -1590,7 +1590,7 @@
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M15.695 16.318 10.333 12m5.362 4.318V7.682m0 8.636v2.18c0 .68-.27 1.332-.75 1.813M10.332 12l5.362-4.318M10.333 12 7.828 9.983m7.867-2.3v-2.18c0-.68-.27-1.333-.75-1.814M7.827 14.017l-3.516 2.831a.61.61 0 0 1-.813-.044l-1.071-1.076a.61.61 0 0 1 .022-.881L5.598 12m2.23 2.017 6.456 5.84q.304.273.66.454m-7.116-6.294L5.598 12m0 0L2.45 9.153a.61.61 0 0 1-.022-.881l1.071-1.076c.22-.22.57-.24.813-.044l3.516 2.83m0 0 6.456-5.839q.304-.273.66-.454m0 16.622a3.04 3.04 0 0 0 2.517.113l2.334-.937c.577-.232.955-.791.955-1.413V5.926c0-.622-.378-1.181-.955-1.413l-2.334-.937a3.04 3.04 0 0 0-2.517.113\"/></svg>"
     },
     "X (Twitter)": {
-        "description": "Twitter, X/Twitter, X Corp., Elon Musk, Bird, Tweet, Post, Social Media",
+        "description": "Twitter, X/Twitter, X Corp., Bird, Tweet, Post, Social Media",
         "category": "Logos & Brands",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m13.081 10.712-4.786-6.71a.6.6 0 0 0-.489-.252H5.28a.6.6 0 0 0-.488.948l6.127 8.59m2.162-2.576 6.127 8.59a.6.6 0 0 1-.488.948h-2.526a.6.6 0 0 1-.489-.252l-4.786-6.71m2.162-2.576 5.842-6.962m-8.004 9.538L5.077 20.25\"/></svg>"
     },
@@ -1744,7 +1744,7 @@
         "category": "Food & Drink",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M12 3.724c-4.302 0-7.79 3.051-7.79 6.816h15.58c0-3.765-3.488-6.816-7.79-6.816\"/><rect width=\"18.5\" height=\"5.355\" x=\"2.75\" y=\"10.54\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" rx=\"2\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M4.21 15.895h15.58l-.278 1.249a4 4 0 0 1-3.905 3.132H8.393a4 4 0 0 1-3.905-3.132zm10.926-2.833-2.162-2.522h5.842l-2.162 2.522a1 1 0 0 1-1.518 0\"/></svg>"
     },
-    "Box Drag": {
+    "Square Drag": {
         "description": "Grab, Hand, Drop, Grabber, Dragging",
         "category": "Gestures",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M12.073 17.533v-3.864m2.544-2.937c0-.699-.57-1.265-1.272-1.265s-1.272.566-1.272 1.265v2.937m2.544-.444v-4.21c0-.698.57-1.265 1.272-1.265s1.272.567 1.272 1.266v1.716m0 0v2.493m0-2.493a1.273 1.273 0 0 1 2.545 0v1.717m0 0v.776m0-.776c0-.7.57-1.266 1.272-1.266s1.272.567 1.272 1.266V17.1a5.15 5.15 0 0 1-5.15 5.15h-2.31a5.55 5.55 0 0 1-5.541-5.872l.012-.201a2.4 2.4 0 0 1 1.67-2.146l1.142-.362\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M6.75 18.25a3 3 0 0 1-3-3v-8.5a3 3 0 0 1 3-3h8.5a3 3 0 0 1 2.959 2.5\"/></svg>"
@@ -1870,7 +1870,7 @@
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M9.301 9.709a2.699 2.699 0 1 1 4.85 1.63 4 4 0 0 1-.32.317c-.092.078-.137.11-.227.171l-.979.675a1.81 1.81 0 0 0-.784 1.493\"/><circle cx=\"11.828\" cy=\"16.74\" r=\"1\" fill=\"currentColor\"/><circle cx=\"12\" cy=\"12\" r=\"9.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/></svg>"
     },
     "Sparkle": {
-        "description": "Flare, Gemini",
+        "description": "Flare, AI, Sparkles, Smart, Enhanced",
         "category": "Miscellaneous",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M11.256 3.567c.266-.675 1.222-.675 1.488 0l2.047 5.19a.8.8 0 0 0 .451.452l5.191 2.047c.675.266.675 1.222 0 1.488l-5.19 2.047a.8.8 0 0 0-.452.451l-2.047 5.191c-.266.675-1.222.675-1.488 0l-2.047-5.19a.8.8 0 0 0-.451-.452l-5.191-2.047c-.675-.266-.675-1.222 0-1.488l5.19-2.047a.8.8 0 0 0 .452-.451z\"/><circle cx=\"5.25\" cy=\"5.25\" r=\"1.25\" fill=\"currentColor\"/><circle cx=\"19\" cy=\"19\" r=\"1\" fill=\"currentColor\"/></svg>"
     },
