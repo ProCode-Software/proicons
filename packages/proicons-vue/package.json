@@ -43,13 +43,13 @@
         "vue"
     ],
     "peerDependencies": {
-        "vue": "^3.5.12"
+        "vue": "^3.5.13"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^5.2.1",
-        "typescript": "~5.6.3",
-        "vite": "^5.4.11",
+        "typescript": "^5.7.2",
+        "vite": "6.0.7",
         "vite-plugin-dts": "^4.4.0",
-        "vue-tsc": "^2.1.10"
+        "vue-tsc": "^2.2.0"
     }
 }

@@ -13,29 +13,6 @@ export const rootNode: IconNode = [
     [],
 ];
 
-export function toNodes(elementString: string): IconNode[] {
-    const element = new DOMParser()
-        .parseFromString(elementString, 'image/svg+xml')
-        .querySelector('svg')
-
-    function renderNodeList(elm: Element) {
-        const nodeArray = []
-
-        for (const child of elm.children) {
-            const nodeItem = [
-                child.tagName,
-
-                child.attributes.length > 0 ? Object.fromEntries([...child.attributes].map(({ name, value }) => [name, value])) : {},
-
-                child.children.length > 0 ? renderNodeList(child) : []
-            ]
-            nodeArray.push(nodeItem)
-        }
-        return nodeArray
-    }
-    return renderNodeList(element)
-}
-
 export function convertNodesWithConfig(nodes: IconNode[], options?: ProIconsOptions): IconNode[] {
     const defaultStroke = 1.5
 

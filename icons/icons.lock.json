@@ -349,7 +349,7 @@
         { "name": "Cookies", "added": "4.8.0" },
         { "name": "Drop", "added": "4.8.0" },
         { "name": "Hamburger", "added": "4.8.0" },
-        { "name": "Box Drag", "added": "4.8.0" },
+        { "name": "Square Drag", "added": "4.8.0", "updated": "4.11.4" },
         { "name": "Cursor Drag", "added": "4.8.0" },
         { "name": "Hand", "added": "4.8.0" },
         { "name": "Thumbs Down", "added": "4.8.0", "updated": "4.11.2" },

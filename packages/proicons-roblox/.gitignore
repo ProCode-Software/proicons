@@ -1,6 +1,0 @@
-# Roblox Studio lock files
-/*.rbxlx.lock
-/*.rbxl.lock
-
-# Output
-!/dist/

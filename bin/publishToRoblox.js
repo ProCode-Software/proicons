@@ -1,25 +1,23 @@
 import axios from 'axios'
-import lockfile from '../../../icons/icons.lock.json' with { type: 'json' }
-import pkg from '../../../package.json' with { type: 'json' }
-import iconsJson from '../../../icons/icons.json' with { type: 'json' }
+import lockfile from '../icons/icons.lock.json' with { type: 'json' }
+import pkg from '../package.json' with { type: 'json' }
+import iconsJson from '../icons/icons.json' with { type: 'json' }
 import FormData from 'form-data'
 import { createReadStream, writeFileSync, readFileSync } from 'fs'
 import { resolve } from 'path'
-import { kebabCase } from '../../../bin/helpers/rename.js'
-import { prettierFormat } from '../../../bin/helpers/prettierFormat.js'
+import { kebabCase } from './helpers/rename.js'
+import { prettierFormat } from './helpers/prettierFormat.js'
 import ansiColors from 'ansi-colors'
 
-const iconAssetsPath = resolve(import.meta.dirname, '../dist/assetPaths.json')
+const iconAssetsPath = resolve(import.meta.dirname, '../icons/roblox.json')
+/** @type {import('../icons/roblox.json')} */
 const assetData = JSON.parse(readFileSync(iconAssetsPath, 'utf-8') ?? '{}')
 
-const removedIcons = readFileSync(
-    resolve(import.meta.dirname, '../removed-icons.txt'),
-    'utf-8'
-).split('\n')
+const removedIcons = assetData.exclude
 
 if (!process.env.ROBLOX_PUBLISH_KEY)
     throw new Error(
-        'You forgot your Roblox API key. Use `node --env-file=.env ./publishIcons.js`'
+        'You forgot your Roblox API key. Use `node --env-file=.env ./publishIcons.js` with the variable "ROBLOX_PUBLISH_KEY"'
     )
 
 const endpoints = {
@@ -86,6 +84,7 @@ const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
                 const data1 = await publishAsset(iconName, kebabCase(iconName))
                 const { operationId } = data1
 
+                // Waiting is required due to Roblox rate limits
                 await wait(4_000)
 
                 async function waitForCompletion() {
