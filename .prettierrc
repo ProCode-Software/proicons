@@ -14,6 +14,12 @@
             "options": {
                 "printWidth": 120
             }
+        },
+        {
+            "files": [".github/**/*.yml"],
+            "options": {
+                "tabWidth": 2
+            }
         }
     ]
 }
