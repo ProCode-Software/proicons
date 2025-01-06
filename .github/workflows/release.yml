@@ -1,0 +1,37 @@
+name: Release Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        description: Version
+        required: true
+      draft:
+        description: Create as draft
+        type: boolean
+        default: false
+
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      VERSION: ${{ inputs.version }}
+    steps:
+      - name: Get bundle version
+        run: |
+          version_str=$(echo $VERSION | sed 's/\./-/g')
+          filename="ProIcons_v$version_str.zip"
+          echo "filename=$filename" >> $GITHUB_ENV
+
+      - name: Create ZIP bundle
+        working-directory: './icons'
+        run: zip -r $filename ./*
+
+      - name: Generate changelog
+        run: pnpm run generate-changelog -w
+
+      - name: Publish release to GitHub
+        run: gh release create $VERSION "./icons/$filename" -F CHANGELOG.md -t "ProIcons v$VERSION" ${{ inputs.version == false && '-d' || '' }}
