@@ -5,7 +5,6 @@ const frameworks = [
     { name: 'HTML', icon: 'html5.svg', path: 'html-api' },
     { name: 'JavaScript', icon: 'javascript.svg', path: 'javascript-api' },
     { name: 'React', icon: 'react.svg', path: 'react' },
-    { name: 'Roblox', icon: 'roblox-studio.svg', path: 'roblox' },
     { name: 'Svelte', icon: 'svelte.svg', path: 'svelte' },
     { name: 'Vue', icon: 'vue.svg', path: 'vue' },
 ]

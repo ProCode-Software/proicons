@@ -42,7 +42,7 @@ features:
     icon: '<div class="vp-icon" style="--icon: url(https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/bolt.svg)"></div>'
 
   - title: Framework support
-    details: ProIcons are available as packages for React, Vue, Svelte, Webfont, and Roblox.
+    details: ProIcons are available as packages for React, Vue, Svelte, and Webfont.
     icon: '<div class="vp-icon" style="--icon: url(https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/reactjs.svg)"></div>'
 
   - title: Free and open source

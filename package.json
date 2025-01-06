@@ -46,6 +46,7 @@
         "icons:optimize": "pnpm run icons:build -o",
         "icons:build-frozen": "pnpm run icons:build -l",
         "icons:build-rebuild": "pnpm run icons:build -r",
+        "icons:roblox-publish": "node ./bin/publishToRoblox.js",
         "icons:prune": "node ./bin/pruneFiles.js",
         "font:codepoints": "node ./bin/generateCodepoints.js",
         "font:build": "pnpm run font:codepoints && pnpm run icons:build -f -r",
@@ -64,7 +65,8 @@
         "font awesome",
         "svg",
         "proicons",
-        "procode"
+        "procode",
+        "icon-library"
     ],
     "author": "ProCode Software",
     "license": "MIT",

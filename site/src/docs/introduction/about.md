@@ -16,7 +16,7 @@ ProIcons are designed to be modern, friendly, and consistent. Icons are designed
 You can learn more about icon design and how to design your own icons for ProIcons [here](design-guidelines/).
 
 ## Packages & Libraries
-ProIcons is currently available for [HTML](html-api), [Node.js/Vanilla JS](javascript-api), [React](react), [Svelte](svelte), [Vue](vue), and [Roblox](roblox).
+ProIcons is currently available for [HTML](html-api), [Node.js/Vanilla JS](javascript-api), [React](react), [Svelte](svelte), and [Vue](vue).
 
 ## Developer Experience
 ProIcons is built to be simple and easy for developers to use. We have added quality-of-life features to our packages including:

@@ -10,7 +10,6 @@ Getting started with ProIcons doesn't take long. Follow the steps below for your
 - [HTML Webfont](#html-webfont)
 - [Node.js](#nodejs)
 - [React](#react)
-- [Roblox](#roblox)
 - [Svelte](#svelte)
 - [Vue](#vue)
 
@@ -82,11 +81,6 @@ If you prefer not to use any scripts, you can also install ProIcons as a webfont
 <!-- @include: ../packages/react.md#install-react -->
 
 [Read the documentation](react)
-
-## Roblox
-<!-- @include: ../packages/roblox.md#install-roblox -->
-
-[Read the documentation](roblox)
 
 ## Svelte
 <!-- @include: ../packages/svelte.md#install-svelte -->

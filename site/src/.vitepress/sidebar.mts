@@ -22,12 +22,19 @@ const sidebar: Record<string, DefaultTheme.SidebarItem[]> = {
             ],
         },
         {
+            text: 'Guides',
+            collapsed: false,
+            base: '/docs/',
+            items: [
+                { text: 'Using in Roblox', link: 'roblox-usage' },
+            ],
+        },
+        {
             text: 'Packages',
             collapsed: false,
             base: '/docs/',
             items: [
                 { text: 'ProIcons React', link: 'react' },
-                { text: 'ProIcons Roblox', link: 'roblox' },
                 { text: 'ProIcons Svelte', link: 'svelte' },
                 { text: 'ProIcons Vue', link: 'vue' },
                 { text: 'ProIcons Webfont', link: 'webfont' },
@@ -42,7 +49,6 @@ const sidebar: Record<string, DefaultTheme.SidebarItem[]> = {
                     text: 'Design Guidelines',
                     base: '/docs/design-guidelines/',
                     link: 'index',
-                    collapsed: true,
                     items: [
                         { text: 'Naming', link: 'naming' },
                         {

@@ -142,23 +142,6 @@
             <a href="https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-webfont">GitHub</a>
         </td>
     </tr>
-    <tr>
-        <td>
-            <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/refs/heads/main/site/src/public/logos/roblox-studio.svg" width="48">
-        </td>
-        <td>
-            <b>Roblox</b>
-            <br>
-            <code>procode-software/proicons</code>
-        </td>
-        <td>
-            <a href="https://wally.run/package/procode-software/proicons">View on Wally</a>
-        </td>
-        <td>
-            <a href="https://procode-software.github.io/proicons/docs/roblox">Documentation</a> | 
-            <a href="https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-roblox">GitHub</a>
-        </td>
-    </tr>
 </table>
 
 # License
