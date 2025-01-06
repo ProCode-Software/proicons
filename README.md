@@ -49,7 +49,7 @@
     </tr>
     <tr>
         <td>
-            <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/refs/heads/main/site/src/public/logos/javascript.svg" width="48">
+            <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/refs/heads/main/site/src/public/logos/javascript.svg" width="40">
         </td>
         <td>
             <b>Vanilla</b>
@@ -68,7 +68,7 @@
     </tr>
     <tr>
         <td>
-            <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/refs/heads/main/site/src/public/logos/react.svg" width="48">
+            <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/refs/heads/main/site/src/public/logos/react.svg" width="40">
         </td>
         <td>
             <b>React</b>
@@ -87,7 +87,7 @@
     </tr>
     <tr>
         <td>
-            <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/refs/heads/main/site/src/public/logos/svelte.svg" width="48">
+            <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/refs/heads/main/site/src/public/logos/svelte.svg" width="40">
         </td>
         <td>
             <b>Svelte</b>
@@ -106,7 +106,7 @@
     </tr>
     <tr>
         <td>
-            <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/refs/heads/main/site/src/public/logos/vue.svg" width="48">
+            <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/refs/heads/main/site/src/public/logos/vue.svg" width="40">
         </td>
         <td>
             <b>Vue</b>
@@ -125,7 +125,7 @@
     </tr>
     <tr>
         <td>
-            <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/refs/heads/main/site/src/public/logos/html5.svg" width="48">
+            <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/refs/heads/main/site/src/public/logos/html5.svg" width="40">
         </td>
         <td>
             <b>Webfont</b>

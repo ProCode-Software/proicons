@@ -1,6 +1,6 @@
 {
     "name": "@proicons/svelte",
-    "version": "4.11.2",
+    "version": "4.11.4",
     "description": "ProIcons icon library for Svelte",
     "main": "dist/proicons-svelte.js",
     "module": "dist/proicons-svelte.js",
@@ -60,14 +60,14 @@
         "svelte"
     ],
     "devDependencies": {
-        "@sveltejs/package": "2.3.7",
+        "@sveltejs/package": "^2.3.7",
         "@sveltejs/vite-plugin-svelte": "^5.0.3",
         "@tsconfig/svelte": "^5.0.4",
         "tslib": "^2.8.1",
-        "typescript": "~5.6.3",
+        "typescript": "^5.7.2",
         "vite": "^6.0.7"
     },
     "peerDependencies": {
-        "svelte": "^5.2.7"
+        "svelte": "^5.16.2"
     }
 }

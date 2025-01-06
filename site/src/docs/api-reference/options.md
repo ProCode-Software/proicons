@@ -3,7 +3,7 @@ title: Options
 editLink: true
 ---
 # Options
-Properties can be used to customize ProIcons in HTML and all JavaScript packages, under the `ProIconsOptions` interface. In HTML, Vue and React, these can be applied as attributes of ProIcon components. In JavaScript, these can be used in `ProIcon.toSvg()` and `proicons.replace()`.
+Properties can be used to customize ProIcons in HTML and all packages, under the `ProIconsOptions` interface. In HTML, Vue and React, these can be applied as attributes of ProIcon components. In Vanilla, these can be used in `ProIcon.toSvg()` and `proicons.replace()`.
 
 ```javascript
 proicons.replace(document.body, {
@@ -16,7 +16,7 @@ proicons.replace(document.body, {
 ### attributes
 * **Type:** `Record<string, any>`
 
-**Only available in JavaScript.**
+**Only available in Vanilla JS.**
 In other libraries, attributes should be applied to the icon component.
 
 Attributes to merge with the generated icon `<svg>` element. These may overwrite the default SVG attributes, except for the `class` attribute, which will be merged.
@@ -85,7 +85,7 @@ Determines the default stroke width of the icon. This only works on SVG elements
 
 ## ProIconReplaceConfig
 Properties used to customize the [`proicons.replace()`](./javascript-api#replace) method in JavaScript.
-This is only available in [JavaScript](./javascript-api) and in the `proicons` package.
+This is only available in the Vanilla JS package.
 
 All properties available in `ProIconsOptions` can be used in `ProIconReplaceConfig`.
 

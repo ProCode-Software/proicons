@@ -91,6 +91,9 @@ async function writeSvgFilesFromData(jsonData) {
         strokeColors.forEach((color) => {
             iconData = iconData.replaceAll(color, 'currentColor');
         });
+        if (data.category == 'NO CATEGORY' || !data.category) {
+            throw new Error(`Icon ${name} does not have a category`)
+        }
 
         let optimized = optimize(iconData, svgoConfig).data;
 

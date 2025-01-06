@@ -6,12 +6,31 @@ import ansiColors from "ansi-colors"
 import { kebabCase } from "./helpers/rename.js"
 
 // Audit lockfiles
-const lockfileIconNames = lockfile.icons.map(({name}) => name).sort()
-const iconNames = Object.keys(icons).sort()
-const isEqual = lockfileIconNames.toString() === iconNames.toString()
+const missingNamesInLockfile = []
+const missingNamesInIcons = []
+for (const icon of lockfile.icons) {
+    if (!icons[icon.name]) {
+        missingNamesInIcons.push(icon.name)
+    }
+}
+for (const name of Object.keys(icons)) {
+    if (!lockfile.icons.some(({ name: n }) => n === name)) {
+        missingNamesInLockfile.push(name)
+    }
+}
+if (missingNamesInLockfile.length || missingNamesInIcons.length) {
+    const mapMissing = (name, arr) => `\t${name} is missing: ${arr.join(', ')}`
 
-if (!isEqual) {
-    throw new Error(ansiColors.red('icons.json and lockfile don\'t match'))
+    const missingNames = [
+        missingNamesInIcons.length ? mapMissing('icons.json', missingNamesInIcons) : '',
+        missingNamesInLockfile.length ? mapMissing('Lockfile', missingNamesInLockfile) : ''
+    ].filter(Boolean).join('\n')
+
+    throw new Error(
+        ansiColors.red(
+            ansiColors.bold(`\nicons.json and lockfile don't match:\n`) + missingNames
+        )
+    )
 }
 
 // Remove extra icons from folders
@@ -21,23 +40,27 @@ const iconDirs = [
     'png/white', 'png@3x/white', 'png@5x/white'
 ]
 const ROOT_DIR = resolve(import.meta.dirname, '../icons')
-const extraIcons = new Set()
-const extraIconPaths = new Set()
+const extraIconNames = new Set()
+const extraIconPaths = []
 
 for (const dirname of iconDirs) {
     const dir = join(ROOT_DIR, dirname)
     for (const filename of readdirSync(dir)) {
         const kebabName = filename.replace(/.(?:svg|png)$/, '')
         const filePath = join(dir, filename)
-        const isInLockfile = lockfileIconNames.some(name => kebabCase(name) === kebabName)
+        const isInLockfile = lockfile.icons.some(({name}) => kebabCase(name) === kebabName)
         if (!isInLockfile) {
-            extraIconPaths.add(filePath)
-            extraIcons.add(kebabName)
+            extraIconPaths.push(filePath)
+            extraIconNames.add(kebabName)
         }
     }
 }
 // Prompt to remove duplicates
-const extraArray = Array.from(extraIcons)
+const extraArray = Array.from(extraIconNames)
+if (!extraArray.length) {
+    console.log(ansiColors.green('No extraneous icons found'))
+    process.exit(0)
+}
 console.log(
     ansiColors.bold(
         ansiColors.yellow(`\nThere are ${ansiColors.cyan(extraArray.length)} extraneous icons in folders. Do you want to remove them?`)

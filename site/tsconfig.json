@@ -17,7 +17,12 @@
         "skipLibCheck": true,
         "allowJs": true
     },
-    "include": ["./src"],
+    "vueCompilerOptions": {
+        "vitePressExtensions": [
+            ".md"
+        ],
+    },
+    "include": ["./src", "**/*.md"],
     "exclude": [
         "node_modules",
         "**/node_modules/*"

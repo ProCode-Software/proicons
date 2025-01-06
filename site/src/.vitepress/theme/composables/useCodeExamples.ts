@@ -124,14 +124,6 @@ export function getCodeExamples(iconName: string, customizations?: Customization
                 `<i class="proicon proicon-${kebabCase(iconName)}"></i>`
             ].join('\n\n'),
             entry: `<i class="proicon proicon-${kebabCase(iconName)}"></i>`,
-        },
-        Roblox: {
-            language: 'luau',
-            code: [
-                `local ProIcons = require(path.to.ProIcons)`,
-                `Instance.new('ImageLabel').Image = ProIcons.${pascalCase(iconName)}.id`
-            ].join('\n\n'),
-            entry: `ProIcons.${pascalCase(iconName)}.id`,
         }
     }
 }

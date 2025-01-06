@@ -1,9 +1,9 @@
 ---
-title: JavaScript
+title: Vanilla JS
 editLink: true
 ---
 
-# ProIcons JavaScript
+# ProIcons Vanilla JavaScript
 Use ProIcons in vanilla JavaScript and Node.js.
 
 ## Installation & Setup

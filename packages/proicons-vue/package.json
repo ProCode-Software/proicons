@@ -1,7 +1,7 @@
 {
     "name": "@proicons/vue",
     "description": "ProIcons icon library for Vue",
-    "version": "4.11.1",
+    "version": "4.11.4",
     "type": "module",
     "sideEffects": false,
     "main": "dist/proicons-vue.js",

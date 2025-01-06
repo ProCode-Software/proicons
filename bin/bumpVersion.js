@@ -40,7 +40,7 @@ for (const folderName of readdirSync(resolve('./packages'))) {
     } else if ((await fetchLatestVersion()) !== pkg.version) {
         // Keep the current package version if ahead
         newVersion = pkg.version
-    } else if (getCliParams(process, 'keep')) {
+    } else if (getCliParams(process, 'sync')) {
         // Keep the current package version
         newVersion = pkg.version
     } else {
