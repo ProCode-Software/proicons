@@ -42,7 +42,7 @@ The file is in the following format:
 ```json
 {
     "exclude": [...],
-    "asset_paths": {
+    "asset-paths": {
         "Add Rhombus": "135021095926333",
         "Add Square": "97666464232500",
         "Add Square Multiple": "85422256562940",
@@ -51,8 +51,35 @@ The file is in the following format:
 }
 ```
 
+### Loading icons
+To get the asset ID for an icon, you can index the `asset-paths` object.
+```luau
+local icons = data['asset-paths']
+
+-- Get the asset id for 'Add' icon
+local Add = icons.Add
+
+-- Create an ImageLabel
+local imageLabel = Instance.new('ImageLabel')
+imageLabel.Image = `rbxassetid://{Add}`
+imageLabel.Parent = gui -- Set this to your own GUI
+```
+
+### Index all available icons
+```luau
+for name, url in pairs(data) do
+    local imageLabel = Instance.new('ImageLabel')
+    imageLabel.Image = `rbxassetid://{url}`
+    imageLabel.Name = name
+    imageLabel.Parent = gui
+end
+```
+
+## Notes
+Icons are added and updated every release. All icons are uploaded in white, and the color can be changed using the `ImageColor3` property on `ImageLabel` or `ImageButton` elements.
+
 ## Excluded icons
-Due to Roblox icons, the following icons have not been uploaded:
+Due to Roblox moderation policies, the following icons have not been uploaded:
 
 <!-- <ul>
     <li v-for="item in data.exclude">{{ item }}</li>
