@@ -40,7 +40,7 @@ jobs:
 
       - name: Bump version
         run: |
-          node ./bin/bumpVersion.js -v $VERSION
+          bash ./bin/bumpVersion.sh $VERSION
 
       - name: Build packages
         run: |
