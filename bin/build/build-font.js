@@ -74,7 +74,7 @@ export async function buildFont(rebuild) {
                     description: 'Modern and open-source icons, designed by ProCode-Software',
                     version: version.slice(0, -2),
                     url: 'https://procode-software.github.io/proicons',
-                    copyright: '©2024 ProCode Software',
+                    copyright: `©${new Date().getFullYear()} ProCode Software`,
                 },
                 woff: { metadata },
             },
