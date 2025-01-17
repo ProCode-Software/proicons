@@ -69,7 +69,7 @@ export default defineConfig({
         ],
         footer: {
             message: 'Released under the MIT License.',
-            copyright: `Copyright © 2024 ProCode Software<br>${getSocialLinks()}`
+            copyright: `Copyright © ${new Date().getFullYear()} ProCode Software<br>${getSocialLinks()}`
         },
         search: {
             provider: "local"
