@@ -5,8 +5,16 @@
 			"type": "npm",
 			"script": "dev",
 			"problemMatcher": [],
-			"label": "proicons dev",
-			"detail": "webpack serve --mode=development --open",
+			"label": "Vanilla dev",
+			"detail": "pnpm vite",
+			"group": "build"
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"problemMatcher": [],
+			"label": "Build Vanilla package",
+			"detail": "pnpm vite build && pnpm run build:minify",
 			"group": "build"
 		},
 		{
@@ -25,6 +33,22 @@
 			"problemMatcher": [],
 			"label": "Build icons",
 			"detail": "node ./bin/build.js"
+		},
+		{
+			"type": "npm",
+			"script": "all:build-modules",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "Build all icon modules",
+			"detail": "pnpm -r run icons:build-modules"
+		},
+		{
+			"type": "npm",
+			"script": "icons:roblox-publish",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "Publish icons to Roblox",
+			"detail": "node --env-file=.env ./bin/publishToRoblox.js"
 		}
 	]
 }
