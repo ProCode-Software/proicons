@@ -782,7 +782,7 @@
     "Text Effects": {
         "description": "",
         "category": "Text",
-        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M14.453 12.928H9.547L12 7.63zM12 2.75a2.5 2.5 0 0 1 2.269 1.45l6.25 13.5a2.5 2.5 0 0 1-4.538 2.1l-1.56-3.372H9.58L8.019 19.8a2.5 2.5 0 0 1-4.538-2.1m5.14-2.772h6.758l1.964 4.242a1 1 0 1 0 1.814-.84l-6.25-13.5a1 1 0 0 0-1.815 0l-6.25 13.5a1 1 0 0 0 1.815.84zM12 2.75A2.5 2.5 0 0 0 9.731 4.2zM9.731 4.2l-6.25 13.5z\" clip-rule=\"evenodd\"/><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M14.269 4.2a2.5 2.5 0 0 0-4.538 0l-6.25 13.5a2.5 2.5 0 0 0 4.538 2.1l1.56-3.372h4.841l1.561 3.372a2.5 2.5 0 0 0 4.538-2.1zM8.62 14.927h6.758l1.964 4.242a1 1 0 1 0 1.814-.84l-6.25-13.5a1 1 0 0 0-1.815 0l-6.25 13.5a1 1 0 0 0 1.815.84z\" clip-rule=\"evenodd\"/></svg>"
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M12 3.5a1.75 1.75 0 0 0-1.588 1.015l-6.25 13.5a1.75 1.75 0 0 0 3.176 1.47L9.1 15.678h5.8l1.762 3.807a1.75 1.75 0 1 0 3.176-1.47l-6.25-13.5A1.75 1.75 0 0 0 12 3.5\" clip-rule=\"evenodd\"/><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"m12 7.63 2.453 5.298H9.547z\" clip-rule=\"evenodd\"/></svg>"
     },
     "Text Expand": {
         "description": "",
@@ -1637,7 +1637,7 @@
     "Box": {
         "description": "Package, Amazon, Delivery",
         "category": "Activities",
-        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m7.687 9.687 2.66 1.426A3.5 3.5 0 0 0 12 11.53M7.687 9.687 3.884 7.65m3.803 2.038 8.496-4.555.128-.07M3.884 7.648a3.5 3.5 0 0 0-.51 1.82v5.061a3.5 3.5 0 0 0 1.845 3.085l5.127 2.748A3.5 3.5 0 0 0 12 20.78M3.884 7.649a3.5 3.5 0 0 1 1.335-1.264l5.127-2.748a3.5 3.5 0 0 1 3.308 0L16.31 5.06M12 11.53a3.5 3.5 0 0 0 1.654-.416l6.462-3.464M12 11.529v9.25m0 0a3.5 3.5 0 0 0 1.654-.416l5.127-2.748a3.5 3.5 0 0 0 1.846-3.085V9.47a3.5 3.5 0 0 0-.511-1.821m0 0a3.5 3.5 0 0 0-1.335-1.264l-2.47-1.324\"/></svg>"
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m12 12 8.073-4.625M12 12v9.25M12 12 7.963 9.688m12.11-2.313a3.17 3.17 0 0 0-1.165-1.156L16.25 4.696m3.823 2.679c.275.472.427 1.015.427 1.58v6.09a3.15 3.15 0 0 1-1.592 2.736l-5.316 3.046A3.2 3.2 0 0 1 12 21.25M3.926 7.375a3.14 3.14 0 0 0-.426 1.58v6.09c0 1.13.607 2.172 1.592 2.736l5.316 3.046A3.2 3.2 0 0 0 12 21.25M3.926 7.375a3.17 3.17 0 0 1 1.166-1.156l5.316-3.046a3.2 3.2 0 0 1 3.184 0l2.658 1.523M3.926 7.375l4.037 2.313m0 0 8.287-4.992\"/></svg>"
     },
     "Broom": {
         "description": "Sweep, Clean",
@@ -2363,5 +2363,90 @@
         "description": "Folders",
         "category": "Files",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M2.75 7.624v6.127a3.5 3.5 0 0 0 3.5 3.5h8.5a3.5 3.5 0 0 0 3.5-3.5V9.187a3.5 3.5 0 0 0-3.5-3.5l-4.25.001M2.75 7.624V5.749a2 2 0 0 1 2-2h2.775a2.5 2.5 0 0 1 1.768.732L10.5 5.688M2.75 7.624h4.779a2.5 2.5 0 0 0 1.767-.732L10.5 5.688\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M21.25 9.687v4.064a6.5 6.5 0 0 1-6.5 6.5h-8\"/></svg>"
+    },
+    "Text Description": {
+        "description": "",
+        "category": "Text",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-width=\"1.5\" d=\"M2.75 5.25h18.5M2.75 12h18.5m-18.5 6.75h13.5\"/></svg>"
+    },
+    "Text Bullet List Tree": {
+        "description": "",
+        "category": "Organization",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><circle cx=\"4.443\" cy=\"5.081\" r=\"1.331\" fill=\"currentColor\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M9.123 5.08h11.765\"/><circle cx=\"4.443\" cy=\"12\" r=\"1.331\" fill=\"currentColor\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M9.123 12h11.765\"/><circle cx=\"9.701\" cy=\"18.919\" r=\"1.331\" fill=\"currentColor\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M14.38 18.92h6.508\"/></svg>"
+    },
+    "Subtract Square Multiple": {
+        "description": "",
+        "category": "Actions",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M7.38 10.63h6.5\"/><rect width=\"14\" height=\"14\" x=\"3.63\" y=\"3.63\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" rx=\"3\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M20.63 7.63v7a6 6 0 0 1-6 6h-7\"/></svg>"
+    },
+    "Subtract Square": {
+        "description": "Add Box, Plus",
+        "category": "Actions",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M8.25 12h7.5\"/><rect width=\"16.5\" height=\"16.5\" x=\"3.75\" y=\"3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" rx=\"4\"/></svg>"
+    },
+    "Sparkle 2": {
+        "description": "Flare, AI, Sparkles, Smart, Enhanced",
+        "category": "Miscellaneous",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" stroke=\"currentColor\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m17.503 14.751.306.777c.3.763.904 1.366 1.666 1.667l.777.306-.777.307c-.762.3-1.365.904-1.666 1.666l-.306.777-.307-.777a2.96 2.96 0 0 0-1.666-1.666l-.777-.307.777-.306a2.96 2.96 0 0 0 1.666-1.667z\"/><path stroke=\"currentColor\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M9.61 3.976c.08-.296.5-.296.58 0l.154.572a6.96 6.96 0 0 0 4.908 4.908l.572.154c.296.08.296.5 0 .58l-.572.154a6.96 6.96 0 0 0-4.908 4.908l-.154.572c-.08.296-.5.296-.58 0l-.154-.572a6.96 6.96 0 0 0-4.908-4.908l-.572-.154c-.296-.08-.296-.5 0-.58l.572-.154a6.96 6.96 0 0 0 4.908-4.908z\"/></svg>"
+    },
+    "Cloud Add": {
+        "description": "",
+        "category": "Communication & Cloud",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M10.33 18.5H7.375q-.09 0-.178-.005-.098.005-.197.005A4.25 4.25 0 0 1 7 10a.445.445 0 0 0 .431-.334 5.502 5.502 0 0 1 10.793.634\"/><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M17.5 23a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11m0-8.993a.5.5 0 0 1 .5.5V17h2.493a.5.5 0 1 1 0 1H18v2.494a.5.5 0 0 1-1 0V18h-2.493a.5.5 0 1 1 0-1H17v-2.493a.5.5 0 0 1 .5-.5\" clip-rule=\"evenodd\"/></svg>"
+    },
+    "Cloud Arrow Up": {
+        "description": "",
+        "category": "Communication & Cloud",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M10.33 18.5H7.375q-.09 0-.178-.005-.098.005-.197.005A4.25 4.25 0 0 1 7 10a.445.445 0 0 0 .431-.334 5.502 5.502 0 0 1 10.793.634\"/><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M17.5 12a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11m.5 8.455a.5.5 0 0 1-1 0v-4.703l-1.564 1.564a.5.5 0 0 1-.707-.707l2.417-2.418a.5.5 0 0 1 .708 0l2.417 2.418a.5.5 0 0 1-.707.707L18 15.752z\" clip-rule=\"evenodd\"/></svg>"
+    },
+    "Cloud Arrow Down": {
+        "description": "",
+        "category": "Communication & Cloud",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M10.33 18.5H7.375q-.09 0-.178-.005-.098.005-.197.005A4.25 4.25 0 0 1 7 10a.445.445 0 0 0 .431-.334 5.502 5.502 0 0 1 10.793.634\"/><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M17.5 23a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11m.5-8.455a.5.5 0 0 0-1 0v4.703l-1.564-1.564a.5.5 0 0 0-.707.707l2.417 2.418a.5.5 0 0 0 .708 0l2.417-2.418a.5.5 0 0 0-.707-.707L18 19.248z\" clip-rule=\"evenodd\"/></svg>"
+    },
+    "Cloud Off": {
+        "description": "",
+        "category": "Communication & Cloud",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m3.282 21.782 18.5-18.5m-4.531 4.53c.64.9 1.017 2 1.017 3.188 0 .3.21.563.497.65a3.502 3.502 0 0 1-1.015 6.85H7.375q-.09 0-.178-.005a4 4 0 0 1-.614-.015m-2.625-1.262A4.25 4.25 0 0 1 7 10a.445.445 0 0 0 .431-.334 5.502 5.502 0 0 1 7.539-3.708\"/></svg>"
+    },
+    "Target": {
+        "description": "Bullseye, Store",
+        "category": "Miscellaneous",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"9.25\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"12\" cy=\"12\" r=\"5.25\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"12\" cy=\"12\" r=\"2\" fill=\"currentColor\"/></svg>"
+    },
+    "Cylinder": {
+        "description": "Tube",
+        "category": "Shapes",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M19.25 6.347c0 1.987-3.246 3.598-7.25 3.598s-7.25-1.61-7.25-3.598m14.5 0c0-1.986-3.246-3.597-7.25-3.597S4.75 4.36 4.75 6.347m14.5 0v11.306c0 1.986-3.246 3.597-7.25 3.597s-7.25-1.61-7.25-3.597V6.347\"/></svg>"
+    },
+    "Cube": {
+        "description": "Box, Prism",
+        "category": "Shapes",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m12 12 8.073-4.625M12 12 3.926 7.375M12 12v9.25m8.073-13.875a3.17 3.17 0 0 0-1.165-1.156l-5.316-3.046a3.2 3.2 0 0 0-3.184 0L5.092 6.22c-.493.282-.89.684-1.166 1.156m16.147 0c.275.472.427 1.015.427 1.58v6.09a3.15 3.15 0 0 1-1.592 2.736l-5.316 3.046A3.2 3.2 0 0 1 12 21.25M3.926 7.375a3.14 3.14 0 0 0-.426 1.58v6.09c0 1.13.607 2.172 1.592 2.736l5.316 3.046A3.2 3.2 0 0 0 12 21.25\"/></svg>"
+    },
+    "Cone": {
+        "description": "Tube",
+        "category": "Shapes",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M4.035 17.883c.716-.8 2.908-2.633 7.965-2.633s7.25 1.833 7.965 2.633m-15.93 0c-.043.43.084.852.424 1.15 1.01.89 3.239 2.217 7.541 2.217s6.531-1.328 7.541-2.216c.34-.3.467-.722.424-1.15m-15.93 0c.02-.201.077-.404.167-.595l6.44-13.678c.542-1.148 2.175-1.148 2.715 0l6.44 13.678c.09.191.148.394.168.594\"/></svg>"
+    },
+    "Alert Rhombus": {
+        "description": "Diamond",
+        "category": "Status",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M3.775 14.475a3.5 3.5 0 0 1 0-4.95l5.75-5.75a3.5 3.5 0 0 1 4.95 0l5.75 5.75a3.5 3.5 0 0 1 0 4.95l-5.75 5.75a3.5 3.5 0 0 1-4.95 0z\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-width=\"1.5\" d=\"M12 12.435v-5\"/><circle cx=\"1.25\" cy=\"1.25\" r=\"1.25\" fill=\"currentColor\" transform=\"matrix(1 0 0 -1 10.75 17.06)\"/></svg>"
+    },
+    "Diff": {
+        "description": "Add Subtract, Minus, Changes, Git",
+        "category": "Development",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M5 10.25h7m0 0h7m-7 0v-7m0 7v7m-7 3.5h14\"/></svg>"
+    },
+    "Chat Question": {
+        "description": "",
+        "category": "Communication & Cloud",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M12 21.25a9.25 9.25 0 1 0-8.307-5.177c.108.22.144.468.089.706l-.816 3.536a.6.6 0 0 0 .72.72l3.535-.817a1.06 1.06 0 0 1 .706.09A9.2 9.2 0 0 0 12 21.25\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M9.301 9.709a2.699 2.699 0 1 1 4.85 1.63 4 4 0 0 1-.32.317c-.092.078-.137.11-.227.171l-.979.675a1.81 1.81 0 0 0-.784 1.493\"/><circle cx=\"11.828\" cy=\"16.74\" r=\"1\" fill=\"currentColor\"/></svg>"
+    },
+    "Info Square": {
+        "description": "Information",
+        "category": "Status",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-width=\"1.5\" d=\"M8.25 3.75a4.5 4.5 0 0 0-4.5 4.5v7.5a4.5 4.5 0 0 0 4.5 4.5h7.5a4.5 4.5 0 0 0 4.5-4.5v-7.5a4.5 4.5 0 0 0-4.5-4.5z\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-width=\"1.5\" d=\"M12 11.435v5\"/><circle cx=\"12\" cy=\"8.06\" r=\"1.25\" fill=\"currentColor\"/></svg>"
     }
 }
