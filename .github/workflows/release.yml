@@ -22,8 +22,8 @@ jobs:
     steps:
       - name: Get bundle version
         run: |
-          version_str=$(echo $VERSION | sed 's/\./-/g')
-          filename="ProIcons_v$version_str.zip"
+          version_str=${VERSION//./-}
+          filename="ProIcons_v${version_str}.zip"
           echo "filename=$filename" >> $GITHUB_ENV
 
       - name: Create ZIP bundle
