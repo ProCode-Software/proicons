@@ -199,6 +199,7 @@ async function buildPngs() {
     }
     await Promise.all(promises)
 
+    console.log('')
     console.timeEnd('Build PNGs')
     progressBar.terminate();
     console.log(ansiColors.green('Done building PNGs!'));
@@ -232,10 +233,10 @@ function buildModules() {
     console.log(ansiColors.green(ansiColors.bold('\nBuild complete!')));
     console.timeEnd('Build time')
 
-    if (newIcons > 0) {
-        console.log(ansiColors.dim('New icons:', newIcons));
+    if (newIcons.length > 0) {
+        console.log(ansiColors.cyan('New icons:', newIcons));
     } else {
-        console.log(ansiColors.dim('No newly added icons'));
+        console.log(ansiColors.cyan('No newly added icons'));
     }
     process.exit(0);
 }).catch(error => {

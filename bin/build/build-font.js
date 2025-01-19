@@ -34,12 +34,12 @@ async function outlineSvgs(rebuild) {
                 traceResolution: 800,
             }).fix()
 
-            console.log(ansiColors.green('Done outlining svgs!'));
+            console.log(ansiColors.green('Done outlining SVGs!'));
         } else {
             console.log(ansiColors.green('SVGs are already outlined, skipped'));
         }
     } catch (err) {
-        console.log(ansiColors.red('Error outlining svgs:'));
+        console.log(ansiColors.red('Error outlining SVGs:'));
         throw new Error(err);
     }
 }
