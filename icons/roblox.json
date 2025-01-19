@@ -1,8 +1,5 @@
 {
-    "exclude": [
-        "Square Drag",
-        "Narrator"
-    ],
+    "exclude": ["Square Drag", "Narrator"],
     "assetPaths": {
         "Add Rhombus": "135021095926333",
         "Add Square": "97666464232500",
@@ -159,7 +156,7 @@
         "Text Collapse": "108528922537656",
         "Text Color": "118183403973512",
         "Text Edit Style": "115455520284505",
-        "Text Effects": "92306668629565",
+        "Text Effects": "86016826053353",
         "Text Expand": "118101309106600",
         "Text Font": "92322517575337",
         "Text Font Size": "70407921053730",
@@ -308,7 +305,7 @@
         "Book Add 2": "134587668740114",
         "Book Info": "129437778524638",
         "Book Open": "98552250282635",
-        "Box": "96808891455433",
+        "Box": "139918608433871",
         "Broom": "72544691022444",
         "Calligraphy Pen": "79997620036424",
         "Cart": "129897948018775",
@@ -438,6 +435,23 @@
         "Panel Bottom": "120454402001124",
         "Panel Bottom Open": "104114481632371",
         "Split Vertical": "93151230934933",
-        "Split Horizontal": "75395036278234"
+        "Split Horizontal": "75395036278234",
+        "Text Description": "95956589669137",
+        "Text Bullet List Tree": "116722577445538",
+        "Subtract Square Multiple": "118790726890422",
+        "Subtract Square": "130008159690835",
+        "Sparkle 2": "93972102401560",
+        "Cloud Add": "110403741020768",
+        "Cloud Arrow Up": "94059400806125",
+        "Cloud Arrow Down": "113721407245492",
+        "Cloud Off": "92094778469458",
+        "Target": "119621910966104",
+        "Cylinder": "112487879632650",
+        "Cube": "99451600850585",
+        "Cone": "123594380767463",
+        "Alert Rhombus": "127857210652612",
+        "Diff": "135782597031506",
+        "Chat Question": "132044213271414",
+        "Info Square": "128440516596328"
     }
 }

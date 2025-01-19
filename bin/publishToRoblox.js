@@ -3,14 +3,14 @@ import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import pkg from '../package.json' with { type: 'json' }
 import iconsJson from '../icons/icons.json' with { type: 'json' }
 import FormData from 'form-data'
-import { createReadStream, writeFileSync, readFileSync, existsSync } from 'fs'
+import { createReadStream, writeFileSync, readFileSync, existsSync, rmSync } from 'fs'
 import { resolve } from 'path'
 import { kebabCase } from './helpers/rename.js'
 import { prettierFormat } from './helpers/prettierFormat.js'
 import ansiColors from 'ansi-colors'
 
 const iconAssetsPath = resolve(import.meta.dirname, '../icons/roblox.json')
-const tempFilePath = resolve(import.meta.dirname, `../../roblox-upload-${pkg.version}.json`)
+const tempFilePath = resolve(import.meta.dirname, `../roblox-upload-${pkg.version}.json`)
 if (!existsSync(tempFilePath)) writeFileSync(tempFilePath, '[]')
 
 /** @type {import('../icons/roblox.json')} */
@@ -30,12 +30,17 @@ const endpoints = {
     operations: oid => `https://apis.roblox.com/assets/v1/operations/${oid}`
 }
 
-function handleError({ err: { response: { data: { code, message } } } }) {
+function handleError(error) {
     class RobloxError extends Error {
         constructor(message) {
             super(ansiColors.red(message))
             this.name = 'RobloxError'
         }
+    }
+    if (!error.response) throw error
+    const { code, message, errors } = error.response.data
+    if (errors) {
+        throw new RobloxError(errors[0].message)
     }
     throw new RobloxError(`[${code}] ${message}`)
 }
@@ -43,7 +48,7 @@ function handleError({ err: { response: { data: { code, message } } } }) {
 async function publishAsset(iconName, filename) {
     const imagePath = resolve(
         import.meta.dirname,
-        `../../../icons/png@5x/white`,
+        '../icons/png@5x/white',
         filename + '.png'
     )
     const form = new FormData()
@@ -112,7 +117,9 @@ console.log(ansiColors.yellow(`Publishing ${iconsToPublish.length} icons...`));
 
             const { response: { assetId } } = await getOperation(operationId)
             assetData.assetPaths[iconName] = assetId
+            uploadedIcons.push(iconName)
             writeFileSync(iconAssetsPath, await prettierFormat(assetData))
+            writeFileSync(tempFilePath, await prettierFormat(iconAssetsPath))
 
             console.log(
                 ansiColors.green(`Published ${iconName}:`), ansiColors.cyan(assetId)
@@ -123,5 +130,7 @@ console.log(ansiColors.yellow(`Publishing ${iconsToPublish.length} icons...`));
         }
     }
 })().then(() => {
-    console.log(ansiColors.green(`Done publishing icons!`))
+    console.log(ansiColors.bold(ansiColors.green(`Done publishing icons!`)))
+    rmSync(tempFilePath)
+    process.exit(0)
 })
