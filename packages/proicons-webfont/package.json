@@ -4,11 +4,9 @@
     "type": "module",
     "description": "Use ProIcons as a webfont on your site",
     "bugs": "https://github.com/ProCode-Software/proicons/issues",
-
     "unpkg": "ProIcons.css",
     "jsdelivr": "ProIcons.css",
     "browser": "ProIcons.css",
-
     "publishConfig": {
         "access": "public"
     },
