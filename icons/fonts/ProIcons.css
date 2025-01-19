@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?e8040ecc24c8e7c0e72614811291c4a1") format("truetype"),
-url("./ProIcons.woff?e8040ecc24c8e7c0e72614811291c4a1") format("woff"),
-url("./ProIcons.woff2?e8040ecc24c8e7c0e72614811291c4a1") format("woff2"),
-url("./ProIcons.eot?e8040ecc24c8e7c0e72614811291c4a1#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?4f4ec4d8a85652b398c3ab7880a35033") format("truetype"),
+url("./ProIcons.woff?4f4ec4d8a85652b398c3ab7880a35033") format("woff"),
+url("./ProIcons.woff2?4f4ec4d8a85652b398c3ab7880a35033") format("woff2"),
+url("./ProIcons.eot?4f4ec4d8a85652b398c3ab7880a35033#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -1458,57 +1458,57 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-folder-multiple::before {
   content: "\e1d9";
 }
-.proicon-alert-rhombus::before {
-  content: "\f101";
-}
-.proicon-chat-question::before {
-  content: "\f102";
-}
-.proicon-cloud-add::before {
-  content: "\f103";
-}
-.proicon-cloud-arrow-down::before {
-  content: "\f104";
-}
-.proicon-cloud-arrow-up::before {
-  content: "\f105";
-}
-.proicon-cloud-off::before {
-  content: "\f106";
-}
-.proicon-cone::before {
-  content: "\f107";
-}
-.proicon-cube::before {
-  content: "\f108";
-}
-.proicon-cylinder::before {
-  content: "\f109";
-}
-.proicon-diff::before {
-  content: "\f10a";
-}
-.proicon-info-square::before {
-  content: "\f10b";
-}
-.proicon-sparkle-2::before {
-  content: "\f10c";
-}
 .proicon-square-drag::before {
-  content: "\f10d";
-}
-.proicon-subtract-square-multiple::before {
-  content: "\f10e";
-}
-.proicon-subtract-square::before {
-  content: "\f10f";
-}
-.proicon-target::before {
-  content: "\f110";
-}
-.proicon-text-bullet-list-tree::before {
-  content: "\f111";
+  content: "\e15d";
 }
 .proicon-text-description::before {
-  content: "\f112";
+  content: "\e1d9";
+}
+.proicon-text-bullet-list-tree::before {
+  content: "\e1da";
+}
+.proicon-subtract-square-multiple::before {
+  content: "\e1db";
+}
+.proicon-subtract-square::before {
+  content: "\e1dc";
+}
+.proicon-sparkle-2::before {
+  content: "\e1dd";
+}
+.proicon-cloud-add::before {
+  content: "\e1de";
+}
+.proicon-cloud-arrow-up::before {
+  content: "\e1df";
+}
+.proicon-cloud-arrow-down::before {
+  content: "\e1e0";
+}
+.proicon-cloud-off::before {
+  content: "\e1e1";
+}
+.proicon-target::before {
+  content: "\e1e2";
+}
+.proicon-cylinder::before {
+  content: "\e1e3";
+}
+.proicon-cube::before {
+  content: "\e1e4";
+}
+.proicon-cone::before {
+  content: "\e1e5";
+}
+.proicon-alert-rhombus::before {
+  content: "\e1e6";
+}
+.proicon-diff::before {
+  content: "\e1e7";
+}
+.proicon-chat-question::before {
+  content: "\e1e8";
+}
+.proicon-info-square::before {
+  content: "\e1e9";
 }
