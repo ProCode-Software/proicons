@@ -8,7 +8,6 @@ import { resolve } from 'path'
 import { kebabCase } from './helpers/rename.js'
 import { prettierFormat } from './helpers/prettierFormat.js'
 import ansiColors from 'ansi-colors'
-import { existsSync } from 'fs'
 
 const iconAssetsPath = resolve(import.meta.dirname, '../icons/roblox.json')
 const tempFilePath = resolve(import.meta.dirname, `../../roblox-upload-${pkg.version}.json`)

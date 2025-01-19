@@ -15,5 +15,11 @@ for (const [i, { name }] of lockfile.icons.entries()) {
         codepoints[kebabName] = 0xE000 + i
     }
 }
+// Cleanup codepoints
+for (const [key] of Object.entries(codepoints)) {
+    if (!lockfile.icons.some(({ name }) => kebabCase(name) == key)) {
+        delete codepoints[key]
+    }
+}
 
 writeFileSync(codepointsPath, JSON.stringify(codepoints, undefined, 4))
