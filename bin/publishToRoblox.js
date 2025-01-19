@@ -3,15 +3,21 @@ import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import pkg from '../package.json' with { type: 'json' }
 import iconsJson from '../icons/icons.json' with { type: 'json' }
 import FormData from 'form-data'
-import { createReadStream, writeFileSync, readFileSync } from 'fs'
+import { createReadStream, writeFileSync, readFileSync, existsSync } from 'fs'
 import { resolve } from 'path'
 import { kebabCase } from './helpers/rename.js'
 import { prettierFormat } from './helpers/prettierFormat.js'
 import ansiColors from 'ansi-colors'
+import { existsSync } from 'fs'
 
 const iconAssetsPath = resolve(import.meta.dirname, '../icons/roblox.json')
+const tempFilePath = resolve(import.meta.dirname, `../../roblox-upload-${pkg.version}.json`)
+if (!existsSync(tempFilePath)) writeFileSync(tempFilePath, '[]')
+
 /** @type {import('../icons/roblox.json')} */
 const assetData = JSON.parse(readFileSync(iconAssetsPath, 'utf-8') ?? '{}')
+/** @type {string[]} */
+const uploadedIcons = JSON.parse(readFileSync(tempFilePath, 'utf-8') ?? '[]')
 
 const removedIcons = assetData.exclude
 
@@ -22,8 +28,17 @@ if (!process.env.ROBLOX_PUBLISH_KEY)
 
 const endpoints = {
     publish: 'https://apis.roblox.com/assets/v1/assets',
-    operations: oid => `https://apis.roblox.com/assets/v1/operations/${oid}`,
-    asset: aid => `https://apis.roblox.com/assets/v1/assets/${aid}`,
+    operations: oid => `https://apis.roblox.com/assets/v1/operations/${oid}`
+}
+
+function handleError({ err: { response: { data: { code, message } } } }) {
+    class RobloxError extends Error {
+        constructor(message) {
+            super(ansiColors.red(message))
+            this.name = 'RobloxError'
+        }
+    }
+    throw new RobloxError(`[${code}] ${message}`)
 }
 
 async function publishAsset(iconName, filename) {
@@ -50,75 +65,64 @@ async function publishAsset(iconName, filename) {
         filename: `${filename}.png`,
         contentType: 'image/png',
     })
-    const res = await axios.post(endpoints.publish, form, {
+    const { data } = await axios.post(endpoints.publish, form, {
         headers: {
             ...form.getHeaders(),
             'x-api-key': process.env.ROBLOX_PUBLISH_KEY,
         },
         responseType: 'json',
-    })
-    return res.data
+    }).catch(handleError)
+
+    return data
 }
 
 async function getOperation(operationId) {
-    const res = await axios.get(endpoints.operations(operationId), {
+    const { data } = await axios.get(endpoints.operations(operationId), {
         headers: {
             'x-api-key': process.env.ROBLOX_PUBLISH_KEY,
         },
         responseType: 'json',
-    })
-    return res.data
+    }).catch(handleError)
+    return data
 }
 
 const iconsToPublish = lockfile.icons
     .filter(({ added, updated }) => added == pkg.version || updated == pkg.version) // New icons only
     .map(({ name }) => name)
     .filter(i => !(iconsJson[i].category == 'Logos & Brands' && i !== 'Roblox')) // Remove brands
-    .filter(i => !removedIcons.includes(i)) // Remove filtered icons
+    .filter(i => !removedIcons.includes(i) && !uploadedIcons.includes(i)) // Remove filtered icons and already uploaded icons
 
-const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
+const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-    ; (async () => {
-        for (const iconName of iconsToPublish) {
-            try {
-                const data1 = await publishAsset(iconName, kebabCase(iconName))
-                const { operationId } = data1
+console.log(ansiColors.yellow(`Publishing ${iconsToPublish.length} icons...`));
 
-                // Waiting is required due to Roblox rate limits
-                await wait(4_000)
+(async () => {
+    for (const iconName of iconsToPublish) {
+        try {
+            const { operationId } = await publishAsset(iconName, kebabCase(iconName))
 
-                async function waitForCompletion() {
-                    let data2
-                    do {
-                        data2 = await getOperation(operationId)
+            // Waiting is required due to Roblox rate limits
+            await wait(4000)
 
-                        if (!data2.done) {
-                            console.log(
-                                ansiColors.yellow('Waiting for operation to complete...')
-                            )
-                            await wait(4_000)
-                        }
-                    } while (!data2.done)
-                    return data2
-                }
-
-                async function getAssetId() {
-                    const data2 = await waitForCompletion()
-
-                    const { response } = data2
-                    return response
-                }
-
-                const response = await getAssetId()
-                assetData[iconName] = response.assetId
-                console.log(ansiColors.green(`Published ${iconName}`))
-
-                writeFileSync(iconAssetsPath, await prettierFormat(assetData))
-            } catch (err) {
-                console.log(ansiColors.red(`Error publishing ${iconName}:`))
-                throw err
+            while (!(await getOperation(operationId)).done) {
+                console.log(
+                    ansiColors.yellow('Waiting for operation to complete...')
+                )
+                await wait(4000)
             }
+
+            const { response: { assetId } } = await getOperation(operationId)
+            assetData.assetPaths[iconName] = assetId
+            writeFileSync(iconAssetsPath, await prettierFormat(assetData))
+
+            console.log(
+                ansiColors.green(`Published ${iconName}:`), ansiColors.cyan(assetId)
+            )
+        } catch (err) {
+            console.log(ansiColors.red(`Error publishing ${iconName}:`))
+            throw err
         }
-    })().then(() => {
-        console.log(ansiColors.green(`Done publishing icons!`))
-    })
+    }
+})().then(() => {
+    console.log(ansiColors.green(`Done publishing icons!`))
+})

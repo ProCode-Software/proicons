@@ -4,7 +4,7 @@ editLink: true
 ---
 
 <script setup lang="ts">
-// import { data } from '../../.vitepress/data/fetchRobloxData.data'
+import { data } from '../../.vitepress/data/fetchRobloxData.data'
 </script>
 
 # Using ProIcons in Roblox
@@ -42,7 +42,7 @@ The file is in the following format:
 ```json
 {
     "exclude": [...],
-    "asset-paths": {
+    "assetPaths": {
         "Add Rhombus": "135021095926333",
         "Add Square": "97666464232500",
         "Add Square Multiple": "85422256562940",
@@ -52,9 +52,9 @@ The file is in the following format:
 ```
 
 ### Loading icons
-To get the asset ID for an icon, you can index the `asset-paths` object.
+To get the asset ID for an icon, you can index the `assetPaths` object.
 ```luau
-local icons = data['asset-paths']
+local icons = data.assetPaths
 
 -- Get the asset id for 'Add' icon
 local Add = icons.Add
@@ -81,6 +81,6 @@ Icons are added and updated every release. All icons are uploaded in white, and 
 ## Excluded icons
 Due to Roblox moderation policies, the following icons have not been uploaded:
 
-<!-- <ul>
+<ul>
     <li v-for="item in data.exclude">{{ item }}</li>
-</ul> -->
+</ul>
