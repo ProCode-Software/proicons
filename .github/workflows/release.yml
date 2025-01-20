@@ -20,6 +20,11 @@ jobs:
     env:
       VERSION: ${{ inputs.version }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
       - name: Get bundle version
         run: |
           version_str=${VERSION//./-}
