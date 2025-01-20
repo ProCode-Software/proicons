@@ -27,6 +27,7 @@ const isHorizontal: Record<Props['type'], boolean> = {
 
 const property = model[bind]
 const value = ref(property)
+const colorInput = ref(null)
 
 const updateSwitchValue = inject('update-slider-value', (e) => {
     value.value = !value.value
@@ -51,7 +52,7 @@ watch(() => model[bind], (newValue) => {
             {{ label }}{{ type == 'slider' ? ":" : '' }}
             <span class="value" v-if="type == 'slider'">
                 {{ value < 0 ? 'Default' : `${value}${suffix
-                    ?? '' }` }} </span>
+                    ?? ''}` }} </span>
 
                     <abbr v-if="tooltip" :title="tooltip">
                         <InfoIcon :size="20"
@@ -73,9 +74,12 @@ watch(() => model[bind], (newValue) => {
             <input type="text" class="colorInput"
                 v-model="value"
                 @blur="() => { if (value == '') value = defaultValue }">
-            <div class="colorPreview">
-                <input type="color" v-model="value">
-            </div>
+            <button class="colorPreview"
+                @click="colorInput?.click"
+                :style="{ background: value }">
+                <input type="color" v-model="value"
+                    ref="colorInput">
+            </button>
         </div>
     </div>
 </template>
@@ -172,18 +176,12 @@ watch(() => model[bind], (newValue) => {
         height: 26px;
         border-radius: 8px;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
+        border: none;
+        outline: none;
         flex: none;
 
         input {
-            padding: 0;
-            border: 0;
-            outline: none;
-            width: 36px;
-            height: 36px;
-            flex: none;
+            display: none;
         }
     }
 }

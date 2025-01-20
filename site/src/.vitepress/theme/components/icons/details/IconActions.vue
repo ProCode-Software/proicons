@@ -1,13 +1,20 @@
 <script setup lang="ts">
 import { ChevronDownIcon } from "@proicons/vue";
 import { computed, ref } from "vue";
-import { copyChar, copyDataUri, copySvg } from "../../../composables/copyData";
+import { copyChar, copyDataUri, copySvg, downloadPng, downloadSvg } from "../../../composables/copyData";
 import { Codepoints, IconEntry } from "../../../composables/types";
 import Flyout from '../Flyout.vue';
+import { customizationData, useAllCustomizations } from "../../../composables/useCustomizations";
 
 const { icon, codepoints } = defineProps<{ icon: IconEntry, codepoints: Codepoints }>()
 const iconName = computed(() => icon[0])
 const iconData = computed(() => icon[1])
+const customizedIcon = computed(() => {
+    return {
+        ...iconData.value,
+        icon: useAllCustomizations(iconData.value.icon, customizationData)
+    } 
+})
 
 const chevronSize = 18
 const viewCodeOpen = ref(false),
@@ -30,13 +37,13 @@ const items = {
         { text: 'Vue' }
     ],
     Copy: [
-        { text: 'Copy SVG', action: () => { copySvg(iconData); setCopied() } },
-        { text: 'Copy Data URL', action: () => { copyDataUri(iconData); setCopied() } },
+        { text: 'Copy SVG', action: () => { copySvg(customizedIcon); setCopied() } },
+        { text: 'Copy Data URL', action: () => { copyDataUri(customizedIcon); setCopied() } },
         { text: 'Copy Glyph', action: () => { copyChar(iconName, codepoints); setCopied() } }
     ],
     Download: [
-        { text: 'Download SVG' },
-        { text: 'Download PNG' }
+        { text: 'Download SVG', action: () => downloadSvg(iconName, customizedIcon) },
+        { text: 'Download PNG', action: () => downloadPng(iconName, customizedIcon) }
     ]
 }
 </script>
@@ -56,7 +63,8 @@ const items = {
                 <template #trigger="{ toggle }">
                     <button class="VPButton medium alt"
                         @click="toggle">
-                        {{recentlyCopied ? 'Copied!' : 'Copy'}}
+                        {{ recentlyCopied ? 'Copied!' :
+                        'Copy'}}
                         <ChevronDownIcon
                             class="dropdownIcon"
                             :size="chevronSize" />

@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-import { filterIcons } from '../../composables/IconSearch';
-import { Icon } from "../../composables/types";
-import { fetchCodepoints, fetchIconsFromVersion } from "../../composables/versionData";
-import IconDetails from "./details/IconDetails.vue";
-import IconList from "./IconList.vue";
-import IconSearch from "./IconSearch.vue";
-import NoResults from "./NoResults.vue";
-import VersionSelection from "./VersionSelection.vue";
-import { customizationData } from "../../composables/useCustomizations";
+import { computed, ref } from 'vue'
+import { filterIcons } from '../../composables/IconSearch'
+import { Icon } from '../../composables/types'
+import { fetchCodepoints, fetchIconsFromVersion } from '../../composables/versionData'
+import IconDetails from './details/IconDetails.vue'
+import IconList from './IconList.vue'
+import IconSearch from './IconSearch.vue'
+import NoResults from './NoResults.vue'
+import VersionSelection from './VersionSelection.vue'
+import { customizationData } from '../../composables/useCustomizations'
 
 const query = ref('')
 const selectedIcon = ref(null)
@@ -20,20 +20,21 @@ const codepoints = ref({})
 const length = computed(() => Object.entries(icons.value).length)
 
 const filteredIcons = computed(() =>
-    query.value.length > 0
-        ? ref(addEvents(filterIcons(icons.value, query.value)))
-        : icons
+    query.value.length > 0 ? ref(addEvents(filterIcons(icons.value, query.value))) : icons
 )
 
 function addEvents(ics: Record<string, Icon>) {
     return Object.fromEntries(
-        Object.entries(ics)
-            .map(([name, data]) => {
-                return [name, {
+        Object.entries(ics).map(([name, data]) => {
+            return [
+                name,
+                {
                     action: selectIcon,
-                    ...data
-                }]
-            }))
+                    ...data,
+                },
+            ]
+        })
+    )
 }
 
 async function updateVersion(v: string) {
@@ -53,40 +54,43 @@ function selectIcon(ic) {
 }
 </script>
 <template>
-    <div class="IconPage" :style="{
-        '--customize-color': customizationData.color,
-        '--customize-stroke-width': customizationData.strokeWidth,
-        '--customize-radius': +customizationData.cornerRadius > 0.5
-            ? `${customizationData.cornerRadius}px`
-            : undefined,
-        '--customize-size': customizationData.size
-            ? `${customizationData.size}px`
-            : undefined,
-        '--customize-outline-stroke-width': customizationData.strokeFilledElements
-            && +customizationData.strokeWidth > 1.5
-            ? +customizationData.strokeWidth - 1.5
-            : undefined
-    }">
+    <div
+        class="IconPage"
+        :style="{
+            '--customize-color': customizationData.color,
+            '--customize-stroke-width': customizationData.strokeWidth,
+            '--customize-radius':
+                +customizationData.cornerRadius > 0.5
+                    ? `${customizationData.cornerRadius}px`
+                    : undefined,
+            '--customize-size': customizationData.size
+                ? `${customizationData.size}px`
+                : undefined,
+            '--customize-outline-stroke-width':
+                customizationData.strokeFilledElements &&
+                +customizationData.strokeWidth > 1.5
+                    ? +customizationData.strokeWidth - 1.5
+                    : undefined,
+        }"
+    >
         <main>
             <div class="group">
-                <IconSearch
-                    :placeholder="`Search ${length} icons`"
-                    v-model="query" />
+                <IconSearch :placeholder="`Search ${length} icons`" v-model="query" />
                 <Suspense>
-                    <VersionSelection
-                        @version-change="updateVersion" />
+                    <VersionSelection @version-change="updateVersion" />
                 </Suspense>
             </div>
 
             <IconList
                 v-if="Object.entries(filteredIcons.value).length > 0"
-                :icons="filteredIcons.value" :query="query"
-                :selectedIcon="selectedIconName" />
+                :icons="filteredIcons.value"
+                :query="query"
+                :selectedIcon="selectedIconName"
+            />
 
             <NoResults v-else :query="query" />
         </main>
-        <IconDetails :icon="selectedIcon"
-            :lockfile="lockfile" :codepoints="codepoints" />
+        <IconDetails :icon="selectedIcon" :lockfile="lockfile" :codepoints="codepoints" />
     </div>
 </template>
 <style lang="scss" scoped>
@@ -105,7 +109,7 @@ function selectIcon(ic) {
         width: 100%;
     }
 
-    &>main {
+    & > main {
         display: flex;
         flex-direction: column;
         gap: 20px;

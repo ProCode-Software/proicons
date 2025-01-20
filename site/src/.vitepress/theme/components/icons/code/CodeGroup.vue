@@ -44,7 +44,7 @@ function highlight(block: { code: string; language: any; }) {
         <div class="tabs">
             <template v-for="{ label, id } in tabs">
                 <input type="radio" :name="groupId" :id="id">
-                <label data-title="PNPM" :for="id">{{ label }}</label>
+                <label :data-title="label" :for="id">{{ label }}</label>
             </template>
         </div>
         <div class="blocks">

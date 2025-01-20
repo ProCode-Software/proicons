@@ -307,3 +307,6 @@ input {
     color: var(--vp-button-alt-text);
     background-color: var(--vp-button-alt-bg);
 }
+.dark:has(.IconPage) svg {
+    --vp-c-text-1: rgba(255, 255, 245, 1);
+}

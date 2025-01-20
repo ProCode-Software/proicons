@@ -300,9 +300,6 @@ const deprecationMessage = (data: typeof deprecationData.value) =>
     height: 100%;
     display: flex;
 }
-.dark .iconPreviewGrid svg {
-    color: #fff;
-}
 
 .deprecationBanner {
     font-size: 15px;
