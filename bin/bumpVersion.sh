@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+set -e
+
+SCRIPT=$(dirname "${BASH_SOURCE[0]}")
+PROICONS_ROOT="$(realpath "$SCRIPT/../..")"
+
 source "$PROICONS_ROOT/bin/helpers/utils.sh"
 
 packages=("$PROICONS_ROOT/packages/"* "$PROICONS_ROOT")
