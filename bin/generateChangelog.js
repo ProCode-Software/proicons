@@ -1,6 +1,5 @@
 import { readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
-import ansiColors from 'ansi-colors'
 import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import pkg from '../package.json' with { type: 'json' }
 const { version } = pkg
@@ -33,7 +32,7 @@ export function generateChangelog() {
     if (shouldWrite) {
         const changelogPath = resolve(__rootdir, 'CHANGELOG.md')
         writeFileSync(changelogPath, changelog)
-        console.log(ansiColors.green(`\nWritten changelog to ${changelogPath}!\n`))
+        console.log(`\nWritten changelog to ${changelogPath}!\n`)
     }
 
     return changelog
