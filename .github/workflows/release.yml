@@ -39,6 +39,6 @@ jobs:
         run: node ./bin/generateChangelog.js -w
 
       - name: Publish release to GitHub
-        run: gh release create $VERSION "./icons/$filename" -F CHANGELOG.md -t "ProIcons v$VERSION" ${{ inputs.version == false && '-d' || '' }}
+        run: gh release create $VERSION "./icons/$filename" -F CHANGELOG.md -t "ProIcons v$VERSION" -d=${{ inputs.draft }}
         env:
           GH_TOKEN: ${{ github.token }}
