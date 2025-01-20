@@ -27,7 +27,7 @@ jobs:
           echo "filename=$filename" >> $GITHUB_ENV
 
       - name: Create ZIP bundle
-        working-directory: './icons'
+        working-directory: 'icons'
         run: zip -r $filename ./*
 
       - name: Generate changelog
