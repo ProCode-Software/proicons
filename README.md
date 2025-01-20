@@ -162,3 +162,4 @@ For more info on how to contribute, please see our [contributing guide](https://
 - Alpha bleeding script from https://github.com/Corecii/Transparent-Pixel-Fix
 - API based on [Feather Icons](https://github.com/feathericons/feather)
 - Website design inspired by [Lucide Icons](https://github.com/lucide-icons/lucide)
+- Logos on website from [svgl](https://svgl.app)

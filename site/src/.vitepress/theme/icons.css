@@ -109,3 +109,38 @@
 .vpi-info {
     --icon: url("https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/svg/info.svg");
 }
+
+/* Package manager logos */
+.vp-code-group .tabs label {
+    display: inline-flex;
+}
+
+.vp-code-block-title [data-title]:before,
+.vp-code-group [data-title]:before {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    align-self: center;
+    margin-right: .5em;
+    background: var(--icon) no-repeat center / contain;
+}
+
+[data-title=NPM]:before {
+    content: "";
+    --icon: url("/logos/npm.svg");
+}
+
+[data-title=Yarn]:before {
+    content: "";
+    --icon: url("/logos/yarn.svg");
+}
+
+[data-title=PNPM]:before {
+    content: "";
+    --icon: url("/logos/pnpm.svg");
+}
+
+[data-title=Bun]:before {
+    content: "";
+    --icon: url("/logos/bun.svg");
+}

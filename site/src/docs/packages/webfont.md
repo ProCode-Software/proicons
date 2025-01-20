@@ -49,5 +49,8 @@ If importing a variable icon such as `add-square-multiple--var`, make sure to on
 :::
 
 ## Caveats
-- There is no tree-shaking
+- Like all icon fonts, icons may have a lower quality or be misaligned
+- There is no tree-shaking, all fonts and icons will be imported
 - Icon strokes cannot be customized
+
+These features are available in the [ProIcons HTML](html-api) package

@@ -2,14 +2,14 @@ export default [
     { text: 'Icons', link: 'icons' },
     { text: 'Guide', link: '/docs/about' },
     {
-        text: 'API Reference',
+        text: 'Packages',
         items: [
             {
                 text: 'HTML',
                 link: '/docs/html-api'
             },
             {
-                text: 'JavaScript',
+                text: 'Vanilla JS',
                 link: '/docs/javascript-api'
             },
             {
@@ -23,6 +23,10 @@ export default [
             {
                 text: 'Vue',
                 link: '/docs/vue'
+            },
+            {
+                text: 'Webfont',
+                link: '/docs/webfont'
             },
         ]
     },

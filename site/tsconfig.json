@@ -15,14 +15,15 @@
         "noEmit": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
-        "allowJs": true
+        "allowJs": true,
+        "rootDir": "."
     },
     "vueCompilerOptions": {
         "vitePressExtensions": [
-            ".md"
+            ".md", ".vue"
         ],
     },
-    "include": ["./src", "**/*.md"],
+    "include": ["./src", "./src/**/*.md", "./src/**/*.vue"],
     "exclude": [
         "node_modules",
         "**/node_modules/*"
