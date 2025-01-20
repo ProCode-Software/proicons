@@ -16,7 +16,7 @@ importers:
         version: 19.0.3(@types/react@19.0.7)
       '@vitejs/plugin-react-swc':
         specifier: ^3.7.2
-        version: 3.7.2(vite@6.0.7)
+        version: 3.7.2(vite@6.0.10)
       dts-bundle-generator:
         specifier: ^9.5.1
         version: 9.5.1
@@ -33,11 +33,11 @@ importers:
         specifier: ^5.7.3
         version: 5.7.3
       vite:
-        specifier: ^6.0.7
-        version: 6.0.7
+        specifier: ^6.0.10
+        version: 6.0.10
       vite-plugin-dts:
         specifier: ^4.5.0
-        version: 4.5.0(rollup@4.31.0)(typescript@5.7.3)(vite@6.0.7)
+        version: 4.5.0(rollup@4.31.0)(typescript@5.7.3)(vite@6.0.10)
 
 packages:
 
@@ -815,8 +815,8 @@ packages:
       vite:
         optional: true
 
-  vite@6.0.7:
-    resolution: {integrity: sha512-RDt8r/7qx9940f8FcOIAH9PTViRrghKaK2K1jY3RaAURrEUbm9Du1mJ72G+jlhtG3WwodnfzY8ORQZbBavZEAQ==}
+  vite@6.0.10:
+    resolution: {integrity: sha512-MEszunEcMo6pFsfXN1GhCFQqnE25tWRH0MA4f0Q7uanACi4y1Us+ZGpTMnITwCTnYzB2b9cpmnelTlxgTBmaBA==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
@@ -1170,10 +1170,10 @@ snapshots:
     dependencies:
       csstype: 3.1.3
 
-  '@vitejs/plugin-react-swc@3.7.2(vite@6.0.7)':
+  '@vitejs/plugin-react-swc@3.7.2(vite@6.0.10)':
     dependencies:
       '@swc/core': 1.10.8
-      vite: 6.0.7
+      vite: 6.0.10
     transitivePeerDependencies:
       - '@swc/helpers'
 
@@ -1536,7 +1536,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite-plugin-dts@4.5.0(rollup@4.31.0)(typescript@5.7.3)(vite@6.0.7):
+  vite-plugin-dts@4.5.0(rollup@4.31.0)(typescript@5.7.3)(vite@6.0.10):
     dependencies:
       '@microsoft/api-extractor': 7.49.1
       '@rollup/pluginutils': 5.1.4(rollup@4.31.0)
@@ -1549,13 +1549,13 @@ snapshots:
       magic-string: 0.30.17
       typescript: 5.7.3
     optionalDependencies:
-      vite: 6.0.7
+      vite: 6.0.10
     transitivePeerDependencies:
       - '@types/node'
       - rollup
       - supports-color
 
-  vite@6.0.7:
+  vite@6.0.10:
     dependencies:
       esbuild: 0.24.2
       postcss: 8.5.1

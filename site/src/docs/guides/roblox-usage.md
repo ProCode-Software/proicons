@@ -38,6 +38,7 @@ Roblox documentation:
 - [HttpService:GetAsync()](https://create.roblox.com/docs/reference/engine/classes/HttpService#GetAsync)
 - [HttpService:JSONDecode()](https://create.roblox.com/docs/reference/engine/classes/HttpService#JSONDecode)
 
+### Format
 The file is in the following format:
 ```json
 {
