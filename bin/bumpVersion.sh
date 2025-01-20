@@ -2,7 +2,7 @@
 set -e
 
 SCRIPT=$(dirname "${BASH_SOURCE[0]}")
-PROICONS_ROOT="$(realpath "$SCRIPT/../..")"
+PROICONS_ROOT="$(realpath "$SCRIPT/..")"
 
 source "$PROICONS_ROOT/bin/helpers/utils.sh"
 
