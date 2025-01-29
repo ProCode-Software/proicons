@@ -25,16 +25,15 @@ if (!process.env.ROBLOX_PUBLISH_KEY)
         'You forgot your Roblox API key. Use `node --env-file=.env ./publishIcons.js` with the variable "ROBLOX_PUBLISH_KEY"'
     )
 
-const endpoints = {
-    publish: 'https://apis.roblox.com/assets/v1/assets',
-    operations: oid => `https://apis.roblox.com/assets/v1/operations/${oid}`
-}
+const publishEndpoint = 'https://apis.roblox.com/assets/v1/assets'
+const operationsEndpoint = 'https://apis.roblox.com/assets/v1/operations'
+const assetDeliveryEndpoint = 'https://assetdelivery.roblox.com/v1/asset'
 
 function handleError(error) {
     class RobloxError extends Error {
         constructor(message) {
-            super(ansiColors.red(message))
             this.name = 'RobloxError'
+            super(ansiColors.red(message))
         }
     }
     if (!error.response) throw error
@@ -69,7 +68,7 @@ async function publishAsset(iconName, filename) {
         filename: `${filename}.png`,
         contentType: 'image/png',
     })
-    const { data } = await axios.post(endpoints.publish, form, {
+    const { data } = await axios.post(publishEndpoint, form, {
         headers: {
             ...form.getHeaders(),
             'x-api-key': process.env.ROBLOX_PUBLISH_KEY,
@@ -80,8 +79,15 @@ async function publishAsset(iconName, filename) {
     return data
 }
 
+async function getImageId(assetId) {
+    const { data } = await axios.get(`${assetDeliveryEndpoint}/?id=${assetId}`).catch(handleError)
+    const parser = new DOMParser()
+    const imageId = parser.parseFromString(data, 'text/xml').querySelector('.Decal Content[name="Texture"] > url').textContent.replace(/.*?\?id=/, '')
+    return imageId
+}
+
 async function getOperation(operationId) {
-    const { data } = await axios.get(endpoints.operations(operationId), {
+    const { data } = await axios.get(`${operationsEndpoint}/${operationId}`, {
         headers: {
             'x-api-key': process.env.ROBLOX_PUBLISH_KEY,
         },
@@ -96,7 +102,7 @@ const iconsToPublish = lockfile.icons
     .filter(i => !(iconsJson[i].category == 'Logos & Brands' && i !== 'Roblox')) // Remove brands
     .filter(i => !removedIcons.includes(i) && !uploadedIcons.includes(i)) // Remove filtered icons and already uploaded icons
 
-const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 console.log(ansiColors.yellow(`Publishing ${iconsToPublish.length} icons...`));
 
@@ -106,23 +112,24 @@ console.log(ansiColors.yellow(`Publishing ${iconsToPublish.length} icons...`));
             const { operationId } = await publishAsset(iconName, kebabCase(iconName))
 
             // Waiting is required due to Roblox rate limits
-            await wait(4000)
+            await sleep(4000)
 
             while (!(await getOperation(operationId)).done) {
                 console.log(
                     ansiColors.yellow('Waiting for operation to complete...')
                 )
-                await wait(4000)
+                await sleep(4000)
             }
 
             const { response: { assetId } } = await getOperation(operationId)
-            assetData.assetPaths[iconName] = assetId
+            const imageId = await getImageId(assetId)
+            assetData.assetPaths[iconName] = imageId
             uploadedIcons.push(iconName)
             writeFileSync(iconAssetsPath, await prettierFormat(assetData))
             writeFileSync(tempFilePath, await prettierFormat(iconAssetsPath))
 
             console.log(
-                ansiColors.green(`Published ${iconName}:`), ansiColors.cyan(assetId)
+                ansiColors.green(`Published ${iconName}:`), ansiColors.cyan(imageId)
             )
         } catch (err) {
             console.log(ansiColors.red(`Error publishing ${iconName}:`))

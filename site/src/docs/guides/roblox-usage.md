@@ -18,14 +18,12 @@ local HttpService = game:GetService('HttpService')
 local iconsUrl = 'https://github.com/ProCode-Software/proicons/blob/main/icons/roblox.json'
 
 -- Fetch JSON data and catch any errors
-local err, data = pcall(function()
+local success, data = pcall(function()
     return HttpService:JSONDecode(HttpService:GetAsync(iconsUrl))
 end)
-if err then
-    error('Failed to fetch icons')
+if success then
+    print(data)
 end
-     
-print(data) -- Print data if successful
 ```
 ::: warning Important
 For this script to work, you must enable HTTP requests in your game. You can do so by running the following code in the Command Bar in Roblox Studio:
