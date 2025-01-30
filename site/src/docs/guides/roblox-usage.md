@@ -11,7 +11,7 @@ import { data } from '../../.vitepress/data/fetchRobloxData.data'
 ProIcons can easily be used in Roblox. All icons have been uploaded to Roblox and have gone through alpha bleeding via [Pixelfix](https://github.com/Corecii/Transparent-Pixel-Fix).
 
 ## Basics
-A file with the asset IDs of all icons is available at [icons/roblox.json](https://github.com/ProCode-Software/proicons/blob/main/icons/roblox.json) in the repository. This can be fetched and loaded in a Roblox script using Roblox's [HttpService](https://create.roblox.com/docs/reference/engine/classes/HttpService).
+A file with the image IDs of all icons is available at [icons/roblox.json](https://github.com/ProCode-Software/proicons/blob/main/icons/roblox.json) in the repository. This can be fetched and loaded in a Roblox script using Roblox's [HttpService](https://create.roblox.com/docs/reference/engine/classes/HttpService).
 
 ```luau
 local HttpService = game:GetService('HttpService')
@@ -51,7 +51,7 @@ The file is in the following format:
 ```
 
 ### Loading icons
-To get the asset ID for an icon, you can index the `assetPaths` object.
+To get the image ID for an icon, you can index the `assetPaths` object.
 ```luau
 local icons = data.assetPaths
 

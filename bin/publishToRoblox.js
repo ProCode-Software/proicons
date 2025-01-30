@@ -8,6 +8,7 @@ import { resolve } from 'path'
 import { kebabCase } from './helpers/rename.js'
 import { prettierFormat } from './helpers/prettierFormat.js'
 import ansiColors from 'ansi-colors'
+import { JSDOM } from 'jsdom'
 
 const iconAssetsPath = resolve(import.meta.dirname, '../icons/roblox.json')
 const tempFilePath = resolve(import.meta.dirname, `../roblox-upload-${pkg.version}.json`)
@@ -80,9 +81,13 @@ async function publishAsset(iconName, filename) {
 }
 
 async function getImageId(assetId) {
-    const { data } = await axios.get(`${assetDeliveryEndpoint}/?id=${assetId}`).catch(handleError)
-    const parser = new DOMParser()
-    const imageId = parser.parseFromString(data, 'text/xml').querySelector('.Decal Content[name="Texture"] > url').textContent.replace(/.*?\?id=/, '')
+    const { data } = await axios.get(`${assetDeliveryEndpoint}/?id=${assetId}`)
+        .catch(handleError)
+
+    const { window: { document: xmlData } } = new JSDOM(data)
+    const imageId = xmlData.querySelector('.Decal content[name="Texture"] > url')
+        .textContent.replace(/.*?\?id=/, '')
+
     return imageId
 }
 
