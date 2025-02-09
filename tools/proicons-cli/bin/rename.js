@@ -1,8 +1,10 @@
-import { readFileSync, renameSync, writeFileSync } from "fs";
+import { existsSync, readFileSync, renameSync, writeFileSync } from "fs";
 import { formatJson } from "./utils.js";
 import { resolve } from "path";
 import * as renameText from '../../../bin/helpers/rename.js'
 import ansiColors from "ansi-colors";
+import pkg from '../../../package.json' with {type: 'json'}
+const { version } = pkg
 const kebabCase = renameText.kebabCase
 
 /**
@@ -34,14 +36,18 @@ export async function rename(oldName, newName, options) {
         imgDirs.forEach(dirName => {
             const getDirName = (n) => resolve('icons', dirName, kebabCase(n) + `${dirName == 'svg' ? '.svg' : '.png'}`)
 
-            renameSync(getDirName(oldName), getDirName(newName))
+            if (existsSync(getDirName(oldName))) renameSync(getDirName(oldName), getDirName(newName))
         })
 
         if (!options['no-alias']) {
             lockfile.aliases[oldName] = newName
-            const formatted = await formatJson(lockfile)
-            writeFileSync(lockFilePath, formatted)
         }
+        const index = lockfile.icons.findIndex((item) => item.name == oldName)
+        lockfile.icons[index].name = newName
+        lockfile.icons[index].updated = version
+
+        writeFileSync(lockFilePath, await formatJson(lockfile))
+        writeFileSync(iconsPath, await formatJson(iconsFile))
 
         console.log(ansiColors.green(`Successfully renamed ${ansiColors.yellow(oldName)} to ${ansiColors.yellow(newName)}${!options["no-alias"] ? ' and created alias' : ''}.`));
 
