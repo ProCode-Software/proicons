@@ -5,7 +5,6 @@ import * as renameText from '../../../bin/helpers/rename.js'
 import ansiColors from "ansi-colors";
 const kebabCase = renameText.kebabCase
 
-
 /**
  * 
  * @param {string} oldName 
@@ -18,14 +17,20 @@ export async function rename(oldName, newName, options) {
         'png/black', 'png@3x/black', 'png@5x/black']
 
     const lockFilePath = resolve('icons', 'icons.lock.json')
+    const iconsPath = resolve('icons', 'icons.json')
 
     /** @type {import('../../../icons/icons.lock.json')} */
-    const lockfile = JSON.parse(readFileSync(lockFilePath))
+    const lockfile = JSON.parse(readFileSync(lockFilePath, 'utf-8'))
+    const iconsFile = JSON.parse(readFileSync(iconsPath, 'utf-8'))
 
     try {
         if (!lockfile.icons.some((item) => item.name == oldName)) {
             throw new Error(`Icon name '${oldName}' does not exist`)
         }
+
+        iconsFile[newName] = iconsFile[oldName]
+        delete iconsFile[oldName]
+
         imgDirs.forEach(dirName => {
             const getDirName = (n) => resolve('icons', dirName, kebabCase(n) + `${dirName == 'svg' ? '.svg' : '.png'}`)
 
@@ -38,7 +43,7 @@ export async function rename(oldName, newName, options) {
             writeFileSync(lockFilePath, formatted)
         }
 
-        console.log(ansiColors.green(`Successfully renamed ${oldName} to ${newName}${!options["no-alias"] ? ' and created alias' : ''}.`));
+        console.log(ansiColors.green(`Successfully renamed ${ansiColors.yellow(oldName)} to ${ansiColors.yellow(newName)}${!options["no-alias"] ? ' and created alias' : ''}.`));
 
         process.exit(0)
     } catch (error) {
