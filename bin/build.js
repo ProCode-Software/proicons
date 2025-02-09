@@ -210,7 +210,7 @@ function buildModules() {
         const result = execSync(`pnpm run icons:build-modules`)
         console.log(result.toString('utf-8'));
     } catch (e) {
-        console.log(ansiColors.red('Couldn\'t build modules:'));
+        console.log(ansiColors.red("Couldn't build modules:"));
         throw e
     }
 }
@@ -230,11 +230,11 @@ function buildModules() {
     }
     await buildFont(newIcons.length > 0 || args.shouldRebuildAll);
 })().then(() => {
-    console.log(ansiColors.green(ansiColors.bold('\nBuild complete!')));
+    console.log(ansiColors.greenBright('\nBuild complete!'));
     console.timeEnd('Build time')
 
     if (newIcons.length > 0) {
-        console.log(ansiColors.cyan('New icons:', newIcons));
+        console.log(ansiColors.cyan('New icons: ' + newIcons.join(', ')));
     } else {
         console.log(ansiColors.cyan('No newly added icons'));
     }
