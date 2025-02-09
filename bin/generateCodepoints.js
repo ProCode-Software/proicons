@@ -3,6 +3,7 @@ import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import { resolve } from 'path'
 import { kebabCase } from './helpers/rename.js'
 import { readFileSync } from 'fs'
+import ansiColors from 'ansi-colors'
 
 const __dirname = import.meta.dirname
 const codepointsPath = resolve(__dirname, '../icons/fonts/ProIcons.json')
@@ -23,3 +24,4 @@ for (const [key] of Object.entries(codepoints)) {
 }
 
 writeFileSync(codepointsPath, JSON.stringify(codepoints, undefined, 4))
+console.log(ansiColors.green('Successfully added font codepoints!'));

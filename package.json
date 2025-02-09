@@ -41,7 +41,7 @@
         "all:build-modules": "pnpm -r run icons:build-modules",
         "build": "pnpm vite build && pnpm run build:minify",
         "build:minify": "pnpm esbuild --minify dist/umd/proicons.cjs --outfile=dist/umd/proicons.min.cjs --allow-overwrite",
-        "icons:build": "pnpm run font:codepoints && node --no-deprecation ./bin/build.js",
+        "icons:build": "node --no-deprecation ./bin/build.js",
         "icons:build-modules": "node ./bin/addIconFiles.js -t './bin/build/templates/iconTemplate.js' -out './src/icons' -i './src/icons.ts' -d --format ts --clean",
         "icons:optimize": "pnpm run icons:build -o",
         "icons:build-frozen": "pnpm run icons:build -l",

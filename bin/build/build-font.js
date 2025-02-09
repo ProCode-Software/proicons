@@ -5,6 +5,7 @@ import { FontAssetType, generateFonts, OtherAssetType } from '@twbs/fantasticon'
 import ansiColors from "ansi-colors";
 import SVGFixer from 'oslllo-svg-fixer';
 import codepoints from '../../icons/fonts/ProIcons.json' with { type: 'json' }
+import { execSync } from "child_process";
 
 const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
 const lockfile = JSON.parse(readFileSync('icons/icons.lock.json', 'utf-8'))
@@ -47,6 +48,7 @@ async function outlineSvgs(rebuild) {
 /** @param {boolean} rebuild If --rebuild flag was used */
 export async function buildFont(rebuild) {
     try {
+        console.log(execSync('pnpm run font:codepoints').toString('utf-8'))
         await outlineSvgs(rebuild)
 
         await generateFonts({

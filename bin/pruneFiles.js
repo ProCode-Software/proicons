@@ -63,7 +63,7 @@ if (!extraArray.length) {
 }
 console.log(
     ansiColors.bold(
-        ansiColors.yellow(`\nThere are ${ansiColors.cyan(extraArray.length)} extraneous icons in folders. Do you want to remove them?`)
+        ansiColors.yellow(`\nThere are ${ansiColors.cyan(extraArray.length.toString())} extraneous icons in folders. Do you want to remove them?`)
     )
     + ansiColors.dim(' (y/n)')
     + `\nIcons: `

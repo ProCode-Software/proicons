@@ -488,5 +488,18 @@
     "bullet-list": 57741,
     "bullet-list-square": 57742,
     "bullet-list-square-add": 57743,
-    "bullet-list-tree": 57818
+    "bullet-list-tree": 57818,
+    "timer-off": 57834,
+    "alarm-clock": 57835,
+    "box-add": 57836,
+    "dot-square": 57837,
+    "dot-circle": 57838,
+    "album": 57839,
+    "tag-add": 57840,
+    "tag-remove": 57841,
+    "pie-chart": 57842,
+    "file-text": 57843,
+    "exclamation-mark": 57844,
+    "road-barrier": 57845,
+    "photo-add": 57846
 }
