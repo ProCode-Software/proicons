@@ -8,7 +8,7 @@ assignees: ''
 <!--
 Thank you for contributing!
 
-Please only include one icon per pull request unless the icons are similar or variable.
+Please only include one icon per pull request unless the icons are similar.
 -->
 
 ### Icon(s)
@@ -36,7 +36,7 @@ Provide names of ProIcons or URLs of designs your icon was based on if applicabl
 - [ ] I have made sure all strokes in my design have consistent strokes and colors.
 
 - [ ] I have made sure I haven't outlined the strokes of my entire icon.
-*(Icons with outlined paths (such as cutouts, but excluding circles and other shapes) should also have a variable variant submitted)*
+*(Filled shapes, such as dots, are allowed)*
 
 ### Naming
 - [ ] I have read and followed the [naming guidelines](https://procode-software.github.io/proicons/docs/contributing/design-guidelines#naming) when naming my icon.
@@ -50,7 +50,5 @@ Provide names of ProIcons or URLs of designs your icon was based on if applicabl
 *(You can still submit this request even if another has been submitted for the same icon.)*
 
 - [ ] This icon is not a logo or is protected by copyright.
-
-- [ ] I have included a variable variant of my icon in my PR if applicable.
 
 - [ ] This icon follows our [code of conduct](https://github.com/ProCode-Software/proicons/blob/main/CODE*OF*CONDUCT.md).
