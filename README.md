@@ -5,6 +5,9 @@
         <img src="https://img.shields.io/github/v/release/ProCode-Software/proicons?style=for-the-badge"
             alt="Version">
     </a>
+    <a href="https://github.com/ProCode-Software/proicons/releases">
+        <img alt="Icons" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FProCode-Software%2Fproicons%2Fmain%2Ficons%2Ficons.lock.json&query=%24.icons.length&style=for-the-badge&label=Icons">
+    </a>
     <a href="https://github.com/ProCode-Software/proicons">
         <img src="https://img.shields.io/github/stars/ProCode-Software/proicons?style=for-the-badge"
             alt="Stars">
@@ -24,19 +27,19 @@
 
 <p align="center">
 <br>
-<b>A collection of 500+ modern and open-source icons and logos</b>
+<b>👑 A collection of 500+ modern and open-source icons and logos</b>
 <br>
-<a href="https://procode-software.github.io/proicons/icons">Browse icons</a> | 
-<a href="https://procode-software.github.io/proicons/docs/introduction/about">Documentation</a> | 
-<a href="https://github.com/ProCode-Software/proicons">GitHub</a> | 
-<a href="https://www.npmjs.com/package/proicons">NPM</a>
+<a href="https://procode-software.github.io/proicons/icons">⭐ Browse icons</a> | 
+<a href="https://procode-software.github.io/proicons/docs/introduction/about">📕 Documentation</a> | 
+<a href="https://github.com/ProCode-Software/proicons">📁 GitHub</a> | 
+<a href="https://www.npmjs.com/package/proicons">📦 NPM</a>
 </p>
 
 ## Features
 
-- Highly-customizable icons
-- Available for [HTML](https://procode-software.github.io/proicons/docs/html-api), [Node.js](https://procode-software.github.io/proicons/docs/html-api), [React](https://procode-software.github.io/proicons/docs/react) and [Vue](https://procode-software.github.io/proicons/docs/vue)
-- Tree-shakable for eliminating unused icons when using a bundler
+- 🎨 Highly-customizable icons
+- 🌐 Available for [HTML](https://procode-software.github.io/proicons/docs/html-api), [Node.js](https://procode-software.github.io/proicons/docs/html-api), [React](https://procode-software.github.io/proicons/docs/react) and [Vue](https://procode-software.github.io/proicons/docs/vue)
+- 🌳 Tree-shakable for eliminating unused icons when using a bundler
 
 ## Packages
 
