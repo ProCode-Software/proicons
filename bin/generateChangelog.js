@@ -3,6 +3,7 @@ import { resolve } from 'path'
 import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import pkg from '../package.json' with { type: 'json' }
 import { kebabCase } from './helpers/rename.js'
+import ansiColors from 'ansi-colors'
 const { version } = pkg
 
 const shouldWrite = process.argv.includes('--write') || process.argv.includes('-w')
@@ -11,28 +12,39 @@ const __rootdir = resolve(import.meta.dirname, '../')
 export function generateChangelog() {
     const newIcons = []
     const updatedIcons = []
+    const renamedIcons = []
 
     for (const { name, added, updated } of lockfile.icons) {
         if (added == version) {
             newIcons.push(name)
         } else if (updated == version) {
-            updatedIcons.push(name)
+
+            const [renamedAlias] = Object.entries(lockfile.aliases).find(([, v]) => v == name) ?? []
+            if (renamedAlias) renamedIcons.push(`${renamedAlias} → ${name}`)
+            else updatedIcons.push(name)
         }
     }
 
-    const toListItem = name => `
+    const toListItem = n => {
+        const name = n.replace(/(.+) → (.+)/, '$2')
+        const kebabName = kebabCase(name)
+        return `
 <li>
-    <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/png@3x/white/${kebabCase(name)}.png#gh-dark-mode-only" width="24">
-    <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/png@3x/black/${kebabCase(name)}.png#gh-light-mode-only" width="24">
-    ${name}
+    <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/png@3x/white/${kebabName}.png#gh-dark-mode-only" width="24">
+    <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/png@3x/black/${kebabName}.png#gh-light-mode-only" width="24">
+    ${n}
 </li>`.trim()
+    }
 
     let changelog = ``
     if (newIcons.length) {
-        changelog += `## New icons\n<ul>${newIcons.map(toListItem).join('\n')}</ul>`
+        changelog += `## New icons\n<ul>\n${newIcons.map(toListItem).join('\n')}\n</ul>`
+    }
+    if (renamedIcons.length) {
+        changelog += `\n\n## Renamed icons\n<ul>\n${renamedIcons.map(toListItem).join('\n')}\n</ul>`
     }
     if (updatedIcons.length) {
-        changelog += `\n\n## Updated icons\n<ul>${updatedIcons.map(toListItem).join('\n')}</ul>`
+        changelog += `\n\n## Updated icons\n<ul>\n${updatedIcons.map(toListItem).join('\n')}\n</ul>`
     }
 
     console.log(changelog)
@@ -40,7 +52,7 @@ export function generateChangelog() {
     if (shouldWrite) {
         const changelogPath = resolve(__rootdir, 'CHANGELOG.md')
         writeFileSync(changelogPath, changelog)
-        console.log(`\nWritten changelog to ${changelogPath}!\n`)
+        console.log(ansiColors.green(`\nWritten changelog to ${changelogPath}!`))
     }
 
     return changelog
