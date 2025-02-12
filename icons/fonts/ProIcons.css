@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?87ca56a526ae49fbe4efc34e8745ec74") format("truetype"),
-url("./ProIcons.woff?87ca56a526ae49fbe4efc34e8745ec74") format("woff"),
-url("./ProIcons.woff2?87ca56a526ae49fbe4efc34e8745ec74") format("woff2"),
-url("./ProIcons.eot?87ca56a526ae49fbe4efc34e8745ec74#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?b3d50ae66a8acee89cee97fc79e45e12") format("truetype"),
+url("./ProIcons.woff?b3d50ae66a8acee89cee97fc79e45e12") format("woff"),
+url("./ProIcons.woff2?b3d50ae66a8acee89cee97fc79e45e12") format("woff2"),
+url("./ProIcons.eot?b3d50ae66a8acee89cee97fc79e45e12#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -1526,6 +1526,9 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 }
 .proicon-photo-add::before {
   content: "\e1f6";
+}
+.proicon-road-cone::before {
+  content: "\e1f7";
 }
 .proicon-apps-list::before {
   content: "\f101";

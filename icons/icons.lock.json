@@ -502,42 +502,10 @@
         { "name": "File Text", "added": "4.12.0" },
         { "name": "Exclamation Mark", "added": "4.12.0" },
         { "name": "Road Barrier", "added": "4.12.0" },
-        { "name": "Photo Add", "added": "4.12.0" }
+        { "name": "Photo Add", "added": "4.12.0" },
+        { "name": "Road Cone", "added": "4.12.1" }
     ],
-    "deprecated": [
-        {
-            "icon": "Comment Multiple -Var",
-            "version": "4.11.0",
-            "alternative": "Comment Multiple"
-        },
-        { "icon": "Copy -Var", "version": "4.11.0", "alternative": "Copy" },
-        {
-            "icon": "Tag Multiple -Var",
-            "version": "4.11.0",
-            "alternative": "Tag Multiple"
-        },
-        {
-            "icon": "Chrome Restore -Var",
-            "version": "4.11.0",
-            "alternative": "Chrome Restore"
-        },
-        {
-            "icon": "Window Multiple -Var",
-            "version": "4.11.0",
-            "alternative": "Window Multiple"
-        },
-        {
-            "icon": "Bookmark Multiple -Var",
-            "version": "4.11.0",
-            "alternative": "Bookmark Multiple"
-        },
-        {
-            "icon": "Add Square Multiple -Var",
-            "version": "4.11.0",
-            "alternative": "Add Square Multiple"
-        },
-        { "icon": "PDF 2", "version": "4.11.2", "alternative": "PDF" }
-    ],
+    "deprecated": [{ "icon": "PDF 2", "version": "4.11.2", "alternative": "PDF" }],
     "aliases": {
         "Plus": "Add",
         "X": "Cancel",
@@ -631,6 +599,10 @@
         "Apps List": "Checkbox List",
         "Cloud Upload": "Cloud Arrow Up",
         "Cloud Download": "Cloud Arrow Down",
-        "Tasks": "Task List"
+        "Tasks": "Task List",
+        "Construction": "Road Barrier",
+        "Construction Cone": "Road Cone",
+        "GNU-Linux": "Linux",
+        "Text Document": "File Text"
     }
 }

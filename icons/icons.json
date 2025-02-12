@@ -2507,11 +2507,16 @@
     "Road Barrier": {
         "description": "Construction, Road Block, Roadblock, Work Zone, Roadwork, Border",
         "category": "Activities",
-        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-width=\"1.5\" d=\"M2.75 21.25h18.5\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m4.75 21.25 1.502-4.625M19.25 21.25l-1.502-4.625M7.754 12l-1.502 4.625M7.754 12l1.501-4.625M7.754 12h8.492m-9.994 4.625h11.496m-8.493-9.25 1.278-3.934a1 1 0 0 1 .95-.691h1.033a1 1 0 0 1 .951.691l1.278 3.934m-5.49 0h5.49m0 0L16.246 12m0 0 1.502 4.625\"/></svg>"
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M5.75 15.25v6m0-18.5v3m12.5 9.5v6m0-18.5v3\"/><path stroke=\"currentColor\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M4.75 5.75a2 2 0 0 0-2 2v5.5a2 2 0 0 0 2 2h14.5a2 2 0 0 0 2-2v-5.5a2 2 0 0 0-2-2z\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m8.917 5.75-5.701 8.783M15.087 5.75l-6.167 9.5m6.17 0 5.698-8.778\"/></svg>"
     },
     "Photo Add": {
         "description": "Image, Picture",
         "category": "Files",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><circle cx=\"15.091\" cy=\"8.909\" r=\"1.5\" fill=\"currentColor\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M3.5 16.57a4 4 0 0 0 4 3.93h3.48M3.5 16.57V7.5a4 4 0 0 1 4-4h9a4 4 0 0 1 4 4v3.48m-17 5.59.178-.2 3.206-3.827a2 2 0 0 1 3.066 0l1.242 1.482\"/><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M17.5 23a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11m0-8.993a.5.5 0 0 1 .5.5V17h2.493a.5.5 0 1 1 0 1H18v2.494a.5.5 0 0 1-1 0V18h-2.493a.5.5 0 1 1 0-1H17v-2.493a.5.5 0 0 1 .5-.5\" clip-rule=\"evenodd\"/></svg>"
+    },
+    "Road Cone": {
+        "description": "Construction, Barrier, Work Zone, Roadwork, Border, Block, VLC",
+        "category": "Activities",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-width=\"1.5\" d=\"M2.75 21.25h18.5\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m4.75 21.25 1.502-4.625M19.25 21.25l-1.502-4.625M7.754 12l-1.502 4.625M7.754 12l1.501-4.625 1.278-3.934a1 1 0 0 1 .95-.691h1.033a1 1 0 0 1 .951.691l1.278 3.934L16.246 12m-8.492 0h8.492m-9.994 4.625h11.496M16.246 12l1.502 4.625\"/></svg>"
     }
 }

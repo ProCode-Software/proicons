@@ -377,6 +377,7 @@ export default [
     'Ribbon',
     'Ribbon Star',
     'Road Barrier',
+    'Road Cone',
     'Roblox',
     'Ruler',
     'Ruler Diagonal',

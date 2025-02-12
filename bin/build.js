@@ -195,7 +195,7 @@ async function buildPngs() {
             progressBar.tick(1, {
                 item: file.slice(0, -4),
             });
-        }));
+        })());
     }
     await Promise.all(promises)
 
