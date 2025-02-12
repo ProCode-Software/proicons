@@ -1,14 +1,14 @@
+import ansiColors from 'ansi-colors'
 import axios from 'axios'
+import FormData from 'form-data'
+import { createReadStream, existsSync, readFileSync, rmSync, writeFileSync } from 'fs'
+import { JSDOM } from 'jsdom'
+import { resolve } from 'path'
+import iconsJson from '../icons/icons.json' with { type: 'json' }
 import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import pkg from '../package.json' with { type: 'json' }
-import iconsJson from '../icons/icons.json' with { type: 'json' }
-import FormData from 'form-data'
-import { createReadStream, writeFileSync, readFileSync, existsSync, rmSync } from 'fs'
-import { resolve } from 'path'
-import { kebabCase } from './helpers/rename.js'
 import { prettierFormat } from './helpers/prettierFormat.js'
-import ansiColors from 'ansi-colors'
-import { JSDOM } from 'jsdom'
+import { kebabCase } from './helpers/rename.js'
 
 const iconAssetsPath = resolve(import.meta.dirname, '../icons/roblox.json')
 const tempFilePath = resolve(import.meta.dirname, `../roblox-upload-${pkg.version}.json`)

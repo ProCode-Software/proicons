@@ -1,8 +1,8 @@
-import lockfile from '../icons/icons.lock.json' with { type: 'json' }
-import icons from '../icons/icons.json' with { type: 'json' }
-import { join, resolve } from "path"
-import { existsSync, readdirSync, unlinkSync } from "fs"
 import ansiColors from "ansi-colors"
+import { existsSync, readdirSync, unlinkSync } from "fs"
+import { join, resolve } from "path"
+import icons from '../icons/icons.json' with { type: 'json' }
+import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import { kebabCase } from "./helpers/rename.js"
 
 // Audit lockfiles

@@ -1,15 +1,15 @@
-import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'fs'
-import { resolve } from 'path';
-import { prettierFormat } from './helpers/prettierFormat.js'
-import * as rename from './helpers/rename.js';
 import ansiColors from 'ansi-colors';
-import { optimize } from 'svgo';
-import progress from 'progress';
-import { buildFont } from "./build/build-font.js";
-import { Piscina } from 'piscina'
 import { execSync } from "child_process";
-import pkg from '../package.json' with { type: 'json' }
-import inIcons from '../in/in.json' with { type: 'json' }
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'fs';
+import { resolve } from 'path';
+import { Piscina } from 'piscina';
+import progress from 'progress';
+import { optimize } from 'svgo';
+import inIcons from '../in/in.json' with { type: 'json' };
+import pkg from '../package.json' with { type: 'json' };
+import { buildFont } from "./build/build-font.js";
+import { prettierFormat } from './helpers/prettierFormat.js';
+import * as rename from './helpers/rename.js';
 
 const __rootdir = resolve(import.meta.dirname, '../')
 const { version } = pkg
@@ -195,7 +195,7 @@ async function buildPngs() {
             progressBar.tick(1, {
                 item: file.slice(0, -4),
             });
-        })());
+        }));
     }
     await Promise.all(promises)
 

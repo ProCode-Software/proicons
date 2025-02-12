@@ -1,14 +1,12 @@
-import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, writeFileSync } from "fs";
-import path from "path";
-import * as rename from '../helpers/rename.js'
 import { FontAssetType, generateFonts, OtherAssetType } from '@twbs/fantasticon';
 import ansiColors from "ansi-colors";
-import SVGFixer from 'oslllo-svg-fixer';
-import codepoints from '../../icons/fonts/ProIcons.json' with { type: 'json' }
 import { execSync } from "child_process";
+import { existsSync, mkdirSync, readFileSync } from "fs";
+import SVGFixer from 'oslllo-svg-fixer';
+import path from "path";
+import codepoints from '../../icons/fonts/ProIcons.json' with { type: 'json' };
 
 const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
-const lockfile = JSON.parse(readFileSync('icons/icons.lock.json', 'utf-8'))
 
 const metadata = `<?xml-model href="https://www.w3.org/TR/WOFF/metadata/woffmeta.rng"?>
 <metadata version="1.0">

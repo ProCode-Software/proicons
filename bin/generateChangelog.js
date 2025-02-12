@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'fs'
+import { writeFileSync } from 'fs'
 import { resolve } from 'path'
 import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import pkg from '../package.json' with { type: 'json' }
@@ -20,14 +20,19 @@ export function generateChangelog() {
         }
     }
 
-    const toListItem = name => `- ![](https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/png/white/${kebabCase(name)}.png#gh-dark-mode-only)![](https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/png/black/${kebabCase(name)}.png#gh-light-mode-only) ${name}`
+    const toListItem = name => `
+<li>
+    <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/png/white/${kebabCase(name)}.png#gh-dark-mode-only">
+    <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/png/black/${kebabCase(name)}.png#gh-light-mode-only">
+    ${name}
+</li>`.trim()
 
     let changelog = ``
     if (newIcons.length) {
-        changelog += `## New icons\n${newIcons.map(toListItem).join('\n')}`
+        changelog += `## New icons\n<ul>${newIcons.map(toListItem).join('\n')}</ul>`
     }
     if (updatedIcons.length) {
-        changelog += `\n\n## Updated icons\n${updatedIcons.map(toListItem).join('\n')}`
+        changelog += `\n\n## Updated icons\n<ul>${updatedIcons.map(toListItem).join('\n')}</ul>`
     }
 
     console.log(changelog)

@@ -1,5 +1,5 @@
 export function format(str: string): string {
-    return str.replace(/[-_()\.\\\/+!@#$%^&*\[\]]/g, ' ').replace(/\s\s+/g, ' ').replace(/^\s+|\s+$/g, '')
+    return str.replace(/[^\w ]|^\d+/g, ' ').replace(/\s+/g, ' ').trim();
 }
 export function camelCase(str: string): string {
     return format(str).split(' ')
