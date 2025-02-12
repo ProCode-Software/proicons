@@ -1,7 +1,7 @@
 import { HeadConfig } from "vitepress"
 
 const name = 'ProIcons'
-const description = "A collection of 400+ modern and open-source icons"
+const description = "A collection of 500+ modern and open-source icons"
 const bannerUrl = 'https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover_light.png'
 const favicon = 'https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/logo_light.svg'
 

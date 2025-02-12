@@ -4,16 +4,16 @@ import head from './head.mts'
 import nav from './nav.mts'
 
 const name = 'ProIcons'
-const description = "A collection of 400+ modern and open-source icons"
+const description = "A collection of 500+ modern and open-source icons"
 
 const socialLinks = [
-    { name: 'GitHub', icon: 'github', link: 'https://github.com/ProCode-Software/proicons'},
-    { name: 'X (Twitter)', icon: 'x', link: 'https://x.com/ProCode-Software'},
-    { name: 'Bluesky', icon: 'bluesky', link: 'https://bsky.app/profile/procodesoftware.bsky.social'},
+    { name: 'GitHub', icon: 'github', link: 'https://github.com/ProCode-Software/proicons' },
+    { name: 'X (Twitter)', icon: 'x', link: 'https://x.com/ProCode-Software' },
+    { name: 'Bluesky', icon: 'bluesky', link: 'https://bsky.app/profile/procodesoftware.bsky.social' },
 ]
 
 function getSocialLinks() {
-    return socialLinks.map(({name, icon, link}) => {
+    return socialLinks.map(({ name, icon, link }) => {
         return `
         <a href="${link}" target="_blank" aria-label="${name}" title="${name}">
             <span class="VPIcon vpi-social-${icon}"></span>

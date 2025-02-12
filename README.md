@@ -24,7 +24,7 @@
 
 <p align="center">
 <br>
-<b>A collection of 400+ modern and open-source icons and logos</b>
+<b>A collection of 500+ modern and open-source icons and logos</b>
 <br>
 <a href="https://procode-software.github.io/proicons/icons">Browse icons</a> | 
 <a href="https://procode-software.github.io/proicons/docs/introduction/about">Documentation</a> | 
