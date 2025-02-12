@@ -41,4 +41,4 @@ jobs:
       - name: Publish release to GitHub
         run: gh release create $VERSION "./icons/$filename" -F CHANGELOG.md -t "ProIcons v$VERSION" -d=${{ inputs.draft }}
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}

@@ -22,8 +22,8 @@ export function generateChangelog() {
 
     const toListItem = name => `
 <li>
-    <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/png/white/${kebabCase(name)}.png#gh-dark-mode-only">
-    <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/png/black/${kebabCase(name)}.png#gh-light-mode-only">
+    <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/png@3x/white/${kebabCase(name)}.png#gh-dark-mode-only" width="24">
+    <img src="https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/png@3x/black/${kebabCase(name)}.png#gh-light-mode-only" width="24">
     ${name}
 </li>`.trim()
 
