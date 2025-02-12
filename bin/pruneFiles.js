@@ -1,7 +1,7 @@
 import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import icons from '../icons/icons.json' with { type: 'json' }
 import { join, resolve } from "path"
-import { readdirSync, unlinkSync } from "fs"
+import { existsSync, readdirSync, unlinkSync } from "fs"
 import ansiColors from "ansi-colors"
 import { kebabCase } from "./helpers/rename.js"
 
@@ -43,6 +43,13 @@ const ROOT_DIR = resolve(import.meta.dirname, '../icons')
 const extraIconNames = new Set()
 const extraIconPaths = []
 
+for (const icon in icons) {
+    for (const dir of iconDirs) {
+        if (!existsSync(join(ROOT_DIR, dir, `${kebabCase(icon)}.${dir.slice(0, 3)}`))) {
+            throw new Error(`Files are out of sync: '${icon}' is missing in 'icons/${dir}'`)
+        }
+    }
+}
 for (const dirname of iconDirs) {
     const dir = join(ROOT_DIR, dirname)
     for (const filename of readdirSync(dir)) {
@@ -55,6 +62,7 @@ for (const dirname of iconDirs) {
         }
     }
 }
+
 // Prompt to remove duplicates
 const extraArray = Array.from(extraIconNames)
 if (!extraArray.length) {

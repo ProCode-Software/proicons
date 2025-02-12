@@ -19,11 +19,14 @@ for package in "${packages[@]}"; do
     name=$(basename "$package")
     package_names+=("${name},")
     (
+        file="$package/package.json"
         cd "$package" || exit
-        pnpm version "$new_version" --git-tag-version false --allow-same-version >/dev/null 2>&1
+        new_file=$(jq ".version = \"$new_version\"" "$file")
+        echo "$new_file" > "$file"
     ) &
 done
 
 wait
-formatted="${package_names[@]}"
+formatted="${package_names[*]}"
+formatted="${formatted%,}"
 green "Bumped version for $(yellow "$formatted")"

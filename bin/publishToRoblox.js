@@ -31,17 +31,13 @@ const operationsEndpoint = 'https://apis.roblox.com/assets/v1/operations'
 const assetDeliveryEndpoint = 'https://assetdelivery.roblox.com/v1/asset'
 
 function handleError(error) {
-    class RobloxError extends Error {
-        constructor(message) {
-            this.name = 'RobloxError'
-            super(ansiColors.red(message))
-        }
+    function RobloxError(message) {
+        console.log(ansiColors.red(`RobloxError: ${message}`))
+        process.exit(1)
     }
     if (!error.response) throw error
     const { code, message, errors } = error.response.data
-    if (errors) {
-        throw new RobloxError(errors[0].message)
-    }
+    if (errors) throw new RobloxError(errors[0].message)
     throw new RobloxError(`[${code}] ${message}`)
 }
 
@@ -102,14 +98,35 @@ async function getOperation(operationId) {
 }
 
 const iconsToPublish = lockfile.icons
-    .filter(({ added, updated }) => added == pkg.version || updated == pkg.version) // New icons only
+    .filter(
+        ({ name, added, updated }) =>
+            !assetData.assetPaths[name] || added == pkg.version || updated == pkg.version
+    ) // New or unuploaded icons only
     .map(({ name }) => name)
     .filter(i => !(iconsJson[i].category == 'Logos & Brands' && i !== 'Roblox')) // Remove brands
-    .filter(i => !removedIcons.includes(i) && !uploadedIcons.includes(i)) // Remove filtered icons and already uploaded icons
+    .filter(
+        i => !removedIcons.includes(i) && !uploadedIcons.some(({ icon }) => icon == i)
+    ) // Remove filtered icons and already uploaded icons
+
+// Cleanup icons file
+const deletedIcons = []
+for (const iconName in assetData.assetPaths) {
+    if (!iconsJson[iconName]) {
+        deletedIcons.push(iconName)
+        delete assetData.assetPaths[iconName]
+    }
+}
+writeFileSync(iconAssetsPath, await prettierFormat(assetData))
+if (deletedIcons.length > 0)
+    console.log(
+        ansiColors.cyan(`Removed ${deletedIcons.length} deleted icons:`),
+        deletedIcons.join(', '), '\n'
+    )
+
+// Publish icons
+console.log(ansiColors.yellow(`Publishing ${iconsToPublish.length} icons...`));
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-console.log(ansiColors.yellow(`Publishing ${iconsToPublish.length} icons...`));
 
 (async () => {
     for (const iconName of iconsToPublish) {
@@ -129,9 +146,9 @@ console.log(ansiColors.yellow(`Publishing ${iconsToPublish.length} icons...`));
             const { response: { assetId } } = await getOperation(operationId)
             const imageId = await getImageId(assetId)
             assetData.assetPaths[iconName] = imageId
-            uploadedIcons.push(iconName)
+            uploadedIcons.push({ icon: iconName, assetId: assetId, imageId: imageId })
             writeFileSync(iconAssetsPath, await prettierFormat(assetData))
-            writeFileSync(tempFilePath, await prettierFormat(iconAssetsPath))
+            writeFileSync(tempFilePath, await prettierFormat(uploadedIcons))
 
             console.log(
                 ansiColors.green(`Published ${iconName}:`), ansiColors.cyan(imageId)

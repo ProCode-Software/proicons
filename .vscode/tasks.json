@@ -49,6 +49,13 @@
 			"problemMatcher": [],
 			"label": "Publish icons to Roblox",
 			"detail": "node --env-file=.env ./bin/publishToRoblox.js"
+		},
+		{
+			"type": "npm",
+			"script": "icons:prune",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "Cleanup icons",
 		}
 	]
 }

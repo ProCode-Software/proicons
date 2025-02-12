@@ -40,11 +40,11 @@ Roblox documentation:
 The file is in the following format:
 ```json
 {
-    "exclude": [...],
+    "exclude": ["..."],
     "assetPaths": {
-        "Add Rhombus": "135021095926333",
-        "Add Square": "97666464232500",
-        "Add Square Multiple": "85422256562940",
+        "Accessibility": "87125978665929",
+        "Add": "91287573941495",
+        "Add Circle": "115071695814939",
         // ...
     }
 }
