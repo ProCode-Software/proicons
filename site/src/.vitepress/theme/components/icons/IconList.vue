@@ -26,20 +26,19 @@ const iconsSearch = computed(() => {
 </script>
 <template>
     <div class="IconList">
-        <section
-            v-for="[category, iconsInCategory] in iconsSearch"
+        <section v-for="[category, iconsInCategory] in iconsSearch"
             :id="kebabCase(category)">
 
             <h2 class="categoryTitle">
                 <a :href="query ? undefined : `#${kebabCase(category)}`">
-                    {{category}}
+                    {{ category }}
                     <span class="badge">{{ iconsInCategory.length }}</span>
                 </a>
             </h2>
 
             <div class="categoryIconsList" :key="category">
-                <IconItem v-for="icon in iconsInCategory"
-                    :icon="icon" :key="icon[0]" :selected="icon[0] == selectedIcon" />
+                <IconItem v-for="icon in iconsInCategory" :icon="icon"
+                    :key="icon[0]" :selected="icon[0] == selectedIcon" />
             </div>
         </section>
     </div>
@@ -64,10 +63,15 @@ const iconsSearch = computed(() => {
     font-weight: 600;
     margin-bottom: 20px;
 
-    & > a {
+    &>a {
         display: flex;
         align-items: center;
         gap: 10px;
+        transition: .15s;
+
+        &:hover {
+            color: var(--vp-c-brand-1);
+        }
     }
 
     .badge {

@@ -98,7 +98,7 @@ function itemClick(item) {
     border: 1px solid var(--vp-c-divider);
     border-radius: 15px;
     background-color: var(--vp-c-bg-elv);
-    max-height: calc(var(--vp-vh, 100vh) - 86px);
+    max-height: 60vh;
     overflow: hidden auto;
     box-shadow: var(--vp-shadow-3);
     padding: 10px;

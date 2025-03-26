@@ -91,7 +91,7 @@
 }
 
 :root {
-    --vp-font-family-mono: 'JetBrains Mono', 'SF Mono', monospace;
+    --vp-font-family-mono: 'Fira Code', 'JetBrains Mono', 'SF Mono', 'Noto Sans Mono', monospace;
 }
 
 h1,
@@ -286,6 +286,13 @@ input {
     display: inline-flex;
     margin-top: 5px;
     margin-inline: 3px;
+}
+.VPFooter .copyright a {
+    text-decoration: none;
+
+    &:hover {
+        color: var(--vp-c-brand-1);
+    }
 }
 
 .VPButton.medium {
