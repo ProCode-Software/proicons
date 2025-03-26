@@ -9,6 +9,7 @@ import inIcons from '../in/in.json' with { type: 'json' };
 import pkg from '../package.json' with { type: 'json' };
 import { buildFont } from "./build/build-font.js";
 import { prettierFormat } from './helpers/prettierFormat.js';
+import convertPathToRect from '@proicons/svgo-plugins/convertPathToRect';
 import * as rename from './helpers/rename.js';
 
 const __rootdir = resolve(import.meta.dirname, '../')
@@ -48,6 +49,7 @@ const svgoConfig = {
                 },
             },
         },
+        convertPathToRect
     ],
 };
 

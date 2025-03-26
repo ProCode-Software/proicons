@@ -22,7 +22,6 @@ export default defineConfig({
         minify: false,
         rollupOptions: {
             input: './src/proicons.ts',
-
             output: bundles.map(format => {
                 return {
                     preserveModules: format == 'esm',
@@ -30,16 +29,18 @@ export default defineConfig({
                     name: 'proicons',
                     dir: `dist/${format}`,
                     format,
-                    entryFileNames: ({ name }) =>
-                        format == 'esm'
-                            ? `${
-                                  utilityFiles.includes(name)
-                                      ? `utils/${name}`
-                                      : functionFiles.includes(name)
-                                        ? `functions/${name}`
-                                        : name
-                              }.js`
-                            : `${name}.cjs`,
+                    entryFileNames: ({ name }) => {
+                        switch (true) {
+                            case format != 'esm':
+                                return `${name}.cjs`
+                            case utilityFiles.includes(name):
+                                return `utils/${name}.js`
+                            case functionFiles.includes(name):
+                                return `functions/${name}.js`
+                            default:
+                                return `${name}.js`
+                        }
+                    },
                 } as OutputOptions
             }),
             preserveEntrySignatures: 'exports-only',
