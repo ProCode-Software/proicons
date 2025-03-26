@@ -7,6 +7,8 @@ import { type ProIconReplaceConfig, ProIcon } from './types'
  * Note that this only works in a browser environment, and also breaks tree-shaking.
  * @param rootElm The element to search inside for children with the `proicon` attribute. Defaults to `document.body`.
  * @param config An optional configuration to customise the behaviour of the replace method
+ * 
+ * [Documentation](https://procode-software.github.io/proicons/docs/javascript-api#replace)
  */
 function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
     // TODO: fix
