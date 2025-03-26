@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import { withBase } from "vitepress";
 
+const c = (t: string) => `#${t}aa`
+
 const frameworks = [
-    { name: 'HTML', icon: 'html5.svg', path: 'html-api', color: '#e34f26' },
+    { name: 'HTML', icon: 'html5.svg', path: 'html-api', color: c('e34f26') },
     {
         name: 'JavaScript',
         icon: 'javascript.svg',
         path: 'javascript-api',
         color: '#f0db4f',
     },
-    { name: 'React', icon: 'react.svg', path: 'react', color: '#00D8FF' },
-    { name: 'Svelte', icon: 'svelte.svg', path: 'svelte', color: '#FF3E00' },
-    { name: 'Vue', icon: 'vue.svg', path: 'vue', color: '#41B883' },
+    { name: 'React', icon: 'react.svg', path: 'react', color: c('00D8FF') },
+    { name: 'Svelte', icon: 'svelte.svg', path: 'svelte', color: c('FF3E00') },
+    { name: 'Vue', icon: 'vue.svg', path: 'vue', color: c('41B883') },
 ]
 </script>
 <template>
@@ -30,6 +32,7 @@ const frameworks = [
 .FrameworkList {
     text-align: center;
 }
+
 .frameworks {
     display: flex;
     gap: 20px;

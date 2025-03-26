@@ -47,7 +47,7 @@ document.write(svg)
 ```
 
 ## Methods
-Note that all of the following methods break tree-shaking
+Note that all of the following methods break tree-shaking.
 
 ### replace
 -   **Parameters:** `rootElm?: Element`, `config?: ProIconReplaceConfig`
@@ -62,7 +62,7 @@ Converts all elements with the `proicon` attribute (can be changed with `config.
 The element to search inside for children with the `proicon` attribute.
 
 #### config: [`ProIconReplaceConfig`](./options#proiconreplaceconfig) (optional)
-An optional configuration to customise the behaviour of the replace method
+An optional configuration to customise the behaviour of the replace method.
 
 #### Example
 
@@ -94,7 +94,7 @@ This method returns `undefined` if the provided key does not match an icon name 
 :::
 
 #### key: `string`
-The icon name in Friendly Form, camelCase or kebab-case. Throws an error if the provided key is invalid. Case-insensitive
+The icon name in Friendly Form, camelCase or kebab-case. Throws an error if the provided key is invalid. Case-insensitive.
 
 #### Example
 ```javascript
@@ -161,14 +161,14 @@ Contains the information about an icon
 **Example:** (for the Add icon)
 
 ```typescript
-{
-    name: "Add",
-    kebabCase: "add",
-    camelCase: "add",
+interface Add {
+    name: 'Add',
+    kebabCase: 'add',
+    camelCase: 'add',
     raw: string,
-    category: "Actions",
-    tags: ["Plus", "Create", "New", "Addition"],
-    toSvg: function()
+    category: 'Actions',
+    tags: ['Plus', 'Create', 'New', 'Addition'],
+    toSvg: () => string
 }
 ```
 

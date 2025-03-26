@@ -81,5 +81,6 @@ Icons are added and updated every release. All icons are uploaded in white, and 
 Due to Roblox moderation policies, the following icons have not been uploaded:
 
 <ul>
+    <li>All brand icons except for Roblox</li>
     <li v-for="item in data.exclude">{{ item }}</li>
 </ul>
