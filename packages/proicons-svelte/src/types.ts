@@ -1,5 +1,7 @@
 import type { SVGAttributes } from 'svelte/elements'
 
+export type IconNode = [string, Record<string, any>, IconNode[]]
+
 export interface ProIconsOptions {
     /** Determines the color of the icons. Defaults to `currentColor`. */
     color?: string

@@ -19,6 +19,6 @@ const increment = () => {
     </div>
 
     <p></p>
-    <AddSquareMultipleIcon size={48} strokeWidth={2} />
+    <AddSquareMultipleIcon size={48} strokeWidth={2} class="myClass" />
     <ProIcon icon="Add" strokeWidth={2} color="red" />
 </main>

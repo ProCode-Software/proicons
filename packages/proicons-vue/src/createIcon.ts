@@ -1,6 +1,6 @@
 import { type FunctionalComponent, h } from 'vue'
-import { kebabCase, kebabToPascalCase, pascalToCamelCase } from '../../../src/rename'
-import { convertNodesWithConfig } from '../../../src/renderNodes'
+import { kebabCase, kebabToPascalCase, pascalToCamelCase } from './rename'
+import { convertNodesWithConfig } from './renderNodes'
 import { type ProIconAttributes } from './types'
 
 export type IconNode = [string, Record<string, string>, IconNode[]]
@@ -32,7 +32,7 @@ export function createIcon(
                 xmlns: 'http://www.w3.org/2000/svg',
                 viewBox: '0 0 24 24',
                 fill: 'none',
-                class: ['proicon', props.class].flat(),
+                class: ['proicon', props.class],
                 'data-proicon-id': kebabCase(name),
                 ...props,
             },

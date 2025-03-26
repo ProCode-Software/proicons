@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { kebabCase, pascalCase } from '../../../src/rename'
+import { kebabCase, pascalCase } from './rename'
 import { ProIconAttributes } from './types'
 import * as icons from './icons'
 

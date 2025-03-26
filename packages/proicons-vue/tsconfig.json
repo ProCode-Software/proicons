@@ -29,8 +29,8 @@
         "rootDir": "./src"
     },
     "include": [
-        "**/*.ts",
-        "**/*.tsx",
-        "**/*.vue"
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue"
     ]
 }

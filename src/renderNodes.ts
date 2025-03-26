@@ -23,37 +23,34 @@ export function convertNodesWithConfig(nodes: IconNode[], options?: ProIconsOpti
         strokeCaps: ["stroke-linejoin"],
         strokeJoin: ["stroke-linecap"],
         cornerRadius: ["rx"],
-        strokeFilledElements: undefined,
     }
 
     if (!options) return nodes
 
     return nodes.map(node => {
-        const children = node[2]
+        const [_, props, children] = node
 
         for (const [optionK, svgAttrs] of Object.entries(attributeKey)) {
-            if (svgAttrs) {
-                for (const s of svgAttrs) {
-                    if (node[1][s] && options[optionK]) {
-                        node[1][s] = options[optionK]
-                    }
+            for (const s of svgAttrs) {
+                if (props[s] && options[optionK]) {
+                    props[s] = options[optionK]
                 }
             }
         }
 
         // Outlining
         if (
-            !Object.hasOwn(node[1], 'stroke-width') &&
-            Object.hasOwn(node[1], 'fill') &&
-            node[1].fill != 'none' &&
-            node[1].stroke != 'none' &&
-            node[1]['stroke-width'] !== '0' &&
+            !Object.hasOwn(props, 'stroke-width') &&
+            Object.hasOwn(props, 'fill') &&
+            props.fill != 'none' &&
+            props.stroke != 'none' &&
+            props['stroke-width'] !== '0' &&
             (options?.strokeWidth ?? 0) > defaultStroke
         ) {
-            node[1]['stroke-width'] = (options.strokeWidth - defaultStroke).toString()
-            node[1].stroke = node[1].fill
-            node[1]['stroke-linecap'] = options.strokeCaps ?? 'round'
-            node[1]['stroke-linejoin'] = options.strokeJoin ?? 'round'
+            props['stroke-width'] = (options.strokeWidth - defaultStroke).toString()
+            props.stroke = props.fill
+            props['stroke-linecap'] = options.strokeCaps ?? 'round'
+            props['stroke-linejoin'] = options.strokeJoin ?? 'round'
         }
 
         if (children.length) {
@@ -65,16 +62,17 @@ export function convertNodesWithConfig(nodes: IconNode[], options?: ProIconsOpti
 
 export function renderNodeWithRoot(nodes: IconNode[], rootNode: IconNode, options: ProIconsOptions): string {
     const root = structuredClone(rootNode)
-    root[2].push(...nodes)
+    const [_, props, children] = root
+    children.push(...nodes)
 
     if (options?.size) {
-        root[1].width = options.size.toString()
-        root[1].height = options.size.toString()
+        props.width = options.size.toString()
+        props.height = options.size.toString()
     }
 
     if (options?.attributes) {
         for (const [k, v] of Object.entries(options.attributes)) {
-            root[1][k] = v
+            props[k] = v
         }
     }
 

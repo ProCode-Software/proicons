@@ -1,0 +1,1 @@
+../../../src/rename.ts
