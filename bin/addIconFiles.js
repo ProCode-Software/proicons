@@ -104,7 +104,9 @@ Promise.all(
                 const exportNames = [
                     ...(libParam == 'vanilla' ? [camelModuleName] : [name.slice(0, -4)]), // Camel name or Camel name without icon
                     ...aliasExports, // Aliases
-                ].map(e => `${libParam == 'svelte' ? 'default' : name} as ${e}`)
+                ]
+                    .map(e => `${libParam == 'svelte' ? 'default' : name} as ${e}`)
+                    .filter((e, i, a) => a.indexOf(e) === i)
 
                 exportNames.unshift(libParam == 'svelte' ? `default as ${name}` : name)
 
