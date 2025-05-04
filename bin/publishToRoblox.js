@@ -28,17 +28,19 @@ if (!process.env.ROBLOX_PUBLISH_KEY)
 
 const publishEndpoint = 'https://apis.roblox.com/assets/v1/assets'
 const operationsEndpoint = 'https://apis.roblox.com/assets/v1/operations'
-const assetDeliveryEndpoint = 'https://assetdelivery.roblox.com/v1/asset'
+const assetDeliveryEndpoint = 'https://apis.roblox.com/asset-delivery-api/v1/assetId' /* 'https://assetdelivery.roblox.com/v1/asset' */
 
-function handleError(error) {
-    function RobloxError(message) {
-        console.log(ansiColors.red(`RobloxError: ${message}`))
-        process.exit(1)
+function handleError(err) {
+    class RobloxError extends Error {
+        constructor(msg) {
+            super(ansiColors.red(msg))
+            this.name = 'RobloxError'
+        }
     }
-    if (!error.response) throw error
-    const { code, message, errors } = error.response.data
-    if (errors) throw new RobloxError(errors[0].message)
-    throw new RobloxError(`[${code}] ${message}`)
+    if (!err.response) throw err
+    let { code, message, errors } = err.response.data
+    if (errors) ({ code, message } = errors[0])
+    throw new RobloxError(`[Code ${code}] ${message}`)
 }
 
 async function publishAsset(iconName, filename) {
@@ -65,35 +67,45 @@ async function publishAsset(iconName, filename) {
         filename: `${filename}.png`,
         contentType: 'image/png',
     })
-    const { data } = await axios.post(publishEndpoint, form, {
-        headers: {
-            ...form.getHeaders(),
-            'x-api-key': process.env.ROBLOX_PUBLISH_KEY,
-        },
-        responseType: 'json',
-    }).catch(handleError)
+    const { data } = await axios
+        .post(publishEndpoint, form, {
+            headers: {
+                ...form.getHeaders(),
+                'x-api-key': process.env.ROBLOX_PUBLISH_KEY,
+            },
+            responseType: 'json',
+        })
+        .catch(handleError)
 
     return data
 }
 
 async function getImageId(assetId) {
-    const { data } = await axios.get(`${assetDeliveryEndpoint}/?id=${assetId}`)
+    const { data } = await axios
+        .get(`${assetDeliveryEndpoint}/${assetId}`, {
+            headers: { 'x-api-key': process.env.ROBLOX_PUBLISH_KEY },
+        })
         .catch(handleError)
 
-    const { window: { document: xmlData } } = new JSDOM(data)
-    const imageId = xmlData.querySelector('.Decal content[name="Texture"] > url')
-        .textContent.replace(/.*?\?id=/, '')
+    const {
+        window: { document: xmlData },
+    } = new JSDOM(data)
+    const imageId = xmlData
+        .querySelector('.Decal content[name="Texture"] > url')
+        .textContent.match(/\?id=(\d+)/)[1]
 
     return imageId
 }
 
 async function getOperation(operationId) {
-    const { data } = await axios.get(`${operationsEndpoint}/${operationId}`, {
-        headers: {
-            'x-api-key': process.env.ROBLOX_PUBLISH_KEY,
-        },
-        responseType: 'json',
-    }).catch(handleError)
+    const { data } = await axios
+        .get(`${operationsEndpoint}/${operationId}`, {
+            headers: {
+                'x-api-key': process.env.ROBLOX_PUBLISH_KEY,
+            },
+            responseType: 'json',
+        })
+        .catch(handleError)
     return data
 }
 
@@ -120,11 +132,12 @@ writeFileSync(iconAssetsPath, await prettierFormat(assetData))
 if (deletedIcons.length > 0)
     console.log(
         ansiColors.cyan(`Removed ${deletedIcons.length} deleted icons:`),
-        deletedIcons.join(', '), '\n'
+        deletedIcons.join(', '),
+        '\n'
     )
 
 // Publish icons
-console.log(ansiColors.yellow(`Publishing ${iconsToPublish.length} icons...`));
+console.log(ansiColors.yellow(`Publishing ${iconsToPublish.length} icons...`))
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -133,17 +146,16 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
         try {
             const { operationId } = await publishAsset(iconName, kebabCase(iconName))
 
-            // Waiting is required due to Roblox rate limits
             await sleep(4000)
 
             while (!(await getOperation(operationId)).done) {
-                console.log(
-                    ansiColors.yellow('Waiting for operation to complete...')
-                )
+                console.log(ansiColors.yellow('Waiting for operation to complete...'))
                 await sleep(4000)
             }
 
-            const { response: { assetId } } = await getOperation(operationId)
+            const {
+                response: { assetId },
+            } = await getOperation(operationId)
             const imageId = await getImageId(assetId)
             assetData.assetPaths[iconName] = imageId
             uploadedIcons.push({ icon: iconName, assetId: assetId, imageId: imageId })
@@ -151,7 +163,8 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
             writeFileSync(tempFilePath, await prettierFormat(uploadedIcons))
 
             console.log(
-                ansiColors.green(`Published ${iconName}:`), ansiColors.cyan(imageId)
+                ansiColors.green(`Published ${iconName}:`),
+                ansiColors.cyan(imageId)
             )
         } catch (err) {
             console.log(ansiColors.red(`Error publishing ${iconName}:`))
