@@ -51,7 +51,7 @@ export function generateChangelog() {
     if (shouldWrite) {
         const changelogPath = resolve(__rootdir, 'CHANGELOG.md')
         writeFileSync(changelogPath, changelog)
-        console.log(`\n\e[32mWritten changelog to ${changelogPath}!\e[m`)
+        console.log(`\n\x1B[32mWritten changelog to ${changelogPath}!\x1B[m`)
     }
 
     return changelog
