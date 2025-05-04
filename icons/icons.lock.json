@@ -521,7 +521,9 @@
     ],
     "deprecated": [
         { "icon": "PDF 2", "version": "4.11.2", "alternative": "PDF" },
-        { "icon": "Book 2", "version": "4.12.2", "alternative": "Book" }
+        { "icon": "Book 2", "version": "4.12.2", "alternative": "Book" },
+        { "icon": "Book Add 2", "version": "4.12.2", "alternative": "Book Add" },
+        { "icon": "Book Info 2", "version": "4.12.2", "alternative": "Book Info" }
     ],
     "aliases": {
         "Plus": "Add",
@@ -638,6 +640,12 @@
         "Typescript": "TypeScript",
         "Vuejs": "VueJS",
         "Youtube": "YouTube",
-        "Youtube Shorts": "YouTube Shorts"
+        "Youtube Shorts": "YouTube Shorts",
+        "ChatGPT": "OpenAI",
+        "Power On": "Power",
+        "Power Off": "Power",
+        "Off": "Power",
+        "Photo AI": "Photo Sparkle",
+        "Repository": "Book Marked"
     }
 }
