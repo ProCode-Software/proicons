@@ -1,6 +1,6 @@
 import icons from '../../../icons/icons.json' with { type: 'json' }
 import lockfile from '../../../icons/icons.lock.json' with { type: 'json' }
-import { camelCase, pascalToCamelCase } from "../../helpers/rename.js"
+import { camelCase, pascalCase } from "../../helpers/rename.js"
 
 /** 
  * Gets information about an icon
@@ -8,8 +8,8 @@ import { camelCase, pascalToCamelCase } from "../../helpers/rename.js"
 */
 export function getData(moduleName) {
     const pascalName = moduleName.replace(/Icon$/, '')
-    const camelName = pascalToCamelCase(pascalName)
-    const friendlyName = Object.keys(icons).find(key => camelCase(key) == camelName)
+    const friendlyName = Object.keys(icons).find(key => pascalCase(key) == pascalName)
+    const camelName = camelCase(friendlyName)
 
     if (!friendlyName) {
         throw new Error(`Icon ${camelName} not found`)

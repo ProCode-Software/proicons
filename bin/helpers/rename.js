@@ -1,32 +1,24 @@
-export function format(str) {
-    return str.replace(/[^\w ]|^\d+/g, ' ').replace(/\s+/g, ' ').trim();
+function clean(str) {
+    return str.trim().replaceAll('&', 'And').replace(/_|[^\w\d]+/g, ' ')
 }
 export function camelCase(str) {
-    return format(str).split(' ')
-        .map(function (word, i) {
-            return i == 0
-                ? word.toLowerCase()
-                : word.charAt(0).toUpperCase() + word.slice(1);
-        }).join('');
+    return clean(str)
+        .replace(/(?<=\s|^)[a-z]/g, m => m.toUpperCase())
+        .replace(/^\s*\d+/, '')
+        .replace(/^\w+/, m => m.toLowerCase())
+        .replaceAll(' ', '')
 }
 export function kebabCase(str) {
-    return format(str).replaceAll(' ', '-').toLowerCase();
+    return clean(str)
+        .replace(/\s+/g, "-")
+        .replace(/^-?\d+/, '')
+        .replace(/^-|-$/g, '')
+        .replace(/-{2,}/, '-')
+        .toLowerCase()
 }
 export function pascalCase(str) {
-    return format(str).replaceAll(' ', '');
-}
-export function camelToKebabCase(str) {
-    return str.replace(/[A-Z]/g, '-$&')
-        .replace(/^\w/, function (w) { return w.toUpperCase(); })
-        .toLowerCase();
-}
-export function kebabToPascalCase(str) {
-    return format(str)
-        .replace(/(?<!\-)\-/g, ' ')
-        .split(' ')
-        .map(function (w) { return w.charAt(0).toUpperCase() + w.slice(1); })
-        .join('');
-}
-export function pascalToCamelCase(str) {
-    return str.charAt(0).toLowerCase() + str.slice(1);
+    return clean(str)
+        .replace(/(?<=\s|^)[a-z]/g, m => m.toUpperCase())
+        .replace(/^\s*\d+/, '')
+        .replaceAll(' ', '')
 }

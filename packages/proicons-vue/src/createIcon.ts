@@ -1,5 +1,5 @@
 import { type FunctionalComponent, h } from 'vue'
-import { kebabCase, kebabToPascalCase, pascalToCamelCase } from './rename'
+import { kebabCase } from './rename'
 import { convertNodesWithConfig } from './renderNodes'
 import { type ProIconAttributes } from './types'
 
