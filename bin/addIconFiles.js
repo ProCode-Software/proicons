@@ -1,5 +1,12 @@
 import ansiColors from 'ansi-colors'
-import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'fs'
+import {
+    existsSync,
+    mkdirSync,
+    readdirSync,
+    readFileSync,
+    rmSync,
+    writeFileSync,
+} from 'fs'
 import { dirname, resolve } from 'path'
 import { fileURLToPath } from 'url'
 import icons from '../icons/icons.json' with { type: 'json' }
@@ -25,10 +32,8 @@ const outDir = resolve(process.cwd(), outDirParam)
 
 const inDir = resolve(__rootdir, 'icons/svg')
 
-if (!shouldCleanDir) {
-    rmSync(outDir, { recursive: true, force: true })
-    mkdirSync(outDir, { recursive: true })
-}
+if (shouldCleanDir) rmSync(outDir, { recursive: true, force: true })
+if (!existsSync(outDir) || shouldCleanDir) mkdirSync(outDir, { recursive: true })
 
 const files = readdirSync(inDir)
 
@@ -36,7 +41,9 @@ const files = readdirSync(inDir)
 const modules = []
 
 if (files.length !== Object.keys(icons).length)
-    throw new Error('The number of files in SVG folder and icons in icons.json are not the same.')
+    throw new Error(
+        'The number of files in SVG folder and icons in icons.json are not the same.'
+    )
 
 Promise.all(
     Object.keys(icons).map(async iconName => {
@@ -69,7 +76,7 @@ Promise.all(
 ).then(async () => {
     console.log(
         ansiColors.green(
-            `Successfully created .${formatParam} files for ${files.length} files in ${outDir}!`
+            `Successfully created ${ansiColors.yellow(`.${formatParam}`)} files for ${ansiColors.yellow(`${files.length} files`)} in ${ansiColors.cyan(outDirParam)}!`
         )
     )
 
@@ -83,8 +90,9 @@ Promise.all(
                 // For backwards compatibility (removes Icon from the end)
                 const camelModuleName = camelCase(friendlyName)
 
-                const aliases = Object.keys(lockfile.aliases ?? {})
-                    .filter(k => lockfile.aliases[k] == friendlyName)
+                const aliases = Object.keys(lockfile.aliases ?? {}).filter(
+                    k => lockfile.aliases[k] == friendlyName
+                )
 
                 const aliasExports = aliases
                     .map(alias => [
@@ -107,7 +115,9 @@ Promise.all(
 
         writeFileSync(indexOutDir, indexTemplate)
         console.log(
-            ansiColors.green(`Successfully created icons index at ${indexOutDir}!`)
+            ansiColors.green(
+                `Successfully created icons index at ${ansiColors.cyan(indexDirParam)}!`
+            )
         )
     }
     if (shouldCreateDataFiles) {

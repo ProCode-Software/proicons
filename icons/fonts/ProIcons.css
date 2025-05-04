@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?b3d50ae66a8acee89cee97fc79e45e12") format("truetype"),
-url("./ProIcons.woff?b3d50ae66a8acee89cee97fc79e45e12") format("woff"),
-url("./ProIcons.woff2?b3d50ae66a8acee89cee97fc79e45e12") format("woff2"),
-url("./ProIcons.eot?b3d50ae66a8acee89cee97fc79e45e12#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?07d2af66a691584c52d4f54b26502674") format("truetype"),
+url("./ProIcons.woff?07d2af66a691584c52d4f54b26502674") format("woff"),
+url("./ProIcons.woff2?07d2af66a691584c52d4f54b26502674") format("woff2"),
+url("./ProIcons.eot?07d2af66a691584c52d4f54b26502674#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -1533,27 +1533,69 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-apps-list::before {
   content: "\f101";
 }
-.proicon-bar-graph::before {
+.proicon-asterisk::before {
   content: "\f102";
 }
-.proicon-box-margins::before {
+.proicon-bar-graph::before {
   content: "\f103";
 }
-.proicon-phone-accept::before {
+.proicon-basketball::before {
   content: "\f104";
 }
-.proicon-phone-hang-up::before {
+.proicon-book-letter::before {
   content: "\f105";
 }
-.proicon-text-bullet-list-square-add::before {
+.proicon-book-marked::before {
   content: "\f106";
 }
-.proicon-text-bullet-list-square::before {
+.proicon-box-margins::before {
   content: "\f107";
 }
-.proicon-text-bullet-list-tree::before {
+.proicon-bug-add::before {
   content: "\f108";
 }
-.proicon-text-bullet-list::before {
+.proicon-bug-play::before {
   content: "\f109";
+}
+.proicon-code-square::before {
+  content: "\f10a";
+}
+.proicon-eraser-sparkle::before {
+  content: "\f10b";
+}
+.proicon-kotlin::before {
+  content: "\f10c";
+}
+.proicon-openai::before {
+  content: "\f10d";
+}
+.proicon-paintbrush-2-sparkle::before {
+  content: "\f10e";
+}
+.proicon-pencil-sparkle::before {
+  content: "\f10f";
+}
+.proicon-phone-accept::before {
+  content: "\f110";
+}
+.proicon-phone-hang-up::before {
+  content: "\f111";
+}
+.proicon-photo-sparkle::before {
+  content: "\f112";
+}
+.proicon-power::before {
+  content: "\f113";
+}
+.proicon-text-bullet-list-square-add::before {
+  content: "\f114";
+}
+.proicon-text-bullet-list-square::before {
+  content: "\f115";
+}
+.proicon-text-bullet-list-tree::before {
+  content: "\f116";
+}
+.proicon-text-bullet-list::before {
+  content: "\f117";
 }

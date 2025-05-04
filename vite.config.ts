@@ -1,5 +1,5 @@
-import { OutputOptions } from 'rollup'
 import { defineConfig } from 'vite'
+import type { Rollup } from 'vite'
 import dts from 'vite-plugin-dts'
 import pkg from './package.json' with { type: 'json' }
 
@@ -10,7 +10,7 @@ const licenseNotice = `/**
  * See the LICENSE file in the root directory of the source tree.
  */`
 
-const bundles: import('rollup').ModuleFormat[] = ['esm', 'cjs', 'umd']
+const bundles: Rollup.ModuleFormat[] = ['esm', 'cjs', 'umd']
 
 const utilityFiles = ['renderNodes', 'rename', 'createIcon']
 const functionFiles = ['replace', 'getIconInfo', 'search']
@@ -31,17 +31,17 @@ export default defineConfig({
                     format,
                     entryFileNames: ({ name }) => {
                         switch (true) {
-                            case format != 'esm':
-                                return `${name}.cjs`
-                            case utilityFiles.includes(name):
-                                return `utils/${name}.js`
-                            case functionFiles.includes(name):
-                                return `functions/${name}.js`
-                            default:
-                                return `${name}.js`
+                        case format != 'esm':
+                            return `${name}.cjs`
+                        case utilityFiles.includes(name):
+                            return `utils/${name}.js`
+                        case functionFiles.includes(name):
+                            return `functions/${name}.js`
+                        default:
+                            return `${name}.js`
                         }
                     },
-                } as OutputOptions
+                } as Rollup.OutputOptions
             }),
             preserveEntrySignatures: 'exports-only',
         },

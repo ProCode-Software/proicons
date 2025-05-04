@@ -60,14 +60,14 @@
         "svelte"
     ],
     "devDependencies": {
-        "@sveltejs/package": "^2.3.10",
+        "@sveltejs/package": "^2.3.11",
         "@sveltejs/vite-plugin-svelte": "^5.0.3",
         "@tsconfig/svelte": "^5.0.4",
         "tslib": "^2.8.1",
-        "typescript": "^5.8.2",
-        "vite": "^6.2.3"
+        "typescript": "^5.8.3",
+        "vite": "^6.3.4"
     },
     "peerDependencies": {
-        "svelte": "^5.25.3"
+        "svelte": "^5.28.2"
     }
 }
