@@ -3,20 +3,20 @@ import iconList from './iconList'
 import * as icons from './icons'
 
 export {
-    /** List of all available icons as type `ProIcon`.
-     * 
+    /** List of all available icons as type [`ProIcon`](https://procode-software.github.io/proicons/docs/javascript-api#proicon).
+     *
      * [View the list of icons here](https://procode-software.github.io/proicons/icons)
-     * 
+     *
      * Note: This will import all icons and breaks tree-shaking
      */
     icons,
     /** List of all categories */
     categories,
     /** List of all icon names as strings
-     * 
+     *
      * [View the list of icons here](https://procode-software.github.io/proicons/icons)
      */
-    iconList
+    iconList,
 }
 
 export { default as getIconInfo } from './getIconInfo'

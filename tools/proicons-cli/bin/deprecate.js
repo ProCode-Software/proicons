@@ -1,5 +1,5 @@
 import ansiColors from "ansi-colors";
-import { formatJson, getVersion } from "./utils.js";
+import { formatJson, getVersion } from "./utils.ts";
 import { resolve } from "path";
 import { readFileSync, writeFileSync } from "fs";
 

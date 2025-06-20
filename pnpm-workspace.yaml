@@ -2,3 +2,7 @@ packages:
     - 'packages/*'
     - 'tools/*'
     - 'site'
+
+overrides:
+  vite: npm:rolldown-vite@latest
+  rolldown: '>=1.0.0-beta.18'

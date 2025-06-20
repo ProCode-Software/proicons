@@ -1,23 +1,23 @@
-import { ProIcon } from './types';
+import { ProIcon } from './types'
 
-export type IconNode = [string, Record<string, string | number>, IconNode[]];
+export type IconNode = [string, Record<string, string | number>, IconNode[]]
 
 export interface IconData {
-    name: string;
-    tags: string[];
-    category: string;
-    deprecated?: boolean;
-    alternativeIcon?: string;
+    name: string
+    tags: string[]
+    category: string
+    deprecated?: boolean
+    alternativeIcon?: string
 }
 
 export function createIcon(
     { name, tags, category, deprecated, alternativeIcon }: IconData,
-    nodes: IconNode[],
+    nodes: IconNode[]
 ): ProIcon {
     if (deprecated) {
         console.warn(
-            `The icon ${name} is deprecated and will be removed in a future version. Use ${alternativeIcon} instead.`,
-        );
+            `The icon ${name} is deprecated and will be removed in a future version. Use ${alternativeIcon} instead.`
+        )
     }
-    return new ProIcon(name, tags, category, nodes);
+    return new ProIcon(name, tags, category, nodes)
 }

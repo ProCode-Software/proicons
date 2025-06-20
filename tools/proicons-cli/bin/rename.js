@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, renameSync, writeFileSync } from "fs";
 import { formatJson } from "./utils.js";
 import { resolve } from "path";
-import * as renameText from '../../../bin/helpers/rename.js'
+import * as renameText from '../../../bin/helpers/rename.ts'
 import ansiColors from "ansi-colors";
 import pkg from '../../../package.json' with {type: 'json'}
 const { version } = pkg

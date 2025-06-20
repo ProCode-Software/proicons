@@ -1,4 +1,5 @@
 {
+    "extends": "./tsconfig.base.json",
     "compilerOptions": {
         "module": "ESNext",
         "moduleResolution": "Bundler",
@@ -12,18 +13,14 @@
         "sourceMap": true,
         "outDir": "./dist",
         "rootDir": "./src",
-        "declaration": true,
         "pretty": true,
-        "declarationDir": "./_lib",
+        
         "moduleDetection": "force",
-        // Emit only declarations
+        // Declaration emit
         "emitDeclarationOnly": true,
-        // Lint
-        "strictNullChecks": false,
-        "strictFunctionTypes": false,
-        "strict": false,
-        "noUnusedParameters": false,
-        "skipDefaultLibCheck": true
+        "declarationDir": "./_lib",
+        "declaration": true,
+        "isolatedDeclarations": true,
     },
     "include": [
         "./src"

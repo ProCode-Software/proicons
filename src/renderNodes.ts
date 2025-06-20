@@ -1,5 +1,5 @@
-import { type IconNode } from './createIcon';
-import { type ProIconsOptions } from './types';
+import { type IconNode } from './createIcon'
+import { type ProIconsOptions } from './types'
 
 export const rootNode: IconNode = [
     'svg',
@@ -11,18 +11,21 @@ export const rootNode: IconNode = [
         fill: 'none',
     },
     [],
-];
+]
 
-export function convertNodesWithConfig(nodes: IconNode[], options?: ProIconsOptions): IconNode[] {
+export function convertNodesWithConfig(
+    nodes: IconNode[],
+    options?: ProIconsOptions
+): IconNode[] {
     const defaultStroke = 1.5
 
     const attributeKey: Partial<Record<keyof ProIconsOptions, string[]>> = {
         // configKey, svgAttr
-        color: ["stroke", "fill"],
-        strokeWidth: ["stroke-width"],
-        strokeCaps: ["stroke-linejoin"],
-        strokeJoin: ["stroke-linecap"],
-        cornerRadius: ["rx"],
+        color: ['stroke', 'fill'],
+        strokeWidth: ['stroke-width'],
+        strokeCaps: ['stroke-linejoin'],
+        strokeJoin: ['stroke-linecap'],
+        cornerRadius: ['rx'],
     }
 
     if (!options) return nodes
@@ -60,7 +63,11 @@ export function convertNodesWithConfig(nodes: IconNode[], options?: ProIconsOpti
     })
 }
 
-export function renderNodeWithRoot(nodes: IconNode[], rootNode: IconNode, options: ProIconsOptions): string {
+export function renderNodeWithRoot(
+    nodes: IconNode[],
+    rootNode: IconNode,
+    options: ProIconsOptions
+): string {
     const root = structuredClone(rootNode)
     const [_, props, children] = root
     children.push(...nodes)
@@ -80,9 +87,12 @@ export function renderNodeWithRoot(nodes: IconNode[], rootNode: IconNode, option
 }
 
 export function renderNodes(nodes: IconNode[]): string {
-    return nodes.map(([element, attrs, children]) => {
-        const attrMap = Object.entries(attrs).map(([k, v]) => `${k}=${JSON.stringify(v)}`)
-
-        return `<${element} ${attrMap.join(' ')}${children.length > 0 ? `>${renderNodes(children)}</${element}>` : ' />'}`
-    }).join('')
+    return nodes
+        .map(([element, attrs, children]) => {
+            const attrMap = Object.entries(attrs).map(
+                ([k, v]) => `${k}=${JSON.stringify(v)}`
+            )
+            return `<${element} ${attrMap.join(' ')}${children.length > 0 ? `>${renderNodes(children)}</${element}>` : ' />'}`
+        })
+        .join('')
 }

@@ -28,4 +28,4 @@ export default [
     'Text',
     'Weather',
     'Window',
-]
+] as const

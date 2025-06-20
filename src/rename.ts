@@ -1,17 +1,17 @@
-function clean(str: string) {
+function clean(str: string): string {
     return str
         .trim()
         .replaceAll('&', 'And')
         .replace(/_|[^\w\d]+/g, ' ')
 }
-export function camelCase(str: string) {
+export function camelCase(str: string): string {
     return clean(str)
         .replace(/(?<=\s|^)[a-z]/g, (m: string) => m.toUpperCase())
         .replace(/^\s*\d+/, '')
         .replace(/^\w+/, (m: string) => m.toLowerCase())
         .replaceAll(' ', '')
 }
-export function kebabCase(str: string) {
+export function kebabCase(str: string): string {
     return clean(str)
         .replace(/\s+/g, '-')
         .replace(/^-?\d+/, '')
@@ -19,7 +19,7 @@ export function kebabCase(str: string) {
         .replace(/-{2,}/, '-')
         .toLowerCase()
 }
-export function pascalCase(str: string) {
+export function pascalCase(str: string): string {
     return clean(str)
         .replace(/(?<=\s|^)[a-z]/g, (m: string) => m.toUpperCase())
         .replace(/^\s*\d+/, '')

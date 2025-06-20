@@ -8,7 +8,7 @@ export interface ProIconsOptions {
     /** Determines the default stroke width of the icon. Defaults to `1.5`. This only works on SVG elements with existing strokes; add `strokeFilledElements` for this property to affect such elements. */
     strokeWidth?: number
     /** Apply strokes to filled SVG elements, such as circles, by the provided amount with `1.5` (default stroke value) subtracted, if `strokeWidth` is set to a value above `1.5`. Defaults to `false`
-     * 
+     *
      * For example, if `strokeWidth` is set to `2`, filled SVG elements will have an additional 0.5px stroke
      */
     strokeFilledElements?: boolean

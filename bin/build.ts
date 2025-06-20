@@ -7,15 +7,27 @@ import progress from 'progress'
 import { optimize } from 'svgo'
 import inIcons from '../in/in.json' with { type: 'json' }
 import pkg from '../package.json' with { type: 'json' }
-import { buildFont } from './build/build-font.js'
-import { prettierFormat } from './helpers/prettierFormat.js'
+import { buildFont } from './build/build-font.ts'
+import { prettierFormat } from './helpers/prettierFormat.ts'
 import convertPathToRect from '@proicons/svgo-plugins/convertPathToRect'
-import * as rename from './helpers/rename.js'
+import * as rename from './helpers/rename.ts'
+import { type Config as SVGOConfig } from 'svgo'
 
 const __rootdir = resolve(import.meta.dirname, '../')
 const { version } = pkg
 
-const argChoice = (c1, c2) => {
+type IconsJSON = typeof import('../icons/icons.json')
+type Lockfile = typeof import('../icons/icons.lock.json')
+interface Icon {
+    description: string
+    category: string
+    icon: string
+}
+interface IconList {
+    [k: string]: Icon
+}
+
+const argChoice = (c1: string, c2: string) => {
     const argv = process.argv.slice(2)
     return argv.includes(c1) || argv.includes(c2)
 }
@@ -33,7 +45,6 @@ const args = {
 
 const strokeColors = ['#212325', 'black', '#000000', '#000']
 
-/** @type {import("svgo").Config} */
 const svgoConfig = {
     multipass: true,
     plugins: [
@@ -51,7 +62,7 @@ const svgoConfig = {
         },
         convertPathToRect,
     ],
-}
+} satisfies SVGOConfig
 
 // Move and rename SVGs
 const inDir = resolve(__rootdir, 'in')
@@ -62,9 +73,8 @@ let newIcons = []
 if (!existsSync(inDir)) mkdirSync(inDir)
 const files = readdirSync(inDir)
 
-function getIconsJson() {
-    /** @type {import('../icons/icons.json')} */
-    const iconsJson = JSON.parse(readFileSync(iconsJsonPath, 'utf-8'))
+function getIconsJson(): IconsJSON {
+    const iconsJson: IconsJSON = JSON.parse(readFileSync(iconsJsonPath, 'utf-8'))
     return iconsJson
 }
 
@@ -82,7 +92,7 @@ async function optimizeIcons() {
 }
 
 // Transform JSON data into files
-async function writeSvgFilesFromData(jsonData) {
+async function writeSvgFilesFromData(jsonData: IconList) {
     const iconsJson = getIconsJson()
 
     for (const [name, data] of Object.entries(jsonData)) {
@@ -120,16 +130,12 @@ async function createSvgFiles() {
 }
 
 // Build lockfile
-/**
- * @type {import('../icons/icons.lock.json')} lockfile
- */
-const lockfile = existsSync(resolve(__rootdir, 'icons/icons.lock.json'))
+const lockfile: Lockfile = existsSync(resolve(__rootdir, 'icons/icons.lock.json'))
     ? JSON.parse(readFileSync(resolve(__rootdir, 'icons/icons.lock.json'), 'utf-8'))
     : []
 
 function createLockfile() {
-    /** @type {import('../icons/icons.json')} */
-    const config = JSON.parse(readFileSync(iconsJsonPath, 'utf-8'))
+    const config: IconsJSON = JSON.parse(readFileSync(iconsJsonPath, 'utf-8'))
 
     Object.keys(config).forEach(friendlyName => {
         const iconInLockfile = z => z.name == friendlyName
@@ -178,7 +184,7 @@ async function buildPngs() {
     })
 
     const worker = new Piscina({
-        filename: new URL('./build/fix-image.js', import.meta.url).href,
+        filename: new URL('./build/fix-image.ts', import.meta.url).href,
     })
 
     console.time('Build PNGs')

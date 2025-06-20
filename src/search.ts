@@ -18,16 +18,16 @@ function search(query: string): ProIcon[] {
     const mappedIcons = Object.values(icons) as ProIcon[]
 
     const filtered = mappedIcons.filter((item, i) => {
-        return Object.entries(item).some(
-            ([key, value]: [keyof ProIcon, any]) => {
+        return (
+            Object.entries(item).some(([key, value]: [keyof ProIcon, any]) => {
                 if ((!Array.isArray(value) && typeof value != 'string') || key == 'raw')
                     return
 
                 return Array.isArray(value)
                     ? value.some(tag => tag.toLowerCase().includes(query))
                     : value.toLowerCase().includes(query)
-            }
-        ) && mappedIcons.indexOf(item) === i
+            }) && mappedIcons.indexOf(item) === i
+        )
     })
 
     return filtered

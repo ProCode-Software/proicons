@@ -1,6 +1,6 @@
-import { getData } from "../../../bin/build/templates/templateData.js";
+import { getData, Node } from './templateData.ts'
 
-export default (moduleName, nodes) => {
+export default (moduleName: string, nodes: Node[]): string => {
     const {
         camelName,
         deprecationData,
@@ -13,8 +13,10 @@ export default (moduleName, nodes) => {
 
     const iconInfo = {
         name: friendlyName,
+        tags: iconData.description.split(', ').map(t => t.trim()),
+        category: iconData.category,
         deprecated: !!deprecationData,
-        alternative: deprecationData?.alternative ?? undefined,
+        alternativeIcon: deprecationData?.alternative ?? undefined,
     }
 
     return `
@@ -25,7 +27,7 @@ import { createIcon } from '../createIcon'
  * @preview ![Icon preview](data:image/svg+xml;base64,${rawSvgData})
  * @added v${lockfileItem.added}${lockfileItem.updated ? `\n * @updated v${lockfileItem.updated}` : ''}${deprecationData ? `\n * @deprecated Use ${deprecationData.alternative} instead` : ''}
  */
-const ${moduleName} = createIcon(${JSON.stringify(iconInfo)}, ${JSON.stringify(nodes)})
+const ${moduleName}: import('../types').ProIcon = createIcon(${JSON.stringify(iconInfo)}, ${JSON.stringify(nodes)})
 
 export { ${moduleName} }
 `.trim()

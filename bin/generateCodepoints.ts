@@ -1,7 +1,7 @@
 import { writeFileSync } from 'fs'
 import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import { resolve } from 'path'
-import { kebabCase } from './helpers/rename.js'
+import { kebabCase } from './helpers/rename.ts'
 import { readFileSync } from 'fs'
 import ansiColors from 'ansi-colors'
 
@@ -24,4 +24,4 @@ for (const [key] of Object.entries(codepoints)) {
 }
 
 writeFileSync(codepointsPath, JSON.stringify(codepoints, undefined, 4))
-console.log(ansiColors.green('Successfully added font codepoints!'));
+console.log(ansiColors.green('Successfully added font codepoints!'))

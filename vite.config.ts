@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import type { Rollup } from 'vite'
-import dts from 'vite-plugin-dts'
+import { dts } from 'rolldown-plugin-dts'
 import pkg from './package.json' with { type: 'json' }
 
 const licenseNotice = `/**
@@ -31,14 +31,14 @@ export default defineConfig({
                     format,
                     entryFileNames: ({ name }) => {
                         switch (true) {
-                        case format != 'esm':
-                            return `${name}.cjs`
-                        case utilityFiles.includes(name):
-                            return `utils/${name}.js`
-                        case functionFiles.includes(name):
-                            return `functions/${name}.js`
-                        default:
-                            return `${name}.js`
+                            case format != 'esm':
+                                return `${name}.cjs`
+                            case utilityFiles.includes(name):
+                                return `utils/${name}.js`
+                            case functionFiles.includes(name):
+                                return `functions/${name}.js`
+                            default:
+                                return `${name}.js`
                         }
                     },
                 } as Rollup.OutputOptions
@@ -53,11 +53,6 @@ export default defineConfig({
     },
 
     plugins: [
-        dts({
-            rollupTypes: true,
-            outDir: 'dist',
-            copyDtsFiles: true,
-            exclude: [],
-        }),
+        dts(),
     ],
 })

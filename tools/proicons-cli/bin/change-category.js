@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { resolve } from "path";
-import { formatJson } from "./utils.js";
+import { formatJson } from "./utils.ts";
 import pkg from '../../../package.json' with {type: 'json'}
 import ansiColors from "ansi-colors";
 const { version } = pkg

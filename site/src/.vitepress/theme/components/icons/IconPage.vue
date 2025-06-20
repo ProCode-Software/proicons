@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { filterIcons } from '../../composables/IconSearch'
-import { Icon } from '../../composables/types'
+import { Icon, Lockfile } from '../../composables/types'
 import { fetchCodepoints, fetchIconsFromVersion } from '../../composables/versionData'
 import IconDetails from './details/IconDetails.vue'
 import IconList from './IconList.vue'
@@ -15,7 +15,7 @@ const selectedIcon = ref(null)
 const selectedIconName = ref('')
 const selectedVersion = ref('')
 const icons = ref({})
-const lockfile = ref({})
+const lockfile = ref<Lockfile>({})
 const codepoints = ref({})
 const length = computed(() => Object.entries(icons.value).length)
 

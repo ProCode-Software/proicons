@@ -1,0 +1,18 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "moduleResolution": "NodeNext",
+        "module": "ESNext",
+        "lib": [ "ESNext" ],
+        "rootDir": ".",
+        "types": ["@types/node"]
+    },
+    "include": [
+        "./tools",
+        "./bin"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/BuildIconList/*",
+    ]
+}

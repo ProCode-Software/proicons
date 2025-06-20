@@ -1,6 +1,6 @@
-import { getData } from "../../../bin/build/templates/templateData.js";
+import { getData, type Node } from "../../../bin/build/templates/templateData.ts";
 
-export default (moduleName, nodes) => {
+export default (moduleName: string, nodes: Node[]): string => {
     const {
         camelName,
         deprecationData,

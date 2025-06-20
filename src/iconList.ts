@@ -517,4 +517,4 @@ export default [
     'YouTube Shorts',
     'Zoom In',
     'Zoom Out',
-]
+] as const

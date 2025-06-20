@@ -4,21 +4,25 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  vite: npm:rolldown-vite@latest
+  rolldown: '>=1.0.0-beta.18'
+
 importers:
 
   .:
     devDependencies:
       '@figma/plugin-typings':
-        specifier: ^1.110.0
-        version: 1.110.0
+        specifier: ^1.114.0
+        version: 1.114.0
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
 
 packages:
 
-  '@figma/plugin-typings@1.110.0':
-    resolution: {integrity: sha512-n1fZKjt2zApCVqxdJs+JCdpmLX2hDvhgoGbuXeAh7xt+IkSj21gB9vhV5KW+O5sDyPnt3H7doTDO47Oy9CRkQg==}
+  '@figma/plugin-typings@1.114.0':
+    resolution: {integrity: sha512-rVUEOgDzyk8Td/XsPwgRPTxSNuinIzvs6zJhuk/LJ8FHsA6JEuCrfYjWMEht1LjOyrn/25aAFubWKKDB/fTDRQ==}
 
   typescript@5.8.3:
     resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
@@ -27,6 +31,6 @@ packages:
 
 snapshots:
 
-  '@figma/plugin-typings@1.110.0': {}
+  '@figma/plugin-typings@1.114.0': {}
 
   typescript@5.8.3: {}

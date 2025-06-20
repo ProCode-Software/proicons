@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "Bundler",
+        "module": "ESNext",
+        "lib": [ "ESNext" ],
+        "target": "ESNext",
+        "pretty": true,
+        "moduleDetection": "force",
+        // Lint
+        "strictNullChecks": false,
+        "strictFunctionTypes": false,
+        "strict": false,
+        "noUnusedParameters": false,
+        "skipDefaultLibCheck": true
+    },
+}

@@ -1,5 +1,6 @@
 import MiniSearch, { type SearchResult } from 'minisearch'
-type IconList = Record<string, Object>
+import { Icon } from './types'
+type IconList = Record<string, Icon>
 
 export function searchResultsToIcons(results: SearchResult[]): IconList {
     return Object.fromEntries(

@@ -1,8 +1,6 @@
 import { JSDOM } from 'jsdom'
 
-/**
- * @typedef {[string, Record<string, string>, IconNode[]]} IconNode
- */
+export type IconNode = [string, Record<string, string>, IconNode[]]
 
 /**
  * Converts an SVG string to an array of IconNodes

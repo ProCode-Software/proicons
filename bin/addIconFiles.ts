@@ -11,10 +11,10 @@ import { dirname, resolve } from 'path'
 import { fileURLToPath } from 'url'
 import icons from '../icons/icons.json' with { type: 'json' }
 import lockfile from '../icons/icons.lock.json' with { type: 'json' }
-import { createSvgNodes } from './build/createSvgNodes.js'
-import { getCliParams } from './helpers/getCliParam.js'
-import { prettierFormat } from './helpers/prettierFormat.js'
-import { camelCase, kebabCase, pascalCase } from './helpers/rename.js'
+import { createSvgNodes } from './build/createSvgNodes.ts'
+import { getCliParams } from './helpers/getCliParam.ts'
+import { prettierFormat } from './helpers/prettierFormat.ts'
+import { camelCase, kebabCase, pascalCase } from './helpers/rename.ts'
 
 const __dirname = fileURLToPath(dirname(import.meta.url))
 const __rootdir = resolve(__dirname, '../')
@@ -61,14 +61,14 @@ Promise.all(
         const svgContent = readFileSync(resolve(inDir, inFile), 'utf-8')
         const svgNodes = createSvgNodes(svgContent)
 
-        /** @type {import('./build/templates/iconTemplate.js').default} */
+        /** @type {import('./build/templates/iconTemplate.ts').default} */
         const renderTemplate = (await import(templateDir)).default
 
         const result = renderTemplate(moduleName, svgNodes)
 
         const formatted = await prettierFormat(
             result,
-            formatParam == 'svelte' ? 'svelte' : 'babel'
+            formatParam == 'svelte' ? 'svelte' : 'babel-ts'
         )
 
         writeFileSync(outputPath, formatted)
@@ -125,16 +125,14 @@ Promise.all(
     if (shouldCreateDataFiles) {
         const formatAndWrite = async (data, file) => {
             const formatted = await prettierFormat(
-                'export default ' + JSON.stringify(data),
-                'babel'
+                'export default ' + JSON.stringify(data) + ' as const',
+                'babel-ts'
             )
 
             writeFileSync(resolve(process.cwd(), 'src', file), formatted)
         }
 
-        const iconListData = Object.keys(icons)
-            .map(name => name)
-            .sort()
+        const iconListData = Object.keys(icons).sort()
 
         const categoryData = Object.values(icons)
             .map(({ category }) => category)

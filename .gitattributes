@@ -1,7 +1,8 @@
 **/.vitepress/theme/** -linguist-detectable
-tools/data/* -linguist-detectable
-icons/fonts/** -linguist-detectable
-*.html -linguist-detectable
+icons/fonts/** -linguist-generated
+*.html -linguist-detecabtle
 **/ProIcons.css -linguist-detectable
-**/ProIcons.luau linguist-vendored
-**/src/icons.ts linguist-vendored
+**/ProIcons.luau linguist-generated
+**/src/icons.ts linguist-generated
+**/src/iconList.ts linguist-generated
+**/src/categories.ts linguist-generated

@@ -1,11 +1,6 @@
-import { getData } from './templateData.js'
+import { getData, type Node } from "../../../bin/build/templates/templateData.ts";
 
-/**
- * @param {string} moduleName
- * @param {import("../createSvgNodes.js").IconNode[]} nodes
- * @returns {string}
- */
-export default (moduleName, nodes) => {
+export default (moduleName: string, nodes: Node[]): string => {
     const {
         camelName,
         deprecationData,
@@ -18,10 +13,8 @@ export default (moduleName, nodes) => {
 
     const iconInfo = {
         name: friendlyName,
-        tags: iconData.description.split(', ').map(t => t.trim()),
-        category: iconData.category,
         deprecated: !!deprecationData,
-        alternativeIcon: deprecationData?.alternative ?? undefined,
+        alternative: deprecationData?.alternative ?? undefined,
     }
 
     return `
