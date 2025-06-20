@@ -1,6 +1,6 @@
 **/.vitepress/theme/** -linguist-detectable
 icons/fonts/** -linguist-generated
-*.html -linguist-detecabtle
+*.html -linguist-detectable
 **/ProIcons.css -linguist-detectable
 **/ProIcons.luau linguist-generated
 **/src/icons.ts linguist-generated
