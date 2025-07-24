@@ -1,35 +1,38 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { filterIcons } from '../../composables/IconSearch'
-import { Icon, Lockfile } from '../../composables/types'
+import { Icon, IconAction, IconEntry, Lockfile } from '../../composables/types'
+import { customizationData } from '../../composables/useCustomizations'
 import { fetchCodepoints, fetchIconsFromVersion } from '../../composables/versionData'
 import IconDetails from './details/IconDetails.vue'
 import IconList from './IconList.vue'
 import IconSearch from './IconSearch.vue'
 import NoResults from './NoResults.vue'
 import VersionSelection from './VersionSelection.vue'
-import { customizationData } from '../../composables/useCustomizations'
 
 const query = ref('')
 const selectedIcon = ref(null)
 const selectedIconName = ref('')
 const selectedVersion = ref('')
 const icons = ref({})
-const lockfile = ref<Lockfile>({})
+const lockfile = ref({} as Lockfile)
 const codepoints = ref({})
 const length = computed(() => Object.entries(icons.value).length)
 
 const filteredIcons = computed(() =>
-    query.value.length > 0 ? ref(addEvents(filterIcons(icons.value, query.value))) : icons
+    query.value !== '' ? ref(addEvents(filterIcons(icons.value, query.value))) : icons
 )
 
-function addEvents(ics: Record<string, Icon>) {
+function addEvents(ics: Record<string, Icon>): Record<string, IconAction> {
     return Object.fromEntries(
         Object.entries(ics).map(([name, data]) => {
+            const li = lockfile.value.icons.find(ic => ic.name == name)
             return [
                 name,
                 {
                     action: selectIcon,
+                    new: li.added == selectedVersion.value,
+                    updated: li.updated == selectedVersion.value,
                     ...data,
                 },
             ]
@@ -43,12 +46,12 @@ async function updateVersion(v: string) {
     const fetchedCodepoints = await fetchCodepoints(selectedVersion.value)
     const fetchedIcons = fetchedData.icons
 
-    icons.value = addEvents(fetchedIcons)
     lockfile.value = fetchedData.lockfile
+    icons.value = addEvents(fetchedIcons)
     codepoints.value = fetchedCodepoints
 }
 
-function selectIcon(ic) {
+function selectIcon(ic: IconEntry) {
     selectedIcon.value = ic
     selectedIconName.value = ic[0]
 }
@@ -90,7 +93,11 @@ function selectIcon(ic) {
 
             <NoResults v-else :query="query" />
         </main>
-        <IconDetails :icon="selectedIcon" :lockfile="lockfile" :codepoints="codepoints" />
+        <IconDetails
+            :icon="selectedIcon"
+            :lockfile="lockfile as Lockfile"
+            :codepoints="codepoints"
+        />
     </div>
 </template>
 <style lang="scss" scoped>

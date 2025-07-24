@@ -1,21 +1,23 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { customizationData, useSvgVariables } from "../../composables/useCustomizations";
-import { IconEntry } from "../../composables/types";
+import { computed } from 'vue'
+import { Icon, IconAction, IconActionEntry, IconEntry } from '../../composables/types'
+import { customizationData, useSvgVariables } from '../../composables/useCustomizations'
 
-const { icon, selected } = defineProps<{ icon: IconEntry, selected: boolean }>()
+const { icon, selected } = defineProps<{ icon: IconActionEntry; selected: boolean }>()
 
-const [key, value] = icon
+const [key, value]: [string, IconAction] = icon
 
 const svg = computed(() => useSvgVariables(value.icon, customizationData))
 </script>
 
 <template>
-    <button :class="{ IconListItem: true, selected }"
-        tabindex="0" role="button"
-        @click="value.action(icon)">
+    <button :class="{ IconListItem: true, selected }" tabindex="0"
+        role="button" @click="value.action(icon)">
         <div class="iconWrapper" v-html="svg" />
         <span class="iconLabel">{{ key }}</span>
+        <div class="newBadge" v-if="value.new || value.updated">
+            {{ value.new ? 'New' : 'Updated' }}
+        </div>
     </button>
 </template>
 <style scoped lang="scss">
@@ -29,7 +31,9 @@ const svg = computed(() => useSvgVariables(value.icon, customizationData))
     font-size: 14px;
     aspect-ratio: 1 / 1;
     border-radius: 10px;
-    transition: background .2s, color .2s;
+    transition:
+        background 0.2s,
+        color 0.2s;
     cursor: pointer;
     height: 100%;
     width: 100%;
@@ -56,6 +60,18 @@ const svg = computed(() => useSvgVariables(value.icon, customizationData))
         font-size: 14px;
         color: var(--vp-c-text-2);
         overflow-wrap: anywhere;
+    }
+
+    .newBadge {
+        background: var(--vp-c-brand-1);
+        color: var(--vp-c-bg);
+        border-radius: 100px;
+        padding: 2px 6px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.4;
+        font-weight: 500;
+        margin-top: -5px;
     }
 }
 </style>

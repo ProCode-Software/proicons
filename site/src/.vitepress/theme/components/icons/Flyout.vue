@@ -3,9 +3,10 @@ import { Ref, ref, watch } from "vue";
 
 interface Item {
     text: string,
-    action?: Function,
+    action?: () => void,
     header?: boolean,
-    default?: boolean
+    default?: boolean,
+    index?: number,
 }
 interface Props {
     items: Item[],
@@ -61,7 +62,7 @@ if (selectMenu) {
     currentItem.value = itemIndex.findIndex(item => item.default)
 }
 
-function itemClick(item) {
+function itemClick(item: Item) {
     item.action?.();
     changeItem(item.index);
     toggleOpen()

@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { ChevronDownIcon, BranchForkIcon } from "@proicons/vue";
 import { BranchForkIcon as BranchForkIcon2, OpenIcon, TagIcon } from "proicons";
-import { fetchLastCommitDate, fetchVersionData } from "../../composables/versionData";
+import { fetchLastCommitDate, fetchVersionData, ReleaseData } from "../../composables/versionData";
 import Flyout from "./Flyout.vue";
 import { setVersion } from "../../composables/versionSelection";
 
@@ -39,7 +39,7 @@ function set(v: string) {
     setVersion(v, emit)
 }
 
-const items = Object.entries(versionData).map(([v, data]) => {
+const items = Object.entries(versionData).map(([v, data]: [string, ReleaseData]) => {
     return {
         text: text(
             TagIcon,

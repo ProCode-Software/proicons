@@ -1,5 +1,5 @@
-import { camelToKebabCase, kebabCase, pascalCase } from '../../../../../src/rename';
-import { defaultCustomizations, type CustomizationData } from './useCustomizations';
+import { camelToKebabCase, kebabCase, pascalCase } from '../../../../../src/rename'
+import { defaultCustomizations, type CustomizationData } from './useCustomizations'
 
 type Format = 'jsx' | 'vue' | 'html'
 
@@ -9,9 +9,7 @@ function formatJson(object: Record<string, any>): string {
     const formatted = JSON.stringify(object, null, 4)
         .replace(/"([^"]+)":/g, '$1:') // Remove quoted keys
         .replace(/"(\d+(?:\.\d+)?)"/g, '$1') // Unquote numbers
-    return length > 2
-        ? formatted
-        : formatted.replace(/\n\s*/g, ' ') // Single-line if short
+    return length > 2 ? formatted : formatted.replace(/\n\s*/g, ' ') // Single-line if short
 }
 
 function filterModified(object: Record<string, any>) {
@@ -22,25 +20,28 @@ function filterModified(object: Record<string, any>) {
 }
 
 function customizationDataToString(data: CustomizationData, format: Format): string {
-    return filterModified(data).map(([k, value]) => {
-        const key = format == 'html'
-            ? (k == 'strokeFilledElements' ? 'outline' : camelToKebabCase(k))
-            : k
-        const isBool = typeof value == 'boolean'
-        const isNumber = !isBool && (typeof value == 'number' || !isNaN(+value))
-        const quotes = (str: string) => `"${str}"`
-        const braces = (str: string) => `{${str}}`
+    return filterModified(data)
+        .map(([k, value]) => {
+            const key =
+                format == 'html'
+                    ? k == 'strokeFilledElements'
+                        ? 'outline'
+                        : camelToKebabCase(k)
+                    : k
+            const isBool = typeof value == 'boolean'
+            const isNumber = !isBool && (typeof value == 'number' || !isNaN(+value))
+            const quotes = (str: string) => `"${str}"`
+            const braces = (str: string) => `{${str}}`
 
-        return [
-            isNumber && format == 'vue' ? ':' : '',
-            key,
-            isBool ? ''
-                : `=${isNumber && format == 'jsx'
-                    ? braces(value)
-                    : quotes(value)
-                }`
-        ].join('')
-    }).join(' ')
+            return [
+                isNumber && format == 'vue' ? ':' : '',
+                key,
+                isBool
+                    ? ''
+                    : `=${isNumber && format == 'jsx' ? braces(value) : quotes(value)}`,
+            ].join('')
+        })
+        .join(' ')
 }
 
 function attrs(format: Format, data?: CustomizationData): string | undefined {
@@ -61,69 +62,71 @@ export function indent(text: string): string {
 }
 
 export function getCodeExamples(iconName: string, customizations?: CustomizationData) {
+    const pascalName = pascalCase(iconName),
+        kebabName = kebabCase(iconName)
     return {
         HTML: {
             language: 'html',
             code: [
-                `<i proicon="${kebabCase(iconName)}"${attrs('html', customizations)}></i>\n`,
+                `<i proicon="${kebabName}"${attrs('html', customizations)}></i>\n`,
                 `<script src="https://unpkg.com/proicons"></script>`,
                 `<script>`,
                 `    proicons.replace()`,
-                `</script>`
+                `</script>`,
             ].join('\n'),
-            entry: `<i proicon="${kebabCase(iconName)}"></i>`,
+            entry: `<i proicon="${kebabName}"></i>`,
         },
         Vanilla: {
             language: 'javascript',
             code: [
-                `import { ${pascalCase(iconName)}Icon } from 'proicons'\n`,
+                `import { ${pascalName}Icon } from 'proicons'\n`,
                 `document.write(`,
-                `    ${pascalCase(iconName)}Icon.toSvg(${indent(customizationDataToJS(customizations))})`,
-                `)`
+                `    ${pascalName}Icon.toSvg(${indent(customizationDataToJS(customizations))})`,
+                `)`,
             ].join('\n'),
-            entry: `${pascalCase(iconName)}Icon.toSvg()`
+            entry: `${pascalName}Icon.toSvg()`,
         },
         React: {
             language: 'jsx',
             code: [
-                `import { ${pascalCase(iconName)}Icon } from '@proicons/react'\n`,
+                `import { ${pascalName}Icon } from '@proicons/react'\n`,
                 `export default function App() {`,
                 '    return (',
-                `        <${pascalCase(iconName)}Icon${attrs('jsx', customizations)} />`,
+                `        <${pascalName}Icon${attrs('jsx', customizations)} />`,
                 '    )',
-                '}'
+                '}',
             ].join('\n'),
-            entry: `<${pascalCase(iconName)}Icon />`,
+            entry: `<${pascalName}Icon />`,
         },
         Svelte: {
             language: 'svelte',
             code: [
                 `<script>`,
-                `import ${pascalCase(iconName)}Icon from '@proicons/svelte'`,
+                `import ${pascalName}Icon from '@proicons/svelte'`,
                 `</script>\n`,
-                `<${pascalCase(iconName)}Icon${attrs('jsx', customizations)} />`,
+                `<${pascalName}Icon${attrs('jsx', customizations)} />`,
             ].join('\n'),
-            entry: `<${pascalCase(iconName)}Icon />`,
+            entry: `<${pascalName}Icon />`,
         },
         Vue: {
             language: 'vue',
             code: [
                 `<script setup>`,
-                `import { ${pascalCase(iconName)}Icon } from '@proicons/vue'`,
+                `import { ${pascalName}Icon } from '@proicons/vue'`,
                 `</script>\n`,
                 `<template>`,
-                `    <${pascalCase(iconName)}Icon${attrs('vue', customizations)} />`,
-                `</template>`
+                `    <${pascalName}Icon${attrs('vue', customizations)} />`,
+                `</template>`,
             ].join('\n'),
-            entry: `<${pascalCase(iconName)}Icon />`,
+            entry: `<${pascalName}Icon />`,
         },
         Webfont: {
             language: 'html',
             code: [
                 `<link rel="stylesheet" href="https://unpkg.com/@proicons/webfont">`,
-                `<i class="proicon proicon-${kebabCase(iconName)}"></i>`
+                `<i class="proicon proicon-${kebabName}"></i>`,
             ].join('\n\n'),
-            entry: `<i class="proicon proicon-${kebabCase(iconName)}"></i>`,
-        }
+            entry: `<i class="proicon proicon-${kebabName}"></i>`,
+        },
     }
 }

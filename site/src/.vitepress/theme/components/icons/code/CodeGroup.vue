@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { createHighlighter } from 'shiki';
 import { computed, ref } from "vue";
-import { createHighlighter } from 'shiki'
 
 const randomBytes = () => Math.floor(Math.random() * 10 ** 11).toString(36)
 

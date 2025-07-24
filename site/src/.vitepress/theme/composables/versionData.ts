@@ -1,39 +1,40 @@
-import { Codepoints, Icon, Lockfile } from "./types"
+import { Codepoints, Icon, Lockfile } from './types'
 
 const releaseEndpoint = 'https://api.github.com/repos/ProCode-Software/proicons/releases'
 const repoEndpoint = 'https://api.github.com/repos/ProCode-Software/proicons'
 
 export interface ReleaseAsset {
-    name: string,
+    name: string
     browser_download_url: string
 }
 
 export interface ReleaseData {
-    tag_name: string,
-    html_url: string,
-    published_at: string,
-    prerelease: boolean,
-    name: string,
-    body: string,
+    tag_name: string
+    html_url: string
+    published_at: string
+    prerelease: boolean
+    name: string
+    body: string
     assets: ReleaseAsset[]
+    latest?: boolean
 }
 
-export async function fetchVersionData() {
+export async function fetchVersionData(): Promise<ReleaseData> {
     const data: ReleaseData[] = await (await fetch(releaseEndpoint)).json()
 
     const dataObj = Object.fromEntries(
-        data.map(({ tag_name: version, ...release }, index) => {
-            return [version, {
-                ...release,
-                latest: index === 0
-            }]
-        }).filter(([v, d]) => v != '4.9.0')
+        data
+            .map(({ tag_name: version, ...release }, i) => [
+                version,
+                { ...release, latest: i === 0 },
+            ])
+            .filter(([v]) => v != '4.9.0')
     )
     return dataObj
 }
 
 export async function fetchReleases() {
-    return await (await fetch(releaseEndpoint)).json() as ReleaseData[]
+    return (await (await fetch(releaseEndpoint)).json()) as ReleaseData[]
 }
 
 export async function fetchLastCommitDate(): Promise<string> {

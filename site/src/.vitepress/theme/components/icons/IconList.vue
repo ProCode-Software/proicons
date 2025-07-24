@@ -1,34 +1,32 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { getCategories, sortCategoryEntries, sortSearchResults } from '../../composables/useCategories';
-import { kebabCase } from "../../composables/rename";
-import IconItem from "./IconItem.vue";
+import { computed } from 'vue'
+import { kebabCase } from '../../composables/rename'
+import { IconAction, IconActionEntry } from '../../composables/types'
+import {
+    getCategories,
+    sortCategoryEntries,
+    sortSearchResults,
+} from '../../composables/useCategories'
+import IconItem from './IconItem.vue'
 
-interface Icon {
-    icon: string,
-    category: string,
-    tags: string[],
-    score?: number
-}
-const { icons, query, selectedIcon } = defineProps<{ icons: Record<string, Icon>, query?: string, selectedIcon?: string | undefined }>()
+const { icons, query, selectedIcon } = defineProps<{
+    icons: Record<string, IconAction>
+    query?: string
+    selectedIcon?: string | undefined
+}>()
 
-const iconsSearch = computed(() => {
-    return query ?
-        [[
-            `Results for "${query}"`,
-            sortSearchResults(Object.entries(icons))
-        ]]
-        : sortCategoryEntries(
-            Object.entries(getCategories(icons))
-        )
+const iconsSearch = computed<[string, IconActionEntry[]][]>(() => {
+    return query
+        ? [[`Results for "${query}"`, sortSearchResults(Object.entries(icons))]]
+        : sortCategoryEntries(Object.entries(getCategories(icons)))
 })
-
 </script>
 <template>
     <div class="IconList">
-        <section v-for="[category, iconsInCategory] in iconsSearch"
-            :id="kebabCase(category)">
-
+        <section
+            v-for="[category, iconsInCategory] in iconsSearch"
+            :id="kebabCase(category)"
+        >
             <h2 class="categoryTitle">
                 <a :href="query ? undefined : `#${kebabCase(category)}`">
                     {{ category }}
@@ -37,8 +35,12 @@ const iconsSearch = computed(() => {
             </h2>
 
             <div class="categoryIconsList" :key="category">
-                <IconItem v-for="icon in iconsInCategory" :icon="icon"
-                    :key="icon[0]" :selected="icon[0] == selectedIcon" />
+                <IconItem
+                    v-for="icon in iconsInCategory"
+                    :icon="icon"
+                    :key="icon[0]"
+                    :selected="icon[0] == selectedIcon"
+                />
             </div>
         </section>
     </div>
@@ -50,7 +52,7 @@ const iconsSearch = computed(() => {
     gap: 32px;
     width: 100%;
 
-    &>section+section .categoryTitle {
+    & > section + section .categoryTitle {
         border-top: 1px solid var(--vp-c-divider);
         padding-top: 20px;
     }
@@ -63,11 +65,11 @@ const iconsSearch = computed(() => {
     font-weight: 600;
     margin-bottom: 20px;
 
-    &>a {
+    & > a {
         display: flex;
         align-items: center;
         gap: 10px;
-        transition: .15s;
+        transition: 0.15s;
 
         &:hover {
             color: var(--vp-c-brand-1);
@@ -87,7 +89,7 @@ const iconsSearch = computed(() => {
         height: 24px;
         align-items: center;
         justify-content: center;
-        text-align: center
+        text-align: center;
     }
 }
 

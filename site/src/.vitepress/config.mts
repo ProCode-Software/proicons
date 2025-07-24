@@ -4,21 +4,31 @@ import head from './head.mts'
 import nav from './nav.mts'
 
 const name = 'ProIcons'
-const description = "A collection of 500+ modern and open-source icons"
+const description = 'A collection of 500+ modern and open-source icons'
 
 const socialLinks = [
-    { name: 'GitHub', icon: 'github', link: 'https://github.com/ProCode-Software/proicons' },
+    {
+        name: 'GitHub',
+        icon: 'github',
+        link: 'https://github.com/ProCode-Software/proicons',
+    },
     { name: 'X (Twitter)', icon: 'x', link: 'https://x.com/ProCode-Software' },
-    { name: 'Bluesky', icon: 'bluesky', link: 'https://bsky.app/profile/procodesoftware.bsky.social' },
+    {
+        name: 'Bluesky',
+        icon: 'bluesky',
+        link: 'https://bsky.app/profile/procodesoftware.bsky.social',
+    },
 ]
 
 function getSocialLinks() {
-    return socialLinks.map(({ name, icon, link }) => {
-        return `
+    return socialLinks
+        .map(({ name, icon, link }) => {
+            return `
         <a href="${link}" target="_blank" aria-label="${name}" title="${name}">
             <span class="VPIcon vpi-social-${icon}"></span>
         </a>`
-    }).join('')
+        })
+        .join('')
 }
 
 // https://vitepress.dev/reference/site-config
@@ -34,28 +44,31 @@ export default defineConfig({
     base: '/proicons/',
     head,
     markdown: {
+        theme: {
+            light: 'github-light',
+            dark: 'plastic',
+        },
         container: {
             tipLabel: 'Tip',
             warningLabel: 'Warning',
             dangerLabel: 'Danger',
             infoLabel: 'Info',
-        }
+        },
     },
-    rewrites(id) {
-        return id.replace(/^docs\/([^/]+)\//, 'docs/')
-    },
+    rewrites: id => id.replace(/^docs\/([^/]+)\//, 'docs/'),
     sitemap: {
-        hostname: 'https://procode-software.github.io/proicons'
+        hostname: 'https://procode-software.github.io/proicons',
     },
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         editLink: {
-            pattern: 'https://github.com/ProCode-Software/proicons/edit/main/site/src/:path'
+            pattern:
+                'https://github.com/ProCode-Software/proicons/edit/main/site/src/:path',
         },
         outline: 'deep',
         notFound: {
             linkText: 'Go home',
-            title: 'We couldn\'t find the page you were looking for'
+            title: "We couldn't find the page you were looking for",
         },
         nav,
         sidebar,
@@ -65,23 +78,15 @@ export default defineConfig({
         },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/ProCode-Software/proicons' },
-            { icon: 'npm', link: 'https://npmjs.com/package/proicons' }
+            { icon: 'npm', link: 'https://npmjs.com/package/proicons' },
         ],
         footer: {
             message: 'Released under the MIT License.',
-            copyright: `Copyright © ${new Date().getFullYear()} ProCode Software<br>${getSocialLinks()}`
+            copyright: `Copyright © ${new Date().getFullYear()} ProCode Software<br>
+            ${getSocialLinks()}`,
         },
         search: {
-            provider: "local"
-        }
+            provider: 'local',
+        },
     },
-    vite: {
-        css: {
-            preprocessorOptions: {
-                scss: {
-                    api: 'modern-compiler'
-                }
-            }
-        }
-    }
 })
