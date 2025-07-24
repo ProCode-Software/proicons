@@ -6,6 +6,7 @@
     "printWidth": 90,
     "endOfLine": "lf",
     "tabWidth": 4,
+    "switchCase": false,
     "vueIndentScriptAndStyle": false,
     "svelteIndentScriptAndStyle": false,
     "overrides": [

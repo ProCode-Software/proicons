@@ -1,4 +1,4 @@
-import { getData, Node } from './templateData.ts'
+import { getData, type Node } from './templateData.ts'
 
 export default (moduleName: string, nodes: Node[]): string => {
     const {

@@ -6,7 +6,7 @@ settings:
 
 overrides:
   vite: npm:rolldown-vite@latest
-  rolldown: '>=1.0.0-beta.18'
+  rolldown: latest
 
 importers:
 

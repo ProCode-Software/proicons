@@ -43,11 +43,8 @@ export function convertNodesWithConfig(
 
         // Outlining
         if (
-            !Object.hasOwn(props, 'stroke-width') &&
-            Object.hasOwn(props, 'fill') &&
-            props.fill != 'none' &&
-            props.stroke != 'none' &&
-            props['stroke-width'] !== '0' &&
+            props.fill != undefined && props.fill != 'none' &&
+            props.stroke != undefined && props.stroke != 'none' &&
             (options?.strokeWidth ?? 0) > defaultStroke
         ) {
             props['stroke-width'] = (options.strokeWidth - defaultStroke).toString()
@@ -56,9 +53,7 @@ export function convertNodesWithConfig(
             props['stroke-linejoin'] = options.strokeJoin ?? 'round'
         }
 
-        if (children.length) {
-            node[2] = convertNodesWithConfig(children, options)
-        }
+        if (children.length) node[2] = convertNodesWithConfig(children, options)
         return node
     })
 }

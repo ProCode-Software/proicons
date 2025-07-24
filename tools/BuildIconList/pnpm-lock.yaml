@@ -6,23 +6,23 @@ settings:
 
 overrides:
   vite: npm:rolldown-vite@latest
-  rolldown: '>=1.0.0-beta.18'
+  rolldown: latest
 
 importers:
 
   .:
     devDependencies:
       '@figma/plugin-typings':
-        specifier: ^1.114.0
-        version: 1.114.0
+        specifier: ^1.116.0
+        version: 1.116.0
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
 
 packages:
 
-  '@figma/plugin-typings@1.114.0':
-    resolution: {integrity: sha512-rVUEOgDzyk8Td/XsPwgRPTxSNuinIzvs6zJhuk/LJ8FHsA6JEuCrfYjWMEht1LjOyrn/25aAFubWKKDB/fTDRQ==}
+  '@figma/plugin-typings@1.116.0':
+    resolution: {integrity: sha512-jpn7Vq3uxgJF5oQ5PwkWGGIyCwIjB260UjtSzBck9LL1WzXJSaxBH1wo+vrU4XXbV//TURUGBYIQ2tU7cdyRYQ==}
 
   typescript@5.8.3:
     resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
@@ -31,6 +31,6 @@ packages:
 
 snapshots:
 
-  '@figma/plugin-typings@1.114.0': {}
+  '@figma/plugin-typings@1.116.0': {}
 
   typescript@5.8.3: {}

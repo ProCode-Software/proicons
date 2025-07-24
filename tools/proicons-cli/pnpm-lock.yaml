@@ -6,7 +6,7 @@ settings:
 
 overrides:
   vite: npm:rolldown-vite@latest
-  rolldown: '>=1.0.0-beta.18'
+  rolldown: latest
 
 importers:
 
@@ -19,8 +19,8 @@ importers:
         specifier: ^13.1.0
         version: 13.1.0
       prettier:
-        specifier: ^3.5.3
-        version: 3.5.3
+        specifier: ^3.6.2
+        version: 3.6.2
 
 packages:
 
@@ -32,8 +32,8 @@ packages:
     resolution: {integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==}
     engines: {node: '>=18'}
 
-  prettier@3.5.3:
-    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -43,4 +43,4 @@ snapshots:
 
   commander@13.1.0: {}
 
-  prettier@3.5.3: {}
+  prettier@3.6.2: {}

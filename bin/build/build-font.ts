@@ -1,10 +1,10 @@
-import { FontAssetType, generateFonts, OtherAssetType } from '@twbs/fantasticon';
-import ansiColors from "ansi-colors";
-import { execSync } from "child_process";
-import { existsSync, mkdirSync, readFileSync } from "fs";
-import SVGFixer from 'oslllo-svg-fixer';
-import path from "path";
-import codepoints from '../../icons/fonts/ProIcons.json' with { type: 'json' };
+import { FontAssetType, generateFonts, OtherAssetType } from '@twbs/fantasticon'
+import ansiColors from "ansi-colors"
+import { execSync } from "child_process"
+import { existsSync, mkdirSync, readFileSync } from "fs"
+import SVGFixer from 'oslllo-svg-fixer'
+import path from "path"
+import codepoints from '../../icons/fonts/ProIcons.json' with { type: 'json' }
 
 const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
 
@@ -19,7 +19,7 @@ const metadata = `<?xml-model href="https://www.w3.org/TR/WOFF/metadata/woffmeta
     <vendor name="ProCode Software" url="https://procode-software.github.io/proicons"></vendor>
 </metadata>`
 
-async function outlineSvgs(rebuild) {
+async function outlineSvgs(rebuild: boolean) {
     const inputDir = path.resolve('./icons/svg')
     const outputDir = path.resolve('./_outlined')
     const needsBuilding = rebuild || !existsSync(outputDir)
@@ -33,18 +33,18 @@ async function outlineSvgs(rebuild) {
                 traceResolution: 800,
             }).fix()
 
-            console.log(ansiColors.green('Done outlining SVGs!'));
+            console.log(ansiColors.green('Done outlining SVGs!'))
         } else {
-            console.log(ansiColors.green('SVGs are already outlined, skipped'));
+            console.log(ansiColors.green('SVGs are already outlined, skipped'))
         }
     } catch (err) {
-        console.log(ansiColors.red('Error outlining SVGs:'));
-        throw new Error(err);
+        console.log(ansiColors.red('Error outlining SVGs:'))
+        throw new Error(err)
     }
 }
 
 /** @param {boolean} rebuild If --rebuild flag was used */
-export async function buildFont(rebuild) {
+export async function buildFont(rebuild: boolean) {
     try {
         console.log(execSync('pnpm run font:codepoints').toString('utf-8'))
         await outlineSvgs(rebuild)
@@ -81,10 +81,10 @@ export async function buildFont(rebuild) {
             prefix: 'proicon',
         })
 
-        console.log(ansiColors.green('Done building fonts!'));
+        console.log(ansiColors.green('Done building fonts!'))
 
     } catch (err) {
-        console.log(ansiColors.red('Error building fonts:'));
-        throw new Error(err);
+        console.log(ansiColors.red('Error building fonts:'))
+        throw new Error(err)
     }
 }

@@ -19,7 +19,6 @@ export default defineConfig({
     build: {
         target: 'es2015',
         sourcemap: false,
-        minify: false,
         rollupOptions: {
             input: './src/proicons.ts',
             output: bundles.map(format => {
@@ -27,9 +26,10 @@ export default defineConfig({
                     preserveModules: format == 'esm',
                     banner: licenseNotice,
                     name: 'proicons',
+                    minify: format == 'umd',
                     dir: `dist/${format}`,
                     format,
-                    entryFileNames: ({ name }) => {
+                    entryFileNames({ name }) {
                         switch (true) {
                             case format != 'esm':
                                 return `${name}.cjs`
@@ -46,13 +46,9 @@ export default defineConfig({
             preserveEntrySignatures: 'exports-only',
         },
     },
-
     server: {
         open: './src/test.html',
         port: 3000,
     },
-
-    plugins: [
-        dts(),
-    ],
+    plugins: [],
 })

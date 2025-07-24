@@ -2,20 +2,11 @@ import { JSDOM } from 'jsdom'
 
 export type IconNode = [string, Record<string, string>, IconNode[]]
 
-/**
- * Converts an SVG string to an array of IconNodes
- * @param {string} svg
- * @returns {IconNode[]}
- */
-export function createSvgNodes(svg) {
+export function createSvgNodes(svg: string): IconNode[] {
     const parser = new JSDOM(svg)
     const svgElement = parser.window.document.querySelector('svg')
 
-    /**
-     * @returns {IconNode[]}
-     * @param {Element} element
-     */
-    function renderNodeList(element) {
+    function renderNodeList(element: Element): IconNode[] {
         const nodeArray = []
 
         for (const child of element.children) {
