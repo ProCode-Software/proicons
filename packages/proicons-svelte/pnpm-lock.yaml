@@ -14,14 +14,14 @@ importers:
     dependencies:
       svelte:
         specifier: ^5.34.7
-        version: 5.36.14
+        version: 5.36.16
     devDependencies:
       '@sveltejs/package':
         specifier: ^2.4.0
-        version: 2.4.0(svelte@5.36.14)(typescript@5.8.3)
+        version: 2.4.0(svelte@5.36.16)(typescript@5.8.3)
       '@sveltejs/vite-plugin-svelte':
         specifier: ^5.1.1
-        version: 5.1.1(rolldown-vite@7.0.10(esbuild@0.25.3))(svelte@5.36.14)
+        version: 5.1.1(rolldown-vite@7.0.10(esbuild@0.25.3))(svelte@5.36.16)
       '@tsconfig/svelte':
         specifier: ^5.0.4
         version: 5.0.4
@@ -32,7 +32,7 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
       vite:
-        specifier: npm:rolldown-vite@latest
+        specifier: npm:rolldown-vite@^7.0.10
         version: rolldown-vite@7.0.10(esbuild@0.25.3)
 
 packages:
@@ -577,8 +577,8 @@ packages:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
 
-  svelte@5.36.14:
-    resolution: {integrity: sha512-okgNwfVa4FfDGOgd0ndooKjQz1LknUFDGfEJp6QNjYP6B4hDG0KktOP+Pta3ZtE8s+JELsYP+7nqMrJzQLkf5A==}
+  svelte@5.36.16:
+    resolution: {integrity: sha512-C7HnyISfvZEofs7T4p7+bmjrbQlhd6lZfgV2tLYg6Eb3nUFM/Zu9dGlSg+GWbUBU/WPw6zDPOFNZAx9qXsoCkg==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.14:
@@ -777,34 +777,34 @@ snapshots:
     dependencies:
       acorn: 8.15.0
 
-  '@sveltejs/package@2.4.0(svelte@5.36.14)(typescript@5.8.3)':
+  '@sveltejs/package@2.4.0(svelte@5.36.16)(typescript@5.8.3)':
     dependencies:
       chokidar: 4.0.3
       kleur: 4.1.5
       sade: 1.8.1
       semver: 7.7.2
-      svelte: 5.36.14
-      svelte2tsx: 0.7.41(svelte@5.36.14)(typescript@5.8.3)
+      svelte: 5.36.16
+      svelte2tsx: 0.7.41(svelte@5.36.16)(typescript@5.8.3)
     transitivePeerDependencies:
       - typescript
 
-  '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.1.1(rolldown-vite@7.0.10(esbuild@0.25.3))(svelte@5.36.14))(rolldown-vite@7.0.10(esbuild@0.25.3))(svelte@5.36.14)':
+  '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.1.1(rolldown-vite@7.0.10(esbuild@0.25.3))(svelte@5.36.16))(rolldown-vite@7.0.10(esbuild@0.25.3))(svelte@5.36.16)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 5.1.1(rolldown-vite@7.0.10(esbuild@0.25.3))(svelte@5.36.14)
+      '@sveltejs/vite-plugin-svelte': 5.1.1(rolldown-vite@7.0.10(esbuild@0.25.3))(svelte@5.36.16)
       debug: 4.4.1
-      svelte: 5.36.14
+      svelte: 5.36.16
       vite: rolldown-vite@7.0.10(esbuild@0.25.3)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@5.1.1(rolldown-vite@7.0.10(esbuild@0.25.3))(svelte@5.36.14)':
+  '@sveltejs/vite-plugin-svelte@5.1.1(rolldown-vite@7.0.10(esbuild@0.25.3))(svelte@5.36.16)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.1.1(rolldown-vite@7.0.10(esbuild@0.25.3))(svelte@5.36.14))(rolldown-vite@7.0.10(esbuild@0.25.3))(svelte@5.36.14)
+      '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.1.1(rolldown-vite@7.0.10(esbuild@0.25.3))(svelte@5.36.16))(rolldown-vite@7.0.10(esbuild@0.25.3))(svelte@5.36.16)
       debug: 4.4.1
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.17
-      svelte: 5.36.14
+      svelte: 5.36.16
       vite: rolldown-vite@7.0.10(esbuild@0.25.3)
       vitefu: 1.1.1(rolldown-vite@7.0.10(esbuild@0.25.3))
     transitivePeerDependencies:
@@ -1016,14 +1016,14 @@ snapshots:
 
   source-map-js@1.2.1: {}
 
-  svelte2tsx@0.7.41(svelte@5.36.14)(typescript@5.8.3):
+  svelte2tsx@0.7.41(svelte@5.36.16)(typescript@5.8.3):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
-      svelte: 5.36.14
+      svelte: 5.36.16
       typescript: 5.8.3
 
-  svelte@5.36.14:
+  svelte@5.36.16:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@jridgewell/sourcemap-codec': 1.5.4
