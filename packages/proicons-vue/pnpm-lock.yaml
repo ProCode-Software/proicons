@@ -23,7 +23,7 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
       vite:
-        specifier: npm:rolldown-vite@^7.0.11
+        specifier: npm:rolldown-vite@latest
         version: rolldown-vite@7.0.11(esbuild@0.25.3)
       vite-plugin-dts:
         specifier: ^4.5.4

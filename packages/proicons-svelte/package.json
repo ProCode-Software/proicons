@@ -65,7 +65,7 @@
         "@tsconfig/svelte": "^5.0.4",
         "tslib": "^2.8.1",
         "typescript": "^5.8.3",
-        "vite": "npm:rolldown-vite@^7.0.11"
+        "vite": "npm:rolldown-vite@latest"
     },
     "peerDependencies": {
         "svelte": "^5.34.7"
