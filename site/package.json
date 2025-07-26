@@ -13,11 +13,11 @@
     "dependencies": {
         "@proicons/vue": "latest",
         "minisearch": "^7.1.2",
+        "oxc-minify": "0.78.0",
         "proicons": "latest",
         "sass-embedded": "^1.89.2",
         "shiki": "3.2.1",
-        "vitepress": "^1.6.3",
-        "esbuild": "0.25.8",
+        "vitepress": "2.0.0-alpha.8",
         "vue": "^3.5.18"
     }
 }

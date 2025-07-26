@@ -18,16 +18,16 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.2.4
-        version: 5.2.4(rolldown-vite@7.0.10(esbuild@0.25.3))(vue@3.5.18(typescript@5.8.3))
+        version: 5.2.4(rolldown-vite@7.0.11(esbuild@0.25.3))(vue@3.5.18(typescript@5.8.3))
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
       vite:
-        specifier: npm:rolldown-vite@^7.0.10
-        version: rolldown-vite@7.0.10(esbuild@0.25.3)
+        specifier: npm:rolldown-vite@^7.0.11
+        version: rolldown-vite@7.0.11(esbuild@0.25.3)
       vite-plugin-dts:
         specifier: ^4.5.4
-        version: 4.5.4(rolldown-vite@7.0.10(esbuild@0.25.3))(rollup@4.40.1)(typescript@5.8.3)
+        version: 4.5.4(rolldown-vite@7.0.11(esbuild@0.25.3))(rollup@4.40.1)(typescript@5.8.3)
       vue-tsc:
         specifier: ^2.2.12
         version: 2.2.12(typescript@5.8.3)
@@ -819,8 +819,8 @@ packages:
     engines: {node: '>= 0.4'}
     hasBin: true
 
-  rolldown-vite@7.0.10:
-    resolution: {integrity: sha512-t3jMDID78NAJ2PWd0Q5RFrDpD1mFv20ouO/yDbqeHzG2Iyi2ZsjChLKClag1bUm591JJXBsoJIjP6FDkFi9qbw==}
+  rolldown-vite@7.0.11:
+    resolution: {integrity: sha512-5C0rxNUIQLnFNJenYieXU1A9RSAbnM7hGFZayIvR/wbU2tiCE/CQ6Z2dIk1msTozZlNrM0nSYeYLM/6VWuMYuA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -1266,9 +1266,9 @@ snapshots:
 
   '@types/estree@1.0.8': {}
 
-  '@vitejs/plugin-vue@5.2.4(rolldown-vite@7.0.10(esbuild@0.25.3))(vue@3.5.18(typescript@5.8.3))':
+  '@vitejs/plugin-vue@5.2.4(rolldown-vite@7.0.11(esbuild@0.25.3))(vue@3.5.18(typescript@5.8.3))':
     dependencies:
-      vite: rolldown-vite@7.0.10(esbuild@0.25.3)
+      vite: rolldown-vite@7.0.11(esbuild@0.25.3)
       vue: 3.5.18(typescript@5.8.3)
 
   '@volar/language-core@2.4.15':
@@ -1645,7 +1645,7 @@ snapshots:
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
 
-  rolldown-vite@7.0.10(esbuild@0.25.3):
+  rolldown-vite@7.0.11(esbuild@0.25.3):
     dependencies:
       fdir: 6.4.6(picomatch@4.0.3)
       lightningcss: 1.30.1
@@ -1746,7 +1746,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite-plugin-dts@4.5.4(rolldown-vite@7.0.10(esbuild@0.25.3))(rollup@4.40.1)(typescript@5.8.3):
+  vite-plugin-dts@4.5.4(rolldown-vite@7.0.11(esbuild@0.25.3))(rollup@4.40.1)(typescript@5.8.3):
     dependencies:
       '@microsoft/api-extractor': 7.52.9
       '@rollup/pluginutils': 5.2.0(rollup@4.40.1)
@@ -1759,7 +1759,7 @@ snapshots:
       magic-string: 0.30.17
       typescript: 5.8.3
     optionalDependencies:
-      vite: rolldown-vite@7.0.10(esbuild@0.25.3)
+      vite: rolldown-vite@7.0.11(esbuild@0.25.3)
     transitivePeerDependencies:
       - '@types/node'
       - rollup
