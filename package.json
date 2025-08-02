@@ -75,7 +75,7 @@
         "@proicons/pixelfix": "workspace:*",
         "@proicons/svgo-plugins": "workspace:*",
         "@twbs/fantasticon": "^3.1.0",
-        "@types/node": "^22.16.5",
+        "@types/node": "^24.1.0",
         "@typescript/native-preview": "7.0.0-dev.20250723.1",
         "adm-zip": "^0.5.16",
         "ansi-colors": "^4.1.3",
@@ -84,16 +84,16 @@
         "form-data": "^4.0.4",
         "jsdom": "^26.1.0",
         "oslllo-svg-fixer": "^5.0.0",
-        "piscina": "^4.9.2",
+        "piscina": "^5.1.3",
         "prettier": "^3.6.2",
         "prettier-plugin-svelte": "^3.4.0",
         "progress": "^2.0.3",
-        "rolldown-plugin-dts": "^0.14.1",
-        "sharp": "^0.33.5",
-        "svgo": "^3.3.2",
-        "typescript": "^5.8.3",
-        "vite": "npm:rolldown-vite@^7.0.11",
+        "rolldown-plugin-dts": "^0.14.3",
+        "sharp": "^0.34.3",
+        "svgo": "^4.0.0",
+        "typescript": "^5.9.2",
+        "vite": "npm:rolldown-vite@^7.0.12",
         "vite-plugin-dts": "^4.5.4"
     },
-    "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad"
+    "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748"
 }

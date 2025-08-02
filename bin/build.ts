@@ -52,7 +52,6 @@ const svgoConfig = {
             name: 'preset-default',
             params: {
                 overrides: {
-                    removeViewBox: false,
                     inlineStyles: {
                         onlyMatchedOnce: false,
                     },
@@ -71,7 +70,6 @@ const iconsJsonPath = resolve(__rootdir, 'icons/icons.json')
 
 let newIcons = []
 if (!existsSync(inDir)) mkdirSync(inDir)
-const files = readdirSync(inDir)
 
 function getIconsJson(): IconsJSON {
     const iconsJson: IconsJSON = JSON.parse(readFileSync(iconsJsonPath, 'utf-8'))
@@ -138,15 +136,12 @@ function createLockfile() {
     const config: IconsJSON = JSON.parse(readFileSync(iconsJsonPath, 'utf-8'))
 
     Object.keys(config).forEach(friendlyName => {
-        const iconInLockfile = z => z.name == friendlyName
-        const lockfileItem = lockfile.icons.find(iconInLockfile)
+        const lockfileItem = lockfile.icons[friendlyName]
 
         if (!lockfileItem) {
-            const lfItem = {
-                name: friendlyName,
+            lockfile.icons[friendlyName] = {
                 added: version,
             }
-            lockfile.icons.push(lfItem)
         } else if (
             newIcons.includes(friendlyName) &&
             lockfileItem &&

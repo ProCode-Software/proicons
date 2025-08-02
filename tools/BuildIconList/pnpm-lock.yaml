@@ -16,16 +16,16 @@ importers:
         specifier: ^1.116.0
         version: 1.116.0
       typescript:
-        specifier: ^5.8.3
-        version: 5.8.3
+        specifier: ^5.9.2
+        version: 5.9.2
 
 packages:
 
   '@figma/plugin-typings@1.116.0':
     resolution: {integrity: sha512-jpn7Vq3uxgJF5oQ5PwkWGGIyCwIjB260UjtSzBck9LL1WzXJSaxBH1wo+vrU4XXbV//TURUGBYIQ2tU7cdyRYQ==}
 
-  typescript@5.8.3:
-    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
+  typescript@5.9.2:
+    resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -33,4 +33,4 @@ snapshots:
 
   '@figma/plugin-typings@1.116.0': {}
 
-  typescript@5.8.3: {}
+  typescript@5.9.2: {}

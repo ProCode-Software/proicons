@@ -26,7 +26,7 @@ const filteredIcons = computed(() =>
 function addEvents(ics: Record<string, Icon>): Record<string, IconAction> {
     return Object.fromEntries(
         Object.entries(ics).map(([name, data]) => {
-            const li = lockfile.value.icons.find(ic => ic.name == name)
+            const li = lockfile.value.icons[name]
             return [
                 name,
                 {

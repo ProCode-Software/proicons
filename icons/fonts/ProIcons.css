@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?07d2af66a691584c52d4f54b26502674") format("truetype"),
-url("./ProIcons.woff?07d2af66a691584c52d4f54b26502674") format("woff"),
-url("./ProIcons.woff2?07d2af66a691584c52d4f54b26502674") format("woff2"),
-url("./ProIcons.eot?07d2af66a691584c52d4f54b26502674#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?3aee62c34d4c00fae3c9ae60911e1c24") format("truetype"),
+url("./ProIcons.woff?3aee62c34d4c00fae3c9ae60911e1c24") format("woff"),
+url("./ProIcons.woff2?3aee62c34d4c00fae3c9ae60911e1c24") format("woff2"),
+url("./ProIcons.eot?3aee62c34d4c00fae3c9ae60911e1c24#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -1530,72 +1530,81 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-road-cone::before {
   content: "\e1f7";
 }
+.proicon-book-letter::before {
+  content: "\e1f8";
+}
+.proicon-power::before {
+  content: "\e1f9";
+}
+.proicon-basketball::before {
+  content: "\e1fa";
+}
+.proicon-book-marked::before {
+  content: "\e1fb";
+}
+.proicon-kotlin::before {
+  content: "\e1fc";
+}
+.proicon-openai::before {
+  content: "\e1fd";
+}
+.proicon-photo-sparkle::before {
+  content: "\e1fe";
+}
+.proicon-pencil-sparkle::before {
+  content: "\e1ff";
+}
+.proicon-paintbrush-2-sparkle::before {
+  content: "\e200";
+}
+.proicon-bug-add::before {
+  content: "\e201";
+}
+.proicon-bug-play::before {
+  content: "\e202";
+}
+.proicon-asterisk::before {
+  content: "\e203";
+}
+.proicon-code-square::before {
+  content: "\e204";
+}
+.proicon-eraser-sparkle::before {
+  content: "\e205";
+}
 .proicon-apps-list::before {
   content: "\f101";
 }
-.proicon-asterisk::before {
+.proicon-bar-graph::before {
   content: "\f102";
 }
-.proicon-bar-graph::before {
+.proicon-box-margins::before {
   content: "\f103";
 }
-.proicon-basketball::before {
+.proicon-magnet::before {
   content: "\f104";
 }
-.proicon-book-letter::before {
+.proicon-phone-accept::before {
   content: "\f105";
 }
-.proicon-book-marked::before {
+.proicon-phone-hang-up::before {
   content: "\f106";
 }
-.proicon-box-margins::before {
+.proicon-text-bullet-list-square-add::before {
   content: "\f107";
 }
-.proicon-bug-add::before {
+.proicon-text-bullet-list-square::before {
   content: "\f108";
 }
-.proicon-bug-play::before {
+.proicon-text-bullet-list-tree::before {
   content: "\f109";
 }
-.proicon-code-square::before {
+.proicon-text-bullet-list::before {
   content: "\f10a";
 }
-.proicon-eraser-sparkle::before {
+.proicon-toy-brick::before {
   content: "\f10b";
 }
-.proicon-kotlin::before {
+.proicon-treasure-chest::before {
   content: "\f10c";
-}
-.proicon-openai::before {
-  content: "\f10d";
-}
-.proicon-paintbrush-2-sparkle::before {
-  content: "\f10e";
-}
-.proicon-pencil-sparkle::before {
-  content: "\f10f";
-}
-.proicon-phone-accept::before {
-  content: "\f110";
-}
-.proicon-phone-hang-up::before {
-  content: "\f111";
-}
-.proicon-photo-sparkle::before {
-  content: "\f112";
-}
-.proicon-power::before {
-  content: "\f113";
-}
-.proicon-text-bullet-list-square-add::before {
-  content: "\f114";
-}
-.proicon-text-bullet-list-square::before {
-  content: "\f115";
-}
-.proicon-text-bullet-list-tree::before {
-  content: "\f116";
-}
-.proicon-text-bullet-list::before {
-  content: "\f117";
 }

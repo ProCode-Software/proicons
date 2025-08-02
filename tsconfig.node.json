@@ -5,7 +5,11 @@
         "module": "ESNext",
         "lib": [ "ESNext" ],
         "rootDir": ".",
-        "types": ["@types/node"]
+        "types": ["@types/node"],
+        "declaration": false,
+        "allowJs": true,
+        "resolveJsonModule": true,
+        "strictNullChecks": true,
     },
     "include": [
         "./tools",
