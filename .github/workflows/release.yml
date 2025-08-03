@@ -24,6 +24,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+            
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
           
       - name: Get bundle version
         run: |
@@ -36,7 +41,7 @@ jobs:
         run: zip -r $filename ./*
 
       - name: Generate changelog
-        run: node --experimental-strip-types ./bin/generateChangelog.ts -w
+        run: pnpm run generate-changelog -w
 
       - name: Publish release to GitHub
         run: gh release create $VERSION "./icons/$filename" -F CHANGELOG.md -t "ProIcons v$VERSION" -d=${{ inputs.draft }}

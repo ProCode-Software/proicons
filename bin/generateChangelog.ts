@@ -5,7 +5,7 @@ import pkg from '../package.json' with { type: 'json' }
 import { kebabCase } from './helpers/rename.ts'
 const { version } = pkg
 
-const shouldWrite = process.argv.includes('--write') || process.argv.includes('-w')
+const shouldWrite = process.argv.includes('-w') || process.argv.includes('--write')
 const __rootdir = resolve(import.meta.dirname, '../')
 
 export function generateChangelog() {
@@ -13,7 +13,8 @@ export function generateChangelog() {
     const updatedIcons = []
     const renamedIcons = []
 
-    for (const { name, added, updated } of lockfile.icons) {
+    //@ts-ignore
+    for (const [name, { added, updated }] of Object.entries(lockfile.icons)) {
         if (added == version) {
             newIcons.push(name)
         } else if (updated == version) {
