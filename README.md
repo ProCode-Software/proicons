@@ -5,9 +5,9 @@
         <img src="https://img.shields.io/github/v/release/ProCode-Software/proicons?style=for-the-badge"
             alt="Version">
     </a>
-    <a href="https://github.com/ProCode-Software/proicons/releases">
+    <!-- <a href="https://github.com/ProCode-Software/proicons/releases">
         <img alt="Icons" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FProCode-Software%2Fproicons%2Fmain%2Ficons%2Ficons.lock.json&query=%24.icons.length&style=for-the-badge&label=Icons">
-    </a>
+    </a> -->
     <a href="https://github.com/ProCode-Software/proicons">
         <img src="https://img.shields.io/github/stars/ProCode-Software/proicons?style=for-the-badge"
             alt="Stars">
