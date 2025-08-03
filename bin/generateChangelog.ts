@@ -17,8 +17,8 @@ export function generateChangelog() {
         if (added == version) {
             newIcons.push(name)
         } else if (updated == version) {
-
-            const [renamedAlias] = Object.entries(lockfile.aliases).find(([, v]) => v == name) ?? []
+            const [renamedAlias] =
+                Object.entries(lockfile.aliases).find(([, v]) => v == name) ?? []
             if (renamedAlias) renamedIcons.push(`${renamedAlias} → ${name}`)
             else updatedIcons.push(name)
         }

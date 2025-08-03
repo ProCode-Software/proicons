@@ -1,4 +1,4 @@
-const dict: Record<string, { description: string, category?: string, icon: string }> = {}
+const dict: Record<string, { description: string; category?: string; icon: string }> = {}
 
 // @ts-ignore
 const frames: (ComponentNode | FrameNode)[] = figma.currentPage.selection
@@ -20,12 +20,12 @@ const addIcon = async (iconNode: ComponentNode) => {
     dict[iconNode.name] = {
         description: iconNode.description,
         category,
-        icon: await exportIcon(iconNode)
+        icon: await exportIcon(iconNode),
     }
-    console.log(dict[iconNode.name].icon);
+    console.log(dict[iconNode.name].icon)
 }
 
-(async () => {
+;(async () => {
     if (frames.length == 0) {
         figma.notify('No components selected')
         return
@@ -33,7 +33,6 @@ const addIcon = async (iconNode: ComponentNode) => {
     for (const node of frames) {
         if (node.type == 'COMPONENT') {
             await addIcon(node)
-
         } else if (node.type == 'FRAME') {
             for (const child of node.children) {
                 if (child.type == 'COMPONENT') {
@@ -42,15 +41,20 @@ const addIcon = async (iconNode: ComponentNode) => {
             }
         }
     }
-    figma.notify(`Successfully built file for ${frames.length} icon${frames.length == 1 ? '' : 's'}`)
+    figma.notify(
+        `Successfully built file for ${frames.length} icon${frames.length == 1 ? '' : 's'}`
+    )
 
     if (iconsWithoutCategories > 0) {
-        figma.notify(`${iconsWithoutCategories} icon${iconsWithoutCategories > 1 ? 's do not have categories' : ' does not have a category'}`, {
-            error: true
-        })
+        figma.notify(
+            `${iconsWithoutCategories} icon${iconsWithoutCategories > 1 ? 's do not have categories' : ' does not have a category'}`,
+            {
+                error: true,
+            }
+        )
     }
 })().then(() => {
-    figma.showUI(__html__);
+    figma.showUI(__html__)
 
     figma.ui.postMessage(JSON.stringify(dict))
 })

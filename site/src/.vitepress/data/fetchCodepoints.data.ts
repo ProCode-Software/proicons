@@ -1,4 +1,5 @@
-const codepointsUrl = 'https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/fonts/ProIcons.json'
+const codepointsUrl =
+    'https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/fonts/ProIcons.json'
 
 export default {
     async load() {

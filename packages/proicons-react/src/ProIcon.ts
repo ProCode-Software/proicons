@@ -22,7 +22,7 @@ interface ProIconComponent extends ProIconAttributes {
 
 export function getPascalName(name: string): string | undefined {
     const lowerName = name.toLowerCase()
-    
+
     return (
         Object.keys(icons).find(pascalName => {
             const lowerIconName = pascalName.replace(/Icon$/, '').toLowerCase()
@@ -39,7 +39,7 @@ export function getPascalName(name: string): string | undefined {
 
 /**
  * Generic icon component allowing you to import icons by their name
- * 
+ *
  * Note: This breaks tree-shaking
  * @example ```jsx
  * <ProIcon icon="Add Square" />

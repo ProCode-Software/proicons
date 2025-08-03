@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { withBase } from 'vitepress';
-import { useData } from 'vitepress/dist/client/theme-default/composables/data';
+import { withBase } from 'vitepress'
+import { useData } from 'vitepress/dist/client/theme-default/composables/data'
 import { useLangs } from 'vitepress/dist/client/theme-default/composables/langs'
-import VPButton from 'vitepress/dist/client/theme-default/components/VPButton.vue';
+import VPButton from 'vitepress/dist/client/theme-default/components/VPButton.vue'
 
-const { theme } = useData();
-const { currentLang } = useLangs();
+const { theme } = useData()
+const { currentLang } = useLangs()
 </script>
 
 <template>
@@ -38,7 +38,7 @@ const { currentLang } = useLangs();
 .NotFound {
     padding: 64px 24px 96px;
     text-align: center;
-	line-height: normal;
+    line-height: normal;
 }
 
 @media (min-width: 768px) {

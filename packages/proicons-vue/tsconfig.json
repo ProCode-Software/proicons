@@ -4,11 +4,7 @@
         "target": "ES2020",
         "useDefineForClassFields": true,
         "module": "ESNext",
-        "lib": [
-            "ES2022",
-            "DOM",
-            "DOM.Iterable"
-        ],
+        "lib": ["ES2022", "DOM", "DOM.Iterable"],
         "skipLibCheck": true,
         /* Bundler mode */
         "moduleResolution": "Bundler",
@@ -17,9 +13,7 @@
         "moduleDetection": "force",
         "noEmit": true,
         "jsx": "preserve",
-        "types": [
-            "vite/client"
-        ],
+        "types": ["vite/client"],
         /* Linting */
         "strict": false,
         "noUnusedLocals": false,
@@ -28,9 +22,5 @@
         "noImplicitAny": false,
         "rootDir": "./src"
     },
-    "include": [
-        "src/**/*.ts",
-        "src/**/*.tsx",
-        "src/**/*.vue"
-    ]
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

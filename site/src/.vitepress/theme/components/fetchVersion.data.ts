@@ -1,18 +1,20 @@
 export default {
     async load() {
-        const version = await fetch('https://api.github.com/repos/ProCode-Software/proicons/releases/latest')
-            .then((res) => {
+        const version = await fetch(
+            'https://api.github.com/repos/ProCode-Software/proicons/releases/latest'
+        )
+            .then(res => {
                 if (res.ok) {
-                    const releaseData = res.json() as Promise<{ tag_name: string }>;
+                    const releaseData = res.json() as Promise<{ tag_name: string }>
 
-                    return releaseData;
+                    return releaseData
                 }
-                return null;
+                return null
             })
-            .then((res) => res.tag_name);
+            .then(res => res.tag_name)
 
         return {
             version,
-        };
+        }
     },
-};
+}

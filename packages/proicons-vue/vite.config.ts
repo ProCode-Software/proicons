@@ -27,10 +27,8 @@ export default defineConfig({
                 name: 'proicons',
                 dir: `dist`,
                 format: 'es',
-                entryFileNames: ({ name }) => `${
-                    name.replace('src/', 'utils/')
-                    .replace(/\.vue/, '')
-                }.js`,
+                entryFileNames: ({ name }) =>
+                    `${name.replace('src/', 'utils/').replace(/\.vue/, '')}.js`,
                 globals: {
                     vue: 'vue',
                 },

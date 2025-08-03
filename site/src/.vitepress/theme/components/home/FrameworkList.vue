@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { withBase } from "vitepress";
+import { withBase } from 'vitepress'
 
 const c = (t: string) => `#${t}aa`
 
@@ -20,9 +20,13 @@ const frameworks = [
     <div class="FrameworkList">
         <h2 class="title">Available for</h2>
         <div class="frameworks">
-            <a v-for="framework in frameworks" class="framework"
-                :href="`./docs/${framework.path}`" :title="framework.name"
-                :style="{ '--framework-color': framework.color }">
+            <a
+                v-for="framework in frameworks"
+                class="framework"
+                :href="`./docs/${framework.path}`"
+                :title="framework.name"
+                :style="{ '--framework-color': framework.color }"
+            >
                 <img :src="withBase(`/logos/${framework.icon}`)" />
             </a>
         </div>
@@ -44,7 +48,7 @@ const frameworks = [
         width: 48px;
         height: 48px;
         display: flex;
-        transition: .15s;
+        transition: 0.15s;
 
         &:hover {
             transform: scale(1.1);

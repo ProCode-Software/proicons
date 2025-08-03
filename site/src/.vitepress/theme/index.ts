@@ -19,10 +19,10 @@ export default {
 
             'sidebar-nav-before': () => h(IconsSidebar),
 
-            'home-hero-image': () => h(Suspense, h(IconGrid))
+            'home-hero-image': () => h(Suspense, h(IconGrid)),
         })
     },
     enhanceApp({ app, router, siteData }) {
         // ...
-    }
+    },
 } satisfies Theme

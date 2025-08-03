@@ -1,13 +1,12 @@
 {
-  "compilerOptions": {
-    "target": "es6",
-    "lib": ["es6"],
-    "types": ["@figma/plugin-typings"],
-    "strict": true,
-    "moduleResolution": "Bundler",
-    "rootDir": "./",
-    
-  },
-  "include": ["./code.ts"],
-  "exclude": ["node_modules", "**/node_modules/*"]
+    "compilerOptions": {
+        "target": "es6",
+        "lib": ["es6"],
+        "types": ["@figma/plugin-typings"],
+        "strict": true,
+        "moduleResolution": "Bundler",
+        "rootDir": "./"
+    },
+    "include": ["./code.ts"],
+    "exclude": ["node_modules", "**/node_modules/*"]
 }

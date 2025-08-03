@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import CodeGroup from "./CodeGroup.vue";
-import { getCodeExamples } from "../../../composables/useCodeExamples";
-import { customizationData } from "../../../composables/useCustomizations";
+import { computed } from 'vue'
+import CodeGroup from './CodeGroup.vue'
+import { getCodeExamples } from '../../../composables/useCodeExamples'
+import { customizationData } from '../../../composables/useCustomizations'
 
-const { visible, icon } = defineProps<{ visible: boolean, icon: string }>()
+const { visible, icon } = defineProps<{ visible: boolean; icon: string }>()
 
 interface CodeExample {
-    code: string,
-    entry: string,
+    code: string
+    entry: string
     language: string
 }
 function mapCodeExamples(code: Record<string, CodeExample>) {
@@ -16,9 +16,7 @@ function mapCodeExamples(code: Record<string, CodeExample>) {
         return { label, ...data }
     })
 }
-const items = computed(() =>
-    mapCodeExamples(getCodeExamples(icon, customizationData))
-)
+const items = computed(() => mapCodeExamples(getCodeExamples(icon, customizationData)))
 </script>
 <template>
     <Transition name="drawer">
@@ -39,7 +37,7 @@ const items = computed(() =>
     clip-path: border-box;
     --vp-code-block-bg: var(--vp-c-bg);
     --vp-code-tab-bg: var(--vp-code-block-bg);
-    transition: all .3s cubic-bezier(0.41, 0.04, 0.28, 0.98);
+    transition: all 0.3s cubic-bezier(0.41, 0.04, 0.28, 0.98);
 
     &.drawer-enter-active,
     &.drawer-leave-active {

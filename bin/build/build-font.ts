@@ -1,9 +1,9 @@
 import { FontAssetType, generateFonts, OtherAssetType } from '@twbs/fantasticon'
-import ansiColors from "ansi-colors"
-import { execSync } from "child_process"
-import { existsSync, mkdirSync, readFileSync } from "fs"
+import ansiColors from 'ansi-colors'
+import { execSync } from 'child_process'
+import { existsSync, mkdirSync, readFileSync } from 'fs'
 import SVGFixer from 'oslllo-svg-fixer'
-import path from "path"
+import path from 'path'
 import codepoints from '../../icons/fonts/ProIcons.json' with { type: 'json' }
 
 const version = JSON.parse(readFileSync('package.json', 'utf-8')).version
@@ -57,7 +57,7 @@ export async function buildFont(rebuild: boolean) {
             fontHeight: 500,
             codepoints,
             templates: {
-                html: path.resolve('tools/data/html-font.hbs')
+                html: path.resolve('tools/data/html-font.hbs'),
             },
             fontTypes: [
                 FontAssetType.TTF,
@@ -65,13 +65,11 @@ export async function buildFont(rebuild: boolean) {
                 FontAssetType.WOFF2,
                 FontAssetType.EOT,
             ],
-            assetTypes: [
-                OtherAssetType.HTML,
-                OtherAssetType.CSS,
-            ],
+            assetTypes: [OtherAssetType.HTML, OtherAssetType.CSS],
             formatOptions: {
                 ttf: {
-                    description: 'Modern and open-source icons, designed by ProCode-Software',
+                    description:
+                        'Modern and open-source icons, designed by ProCode-Software',
                     version: version.slice(0, -2),
                     url: 'https://procode-software.github.io/proicons',
                     copyright: `©${new Date().getFullYear()} ProCode Software`,
@@ -82,7 +80,6 @@ export async function buildFont(rebuild: boolean) {
         })
 
         console.log(ansiColors.green('Done building fonts!'))
-
     } catch (err) {
         console.log(ansiColors.red('Error building fonts:'))
         throw new Error(err)

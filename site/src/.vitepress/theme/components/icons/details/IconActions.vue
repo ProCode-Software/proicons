@@ -1,19 +1,28 @@
 <script setup lang="ts">
-import { ChevronDownIcon } from "@proicons/vue";
-import { computed, ref } from "vue";
-import { copyChar, copyDataUri, copySvg, downloadPng, downloadSvg } from "../../../composables/copyData";
-import { Codepoints, IconEntry } from "../../../composables/types";
-import Flyout from '../Flyout.vue';
-import { customizationData, useAllCustomizations } from "../../../composables/useCustomizations";
+import { ChevronDownIcon } from '@proicons/vue'
+import { computed, ref } from 'vue'
+import {
+    copyChar,
+    copyDataUri,
+    copySvg,
+    downloadPng,
+    downloadSvg,
+} from '../../../composables/copyData'
+import { Codepoints, IconEntry } from '../../../composables/types'
+import Flyout from '../Flyout.vue'
+import {
+    customizationData,
+    useAllCustomizations,
+} from '../../../composables/useCustomizations'
 
-const { icon, codepoints } = defineProps<{ icon: IconEntry, codepoints: Codepoints }>()
+const { icon, codepoints } = defineProps<{ icon: IconEntry; codepoints: Codepoints }>()
 const iconName = computed(() => icon[0])
 const iconData = computed(() => icon[1])
 const customizedIcon = computed(() => {
     return {
         ...iconData.value,
-        icon: useAllCustomizations(iconData.value.icon, customizationData)
-    } 
+        icon: useAllCustomizations(iconData.value.icon, customizationData),
+    }
 })
 
 const chevronSize = 18
@@ -31,59 +40,67 @@ function setCopied() {
 }
 
 const items = {
-    ViewCode: [
-        { text: 'HTML' },
-        { text: 'React' },
-        { text: 'Vue' }
-    ],
+    ViewCode: [{ text: 'HTML' }, { text: 'React' }, { text: 'Vue' }],
     Copy: [
-        { text: 'Copy SVG', action: () => { copySvg(customizedIcon); setCopied() } },
-        { text: 'Copy Data URL', action: () => { copyDataUri(customizedIcon); setCopied() } },
-        { text: 'Copy Glyph', action: () => { copyChar(iconName, codepoints); setCopied() } }
+        {
+            text: 'Copy SVG',
+            action: () => {
+                copySvg(customizedIcon)
+                setCopied()
+            },
+        },
+        {
+            text: 'Copy Data URL',
+            action: () => {
+                copyDataUri(customizedIcon)
+                setCopied()
+            },
+        },
+        {
+            text: 'Copy Glyph',
+            action: () => {
+                copyChar(iconName, codepoints)
+                setCopied()
+            },
+        },
     ],
     Download: [
         { text: 'Download SVG', action: () => downloadSvg(iconName, customizedIcon) },
-        { text: 'Download PNG', action: () => downloadPng(iconName, customizedIcon) }
-    ]
+        { text: 'Download PNG', action: () => downloadPng(iconName, customizedIcon) },
+    ],
 }
 </script>
 <template>
     <div class="iconActions">
         <div class="action">
-            <button class="VPButton medium alt"
-                @click="$emit('showDrawer')">
+            <button class="VPButton medium alt" @click="$emit('showDrawer')">
                 View code
             </button>
         </div>
         <div class="action">
-            <Flyout :items="items.Copy"
+            <Flyout
+                :items="items.Copy"
                 v-model:open="copyOpen"
-                :position="['top', 'right']">
-
+                :position="['top', 'right']"
+            >
                 <template #trigger="{ toggle }">
-                    <button class="VPButton medium alt"
-                        @click="toggle">
-                        {{ recentlyCopied ? 'Copied!' :
-                        'Copy'}}
-                        <ChevronDownIcon
-                            class="dropdownIcon"
-                            :size="chevronSize" />
+                    <button class="VPButton medium alt" @click="toggle">
+                        {{ recentlyCopied ? 'Copied!' : 'Copy' }}
+                        <ChevronDownIcon class="dropdownIcon" :size="chevronSize" />
                     </button>
                 </template>
             </Flyout>
         </div>
         <div class="action">
-            <Flyout :items="items.Download"
+            <Flyout
+                :items="items.Download"
                 v-model:open="downloadOpen"
-                :position="['top', 'right']">
-
+                :position="['top', 'right']"
+            >
                 <template #trigger="{ toggle }">
-                    <button class="VPButton medium alt"
-                        @click="toggle">
+                    <button class="VPButton medium alt" @click="toggle">
                         Download
-                        <ChevronDownIcon
-                            class="dropdownIcon"
-                            :size="chevronSize" />
+                        <ChevronDownIcon class="dropdownIcon" :size="chevronSize" />
                     </button>
                 </template>
             </Flyout>
@@ -116,7 +133,7 @@ const items = {
         padding: 0px 15px;
 
         &:hover {
-            background: var(--vp-c-gray-1)
+            background: var(--vp-c-gray-1);
         }
 
         .VPIcon {
@@ -135,7 +152,7 @@ const items = {
                 width: auto;
             }
 
-            &>div {
+            & > div {
                 width: auto !important;
             }
         }

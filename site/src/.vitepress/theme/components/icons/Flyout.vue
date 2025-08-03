@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { Ref, ref, watch } from "vue";
+import { Ref, ref, watch } from 'vue'
 
 interface Item {
-    text: string,
-    action?: () => void,
-    header?: boolean,
-    default?: boolean,
-    index?: number,
+    text: string
+    action?: () => void
+    header?: boolean
+    default?: boolean
+    index?: number
 }
 interface Props {
-    items: Item[],
-    open: Ref<boolean, boolean> | boolean,
-    mainRef?: Ref,
-    position: [('top' | 'center' | 'bottom'), ('left' | 'middle' | 'right')],
+    items: Item[]
+    open: Ref<boolean, boolean> | boolean
+    mainRef?: Ref
+    position: ['top' | 'center' | 'bottom', 'left' | 'middle' | 'right']
     selectMenu?: boolean
 }
 const { items, open, selectMenu } = defineProps<Props>()
@@ -43,13 +43,16 @@ function changeItem(index: number) {
     }
 }
 
-watch(() => open, (value) => {
-    if (value) {
-        document.addEventListener('click', closeOnClickOutside)
-        return
+watch(
+    () => open,
+    value => {
+        if (value) {
+            document.addEventListener('click', closeOnClickOutside)
+            return
+        }
+        document.removeEventListener('click', closeOnClickOutside)
     }
-    document.removeEventListener('click', closeOnClickOutside)
-})
+)
 const itemIndex = items.map((item, index) => {
     item.index = index
     return item
@@ -63,31 +66,36 @@ if (selectMenu) {
 }
 
 function itemClick(item: Item) {
-    item.action?.();
-    changeItem(item.index);
+    item.action?.()
+    changeItem(item.index)
     toggleOpen()
 }
 </script>
 <template>
     <slot name="trigger" :toggle="toggleOpen" />
     <Transition name="flyout">
-        <div :class="['flyout', ...position]" v-if="open"
-            ref="main">
+        <div :class="['flyout', ...position]" v-if="open" ref="main">
             <div class="header" v-if="headerItems.length">
-                <button :class="{
-                    contextItem: true,
-                    active: currentItem === item.index
-                }" v-for="item in headerItems"
+                <button
+                    :class="{
+                        contextItem: true,
+                        active: currentItem === item.index,
+                    }"
+                    v-for="item in headerItems"
                     @click="itemClick(item)"
-                    v-html="item.text" />
+                    v-html="item.text"
+                />
             </div>
             <div class="items">
-                <button :class="{
-                    contextItem: true,
-                    active: currentItem === item.index
-                }" v-for="item in nonHeaderItems"
+                <button
+                    :class="{
+                        contextItem: true,
+                        active: currentItem === item.index,
+                    }"
+                    v-for="item in nonHeaderItems"
                     @click="itemClick(item)"
-                    v-html="item.text" />
+                    v-html="item.text"
+                />
             </div>
         </div>
     </Transition>
@@ -114,7 +122,7 @@ function itemClick(item: Item) {
     }
 
     &.flyout-leave-active {
-        transition-duration: .15s;
+        transition-duration: 0.15s;
     }
 
     &.flyout-enter-from,
@@ -136,7 +144,7 @@ function itemClick(item: Item) {
         }
     }
 
-    .header+.items {
+    .header + .items {
         padding-top: 5px;
     }
 }
@@ -177,7 +185,9 @@ function itemClick(item: Item) {
     font-weight: 500;
     color: var(--vp-c-text-1);
     white-space: nowrap;
-    transition: background-color 0.25s, color 0.25s;
+    transition:
+        background-color 0.25s,
+        color 0.25s;
     text-align: left;
 
     &:hover {

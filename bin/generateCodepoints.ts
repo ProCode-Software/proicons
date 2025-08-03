@@ -13,7 +13,7 @@ const codepoints = JSON.parse(readFileSync(codepointsPath, 'utf-8') ?? '{}')
 for (const [i, { name }] of lockfile.icons.entries()) {
     const kebabName = kebabCase(name)
     if (!(kebabName in codepoints)) {
-        codepoints[kebabName] = 0xE000 + i
+        codepoints[kebabName] = 0xe000 + i
     }
 }
 // Cleanup codepoints

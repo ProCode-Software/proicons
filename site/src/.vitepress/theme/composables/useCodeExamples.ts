@@ -91,9 +91,7 @@ export function getCodeExamples(iconName: string, customizations?: Customization
             code: [
                 `import { ${pascalName}Icon } from '@proicons/react'\n`,
                 `export default function App() {`,
-                '    return (',
-                `        <${pascalName}Icon${attrs('jsx', customizations)} />`,
-                '    )',
+                `    return <${pascalName}Icon${attrs('jsx', customizations)} />`,
                 '}',
             ].join('\n'),
             entry: `<${pascalName}Icon />`,

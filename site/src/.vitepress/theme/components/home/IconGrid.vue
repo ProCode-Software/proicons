@@ -21,8 +21,12 @@ onMounted(() => {
 </script>
 <template>
     <div class="IconGrid">
-        <div v-for="[name, { icon }] in randomIcons" :key="name"
-            class="IconItem" v-html="icon"></div>
+        <div
+            v-for="[name, { icon }] in randomIcons"
+            :key="name"
+            class="IconItem"
+            v-html="icon"
+        ></div>
     </div>
 </template>
 <style scoped lang="scss">
@@ -53,7 +57,7 @@ onMounted(() => {
 }
 </style>
 <style lang="scss">
-.IconGrid .IconItem>svg {
+.IconGrid .IconItem > svg {
     animation: svg_show 0.3s ease-out;
     transition: transform 0.2s;
 

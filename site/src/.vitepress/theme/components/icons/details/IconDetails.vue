@@ -1,18 +1,21 @@
 <script setup lang="ts">
-import { AlertCircleIcon, CancelIcon } from "@proicons/vue";
-import { computed, ref, watch } from "vue";
-import { kebabCase } from "../../../composables/rename";
-import { Icon, IconEntry } from '../../../composables/types';
-import { customizationData, useSvgVariables } from "../../../composables/useCustomizations";
-import { getDeprecationData } from "../../../composables/useDeprecationData";
-import { VersionData } from "../../../composables/versionData";
-import CodeDrawer from "../code/CodeDrawer.vue";
-import IconActions from './IconActions.vue';
-import IconSideDetails from "./IconSideDetails.vue";
+import { AlertCircleIcon, CancelIcon } from '@proicons/vue'
+import { computed, ref, watch } from 'vue'
+import { kebabCase } from '../../../composables/rename'
+import { Icon, IconEntry } from '../../../composables/types'
+import {
+    customizationData,
+    useSvgVariables,
+} from '../../../composables/useCustomizations'
+import { getDeprecationData } from '../../../composables/useDeprecationData'
+import { VersionData } from '../../../composables/versionData'
+import CodeDrawer from '../code/CodeDrawer.vue'
+import IconActions from './IconActions.vue'
+import IconSideDetails from './IconSideDetails.vue'
 
 const { icon, versionData } = defineProps<{
-    icon?: IconEntry,
-   versionData: VersionData
+    icon?: IconEntry
+    versionData: VersionData
 }>()
 
 const name = computed<string>(() => icon[0])
@@ -23,35 +26,49 @@ const hidden = ref(!!icon)
 function toggleDrawer() {
     codeDrawerShown.value = !codeDrawerShown.value
 }
-watch(() => icon, () => {
-    hidden.value = false
-})
+watch(
+    () => icon,
+    () => {
+        hidden.value = false
+    }
+)
 const svg = computed(() => useSvgVariables(iconData.value.icon, customizationData))
-const deprecationData = computed(() => getDeprecationData(name.value, versionData.lockfile))
+const deprecationData = computed(() =>
+    getDeprecationData(name.value, versionData.lockfile)
+)
 
 const deprecationMessage = (data: typeof deprecationData.value) =>
-    `This icon was deprecated in v${data.version} and will be removed in a later version.`
-        + (data.alternative ? ` Please use ${data.alternative} instead.` : ``)
+    `This icon was deprecated in v${data.version} and will be removed in a later version.` +
+    (data.alternative ? ` Please use ${data.alternative} instead.` : ``)
 </script>
 <template>
     <Transition name="details">
-        <aside :class="['IconDetail', { withDrawer: codeDrawerShown }]"
-            v-if="icon && versionData.lockfile.getIcon(name)" v-show="!hidden">
+        <aside
+            :class="['IconDetail', { withDrawer: codeDrawerShown }]"
+            v-if="icon && versionData.lockfile.getIcon(name)"
+            v-show="!hidden"
+        >
             <div class="closeButtonWrapper">
                 <button class="closeButton" @click="hidden = true" title="Close">
-                <CancelIcon :size="20" />
-            </button>
+                    <CancelIcon :size="20" />
+                </button>
             </div>
-            <div class="iconPreviewGrid"
-                v-html="svg" :style="{
-                    '--grid-size': customizationData.size
-                }" />
+            <div
+                class="iconPreviewGrid"
+                v-html="svg"
+                :style="{
+                    '--grid-size': customizationData.size,
+                }"
+            />
             <div class="iconDetails">
                 <div class="body">
                     <h2 class="icon">
                         {{ name }}
-                        <div v-if="deprecationData" class="deprecationBanner"
-                            :title="deprecationMessage(deprecationData)">
+                        <div
+                            v-if="deprecationData"
+                            class="deprecationBanner"
+                            :title="deprecationMessage(deprecationData)"
+                        >
                             <AlertCircleIcon :size="20" />
                             Deprecated
                         </div>
@@ -63,18 +80,21 @@ const deprecationMessage = (data: typeof deprecationData.value) =>
                     </span>
                 </div>
                 <div class="right">
-                    <IconSideDetails :icon="name"
-                        :versionData="versionData" />
+                    <IconSideDetails :icon="name" :versionData="versionData" />
                 </div>
             </div>
             <div class="tagList">
-                <span v-if="iconData.description"
-                    v-for="tag in iconData.description.split(',')">{{
-                        tag.trim() }}</span>
+                <span
+                    v-if="iconData.description"
+                    v-for="tag in iconData.description.split(',')"
+                    >{{ tag.trim() }}</span
+                >
             </div>
-            <IconActions :icon="icon"
+            <IconActions
+                :icon="icon"
                 :codepoints="versionData.codepoints"
-                @showDrawer="toggleDrawer" />
+                @showDrawer="toggleDrawer"
+            />
             <CodeDrawer :visible="codeDrawerShown" :icon="name" />
         </aside>
     </Transition>
@@ -92,16 +112,16 @@ const deprecationMessage = (data: typeof deprecationData.value) =>
     bottom: 40px;
     border: 1px solid var(--vp-c-divider);
     box-shadow: var(--vp-shadow-3);
-    grid-template-areas: "a b b" "a c c" "a d d" "e e e";
+    grid-template-areas: 'a b b' 'a c c' 'a d d' 'e e e';
     gap: 15px 20px;
     grid-template-columns: 200px 1fr 1fr;
 
     &.details-enter-active,
     &.details-leave-active {
-        transition: .2s cubic-bezier(0.01, 0.33, 0.33, 0.99);
+        transition: 0.2s cubic-bezier(0.01, 0.33, 0.33, 0.99);
     }
     &.details-leave-active {
-        transition-duration: .15s;
+        transition-duration: 0.15s;
     }
     &.details-enter-from,
     &.details-leave-to {
@@ -119,7 +139,7 @@ const deprecationMessage = (data: typeof deprecationData.value) =>
             inset: 20px;
             top: auto;
             min-width: auto;
-            grid-template-areas: "a b" "c c" "d d" "e e";
+            grid-template-areas: 'a b' 'c c' 'd d' 'e e';
             grid-template-columns: 120px 1fr;
         }
     }
@@ -142,7 +162,7 @@ const deprecationMessage = (data: typeof deprecationData.value) =>
 
     .categoryName a {
         color: var(--vp-c-text-2);
-        transition: color .15s;
+        transition: color 0.15s;
 
         &:hover {
             color: var(--vp-c-brand-1);
@@ -181,19 +201,16 @@ const deprecationMessage = (data: typeof deprecationData.value) =>
 }
 
 .dark .iconPreviewGrid {
-    --fade-gradient: radial-gradient(rgb(0, 0, 0, .1),
-            var(--vp-c-bg-alt) 70%);
+    --fade-gradient: radial-gradient(rgb(0, 0, 0, 0.1), var(--vp-c-bg-alt) 70%);
 }
 
 .iconPreviewGrid {
-    --grid-gradient: var(--vp-c-divider),
-        var(--vp-c-divider) 1px,
-        transparent 1px,
+    --grid-gradient:
+        var(--vp-c-divider), var(--vp-c-divider) 1px, transparent 1px,
         transparent calc(100% / var(--grid-size));
-    --fade-gradient: radial-gradient(rgb(255, 255, 255, .1),
-            var(--vp-c-bg-alt) 70%);
-    background: var(--fade-gradient),
-        repeating-linear-gradient(90deg, var(--grid-gradient)),
+    --fade-gradient: radial-gradient(rgb(255, 255, 255, 0.1), var(--vp-c-bg-alt) 70%);
+    background:
+        var(--fade-gradient), repeating-linear-gradient(90deg, var(--grid-gradient)),
         repeating-linear-gradient(0deg, var(--grid-gradient));
 
     width: 100%;
@@ -236,7 +253,7 @@ const deprecationMessage = (data: typeof deprecationData.value) =>
     }
 }
 
-.tagList>span,
+.tagList > span,
 .badge {
     background: var(--vp-c-default-3);
     border-radius: 10px;
@@ -248,7 +265,9 @@ const deprecationMessage = (data: typeof deprecationData.value) =>
     font-size: 20px;
     display: flex;
     color: var(--vp-c-text-2);
-    transition: background .15s, box-shadow .15s;
+    transition:
+        background 0.15s,
+        box-shadow 0.15s;
     border-radius: 100px;
 
     &:hover,
@@ -273,7 +292,7 @@ const deprecationMessage = (data: typeof deprecationData.value) =>
     }
 
     .closeButton {
-        transition: .15s;
+        transition: 0.15s;
         border-radius: 8px;
         padding: 8px;
         opacity: 0;

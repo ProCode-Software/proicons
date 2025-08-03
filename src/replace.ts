@@ -53,9 +53,8 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
                     let typed: any = element.getAttribute(htmlAttr)
                     if (propTypes[optionKey] == 'number')
                         typed = isNaN(+typed) ? undefined : +typed
-                    else if (propTypes[optionKey] == 'bool')
-                        typed = typed === 'true';
-                    (elementConfig as any)[optionKey] = typed
+                    else if (propTypes[optionKey] == 'bool') typed = typed === 'true'
+                    ;(elementConfig as any)[optionKey] = typed
                     element.removeAttribute(htmlAttr)
                 }
             }

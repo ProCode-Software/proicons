@@ -42,9 +42,7 @@ ProIcons can be imported by the icon name in PascalCase, and may end in `Icon`. 
 import { SearchIcon } from '@proicons/react'
 
 function App() {
-    return (
-        <SearchIcon color="red" size={32} />
-    )
+    return <SearchIcon color="red" size={32} />
 }
 ```
 Props from [`ProIconsOptions`](options#proiconsoptions) can be used to customize icons. These components get converted into `<svg>` elements with your configuration.

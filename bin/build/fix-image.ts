@@ -3,10 +3,10 @@ import pixelfix from '@proicons/pixelfix'
 import sharp from 'sharp'
 import path from 'path'
 
-export default async ({ file, root }: {file: string, root: string}) => {
+export default async ({ file, root }: { file: string; root: string }) => {
     const pngSizes = [24, 72, 120]
     const outDir = path.resolve(root, 'icons/svg')
-    
+
     for (const size of pngSizes) {
         const colors = ['black', 'white']
         const scale = size / 24
@@ -23,7 +23,10 @@ export default async ({ file, root }: {file: string, root: string}) => {
             const newFilePath = path.resolve(newFolder, color, `${file.slice(0, -4)}.png`)
 
             try {
-                await sharp(Buffer.from(fileStr)).resize(size, size).png().toFile(newFilePath)
+                await sharp(Buffer.from(fileStr))
+                    .resize(size, size)
+                    .png()
+                    .toFile(newFilePath)
                 await pixelfix(newFilePath)
             } catch (error) {
                 console.error(`Failed to generate ${file}`, error)

@@ -1,4 +1,5 @@
-const url = 'https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/roblox.json'
+const url =
+    'https://raw.githubusercontent.com/ProCode-Software/proicons/main/icons/roblox.json'
 
 export default {
     async load() {

@@ -57,34 +57,39 @@ function selectIcon(ic: IconEntry) {
 }
 </script>
 <template>
-    <div class="IconPage" :style="{
-        '--customize-color': customizationData.color,
-        '--customize-stroke-width': customizationData.strokeWidth,
-        '--customize-radius':
-            +customizationData.cornerRadius > 0.5
-                ? `${customizationData.cornerRadius}px`
+    <div
+        class="IconPage"
+        :style="{
+            '--customize-color': customizationData.color,
+            '--customize-stroke-width': customizationData.strokeWidth,
+            '--customize-radius':
+                +customizationData.cornerRadius > 0.5
+                    ? `${customizationData.cornerRadius}px`
+                    : undefined,
+            '--customize-size': customizationData.size
+                ? `${customizationData.size}px`
                 : undefined,
-        '--customize-size': customizationData.size
-            ? `${customizationData.size}px`
-            : undefined,
-        '--customize-outline-stroke-width':
-            customizationData.strokeFilledElements &&
+            '--customize-outline-stroke-width':
+                customizationData.strokeFilledElements &&
                 +customizationData.strokeWidth > 1.5
-                ? +customizationData.strokeWidth - 1.5
-                : undefined,
-    }">
+                    ? +customizationData.strokeWidth - 1.5
+                    : undefined,
+        }"
+    >
         <main>
             <div class="group">
-                <IconSearch :placeholder="`Search ${length} icons`"
-                    v-model="query" />
+                <IconSearch :placeholder="`Search ${length} icons`" v-model="query" />
                 <Suspense>
                     <VersionSelection @version-change="updateVersion" />
                 </Suspense>
             </div>
 
-            <IconList v-if="Object.entries(filteredIcons.value).length > 0"
-                :icons="filteredIcons.value" :query
-                :selectedIcon="selectedIconName" />
+            <IconList
+                v-if="Object.entries(filteredIcons.value).length > 0"
+                :icons="filteredIcons.value"
+                :query
+                :selectedIcon="selectedIconName"
+            />
 
             <NoResults v-else :query />
         </main>
@@ -107,7 +112,7 @@ function selectIcon(ic: IconEntry) {
         width: 100%;
     }
 
-    &>main {
+    & > main {
         display: flex;
         flex-direction: column;
         gap: 20px;

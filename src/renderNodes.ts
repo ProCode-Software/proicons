@@ -43,8 +43,10 @@ export function convertNodesWithConfig(
 
         // Outlining
         if (
-            props.fill != undefined && props.fill != 'none' &&
-            props.stroke != undefined && props.stroke != 'none' &&
+            props.fill != undefined &&
+            props.fill != 'none' &&
+            props.stroke != undefined &&
+            props.stroke != 'none' &&
             (options?.strokeWidth ?? 0) > defaultStroke
         ) {
             props['stroke-width'] = (options.strokeWidth - defaultStroke).toString()

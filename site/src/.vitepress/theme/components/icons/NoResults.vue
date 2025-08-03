@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import {computed} from 'vue'
-import VPButton from "vitepress/dist/client/theme-default/components/VPButton.vue";
-import { SearchCancelIcon } from "@proicons/vue";
+import { computed } from 'vue'
+import VPButton from 'vitepress/dist/client/theme-default/components/VPButton.vue'
+import { SearchCancelIcon } from '@proicons/vue'
 
 const { query } = defineProps<{ query: string }>()
 
-const requestUrl = computed(() => `https://github.com/ProCode-Software/proicons/discussions/new?category=icon-requests&title=[Icon%20Request]:%20${encodeURIComponent(query)}`)
-
+const requestUrl = computed(
+    () =>
+        `https://github.com/ProCode-Software/proicons/discussions/new?category=icon-requests&title=[Icon%20Request]:%20${encodeURIComponent(query)}`
+)
 </script>
 <template>
     <div class="center">
@@ -15,13 +17,10 @@ const requestUrl = computed(() => `https://github.com/ProCode-Software/proicons/
         </div>
         <div class="text">
             <h2>No results for "{{ query }}"</h2>
-            <p>However, you can request this icon on GitHub.
-            </p>
+            <p>However, you can request this icon on GitHub.</p>
         </div>
-        <VPButton text="Request on GitHub" theme="alt"
-            :href="requestUrl" />
+        <VPButton text="Request on GitHub" theme="alt" :href="requestUrl" />
     </div>
-
 </template>
 <style lang="scss" scoped>
 .center {
@@ -50,7 +49,6 @@ const requestUrl = computed(() => `https://github.com/ProCode-Software/proicons/
         align-items: center;
         gap: 8px;
     }
-
 }
 
 .NoResultsGraphic {

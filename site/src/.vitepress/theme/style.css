@@ -61,7 +61,7 @@
     --vp-c-tip-1: hsl(208, 70%, 52%);
     --vp-c-tip-2: hsl(208, 70%, 62%);
     --vp-c-tip-3: hsl(208, 70%, 70%);
-    --vp-c-tip-soft: hsla(208, 70%, 70%, .14);
+    --vp-c-tip-soft: hsla(208, 70%, 70%, 0.14);
 
     --vp-c-warning-1: var(--vp-c-yellow-1);
     --vp-c-warning-2: var(--vp-c-yellow-2);
@@ -87,11 +87,12 @@
     --vp-c-tip-1: hsl(208, 90%, 52%);
     --vp-c-tip-2: hsl(208, 90%, 62%);
     --vp-c-tip-3: hsl(208, 90%, 70%);
-    --vp-c-tip-soft: hsla(208, 95%, 50%, .14);
+    --vp-c-tip-soft: hsla(208, 95%, 50%, 0.14);
 }
 
 :root {
-    --vp-font-family-mono: 'Fira Code', 'JetBrains Mono', 'SF Mono', 'Noto Sans Mono', monospace;
+    --vp-font-family-mono:
+        'Fira Code', 'JetBrains Mono', 'SF Mono', 'Noto Sans Mono', monospace;
 }
 
 h1,
@@ -172,7 +173,7 @@ h6 {
 [class^='vpi-']:not(.bg),
 [class*=' vpi-']:not(.bg),
 .vp-icon:not(.bg),
-.vp-doc [class*=language-]>button.copy::after,
+.vp-doc [class*='language-'] > button.copy::after,
 p.custom-block-title::before {
     -webkit-mask: var(--icon) no-repeat;
     mask: var(--icon) no-repeat;
@@ -182,18 +183,18 @@ p.custom-block-title::before {
     color: inherit;
 }
 
-.vp-doc [class*=language-]>button.copy {
+.vp-doc [class*='language-'] > button.copy {
     background-image: none !important;
     --icon: var(--vp-icon-copy);
     color: rgb(128, 128, 128);
 }
 
-.vp-doc [class*=language-]>button.copy.copied {
-    --icon: var(--vp-icon-copied)
+.vp-doc [class*='language-'] > button.copy.copied {
+    --icon: var(--vp-icon-copied);
 }
 
-.vp-doc [class*=language-]>button.copy::before {
-    animation: copiedAnimation .25s var(--copy-transition);
+.vp-doc [class*='language-'] > button.copy::before {
+    animation: copiedAnimation 0.25s var(--copy-transition);
 }
 
 @keyframes copiedAnimation {
@@ -206,7 +207,7 @@ p.custom-block-title::before {
     }
 }
 
-.vp-doc [class*=language-]>button.copy::after {
+.vp-doc [class*='language-'] > button.copy::after {
     width: 20px;
     height: 20px;
     content: '';
@@ -230,7 +231,6 @@ article.box .icon {
     font-size: 26px;
 }
 
-
 p.custom-block-title {
     display: flex;
     gap: 5px;
@@ -247,7 +247,7 @@ p.custom-block-title {
 .search-keyboard-shortcuts span kbd {
     box-shadow: none !important;
     background: none !important;
-    border-color: rgba(100, 100, 100, .3) !important;
+    border-color: rgba(100, 100, 100, 0.3) !important;
     font-family: inherit;
 }
 
@@ -275,7 +275,7 @@ input {
     padding: 25px;
 }
 .sym-img.sh img {
-    --shadow: 0px 20px 20px rgba(0, 0, 0, .2);
+    --shadow: 0px 20px 20px rgba(0, 0, 0, 0.2);
     filter: drop-shadow(var(--shadow));
 }
 .dark .sym-img.sh img {
@@ -307,7 +307,10 @@ input {
     text-align: center;
     font-weight: 600;
     white-space: nowrap;
-    transition: color 0.25s, border-color 0.25s, background-color 0.25s;
+    transition:
+        color 0.25s,
+        border-color 0.25s,
+        background-color 0.25s;
 }
 .VPButton.alt {
     border-color: var(--vp-button-alt-border);

@@ -19,4 +19,4 @@ export interface ProIconsOptions {
     size?: number
 }
 
-export type ProIconAttributes = Partial</* @vue-ignore */SVGAttributes> & ProIconsOptions
+export type ProIconAttributes = Partial</* @vue-ignore */ SVGAttributes> & ProIconsOptions

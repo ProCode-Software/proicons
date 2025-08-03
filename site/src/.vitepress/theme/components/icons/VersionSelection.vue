@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { ChevronDownIcon, BranchForkIcon } from "@proicons/vue";
-import { BranchForkIcon as BranchForkIcon2, OpenIcon, TagIcon } from "proicons";
-import { fetchLastCommitDate, fetchVersionList, ReleaseData } from "../../composables/versionData";
-import Flyout from "./Flyout.vue";
-import { setVersion } from "../../composables/versionSelection";
+import { ChevronDownIcon, BranchForkIcon } from '@proicons/vue'
+import { BranchForkIcon as BranchForkIcon2, OpenIcon, TagIcon } from 'proicons'
+import {
+    fetchLastCommitDate,
+    fetchVersionList,
+    ReleaseData,
+} from '../../composables/versionData'
+import Flyout from './Flyout.vue'
+import { setVersion } from '../../composables/versionSelection'
 
 const versionData = await fetchVersionList()
 const lastCommitDate = await fetchLastCommitDate()
@@ -15,11 +19,12 @@ const emit = defineEmits(['versionChange'])
 const dateFormat: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'short',
-    day: 'numeric'
+    day: 'numeric',
 }
-const baseLink = (v: string) => v == 'Development'
-    ? `https://github.com/ProCode-Software/proicons`
-    : `https://github.com/ProCode-Software/proicons/releases/tag/${v.replace(/^v/, '')}`
+const baseLink = (v: string) =>
+    v == 'Development'
+        ? `https://github.com/ProCode-Software/proicons`
+        : `https://github.com/ProCode-Software/proicons/releases/tag/${v.replace(/^v/, '')}`
 
 const text = (icon, label: string, date: string, latest: boolean) => `
 ${icon.toSvg({ size: 20 })}
@@ -41,38 +46,31 @@ function set(v: string) {
 
 const items = Object.entries(versionData).map(([v, data]: [string, ReleaseData]) => {
     return {
-        text: text(
-            TagIcon,
-            'v' + v,
-            data.published_at,
-            data.latest
-        ),
+        text: text(TagIcon, 'v' + v, data.published_at, data.latest),
         action: () => set(v),
         header: data.latest,
         default: data.latest,
-        ...data
+        ...data,
     }
 })
 // @ts-ignore
 items.unshift({
-    text: text(
-        BranchForkIcon2,
-        'Development',
-        lastCommitDate,
-        false
-    ),
-    action: () => set('development')
+    text: text(BranchForkIcon2, 'Development', lastCommitDate, false),
+    action: () => set('development'),
 })
 
 // Set default version
-const latestVersion = Object.entries(versionData)
-    .find(([v, d]) => d.latest)![0]
+const latestVersion = Object.entries(versionData).find(([v, d]) => d.latest)![0]
 set(latestVersion)
 </script>
 <template>
     <div class="VersionSelection">
-        <Flyout :items="items" v-model:open="open"
-            :position="['bottom', 'right']" :selectMenu="true">
+        <Flyout
+            :items="items"
+            v-model:open="open"
+            :position="['bottom', 'right']"
+            :selectMenu="true"
+        >
             <template #trigger="{ toggle }">
                 <button class="selectionDropdown" @click="toggle">
                     <BranchForkIcon :size="22" />
@@ -96,7 +94,7 @@ set(latestVersion)
     border-radius: 10px;
     gap: 8px;
     font-size: 14px;
-    transition: background .2s;
+    transition: background 0.2s;
     position: sticky;
     font-weight: 500;
     width: 100%;
@@ -141,12 +139,12 @@ set(latestVersion)
         line-height: normal;
         padding-block: 6px;
 
-        &>a {
+        & > a {
             font-weight: 500;
             width: fit-content;
         }
 
-        &>span {
+        & > span {
             color: var(--vp-c-text-3);
             font-size: 13px;
         }
@@ -158,7 +156,9 @@ set(latestVersion)
 
     .link {
         opacity: 0;
-        transition: opacity .15s, background .15s;
+        transition:
+            opacity 0.15s,
+            background 0.15s;
         padding: 5px;
         position: absolute;
         right: 8px;
@@ -171,7 +171,7 @@ set(latestVersion)
 
     &:hover,
     &.active {
-        .col>span {
+        .col > span {
             color: var(--vp-c-brand-1);
         }
     }
@@ -189,7 +189,7 @@ set(latestVersion)
         margin-left: 5px;
         font-size: 13px;
         opacity: 1;
-        transition: opacity .15s;
+        transition: opacity 0.15s;
     }
 }
 </style>

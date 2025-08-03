@@ -1,84 +1,119 @@
 <script setup lang="ts">
 import { ref, inject, Ref } from 'vue'
-import VPSwitch from "vitepress/dist/client/theme-default/components/VPSwitch.vue";
+import VPSwitch from 'vitepress/dist/client/theme-default/components/VPSwitch.vue'
 import { InfoIcon } from '@proicons/vue'
-import { watch } from "vue";
+import { watch } from 'vue'
 
 interface Props {
-    type: 'color' | 'slider' | 'toggle';
-    label: string;
-    min?: number;
-    max?: number;
-    defaultValue: string | number | boolean;
-    model: Record<string, any>,
-    bind: keyof Props['model'],
-    className?: string;
-    step?: number;
-    suffix?: string;
-    tooltip?: string;
+    type: 'color' | 'slider' | 'toggle'
+    label: string
+    min?: number
+    max?: number
+    defaultValue: string | number | boolean
+    model: Record<string, any>
+    bind: keyof Props['model']
+    className?: string
+    step?: number
+    suffix?: string
+    tooltip?: string
 }
-const { type, label, min, max, defaultValue, bind, className, step, suffix, tooltip, model } = defineProps<Props>()
+const {
+    type,
+    label,
+    min,
+    max,
+    defaultValue,
+    bind,
+    className,
+    step,
+    suffix,
+    tooltip,
+    model,
+} = defineProps<Props>()
 
 const isHorizontal: Record<Props['type'], boolean> = {
     color: false,
     slider: false,
-    toggle: true
+    toggle: true,
 }
 
 const property = model[bind]
 const value = ref(property)
 const colorInput = ref(null)
 
-const updateSwitchValue = inject('update-slider-value', (e) => {
+const updateSwitchValue = inject('update-slider-value', e => {
     value.value = !value.value
 })
 
-watch(() => value.value, (newValue) => {
-    model[bind] = newValue
-})
-watch(() => model[bind], (newValue) => {
-    value.value = newValue
-})
+watch(
+    () => value.value,
+    newValue => {
+        model[bind] = newValue
+    }
+)
+watch(
+    () => model[bind],
+    newValue => {
+        value.value = newValue
+    }
+)
 </script>
 
 <template>
-    <div :class="[
-        'CustomizeIconField',
-        type + 'CustomizerField',
-        { horizontal: isHorizontal[type] },
-        className
-    ]">
+    <div
+        :class="[
+            'CustomizeIconField',
+            type + 'CustomizerField',
+            { horizontal: isHorizontal[type] },
+            className,
+        ]"
+    >
         <p class="customizeLabel">
-            {{ label }}{{ type == 'slider' ? ":" : '' }}
+            {{ label }}{{ type == 'slider' ? ':' : '' }}
             <span class="value" v-if="type == 'slider'">
-                {{ value < 0 ? 'Default' : `${value}${suffix
-                    ?? ''}` }} </span>
+                {{ value < 0 ? 'Default' : `${value}${suffix ?? ''}` }}
+            </span>
 
-                    <abbr v-if="tooltip" :title="tooltip">
-                        <InfoIcon :size="20"
-                            class="infoIcon" />
-                    </abbr>
+            <abbr v-if="tooltip" :title="tooltip">
+                <InfoIcon :size="20" class="infoIcon" />
+            </abbr>
         </p>
 
-        <input type="range" v-if="type == 'slider'"
-            :min="min" :max="max" :step="step"
-            :class="className" v-model="value"
-            :style="`--p: ${(value - (min ?? 0)) / (max - (min ?? 0)) * 100}%`">
+        <input
+            type="range"
+            v-if="type == 'slider'"
+            :min="min"
+            :max="max"
+            :step="step"
+            :class="className"
+            v-model="value"
+            :style="`--p: ${((value - (min ?? 0)) / (max - (min ?? 0))) * 100}%`"
+        />
 
-        <VPSwitch :class="className"
+        <VPSwitch
+            :class="className"
             @click="updateSwitchValue"
-            v-if="type == 'toggle'" v-model="value" />
+            v-if="type == 'toggle'"
+            v-model="value"
+        />
 
-        <div :class="['colorPicker', className]"
-            v-if="type === 'color'">
-            <input type="text" class="colorInput"
+        <div :class="['colorPicker', className]" v-if="type === 'color'">
+            <input
+                type="text"
+                class="colorInput"
                 v-model="value"
-                @blur="() => { if (value == '') value = defaultValue }">
-            <button class="colorPreview"
+                @blur="
+                    () => {
+                        if (value == '') value = defaultValue
+                    }
+                "
+            />
+            <button
+                class="colorPreview"
                 @click="colorInput?.click"
-                :style="{ background: value }">
-                <input type="color" v-model="value"
-                    ref="colorInput">
+                :style="{ background: value }"
+            >
+                <input type="color" v-model="value" ref="colorInput" />
             </button>
         </div>
     </div>
@@ -103,7 +138,7 @@ watch(() => model[bind], (newValue) => {
 }
 
 .infoIcon {
-    transition: color .25s;
+    transition: color 0.25s;
     cursor: pointer;
     color: var(--vp-c-text-3);
 
@@ -128,7 +163,7 @@ watch(() => model[bind], (newValue) => {
     }
 }
 
-.VPSwitch[modelvalue="true"] {
+.VPSwitch[modelvalue='true'] {
     background-color: var(--vp-c-brand-1);
 }
 
@@ -145,7 +180,7 @@ watch(() => model[bind], (newValue) => {
     border-radius: 10px;
     padding: 6px;
     gap: 10px;
-    transition: box-shadow .2s;
+    transition: box-shadow 0.2s;
     cursor: text;
 
     &:hover {
@@ -187,7 +222,7 @@ watch(() => model[bind], (newValue) => {
 }
 </style>
 <style lang="scss">
-input[type="range"] {
+input[type='range'] {
     --bar: var(--vp-c-default-soft);
     --active: var(--vp-c-brand-1);
     appearance: none;
@@ -199,11 +234,12 @@ input[type="range"] {
     cursor: pointer;
 
     &:focus-visible {
-        box-shadow: 0 0 0 2px currentColor
+        box-shadow: 0 0 0 2px currentColor;
     }
 }
 
-::-webkit-slider-runnable-track {}
+::-webkit-slider-runnable-track {
+}
 
 ::-webkit-slider-thumb {
     background: #fff;
@@ -215,7 +251,7 @@ input[type="range"] {
     -webkit-appearance: none;
 }
 
-.CustomizeIconField .VPSwitch[modelvalue="true"] .check {
+.CustomizeIconField .VPSwitch[modelvalue='true'] .check {
     transform: translateX(100%);
 }
 

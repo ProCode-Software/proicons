@@ -7,8 +7,7 @@ const { page } = useData()
 </script>
 
 <template>
-    <div class="iconsSidebar"
-        v-if="page.relativePath.startsWith('icons')">
+    <div class="iconsSidebar" v-if="page.relativePath.startsWith('icons')">
         <IconsCustomizer />
         <CategoryList />
     </div>

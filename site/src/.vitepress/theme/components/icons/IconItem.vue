@@ -11,8 +11,12 @@ const svg = computed(() => useSvgVariables(value.icon, customizationData))
 </script>
 
 <template>
-    <button :class="{ IconListItem: true, selected }" tabindex="0"
-        role="button" @click="value.action(icon)">
+    <button
+        :class="{ IconListItem: true, selected }"
+        tabindex="0"
+        role="button"
+        @click="value.action(icon)"
+    >
         <div class="iconWrapper" v-html="svg" />
         <span class="iconLabel">{{ key }}</span>
         <div class="newBadge" v-if="value.new || value.updated">
