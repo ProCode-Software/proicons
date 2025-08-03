@@ -36,7 +36,7 @@ jobs:
         run: zip -r $filename ./*
 
       - name: Generate changelog
-        run: node ./bin/generateChangelog.ts -w
+        run: node --experimental-strip-types ./bin/generateChangelog.ts -w
 
       - name: Publish release to GitHub
         run: gh release create $VERSION "./icons/$filename" -F CHANGELOG.md -t "ProIcons v$VERSION" -d=${{ inputs.draft }}
