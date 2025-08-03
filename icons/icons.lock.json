@@ -518,9 +518,9 @@
         "Asterisk": { "added": "4.12.2" },
         "Code Square": { "added": "4.12.2" },
         "Eraser Sparkle": { "added": "4.12.2" },
-        "Magnet": { "added": "4.12.2" },
-        "Treasure Chest": { "added": "4.12.2" },
-        "Toy Brick": { "added": "4.12.2" }
+        "Magnet": { "added": "4.13.0" },
+        "Treasure Chest": { "added": "4.13.0" },
+        "Toy Brick": { "added": "4.13.0" }
     },
     "deprecated": {
         "PDF 2": { "version": "4.11.2", "alternative": "PDF" },
