@@ -1,30 +1,28 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { fetchIconsFromVersion } from "../../composables/versionData";
-import { onMounted } from "vue"
-const { icons } = await fetchIconsFromVersion('development')
+import { fetchVersion } from '../../composables/versionData'
+import { ref } from 'vue'
+import { onMounted } from 'vue'
+const { icons } = await fetchVersion('development')
 
 const amount = 60,
     timeout = 4
 
-const randomIcons = ref<any[]>([])
+const randomIcons = ref<typeof iconEntries>([])
 const iconEntries = Object.entries(icons)
 
 function setRandomIcons() {
-    randomIcons.value = iconEntries.sort(() => Math.random() - 0.5)
-        .slice(0, amount)
+    randomIcons.value = iconEntries.sort(() => Math.random() - 0.5).slice(0, amount)
 }
 
 setRandomIcons()
 onMounted(() => {
-    setInterval(setRandomIcons, 1000 * timeout);
+    setInterval(setRandomIcons, 1000 * timeout)
 })
 </script>
 <template>
     <div class="IconGrid">
-        <div v-for="[name, { icon }] in randomIcons"
-            :key="name" class="IconItem" v-html="icon">
-        </div>
+        <div v-for="[name, { icon }] in randomIcons" :key="name"
+            class="IconItem" v-html="icon"></div>
     </div>
 </template>
 <style scoped lang="scss">
@@ -43,7 +41,7 @@ onMounted(() => {
     border-radius: 20px;
     box-shadow: var(--vp-shadow-3);
     z-index: 3;
-    transition: transform .15s ease-out;
+    transition: transform 0.15s ease-out;
 
     .IconItem {
         display: flex;
@@ -56,8 +54,8 @@ onMounted(() => {
 </style>
 <style lang="scss">
 .IconGrid .IconItem>svg {
-    animation: svg_show .3s ease-out;
-    transition: transform .2s;
+    animation: svg_show 0.3s ease-out;
+    transition: transform 0.2s;
 
     &:hover {
         transform: scale(1.1);

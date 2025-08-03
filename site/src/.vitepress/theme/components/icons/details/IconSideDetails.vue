@@ -1,16 +1,15 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { Codepoints, Lockfile } from "../../../composables/types";
 import { getHex } from '../../../composables/useGlyphData';
+import { VersionData } from "../../../composables/versionData";
 
-const { icon, lockfile, codepoints } = defineProps<{
+const { icon, versionData } = defineProps<{
     icon: string,
-    lockfile: Lockfile,
-    codepoints: Codepoints
+    versionData: VersionData
 }>()
 
 function getIconData() {
-    return computed(() => lockfile.icons.find((i) => i.name == icon)).value
+    return computed(() => versionData.lockfile.getIcon(icon)).value
 }
 
 const data = computed(() => [
@@ -26,9 +25,9 @@ const data = computed(() => [
     },
     {
         key: 'Unicode Hex',
-        value: getHex(icon, codepoints) == 'Not found'
+        value: getHex(icon, versionData.codepoints) == 'Not found'
             ? 'Not found'
-            : `U+${getHex(icon, codepoints)}`
+            : `U+${getHex(icon, versionData.codepoints)}`
     },
 ])
 

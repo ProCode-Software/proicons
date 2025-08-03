@@ -1,4 +1,5 @@
-import { Codepoints, Icon, Lockfile } from './types'
+import { Codepoints, Icon } from './types'
+import { Lockfile } from './useLockfile'
 
 const releaseEndpoint = 'https://api.github.com/repos/ProCode-Software/proicons/releases'
 const repoEndpoint = 'https://api.github.com/repos/ProCode-Software/proicons'
@@ -19,7 +20,14 @@ export interface ReleaseData {
     latest?: boolean
 }
 
-export async function fetchVersionData(): Promise<ReleaseData> {
+export interface VersionData {
+    version: string
+    lockfile: Lockfile
+    icons: Record<string, Icon>
+    codepoints: Codepoints
+}
+
+export async function fetchVersionList(): Promise<ReleaseData> {
     const data: ReleaseData[] = await (await fetch(releaseEndpoint)).json()
 
     const dataObj = Object.fromEntries(
@@ -42,23 +50,17 @@ export async function fetchLastCommitDate(): Promise<string> {
     return data.pushed_at
 }
 
-export async function fetchIconsFromVersion(version: string) {
-    const cleanVersion = version.replace(/^v/, '')
-    const baseUrl = `https://raw.githubusercontent.com/ProCode-Software/proicons/${cleanVersion == 'development' ? 'main' : `refs/tags/${cleanVersion}`}`
-    const iconsEndpoint = `${baseUrl}/icons/icons.json`
-    const lockfileEndpoint = `${baseUrl}/icons/icons.lock.json`
+export async function fetchVersion(version: string): Promise<VersionData> {
+    version = version.replace(/^v/, '')
+    const baseUrl = `https://raw.githubusercontent.com/ProCode-Software/proicons/${version == 'development' ? 'main' : `refs/tags/${version}`}`
 
-    const icons = (await (await fetch(iconsEndpoint)).json()) as Record<string, Icon>
-    const lockfile = (await (await fetch(lockfileEndpoint)).json()) as Lockfile
+    const iconsEndpoint = `${baseUrl}/icons/icons.json`,
+        lockfileEndpoint = `${baseUrl}/icons/icons.lock.json`,
+        codepointEndpoint = `${baseUrl}/icons/fonts/ProIcons.json`
 
-    return { icons, lockfile }
-}
+    const icons = (await (await fetch(iconsEndpoint)).json()) as Record<string, Icon>,
+        lockfile = await (await fetch(lockfileEndpoint)).json(),
+        codepoints = (await (await fetch(codepointEndpoint)).json()) as Codepoints
 
-export async function fetchCodepoints(version: string) {
-    const cleanVersion = version.replace(/^v/, '')
-    const baseUrl = `https://raw.githubusercontent.com/ProCode-Software/proicons/${cleanVersion == 'development' ? 'main' : `refs/tags/${cleanVersion}`}`
-    const codepointEndpoint = `${baseUrl}/icons/fonts/ProIcons.json`
-
-    const codepoints = (await (await fetch(codepointEndpoint)).json()) as Codepoints
-    return codepoints
+    return { version, icons, codepoints, lockfile: new Lockfile(lockfile, version) }
 }

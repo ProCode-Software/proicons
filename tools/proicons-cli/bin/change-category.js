@@ -22,7 +22,7 @@ export async function changeCategory(iconName, newCategory) {
     try {
         const oldCategory = iconsFile[iconName].category
         iconsFile[iconName].category = newCategory
-        lockfile.icons.find((item) => item.name == iconName).updated = version
+        lockfile.icons[iconName].updated = version
 
         writeFileSync(iconsFilePath, await formatJson(iconsFile))
         writeFileSync(lockfilePath, await formatJson(lockfile))

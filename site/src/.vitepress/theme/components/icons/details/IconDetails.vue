@@ -1,18 +1,18 @@
 <script setup lang="ts">
+import { AlertCircleIcon, CancelIcon } from "@proicons/vue";
 import { computed, ref, watch } from "vue";
 import { kebabCase } from "../../../composables/rename";
-import { Codepoints, Icon, IconEntry, Lockfile } from '../../../composables/types';
+import { Icon, IconEntry } from '../../../composables/types';
+import { customizationData, useSvgVariables } from "../../../composables/useCustomizations";
+import { getDeprecationData } from "../../../composables/useDeprecationData";
+import { VersionData } from "../../../composables/versionData";
+import CodeDrawer from "../code/CodeDrawer.vue";
 import IconActions from './IconActions.vue';
 import IconSideDetails from "./IconSideDetails.vue";
-import CodeDrawer from "../code/CodeDrawer.vue";
-import { CancelIcon, AlertCircleIcon } from "@proicons/vue";
-import { useSvgVariables, customizationData } from "../../../composables/useCustomizations";
-import { getDeprecationData } from "../../../composables/useDeprecationData";
 
-const { icon, lockfile, codepoints } = defineProps<{
+const { icon, versionData } = defineProps<{
     icon?: IconEntry,
-    lockfile: Lockfile,
-    codepoints: Codepoints
+   versionData: VersionData
 }>()
 
 const name = computed<string>(() => icon[0])
@@ -27,7 +27,7 @@ watch(() => icon, () => {
     hidden.value = false
 })
 const svg = computed(() => useSvgVariables(iconData.value.icon, customizationData))
-const deprecationData = computed(() => getDeprecationData(name.value, lockfile))
+const deprecationData = computed(() => getDeprecationData(name.value, versionData.lockfile))
 
 const deprecationMessage = (data: typeof deprecationData.value) =>
     `This icon was deprecated in v${data.version} and will be removed in a later version.`
@@ -36,7 +36,7 @@ const deprecationMessage = (data: typeof deprecationData.value) =>
 <template>
     <Transition name="details">
         <aside :class="['IconDetail', { withDrawer: codeDrawerShown }]"
-            v-if="icon && lockfile.icons.find(({name: i}) => i == name)" v-show="!hidden">
+            v-if="icon && versionData.lockfile.getIcon(name)" v-show="!hidden">
             <div class="closeButtonWrapper">
                 <button class="closeButton" @click="hidden = true" title="Close">
                 <CancelIcon :size="20" />
@@ -64,8 +64,7 @@ const deprecationMessage = (data: typeof deprecationData.value) =>
                 </div>
                 <div class="right">
                     <IconSideDetails :icon="name"
-                        :lockfile="lockfile"
-                        :codepoints="codepoints" />
+                        :versionData="versionData" />
                 </div>
             </div>
             <div class="tagList">
@@ -74,7 +73,7 @@ const deprecationMessage = (data: typeof deprecationData.value) =>
                         tag.trim() }}</span>
             </div>
             <IconActions :icon="icon"
-                :codepoints="codepoints"
+                :codepoints="versionData.codepoints"
                 @showDrawer="toggleDrawer" />
             <CodeDrawer :visible="codeDrawerShown" :icon="name" />
         </aside>

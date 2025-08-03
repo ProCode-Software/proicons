@@ -2,11 +2,11 @@
 import { ref } from 'vue'
 import { ChevronDownIcon, BranchForkIcon } from "@proicons/vue";
 import { BranchForkIcon as BranchForkIcon2, OpenIcon, TagIcon } from "proicons";
-import { fetchLastCommitDate, fetchVersionData, ReleaseData } from "../../composables/versionData";
+import { fetchLastCommitDate, fetchVersionList, ReleaseData } from "../../composables/versionData";
 import Flyout from "./Flyout.vue";
 import { setVersion } from "../../composables/versionSelection";
 
-const versionData = await fetchVersionData()
+const versionData = await fetchVersionList()
 const lastCommitDate = await fetchLastCommitDate()
 const open = ref(false)
 const selectedVersion = ref('')
@@ -72,11 +72,9 @@ set(latestVersion)
 <template>
     <div class="VersionSelection">
         <Flyout :items="items" v-model:open="open"
-            :position="['bottom', 'right']"
-            :selectMenu="true">
+            :position="['bottom', 'right']" :selectMenu="true">
             <template #trigger="{ toggle }">
-                <button class="selectionDropdown"
-                    @click="toggle">
+                <button class="selectionDropdown" @click="toggle">
                     <BranchForkIcon :size="22" />
                     <span>{{ selectedVersion }}</span>
                     <ChevronDownIcon class="dropdownIcon" />
@@ -154,7 +152,10 @@ set(latestVersion)
         }
     }
 
-    &:hover .link { opacity: 1; }
+    &:hover .link {
+        opacity: 1;
+    }
+
     .link {
         opacity: 0;
         transition: opacity .15s, background .15s;
@@ -175,7 +176,10 @@ set(latestVersion)
         }
     }
 
-    &:hover .badge { opacity: 0; }
+    &:hover .badge {
+        opacity: 0;
+    }
+
     .badge {
         line-height: normal;
         border-radius: 100px;
