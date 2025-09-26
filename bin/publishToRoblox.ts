@@ -1,5 +1,5 @@
 import ansiColors from 'ansi-colors'
-import axios from 'axios'
+import axios, { type AxiosResponse } from 'axios'
 import FormData from 'form-data'
 import { createReadStream, existsSync, readFileSync, rmSync, writeFileSync } from 'fs'
 import { JSDOM } from 'jsdom'
@@ -9,17 +9,17 @@ import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import pkg from '../package.json' with { type: 'json' }
 import { prettierFormat } from './helpers/prettierFormat.ts'
 import { kebabCase } from './helpers/rename.ts'
-import { AxiosResponse } from 'axios'
 
 const iconAssetsPath = resolve(import.meta.dirname, '../icons/roblox.json')
 const tempFilePath = resolve(import.meta.dirname, `../roblox-upload-${pkg.version}.json`)
 if (!existsSync(tempFilePath)) writeFileSync(tempFilePath, '[]')
 
-/** @type {import('../icons/roblox.json')} */
-const assetData = JSON.parse(readFileSync(iconAssetsPath, 'utf-8') ?? '{}')
-/** @type {string[]} */
-const uploadedIcons = JSON.parse(readFileSync(tempFilePath, 'utf-8') ?? '[]')
-
+const assetData: typeof import('../icons/roblox.json') = JSON.parse(
+    readFileSync(iconAssetsPath, 'utf-8') ?? '{}'
+)
+const uploadedIcons: Record<'icon' | 'assetId' | 'imageId', string>[] = JSON.parse(
+    readFileSync(tempFilePath, 'utf-8') ?? '[]'
+)
 const removedIcons = assetData.exclude
 
 if (!process.env.ROBLOX_PUBLISH_KEY)
@@ -27,10 +27,10 @@ if (!process.env.ROBLOX_PUBLISH_KEY)
         'You forgot your Roblox API key. Use `node --env-file=.env ./publishIcons.ts` with the variable "ROBLOX_PUBLISH_KEY"'
     )
 
-const publishEndpoint = 'https://apis.roblox.com/assets/v1/assets'
-const operationsEndpoint = 'https://apis.roblox.com/assets/v1/operations'
-const assetDeliveryEndpoint =
-    'https://apis.roblox.com/asset-delivery-api/v1/assetId' /* 'https://assetdelivery.roblox.com/v1/asset' */
+const publishEndpoint = 'https://apis.roblox.com/assets/v1/assets',
+    operationsEndpoint = 'https://apis.roblox.com/assets/v1/operations',
+    assetDeliveryEndpoint = 'https://apis.roblox.com/asset-delivery-api/v1/assetId'
+/* 'https://assetdelivery.roblox.com/v1/asset' */
 
 function handleError(err) {
     class RobloxError extends Error {
@@ -110,16 +110,22 @@ async function getOperation(operationId: string) {
     return data
 }
 
-const iconsToPublish = lockfile.icons
-    .filter(
-        ({ name, added, updated }) =>
-            !assetData.assetPaths[name] || added == pkg.version || updated == pkg.version
-    ) // New or unuploaded icons only
-    .map(({ name }) => name)
-    .filter(i => !(iconsJson[i].category == 'Logos & Brands' && i !== 'Roblox')) // Remove brands
-    .filter(
-        i => !removedIcons.includes(i) && !uploadedIcons.some(({ icon }) => icon == i)
-    ) // Remove filtered icons and already uploaded icons
+const iconsToPublish: string[] = []
+for (const [name, data] of Object.entries(lockfile.icons)) {
+    const updated = (data as any).updated as string | undefined
+    if (
+        // New or unuploaded icons only
+        (!assetData.assetPaths[name] ||
+            data.added == pkg.version ||
+            updated == pkg.version) &&
+        // Remove brands except Roblox
+        !(iconsJson[name].category == 'Logos & Brands' && name != 'Roblox') &&
+        // Remove filtered icons and already uploaded icons
+        !removedIcons.includes(name) &&
+        !uploadedIcons.some(({ icon }) => icon == name)
+    )
+        iconsToPublish.push(name)
+}
 
 // Cleanup icons file
 const deletedIcons = []
@@ -140,9 +146,9 @@ if (deletedIcons.length > 0)
 // Publish icons
 console.log(ansiColors.yellow(`Publishing ${iconsToPublish.length} icons...`))
 
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+const sleep = (ms: number) => new Promise(res => setTimeout(res, ms))
 
-;(async () => {
+async function run() {
     for (const iconName of iconsToPublish) {
         try {
             const { operationId } = await publishAsset<{ operationId: string }>(
@@ -164,7 +170,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
             assetData.assetPaths[iconName] = imageId
             uploadedIcons.push({ icon: iconName, assetId: assetId, imageId: imageId })
             writeFileSync(iconAssetsPath, await prettierFormat(assetData))
-            writeFileSync(tempFilePath, await prettierFormat(uploadedIcons))
+            writeFileSync(tempFilePath, JSON.stringify(uploadedIcons, null, 4))
 
             console.log(
                 ansiColors.green(`Published ${iconName}:`),
@@ -175,7 +181,9 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
             throw err
         }
     }
-})().then(() => {
+}
+
+run().then(() => {
     console.log(ansiColors.bold(ansiColors.green(`Done publishing icons!`)))
     rmSync(tempFilePath)
     process.exit(0)

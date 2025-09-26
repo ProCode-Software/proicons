@@ -25,28 +25,28 @@ async function outlineSvgs(rebuild: boolean) {
     const needsBuilding = rebuild || !existsSync(outputDir)
 
     try {
-        if (needsBuilding) {
-            if (!existsSync(outputDir)) mkdirSync(outputDir)
-
-            await SVGFixer(inputDir, outputDir, {
-                showProgressBar: true,
-                traceResolution: 800,
-            }).fix()
-
-            console.log(ansiColors.green('Done outlining SVGs!'))
-        } else {
+        if (!needsBuilding) {
             console.log(ansiColors.green('SVGs are already outlined, skipped'))
+            return
         }
+        if (!existsSync(outputDir)) mkdirSync(outputDir)
+
+        await SVGFixer(inputDir, outputDir, {
+            showProgressBar: true,
+            traceResolution: 800,
+        }).fix()
+
+        console.log(ansiColors.green('Done outlining SVGs!'))
     } catch (err) {
         console.log(ansiColors.red('Error outlining SVGs:'))
-        throw new Error(err)
+        throw err
     }
 }
 
 /** @param {boolean} rebuild If --rebuild flag was used */
 export async function buildFont(rebuild: boolean) {
     try {
-        console.log(execSync('pnpm run font:codepoints').toString('utf-8'))
+        console.log(execSync('bun run font:codepoints').toString('utf-8'))
         await outlineSvgs(rebuild)
 
         await generateFonts({
@@ -82,6 +82,6 @@ export async function buildFont(rebuild: boolean) {
         console.log(ansiColors.green('Done building fonts!'))
     } catch (err) {
         console.log(ansiColors.red('Error building fonts:'))
-        throw new Error(err)
+        throw err
     }
 }

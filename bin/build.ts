@@ -18,6 +18,10 @@ const { version } = pkg
 
 type IconsJSON = typeof import('../icons/icons.json')
 type Lockfile = typeof import('../icons/icons.lock.json')
+interface LockfileItem {
+    added: string
+    updated?: string
+}
 interface Icon {
     description: string
     category: string
@@ -68,7 +72,7 @@ const inDir = resolve(__rootdir, 'in')
 const outDir = resolve(__rootdir, 'icons/svg')
 const iconsJsonPath = resolve(__rootdir, 'icons/icons.json')
 
-let newIcons = []
+let newIcons: string[] = []
 if (!existsSync(inDir)) mkdirSync(inDir)
 
 function getIconsJson(): IconsJSON {
@@ -116,7 +120,7 @@ async function writeSvgFilesFromData(jsonData: IconList) {
             throw e
         }
 
-        iconsJson[name] = data
+        iconsJson[name as keyof typeof iconsJson] = data
     }
     const formatted = await prettierFormat(iconsJson)
     writeFileSync(iconsJsonPath, formatted)
@@ -136,7 +140,7 @@ function createLockfile() {
     const config: IconsJSON = JSON.parse(readFileSync(iconsJsonPath, 'utf-8'))
 
     Object.keys(config).forEach(friendlyName => {
-        const lockfileItem = lockfile.icons[friendlyName]
+        const lockfileItem: LockfileItem = lockfile.icons[friendlyName as keyof typeof lockfile.icons]
 
         if (!lockfileItem) {
             lockfile.icons[friendlyName] = {

@@ -13,16 +13,16 @@ importers:
   .:
     devDependencies:
       '@figma/plugin-typings':
-        specifier: ^1.116.0
-        version: 1.116.0
+        specifier: ^1.117.0
+        version: 1.117.0
       typescript:
         specifier: ^5.9.2
         version: 5.9.2
 
 packages:
 
-  '@figma/plugin-typings@1.116.0':
-    resolution: {integrity: sha512-jpn7Vq3uxgJF5oQ5PwkWGGIyCwIjB260UjtSzBck9LL1WzXJSaxBH1wo+vrU4XXbV//TURUGBYIQ2tU7cdyRYQ==}
+  '@figma/plugin-typings@1.117.0':
+    resolution: {integrity: sha512-EDirBOeOcS90SQ5SwrJyTiL6iJxG/81U9nzJJkBqdWRHGMfFWAOydbAlcRylgETKwIKRlflL92nNSt+WmnweKA==}
 
   typescript@5.9.2:
     resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
@@ -31,6 +31,6 @@ packages:
 
 snapshots:
 
-  '@figma/plugin-typings@1.116.0': {}
+  '@figma/plugin-typings@1.117.0': {}
 
   typescript@5.9.2: {}

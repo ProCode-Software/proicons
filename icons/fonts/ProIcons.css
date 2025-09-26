@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?3aee62c34d4c00fae3c9ae60911e1c24") format("truetype"),
-url("./ProIcons.woff?3aee62c34d4c00fae3c9ae60911e1c24") format("woff"),
-url("./ProIcons.woff2?3aee62c34d4c00fae3c9ae60911e1c24") format("woff2"),
-url("./ProIcons.eot?3aee62c34d4c00fae3c9ae60911e1c24#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?664e55418abb0d245213f295bfcbeddd") format("truetype"),
+url("./ProIcons.woff?664e55418abb0d245213f295bfcbeddd") format("woff"),
+url("./ProIcons.woff2?664e55418abb0d245213f295bfcbeddd") format("woff2"),
+url("./ProIcons.eot?664e55418abb0d245213f295bfcbeddd#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -1572,6 +1572,15 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-eraser-sparkle::before {
   content: "\e205";
 }
+.proicon-magnet::before {
+  content: "\e206";
+}
+.proicon-treasure-chest::before {
+  content: "\e207";
+}
+.proicon-toy-brick::before {
+  content: "\e208";
+}
 .proicon-apps-list::before {
   content: "\f101";
 }
@@ -1581,30 +1590,21 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-box-margins::before {
   content: "\f103";
 }
-.proicon-magnet::before {
+.proicon-phone-accept::before {
   content: "\f104";
 }
-.proicon-phone-accept::before {
+.proicon-phone-hang-up::before {
   content: "\f105";
 }
-.proicon-phone-hang-up::before {
+.proicon-text-bullet-list-square-add::before {
   content: "\f106";
 }
-.proicon-text-bullet-list-square-add::before {
+.proicon-text-bullet-list-square::before {
   content: "\f107";
 }
-.proicon-text-bullet-list-square::before {
+.proicon-text-bullet-list-tree::before {
   content: "\f108";
 }
-.proicon-text-bullet-list-tree::before {
-  content: "\f109";
-}
 .proicon-text-bullet-list::before {
-  content: "\f10a";
-}
-.proicon-toy-brick::before {
-  content: "\f10b";
-}
-.proicon-treasure-chest::before {
-  content: "\f10c";
+  content: "\f109";
 }
