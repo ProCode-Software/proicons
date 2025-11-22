@@ -16,7 +16,8 @@ let nextCodepoint = Math.max(...Object.values(codepoints)) + 1
 
 for (const name in lockfile.icons) {
     const kebabName = kebabCase(name)
-    const oldIcon: string | undefined = lockfile.aliases[name]
+    const oldIcon: string | undefined =
+        lockfile.aliases[name as keyof typeof lockfile.aliases]
     if (!(kebabName in codepoints)) {
         if (oldIcon) {
             const kebabAlias = kebabCase(oldIcon)
