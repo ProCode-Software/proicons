@@ -682,7 +682,7 @@
     "Draw Text": {
         "description": "",
         "category": "Text",
-        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m5.719 16.25 1.92-4.404m0 0h6.91m-6.91 0 2.94-6.747a.553.553 0 0 1 1.029 0l2.941 6.747m0 0 .337.774\"/><path fill=\"currentColor\" d=\"M15.586 20.936a2.5 2.5 0 0 0 1.219-.673l5.454-5.45a2.526 2.526 0 1 0-3.57-3.573l-5.453 5.452c-.335.336-.569.76-.674 1.222l-.536 2.354a1.007 1.007 0 0 0 1.206 1.206z\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m3.75 19.687.568.234c.638.263 1.364.175 1.956-.18.69-.411 1.649-.915 2.483-1.1.583-.13 1.243.199 1.091.776-.17.642-.69 1.396-.192 1.745.75.525 5.031-.818 5.031-.818\"/></svg>"
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"m6 15.5 2.143-4.787m0 0h7.714L12.574 3.38a.624.624 0 0 0-1.148 0z\"/><path fill=\"currentColor\" d=\"M15.586 20.686a2.5 2.5 0 0 0 1.219-.673l5.454-5.45a2.526 2.526 0 1 0-3.57-3.573l-5.453 5.452c-.335.336-.569.76-.674 1.222l-.536 2.354a1.007 1.007 0 0 0 1.206 1.206z\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-width=\"1.5\" d=\"M3.75 19H10\"/></svg>"
     },
     "Note": {
         "description": "",
@@ -847,7 +847,7 @@
     "Text Number List": {
         "description": "",
         "category": "Text",
-        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M9.75 5.247h10M9.75 12h10m-10 6.753h10M3.694 4.123 5.494 3v4.493m-2.223 3.582A1.32 1.32 0 0 1 4.465 9.76a1.325 1.325 0 0 1 1.428 1.057 1.32 1.32 0 0 1-.363 1.192l-1.994 1.973v.265H5.86m-2.265 2.26h2.344l-2.103 1.927h1.037c.589 0 1.066.477 1.066 1.065s-.172 1.242-1.241 1.483c-.587.132-1.448-.482-1.448-.964\"/></svg>"
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M10.25 5h10m-10 7h10m-10 7h10M3.75 3.75l2-1v4.5m-2 3.625a1.52 1.52 0 0 1 .626-.87 1.53 1.53 0 0 1 1.995.262c.565.64.019 1.58-.612 2.155L3.75 14.25h3m-3 2.5h2.986l-1.73 2.017a1.77 1.77 0 0 1 .907.112c.281.115.512.301.66.532.148.23.205.493.164.752-.04.26-.178.5-.392.692a1.6 1.6 0 0 1-.802.37 2.2 2.2 0 0 1-1.013-.087c-.285-.107-.622-.287-.78-.513\"/></svg>"
     },
     "Text Position Bottom": {
         "description": "",
@@ -2603,5 +2603,85 @@
         "description": "Block, Plugin, LEGO",
         "category": "Objects",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><rect width=\"18.5\" height=\"13\" x=\"2.75\" y=\"7.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" rx=\"3\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M5.25 5.25a1.5 1.5 0 0 1 1.5-1.5h2a1.5 1.5 0 0 1 1.5 1.5v2h-5zm8.5 0a1.5 1.5 0 0 1 1.5-1.5h2a1.5 1.5 0 0 1 1.5 1.5v2h-5z\"/></svg>"
+    },
+    "Brain": {
+        "description": "AI, Intelligence, Smart, Robot, Thinking, Thought",
+        "category": "Objects",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"M5 15.75h.75a.75.75 0 0 0-.396-.662zm0-7.501.353.662a.75.75 0 0 0 .397-.662zM8.5 2.75v.75a2.75 2.75 0 0 1 2.75 2.75h1.5A4.25 4.25 0 0 0 8.5 2zm3.5 3.5h-.75v11.5h1.5V6.25zm0 11.5h-.75A2.75 2.75 0 0 1 8.5 20.5V22a4.25 4.25 0 0 0 4.25-4.25zm-3.5 3.5v-.75a2.75 2.75 0 0 1-2.75-2.75h-1.5A4.25 4.25 0 0 0 8.5 22zM5 17.75h.75v-2h-1.5v2zm0-2 .354-.662A3.5 3.5 0 0 1 3.5 12H2a5 5 0 0 0 2.646 4.412zM2.75 12h.75a3.5 3.5 0 0 1 1.853-3.09L5 8.25l-.353-.661A5 5 0 0 0 2 12zM5 8.249h.75V6.25h-1.5v1.999zM5 6.25h.75A2.75 2.75 0 0 1 8.5 3.5V2a4.25 4.25 0 0 0-4.25 4.25z\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M8.952 15.775a4.25 4.25 0 1 1-1.736-8.02M12 15a4 4 0 0 0-4-4m4 4a4 4 0 0 1 4-4\"/><path fill=\"currentColor\" d=\"M19 15.75h-.75a.75.75 0 0 1 .396-.662zm0-7.501-.353.662a.75.75 0 0 1-.397-.662zM15.5 2.75v.75a2.75 2.75 0 0 0-2.75 2.75h-1.5A4.25 4.25 0 0 1 15.5 2zM12 6.25h.75v11.5h-1.5V6.25zm0 11.5h.75a2.75 2.75 0 0 0 2.75 2.75V22a4.25 4.25 0 0 1-4.25-4.25zm3.5 3.5v-.75a2.75 2.75 0 0 0 2.75-2.75h1.5A4.25 4.25 0 0 1 15.5 22zm3.5-3.5h-.75v-2h1.5v2zm0-2-.354-.662A3.5 3.5 0 0 0 20.5 12H22a5 5 0 0 1-2.646 4.412zM21.25 12h-.75a3.5 3.5 0 0 0-1.853-3.09L19 8.25l.353-.661A5 5 0 0 1 22 12zM19 8.249h-.75V6.25h1.5v1.999zm0-1.999h-.75A2.75 2.75 0 0 0 15.5 3.5V2a4.25 4.25 0 0 1 4.25 4.25z\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M15.048 15.775a4.25 4.25 0 1 0 1.736-8.02\"/></svg>"
+    },
+    "Key": {
+        "description": "Security, Lock, Door, Password, Authenticate, Authentication",
+        "category": "Security",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linejoin=\"round\" stroke-width=\"1.387\" d=\"M14.775 2.75a6.475 6.475 0 1 1-3.38 11.998c-.137-.085-.32.011-.32.173v1.129a1.5 1.5 0 0 1-1.5 1.5h-1.2a1 1 0 0 0-1 1v1.2a1.5 1.5 0 0 1-1.5 1.5H4.25a1.5 1.5 0 0 1-1.5-1.5v-2.297a2 2 0 0 1 .586-1.414l4.566-4.566c.376-.376.511-.923.446-1.452a6.475 6.475 0 0 1 6.427-7.271Z\"/><circle cx=\"15.5\" cy=\"8.5\" r=\"1.75\" fill=\"currentColor\"/></svg>"
+    },
+    "Bar Chart Sparkle": {
+        "description": "Stats, Statistics, Data, Graph, Chart, AI, Summarize, AI Chart",
+        "category": "Math & Numbers",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M2.75 10.25a2 2 0 0 1 2-2h4.167v13H4.75a2 2 0 0 1-2-2zm15.75 2h-3.417v9h4.167a2 2 0 0 0 2-2V13.5m-6.167-3v10.75H8.917V4.75a2 2 0 0 1 2-2H12\"/><path fill=\"currentColor\" d=\"M15.4 1.418a.64.64 0 0 1 1.2 0l.167.45a4 4 0 0 0 2.366 2.365l.449.166a.64.64 0 0 1 0 1.202l-.45.166a4 4 0 0 0-2.365 2.366l-.166.449a.64.64 0 0 1-1.202 0l-.166-.45a4 4 0 0 0-2.366-2.365l-.449-.166a.64.64 0 0 1 0-1.202l.45-.166a4 4 0 0 0 2.365-2.366zm4.725 5.843a.4.4 0 0 1 .75 0l.104.281a2.5 2.5 0 0 0 1.479 1.479l.28.103a.4.4 0 0 1 0 .752l-.28.103a2.5 2.5 0 0 0-1.479 1.479l-.104.28a.4.4 0 0 1-.75 0l-.104-.28a2.5 2.5 0 0 0-1.479-1.479l-.28-.103a.4.4 0 0 1 0-.752l.28-.103a2.5 2.5 0 0 0 1.479-1.479z\"/></svg>"
+    },
+    "Trophy": {
+        "description": "Winning, Won, Reward, 1st Place, First Place, Team",
+        "category": "Objects",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M16.473 11.75c.493-.8.777-1.742.777-2.75V4.75m-.777 7A5.25 5.25 0 0 1 12 14.25c-1.891 0-3.549-1-4.473-2.5m8.946 0h.777a4 4 0 0 0 4-4v-1.5a1.5 1.5 0 0 0-1.5-1.5h-2.5m-9.723 7H6.75a4 4 0 0 1-4-4v-1.5a1.5 1.5 0 0 1 1.5-1.5h2.5m.777 7A5.23 5.23 0 0 1 6.75 9V4.75m0 0a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2m-10 15a2 2 0 0 1 2-2h5.5a2 2 0 0 1 2 2v.5a1 1 0 0 1-1 1h-7.5a1 1 0 0 1-1-1zm4.75-5.5v3.5\"/></svg>"
+    },
+    "Food": {
+        "description": "Fork and Knife, Eating, Dinner",
+        "category": "Food & Drink",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M3.25 2.75v7a3 3 0 0 0 3 3h1m4-10v7a3 3 0 0 1-3 3h-1m0-10v10m0 0v8.5m13.5 0v-6.5m0 0V3.286a.536.536 0 0 0-.536-.536 4.464 4.464 0 0 0-4.464 4.464v5.536a2 2 0 0 0 2 2z\"/></svg>"
+    },
+    "Photo Filter 2": {
+        "description": "Color Filter, Tint, Blend",
+        "category": "Design",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><circle cx=\"9.5\" cy=\"9.5\" r=\"6.75\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"14.5\" cy=\"14.5\" r=\"6.75\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg>"
+    },
+    "Glasses": {
+        "description": "See, Look, Sight, Reading, Reading List, Focus",
+        "category": "Objects",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M15.25 4.75h.703a4 4 0 0 1 3.927 3.236l1.17 6.01M8.75 4.75h-.703A4 4 0 0 0 4.12 7.986l-1.17 6.01m7.674.256a4.002 4.002 0 0 0-7.673-.257m7.673.257q.124.48.126.998a4 4 0 1 1-7.8-1.255m7.674.257h2.752m0 0a4.002 4.002 0 0 1 7.673-.257m-7.673.257a4 4 0 1 0 7.674-.257\"/></svg>"
+    },
+    "Pulse": {
+        "description": "Heartbeat, Activity, Rhythm, Heart Rate",
+        "category": "Activities",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M2.75 12h2.361a2.5 2.5 0 0 0 2.358-1.668L9.44 4.75 12 12l2.56 7.25 1.98-5.585A2.5 2.5 0 0 1 18.896 12h2.354\"/></svg>"
+    },
+    "Container": {
+        "description": "Docker, Shipping, Containerization",
+        "category": "Development",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M9.93 13.22 3.168 9.626m6.762 3.596v7.357m0-7.357 5.443-3.079M3.168 9.625c-.27.455-.418.98-.418 1.528v4.227a3 3 0 0 0 1.592 2.649l4.135 2.198a3 3 0 0 0 1.453.351M3.168 9.625c.263-.444.64-.82 1.105-1.083l8.364-4.732a3 3 0 0 1 2.886-.037l4.135 2.199c.486.258.881.639 1.157 1.092m0 0c.28.461.435.997.435 1.556v4.227a3 3 0 0 1-1.523 2.612l-4.354 2.463m5.442-10.858-5.442 3.078M9.93 20.578a3 3 0 0 0 1.433-.388l4.01-2.268m0-7.78v7.78\"/></svg>"
+    },
+    "Egg Fried": {
+        "description": "Breakfast",
+        "category": "Food & Drink",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"M13.193 2.75V2zm5.663 5.662h.75zm2.395 8.059h.75zm-4.78 4.779V22zm-7.77-1.944v.75zM2.75 13.353H2zm5.12-6.87-.706-.255zm5.19 13.332.535-.525zm5.615-9.977-.726-.189zm.982 3.069-.5.559zM13.193 2.75v.75c2.713 0 4.912 2.2 4.913 4.912h1.5A6.41 6.41 0 0 0 13.192 2zm5.663 5.662h-.75q-.002.644-.158 1.237l.726.19.726.188a6.4 6.4 0 0 0 .206-1.615zm.8 4.495-.5.559a4.02 4.02 0 0 1 1.345 3.005h1.5a5.52 5.52 0 0 0-1.845-4.123zm1.595 3.564h-.75a4.03 4.03 0 0 1-4.03 4.029V22a5.53 5.53 0 0 0 5.53-5.53zm-4.78 4.779v-.75a4 4 0 0 1-2.877-1.21l-.536.525-.536.525a5.5 5.5 0 0 0 3.95 1.66zm-6.094-2.184-.21-.72a5.2 5.2 0 0 1-1.466.21v1.5c.655 0 1.288-.095 1.888-.27zm-1.676.24v-.75A5.2 5.2 0 0 1 3.5 13.353H2c0 3.702 3 6.703 6.702 6.703zM2.75 13.353h.75A5.2 5.2 0 0 1 6.855 8.49l-.267-.701-.266-.701a6.7 6.7 0 0 0-4.323 6.266zm5.12-6.87.704.256a4.915 4.915 0 0 1 4.62-3.239V2a6.415 6.415 0 0 0-6.03 4.228zM6.588 7.79l.266.701c.8-.304 1.43-.954 1.718-1.751l-.705-.256-.705-.255a1.46 1.46 0 0 1-.841.86zm6.47 12.026.535-.525c-.841-.858-2.22-1.299-3.428-.944l.211.72.212.72c.622-.183 1.439.05 1.933.554zm5.615-9.977-.726-.189c-.179.686-.11 1.424.104 2.078.214.655.593 1.282 1.104 1.739l.5-.56.5-.558c-.287-.257-.534-.646-.679-1.088s-.169-.882-.077-1.233z\"/><circle cx=\"11.75\" cy=\"12\" r=\"3.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/></svg>"
+    },
+    "Cheese": {
+        "description": "Dairy, Cheddar, Mouse, Mice, Swiss, Gouda, Holes, Snack",
+        "category": "Food & Drink",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M21.25 10.392c-.366-1.539-1.713-3.411-2.791-4.489a9.53 9.53 0 0 0-4.816-2.594c-1.21-.25-2.404.314-3.251 1.214l-6.727 7.139a3.4 3.4 0 0 0-.623.936m18.208-2.206v3.475m0-3.475-5.326.645m-12.882 1.56a3.4 3.4 0 0 0-.292 1.37v4.541a2.242 2.242 0 0 0 2.512 2.225l1.672-.202m-3.892-7.933 7.048-.854m1.7 8.199a2.803 2.803 0 1 0-4.856.588m4.856-.588-4.856.588m4.856-.588 5.15-.624m0 0 2.337-.284a2.24 2.24 0 0 0 1.973-2.224v-2.944m-4.31 5.452a5 5 0 0 1-.096-.547c-.303-2.473 1.175-4.69 3.303-4.95a3.4 3.4 0 0 1 1.103.045m-5.326-2.83q.014-.165-.007-.33c-.163-1.331-1.976-2.204-3.244-2.049S9.857 10.1 10.02 11.432q.02.16.07.312m5.834-.707c-.098 1.208-1.496 2.301-2.66 2.444s-2.792-.584-3.174-1.737\"/></svg>"
+    },
+    "Toast": {
+        "description": "Bread, Wheat, Butter, Breakfast",
+        "category": "Food & Drink",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"m19.25 11.605-.398-.636a.75.75 0 0 0-.352.636zM7.75 20.25V21zm-3-8.645h.75a.75.75 0 0 0-.352-.636zM17 3.75v.75A3.5 3.5 0 0 1 20.5 8H22a5 5 0 0 0-5-5zM21.25 8h-.75c0 1.25-.657 2.349-1.648 2.969l.398.636.398.635A5 5 0 0 0 22 8zm-2 3.605h-.75v5.645H20v-5.645zm0 5.645h-.75a2.25 2.25 0 0 1-2.25 2.25V21A3.75 3.75 0 0 0 20 17.25zm-3 3v-.75h-8.5V21h8.5zm-8.5 0v-.75a2.25 2.25 0 0 1-2.25-2.25H4A3.75 3.75 0 0 0 7.75 21zm-3-3h.75v-5.645H4v5.645zm0-5.645.398-.636A3.5 3.5 0 0 1 3.5 8H2c0 1.79.942 3.358 2.352 4.24zM2.75 8h.75A3.5 3.5 0 0 1 7 4.5V3a5 5 0 0 0-5 5zM7 3.75v.75h10V3H7z\"/><rect width=\"6\" height=\"6\" x=\"9\" y=\"9\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" rx=\"2\"/></svg>"
+    },
+    "Rose": {
+        "description": "Plant, Poppy, Flower, Bloom",
+        "category": "Nature",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M12 15.75v-2.386c0-2.807-1.342-5.266-3.354-6.63M12 15.75c-3.948 0-7.149-3.55-7.149-7.93V5.599H5c1.336 0 2.584.415 3.646 1.135M12 15.75v-3.151a7 7 0 0 1 3.326-5.96M12 15.75c3.948 0 7.149-3.2 7.149-7.149V5.599H19c-1.348 0-2.606.38-3.674 1.04m0 0a3.5 3.5 0 0 0-.863-1.426L12 2.75 9.537 5.213a3.47 3.47 0 0 0-.891 1.521M12 14.75v6.5m6.712-3.875a7.75 7.75 0 0 1-13.424 0\"/></svg>"
+    },
+    "Rocket": {
+        "description": "Deploy, Ship, Publish, Start",
+        "category": "Places & Transportation",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M13.604 4.683a4.04 4.04 0 0 1 5.713 5.713l-7.32 7.32-5.712-5.713z\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M15.568 14.145a4.04 4.04 0 0 1 0 5.713L13.426 22l-1.429-1.428a2.02 2.02 0 0 1 0-2.857zM9.855 8.432a4.04 4.04 0 0 0-5.713 0L2 10.575l1.428 1.428a2.02 2.02 0 0 0 2.857 0z\"/><path fill=\"currentColor\" d=\"M9.32 17.894a4 4 0 0 1-.943.698c-.34.179-.695.297-1.043.346-.348.05-.683.03-.986-.057a1.8 1.8 0 0 1-.778-.451 1.8 1.8 0 0 1-.451-.778 2.4 2.4 0 0 1-.057-.986c.05-.348.167-.703.346-1.043.18-.341.417-.661.698-.942z\"/><circle cx=\"15.918\" cy=\"8.082\" r=\"1.5\" fill=\"currentColor\" transform=\"rotate(45 15.918 8.082)\"/></svg>"
+    },
+    "Sapling": {
+        "description": "Plant, Flower",
+        "category": "Nature",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M2.75 5.25a1.5 1.5 0 0 1 1.5-1.5H6a6 6 0 0 1 6 6v2H8.75a6 6 0 0 1-6-6zm18.5 3a1.5 1.5 0 0 0-1.5-1.5H18a6 6 0 0 0-6 6v2h3.25a6 6 0 0 0 6-6zM12 14.75v6.5\"/></svg>"
+    },
+    "Pizza": {
+        "description": "Pepperoni, Cheese, Veggie, Meat, Slice",
+        "category": "Food & Drink",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M18.388 15.002c-.562-1.996-1.658-5.06-4.896-6.93-3.237-1.869-6.44-1.286-8.449-.775m13.345 7.705 1.562-.906c.952-.552 1.54-1.579 1.252-2.64-.5-1.838-1.876-4.76-5.655-6.942s-6.998-1.912-8.84-1.426c-1.063.28-1.658 1.304-1.66 2.404l-.004 1.805m13.345 7.705L8.1 20.97c-1.37.794-3.083-.195-3.08-1.779l.024-11.894\"/><path fill=\"currentColor\" d=\"M10.023 17.25a1.5 1.5 0 1 1-2.597-1.5 1.5 1.5 0 0 1 2.597 1.5m4.557-3.053a1.798 1.798 0 1 1-3.114-1.798 1.798 1.798 0 0 1 3.114 1.798M8.325 11.3a1.8 1.8 0 0 1-3.295 1.003v-2.007A1.8 1.8 0 0 1 8.325 11.3\"/></svg>"
     }
 }

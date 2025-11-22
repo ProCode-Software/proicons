@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#! /usr/bin/env bun
 import { program } from 'commander'
 import { changeCategory } from './change-category.js'
 import { auditDeprecated, deprecate } from './deprecate.js'

@@ -25,10 +25,10 @@ jobs:
         with:
           fetch-depth: 0
             
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: latest
+          bun-version: latest
           
       - name: Get bundle version
         run: |
@@ -41,7 +41,7 @@ jobs:
         run: zip -r $filename ./*
 
       - name: Generate changelog
-        run: node ./bin/generateChangelog.ts -w
+        run: bun run ./bin/generateChangelog.ts -w
 
       - name: Publish release to GitHub
         run: gh release create $VERSION "./icons/$filename" -F CHANGELOG.md -t "ProIcons v$VERSION" -d=${{ inputs.draft }}

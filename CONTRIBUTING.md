@@ -19,7 +19,7 @@ To keep things organized, **please include only one icon per pull request** unle
 
 ## Contributing to packages
 
-The main ProIcons package is inside of the root `src` folder. Other packages are available in the `packages` folder. We use [PNPM workspaces](https://pnpm.io/workspaces) to manage and distribute multiple packages in a single monorepo.
+The main ProIcons package is inside of the root `src` folder. Other packages are available in the `packages` folder. We use [Bun workspaces](https://bun.com/docs/pm/workspaces) to manage and distribute multiple packages in a single monorepo.
 
 ## Contributing to documentation
 
@@ -29,8 +29,8 @@ The ProIcons documentation is built using [VitePress](https://vitepress.dev). Th
 
 ### Getting the repo
 #### Prerequisites
-- [Node.js](https://nodejs.org) 18+
-- [PNPM](https://pnpm.io)
+- [Node.js](https://nodejs.org) 22+
+- [Bun](https://bun.com)
 
 First, clone the repository:
 
@@ -41,10 +41,10 @@ git clone https://github.com/ProCode-Software/proicons.git
 Then install dependencies
 
 ```
-pnpm install
+bun install
 ```
 
-The command above will install dependencies for all packages. If you want to install dependencies for a specific package, run `pnpm --filter [package] install`.
+The command above will install dependencies for all packages. If you want to install dependencies for a specific package, run `bun --filter [package] install`.
 
 Note that you will need to install all dependencies if you want to build the icon set.
 
@@ -87,7 +87,7 @@ Please follow our [design guidelines](https://procode-software.github.io/proicon
 ```
 
 #### Building the icon set
-Run `pnpm run icons:build` in the `proicons` folder to create PNG and SVG files from your icons in `proicons/icons` and add them to `icons.json` and `icons.lock.json`
+Run `bun run icons:build` in the `proicons` folder to create PNG and SVG files from your icons in `proicons/icons` and add them to `icons.json` and `icons.lock.json`
 
 ### Testing packages
 
@@ -98,9 +98,9 @@ To ensure your changes work, test your changes. This can be done by creating a s
 cd proicons
 
 # Make sure to build your package when testing
-pnpm run ci
+bun run ci
 
-pnpm link
+bun link
 
 # Create a testing folder and initialize a package
 mkdir test

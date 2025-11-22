@@ -32,21 +32,17 @@ jobs:
         with:
           fetch-depth: 0
           
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: latest
-          cache: pnpm
+          bun-version: latest
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
-        run: pnpm --filter @proicons/site add proicons @proicons/vue
-      - run: pnpm install --frozen-lockfile
+        run: bun --filter @proicons/site add proicons @proicons/vue
+      - run: bun install --frozen-lockfile
         
       # - name: Build with Jekyll
       #   uses: actions/jekyll-build-pages@v1
@@ -54,7 +50,7 @@ jobs:
       #     source: ./site/dist
       #     destination: ./_site
       - name: Build with VitePress
-        run: pnpm run docs:build
+        run: bun run docs:build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
