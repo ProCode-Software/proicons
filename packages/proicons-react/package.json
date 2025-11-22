@@ -15,12 +15,12 @@
         "access": "public"
     },
     "scripts": {
-        "dev": "pnpm vite",
-        "build": "rm -rf ./dist/* && tsc && pnpm vite build && pnpm run build:types",
+        "dev": "bun vite",
+        "build": "rm -rf ./dist/* && tsc && bun vite build && bun run build:types",
         "build:types": "dts-bundle-generator dist/types/packages/proicons-react/src/proicons-react.d.ts -o dist/proicons-react.d.ts --no-banner && rm -rf ./dist/types",
-        "preview": "pnpm vite preview",
-        "icons:build-modules": "node ../../bin/addIconFiles.ts -t './bin/reactIconTemplate.ts' -out './src/icons' -i './src/icons.ts' --format ts --clean --lib react",
-        "ci": "pnpm run icons:build-modules && pnpm run build"
+        "preview": "bun vite preview",
+        "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/reactIconTemplate.ts' -out './src/icons' -i './src/icons.ts' --format ts --clean --lib react",
+        "ci": "bun run icons:build-modules && bun run build"
     },
     "author": "ProCode Software",
     "license": "MIT",

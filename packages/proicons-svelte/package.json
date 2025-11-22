@@ -16,11 +16,11 @@
     },
     "scripts": {
         "dev": "vite",
-        "build": "pnpm run package && pnpm run bundle",
+        "build": "bun run package && bun run bundle",
         "package": "svelte-package --input ./src",
-        "bundle": "pnpm esbuild ./src/utils.ts --bundle --outfile=./dist/utils.js --format=esm",
-        "icons:build-modules": "node ../../bin/addIconFiles.ts -t './bin/svelteIconTemplate.ts' -out './src/icons' -i './src/icons.ts' --format svelte --clean --lib svelte",
-        "ci": "pnpm run icons:build-modules && pnpm run build"
+        "bundle": "bun esbuild ./src/utils.ts --bundle --outfile=./dist/utils.js --format=esm",
+        "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/svelteIconTemplate.ts' -out './src/icons' -i './src/icons.ts' --format svelte --clean --lib svelte",
+        "ci": "bun run icons:build-modules && bun run build"
     },
     "exports": {
         ".": {

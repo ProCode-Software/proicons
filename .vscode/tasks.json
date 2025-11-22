@@ -6,7 +6,7 @@
 			"script": "dev",
 			"problemMatcher": [],
 			"label": "Vanilla dev",
-			"detail": "pnpm vite",
+			"detail": "bun vite",
 			"group": "build"
 		},
 		{
@@ -14,7 +14,7 @@
 			"script": "build",
 			"problemMatcher": [],
 			"label": "Build Vanilla package",
-			"detail": "pnpm vite build && pnpm run build:minify",
+			"detail": "bun vite build && bun run build:minify",
 			"group": "build"
 		},
 		{
@@ -32,7 +32,7 @@
 			"group": "build",
 			"problemMatcher": [],
 			"label": "Build icons",
-			"detail": "node ./bin/build.ts"
+			"detail": "bun run ./bin/build.ts"
 		},
 		{
 			"type": "npm",
@@ -40,7 +40,7 @@
 			"group": "build",
 			"problemMatcher": [],
 			"label": "Build all icon modules",
-			"detail": "pnpm -r run icons:build-modules"
+			"detail": "bun -r run icons:build-modules"
 		},
 		{
 			"type": "npm",
@@ -48,7 +48,7 @@
 			"group": "build",
 			"problemMatcher": [],
 			"label": "Publish icons to Roblox",
-			"detail": "node --env-file=.env ./bin/publishToRoblox.ts"
+			"detail": "bun run --env-file=.env ./bin/publishToRoblox.ts"
 		},
 		{
 			"type": "npm",

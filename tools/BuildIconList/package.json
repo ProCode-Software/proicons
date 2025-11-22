@@ -5,8 +5,8 @@
   "main": "code.js",
   "private": true,
   "scripts": {
-    "build": "pnpm tsc -p tsconfig.json",
-    "watch": "pnpm run build --watch"
+    "build": "bun tsc -p tsconfig.json",
+    "watch": "bun run build --watch"
   },
   "author": "",
   "license": "",

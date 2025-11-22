@@ -1,4 +1,8 @@
 {
     "prettier.configPath": "./.prettierrc",
-    "vue.server.includeLanguages": ["vue"]
+    "vue.server.includeLanguages": [
+        "vue"
+    ],
+    "npm.packageManager": "bun",
+    "npm.scriptRunner": "bun"
 }

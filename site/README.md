@@ -3,6 +3,6 @@ ProIcons [website](https://procode-software.github.io/proicons), built with [Vit
 
 ## Development
 ```
-pnpm run docs:dev
+bun run docs:dev
 ```
 This will open the docs server on [localhost:9000](localhost:9000)
