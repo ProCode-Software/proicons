@@ -16,8 +16,7 @@
     },
     "scripts": {
         "dev": "bun vite",
-        "build": "rm -rf ./dist/* && tsc && bun vite build && bun run build:types",
-        "build:types": "dts-bundle-generator dist/types/packages/proicons-react/src/proicons-react.d.ts -o dist/proicons-react.d.ts --no-banner && rm -rf ./dist/types",
+        "build": "rm -rf ./dist/* && bunx tsgo & bun vite build",
         "preview": "bun vite preview",
         "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/reactIconTemplate.ts' -out './src/icons' -i './src/icons.ts' --format ts --clean --lib react",
         "ci": "bun run icons:build-modules && bun run build"
@@ -47,13 +46,14 @@
         "@types/react": "^19.1.13",
         "@types/react-dom": "^19.1.9",
         "@vitejs/plugin-react-swc": "^3.11.0",
-        "dts-bundle-generator": "^9.5.1",
-        "react": "^19.1.1",
-        "react-dom": "^19.1.1",
-        "typescript": "^5.9.2",
-        "vite": "npm:rolldown-vite@^7.1.13"
+        "@typescript/native-preview": "7.0.0-dev.20250723.1",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "typescript": "^5.9.3",
+        "vite": "npm:rolldown-vite@^7.1.13",
+        "@proicons/shared": "workspace:*"
     },
     "peerDependencies": {
-        "react": "^19.1.1"
+        "react": "^19.2.0"
     }
 }

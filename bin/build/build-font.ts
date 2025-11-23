@@ -57,7 +57,7 @@ export async function buildFont(rebuild: boolean) {
             fontHeight: 500,
             codepoints,
             templates: {
-                html: path.resolve('tools/data/html-font.hbs'),
+                html: path.resolve('./bin/build/templates/codepoints.hbs'),
             },
             fontTypes: [
                 FontAssetType.TTF,

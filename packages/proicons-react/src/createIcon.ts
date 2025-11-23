@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { kebabCase, kebabToCamelCase } from '../../../src/rename'
-import { convertNodesWithConfig } from '../../../src/renderNodes'
+import { convertNodesWithConfig } from '@proicons/shared'
 import { ProIconAttributes } from './types'
 
 export type IconNode = [string, Record<string, string>, IconNode[]]
@@ -19,6 +19,8 @@ export const convertNodes = (n: IconNode[]) => {
           })
 }
 
+export type IconComponent = React.ForwardRefExoticComponent<Omit<ProIconAttributes, "ref"> & React.RefAttributes<SVGSVGElement>>
+
 export function createIcon(
     {
         name,
@@ -26,7 +28,7 @@ export function createIcon(
         alternative,
     }: { name: string; deprecated?: boolean; alternative?: string },
     nodes: IconNode[]
-) {
+): IconComponent {
     if (deprecated) {
         console.warn(`Icon ${name} is deprecated. Use ${alternative} instead.`)
     }

@@ -1,7 +1,7 @@
 import { writeFileSync } from 'fs'
 import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import { resolve } from 'path'
-import { kebabCase } from './helpers/rename.ts'
+import { kebabCase } from '@proicons/shared'
 import { readFileSync } from 'fs'
 import ansiColors from 'ansi-colors'
 

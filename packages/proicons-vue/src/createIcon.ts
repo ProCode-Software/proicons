@@ -1,6 +1,6 @@
 import { type FunctionalComponent, h } from 'vue'
-import { kebabCase } from './rename'
-import { convertNodesWithConfig } from './renderNodes'
+import { kebabCase } from '@proicons/shared'
+import { convertNodesWithConfig } from '@proicons/shared'
 import { type ProIconAttributes } from './types'
 
 export type IconNode = [string, Record<string, string>, IconNode[]]

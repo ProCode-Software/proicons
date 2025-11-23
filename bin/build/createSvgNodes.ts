@@ -7,10 +7,9 @@ export function createSvgNodes(svg: string): IconNode[] {
     const svgElement = parser.window.document.querySelector('svg')
 
     function renderNodeList(element: Element): IconNode[] {
-        const nodeArray = []
-
+        const nodeArray: IconNode[] = []
         for (const child of element.children) {
-            const nodeItem = [
+            const nodeItem: IconNode = [
                 child.tagName,
                 child.attributes.length > 0
                     ? Object.fromEntries(
@@ -21,7 +20,6 @@ export function createSvgNodes(svg: string): IconNode[] {
             ]
             nodeArray.push(nodeItem)
         }
-
         return nodeArray
     }
     return renderNodeList(svgElement)

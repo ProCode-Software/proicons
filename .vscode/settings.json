@@ -3,6 +3,12 @@
     "vue.server.includeLanguages": [
         "vue"
     ],
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "npm.packageManager": "bun",
     "npm.scriptRunner": "bun"
 }

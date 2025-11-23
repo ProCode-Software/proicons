@@ -14,7 +14,7 @@ import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import { createSvgNodes } from './build/createSvgNodes.ts'
 import { getCliParams } from './helpers/getCliParam.ts'
 import { prettierFormat } from './helpers/prettierFormat.ts'
-import { camelCase, kebabCase, pascalCase } from './helpers/rename.ts'
+import { camelCase, kebabCase, pascalCase } from '@proicons/shared'
 
 const __dirname = fileURLToPath(dirname(import.meta.url))
 const __rootdir = resolve(__dirname, '../')
@@ -36,9 +36,7 @@ if (shouldCleanDir) rmSync(outDir, { recursive: true, force: true })
 if (!existsSync(outDir) || shouldCleanDir) mkdirSync(outDir, { recursive: true })
 
 const files = readdirSync(inDir)
-
-/** @type {{ name: string, path: string, friendlyName: string }[]} */
-const modules = []
+const modules: { name: string, path: string, friendlyName: string }[] = []
 
 if (files.length !== Object.keys(icons).length)
     throw new Error(
@@ -123,12 +121,11 @@ Promise.all(
         )
     }
     if (shouldCreateDataFiles) {
-        const formatAndWrite = async (data, file) => {
+        const formatAndWrite = async (data: any, file: string) => {
             const formatted = await prettierFormat(
                 'export default ' + JSON.stringify(data) + ' as const',
                 'babel-ts'
             )
-
             writeFileSync(resolve(process.cwd(), 'src', file), formatted)
         }
 

@@ -18,7 +18,7 @@
         "declarationDir": "./dist/types",
         "outDir": "./dist",
         "declaration": true,
-        "baseUrl": ".",
+        "rootDir": "./src",
 
         // Linting
         "strict": false,

@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import type { Rollup } from 'vite'
-import { dts } from 'rolldown-plugin-dts'
-import pkg from './package.json' with { type: 'json' }
+import pkg from '../../package.json' with { type: 'json' }
 
 const licenseNotice = `/**
  * @license ProIcons v${pkg.version} - MIT

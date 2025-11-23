@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { IconNode, ProIconAttributes } from './types'
-import { convertNodesWithConfig, kebabCase } from './utils'
+import { convertNodesWithConfig, kebabCase } from '@proicons/shared'
 
 type Props = ProIconAttributes & {
     icon: {

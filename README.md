@@ -66,7 +66,7 @@
         </td>
         <td>
             <a href="https://procode-software.github.io/proicons/docs/javascript-api">Documentation</a> | 
-            <a href="https://github.com/ProCode-Software/proicons/tree/main/src">GitHub</a>
+            <a href="https://github.com/ProCode-Software/proicons/tree/main/packages/proicons">GitHub</a>
         </td>
     </tr>
     <tr>

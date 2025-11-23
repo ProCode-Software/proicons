@@ -2,7 +2,7 @@ import { writeFileSync } from 'fs'
 import { resolve } from 'path'
 import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import pkg from '../package.json' with { type: 'json' }
-import { kebabCase } from './helpers/rename.ts'
+import { kebabCase } from '@proicons/shared'
 const { version } = pkg
 
 const shouldWrite = process.argv.includes('-w') || process.argv.includes('--write')

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { kebabCase, pascalCase } from '../../../src/rename'
+import { kebabCase, pascalCase } from '@proicons/shared'
 import * as icons from './icons'
 import { ProIconAttributes } from './types'
 

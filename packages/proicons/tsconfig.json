@@ -1,0 +1,23 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "lib": ["ESNext", "DOM", "DOM.Iterable"],
+        "target": "ES6",
+        "jsx": "react",
+        "sourceMap": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "pretty": true,
+
+        "moduleDetection": "force",
+        // Declaration emit
+        "emitDeclarationOnly": true,
+        "declarationDir": "./dist/types",
+        "declaration": true,
+        "isolatedDeclarations": true,
+    },
+    "include": ["./src"],
+    "exclude": ["node_modules", "**/node_modules/*", "**/BuildIconList/*"]
+}

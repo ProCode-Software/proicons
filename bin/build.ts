@@ -10,7 +10,7 @@ import pkg from '../package.json' with { type: 'json' }
 import { buildFont } from './build/build-font.ts'
 import { prettierFormat } from './helpers/prettierFormat.ts'
 import convertPathToRect from '@proicons/svgo-plugins/convertPathToRect'
-import * as rename from './helpers/rename.ts'
+import * as rename from '@proicons/shared'
 import { type Config as SVGOConfig } from 'svgo'
 
 const __rootdir = resolve(import.meta.dirname, '../')
@@ -140,7 +140,8 @@ function createLockfile() {
     const config: IconsJSON = JSON.parse(readFileSync(iconsJsonPath, 'utf-8'))
 
     Object.keys(config).forEach(friendlyName => {
-        const lockfileItem: LockfileItem = lockfile.icons[friendlyName as keyof typeof lockfile.icons]
+        const lockfileItem: LockfileItem =
+            lockfile.icons[friendlyName as keyof typeof lockfile.icons]
 
         if (!lockfileItem) {
             lockfile.icons[friendlyName] = {

@@ -1,0 +1,8 @@
+{
+    "name": "@proicons/shared",
+    "version": "1.0.0",
+    "description": "Shared utilities for ProIcons packages",
+    "module": "./shared.ts",
+    "type": "module",
+    "types": "./types/tools/shared/shared.d.ts"
+}

@@ -8,7 +8,7 @@ import iconsJson from '../icons/icons.json' with { type: 'json' }
 import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import pkg from '../package.json' with { type: 'json' }
 import { prettierFormat } from './helpers/prettierFormat.ts'
-import { kebabCase } from './helpers/rename.ts'
+import { kebabCase } from '@proicons/shared'
 
 const iconAssetsPath = resolve(import.meta.dirname, '../icons/roblox.json')
 const tempFilePath = resolve(import.meta.dirname, `../roblox-upload-${pkg.version}.json`)

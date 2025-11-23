@@ -3,7 +3,7 @@ import { existsSync, readdirSync, unlinkSync } from 'fs'
 import { join, resolve } from 'path'
 import icons from '../icons/icons.json' with { type: 'json' }
 import lockfile from '../icons/icons.lock.json' with { type: 'json' }
-import { kebabCase } from './helpers/rename.ts'
+import { kebabCase } from '@proicons/shared'
 
 // Audit lockfiles
 const missingNamesInLockfile = []

@@ -10,6 +10,8 @@
         "strict": false,
         "noImplicitAny": false,
         "noUnusedParameters": false,
-        "skipDefaultLibCheck": true
+        "skipDefaultLibCheck": true,
+        "skipLibCheck": true,
+        "rewriteRelativeImportExtensions": true
     },
 }
