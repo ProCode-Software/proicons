@@ -3,37 +3,13 @@
     "version": "4.13.0",
     "description": "A collection of 500+ modern and open-source icons",
     "type": "module",
-    "sideEffects": false,
-    "main": "dist/cjs/proicons.cjs",
-    "main:umd": "dist/umd/proicons.cjs",
-    "module": "dist/esm/proicons.js",
-    "typings": "dist/proicons.d.ts",
-    "amdName": "proicons",
-    "unpkg": "dist/umd/proicons.cjs",
-    "jsdelivr": "dist/umd/proicons.cjs",
-    "browser": "dist/umd/proicons.cjs",
     "workspaces": [
         "packages/*",
         "tools/*",
         "site"
     ],
-    "files": [
-        "dist",
-        "!dist/types"
-    ],
-    "exports": {
-        ".": {
-            "types": "./dist/types/proicons.d.ts",
-            "import": "./dist/esm/proicons.js",
-            "require": "./dist/cjs/proicons.cjs",
-            "default": "./dist/umd/proicons.cjs"
-        }
-    },
     "repository": {
         "url": "ProCode-Software/proicons"
-    },
-    "publishConfig": {
-        "access": "public"
     },
     "homepage": "https://github.com/ProCode-Software/proicons",
     "bugs": "https://github.com/ProCode-Software/proicons/issues",
@@ -52,19 +28,6 @@
         "docs:build": "bun --filter @proicons/site run docs:build",
         "ci": "bun run -r ci"
     },
-    "keywords": [
-        "icons",
-        "icon-pack",
-        "js",
-        "feather",
-        "lucide",
-        "fluent",
-        "font awesome",
-        "svg",
-        "proicons",
-        "procode",
-        "icon-library"
-    ],
     "author": "ProCode Software",
     "license": "MIT",
     "devDependencies": {
@@ -86,7 +49,7 @@
         "progress": "^2.0.3",
         "sharp": "^0.34.5",
         "svgo": "^4.0.0",
-        "typescript": "^7.0.0-dev.20251121.1",
+        "typescript": "^7.0.0-dev.20251123.1",
         "vite": "npm:rolldown-vite@^7.2.7"
     },
     "overrides": {

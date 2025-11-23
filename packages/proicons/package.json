@@ -12,11 +12,6 @@
     "unpkg": "dist/umd/proicons.cjs",
     "jsdelivr": "dist/umd/proicons.cjs",
     "browser": "dist/umd/proicons.cjs",
-    "workspaces": [
-        "packages/*",
-        "tools/*",
-        "site"
-    ],
     "files": [
         "dist",
         "!dist/types"
@@ -40,7 +35,7 @@
     "scripts": {
         "dev": "bun vite",
         "build": "bun vite build",
-        "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/build/templates/iconTemplate.ts' -out './src/icons' -i './src/icons.ts' -d --format ts --clean",
+        "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/iconTemplate.ts' -out './src/icons' -i './src/icons.ts' -d --format ts --clean",
         "ci": "bun run icons:build-modules && bun run build"
     },
     "keywords": [

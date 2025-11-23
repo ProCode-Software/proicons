@@ -11,7 +11,7 @@ import { dirname, resolve } from 'path'
 import { fileURLToPath } from 'url'
 import icons from '../icons/icons.json' with { type: 'json' }
 import lockfile from '../icons/icons.lock.json' with { type: 'json' }
-import { createSvgNodes } from './build/createSvgNodes.ts'
+import { createSvgNodes, IconNode } from './build/createSvgNodes.ts'
 import { getCliParams } from './helpers/getCliParam.ts'
 import { prettierFormat } from './helpers/prettierFormat.ts'
 import { camelCase, kebabCase, pascalCase } from '@proicons/shared'
@@ -36,7 +36,7 @@ if (shouldCleanDir) rmSync(outDir, { recursive: true, force: true })
 if (!existsSync(outDir) || shouldCleanDir) mkdirSync(outDir, { recursive: true })
 
 const files = readdirSync(inDir)
-const modules: { name: string, path: string, friendlyName: string }[] = []
+const modules: { name: string; path: string; friendlyName: string }[] = []
 
 if (files.length !== Object.keys(icons).length)
     throw new Error(
@@ -59,8 +59,9 @@ Promise.all(
         const svgContent = readFileSync(resolve(inDir, inFile), 'utf-8')
         const svgNodes = createSvgNodes(svgContent)
 
-        /** @type {import('./build/templates/iconTemplate.ts').default} */
-        const renderTemplate = (await import(templateDir)).default
+        const renderTemplate: (moduleName: string, nodes: IconNode[]) => string = (
+            await import(templateDir)
+        ).default
 
         const result = renderTemplate(moduleName, svgNodes)
 
