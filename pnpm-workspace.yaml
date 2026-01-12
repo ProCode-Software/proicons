@@ -1,0 +1,8 @@
+packages:
+    - 'packages/*'
+    - 'tools/*'
+    - 'site'
+
+overrides:
+  vite: npm:rolldown-vite@latest
+  rolldown: latest
