@@ -2,19 +2,21 @@
     "name": "proicons",
     "version": "4.13.1",
     "description": "A collection of 500+ modern and open-source icons",
-    "type": "module",
+    "homepage": "https://github.com/ProCode-Software/proicons",
+    "bugs": "https://github.com/ProCode-Software/proicons/issues",
+    "license": "MIT",
+    "author": "ProCode Software",
+    "repository": {
+        "url": "ProCode-Software/proicons"
+    },
     "workspaces": [
         "packages/*",
         "tools/*",
         "site"
     ],
-    "repository": {
-        "url": "ProCode-Software/proicons"
-    },
-    "homepage": "https://github.com/ProCode-Software/proicons",
-    "bugs": "https://github.com/ProCode-Software/proicons/issues",
+    "type": "module",
     "scripts": {
-        "all:build-modules": "bun -r run icons:build-modules",
+        "all:build-modules": "pnpm -r run icons:build-modules",
         "icons:build": "pnpm run --no-deprecation ./bin/build.ts",
         "icons:optimize": "pnpm run icons:build -o",
         "icons:build-frozen": "pnpm run icons:build -l",
@@ -26,15 +28,14 @@
         "generate-changelog": "bun run ./bin/generateChangelog.ts",
         "docs:dev": "bun --filter @proicons/site run docs:dev",
         "docs:build": "bun --filter @proicons/site run docs:build",
-        "ci": "pnpm run -r ci"
+        "ci": "pnpm run -r ci",
+        "fmt": "oxfmt"
     },
-    "author": "ProCode Software",
-    "license": "MIT",
     "devDependencies": {
         "@proicons/cli": "workspace:*",
         "@proicons/pixelfix": "workspace:*",
-        "@proicons/svgo-plugins": "workspace:*",
         "@proicons/shared": "workspace:*",
+        "@proicons/svgo-plugins": "workspace:*",
         "@twbs/fantasticon": "^3.1.0",
         "@types/bun": "latest",
         "@typescript/native-preview": "7.0.0-dev.20250723.1",
@@ -43,6 +44,7 @@
         "form-data": "^4.0.5",
         "jsdom": "^27.4.0",
         "oslllo-svg-fixer": "^5.0.0",
+        "oxfmt": "^0.24.0",
         "piscina": "^5.1.4",
         "prettier": "^3.7.4",
         "prettier-plugin-svelte": "^3.4.1",
@@ -54,8 +56,8 @@
     },
     "overrides": {
         "rolldown": "latest",
-        "vite": "npm:rolldown-vite@latest",
-        "typescript": "npm:@typescript/native-preview@latest"
+        "typescript": "npm:@typescript/native-preview@latest",
+        "vite": "npm:rolldown-vite@latest"
     },
-    "packageManager": "bun@10.17.1+sha512.17c560fca4867ae9473a3899ad84a88334914f379be46d455cbf92e5cf4b39d34985d452d2583baf19967fa76cb5c17bc9e245529d0b98745721aa7200ecaf7a"
+    "packageManager": "pnpm@10.28.0"
 }

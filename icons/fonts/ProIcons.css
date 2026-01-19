@@ -1,10 +1,10 @@
 @font-face {
   font-display: block;
   font-family: "ProIcons";
-  src: url("./ProIcons.ttf?8c7cff030ab1fed1feadab5f4d5d8c0c") format("truetype"),
-url("./ProIcons.woff?8c7cff030ab1fed1feadab5f4d5d8c0c") format("woff"),
-url("./ProIcons.woff2?8c7cff030ab1fed1feadab5f4d5d8c0c") format("woff2"),
-url("./ProIcons.eot?8c7cff030ab1fed1feadab5f4d5d8c0c#iefix") format("embedded-opentype");
+  src: url("./ProIcons.ttf?a5c34c220dff17b497a6759a90728e52") format("truetype"),
+url("./ProIcons.woff?a5c34c220dff17b497a6759a90728e52") format("woff"),
+url("./ProIcons.woff2?a5c34c220dff17b497a6759a90728e52") format("woff2"),
+url("./ProIcons.eot?a5c34c220dff17b497a6759a90728e52#iefix") format("embedded-opentype");
 }
 
 i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
@@ -1581,10 +1581,58 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-toy-brick::before {
   content: "\e208";
 }
-.proicon-apps-list::before {
-  content: "\f101";
+.proicon-brain::before {
+  content: "\e209";
+}
+.proicon-key::before {
+  content: "\e20a";
 }
 .proicon-bar-chart-sparkle::before {
+  content: "\e20b";
+}
+.proicon-trophy::before {
+  content: "\e20c";
+}
+.proicon-food::before {
+  content: "\e20d";
+}
+.proicon-photo-filter-2::before {
+  content: "\e20e";
+}
+.proicon-glasses::before {
+  content: "\e20f";
+}
+.proicon-pulse::before {
+  content: "\e210";
+}
+.proicon-container::before {
+  content: "\e211";
+}
+.proicon-egg-fried::before {
+  content: "\e212";
+}
+.proicon-cheese::before {
+  content: "\e213";
+}
+.proicon-toast::before {
+  content: "\e214";
+}
+.proicon-rose::before {
+  content: "\e215";
+}
+.proicon-rocket::before {
+  content: "\e216";
+}
+.proicon-sapling::before {
+  content: "\e217";
+}
+.proicon-pizza::before {
+  content: "\e218";
+}
+.proicon-american-football::before {
+  content: "\f101";
+}
+.proicon-apps-list::before {
   content: "\f102";
 }
 .proicon-bar-graph::before {
@@ -1593,66 +1641,24 @@ i[class^="proicon-"]::before, i[class*=" proicon-"]::before {
 .proicon-box-margins::before {
   content: "\f104";
 }
-.proicon-brain::before {
+.proicon-phone-accept::before {
   content: "\f105";
 }
-.proicon-cheese::before {
+.proicon-phone-hang-up::before {
   content: "\f106";
 }
-.proicon-container::before {
+.proicon-soccer::before {
   content: "\f107";
 }
-.proicon-egg-fried::before {
+.proicon-text-bullet-list-square-add::before {
   content: "\f108";
 }
-.proicon-food::before {
+.proicon-text-bullet-list-square::before {
   content: "\f109";
 }
-.proicon-glasses::before {
+.proicon-text-bullet-list-tree::before {
   content: "\f10a";
 }
-.proicon-key::before {
-  content: "\f10b";
-}
-.proicon-phone-accept::before {
-  content: "\f10c";
-}
-.proicon-phone-hang-up::before {
-  content: "\f10d";
-}
-.proicon-photo-filter-2::before {
-  content: "\f10e";
-}
-.proicon-pizza::before {
-  content: "\f10f";
-}
-.proicon-pulse::before {
-  content: "\f110";
-}
-.proicon-rocket::before {
-  content: "\f111";
-}
-.proicon-rose::before {
-  content: "\f112";
-}
-.proicon-sapling::before {
-  content: "\f113";
-}
-.proicon-text-bullet-list-square-add::before {
-  content: "\f114";
-}
-.proicon-text-bullet-list-square::before {
-  content: "\f115";
-}
-.proicon-text-bullet-list-tree::before {
-  content: "\f116";
-}
 .proicon-text-bullet-list::before {
-  content: "\f117";
-}
-.proicon-toast::before {
-  content: "\f118";
-}
-.proicon-trophy::before {
-  content: "\f119";
+  content: "\f10b";
 }

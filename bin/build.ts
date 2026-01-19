@@ -1,17 +1,16 @@
+import * as rename from '@proicons/shared'
+import convertPathToRect from '@proicons/svgo-plugins/convertPathToRect'
 import ansiColors from 'ansi-colors'
-import { execSync } from 'child_process'
+import { $ } from 'bun'
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
 import { Piscina } from 'piscina'
 import progress from 'progress'
-import { optimize } from 'svgo'
+import { optimize, type Config as SVGOConfig } from 'svgo'
 import inIcons from '../in/in.json' with { type: 'json' }
 import pkg from '../package.json' with { type: 'json' }
 import { buildFont } from './build/build-font.ts'
 import { prettierFormat } from './helpers/prettierFormat.ts'
-import convertPathToRect from '@proicons/svgo-plugins/convertPathToRect'
-import * as rename from '@proicons/shared'
-import { type Config as SVGOConfig } from 'svgo'
 
 const __rootdir = resolve(import.meta.dirname, '../')
 const { version } = pkg
@@ -136,8 +135,8 @@ const lockfile: Lockfile = existsSync(resolve(__rootdir, 'icons/icons.lock.json'
     ? JSON.parse(readFileSync(resolve(__rootdir, 'icons/icons.lock.json'), 'utf-8'))
     : []
 
-function createLockfile() {
-    const config: IconsJSON = JSON.parse(readFileSync(iconsJsonPath, 'utf-8'))
+async function createLockfile() {
+    const config: IconsJSON = await Bun.file(iconsJsonPath).json()
 
     Object.keys(config).forEach(friendlyName => {
         const lockfileItem: LockfileItem =
@@ -189,19 +188,15 @@ async function buildPngs() {
 
     console.time('Build PNGs')
 
-    const promises = []
-    for (const file of args.shouldRebuildAll ? svgFiles : newSvgsOnly) {
-        promises.push(
+    await Promise.all(
+        (args.shouldRebuildAll ? svgFiles : newSvgsOnly).map(file =>
             (async () => {
                 await worker.run({ file, root: __rootdir })
 
-                progressBar.tick(1, {
-                    item: file.slice(0, -4),
-                })
+                progressBar.tick(1, { item: file.slice(0, -4) })
             })()
         )
-    }
-    await Promise.all(promises)
+    )
 
     console.log('')
     console.timeEnd('Build PNGs')
@@ -209,31 +204,34 @@ async function buildPngs() {
     console.log(ansiColors.green('Done building PNGs!'))
 }
 
-function buildModules() {
+async function buildModules() {
     try {
-        const result = execSync(`pnpm run icons:build-modules`)
-        console.log(result.toString('utf-8'))
+        const result = await $`pnpm run all:build-modules`.text()
+        console.log(result)
     } catch (e) {
         console.log(ansiColors.red("Couldn't build modules:"))
         throw e
     }
 }
 
-;(async () => {
+async function run() {
     console.time('Build time')
     if (args.optimizeOnly) {
         await optimizeIcons()
         return
     }
-    if (!args.fontOnly) {
-        await createSvgFiles()
-        createLockfile()
-        await writeLockfile()
-        await buildPngs()
-        buildModules()
+    if (args.fontOnly) {
+        await buildFont(newIcons.length > 0 || args.shouldRebuildAll)
+        return
     }
+    await createSvgFiles()
+    await createLockfile()
+    await writeLockfile()
+    await buildPngs()
+    await buildModules()
     await buildFont(newIcons.length > 0 || args.shouldRebuildAll)
-})().then(() => {
+
+    // Build complete
     console.log(ansiColors.greenBright('\nBuild complete!'))
     console.timeEnd('Build time')
 
@@ -242,5 +240,6 @@ function buildModules() {
     } else {
         console.log(ansiColors.cyan('No newly added icons'))
     }
-    process.exit(0)
-})
+}
+
+await run()

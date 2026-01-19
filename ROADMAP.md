@@ -2,7 +2,8 @@
 Here are some things that are currently being planned for this project. Note that this list is subject to change and items can be added or removed.
 
 ## Website Redesign
-Redesign the homepage, and possibly the rest of the website.
+- Redesign the homepage
+- Show aliases in the icon library
 
 ## Figma Plugin
 **Available in preview:** https://github.com/ProCode-Software/proicons-figma

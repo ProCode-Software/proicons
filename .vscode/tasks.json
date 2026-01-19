@@ -40,7 +40,7 @@
 			"group": "build",
 			"problemMatcher": [ ],
 			"label": "Build all icon modules",
-			"detail": "bun -r run icons:build-modules"
+			"detail": "pnpm -r run icons:build-modules"
 		},
 		{
 			"type": "npm",
