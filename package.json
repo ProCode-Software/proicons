@@ -27,8 +27,8 @@
         "font:codepoints": "bun run ./bin/generateCodepoints.ts",
         "font:build": "pnpm run icons:build -f -r",
         "generate-changelog": "bun run ./bin/generateChangelog.ts",
-        "docs:dev": "bun --filter @proicons/site run docs:dev",
-        "docs:build": "bun --filter @proicons/site run docs:build",
+        "docs:dev": "pnpm --filter @proicons/site run docs:dev",
+        "docs:build": "pnpm --filter @proicons/site run docs:build",
         "ci": "pnpm run -r ci",
         "fmt": "oxfmt"
     },

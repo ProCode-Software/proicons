@@ -46,7 +46,7 @@ Then install dependencies
 bun install
 ```
 
-The command above will install dependencies for all packages. If you want to install dependencies for a specific package, run `bun --filter [package] install`.
+The command above will install dependencies for all packages. If you want to install dependencies for a specific package, run `pnpm --filter [package] install`.
 
 Note that you will need to install all dependencies if you want to build the icon set.
 
