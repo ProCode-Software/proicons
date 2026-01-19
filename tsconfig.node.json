@@ -14,7 +14,8 @@
     },
     "include": [
         "./tools",
-        "./bin"
+        "./bin",
+        "**/bin"
     ],
     "exclude": [
         "node_modules",

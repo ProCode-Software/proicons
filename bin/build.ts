@@ -215,6 +215,7 @@ async function buildModules() {
 }
 
 async function run() {
+    // TODO: check that package.json version has been bumped from latest published
     console.time('Build time')
     if (args.optimizeOnly) {
         await optimizeIcons()

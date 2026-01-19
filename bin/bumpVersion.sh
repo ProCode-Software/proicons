@@ -6,7 +6,6 @@ PROICONS_ROOT="$(realpath "$SCRIPT/..")"
 
 source "$PROICONS_ROOT/bin/helpers/utils.sh"
 
-packages=("$PROICONS_ROOT/packages/"* "$PROICONS_ROOT")
 package_names=()
 
 new_version=$1
@@ -15,7 +14,7 @@ if [[ -z $new_version ]]; then
     error "Error: A version is required"
 fi
 
-for package in "${packages[@]}"; do
+for package in "$PROICONS_ROOT/packages/"*; do
     name=$(basename "$package")
     package_names+=("${name},")
     (

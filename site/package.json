@@ -15,9 +15,9 @@
         "minisearch": "^7.2.0",
         "oxc-minify": "0.106.0",
         "proicons": "latest",
-        "sass-embedded": "^1.93.2",
+        "sass-embedded": "^1.97.2",
         "shiki": "3.2.1",
-        "vitepress": "^2.0.0-alpha.12",
+        "vitepress": "2.0.0-alpha.15",
         "vue": "^3.5.26"
     }
 }

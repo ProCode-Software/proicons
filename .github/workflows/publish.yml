@@ -27,12 +27,14 @@ jobs:
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-          scope: '@proicons'
-          registry-url: 'https://registry.npmjs.org'
+          registries: '@proicons:https://registry.npmjs.org'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Install dependencies
         run: |
-          bun install --frozen-lockfile
+          pnpm install --frozen-lockfile
 
       - name: Bump version
         run: |
@@ -40,10 +42,8 @@ jobs:
 
       - name: Build packages
         run: |
-          pnpm run ci
-          bun --filter './packages/*' run ci
+          pnpm --filter './packages/*' run ci
 
       - name: Publish to NPM
         run: |
-          bun publish --no-git-checks
-          bun --filter './packages/*' publish --no-git-checks
+          pnpm --filter './packages/*' publish --no-git-checks
