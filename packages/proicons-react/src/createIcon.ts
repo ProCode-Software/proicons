@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { kebabCase, kebabToCamelCase } from '../../../src/rename'
+import { kebabCase, kebabToCamelCase } from '@proicons/shared'
 import { convertNodesWithConfig } from '@proicons/shared'
 import { ProIconAttributes } from './types'
 

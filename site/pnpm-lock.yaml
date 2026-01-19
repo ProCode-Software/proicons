@@ -12,6 +12,9 @@ importers:
 
   .:
     dependencies:
+      '@proicons/shared':
+        specifier: workspace:*
+        version: link:../tools/shared
       '@proicons/vue':
         specifier: latest
         version: 4.13.0(vue@3.5.26)

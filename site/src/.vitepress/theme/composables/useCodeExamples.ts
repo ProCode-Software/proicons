@@ -1,4 +1,4 @@
-import { camelToKebabCase, kebabCase, pascalCase } from '../../../../../src/rename'
+import { camelToKebabCase, kebabCase, pascalCase } from '@proicons/shared'
 import { defaultCustomizations, type CustomizationData } from './useCustomizations'
 
 type Format = 'jsx' | 'vue' | 'html'
