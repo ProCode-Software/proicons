@@ -50,7 +50,7 @@ jobs:
       #     source: ./site/dist
       #     destination: ./_site
       - name: Build with VitePress
-        run: bun run docs:build
+        run: pnpm run docs:build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

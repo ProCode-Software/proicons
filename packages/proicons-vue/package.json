@@ -19,7 +19,7 @@
         "build": "bun vite build",
         "preview": "bun vite preview",
         "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/vueIconTemplate.ts' -out './src/icons' -i './src/icons.ts' --format ts --clean --lib vue",
-        "ci": "bun run icons:build-modules && bun run build"
+        "ci": "pnpm run icons:build-modules && pnpm run build"
     },
     "author": "ProCode Software",
     "license": "MIT",

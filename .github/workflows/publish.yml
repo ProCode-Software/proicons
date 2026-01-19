@@ -40,7 +40,7 @@ jobs:
 
       - name: Build packages
         run: |
-          bun run ci
+          pnpm run ci
           bun --filter './packages/*' run ci
 
       - name: Publish to NPM

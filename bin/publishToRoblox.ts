@@ -24,7 +24,7 @@ const removedIcons = assetData.exclude
 
 if (!process.env.ROBLOX_PUBLISH_KEY)
     throw new Error(
-        'You forgot your Roblox API key. Use `bun run --env-file=.env ./publishIcons.ts` with the variable "ROBLOX_PUBLISH_KEY"'
+        'You forgot your Roblox API key. Use `pnpm run --env-file=.env ./publishIcons.ts` with the variable "ROBLOX_PUBLISH_KEY"'
     )
 
 const publishEndpoint = 'https://apis.roblox.com/assets/v1/assets',

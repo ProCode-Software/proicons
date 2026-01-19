@@ -16,10 +16,10 @@
     },
     "scripts": {
         "dev": "vite",
-        "build": "bun run package",
+        "build": "pnpm run package",
         "package": "svelte-package --input ./src",
         "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/svelteIconTemplate.ts' -out './src/icons' -i './src/icons.ts' --format svelte --clean --lib svelte",
-        "ci": "bun run icons:build-modules && bun run build"
+        "ci": "pnpm run icons:build-modules && pnpm run build"
     },
     "exports": {
         ".": {

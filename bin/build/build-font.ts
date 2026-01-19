@@ -46,7 +46,7 @@ async function outlineSvgs(rebuild: boolean) {
 /** @param {boolean} rebuild If --rebuild flag was used */
 export async function buildFont(rebuild: boolean) {
     try {
-        console.log(execSync('bun run font:codepoints').toString('utf-8'))
+        console.log(execSync('pnpm run font:codepoints').toString('utf-8'))
         await outlineSvgs(rebuild)
 
         await generateFonts({

@@ -28,7 +28,9 @@ The ProIcons documentation is built using [VitePress](https://vitepress.dev). Th
 ## Development Guide
 
 ### Getting the repo
+
 #### Prerequisites
+
 - [Node.js](https://nodejs.org) 22+
 - [Bun](https://bun.com)
 
@@ -49,21 +51,24 @@ The command above will install dependencies for all packages. If you want to ins
 Note that you will need to install all dependencies if you want to build the icon set.
 
 ### Adding an icon
+
 The [Figma desktop app](https://www.figma.com/downloads/) is recommended, along with our [Build Icon List](https://github.com/ProCode-Software/proicons/tree/main/tools/BuildIconList) plugin cloned and [imported](#installing-the-figma-plugin) into Figma.
 
 Please follow our [design guidelines](https://procode-software.github.io/proicons/docs/design-guidelines) and [naming conventions](https://procode-software.github.io/proicons/docs/design-guidelines/naming) when creating your icon.
 
-#### Installing the Figma plugin *(Recommended if using Figma)*
+#### Installing the Figma plugin _(Recommended if using Figma)_
+
 1. Make sure you have cloned the ProIcons repository
-2. Select the dropdown in the title bar or right click in a file > *Plugins > Development > Import plugin from manifest...*
+2. Select the dropdown in the title bar or right click in a file > _Plugins > Development > Import plugin from manifest..._
 3. Upload the `manifest.json` file located in `proicons/tools/BuildIconList/`.
 
 #### Using Build Icon List plugin in Figma
+
 1. After designing your icon, make it a component by pressing `Ctrl + Alt + K` or `Cmd + Option + K`
 
 2. In `Component configuration` in the sidebar, add a description
 
-3. Run the Build Icon List plugin by right-clicking and selecting *Plugins > Development > Build Icon List*. A popup will show with your generated JSON.
+3. Run the Build Icon List plugin by right-clicking and selecting _Plugins > Development > Build Icon List_. A popup will show with your generated JSON.
 
 > [!NOTE]
 > You may see a warning saying `1 icon doesn't have a category` or similar. If you see this, replace `NO CATEGORY` in your JSON data with a category that is [already in the set](https://procode-software.github.io/proicons/icons) (case-sensitive).
@@ -73,6 +78,7 @@ Please follow our [design guidelines](https://procode-software.github.io/proicon
 4. Paste the generated JSON into a new file at `proicons/in/in.json`
 
 #### Using other software
+
 1. Create a new file at `proicons/in/in.json` with the following content:
 
 ```jsonc
@@ -80,14 +86,15 @@ Please follow our [design guidelines](https://procode-software.github.io/proicon
     "Icon Name": {
         "description": "Icon description",
         "category": "Icon category",
-        "icon": "Paste your icon's escaped SVG code"
+        "icon": "Paste your icon's escaped SVG code",
     },
     // ...other icons
 }
 ```
 
 #### Building the icon set
-Run `bun run icons:build` in the `proicons` folder to create PNG and SVG files from your icons in `proicons/icons` and add them to `icons.json` and `icons.lock.json`
+
+Run `pnpm run icons:build` in the `proicons` folder to create PNG and SVG files from your icons in `proicons/icons` and add them to `icons.json` and `icons.lock.json`
 
 ### Testing packages
 
@@ -98,7 +105,7 @@ To ensure your changes work, test your changes. This can be done by creating a s
 cd proicons
 
 # Make sure to build your package when testing
-bun run ci
+pnpm run ci
 
 bun link
 

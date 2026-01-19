@@ -4,7 +4,7 @@
 		{
 			"type": "npm",
 			"script": "dev",
-			"problemMatcher": [],
+			"problemMatcher": [ ],
 			"label": "Vanilla dev",
 			"detail": "bun vite",
 			"group": "build"
@@ -12,9 +12,9 @@
 		{
 			"type": "npm",
 			"script": "build",
-			"problemMatcher": [],
+			"problemMatcher": [ ],
 			"label": "Build Vanilla package",
-			"detail": "bun vite build && bun run build:minify",
+			"detail": "bun vite build && pnpm run build:minify",
 			"group": "build"
 		},
 		{
@@ -22,7 +22,7 @@
 			"script": "docs:dev",
 			"path": "site",
 			"group": "build",
-			"problemMatcher": [],
+			"problemMatcher": [ ],
 			"label": "docs dev",
 			"detail": "vitepress dev src --port 9000"
 		},
@@ -30,7 +30,7 @@
 			"type": "npm",
 			"script": "icons:build",
 			"group": "build",
-			"problemMatcher": [],
+			"problemMatcher": [ ],
 			"label": "Build icons",
 			"detail": "bun run ./bin/build.ts"
 		},
@@ -38,7 +38,7 @@
 			"type": "npm",
 			"script": "all:build-modules",
 			"group": "build",
-			"problemMatcher": [],
+			"problemMatcher": [ ],
 			"label": "Build all icon modules",
 			"detail": "bun -r run icons:build-modules"
 		},
@@ -46,15 +46,15 @@
 			"type": "npm",
 			"script": "icons:roblox-publish",
 			"group": "build",
-			"problemMatcher": [],
+			"problemMatcher": [ ],
 			"label": "Publish icons to Roblox",
-			"detail": "bun run --env-file=.env ./bin/publishToRoblox.ts"
+			"detail": "pnpm run --env-file=.env ./bin/publishToRoblox.ts"
 		},
 		{
 			"type": "npm",
 			"script": "icons:prune",
 			"group": "build",
-			"problemMatcher": [],
+			"problemMatcher": [ ],
 			"label": "Cleanup icons",
 		}
 	]

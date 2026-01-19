@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "bun tsc -p tsconfig.json",
-    "watch": "bun run build --watch"
+    "watch": "pnpm run build --watch"
   },
   "author": "",
   "license": "",
