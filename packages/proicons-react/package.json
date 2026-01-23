@@ -4,21 +4,20 @@
     "description": "ProIcons icon library for ReactJS",
     "main": "dist/proicons-react.js",
     "module": "dist/proicons-react.js",
-    "types": "dist/proicons-react.d.ts",
+    "typings": "dist/types/proicons-react.d.ts",
     "type": "module",
     "sideEffects": false,
     "files": [
-        "dist",
-        "!dist/types"
+        "dist"
     ],
     "publishConfig": {
         "access": "public"
     },
     "scripts": {
         "dev": "bun vite",
-        "build": "rm -rf ./dist/* && bunx tsgo & bun vite build",
+        "build": "bun vite build && bunx tsgo",
         "preview": "bun vite preview",
-        "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/reactIconTemplate.ts' -out './src/icons' -i './src/icons.ts' --format ts --clean --lib react",
+        "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/reactIconTemplate.ts' --out './src/icons' -i './src/icons.ts' --format ts --clean --lib react",
         "ci": "pnpm run icons:build-modules && pnpm run build"
     },
     "author": "ProCode Software",

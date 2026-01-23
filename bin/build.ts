@@ -3,13 +3,14 @@ import convertPathToRect from '@proicons/svgo-plugins/convertPathToRect'
 import ansiColors from 'ansi-colors'
 import { $ } from 'bun'
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'fs'
-import { resolve } from 'path'
+import { join, resolve } from 'path'
+import { parseArgs } from 'util'
 import { Piscina } from 'piscina'
-import progress from 'progress'
+import Progress from 'progress'
 import { optimize, type Config as SVGOConfig } from 'svgo'
 import inIcons from '../in/in.json' with { type: 'json' }
 import pkg from '../package.json' with { type: 'json' }
-import { buildFont } from './build/build-font.ts'
+import { buildFont } from './build/buildFont.ts'
 import { prettierFormat } from './helpers/prettierFormat.ts'
 
 const __rootdir = resolve(import.meta.dirname, '../')
@@ -30,21 +31,23 @@ interface IconList {
     [k: string]: Icon
 }
 
-const argChoice = (c1: string, c2: string) => {
-    const argv = process.argv.slice(2)
-    return argv.includes(c1) || argv.includes(c2)
-}
-
-const args = {
-    // Should rebuild all images
-    shouldRebuildAll: argChoice('--rebuild', '-r'),
-    // Only build font
-    fontOnly: argChoice('--font-only', '-f'),
-    // Don't update the lockfile
-    frozenLockfile: argChoice('--no-update-lockfile', '-l'),
-    // Only optimize icons
-    optimizeOnly: argChoice('--optimize-only', '-o'),
-}
+const {
+    values: {
+        rebuild: shouldRebuildAll,
+        'font-only': fontOnly,
+        'no-update-lockfile': frozenLockfile,
+        'optimize-only': optimizeOnly,
+    },
+} = parseArgs({
+    options: {
+        rebuild: { type: 'boolean', short: 'r' },
+        'font-only': { type: 'boolean', short: 'f' },
+        'no-update-lockfile': { type: 'boolean', short: 'l' },
+        'optimize-only': { type: 'boolean', short: 'o' },
+    },
+    strict: true,
+    allowPositionals: false,
+})
 
 const strokeColors = ['#212325', 'black', '#000000', '#000']
 
@@ -115,7 +118,7 @@ async function writeSvgFilesFromData(jsonData: IconList) {
             writeFileSync(resolve(outDir, `${fn}.svg`), optimized)
             data.icon = optimized
         } catch (e) {
-            console.log(ansiColors.red('Error making files:'))
+            console.error('Error making files:', e)
             throw e
         }
 
@@ -137,18 +140,15 @@ const lockfile: Lockfile = existsSync(resolve(__rootdir, 'icons/icons.lock.json'
 
 async function createLockfile() {
     const config: IconsJSON = await Bun.file(iconsJsonPath).json()
-
     Object.keys(config).forEach(friendlyName => {
         const lockfileItem: LockfileItem =
             lockfile.icons[friendlyName as keyof typeof lockfile.icons]
 
         if (!lockfileItem) {
-            lockfile.icons[friendlyName] = {
-                added: version,
-            }
+            lockfile.icons[friendlyName] = { added: version }
         } else if (
+            !frozenLockfile &&
             newIcons.includes(friendlyName) &&
-            lockfileItem &&
             lockfileItem.added != version
         ) {
             lockfileItem.updated = version
@@ -174,31 +174,25 @@ async function writeLockfile() {
 async function buildPngs() {
     const svgFiles = readdirSync(outDir).filter(file => file.endsWith('.svg'))
     const newSvgsOnly = newIcons.map(i => rename.kebabCase(i.trim()) + '.svg')
-
-    const progressBar = new progress('  Build PNGs [:bar] :item :percent :etas', {
+    const filesToProcess = shouldRebuildAll ? svgFiles : newSvgsOnly
+    const progressBar = new Progress('  Build PNGs [:bar] :item :percent :etas', {
         complete: '=',
         incomplete: ' ',
         width: 25,
-        total: svgFiles.length * 3 * 2,
+        total: filesToProcess.length,
     })
 
     const worker = new Piscina({
-        filename: new URL('./build/fix-image.ts', import.meta.url).href,
+        filename: join(import.meta.dir, './build/fixImage.ts'),
     })
 
     console.time('Build PNGs')
-
     await Promise.all(
-        (args.shouldRebuildAll ? svgFiles : newSvgsOnly).map(file =>
-            (async () => {
-                await worker.run({ file, root: __rootdir })
-
-                progressBar.tick(1, { item: file.slice(0, -4) })
-            })()
-        )
+        filesToProcess.map(async file => {
+            await worker.run({ file, root: __rootdir })
+            progressBar.tick(1, { item: file.slice(0, -4) })
+        })
     )
-
-    console.log('')
     console.timeEnd('Build PNGs')
     progressBar.terminate()
     console.log(ansiColors.green('Done building PNGs!'))
@@ -209,7 +203,7 @@ async function buildModules() {
         const result = await $`pnpm run all:build-modules`.text()
         console.log(result)
     } catch (e) {
-        console.log(ansiColors.red("Couldn't build modules:"))
+        console.error("Couldn't build modules:", e)
         throw e
     }
 }
@@ -217,12 +211,12 @@ async function buildModules() {
 async function run() {
     // TODO: check that package.json version has been bumped from latest published
     console.time('Build time')
-    if (args.optimizeOnly) {
+    if (optimizeOnly) {
         await optimizeIcons()
         return
     }
-    if (args.fontOnly) {
-        await buildFont(newIcons.length > 0 || args.shouldRebuildAll)
+    if (fontOnly) {
+        await buildFont(newIcons.length > 0 || shouldRebuildAll == true)
         return
     }
     await createSvgFiles()
@@ -230,7 +224,7 @@ async function run() {
     await writeLockfile()
     await buildPngs()
     await buildModules()
-    await buildFont(newIcons.length > 0 || args.shouldRebuildAll)
+    await buildFont(newIcons.length > 0 || shouldRebuildAll == true)
 
     // Build complete
     console.log(ansiColors.greenBright('\nBuild complete!'))

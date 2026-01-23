@@ -25,8 +25,6 @@ import { createIcon } from '../createIcon'
  * @preview ![Icon preview](data:image/svg+xml;base64,${rawSvgData})
  * @added v${lockfileItem.added}${lockfileItem.updated ? `\n * @updated v${lockfileItem.updated}` : ''}${deprecationData ? `\n * @deprecated Use ${deprecationData.alternative} instead` : ''}
  */
-const ${moduleName} = createIcon(${JSON.stringify(iconInfo)}, ${JSON.stringify(nodes)})
-
-export { ${moduleName} }
+export const ${moduleName} = createIcon(${JSON.stringify(iconInfo)}, ${JSON.stringify(nodes)})
 `.trim()
 }

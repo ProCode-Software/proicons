@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import dts from 'vite-plugin-dts'
 import pkg from './package.json' with { type: 'json' }
 
 const licenseNotice = `/**
@@ -37,13 +36,5 @@ export default defineConfig({
             external: ['vue'],
         },
     },
-    plugins: [
-        vue(),
-        dts({
-            rollupTypes: true,
-            outDir: 'dist',
-            copyDtsFiles: true,
-            exclude: [],
-        }),
-    ],
+    plugins: [vue()],
 })

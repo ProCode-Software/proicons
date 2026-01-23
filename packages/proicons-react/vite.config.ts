@@ -16,7 +16,6 @@ export default defineConfig({
     build: {
         sourcemap: false,
         minify: false,
-        emptyOutDir: false,
         rollupOptions: {
             input: './src/proicons-react.ts',
             output: {

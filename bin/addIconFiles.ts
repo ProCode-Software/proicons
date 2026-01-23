@@ -5,20 +5,37 @@ import { dirname, resolve } from 'path'
 import { fileURLToPath } from 'url'
 import icons from '../icons/icons.json' with { type: 'json' }
 import lockfile from '../icons/icons.lock.json' with { type: 'json' }
-import { getCliParams } from './helpers/getCliParam.ts'
+import { parseArgs } from 'util'
 import { prettierFormat } from './helpers/prettierFormat.ts'
 import { Piscina } from 'piscina'
 
 const __dirname = fileURLToPath(dirname(import.meta.url))
 const __rootdir = resolve(__dirname, '../')
-const outDirParam = getCliParams(process, 'out')
-const templateDirParam = getCliParams(process, 't', 'template')
-const formatParam = getCliParams(process, 'format', 'f')
-const indexDirParam = getCliParams(process, 'index-dir', 'i')
-const libParam = getCliParams(process, 'lib') ?? 'vanilla'
+const {
+    values: {
+        out: outDirParam = '',
+        template: templateDirParam = '',
+        format: formatParam,
+        'index-dir': indexDirParam = '',
+        lib: libParamRaw,
+        clean: shouldCleanDir,
+        data: shouldCreateDataFiles,
+    },
+} = parseArgs({
+    options: {
+        out: { type: 'string', short: 'o' },
+        template: { type: 'string', short: 't' },
+        format: { type: 'string', short: 'f' },
+        'index-dir': { type: 'string', short: 'i' },
+        lib: { type: 'string', default: 'vanilla' },
+        clean: { type: 'boolean', default: false },
+        data: { type: 'boolean', short: 'd', default: false },
+    },
+    strict: true,
+    allowPositionals: true,
+})
 
-const shouldCleanDir = process.argv.slice(2).includes('--clean')
-const shouldCreateDataFiles = process.argv.slice(2).includes('-d')
+const libParam = libParamRaw ?? 'vanilla'
 
 const templateDir = resolve(process.cwd(), templateDirParam)
 const outDir = resolve(process.cwd(), outDirParam)
@@ -41,15 +58,16 @@ const piscina = new Piscina({
 })
 
 const modules = await Promise.all(
-    Object.keys(icons).map(async iconName => {
-        return await piscina.run({
-            iconName,
-            inDir,
-            outDir,
-            templateDir,
-            format: formatParam,
-        })
-    })
+    Object.keys(icons).map(
+        async iconName =>
+            await piscina.run({
+                iconName,
+                inDir,
+                outDir,
+                templateDir,
+                format: formatParam,
+            })
+    )
 )
 
 console.log(
