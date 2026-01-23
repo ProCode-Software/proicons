@@ -15,15 +15,23 @@ Getting started with ProIcons doesn't take long. Follow the steps below for your
 
 ## HTML
 <!-- #region install-html -->
-### Method 1: Use a CDN provider
+### Using a CDN provider
 
-The easiest way to install ProIcons is via a CDN provider such as [UNPKG](https://unpkg.com)
+#### [JSDelivr/esm.run](https://www.jsdelivr.com)
+Import `proicons` via [esm.run](https://esm.run) in a JavaScript module
 
+```javascript
+import * as proicons from 'https://esm.run/proicons'
+// or 'https://cdn.jsdelivr.net/npm/proicons/+esm'
+```
+
+#### [UNPKG](https://unpkg.com)
+Import `proicons` via UNPKG using a `<script>` tag in your HTML
 ```html
 <script src="https://unpkg.com/proicons"></script>
 ```
 
-### Method 2: Install locally
+### Install locally
 
 If you want to use ProIcons locally, you can also install ProIcons via [NPM](https://npmjs.com/package/proicons).
 

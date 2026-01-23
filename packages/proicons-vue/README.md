@@ -68,6 +68,10 @@ import { AddSquare } from '@proicons/vue'
 </template>
 ```
 
+## Request an icon
+
+If an icon you want isn't in the set, you can request an icon in [discussions](https://github.com/ProCode-Software/proicons/discussions/categories/icon-requests).
+
 ## Contributing
 
 For more info on how to contribute, please see our [contributing guide](https://github.com/ProCode-Software/proicons/blob/main/CONTRIBUTING.md).

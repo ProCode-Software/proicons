@@ -9,16 +9,7 @@ const sidebar: Record<string, DefaultTheme.SidebarItem[]> = {
             items: [
                 { text: 'What is ProIcons?', link: 'about' },
                 { text: 'Installation', link: 'installation' },
-            ],
-        },
-        {
-            text: 'API Reference',
-            collapsed: false,
-            base: '/docs/',
-            items: [
-                { text: 'HTML', link: 'html-api' },
-                { text: 'Vanilla JavaScript', link: 'javascript-api' },
-                { text: 'Options', link: 'options' },
+                 { text: 'Options', link: 'options' },
             ],
         },
         {
@@ -34,10 +25,12 @@ const sidebar: Record<string, DefaultTheme.SidebarItem[]> = {
             collapsed: false,
             base: '/docs/',
             items: [
-                { text: 'ProIcons React', link: 'react' },
-                { text: 'ProIcons Svelte', link: 'svelte' },
-                { text: 'ProIcons Vue', link: 'vue' },
-                { text: 'ProIcons Webfont', link: 'webfont' },
+                { text: 'HTML', link: 'html-api' },
+                { text: 'Vanilla JS', link: 'javascript-api' },
+                { text: 'React', link: 'react' },
+                { text: 'Svelte', link: 'svelte' },
+                { text: 'Vue', link: 'vue' },
+                { text: 'Webfont', link: 'webfont' },
             ],
         },
         {

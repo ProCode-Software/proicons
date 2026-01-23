@@ -22,7 +22,7 @@
 
 <p align="center">
 <br>
-An implementation of the <a href="https://github.com/ProCode-Software/proicons" target="_blank">ProIcons</a> icon library for React applications.
+⚛️ An implementation of the <a href="https://github.com/ProCode-Software/proicons" target="_blank">ProIcons</a> icon library for React applications.
 <br>
 <a href="https://procode-software.github.io/proicons/icons">Browse icons</a> | 
 <a href="https://procode-software.github.io/proicons/docs/react">Documentation</a> | 
@@ -61,6 +61,10 @@ function App() {
     return <SearchIcon color="red" size={32} />
 }
 ```
+
+## Request an icon
+
+If an icon you want isn't in the set, you can request an icon in [discussions](https://github.com/ProCode-Software/proicons/discussions/categories/icon-requests).
 
 ## Contributing
 

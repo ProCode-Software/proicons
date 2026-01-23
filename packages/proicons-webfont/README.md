@@ -24,7 +24,7 @@
 
 <p align="center">
 <br>
-Use <a href="https://github.com/ProCode-Software/proicons" target="_blank">ProIcons</a> as a webfont on your site without the need of using scripts.
+🔡 Use <a href="https://github.com/ProCode-Software/proicons" target="_blank">ProIcons</a> as a webfont on your site without the need of using scripts.
 <br>
 <a href="https://procode-software.github.io/proicons/icons">Browse icons</a> | 
 <a href="https://procode-software.github.io/proicons/docs/webfont">Documentation</a> | 
@@ -66,6 +66,10 @@ To import the Add icon:
 ```html
 <i class="proicon-add"></i>
 ```
+
+## Request an icon
+
+If an icon you want isn't in the set, you can request an icon in [discussions](https://github.com/ProCode-Software/proicons/discussions/categories/icon-requests).
 
 ## Contributing
 

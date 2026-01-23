@@ -29,7 +29,7 @@
     "publishConfig": {
         "access": "public"
     },
-    "homepage": "https://github.com/ProCode-Software/proicons",
+    "homepage": "https://github.com/ProCode-Software/proicons/tree/main/packages/proicons",
     "bugs": "https://github.com/ProCode-Software/proicons/issues",
     "scripts": {
         "dev": "bun vite",
