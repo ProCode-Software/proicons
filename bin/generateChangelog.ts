@@ -2,16 +2,16 @@ import { writeFileSync } from 'fs'
 import { resolve } from 'path'
 import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import pkg from '../package.json' with { type: 'json' }
-import { kebabCase } from '@proicons/shared'
+import { kebabCase } from '../tools/shared/shared.ts'
 const { version } = pkg
 
 const shouldWrite = process.argv.includes('-w') || process.argv.includes('--write')
 const __rootdir = resolve(import.meta.dirname, '../')
 
 export function generateChangelog() {
-    const newIcons = []
-    const updatedIcons = []
-    const renamedIcons = []
+    const newIcons: string[] = []
+    const updatedIcons: string[] = []
+    const renamedIcons: string[] = []
 
     //@ts-ignore
     for (const [name, { added, updated }] of Object.entries(lockfile.icons)) {
@@ -25,7 +25,7 @@ export function generateChangelog() {
         }
     }
 
-    const toListItem = n => {
+    const toListItem = (n: string) => {
         const name = n.replace(/(.+) → (.+)/, '$2')
         const kebabName = kebabCase(name)
         return `
@@ -54,7 +54,6 @@ export function generateChangelog() {
         writeFileSync(changelogPath, changelog)
         console.log(`\n\x1B[32mWritten changelog to ${changelogPath}!\x1B[m`)
     }
-
     return changelog
 }
 generateChangelog()
