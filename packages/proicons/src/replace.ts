@@ -1,5 +1,5 @@
 import getIconInfo from './getIconInfo'
-import { type ProIconReplaceConfig, ProIcon } from './types'
+import { type ProIconReplaceConfig } from './types'
 
 /**
  * Converts all elements with the `proicon` attribute (which can be customised in the config) on the page to an icon corresponding to the attribute value.
@@ -49,14 +49,16 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
 
         if (useAttrs) {
             for (const [htmlAttr, optionKey] of Object.entries(propMap)) {
-                if (element.hasAttribute(htmlAttr)) {
-                    let typed: any = element.getAttribute(htmlAttr)
-                    if (propTypes[optionKey] == 'number')
-                        typed = isNaN(+typed) ? undefined : +typed
-                    else if (propTypes[optionKey] == 'bool') typed = typed === 'true'
-                    ;(elementConfig as any)[optionKey] = typed
-                    element.removeAttribute(htmlAttr)
+                if (!element.hasAttribute(htmlAttr)) continue
+                let typed: any = element.getAttribute(htmlAttr)
+                
+                if (propTypes[optionKey] == 'number') {
+                    typed = isNaN(+typed) ? undefined : +typed
+                } else if (propTypes[optionKey] == 'bool') {
+                    typed = typed === 'true'
                 }
+                ;(elementConfig as any)[optionKey] = typed
+                element.removeAttribute(htmlAttr)
             }
             for (const { name, value } of element.attributes) {
                 elementConfig.attributes ??= {}
@@ -71,9 +73,8 @@ function replace(rootElm?: Element, config?: ProIconReplaceConfig): void {
         iconElement.classList.add('proicon')
         iconElement.setAttribute('data-proicon-id', getIconInfo(iconName).kebabCase)
 
-        toReplace == true
-            ? element.replaceWith(iconElement)
-            : element.insertBefore(iconElement, element.childNodes[0])
+        if (toReplace) element.replaceWith(iconElement)
+        else element.insertBefore(iconElement, element.childNodes[0])
     }
 }
 

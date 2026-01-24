@@ -17,7 +17,7 @@ watch(searchQuery, newValue => {
     emit('update:modelValue', newValue)
 })
 
-getParam('q') && (searchQuery.value = getParam('q'))
+if (getParam('q')) searchQuery.value = getParam('q')
 </script>
 <template>
     <div class="IconSearchBar">
