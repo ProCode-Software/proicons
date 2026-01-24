@@ -2526,7 +2526,7 @@
     },
     "Power": {
         "description": "Shutdown, Shut Down, Power On, Power Off",
-        "category": "Status",
+        "category": "Actions",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M18.54 5.46a9.25 9.25 0 1 1-13.08 0M12 3.367V12\"/></svg>"
     },
     "Basketball": {

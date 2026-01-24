@@ -1,6 +1,6 @@
 {
     "name": "@proicons/proicons",
-    "version": "4.13.1",
+    "version": "4.13.3",
     "description": "A collection of 500+ modern and open-source icons",
     "homepage": "https://github.com/ProCode-Software/proicons",
     "bugs": "https://github.com/ProCode-Software/proicons/issues",
@@ -18,7 +18,7 @@
     "private": true,
     "scripts": {
         "all:build-modules": "pnpm -r run icons:build-modules",
-        "icons:build": "pnpm run --no-deprecation ./bin/build.ts",
+        "icons:build": "pnpm run ./bin/build.ts",
         "icons:optimize": "pnpm run icons:build -o",
         "icons:build-frozen": "pnpm run icons:build -l",
         "icons:build-rebuild": "pnpm run icons:build -r",

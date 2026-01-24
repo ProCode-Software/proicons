@@ -13,7 +13,7 @@ import pkg from '../package.json' with { type: 'json' }
 import { buildFont } from './build/buildFont.ts'
 import { prettierFormat } from './helpers/prettierFormat.ts'
 
-const { version } = pkg
+let { version } = pkg
 const ROOT_DIR = join(import.meta.dir, '../')
 const resolveRoot = (...paths: string[]) => join(ROOT_DIR, ...paths)
 
@@ -83,14 +83,27 @@ function getIconsJson(): IconsJSON {
     return iconsJson
 }
 
-// Only optimize icons
-async function optimizeIcons() {
-    await writeSvgFilesFromData(getIconsJson())
+/** Checks the `version` in `package.json` against the latest version on npm. If it is the same or lower, prompts the user to enter a new version. */
+async function versionCheck() {
+    const res = await Bun.fetch('https://registry.npmjs.org/proicons')
+    const {
+        'dist-tags': { latest },
+    } = (await res.json()) as { 'dist-tags': { latest: string } }
 
-    console.log(ansiColors.bold(ansiColors.green('Optimized icons!')))
+    // This does string comparison, meaning 4.11.1 < 4.1.0, but it is ok here
+    if (version > latest) return
+    let newVersion: string
+    // Keep prompting until a valid version is entered
+    while (
+        !(newVersion = prompt(`Enter a new version (latest is ${latest})`)!) ||
+        newVersion <= latest
+    );
+    version = newVersion
+    pkg.version = newVersion
+    Bun.write(resolveRoot('package.json'), JSON.stringify(pkg, undefined, 4))
 }
 
-// Transform JSON data into files
+/** Writes data from `jsonData` into `icons/icons.json`, and writes optimized SVG files into `icons/svg`. */
 async function writeSvgFilesFromData(jsonData: IconList) {
     const iconsJson = getIconsJson()
 
@@ -123,6 +136,14 @@ async function writeSvgFilesFromData(jsonData: IconList) {
     writeFileSync(iconsJsonPath, formatted)
 }
 
+/** Optimizes **all icons** and writes them into `icons/svg`. */
+async function optimizeIcons() {
+    await writeSvgFilesFromData(getIconsJson())
+
+    console.log(ansiColors.bold(ansiColors.green('Optimized icons!')))
+}
+
+/** Writes data for **new icons** into `icons/icons.json`, and optimized SVG files into `icons/svg`. */
 async function createSvgFiles() {
     await writeSvgFilesFromData(inIcons)
     console.log(ansiColors.green('Done creating SVG files!'))
@@ -165,11 +186,11 @@ async function writeLockfile() {
     }
 }
 
-// Convert to PNGs
-async function buildPngs() {
-    const svgFiles = readdirSync(outDir).filter(file => file.endsWith('.svg'))
-    const newSvgsOnly = newIcons.map(i => rename.kebabCase(i.trim()) + '.svg')
-    const filesToProcess = shouldRebuildAll ? svgFiles : newSvgsOnly
+/** Converts queued icon SVG files from `icons/svg` into PNG files in `icons/png*`. Files are processed in parallel. */
+async function buildPNGs() {
+    const filesToProcess = shouldRebuildAll
+        ? readdirSync(outDir).filter(file => file.endsWith('.svg'))
+        : newIcons.map(i => rename.kebabCase(i.trim()) + '.svg')
     const progressBar = new Progress('  Build PNGs [:bar] :item :percent :etas', {
         complete: '=',
         incomplete: ' ',
@@ -193,6 +214,7 @@ async function buildPngs() {
     console.log(ansiColors.green('Done building PNGs!'))
 }
 
+/** Builds icon modules for all packages. */
 async function buildModules() {
     try {
         const result = await $`pnpm run all:build-modules`.text()
@@ -215,10 +237,11 @@ async function run() {
         await buildFont(rebuildFont)
         return
     }
+    await versionCheck()
     await createSvgFiles()
     await createLockfile()
     await writeLockfile()
-    await buildPngs()
+    await buildPNGs()
     await buildModules()
     await buildFont(rebuildFont)
 
