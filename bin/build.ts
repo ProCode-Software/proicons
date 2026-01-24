@@ -13,8 +13,9 @@ import pkg from '../package.json' with { type: 'json' }
 import { buildFont } from './build/buildFont.ts'
 import { prettierFormat } from './helpers/prettierFormat.ts'
 
-const __rootdir = resolve(import.meta.dirname, '../')
 const { version } = pkg
+const ROOT_DIR = join(import.meta.dir, '../')
+const resolveRoot = (...paths: string[]) => join(ROOT_DIR, ...paths)
 
 type IconsJSON = typeof import('../icons/icons.json')
 type Lockfile = typeof import('../icons/icons.lock.json')
@@ -70,9 +71,9 @@ const svgoConfig = {
 } satisfies SVGOConfig
 
 // Move and rename SVGs
-const inDir = resolve(__rootdir, 'in')
-const outDir = resolve(__rootdir, 'icons/svg')
-const iconsJsonPath = resolve(__rootdir, 'icons/icons.json')
+const inDir = resolveRoot('in')
+const outDir = resolveRoot('icons/svg')
+const iconsJsonPath = resolveRoot('icons/icons.json')
 
 let newIcons: string[] = []
 if (!existsSync(inDir)) mkdirSync(inDir)
@@ -84,15 +85,9 @@ function getIconsJson(): IconsJSON {
 
 // Only optimize icons
 async function optimizeIcons() {
-    const iconsJson = getIconsJson()
+    await writeSvgFilesFromData(getIconsJson())
 
-    try {
-        await writeSvgFilesFromData(iconsJson)
-
-        console.log(ansiColors.bold(ansiColors.green('Optimized icons!')))
-    } catch (e) {
-        throw e
-    }
+    console.log(ansiColors.bold(ansiColors.green('Optimized icons!')))
 }
 
 // Transform JSON data into files
@@ -134,8 +129,8 @@ async function createSvgFiles() {
 }
 
 // Build lockfile
-const lockfile: Lockfile = existsSync(resolve(__rootdir, 'icons/icons.lock.json'))
-    ? JSON.parse(readFileSync(resolve(__rootdir, 'icons/icons.lock.json'), 'utf-8'))
+const lockfile: Lockfile = existsSync(resolveRoot('icons/icons.lock.json'))
+    ? JSON.parse(readFileSync(resolveRoot('icons/icons.lock.json'), 'utf-8'))
     : []
 
 async function createLockfile() {
@@ -159,7 +154,7 @@ async function createLockfile() {
 async function writeLockfile() {
     try {
         const formatted = await prettierFormat(lockfile)
-        const location = resolve(__rootdir, 'icons/icons.lock.json')
+        const location = resolveRoot('icons/icons.lock.json')
 
         writeFileSync(location, formatted)
 
@@ -189,7 +184,7 @@ async function buildPngs() {
     console.time('Build PNGs')
     await Promise.all(
         filesToProcess.map(async file => {
-            await worker.run({ file, root: __rootdir })
+            await worker.run({ file, root: ROOT_DIR })
             progressBar.tick(1, { item: file.slice(0, -4) })
         })
     )
@@ -215,8 +210,9 @@ async function run() {
         await optimizeIcons()
         return
     }
+    const rebuildFont = newIcons.length > 0 || shouldRebuildAll == true
     if (fontOnly) {
-        await buildFont(newIcons.length > 0 || shouldRebuildAll == true)
+        await buildFont(rebuildFont)
         return
     }
     await createSvgFiles()
@@ -224,7 +220,7 @@ async function run() {
     await writeLockfile()
     await buildPngs()
     await buildModules()
-    await buildFont(newIcons.length > 0 || shouldRebuildAll == true)
+    await buildFont(rebuildFont)
 
     // Build complete
     console.log(ansiColors.greenBright('\nBuild complete!'))

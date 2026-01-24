@@ -2,13 +2,11 @@ import { getData, type Node } from '../../../bin/build/templates/templateData.ts
 
 export default (moduleName: string, nodes: Node[]): string => {
     const {
-        camelName,
         deprecationData,
         friendlyName,
         iconData,
         lockfileItem,
         rawSvgData,
-        pascalName,
     } = getData(moduleName)
 
     const iconInfo = {
