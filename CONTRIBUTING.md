@@ -19,7 +19,7 @@ To keep things organized, **please include only one icon per pull request** unle
 
 ## Contributing to packages
 
-The main ProIcons package is inside of the root `src` folder. Other packages are available in the `packages` folder. We use [Bun workspaces](https://bun.com/docs/pm/workspaces) to manage and distribute multiple packages in a single monorepo.
+The main ProIcons package is inside of the root `src` folder. Other packages are available in the `packages` folder. We use [PNPM workspaces](https://pnpm.io/workspaces) to manage and distribute multiple packages in a single monorepo.
 
 ## Contributing to documentation
 
@@ -27,11 +27,21 @@ The ProIcons documentation is built using [VitePress](https://vitepress.dev). Th
 
 ## Development Guide
 
+### Tech Stack
+- [Bun](https://bun.com) as a runtime
+- [PNPM](https://pnpm.io) as a package manager
+- The codebase is written in [TypeScript](https://typescriptlang.org)
+- [tsgo](https://github.com/microsoft/typescript-go) for .dts generation
+- [Vite](https://vite.dev) with [Rolldown](https://rolldown.rs) for bundling
+- [VitePress](https://vitepress.dev) for documentation
+- [Oxc](https://oxc.rs) for code formatting
+
 ### Getting the repo
 
 #### Prerequisites
 
 - [Node.js](https://nodejs.org) 22+
+- [PNPM](https://pnpm.io) 10+
 - [Bun](https://bun.com)
 
 First, clone the repository:
@@ -43,7 +53,7 @@ git clone https://github.com/ProCode-Software/proicons.git
 Then install dependencies
 
 ```
-bun install
+pnpm install
 ```
 
 The command above will install dependencies for all packages. If you want to install dependencies for a specific package, run `pnpm --filter [package] install`.
@@ -98,7 +108,7 @@ Run `pnpm run icons:build` in the `proicons` folder to create PNG and SVG files 
 
 ### Testing packages
 
-To ensure your changes work, test your changes. This can be done by creating a separate test project and creating a symlink to your modified version using `npm link` as shown below:
+To ensure your changes work, test your changes. This can be done by creating a separate test project and creating a symlink to your modified version using `pnpm link` as shown below:
 
 ```shell
 # In your proicons folder
@@ -107,7 +117,7 @@ cd proicons
 # Make sure to build your package when testing
 pnpm run ci
 
-bun link
+pnpm link
 
 # Create a testing folder and initialize a package
 mkdir test
@@ -115,10 +125,10 @@ cd test
 
 
 # Inside your test folder
-npm init
+pnpm init
 
 # Create a symbolic link to the proicons package
-npm link proicons
+pnpm link proicons
 ```
 
-Replace `proicons` in the `npm link` command with the package you want to test.
+Replace `proicons` in the `pnpm link` command with the package you want to test.
