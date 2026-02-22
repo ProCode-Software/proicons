@@ -43,12 +43,12 @@
     ],
     "devDependencies": {
         "@proicons/shared": "workspace:*",
-        "@types/react": "^19.2.8",
+        "@types/react": "^19.2.14",
         "@types/react-dom": "^19.2.3",
         "@typescript/native-preview": "7.0.0-dev.20250723.1",
         "@vitejs/plugin-react-swc": "^3.11.0",
-        "react": "^19.2.3",
-        "react-dom": "^19.2.3",
+        "react": "^19.2.4",
+        "react-dom": "^19.2.4",
         "typescript": "^5.9.3",
         "vite": "npm:rolldown-vite@^7.3.1"
     },
