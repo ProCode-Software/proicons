@@ -14,11 +14,11 @@
         "@proicons/shared": "workspace:*",
         "@proicons/vue": "latest",
         "minisearch": "^7.2.0",
-        "oxc-minify": "0.106.0",
+        "oxc-minify": "^0.106.0",
         "proicons": "latest",
         "sass-embedded": "^1.97.3",
-        "shiki": "3.2.1",
-        "vitepress": "2.0.0-alpha.15",
+        "shiki": "^3.2.1",
+        "vitepress": "alpha",
         "vue": "^3.5.28"
     }
 }

@@ -4,5 +4,5 @@ packages:
     - 'site'
 
 overrides:
-  vite: npm:rolldown-vite@latest
+  vite: beta
   rolldown: latest
