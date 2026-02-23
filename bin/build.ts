@@ -8,7 +8,6 @@ import { parseArgs } from 'util'
 import { Piscina } from 'piscina'
 import Progress from 'progress'
 import { optimize, type Config as SVGOConfig } from 'svgo'
-import inIcons from '../in/in.json' with { type: 'json' }
 import pkg from '../package.json' with { type: 'json' }
 import { buildFont } from './build/buildFont.ts'
 import { prettierFormat } from './helpers/prettierFormat.ts'
@@ -145,6 +144,11 @@ async function optimizeIcons() {
 
 /** Writes data for **new icons** into `icons/icons.json`, and optimized SVG files into `icons/svg`. */
 async function createSvgFiles() {
+    let inIcons: IconList = {}
+    try {
+        inIcons = (await import('../in/in.json', { with: { type: 'json' } }))
+            .default as IconList
+    } catch {}
     await writeSvgFilesFromData(inIcons)
     console.log(ansiColors.green('Done creating SVG files!'))
 }

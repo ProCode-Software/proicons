@@ -1,4 +1,4 @@
-import { FontAssetType, generateFonts, OtherAssetType } from '@twbs/fantasticon'
+import { FontAssetType, generateFonts, OtherAssetType } from 'fantasticon'
 import ansiColors from 'ansi-colors'
 import { execSync } from 'child_process'
 import { existsSync, mkdirSync, readFileSync } from 'fs'
