@@ -15,8 +15,8 @@ importers:
         specifier: workspace:*
         version: link:../tools/shared
       '@proicons/vue':
-        specifier: workspace:*
-        version: link:../packages/proicons-vue
+        specifier: latest
+        version: 4.13.3(vue@3.5.30)
       minisearch:
         specifier: ^7.2.0
         version: 7.2.0
@@ -319,6 +319,11 @@ packages:
   '@parcel/watcher@2.5.6':
     resolution: {integrity: sha512-tmmZ3lQxAe/k/+rNnXQRawJ4NjxO2hqiOLTHvWchtGZULp4RyFeh6aU4XdOYBFe2KE1oShQTv4AblOs2iOrNnQ==}
     engines: {node: '>= 10.0.0'}
+
+  '@proicons/vue@4.13.3':
+    resolution: {integrity: sha512-Nj5ckrFkmiZG5557mQ9M8FufwjucOchxQqMZ//VKajqxM45ZXXCa5TKRPbynbPHtyzfAN2v3FybKAia/SrjKvw==}
+    peerDependencies:
+      vue: ^3.5.30
 
   '@rolldown/pluginutils@1.0.0-rc.2':
     resolution: {integrity: sha512-izyXV/v+cHiRfozX62W9htOAvwMo4/bXKDrQ+vom1L1qRuexPock/7VZDAhnpHCLNejd3NJ6hiab+tO0D44Rgw==}
@@ -1311,6 +1316,10 @@ snapshots:
       '@parcel/watcher-win32-ia32': 2.5.6
       '@parcel/watcher-win32-x64': 2.5.6
     optional: true
+
+  '@proicons/vue@4.13.3(vue@3.5.30)':
+    dependencies:
+      vue: 3.5.30
 
   '@rolldown/pluginutils@1.0.0-rc.2': {}
 
