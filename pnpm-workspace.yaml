@@ -4,5 +4,7 @@ packages:
     - 'site'
 
 overrides:
-  vite: beta
   rolldown: latest
+
+catalog:
+    vite: ^8.0.1

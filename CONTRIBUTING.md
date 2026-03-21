@@ -60,6 +60,15 @@ The command above will install dependencies for all packages. If you want to ins
 
 Note that you will need to install all dependencies if you want to build the icon set.
 
+### Building packages
+To build a package, run the `ci` script after installing dependencies:
+```bash
+pnpm --filter package-name run ci
+```
+This generates the icon modules for the package and builds the package into its `dist` folder.
+> [!IMPORTANT]
+> Make sure to use `pnpm run ci`, not `pnpm ci`.
+
 ### Adding an icon
 
 The [Figma desktop app](https://www.figma.com/downloads/) is recommended, along with our [Build Icon List](https://github.com/ProCode-Software/proicons/tree/main/tools/BuildIconList) plugin cloned and [imported](#installing-the-figma-plugin) into Figma.

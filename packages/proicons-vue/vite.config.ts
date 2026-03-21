@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import pkg from './package.json' with { type: 'json' }
 
-const licenseNotice = `/**
+export const licenseNotice = `/**
  * @license ProIcons Vue v${pkg.version} - MIT
  * 
  * This code is licensed under the MIT license.
@@ -16,23 +16,18 @@ export default defineConfig({
     build: {
         sourcemap: false,
         minify: false,
-
-        rollupOptions: {
+        lib: { entry: './src/proicons-vue.ts', formats: ['es'] },
+        rolldownOptions: {
             input: './src/proicons-vue.ts',
             output: {
                 preserveModules: true,
                 preserveModulesRoot: 'src',
                 banner: licenseNotice,
-                name: 'proicons',
                 dir: `dist`,
                 format: 'es',
                 entryFileNames: ({ name }) =>
                     `${name.replace('src/', 'utils/').replace(/\.vue/, '')}.js`,
-                globals: {
-                    vue: 'vue',
-                },
             },
-            preserveEntrySignatures: 'exports-only',
             external: ['vue'],
         },
     },

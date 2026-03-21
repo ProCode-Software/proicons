@@ -8,7 +8,7 @@ Use ProIcons in vanilla JavaScript and Node.js.
 
 ## Installation & Setup
 
-<!--@include: ../installation.md#install-node-->
+<!--@include: ../introduction/installation.md#install-node-->
 
 If pairing your JavaScript file with HTML, you can install ProIcons the same way you would with [HTML](installation#html).
 
