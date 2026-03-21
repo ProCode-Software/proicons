@@ -12,7 +12,7 @@
     "license": "MIT",
     "dependencies": {
         "@proicons/shared": "workspace:*",
-        "@proicons/vue": "workspace:*",
+        "@proicons/vue": "latest",
         "minisearch": "^7.2.0",
         "proicons": "latest",
         "sass-embedded": "^1.98.0",

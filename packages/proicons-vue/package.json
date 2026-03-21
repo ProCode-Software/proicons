@@ -1,12 +1,12 @@
 {
     "name": "@proicons/vue",
     "description": "ProIcons icon library for Vue",
-    "version": "4.11.4",
+    "version": "4.13.3",
     "type": "module",
     "sideEffects": false,
     "main": "dist/proicons-vue.js",
     "module": "dist/proicons-vue.js",
-    "typings": "dist/types/proicons-vue.d.ts",
+    "typings": "dist/proicons-vue.d.ts",
     "files": [
         "dist",
         "!dist/*2.js"
@@ -16,7 +16,8 @@
     },
     "scripts": {
         "dev": "bun vite",
-        "build": "bun vite build && bunx vue-tsc",
+        "build:tsdown": "bun tsdown",
+        "build": "pnpm run build:tsdown",
         "preview": "bun vite preview",
         "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/vueIconTemplate.ts' --out './src/icons' -i './src/icons.ts' --format ts --clean --lib vue",
         "ci": "pnpm run icons:build-modules && pnpm run build"
