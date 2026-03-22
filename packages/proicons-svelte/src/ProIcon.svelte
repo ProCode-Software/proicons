@@ -20,13 +20,12 @@ type IconProp = IconEnum<keyof typeof icons> | (string & {})
 type Props = ProIconAttributes & { icon: IconProp }
 const { icon, ...props }: Props = $props()
 
-if (!icon) {
-    throw new Error("An 'icon' attribute is required.")
-}
+if (!icon) throw new Error("An 'icon' attribute is required.")
+
 function getPascalName(name: string) {
     const lowerName = name.toLowerCase()
     const iconEntries = Object.keys(icons)
-    
+
     return iconEntries.find(pascalName => {
         const lowerIconName = pascalName.replace(/Icon$/, '').toLowerCase()
 

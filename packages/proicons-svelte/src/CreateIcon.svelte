@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { IconNode, ProIconAttributes } from './types'
-import { convertNodesWithConfig, kebabCase } from '@proicons/shared'
+import { convertNodesWithConfig, kebabCase } from './utils'
 
 type Props = ProIconAttributes & {
     icon: {
@@ -54,7 +54,7 @@ if (props?.class) {
     data-proicon-id={kebabCase(name)}
     {...props}
 >
-    {#snippet node(tag, p, children)}
+    {#snippet node(tag: string, p: IconNode[1], children: IconNode[])}
         <svelte:element this={tag} {...p}>
             {#each children as [tag2, p2, children2]}
                 {@render node(tag2, p2, children2)}
