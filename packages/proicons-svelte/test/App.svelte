@@ -10,7 +10,7 @@ const increment = () => {
 </script>
 
 <main>
-    <h1>Vite + Svelte</h1>
+    <h1>ProIcons Svelte Test</h1>
 
     <div class="card">
         <button onclick={increment}>

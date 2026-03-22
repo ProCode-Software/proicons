@@ -4,6 +4,7 @@ import { AddSquareMultipleIcon, AddIcon, TvIcon } from "../src/icons";
 </script>
 
 <template>
+    <h1>ProIcons Vue Test</h1>
     <AddSquareMultipleIcon :size="32" color="red" />
     
     <!-- Test for https://github.com/ProCode-Software/proicons/issues/5 -->

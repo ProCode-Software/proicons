@@ -89,7 +89,7 @@ export function renderNodes(nodes: IconNode[]): string {
             const attrMap = Object.entries(attrs).map(
                 ([k, v]) => `${k}=${JSON.stringify(v)}`
             )
-            return `<${element} ${attrMap.join(' ')}${children.length > 0 ? `>${renderNodes(children)}</${element}>` : ' />'}`
+            return `<${element} ${attrMap.join(' ')}>${children.length > 0 ? renderNodes(children) : ''}</${element}>`
         })
         .join('')
 }

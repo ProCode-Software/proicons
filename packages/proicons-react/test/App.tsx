@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { createRoot } from 'react-dom/client'
 import { ProIcon } from '../src/ProIcon.ts'
-import { AddIcon, TvIcon } from '../src/icons'
+import { AddIcon, TvIcon } from '../src/icons.ts'
 
 function App() {
     return (
         <>
+            <h1>ProIcons React Test</h1>
             <ProIcon icon="Add Square Multiple" size={32} className="myClass" />
             <AddIcon
                 size={32}
