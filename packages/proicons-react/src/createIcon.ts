@@ -19,7 +19,9 @@ export const convertNodes = (n: IconNode[]) => {
           })
 }
 
-export type IconComponent = React.ForwardRefExoticComponent<Omit<ProIconAttributes, "ref"> & React.RefAttributes<SVGSVGElement>>
+export type IconComponent = React.ForwardRefExoticComponent<
+    Omit<ProIconAttributes, 'ref'> & React.RefAttributes<SVGSVGElement>
+>
 
 export function createIcon(
     {
@@ -29,9 +31,9 @@ export function createIcon(
     }: { name: string; deprecated?: boolean; alternative?: string },
     nodes: IconNode[]
 ): IconComponent {
-    if (deprecated) {
+    if (deprecated)
         console.warn(`Icon ${name} is deprecated. Use ${alternative} instead.`)
-    }
+
     const Component = React.forwardRef<SVGSVGElement, ProIconAttributes>((props, ref) => {
         return React.createElement(
             'svg',

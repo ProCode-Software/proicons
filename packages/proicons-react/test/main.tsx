@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { createRoot } from 'react-dom/client'
 import { ProIcon } from '../src/ProIcon.ts'
-import { AddIcon } from '../src/icons'
+import { AddIcon, TvIcon } from '../src/icons'
 
 function App() {
     return (
@@ -13,6 +13,15 @@ function App() {
                 strokeWidth={2}
                 className="myIconClassAdd"
             />
+            {/* Test for https://github.com/ProCode-Software/proicons/issues/5 */}
+            <div style={{ color: 'green' }}>
+                <AddIcon color="red" /> {/* red ✓ */}
+                <TvIcon /> {/* green ✓ */}
+            </div>
+            <div style={{ color: 'blue' }}>
+                <AddIcon /> {/* red x */}
+                <TvIcon /> {/* blue ✓ */}
+            </div>
         </>
     )
 }

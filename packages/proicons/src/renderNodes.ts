@@ -31,15 +31,13 @@ export function convertNodesWithConfig(
     if (!options) return nodes
 
     return nodes.map(node => {
-        const [_, props, children] = node
+        // Copy each node
+        const [tag, ogProps, ogChildren] = node
+        const props = { ...ogProps }
 
-        for (const [optionK, svgAttrs] of Object.entries(attributeKey)) {
-            for (const s of svgAttrs) {
-                if (props[s] && options[optionK]) {
-                    props[s] = options[optionK]
-                }
-            }
-        }
+        for (const optionK in attributeKey)
+            for (const s of attributeKey[optionK])
+                if (props[s] && options[optionK]) props[s] = options[optionK]
 
         // Outlining
         if (
@@ -54,9 +52,11 @@ export function convertNodesWithConfig(
             props['stroke-linecap'] = options.strokeCaps ?? 'round'
             props['stroke-linejoin'] = options.strokeJoin ?? 'round'
         }
-
-        if (children.length) node[2] = convertNodesWithConfig(children, options)
-        return node
+        const children = ogChildren.length
+            ? convertNodesWithConfig(ogChildren, options)
+            : ogChildren // []
+        // New node with customized props
+        return [tag, props, children] as IconNode
     })
 }
 
