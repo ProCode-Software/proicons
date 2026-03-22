@@ -1,5 +1,5 @@
 <script lang="ts">
-import { AddSquareMultipleIcon } from '../src/icons'
+import { AddSquareMultipleIcon, AddIcon, TvIcon } from '../src/icons'
 import { ProIcon } from '../src/proicons-svelte'
 
 let count: number = $state(0)
@@ -10,7 +10,7 @@ const increment = () => {
 </script>
 
 <main>
-    <h1>Vite + Svelte</h1>
+    <h1>ProIcons Svelte Test</h1>
 
     <div class="card">
         <button onclick={increment}>
@@ -21,4 +21,14 @@ const increment = () => {
     <p></p>
     <AddSquareMultipleIcon size={48} strokeWidth={2} class="myClass" />
     <ProIcon icon="Add" strokeWidth={2} color="red" />
+
+    <!-- Test for https://github.com/ProCode-Software/proicons/issues/5 -->
+    <div style="color: green">
+        <AddIcon color="red" />
+        <TvIcon />
+    </div>
+    <div style="color: blue">
+        <AddIcon />
+        <TvIcon />
+    </div>
 </main>

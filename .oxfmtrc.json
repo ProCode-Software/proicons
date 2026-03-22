@@ -11,4 +11,5 @@
   "vueIndentScriptAndStyle": false,
   "svelteIndentScriptAndStyle": false,
   "ignorePatterns": [],
+  "insertFinalNewline": true
 }

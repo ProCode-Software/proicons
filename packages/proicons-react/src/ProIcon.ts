@@ -21,19 +21,20 @@ interface ProIconComponent extends ProIconAttributes {
 }
 
 export function getPascalName(name: string): string | undefined {
+    name = name.replace(/Icon$/i, '')
     const lowerName = name.toLowerCase()
-
     return (
+        icons[name] ??
         Object.keys(icons).find(pascalName => {
-            const lowerIconName = pascalName.replace(/Icon$/, '').toLowerCase()
-
+            // Doesn't end in Icon
+            const lowerIconName = pascalName.replace(/Icon$/i, '').toLowerCase()
             return (
                 lowerIconName == lowerName ||
-                lowerIconName + 'icon' == lowerName ||
                 kebabCase(lowerIconName) == lowerName ||
-                lowerIconName == pascalCase(lowerName)
+                pascalName == pascalCase(name)
             )
-        }) ?? undefined
+        }) ??
+        undefined
     )
 }
 
@@ -47,18 +48,11 @@ export function getPascalName(name: string): string | undefined {
  */
 export const ProIcon = React.forwardRef<SVGSVGElement, ProIconComponent>(
     ({ icon, ...props }, ref) => {
-        if (!icon) {
-            throw new TypeError("An 'icon' attribute is required.")
-        }
+        if (!icon) throw new TypeError("An 'icon' attribute is required.")
+
         const pascalName = getPascalName(icon)
+        if (!pascalName) throw new Error(`Icon '${icon}' not found.`)
 
-        if (!pascalName) {
-            throw new Error(`Icon '${icon}' not found.`)
-        }
-
-        return React.createElement(icons[pascalName], {
-            ref,
-            ...props,
-        })
+        return React.createElement(icons[pascalName], { ref, ...props })
     }
 )

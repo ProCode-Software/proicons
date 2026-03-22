@@ -137,7 +137,7 @@ out
 packages/**/dist/
 packages/**/lib/
 /lib/
-/src/*.d.ts
+/packages/proicons/src/*.d.ts
 
 # VitePress
 **/.vitepress/cache/

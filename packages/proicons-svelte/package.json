@@ -16,7 +16,8 @@
     },
     "scripts": {
         "dev": "vite",
-        "build": "pnpm run package",
+        "build": "pnpm run package && pnpm run build:utils",
+        "build:utils": "vite build",
         "package": "svelte-package --input ./src",
         "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/svelteIconTemplate.ts' --out './src/icons' -i './src/icons.ts' --format svelte --clean --lib svelte",
         "ci": "pnpm run icons:build-modules && pnpm run build"

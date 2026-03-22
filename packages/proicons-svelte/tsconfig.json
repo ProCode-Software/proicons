@@ -20,15 +20,14 @@
         "strict": false,
         "noImplicitAny": false,
         "noUnusedLocals": false,
-        "types": ["vite/client", "svelte"]
+        "types": [ "vite/client", "svelte" ]
     },
     "include": [
         "./src/**/*.ts",
         "./src/**/*.js",
         "./src/**/*.svelte",
-        "./test/main.ts",
-        "./test/main.ts",
-        "./test/App.svelte"
+        "./test/*.ts",
+        "./test/*.svelte"
     ],
-    "exclude": ["node_modules", "../../src", "packages/**", "!packages/proicons-svelte"]
+    "exclude": [ "node_modules" ]
 }
