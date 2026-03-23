@@ -1,5 +1,5 @@
-import { type IconNode } from './createIcon'
-import { type ProIconsOptions } from './types'
+import { type IconNode } from './src/createIcon'
+import { type ProIconsOptions } from './src/types'
 
 export const rootNode: IconNode = [
     'svg',
