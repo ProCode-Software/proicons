@@ -10,9 +10,9 @@ Note: This breaks tree-shaking
 [Documentation](https://procode-software.github.io/proicons/docs/svelte#proicon-component)
 -->
 <script lang="ts">
-import type { ProIconAttributes } from './types'
 import * as icons from './icons'
-import { kebabCase, pascalCase } from './utils'
+import type { ProIconAttributes } from './types'
+import { getPascalName } from './utils'
 
 type IconEnum<T extends string> = T extends `${infer Base}Icon` ? Base : T
 type IconProp = IconEnum<keyof typeof icons> | (string & {})
@@ -20,30 +20,13 @@ type IconProp = IconEnum<keyof typeof icons> | (string & {})
 type Props = ProIconAttributes & { icon: IconProp }
 const { icon, ...props }: Props = $props()
 
-if (!icon) throw new Error("An 'icon' attribute is required.")
+const Icon = $derived.by(() => {
+    if (!icon) throw new TypeError("An 'icon' attribute is required.")
 
-function getPascalName(name: string) {
-    const lowerName = name.toLowerCase()
-    const iconEntries = Object.keys(icons)
-
-    return iconEntries.find(pascalName => {
-        const lowerIconName = pascalName.replace(/Icon$/, '').toLowerCase()
-
-        return (
-            lowerIconName == lowerName ||
-            lowerIconName + 'icon' == lowerName ||
-            kebabCase(lowerIconName) == lowerName ||
-            lowerIconName == pascalCase(lowerName)
-        )
-    })
-}
-const name = getPascalName(icon)
-
-if (!name) {
-    throw new Error(`Icon '${name}' not found.`)
-}
-
-const Icon = icons[name]
+    const name = getPascalName(icons, icon)
+    if (!name) throw new Error(`Icon '${icon}' not found.`)
+    return icons[name]
+})
 </script>
 
 <Icon {...props} />
