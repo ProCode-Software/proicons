@@ -22,7 +22,7 @@ export default {
                     const matches = d.match(PATH_REGEX)
                     if (!matches) return
 
-                    const [_, x, _radY, rad, _radX, y, remW, remH] = matches.map(Number)
+                    const [_, x, __, rad, ___, y, remW, remH] = matches.map(Number)
                     node.name = 'rect'
                     node.children = []
                     node.attributes = {

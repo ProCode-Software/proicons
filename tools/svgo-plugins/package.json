@@ -5,7 +5,7 @@
     "type": "module",
     "private": true,
     "exports": {
-        "./convertPathToRect": "./convertPathToRect.js"
+        "./convertPathToRect": "./convertPathToRect.ts"
     },
     "scripts": {},
     "keywords": ["svgo"],
