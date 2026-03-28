@@ -11,26 +11,17 @@ import { ProIcon } from './types'
  *
  * [Documentation](https://procode-software.github.io/proicons/docs/javascript-api#search)
  */
-function search(query: string): ProIcon[] {
+export function search(query: string): ProIcon[] {
     if (!query) throw new TypeError('A query is required')
     query = query.toString().toLowerCase()
 
-    const mappedIcons = Object.values(icons) as ProIcon[]
-
-    const filtered = mappedIcons.filter((item, i) => {
-        return (
-            Object.entries(item).some(([key, value]: [keyof ProIcon, any]) => {
-                if ((!Array.isArray(value) && typeof value != 'string') || key == 'raw')
-                    return
-
-                return Array.isArray(value)
-                    ? value.some(tag => tag.toLowerCase().includes(query))
-                    : value.toLowerCase().includes(query)
-            }) && mappedIcons.indexOf(item) === i
+    const uniqueObjs = new Set(Object.values(icons) as ProIcon[])
+    const filtered = Array.from(uniqueObjs).filter(item =>
+        Object.entries(item).some(([key, value]) =>
+            Array.isArray(value)
+                ? value.some(tag => tag.toLowerCase().includes(query))
+                : key != 'raw' && value.toLowerCase().includes(query)
         )
-    })
-
+    )
     return filtered
 }
-
-export default search

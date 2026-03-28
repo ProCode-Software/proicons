@@ -1,5 +1,5 @@
+import { getPascalName } from '@proicons/shared'
 import * as icons from './icons'
-import { kebabCase, pascalCase } from './rename'
 import { ProIcon } from './types'
 
 /**
@@ -13,20 +13,8 @@ import { ProIcon } from './types'
  * getIconInfo('addSquare')
  * getIconInfo('add-square')
  */
-function getIconInfo(key: string): ProIcon | undefined {
-    const lowerName = key.toLowerCase()
-    const iconName = Object.keys(icons).find(pascalName => {
-        const lowerIconName = pascalName.replace(/Icon$/, '').toLowerCase()
-
-        return (
-            lowerIconName == lowerName ||
-            lowerIconName + 'icon' == lowerName ||
-            kebabCase(lowerIconName) == lowerName ||
-            lowerIconName == pascalCase(lowerName)
-        )
-    })
-
-    return icons[iconName]
+export function getIconInfo(key: string): ProIcon | undefined {
+    const iconName = getPascalName(icons, key)
+    if (!iconName) return undefined
+    return icons[iconName as keyof typeof icons]
 }
-
-export default getIconInfo

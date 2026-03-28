@@ -3,13 +3,14 @@
     "compilerOptions": {
         "module": "ESNext",
         "moduleResolution": "Bundler",
-        "lib": ["ESNext", "DOM", "DOM.Iterable"],
+        "lib": [ "ESNext", "DOM", "DOM.Iterable" ],
         "target": "ES6",
         "jsx": "react",
         "sourceMap": true,
         "outDir": "./dist",
         "rootDir": "./src",
         "pretty": true,
+        "strict": true,
 
         "moduleDetection": "force",
         // Declaration emit
@@ -18,6 +19,6 @@
         "declaration": true,
         "isolatedDeclarations": true,
     },
-    "include": ["./src"],
-    "exclude": ["node_modules", "**/node_modules/*", "**/BuildIconList/*"]
+    "include": [ "./src"],
+    "exclude": [ ]
 }

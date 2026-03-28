@@ -1,6 +1,6 @@
+import * as rename from '@proicons/shared'
+import { convertNodesWithConfig, renderNodeWithRoot, rootNode } from '@proicons/shared'
 import { type IconNode } from './createIcon'
-import * as rename from './rename'
-import { convertNodesWithConfig, renderNodeWithRoot, rootNode } from './renderNodes'
 
 export interface ProIconsOptions {
     /** Determines the color of the icons. Defaults to `currentColor`. */
