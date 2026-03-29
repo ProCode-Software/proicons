@@ -64,7 +64,7 @@ export function convertNodesWithConfig(
 export function renderNodeWithRoot(
     nodes: IconNode[],
     [rootTag, rootProps, rootChildren]: IconNode,
-    options: ProIconsOptions
+    options?: ProIconsOptions
 ): string {
     const size = options.size?.toString() ?? rootProps.size.toString()
     const root: IconNode = [
