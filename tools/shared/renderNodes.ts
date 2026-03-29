@@ -1,5 +1,6 @@
-import { type IconNode } from './src/createIcon'
-import { type ProIconsOptions } from './src/types'
+import type { SharedProIconsOptions as ProIconsOptions } from './shared.ts'
+
+export type IconNode = [string, Record<string, string | number>, IconNode[]]
 
 export const rootNode: IconNode = [
     'svg',
@@ -62,24 +63,20 @@ export function convertNodesWithConfig(
 
 export function renderNodeWithRoot(
     nodes: IconNode[],
-    rootNode: IconNode,
+    [rootTag, rootProps, rootChildren]: IconNode,
     options: ProIconsOptions
 ): string {
-    const root = structuredClone(rootNode)
-    const [_, props, children] = root
-    children.push(...nodes)
-
-    if (options?.size) {
-        props.width = options.size.toString()
-        props.height = options.size.toString()
-    }
-
-    if (options?.attributes) {
-        for (const [k, v] of Object.entries(options.attributes)) {
-            props[k] = v
-        }
-    }
-
+    const size = options.size?.toString() ?? rootProps.size.toString()
+    const root: IconNode = [
+        rootTag,
+        {
+            ...rootProps,
+            width: size,
+            height: size,
+            ...options?.attributes,
+        },
+        [...rootChildren, ...nodes],
+    ]
     return renderNodes([root])
 }
 

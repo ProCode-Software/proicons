@@ -4,11 +4,14 @@
     "description": "Shared utilities for ProIcons packages",
     "type": "module",
     "module": "./shared.ts",
-    "types": "./shared.d.ts",
+    "types": "./types/shared.d.ts",
+    "scripts": {
+        "declaration": "bunx tsgo"
+    },
     "exports": {
         ".": {
             "import": "./shared.ts",
-            "types": "./types.d.ts"
+            "types": "./types/shared.d.ts"
         }
     }
 }
