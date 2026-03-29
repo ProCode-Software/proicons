@@ -12,6 +12,6 @@
   "license": "",
   "devDependencies": {
     "@figma/plugin-typings": "^1.123.0",
-    "typescript": "^5.9.3"
+    "typescript": "catalog:typescript-stable"
   }
 }
