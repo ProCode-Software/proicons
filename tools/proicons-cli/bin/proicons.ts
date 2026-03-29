@@ -2,7 +2,7 @@
 import { program } from 'commander'
 import { changeCategory } from './change-category.js'
 import { auditDeprecated, deprecate } from './deprecate.js'
-import { rename } from './rename.js'
+import { rename } from './rename.ts'
 import { listCategories } from './list-categories.js'
 
 program

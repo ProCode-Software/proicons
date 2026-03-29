@@ -1,19 +1,17 @@
 import { existsSync, readFileSync, renameSync, writeFileSync } from 'fs'
-import { formatJson } from './utils.js'
+import { formatJson } from './utils.ts'
 import { resolve } from 'path'
-import * as renameText from '../../../bin/helpers/rename.ts'
+import * as renameText from '@proicons/shared'
 import ansiColors from 'ansi-colors'
 import pkg from '../../../package.json' with { type: 'json' }
 const { version } = pkg
-const kebabCase = renameText.kebabCase
+const { kebabCase } = renameText
 
-/**
- *
- * @param {string} oldName
- * @param {string} newName
- * @param {{ 'no-alias': boolean }} options
- */
-export async function rename(oldName, newName, options) {
+export async function rename(
+    oldName: string,
+    newName: string,
+    options: { 'no-alias': boolean }
+) {
     const imgDirs = [
         'svg',
         'png/white',
@@ -32,7 +30,7 @@ export async function rename(oldName, newName, options) {
     const iconsFile = JSON.parse(readFileSync(iconsPath, 'utf-8'))
 
     try {
-        if (!lockfile.icons.some(item => item.name == oldName)) {
+        if (!lockfile.icons.some((item: { name: any }) => item.name == oldName)) {
             throw new Error(`Icon name '${oldName}' does not exist`)
         }
 
@@ -40,7 +38,7 @@ export async function rename(oldName, newName, options) {
         delete iconsFile[oldName]
 
         imgDirs.forEach(dirName => {
-            const getDirName = n =>
+            const getDirName = (n: string) =>
                 resolve(
                     'icons',
                     dirName,
@@ -53,7 +51,9 @@ export async function rename(oldName, newName, options) {
         if (!options['no-alias']) {
             lockfile.aliases[oldName] = newName
         }
-        const index = lockfile.icons.findIndex(item => item.name == oldName)
+        const index = lockfile.icons.findIndex(
+            (item: { name: any }) => item.name == oldName
+        )
         lockfile.icons[index].name = newName
         lockfile.icons[index].updated = version
 

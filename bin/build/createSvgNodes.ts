@@ -4,7 +4,7 @@ export type IconNode = [string, Record<string, string>, IconNode[]]
 
 export function createSvgNodes(svg: string): IconNode[] {
     const parser = new JSDOM(svg)
-    const svgElement = parser.window.document.querySelector('svg')
+    const svgElement = parser.window.document.querySelector('svg')!
 
     function renderNodeList(element: Element): IconNode[] {
         const nodeArray: IconNode[] = []

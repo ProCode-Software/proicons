@@ -6,20 +6,19 @@ import lockfile from '../icons/icons.lock.json' with { type: 'json' }
 import { kebabCase } from '@proicons/shared'
 
 // Audit lockfiles
-const missingNamesInLockfile = []
-const missingNamesInIcons = []
-for (const icon of lockfile.icons) {
-    if (!icons[icon.name]) {
-        missingNamesInIcons.push(icon.name)
-    }
+const missingNamesInLockfile: string[] = []
+const missingNamesInIcons: string[] = []
+for (const name in lockfile.icons) {
+    if (!icons[name]) missingNamesInIcons.push(name)
 }
-for (const name of Object.keys(icons)) {
-    if (!lockfile.icons.some(({ name: n }) => n === name)) {
-        missingNamesInLockfile.push(name)
-    }
+
+for (const name in icons) {
+    if (!lockfile.icons[name]) missingNamesInLockfile.push(name)
 }
+
 if (missingNamesInLockfile.length || missingNamesInIcons.length) {
-    const mapMissing = (name, arr) => `\t${name} is missing: ${arr.join(', ')}`
+    const mapMissing = (name: string, arr: string[]) =>
+        `\t${name} is missing: ${arr.join(', ')}`
 
     const missingNames = [
         missingNamesInIcons.length ? mapMissing('icons.json', missingNamesInIcons) : '',
@@ -48,8 +47,8 @@ const iconDirs = [
     'png@5x/white',
 ]
 const ROOT_DIR = resolve(import.meta.dirname, '../icons')
-const extraIconNames = new Set()
-const extraIconPaths = []
+const extraIconNames = new Set<string>()
+const extraIconPaths: string[] = []
 
 for (const icon in icons) {
     for (const dir of iconDirs) {
@@ -65,8 +64,8 @@ for (const dirname of iconDirs) {
     for (const filename of readdirSync(dir)) {
         const kebabName = filename.replace(/.(?:svg|png)$/, '')
         const filePath = join(dir, filename)
-        const isInLockfile = lockfile.icons.some(
-            ({ name }) => kebabCase(name) === kebabName
+        const isInLockfile = Object.keys(lockfile.icons).some(
+            name => kebabCase(name) === kebabName
         )
         if (!isInLockfile) {
             extraIconPaths.push(filePath)

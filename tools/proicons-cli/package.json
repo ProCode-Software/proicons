@@ -2,14 +2,14 @@
   "name": "@proicons/cli",
   "version": "1.0.0",
   "description": "Internal CLI tool for building ProIcons",
-  "main": "bin/proicons.js",
+  "main": "bin/proicons.ts",
   "type": "module",
   "private": true,
   "scripts": {
     "test": "pnpm run ."
   },
   "bin": {
-    "proicons": "bin/proicons.js"
+    "proicons": "bin/proicons.ts"
   },
   "keywords": [],
   "author": "",

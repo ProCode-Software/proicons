@@ -91,9 +91,9 @@ async function getImageId(assetId: string) {
     const {
         window: { document: xmlData },
     } = new JSDOM(data)
-    const imageId = xmlData
-        .querySelector('.Decal content[name="Texture"] > url')
-        .textContent.match(/\?id=(\d+)/)[1]
+    const imageId = xmlData!
+        .querySelector('.Decal content[name="Texture"] > url')!
+        .textContent.match(/\?id=(\d+)/)![1]
 
     return imageId
 }
@@ -128,7 +128,7 @@ for (const [name, data] of Object.entries(lockfile.icons)) {
 }
 
 // Cleanup icons file
-const deletedIcons = []
+const deletedIcons: string[] = []
 for (const iconName in assetData.assetPaths) {
     if (!iconsJson[iconName]) {
         deletedIcons.push(iconName)

@@ -6,6 +6,7 @@
         "lib": [ "ESNext" ],
         "rootDir": ".",
         "types": ["@types/bun"],
+        "strict": true,
         "declaration": false,
         "allowJs": true,
         "resolveJsonModule": true,

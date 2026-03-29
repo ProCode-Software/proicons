@@ -46,9 +46,9 @@ export function convertNodesWithConfig(
             props.fill != 'none' &&
             props.stroke != undefined &&
             props.stroke != 'none' &&
-            (options?.strokeWidth ?? 0) > defaultStroke
+            (options?.strokeWidth ?? defaultStroke) > defaultStroke
         ) {
-            props['stroke-width'] = (options.strokeWidth - defaultStroke).toString()
+            props['stroke-width'] = (options.strokeWidth! - defaultStroke).toString()
             props.stroke = props.fill
             props['stroke-linecap'] = options.strokeCaps ?? 'round'
             props['stroke-linejoin'] = options.strokeJoin ?? 'round'
@@ -66,7 +66,7 @@ export function renderNodeWithRoot(
     [rootTag, rootProps, rootChildren]: IconNode,
     options?: ProIconsOptions
 ): string {
-    const size = options.size?.toString() ?? rootProps.size.toString()
+    const size = options?.size?.toString() ?? rootProps.size.toString()
     const root: IconNode = [
         rootTag,
         {

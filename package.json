@@ -38,6 +38,7 @@
         "@proicons/shared": "workspace:*",
         "@proicons/svgo-plugins": "workspace:*",
         "@types/bun": "latest",
+        "@types/jsdom": "^28.0.1",
         "ansi-colors": "^4.1.3",
         "axios": "^1.13.6",
         "fantasticon": "^4.1.0",
