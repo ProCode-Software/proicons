@@ -19,11 +19,10 @@ export function createIcon(
     { name, deprecated, alternative }: CreateAttributes,
     nodes: IconNode[]
 ): FunctionalComponent<ProIconAttributes> {
-    if (deprecated) {
-        console.warn(`Icon ${name} is deprecated. Use ${alternative} instead.`)
-    }
-
     return props => {
+        if (deprecated) {
+            console.warn(`Icon ${name} is deprecated. Use ${alternative} instead.`)
+        }
         return h(
             'svg',
             {
