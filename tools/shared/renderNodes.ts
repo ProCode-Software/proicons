@@ -66,7 +66,7 @@ export function renderNodeWithRoot(
     [rootTag, rootProps, rootChildren]: IconNode,
     options?: ProIconsOptions
 ): string {
-    const size = options?.size?.toString() ?? rootProps.size.toString()
+    const size = options?.size?.toString() ?? rootProps.width.toString()
     const root: IconNode = [
         rootTag,
         {
