@@ -1,15 +1,15 @@
 packages:
-    - 'packages/*'
-    - 'tools/*'
-    - 'site'
+  - 'packages/*'
+  - 'tools/*'
+  - 'site'
+
+catalog:
+  typescript: npm:@typescript/native-preview@latest
+  vite: ^8.0.3
+
+catalogs:
+  typescript-stable:
+    typescript: ^6.0.2
 
 overrides:
   rolldown: latest
-
-catalog:
-    vite: ^8.0.1
-    typescript: npm:@typescript/native-preview@latest
-
-catalogs:
-    typescript-stable:
-        typescript: ^6.0.2
