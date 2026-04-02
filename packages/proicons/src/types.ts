@@ -64,9 +64,15 @@ export class ProIcon {
 
     /**
      * The raw SVG string of the icon, with the default properties
+     * and `currentColor` as the color.
      * Use `toSvg()` instead to use custom properties
      */
-    raw: string
+    #raw?: string
+    get raw(): string {
+        return this.#raw ? this.#raw : (this.#raw = this.toSvg())
+    }
+
+    #deprecated?: { alternativeIcon?: string }
 
     /**
      *
@@ -90,7 +96,6 @@ export class ProIcon {
         this.category = category
         this.#deprecated = deprecated
         this.#nodes = nodes
-        this.raw = this.toSvg()
     }
 
     /**
