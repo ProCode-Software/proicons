@@ -76,13 +76,19 @@ export class ProIcon {
      * @param category The category of the icon.
      * @param tags An array of the icon's tags.
      */
-    constructor(name: string, tags: string[], category: string, nodes: IconNode[]) {
+    constructor(
+        name: string,
+        tags: string[],
+        category: string,
+        nodes: IconNode[],
+        deprecated?: { alternativeIcon?: string }
+    ) {
         this.name = name
         this.kebabCase = rename.kebabCase(name)
         this.camelCase = rename.camelCase(name)
         this.tags = tags ?? []
         this.category = category
-
+        this.#deprecated = deprecated
         this.#nodes = nodes
         this.raw = this.toSvg()
     }
@@ -93,6 +99,14 @@ export class ProIcon {
      * @param options Customization options for the icon
      */
     toSvg(options?: ProIconsOptions): string {
+        if (this.#deprecated) {
+            const alt = this.#deprecated.alternativeIcon
+            console.warn(
+                `Icon ${this.name} is deprecated` + alt
+                    ? `. Use ${this.#deprecated.alternativeIcon} instead.`
+                    : ''
+            )
+        }
         return renderNodeWithRoot(
             convertNodesWithConfig(this.#nodes, options),
             rootNode,
