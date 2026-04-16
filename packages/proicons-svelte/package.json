@@ -62,13 +62,13 @@
     "devDependencies": {
         "@proicons/shared": "workspace:*",
         "@sveltejs/package": "^2.5.7",
-        "@sveltejs/vite-plugin-svelte": "^6.2.4",
+        "@sveltejs/vite-plugin-svelte": "^7.0.0",
         "@tsconfig/svelte": "^5.0.8",
         "tslib": "^2.8.1",
         "typescript": "catalog:typescript-stable",
         "vite": "catalog:"
     },
     "peerDependencies": {
-        "svelte": "^5.39.6"
+        "svelte": "^5.55.4"
     }
 }
