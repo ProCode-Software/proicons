@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "d3-delaunay": "^6.0.4",
-        "jimp": "^1.6.0"
+        "jimp": "^1.6.1"
     },
     "keywords": [],
     "author": "ProCode Software",

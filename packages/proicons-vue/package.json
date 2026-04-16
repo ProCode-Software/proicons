@@ -48,8 +48,8 @@
     },
     "devDependencies": {
         "@proicons/shared": "workspace:*",
-        "@vitejs/plugin-vue": "^6.0.5",
-        "tsdown": "^0.21.7",
+        "@vitejs/plugin-vue": "^6.0.6",
+        "tsdown": "^0.21.9",
         "typescript": "catalog:typescript-stable",
         "unplugin-vue": "^7.1.1",
         "vite": "catalog:",
