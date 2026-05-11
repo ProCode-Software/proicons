@@ -16,13 +16,13 @@ importers:
         version: link:../tools/shared
       '@proicons/vue':
         specifier: latest
-        version: 4.13.5(vue@3.5.34)
+        version: 4.13.6(vue@3.5.34)
       minisearch:
         specifier: ^7.2.0
         version: 7.2.0
       proicons:
         specifier: latest
-        version: 4.13.5
+        version: 4.13.6
       sass-embedded:
         specifier: ^1.99.0
         version: 1.99.0
@@ -320,8 +320,8 @@ packages:
     resolution: {integrity: sha512-tmmZ3lQxAe/k/+rNnXQRawJ4NjxO2hqiOLTHvWchtGZULp4RyFeh6aU4XdOYBFe2KE1oShQTv4AblOs2iOrNnQ==}
     engines: {node: '>= 10.0.0'}
 
-  '@proicons/vue@4.13.5':
-    resolution: {integrity: sha512-qPi+u2B6WtcXxO3uDNNKD1dMfoPf6pGHnYpA4joWoYku5VAHeqNjR9eEO7isAH1uHshNZST2INwCY+CQjou6QA==}
+  '@proicons/vue@4.13.6':
+    resolution: {integrity: sha512-FvnOzrqpL+mE03q++d5G8wzYqhdxr0snNJc5JixAuZsiREuU2I8IIZYsOFjVbpZlPmeaDYjE/W9R6z4s+w31qQ==}
     peerDependencies:
       vue: ^3.5.30
 
@@ -792,8 +792,8 @@ packages:
     resolution: {integrity: sha512-SoSL4+OSEtR99LHFZQiJLkT59C5B1amGO1NzTwj7TT1qCUgUO6hxOvzkOYxD+vMrXBM3XJIKzokoERdqQq/Zmg==}
     engines: {node: ^10 || ^12 || >=14}
 
-  proicons@4.13.5:
-    resolution: {integrity: sha512-uw16iualfa9rmUpHyOlLpjqkqZoD76rkDPtz/xdjy9cC5fvyX7IdNAJX8Y9mFINkVM4d3wGGyjEtxYGMTflwwA==}
+  proicons@4.13.6:
+    resolution: {integrity: sha512-1epeVDDiAqRveyhKkzUFZ47R3DkrFLEWx8/H3kvaD7OeOUBRbYZu5O3YBDPsd949Yu0kmBOsVI/YZO4/Xuw1Pw==}
 
   property-information@7.1.0:
     resolution: {integrity: sha512-TwEZ+X+yCJmYfL7TPUOcvBZ4QfoT5YenQiJuX//0th53DE6w0xxLEtfK3iyryQFddXuvkIk51EEgrJQ0WJkOmQ==}
@@ -1243,7 +1243,7 @@ snapshots:
       '@parcel/watcher-win32-x64': 2.5.6
     optional: true
 
-  '@proicons/vue@4.13.5(vue@3.5.34)':
+  '@proicons/vue@4.13.6(vue@3.5.34)':
     dependencies:
       vue: 3.5.34
 
@@ -1687,7 +1687,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  proicons@4.13.5: {}
+  proicons@4.13.6: {}
 
   property-information@7.1.0: {}
 
