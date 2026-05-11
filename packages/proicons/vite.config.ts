@@ -20,28 +20,29 @@ export default defineConfig({
         sourcemap: false,
         rollupOptions: {
             input: './src/proicons.ts',
-            output: bundles.map(format => {
-                return {
-                    preserveModules: format == 'esm',
-                    banner: licenseNotice,
-                    name: 'proicons',
-                    minify: format == 'umd',
-                    dir: `dist/${format}`,
-                    format,
-                    entryFileNames({ name }) {
-                        switch (true) {
-                            case format != 'esm':
-                                return `${name}.cjs`
-                            case utilityFiles.includes(name):
-                                return `utils/${name}.js`
-                            case functionFiles.includes(name):
-                                return `functions/${name}.js`
-                            default:
-                                return `${name}.js`
-                        }
-                    },
-                } as Rollup.OutputOptions
-            }),
+            output: bundles.map(format => ({
+                preserveModules: format == 'esm',
+                preserveModulesRoot: 'src',
+                banner: licenseNotice,
+                name: 'proicons',
+                minify: format == 'umd',
+                dir: `dist/${format}`,
+                format,
+                entryFileNames({ name }) {
+                    switch (true) {
+                        case format != 'esm':
+                            return `${name}.cjs`
+                        case utilityFiles.includes(name):
+                            return `utils/${name}.js`
+                        case name.includes('shared'):
+                            return `utils/${name.split('/').pop()}.js`
+                        case functionFiles.includes(name):
+                            return `functions/${name}.js`
+                        default:
+                            return `${name}.js`
+                    }
+                },
+            })),
             preserveEntrySignatures: 'exports-only',
         },
     },
