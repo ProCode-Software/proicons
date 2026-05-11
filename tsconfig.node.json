@@ -16,11 +16,10 @@
     "include": [
         "./tools",
         "./bin",
-        "!./bin/BuildIconList",
         "**/bin"
     ],
     "exclude": [
         "node_modules",
-        "**/BuildIconList/*",
+        "./tools/BuildIconList",
     ]
 }

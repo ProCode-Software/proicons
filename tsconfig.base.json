@@ -4,7 +4,6 @@
         "module": "ESNext",
         "lib": [ "ESNext" ],
         "target": "ESNext",
-        "pretty": true,
         "moduleDetection": "force",
         // Lint
         "strict": false,

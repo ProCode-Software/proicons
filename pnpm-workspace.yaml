@@ -5,11 +5,14 @@ packages:
 
 catalog:
   typescript: npm:@typescript/native-preview@latest
-  vite: ^8.0.8
+  vite: ^8.0.11
 
 catalogs:
   typescript-stable:
-    typescript: ^6.0.2
+    typescript: ^6.0.3
 
 overrides:
-  rolldown: latest
+  rolldown: ^1.0.0
+
+sharedWorkspaceLockfile: false
+ignoreWorkspaceCycles: true

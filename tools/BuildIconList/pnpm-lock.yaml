@@ -7,35 +7,35 @@ settings:
 catalogs:
   typescript-stable:
     typescript:
-      specifier: ^6.0.2
-      version: 6.0.2
+      specifier: ^6.0.3
+      version: 6.0.3
 
 overrides:
-  rolldown: latest
+  rolldown: ^1.0.0
 
 importers:
 
   .:
     devDependencies:
       '@figma/plugin-typings':
-        specifier: ^1.124.0
-        version: 1.124.0
+        specifier: ^1.125.0
+        version: 1.125.0
       typescript:
         specifier: catalog:typescript-stable
-        version: 6.0.2
+        version: 6.0.3
 
 packages:
 
-  '@figma/plugin-typings@1.124.0':
-    resolution: {integrity: sha512-dZ7w5TKz8WGAncwev6G5UdX5UrMImnPw7QlSAh3vqOY1trdFL1PUKDtEpWRqB65hfMdfa8X0NuaGM0Z+2ak7QQ==}
+  '@figma/plugin-typings@1.125.0':
+    resolution: {integrity: sha512-8cXB4iKyRFl+/DryImvTngkFtgnowZUeFu/dt/jSaFL04mOKhGoZE1d1Vz+sUKUdZWXibGIWexCCdFK5gH5zxg==}
 
-  typescript@6.0.2:
-    resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
 snapshots:
 
-  '@figma/plugin-typings@1.124.0': {}
+  '@figma/plugin-typings@1.125.0': {}
 
-  typescript@6.0.2: {}
+  typescript@6.0.3: {}
