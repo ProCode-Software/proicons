@@ -38,7 +38,16 @@ jobs:
           bun-version: latest
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
+        with:
+          cache: true
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: latest
+          cache: pnpm
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@proicons'
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
