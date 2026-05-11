@@ -16,3 +16,6 @@ overrides:
 
 sharedWorkspaceLockfile: false
 ignoreWorkspaceCycles: true
+minimumReleaseAgeExclude:
+  - proicons
+  - '@proicons/*'
