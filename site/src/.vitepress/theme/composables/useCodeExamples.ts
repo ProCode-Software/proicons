@@ -22,12 +22,8 @@ function filterModified(object: Record<string, any>) {
 function customizationDataToString(data: CustomizationData, format: Format): string {
     return filterModified(data)
         .map(([k, value]) => {
-            const key =
-                format == 'html'
-                    ? k == 'strokeFilledElements'
-                        ? 'outline'
-                        : camelToKebabCase(k)
-                    : k
+            if (k == 'outline') k = 'outline'
+            const key = format == 'html' ? camelToKebabCase(k) : k
             const isBool = typeof value == 'boolean'
             const isNumber = !isBool && (typeof value == 'number' || !isNaN(+value))
             const quotes = (str: string) => `"${str}"`
