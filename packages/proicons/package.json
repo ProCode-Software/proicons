@@ -46,7 +46,7 @@
     },
     "scripts": {
         "dev": "bun vite",
-        "build": "bun vite build && bunx tsgo",
+        "build": "bun vite build && bunx tsc",
         "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/iconTemplate.ts' --out './src/icons' -i './src/icons.ts' -d --format ts --clean",
         "ci": "pnpm run icons:build-modules && pnpm run build"
     },

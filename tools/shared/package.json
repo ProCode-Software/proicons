@@ -12,6 +12,6 @@
         }
     },
     "scripts": {
-        "declaration": "bunx tsgo"
+        "declaration": "bunx tsc"
     }
 }
