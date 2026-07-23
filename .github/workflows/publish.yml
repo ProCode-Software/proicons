@@ -21,7 +21,7 @@ jobs:
       VERSION: ${{github.event.release.tag_name || inputs.version}}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -34,7 +34,7 @@ jobs:
         with:
           cache: true
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: latest
           cache: pnpm
