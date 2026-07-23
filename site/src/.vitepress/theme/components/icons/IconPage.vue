@@ -70,7 +70,7 @@ function selectIcon(ic: IconEntry) {
                 ? `${customizationData.size}px`
                 : undefined,
             '--customize-outline-stroke-width':
-                customizationData.strokeFilledElements &&
+                customizationData.outline &&
                 +customizationData.strokeWidth > 1.5
                     ? +customizationData.strokeWidth - 1.5
                     : undefined,

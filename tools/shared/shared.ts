@@ -38,6 +38,8 @@ export interface SharedProIconsOptions {
      *
      * For example, if `strokeWidth` is set to `2`, filled SVG elements will have an additional 0.5px stroke
      */
+    outline?: boolean
+    /** Same as {@link SharedProIconsOptions.outline} */
     strokeFilledElements?: boolean
     /** Defaults to `round` */
     strokeCaps?: 'round' | 'square' | 'butt'
@@ -45,10 +47,8 @@ export interface SharedProIconsOptions {
     strokeJoin?: 'round' | 'miter' | 'bevel'
     /** Determines the corner radius of SVG elements. Does not apply to all rounded elements. */
     cornerRadius?: number
-
     /** Determines the size of the icon in pixels. Defaults to `24` */
     size?: number
-
     /**
      * Attributes to merge with the generated icon
      * @example

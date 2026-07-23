@@ -68,7 +68,7 @@ import {
                     <CustomizerField
                         type="toggle"
                         label="Outline fills"
-                        bind="strokeFilledElements"
+                        bind="outline"
                         :model="customizationData"
                         :defaultValue="false"
                         tooltip="Add strokes to filled SVG elements for balance"

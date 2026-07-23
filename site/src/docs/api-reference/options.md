@@ -60,7 +60,7 @@ Determines the size of the icon in pixels. This sets both `width` and `height` a
 
 Defines the shape to be used for stroke caps.
 
-### strokeFilledElements
+### outline / strokeFilledElements
 * **Type:** `boolean`
 * **HTML Attribute:** `outline`
 * **Default:** `false`
@@ -81,7 +81,7 @@ Defines the shape to be used for stroke joins.
 * **HTML Attribute:** `stroke-width`
 * **Default:** `1.5`
 
-Determines the default stroke width of the icon. This only works on SVG elements with existing strokes; add `strokeFilledElements` for this property to affect such elements.
+Determines the default stroke width of the icon. This only works on SVG elements with existing strokes; add `outline` for this property to affect such elements.
 
 ## ProIconReplaceConfig
 Properties used to customize the [`proicons.replace()`](./javascript-api#replace) method in JavaScript.

@@ -45,29 +45,17 @@ const updateSwitchValue = inject('update-slider-value', e => {
     value.value = !value.value
 })
 
-watch(
-    () => value.value,
-    newValue => {
-        model[bind] = newValue
-    }
-)
-watch(
-    () => model[bind],
-    newValue => {
-        value.value = newValue
-    }
-)
+watch(() => value.value, newValue => { model[bind] = newValue })
+watch(() => model[bind], newValue => { value.value = newValue })
 </script>
 
 <template>
-    <div
-        :class="[
-            'CustomizeIconField',
-            type + 'CustomizerField',
-            { horizontal: isHorizontal[type] },
-            className,
-        ]"
-    >
+    <div :class="[
+        'CustomizeIconField',
+        type + 'CustomizerField',
+        { horizontal: isHorizontal[type] },
+        className,
+    ]">
         <p class="customizeLabel">
             {{ label }}{{ type == 'slider' ? ':' : '' }}
             <span class="value" v-if="type == 'slider'">
@@ -79,40 +67,21 @@ watch(
             </abbr>
         </p>
 
-        <input
-            type="range"
-            v-if="type == 'slider'"
-            :min="min"
-            :max="max"
-            :step="step"
-            :class="className"
-            v-model="value"
-            :style="`--p: ${((value - (min ?? 0)) / (max - (min ?? 0))) * 100}%`"
-        />
+        <input type="range" v-if="type == 'slider'" :min="min" :max="max"
+            :step="step" :class="className" v-model="value"
+            :style="`--p: ${((value - (min ?? 0)) / (max - (min ?? 0))) * 100}%`" />
 
-        <VPSwitch
-            :class="className"
-            @click="updateSwitchValue"
-            v-if="type == 'toggle'"
-            v-model="value"
-        />
+        <VPSwitch :class="className" @click="updateSwitchValue"
+            v-if="type == 'toggle'" v-model="value" />
 
         <div :class="['colorPicker', className]" v-if="type === 'color'">
-            <input
-                type="text"
-                class="colorInput"
-                v-model="value"
-                @blur="
-                    () => {
-                        if (value == '') value = defaultValue
-                    }
-                "
-            />
-            <button
-                class="colorPreview"
-                @click="colorInput?.click"
-                :style="{ background: value }"
-            >
+            <input type="text" class="colorInput" v-model="value" @blur="
+                () => {
+                    if (value == '') value = defaultValue
+                }
+            " />
+            <button class="colorPreview" @click="colorInput?.click"
+                :style="{ background: value }">
                 <input type="color" v-model="value" ref="colorInput" />
             </button>
         </div>
@@ -238,8 +207,7 @@ input[type='range'] {
     }
 }
 
-::-webkit-slider-runnable-track {
-}
+::-webkit-slider-runnable-track {}
 
 ::-webkit-slider-thumb {
     background: #fff;

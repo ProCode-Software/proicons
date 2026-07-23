@@ -1,11 +1,11 @@
 import { reactive } from 'vue'
 
-const customizations = {
+const customizations: CustomizationData = {
     size: 24,
     strokeWidth: 1.5,
     color: 'currentColor',
     cornerRadius: -0.5,
-    strokeFilledElements: false,
+    outline: false,
 }
 export { customizations as defaultCustomizations }
 
@@ -14,7 +14,7 @@ export interface CustomizationData {
     strokeWidth: number | string
     color: string
     cornerRadius: number | string
-    strokeFilledElements: boolean
+    outline: boolean
 }
 
 export const customizationData = reactive(structuredClone(customizations))
@@ -49,7 +49,7 @@ export function useSvgVariables(svg: string, customizations: CustomizationData):
     }
 
     // Outline strokes
-    if (customizations.strokeFilledElements && +customizationData.strokeWidth > 1.5) {
+    if (customizations.outline && +customizationData.strokeWidth > 1.5) {
         newString = newString.replace(OUTLINE_REGEX, match => {
             if (!match.includes('stroke-width')) {
                 return match.replace(
@@ -75,7 +75,7 @@ export function useAllCustomizations(
     )
     newString = newString.replace(
         /var\(--customize-outline-stroke-width\)/g,
-        (customizationData.strokeWidth - 1.5).toString()
+        (+customizationData.strokeWidth - 1.5).toString()
     )
     newString = newString.replace(
         /(fill|stroke)="(.*?)"/g,
@@ -83,9 +83,7 @@ export function useAllCustomizations(
     )
     newString = newString.replace(
         /(?<=<svg [^>]*?(?:width|height)=")(.*?)(?=")/g,
-        (s, g1) => {
-            return s.replace(g1, customizations.size.toString())
-        }
+        (s, g1) => s.replace(g1, customizations.size.toString())
     )
     return newString
 }

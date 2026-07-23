@@ -78,10 +78,11 @@ function applyConfigAttributes(
         strokeJoin: getAttr('join', 'strokeJoin') as ProIconReplaceConfig['strokeJoin'],
         strokeCaps: getAttr('caps', 'strokeCaps') as ProIconReplaceConfig['strokeCaps'],
     }
-    // strokeFilledElements
-    const outline = getAttr<boolean>('outline', 'strokeFilledElements')
+    const outline =
+        getAttr<boolean>('outline', 'outline') ??
+        getAttr<boolean>('outline', 'strokeFilledElements')
 
-    elementConfig.strokeFilledElements =
+    elementConfig.outline =
         outline === true ||
         outline == 'true' ||
         outline == '' ||

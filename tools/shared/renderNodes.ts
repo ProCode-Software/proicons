@@ -42,6 +42,7 @@ export function convertNodesWithConfig(
 
         // Outlining
         if (
+            (options.outline || options.strokeFilledElements) &&
             props.fill != undefined &&
             props.fill != 'none' &&
             props.stroke != undefined &&

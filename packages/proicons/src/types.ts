@@ -11,6 +11,8 @@ export interface ProIconsOptions {
      *
      * For example, if `strokeWidth` is set to `2`, filled SVG elements will have an additional 0.5px stroke
      */
+    outline?: boolean
+    /** Same as {@link ProIconsOptions.outline} */
     strokeFilledElements?: boolean
     /** Defaults to `round` */
     strokeCaps?: 'round' | 'square' | 'butt'
