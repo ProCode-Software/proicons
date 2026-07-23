@@ -1,0 +1,16 @@
+{
+    "name": "@proicons/icon-loader-cli",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [],
+    "license": "MIT",
+    "author": "",
+    "bin": {
+        "icon-loader": "./index.ts"
+    },
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "run": "bun run ./index.ts"
+    }
+}
