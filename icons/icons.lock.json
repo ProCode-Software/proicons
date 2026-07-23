@@ -538,7 +538,12 @@
         "Sapling": { "added": "4.13.1" },
         "Pizza": { "added": "4.13.1" },
         "Soccer": { "added": "4.13.1" },
-        "American Football": { "added": "4.13.1" }
+        "American Football": { "added": "4.13.1" },
+        "Volleyball": { "added": "4.13.7" },
+        "Emoji Heart Eyes": { "added": "4.13.7" },
+        "Share": { "added": "4.13.7" },
+        "Emoji Crying Loudly": { "added": "4.13.7" },
+        "Crown": { "added": "4.13.7" }
     },
     "deprecated": {
         "PDF 2": { "version": "4.11.2", "alternative": "PDF" },
