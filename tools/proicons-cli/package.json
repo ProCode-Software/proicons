@@ -1,22 +1,22 @@
 {
-  "name": "@proicons/cli",
-  "version": "1.0.0",
-  "description": "Internal CLI tool for building ProIcons",
-  "main": "bin/proicons.ts",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "test": "pnpm run ."
-  },
-  "bin": {
-    "proicons": "bin/proicons.ts"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "ansi-colors": "^4.1.3",
-    "commander": "^13.1.0",
-    "prettier": "^3.8.3"
-  }
+    "name": "@proicons/cli",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Internal CLI tool for building ProIcons",
+    "keywords": [],
+    "license": "MIT",
+    "author": "",
+    "bin": {
+        "proicons": "bin/proicons.ts"
+    },
+    "type": "module",
+    "main": "bin/proicons.ts",
+    "scripts": {
+        "test": "pnpm run ."
+    },
+    "dependencies": {
+        "ansi-colors": "^4.1.3",
+        "commander": "^13.1.0",
+        "prettier": "^3.9.6"
+    }
 }

@@ -1,34 +1,34 @@
 {
     "name": "@proicons/webfont",
     "version": "4.11.4",
-    "type": "module",
     "description": "Use ProIcons as a webfont on your site",
+    "keywords": [
+        "font",
+        "icons",
+        "otf",
+        "proicons",
+        "ttf",
+        "webfont",
+        "woff",
+        "woff2"
+    ],
+    "homepage": "https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-webfont",
     "bugs": "https://github.com/ProCode-Software/proicons/issues",
+    "license": "MIT",
+    "author": "ProCode Software",
+    "repository": {
+        "url": "ProCode-Software/proicons",
+        "directory": "packages/proicons-webfont"
+    },
+    "type": "module",
+    "browser": "ProIcons.css",
     "unpkg": "ProIcons.css",
     "jsdelivr": "ProIcons.css",
-    "browser": "ProIcons.css",
     "publishConfig": {
         "access": "public"
     },
     "scripts": {
         "prepack": "rsync -av --exclude='ProIcons.json' --exclude='ProIcons.html' ../../icons/fonts/ .",
         "ci": "pnpm run prepack"
-    },
-    "keywords": [
-        "font",
-        "webfont",
-        "proicons",
-        "icons",
-        "ttf",
-        "otf",
-        "woff",
-        "woff2"
-    ],
-    "author": "ProCode Software",
-    "license": "MIT",
-    "repository": {
-        "url": "ProCode-Software/proicons",
-        "directory": "packages/proicons-webfont"
-    },
-    "homepage": "https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-webfont"
+    }
 }

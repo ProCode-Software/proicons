@@ -16,7 +16,7 @@
         "esModuleInterop": true,
         "skipLibCheck": true,
         "allowJs": true,
-        "rootDir": "."
+        "rootDir": "./src"
     },
     "vueCompilerOptions": {
         "vitePressExtensions": [".md", ".vue"]

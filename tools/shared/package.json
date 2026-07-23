@@ -5,13 +5,13 @@
     "type": "module",
     "module": "./shared.ts",
     "types": "./types/shared.d.ts",
-    "scripts": {
-        "declaration": "bunx tsgo"
-    },
     "exports": {
         ".": {
             "import": "./shared.ts",
             "types": "./types/shared.d.ts"
         }
+    },
+    "scripts": {
+        "declaration": "bunx tsgo"
     }
 }

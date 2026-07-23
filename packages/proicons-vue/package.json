@@ -1,16 +1,37 @@
 {
     "name": "@proicons/vue",
-    "description": "ProIcons icon library for Vue",
     "version": "4.13.3",
+    "description": "ProIcons icon library for Vue",
+    "keywords": [
+        "feather",
+        "fluent",
+        "font awesome",
+        "icon-pack",
+        "icons",
+        "js",
+        "lucide",
+        "procode",
+        "proicons",
+        "svg",
+        "vue"
+    ],
+    "homepage": "https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-vue",
+    "bugs": "https://github.com/ProCode-Software/proicons/issues",
+    "license": "MIT",
+    "author": "ProCode Software",
+    "repository": {
+        "url": "ProCode-Software/proicons",
+        "directory": "packages/proicons-vue"
+    },
+    "files": [
+        "dist",
+        "!dist/*2.js"
+    ],
     "type": "module",
     "sideEffects": false,
     "main": "dist/proicons-vue.js",
     "module": "dist/proicons-vue.js",
     "typings": "dist/proicons-vue.d.ts",
-    "files": [
-        "dist",
-        "!dist/*2.js"
-    ],
     "publishConfig": {
         "access": "public"
     },
@@ -22,37 +43,16 @@
         "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/vueIconTemplate.ts' --out './src/icons' -i './src/icons.ts' --format ts --clean --lib vue",
         "ci": "pnpm run icons:build-modules && pnpm run build"
     },
-    "author": "ProCode Software",
-    "license": "MIT",
-    "bugs": "https://github.com/ProCode-Software/proicons/issues",
-    "repository": {
-        "url": "ProCode-Software/proicons",
-        "directory": "packages/proicons-vue"
-    },
-    "homepage": "https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-vue",
-    "keywords": [
-        "icons",
-        "icon-pack",
-        "js",
-        "feather",
-        "lucide",
-        "fluent",
-        "font awesome",
-        "svg",
-        "proicons",
-        "procode",
-        "vue"
-    ],
-    "peerDependencies": {
-        "vue": "^3.5.30"
-    },
     "devDependencies": {
         "@proicons/shared": "workspace:*",
-        "@vitejs/plugin-vue": "^6.0.6",
-        "tsdown": "^0.21.10",
-        "typescript": "catalog:typescript-stable",
+        "@vitejs/plugin-vue": "^6.0.8",
+        "tsdown": "^0.22.13",
+        "typescript": "^7.0.2",
         "unplugin-vue": "^7.2.0",
         "vite": "catalog:",
-        "vue-tsc": "^3.2.8"
+        "vue-tsc": "^3.3.7"
+    },
+    "peerDependencies": {
+        "vue": "^3.5.30"
     }
 }

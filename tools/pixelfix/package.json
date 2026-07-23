@@ -2,16 +2,16 @@
     "name": "@proicons/pixelfix",
     "version": "1.0.0",
     "description": "Internal plugin used for alpha bleeding PNGs",
-    "main": "index.js",
+    "keywords": [],
+    "license": "MIT",
+    "author": "ProCode Software",
     "type": "module",
+    "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {
         "d3-delaunay": "^6.0.4",
         "jimp": "^1.6.1"
-    },
-    "keywords": [],
-    "author": "ProCode Software",
-    "license": "MIT"
+    }
 }

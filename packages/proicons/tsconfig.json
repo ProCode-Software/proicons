@@ -1,9 +1,8 @@
 {
-    "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "module": "ESNext",
         "moduleResolution": "Bundler",
-        "lib": [ "ESNext", "DOM", "DOM.Iterable" ],
+        "lib": ["ESNext", "DOM", "DOM.Iterable"],
         "target": "ES6",
         "jsx": "react",
         "sourceMap": true,
@@ -18,7 +17,12 @@
         "declarationDir": "./dist/types",
         "declaration": true,
         "isolatedDeclarations": true,
+        "noUnusedParameters": false,
+        "noImplicitAny": false,
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "rewriteRelativeImportExtensions": true
     },
-    "include": [ "./src"],
-    "exclude": [ ]
+    "include": ["./src"],
+    "exclude": []
 }

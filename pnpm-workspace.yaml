@@ -4,15 +4,13 @@ packages:
   - 'site'
 
 catalog:
-  typescript: npm:@typescript/native-preview@latest
-  vite: ^8.0.11
-
-catalogs:
-  typescript-stable:
-    typescript: ^6.0.3
+  typescript: ^7.0.2
+  vite: ^8.1.5
 
 overrides:
-  rolldown: ^1.0.0
+  typescript: ^7.0.2
+  file-type: '>=21.3.1'
+  svelte: '>=5.56.7'
 
 sharedWorkspaceLockfile: false
 ignoreWorkspaceCycles: true

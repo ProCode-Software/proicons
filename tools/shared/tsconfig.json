@@ -1,10 +1,11 @@
 {
-    "extends": [ "../../tsconfig.base.json" ],
+    "extends": ["../../packages/proicons/tsconfig.json"],
     "compilerOptions": {
         "declaration": true,
         "emitDeclarationOnly": true,
         "declarationDir": "./types",
-        "rootDir": ".",
+        "rootDir": "."
     },
-    "include": [ "." ]
+    "include": ["."],
+    "exclude": ["./types"]
 }

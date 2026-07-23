@@ -2,14 +2,35 @@
     "name": "@proicons/react",
     "version": "4.11.4",
     "description": "ProIcons icon library for ReactJS",
-    "main": "dist/proicons-react.js",
-    "module": "dist/proicons-react.js",
-    "typings": "dist/types/proicons-react.d.ts",
-    "type": "module",
-    "sideEffects": false,
+    "keywords": [
+        "feather",
+        "fluent",
+        "font awesome",
+        "icon-pack",
+        "icons",
+        "js",
+        "lucide",
+        "procode",
+        "proicons",
+        "react",
+        "svg"
+    ],
+    "homepage": "https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-react",
+    "bugs": "https://github.com/ProCode-Software/proicons/issues",
+    "license": "MIT",
+    "author": "ProCode Software",
+    "repository": {
+        "url": "ProCode-Software/proicons",
+        "directory": "packages/proicons-react"
+    },
     "files": [
         "dist"
     ],
+    "type": "module",
+    "sideEffects": false,
+    "main": "dist/proicons-react.js",
+    "module": "dist/proicons-react.js",
+    "typings": "dist/types/proicons-react.d.ts",
     "publishConfig": {
         "access": "public"
     },
@@ -20,36 +41,14 @@
         "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/reactIconTemplate.ts' --out './src/icons' -i './src/icons.ts' --format ts --clean --lib react",
         "ci": "pnpm run icons:build-modules && pnpm run build"
     },
-    "author": "ProCode Software",
-    "license": "MIT",
-    "bugs": "https://github.com/ProCode-Software/proicons/issues",
-    "repository": {
-        "url": "ProCode-Software/proicons",
-        "directory": "packages/proicons-react"
-    },
-    "homepage": "https://github.com/ProCode-Software/proicons/tree/main/packages/proicons-react",
-    "keywords": [
-        "icons",
-        "icon-pack",
-        "js",
-        "feather",
-        "lucide",
-        "fluent",
-        "font awesome",
-        "svg",
-        "proicons",
-        "procode",
-        "react"
-    ],
     "devDependencies": {
         "@proicons/shared": "workspace:*",
-        "@types/react": "^19.2.14",
+        "@types/react": "^19.2.17",
         "@types/react-dom": "^19.2.3",
-        "@typescript/native-preview": "latest",
-        "@vitejs/plugin-react": "^6.0.1",
-        "react": "^19.2.6",
-        "react-dom": "^19.2.6",
-        "typescript": "catalog:typescript-stable",
+        "@vitejs/plugin-react": "^6.0.4",
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8",
+        "typescript": "^7.0.2",
         "vite": "catalog:"
     },
     "peerDependencies": {

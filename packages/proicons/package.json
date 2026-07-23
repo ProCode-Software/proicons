@@ -2,19 +2,37 @@
     "name": "proicons",
     "version": "4.13.0",
     "description": "A collection of 500+ modern and open-source icons",
-    "type": "module",
-    "sideEffects": false,
-    "main": "dist/cjs/proicons.cjs",
-    "main:umd": "dist/umd/proicons.cjs",
-    "module": "dist/esm/proicons.js",
-    "typings": "dist/types/proicons.d.ts",
-    "amdName": "proicons",
-    "unpkg": "dist/umd/proicons.cjs",
-    "jsdelivr": "dist/umd/proicons.cjs",
-    "browser": "dist/umd/proicons.cjs",
+    "keywords": [
+        "feather",
+        "fluent",
+        "font awesome",
+        "icon-library",
+        "icon-pack",
+        "icons",
+        "js",
+        "lucide",
+        "procode",
+        "proicons",
+        "svg"
+    ],
+    "homepage": "https://github.com/ProCode-Software/proicons/tree/main/packages/proicons",
+    "bugs": "https://github.com/ProCode-Software/proicons/issues",
+    "license": "MIT",
+    "author": "ProCode Software",
+    "repository": {
+        "url": "ProCode-Software/proicons"
+    },
     "files": [
         "dist"
     ],
+    "type": "module",
+    "sideEffects": false,
+    "main": "dist/cjs/proicons.cjs",
+    "module": "dist/esm/proicons.js",
+    "browser": "dist/umd/proicons.cjs",
+    "typings": "dist/types/proicons.d.ts",
+    "unpkg": "dist/umd/proicons.cjs",
+    "jsdelivr": "dist/umd/proicons.cjs",
     "exports": {
         ".": {
             "types": "./dist/types/proicons.d.ts",
@@ -23,41 +41,22 @@
             "default": "./dist/umd/proicons.cjs"
         }
     },
-    "repository": {
-        "url": "ProCode-Software/proicons"
-    },
     "publishConfig": {
         "access": "public"
     },
-    "homepage": "https://github.com/ProCode-Software/proicons/tree/main/packages/proicons",
-    "bugs": "https://github.com/ProCode-Software/proicons/issues",
     "scripts": {
         "dev": "bun vite",
         "build": "bun vite build && bunx tsgo",
         "icons:build-modules": "bun run ../../bin/addIconFiles.ts -t './bin/iconTemplate.ts' --out './src/icons' -i './src/icons.ts' -d --format ts --clean",
         "ci": "pnpm run icons:build-modules && pnpm run build"
     },
-    "keywords": [
-        "icons",
-        "icon-pack",
-        "js",
-        "feather",
-        "lucide",
-        "fluent",
-        "font awesome",
-        "svg",
-        "proicons",
-        "procode",
-        "icon-library"
-    ],
-    "author": "ProCode Software",
-    "license": "MIT",
     "devDependencies": {
         "@proicons/shared": "workspace:*",
         "@types/bun": "latest",
         "@typescript/native-preview": "latest",
-        "typescript": "catalog:typescript-stable",
+        "typescript": "^7.0.2",
         "vite": "catalog:"
     },
-    "packageManager": "bun@10.17.1+sha512.17c560fca4867ae9473a3899ad84a88334914f379be46d455cbf92e5cf4b39d34985d452d2583baf19967fa76cb5c17bc9e245529d0b98745721aa7200ecaf7a"
+    "amdName": "proicons",
+    "main:umd": "dist/umd/proicons.cjs"
 }

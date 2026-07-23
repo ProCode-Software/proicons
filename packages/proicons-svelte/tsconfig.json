@@ -20,7 +20,7 @@
         "strict": false,
         "noImplicitAny": false,
         "noUnusedLocals": false,
-        "types": [ "vite/client", "svelte" ]
+        "types": ["vite/client", "svelte"]
     },
     "include": [
         "./src/**/*.ts",
@@ -29,5 +29,5 @@
         "./test/*.ts",
         "./test/*.svelte"
     ],
-    "exclude": [ "node_modules" ]
+    "exclude": ["node_modules"]
 }

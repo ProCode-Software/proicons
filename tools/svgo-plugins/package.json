@@ -1,14 +1,16 @@
 {
     "name": "@proicons/svgo-plugins",
     "version": "1.0.0",
-    "description": "Internal SVGO plugins for ProIcons",
-    "type": "module",
     "private": true,
+    "description": "Internal SVGO plugins for ProIcons",
+    "keywords": [
+        "svgo"
+    ],
+    "license": "MIT",
+    "author": "ProCode Software",
+    "type": "module",
     "exports": {
         "./convertPathToRect": "./convertPathToRect.ts"
     },
-    "scripts": {},
-    "keywords": ["svgo"],
-    "author": "ProCode Software",
-    "license": "MIT"
+    "scripts": {}
 }
