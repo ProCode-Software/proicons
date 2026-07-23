@@ -1,7 +1,21 @@
 {
-    "extends": [ "./tsconfig.base.json", "./tsconfig.node.json" ],
     "compilerOptions": {
+        "moduleResolution": "NodeNext",
         "module": "nodenext",
         "noEmit": true,
-    }
+        "lib": ["ESNext"],
+        // "rootDir": ".",
+        "types": ["bun", "node"],
+        "strict": true,
+        "declaration": false,
+        "allowJs": true,
+        "resolveJsonModule": true,
+        "strictNullChecks": true,
+        "rewriteRelativeImportExtensions": true,
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "noImplicitAny": false
+    },
+    "include": ["./tools", "./bin", "**/bin"],
+    "exclude": ["**/node_modules", "./tools/BuildIconList", "packages"]
 }
