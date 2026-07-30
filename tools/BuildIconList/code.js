@@ -29,7 +29,7 @@ const addIcon = (iconNode) => __awaiter(void 0, void 0, void 0, function* () {
     dict[iconNode.name] = {
         description: iconNode.description,
         category,
-        icon: yield exportIcon(iconNode)
+        icon: yield exportIcon(iconNode),
     };
     console.log(dict[iconNode.name].icon);
 });
@@ -53,7 +53,7 @@ const addIcon = (iconNode) => __awaiter(void 0, void 0, void 0, function* () {
     figma.notify(`Successfully built file for ${frames.length} icon${frames.length == 1 ? '' : 's'}`);
     if (iconsWithoutCategories > 0) {
         figma.notify(`${iconsWithoutCategories} icon${iconsWithoutCategories > 1 ? 's do not have categories' : ' does not have a category'}`, {
-            error: true
+            error: true,
         });
     }
 }))().then(() => {

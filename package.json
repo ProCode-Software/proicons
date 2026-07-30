@@ -47,7 +47,7 @@
         "jsdom": "^29.1.1",
         "oslllo-svg-fixer": "^6.0.1",
         "oxfmt": "^0.60.0",
-        "oxlint": "^1.75.0",
+        "oxlint": "^1.76.0",
         "piscina": "^5.3.0",
         "prettier": "^3.9.6",
         "prettier-plugin-svelte": "^4.1.1",
@@ -57,5 +57,5 @@
         "typescript": "^7.0.2",
         "vite": "catalog:"
     },
-    "packageManager": "pnpm@11.15.1"
+    "packageManager": "pnpm@11.18.0"
 }

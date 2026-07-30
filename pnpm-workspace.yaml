@@ -8,7 +8,6 @@ catalog:
   vite: ^8.1.5
 
 overrides:
-  typescript: ^7.0.2
   file-type: '>=21.3.1'
   svelte: '>=5.56.7'
 

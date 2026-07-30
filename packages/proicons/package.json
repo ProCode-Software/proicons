@@ -53,7 +53,6 @@
     "devDependencies": {
         "@proicons/shared": "workspace:*",
         "@types/bun": "latest",
-        "@typescript/native-preview": "latest",
         "typescript": "^7.0.2",
         "vite": "catalog:"
     },
