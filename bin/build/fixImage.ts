@@ -1,6 +1,5 @@
 import fs from 'fs/promises'
 import pixelfix from '@proicons/pixelfix'
-import sharp from 'sharp'
 import path from 'path'
 
 export default async ({ file, root }: { file: string; root: string }) => {
@@ -23,10 +22,10 @@ export default async ({ file, root }: { file: string; root: string }) => {
             const newFilePath = path.resolve(newFolder, color, `${file.slice(0, -4)}.png`)
 
             try {
-                await sharp(Buffer.from(fileStr))
+                await new Bun.Image(Buffer.from(fileStr))
                     .resize(size, size)
                     .png()
-                    .toFile(newFilePath)
+                    .write(newFilePath)
                 await pixelfix(newFilePath)
             } catch (error) {
                 console.error(`Failed to generate ${file}`, error)
