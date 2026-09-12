@@ -4,6 +4,8 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: [ "main" ]
+    paths:
+      - 'site/**'
   release:
     types: [ published ]
 
