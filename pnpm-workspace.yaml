@@ -5,7 +5,7 @@ packages:
 
 catalog:
   typescript: ^7.0.2
-  vite: ^8.1.5
+  vite: ^8.3.0
 
 overrides:
   file-type: '>=21.3.1'
@@ -16,3 +16,7 @@ ignoreWorkspaceCycles: true
 minimumReleaseAgeExclude:
   - proicons
   - '@proicons/*'
+allowBuilds:
+  '@parcel/watcher': set this to true or false
+  es5-ext: true
+  ttf2woff2: true

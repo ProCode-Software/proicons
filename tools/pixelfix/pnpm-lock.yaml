@@ -175,8 +175,8 @@ packages:
   exif-parser@0.1.12:
     resolution: {integrity: sha512-c2bQfLNbMzLPmzQuOr8fy0csy84WmwnER81W88DzTp9CYNPJ6yzOj2EZAh9pywYpqHnshVLHQJ8WzldAyfY+Iw==}
 
-  file-type@22.0.1:
-    resolution: {integrity: sha512-ww5Mhre0EE+jmBvOXTmXAbEMuZE7uX4a3+oRCQFNj8w++g3ev913N6tXQz0XTXbueQ5TWQfm6BdaViEHHn8bhA==}
+  file-type@22.0.2:
+    resolution: {integrity: sha512-0H8TsCUGBLx+V5adH3EY52hTAcyLKbV1D4gq5cIOJ6DnQAHeV9Z2Hhuc5CoBX4YmvB2oL+JIC84z0qO7JsCoNw==}
     engines: {node: '>=22'}
 
   gifwrap@0.10.1:
@@ -284,7 +284,7 @@ snapshots:
       '@jimp/utils': 1.6.1
       await-to-js: 3.0.0
       exif-parser: 0.1.12
-      file-type: 22.0.1
+      file-type: 22.0.2
       mime: 3.0.0
     transitivePeerDependencies:
       - supports-color
@@ -531,7 +531,7 @@ snapshots:
 
   exif-parser@0.1.12: {}
 
-  file-type@22.0.1:
+  file-type@22.0.2:
     dependencies:
       '@tokenizer/inflate': 0.4.1
       strtok3: 10.3.5
