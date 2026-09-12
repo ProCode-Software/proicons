@@ -1530,7 +1530,7 @@
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M7.201 9.947a5.365 5.365 0 0 1 8.145-2.262c.355.262.858.268 1.17-.044l1.617-1.616c.312-.312.314-.822-.024-1.106A9.25 9.25 0 0 0 3.612 8.46M7.2 9.947a5.365 5.365 0 0 0 1.69 6.31M7.2 9.947 3.611 8.46m5.28 7.796a5.365 5.365 0 0 0 6.533 0m-6.532 0-2.365 3.082m8.897-3.082a5.4 5.4 0 0 0 1.537-1.866h-3.91a.8.8 0 0 1-.8-.8V11.3a.8.8 0 0 1 .8-.8h7.493c.316 0 .61.186.681.495.313 1.362-.125 3.246-.158 3.384l-.004.016c-.528 1.963-1.661 3.706-3.274 4.944m-2.365-3.083 2.365 3.082m0 0a9.25 9.25 0 0 1-11.262 0m0 0A9.25 9.25 0 0 1 3.612 8.46\"/></svg>"
     },
     "Google Chrome": {
-        "description": "Browser, Chromium, Microsoft, MS Edge",
+        "description": "Browser, Chromium",
         "category": "Logos & Brands",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M12 8.25a3.75 3.75 0 0 0-3.747 3.904M12 8.25a3.75 3.75 0 0 1 3.608 4.775M12 8.25h8.458m-4.85 4.775a3.752 3.752 0 0 1-7.355-.871m7.355.871-3.08 8.21m7.93-12.985A9.252 9.252 0 0 0 4.6 6.45m15.858 1.8q.085.19.161.386a9.25 9.25 0 0 1-8.09 12.599m0 0A9.25 9.25 0 0 1 2.75 12c0-2.083.688-4.004 1.85-5.55m3.653 5.704L4.6 6.45\"/></svg>"
     },
@@ -1550,12 +1550,12 @@
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><rect width=\"17\" height=\"17\" x=\"3.5\" y=\"3.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" rx=\"5.5\"/><circle cx=\"12\" cy=\"12\" r=\"3.606\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/><circle cx=\"16.894\" cy=\"7.106\" r=\"1.03\" fill=\"currentColor\"/></svg>"
     },
     "JavaScript": {
-        "description": "Programming, Web, Electron, JS",
+        "description": "Programming, Web, Electron, JS, Browser",
         "category": "Logos & Brands",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><rect width=\"16.5\" height=\"16.5\" x=\"3.75\" y=\"3.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" rx=\"2\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M11.5 11.25v5a1 1 0 0 1-1 1H9m8.25-6h-2a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-2\"/></svg>"
     },
     "Microsoft": {
-        "description": "Windows, Win11, Windows 11",
+        "description": "Windows, Win11, Windows 11, Microslop",
         "category": "Logos & Brands",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M12 3.75H5.75a2 2 0 0 0-2 2V12M12 3.75h6.25a2 2 0 0 1 2 2V12M12 3.75v16.5m0 0h6.25a2 2 0 0 0 2-2V12M12 20.25H5.75a2 2 0 0 1-2-2V12m0 0h16.5\"/></svg>"
     },
@@ -2685,7 +2685,7 @@
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M18.388 15.002c-.562-1.996-1.658-5.06-4.896-6.93-3.237-1.869-6.44-1.286-8.449-.775m13.345 7.705 1.562-.906c.952-.552 1.54-1.579 1.252-2.64-.5-1.838-1.876-4.76-5.655-6.942s-6.998-1.912-8.84-1.426c-1.063.28-1.658 1.304-1.66 2.404l-.004 1.805m13.345 7.705L8.1 20.97c-1.37.794-3.083-.195-3.08-1.779l.024-11.894\"/><path fill=\"currentColor\" d=\"M10.023 17.25a1.5 1.5 0 1 1-2.597-1.5 1.5 1.5 0 0 1 2.597 1.5m4.557-3.053a1.798 1.798 0 1 1-3.114-1.798 1.798 1.798 0 0 1 3.114 1.798M8.325 11.3a1.8 1.8 0 0 1-3.295 1.003v-2.007A1.8 1.8 0 0 1 8.325 11.3\"/></svg>"
     },
     "Soccer": {
-        "description": "Dribble, Dribbble",
+        "description": "Football",
         "category": "Activities",
         "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"m15 11.327-3-2.18-3 2.18 1.146 3.526h3.708zm6.25.673c0-2.41-.921-4.604-2.43-6.25v3.397l2.341 4.14q.089-.632.089-1.287M15.5 3.435A9.2 9.2 0 0 0 12 2.75c-1.239 0-2.42.243-3.5.685l3.5 1.69zM5.18 5.75A9.22 9.22 0 0 0 2.75 12q0 .656.089 1.286l2.342-4.14zM7.5 18.031 3.962 16.58a9.27 9.27 0 0 0 5.875 4.416zm6.663 2.965a9.27 9.27 0 0 0 5.875-4.416L16.5 18.031z\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M12 9.147V5.125m0 4.022 3 2.18m-3-2.18-3 2.18m4.854 3.526 2.646 3.178m-2.646-3.178h-3.708m3.708 0L15 11.326m-4.854 3.527L7.5 18.031m2.646-3.178L9 11.326m0 0-3.82-2.18M12 5.126l-3.5-1.69m3.5 1.69 3.5-1.69m0 0A9.2 9.2 0 0 0 12 2.75c-1.239 0-2.42.243-3.5.685m7 0a9.3 9.3 0 0 1 3.32 2.315m0 0A9.22 9.22 0 0 1 21.25 12q0 .656-.089 1.286M18.82 5.75v3.397M8.5 3.435A9.3 9.3 0 0 0 5.18 5.75m0 0A9.22 9.22 0 0 0 2.75 12q0 .656.089 1.286M5.18 5.75v3.397m8.982 11.849A9.3 9.3 0 0 1 12 21.25a9.3 9.3 0 0 1-2.163-.254m4.326 0a9.27 9.27 0 0 0 5.875-4.416m-5.875 4.416L16.5 18.03m-6.663 2.965a9.27 9.27 0 0 1-5.875-4.416m5.875 4.416L7.5 18.03m12.538-1.451a9.2 9.2 0 0 0 1.123-3.294m-1.123 3.294L16.5 18.031m4.661-4.745-2.342-4.14M3.962 16.58 7.5 18.031M3.962 16.58a9.2 9.2 0 0 1-1.123-3.294m0 0 2.342-4.14m13.638 0L15 11.327\"/></svg>"
     },
