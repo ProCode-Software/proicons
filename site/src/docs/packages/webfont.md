@@ -44,9 +44,6 @@ To import the Add icon:
 ```html
 <i class="proicon-add"></i>
 ```
-::: info Important
-If importing a variable icon such as `add-square-multiple--var`, make sure to only use one hyphen before `var`. This class name would be replaced with `add-square-multiple-var`.
-:::
 
 ## Caveats
 - Like all icon fonts, icons may have a lower quality or be misaligned
