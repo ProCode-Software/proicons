@@ -44,14 +44,6 @@
 		},
 		{
 			"type": "npm",
-			"script": "icons:roblox-publish",
-			"group": "build",
-			"problemMatcher": [ ],
-			"label": "Publish icons to Roblox",
-			"detail": "pnpm run --env-file=.env ./bin/publishToRoblox.ts"
-		},
-		{
-			"type": "npm",
 			"script": "icons:prune",
 			"group": "build",
 			"problemMatcher": [ ],

@@ -147,8 +147,5 @@ site/dist/
 **/src/icons/
 **/src/icons.ts
 
-# Roblox upload temp
-/roblox-upload-*.json
-
 # Changelog
 /CHANGELOG.md

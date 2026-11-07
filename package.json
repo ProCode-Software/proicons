@@ -22,7 +22,6 @@
         "icons:optimize": "pnpm run icons:build -o",
         "icons:build-frozen": "pnpm run icons:build -l",
         "icons:build-rebuild": "pnpm run icons:build -r",
-        "icons:roblox-publish": "bun run --env-file=.env ./bin/publishToRoblox.ts",
         "icons:prune": "bun run ./bin/pruneFiles.ts",
         "font:codepoints": "bun run ./bin/generateCodepoints.ts",
         "font:build": "pnpm run icons:build -f -r",
