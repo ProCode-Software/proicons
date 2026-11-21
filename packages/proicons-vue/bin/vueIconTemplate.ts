@@ -1,13 +1,8 @@
 import { getData, type Node } from '../../../bin/build/templates/templateData.ts'
 
 export default (moduleName: string, nodes: Node[]): string => {
-    const {
-        deprecationData,
-        friendlyName,
-        iconData,
-        lockfileItem,
-        rawSvgData,
-    } = getData(moduleName)
+    const { deprecationData, friendlyName, iconData, lockfileItem, rawSvgData } =
+        getData(moduleName)
 
     const iconInfo = {
         name: friendlyName,

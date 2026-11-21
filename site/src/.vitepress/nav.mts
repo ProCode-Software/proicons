@@ -6,28 +6,28 @@ export default [
         items: [
             {
                 text: 'HTML',
-                link: '/docs/html-api'
+                link: '/docs/html-api',
             },
             {
                 text: 'Vanilla JS',
-                link: '/docs/javascript-api'
+                link: '/docs/javascript-api',
             },
             {
                 text: 'React',
-                link: '/docs/react'
+                link: '/docs/react',
             },
             {
                 text: 'Svelte',
-                link: '/docs/svelte'
+                link: '/docs/svelte',
             },
             {
                 text: 'Vue',
-                link: '/docs/vue'
+                link: '/docs/vue',
             },
             {
                 text: 'Webfont',
-                link: '/docs/webfont'
+                link: '/docs/webfont',
             },
-        ]
+        ],
     },
 ]

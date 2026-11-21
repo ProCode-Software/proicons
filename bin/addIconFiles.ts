@@ -1,5 +1,5 @@
 import { camelCase, pascalCase } from '@proicons/shared'
-import ansiColors from 'ansi-colors'
+import { styleText } from 'util'
 import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'fs'
 import { dirname, resolve } from 'path'
 import { fileURLToPath } from 'url'
@@ -71,8 +71,9 @@ const modules = await Promise.all(
 )
 
 console.log(
-    ansiColors.green(
-        `Successfully created ${ansiColors.yellow(`.${formatParam}`)} files for ${ansiColors.yellow(`${files.length} files`)} in ${ansiColors.cyan(outDirParam)}!`
+    styleText(
+        'green',
+        `Successfully created ${styleText('yellow', `.${formatParam}`)} files for ${styleText('yellow', `${files.length} files`)} in ${styleText('cyan', outDirParam)}!`
     )
 )
 
@@ -116,8 +117,9 @@ function createIndex() {
 
     writeFileSync(indexOutDir, indexTemplate)
     console.log(
-        ansiColors.green(
-            `Successfully created icons index at ${ansiColors.cyan(indexDirParam)}!`
+        styleText(
+            'green',
+            `Successfully created icons index at ${styleText('cyan', indexDirParam)}!`
         )
     )
 }
@@ -139,8 +141,8 @@ async function createDataFiles() {
         .sort()
 
     await formatAndWrite(iconListData, `iconList.${formatParam}`)
-    console.log(ansiColors.green(`Successfully created icon list!`))
+    console.log(styleText('green', `Successfully created icon list!`))
 
     await formatAndWrite(categoryData, `categories.${formatParam}`)
-    console.log(ansiColors.green(`Successfully created category list!`))
+    console.log(styleText('green', `Successfully created category list!`))
 }

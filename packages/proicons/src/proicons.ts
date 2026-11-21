@@ -16,7 +16,7 @@ export {
      *
      * Note: This will import all icons and breaks tree-shaking
      */
-    icons
+    icons,
 }
 
 export { getIconInfo } from './getIconInfo'

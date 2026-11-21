@@ -34,7 +34,7 @@ const iconName = ref(getRandomIcon())
     <br />
     <ProIcon icon="Search Cancel" :size />
     <BrainIcon :size />
-    <br>
+    <br />
     <ProIcon :icon="iconName" :size />
-    <button @click="() => iconName = getRandomIcon()">Random Icon</button>
+    <button @click="() => (iconName = getRandomIcon())">Random Icon</button>
 </template>

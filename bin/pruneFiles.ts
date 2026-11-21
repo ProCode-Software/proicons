@@ -1,4 +1,4 @@
-import ansiColors from 'ansi-colors'
+import { styleText } from 'util'
 import { existsSync, readdirSync, unlinkSync } from 'fs'
 import { join, resolve } from 'path'
 import icons from '../icons/icons.json' with { type: 'json' }
@@ -30,8 +30,9 @@ if (missingNamesInLockfile.length || missingNamesInIcons.length) {
         .join('\n')
 
     throw new Error(
-        ansiColors.red(
-            ansiColors.bold(`\nicons.json and lockfile don't match:\n`) + missingNames
+        styleText(
+            'red',
+            styleText('bold', `\nicons.json and lockfile don't match:\n`) + missingNames
         )
     )
 }
@@ -77,18 +78,20 @@ for (const dirname of iconDirs) {
 // Prompt to remove duplicates
 const extraArray = Array.from(extraIconNames)
 if (!extraArray.length) {
-    console.log(ansiColors.green('No extraneous icons found'))
+    console.log(styleText('green', 'No extraneous icons found'))
     process.exit(0)
 }
 console.log(
-    ansiColors.bold(
-        ansiColors.yellow(
-            `\nThere are ${ansiColors.cyan(extraArray.length.toString())} extraneous icons in folders. Do you want to remove them?`
+    styleText(
+        'bold',
+        styleText(
+            'yellow',
+            `\nThere are ${styleText('cyan', extraArray.length.toString())} extraneous icons in folders. Do you want to remove them?`
         )
     ) +
-        ansiColors.dim(' (y/n)') +
+        styleText('dim', ' (y/n)') +
         `\nIcons: ` +
-        ansiColors.cyan(extraArray.join(', ')) +
+        styleText('cyan', extraArray.join(', ')) +
         '\n'
 )
 
@@ -97,10 +100,10 @@ process.stdin.on('data', data => {
         for (const filePath of extraIconPaths) {
             unlinkSync(filePath)
         }
-        console.log(ansiColors.green(`Removed ${extraArray.length} icon(s)`))
+        console.log(styleText('green', `Removed ${extraArray.length} icon(s)`))
         process.exit(0)
     } else {
-        console.log(ansiColors.red('Aborted'))
+        console.log(styleText('red', 'Aborted'))
         process.exit(1)
     }
 })

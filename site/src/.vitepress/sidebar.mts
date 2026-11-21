@@ -9,16 +9,14 @@ const sidebar: Record<string, DefaultTheme.SidebarItem[]> = {
             items: [
                 { text: 'What is ProIcons?', link: 'about' },
                 { text: 'Installation', link: 'installation' },
-                 { text: 'Options', link: 'options' },
+                { text: 'Options', link: 'options' },
             ],
         },
         {
             text: 'Guides',
             collapsed: false,
             base: '/docs/',
-            items: [
-                { text: 'Using in Roblox', link: 'roblox-usage' },
-            ],
+            items: [{ text: 'Using in Roblox', link: 'roblox-usage' }],
         },
         {
             text: 'Packages',
@@ -50,7 +48,7 @@ const sidebar: Record<string, DefaultTheme.SidebarItem[]> = {
                         },
                     ],
                 },
-                { text: 'Roadmap', link: 'roadmap' }
+                { text: 'Roadmap', link: 'roadmap' },
             ],
         },
     ],

@@ -1,8 +1,8 @@
 // Derived from https://github.com/Corecii/Transparent-Pixel-Fix
-"use strict";
+'use strict'
 
-import { Jimp } from "jimp";
-import { Delaunay } from "d3-delaunay";
+import { Jimp } from 'jimp'
+import { Delaunay } from 'd3-delaunay'
 
 const neighborLocations = [
     [-1, -1],
@@ -12,47 +12,50 @@ const neighborLocations = [
     [1, 1],
     [0, 1],
     [-1, 1],
-    [-1, 0]
-];
+    [-1, 0],
+]
 
 async function fixImage(filePath) {
-    let image = await Jimp.read(filePath);
+    let image = await Jimp.read(filePath)
 
-    let voronoiPoints = [];
-    let voronoiColors = [];
+    let voronoiPoints = []
+    let voronoiColors = []
     image.scan(0, 0, image.bitmap.width, image.bitmap.height, function (x, y, idx) {
-        let alpha = this.bitmap.data[idx + 3];
+        let alpha = this.bitmap.data[idx + 3]
         if (alpha != 0) {
-            let red = this.bitmap.data[idx + 0];
-            let green = this.bitmap.data[idx + 1];
-            let blue = this.bitmap.data[idx + 2];
+            let red = this.bitmap.data[idx + 0]
+            let green = this.bitmap.data[idx + 1]
+            let blue = this.bitmap.data[idx + 2]
             // Voronoi
             for (let offset of neighborLocations) {
-                let neighborAlpha = this.bitmap.data[image.getPixelIndex(x + offset[0], y + offset[1]) + 3];
+                let neighborAlpha =
+                    this.bitmap.data[
+                        image.getPixelIndex(x + offset[0], y + offset[1]) + 3
+                    ]
                 if (neighborAlpha == 0) {
-                    voronoiPoints.push([x, y]);
-                    voronoiColors.push([red, green, blue]);
-                    break;
+                    voronoiPoints.push([x, y])
+                    voronoiColors.push([red, green, blue])
+                    break
                 }
             }
         }
-    });
+    })
     if (voronoiPoints.length > 0) {
-        let dela = Delaunay.from(voronoiPoints);
+        let dela = Delaunay.from(voronoiPoints)
         image.scan(0, 0, image.bitmap.width, image.bitmap.height, function (x, y, idx) {
-            let alpha = this.bitmap.data[idx + 3];
+            let alpha = this.bitmap.data[idx + 3]
             if (alpha == 0) {
-                let closestIndex = dela.find(x, y);
+                let closestIndex = dela.find(x, y)
                 if (closestIndex != -1) {
-                    let color = voronoiColors[closestIndex];
+                    let color = voronoiColors[closestIndex]
 
-                    this.bitmap.data[idx + 0] = color[0];
-                    this.bitmap.data[idx + 1] = color[1];
-                    this.bitmap.data[idx + 2] = color[2];
+                    this.bitmap.data[idx + 0] = color[0]
+                    this.bitmap.data[idx + 1] = color[1]
+                    this.bitmap.data[idx + 2] = color[2]
                 }
             }
-        });
-        await image.write(filePath);
+        })
+        await image.write(filePath)
     }
 }
-export default fixImage;
+export default fixImage

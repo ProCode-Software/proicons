@@ -2,7 +2,7 @@ import { existsSync, readFileSync, renameSync, writeFileSync } from 'fs'
 import { formatJson } from './utils.ts'
 import { resolve } from 'path'
 import * as renameText from '@proicons/shared'
-import ansiColors from 'ansi-colors'
+import { styleText } from 'util'
 import pkg from '../../../package.json' with { type: 'json' }
 const { version } = pkg
 const { kebabCase } = renameText
@@ -61,8 +61,9 @@ export async function rename(
         writeFileSync(iconsPath, await formatJson(iconsFile))
 
         console.log(
-            ansiColors.green(
-                `Successfully renamed ${ansiColors.yellow(oldName)} to ${ansiColors.yellow(newName)}${!options['no-alias'] ? ' and created alias' : ''}.`
+            styleText(
+                'green',
+                `Successfully renamed ${styleText('yellow', oldName)} to ${styleText('yellow', newName)}${!options['no-alias'] ? ' and created alias' : ''}.`
             )
         )
 

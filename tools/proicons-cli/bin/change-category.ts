@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
 import { formatJson } from './utils.ts'
 import pkg from '../../../package.json' with { type: 'json' }
-import ansiColors from 'ansi-colors'
+import { styleText } from 'util'
 const { version } = pkg
 
 const iconsFilePath = resolve('icons/icons.json')
@@ -28,8 +28,9 @@ export async function changeCategory(iconName, newCategory) {
         writeFileSync(lockfilePath, await formatJson(lockfile))
 
         console.log(
-            ansiColors.green(
-                `Successfully changed category of '${iconName}' from ${ansiColors.yellow(oldCategory)} to ${ansiColors.yellow(newCategory)}`
+            styleText(
+                'green',
+                `Successfully changed category of '${iconName}' from ${styleText('yellow', oldCategory)} to ${styleText('yellow', newCategory)}`
             )
         )
         process.exit(0)

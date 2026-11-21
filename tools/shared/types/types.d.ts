@@ -1,19 +1,19 @@
 export interface LockfileIcon {
-    added: string;
-    updated?: string;
+    added: string
+    updated?: string
 }
 export interface DeprecatedIcon {
-    version: string;
-    alternative?: string;
+    version: string
+    alternative?: string
 }
 export interface Lockfile {
-    icons: Record<string, LockfileIcon>;
-    aliases: Record<string, string>;
-    deprecated: Record<string, DeprecatedIcon>;
+    icons: Record<string, LockfileIcon>
+    aliases: Record<string, string>
+    deprecated: Record<string, DeprecatedIcon>
 }
 export interface Icon {
-    description: string;
-    category: string;
-    icon: string;
+    description: string
+    category: string
+    icon: string
 }
-export type IconsJSON = Record<string, Icon>;
+export type IconsJSON = Record<string, Icon>

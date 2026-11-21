@@ -1,9 +1,11 @@
-import { HeadConfig } from "vitepress"
+import { HeadConfig } from 'vitepress'
 
 const name = 'ProIcons'
-const description = "A collection of 500+ modern and open-source icons"
-const bannerUrl = 'https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover_light.png'
-const favicon = 'https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/logo_light.svg'
+const description = 'A collection of 500+ modern and open-source icons'
+const bannerUrl =
+    'https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/github-cover_light.png'
+const favicon =
+    'https://raw.githubusercontent.com/ProCode-Software/proicons/main/.github/images/logo_light.svg'
 
 const head: HeadConfig[] = [
     ['meta', { property: 'og:locale', content: 'en_US' }],
@@ -11,7 +13,10 @@ const head: HeadConfig[] = [
     ['meta', { property: 'og:site_name', content: name }],
     ['meta', { property: 'og:title', content: name }],
     ['meta', { property: 'og:description', content: description }],
-    ['meta', { property: 'og:url', content: 'https://procode-software.github.io/proicons' }],
+    [
+        'meta',
+        { property: 'og:url', content: 'https://procode-software.github.io/proicons' },
+    ],
     ['meta', { property: 'og:image', content: bannerUrl }],
     // [ 'meta', { property: 'og:image:width', content: '1200', }, ],
     // [ 'meta', { property: 'og:image:height', content: '630', }, ],

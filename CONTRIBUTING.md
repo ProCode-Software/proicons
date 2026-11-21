@@ -28,6 +28,7 @@ The ProIcons documentation is built using [VitePress](https://vitepress.dev). Th
 ## Development Guide
 
 ### Tech Stack
+
 - [Bun](https://bun.com) as a runtime
 - [PNPM](https://pnpm.io) as a package manager
 - The codebase is written in [TypeScript](https://typescriptlang.org)
@@ -61,11 +62,15 @@ The command above will install dependencies for all packages. If you want to ins
 Note that you will need to install all dependencies if you want to build the icon set.
 
 ### Building packages
+
 To build a package, run the `ci` script after installing dependencies:
+
 ```bash
 pnpm --filter package-name run ci
 ```
+
 This generates the icon modules for the package and builds the package into its `dist` folder.
+
 > [!IMPORTANT]
 > Make sure to use `pnpm run ci`, not `pnpm ci`.
 

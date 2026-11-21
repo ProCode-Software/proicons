@@ -1,11 +1,14 @@
 # ProIcons Roadmap
+
 Here are some things that are currently being planned for this project. Note that this list is subject to change and items can be added or removed.
 
 ## Website Redesign
+
 - Redesign the homepage
 - Show aliases in the icon library
 
 ## Figma Plugin
+
 **Available in preview:** https://github.com/ProCode-Software/proicons-figma
 
 A Figma plugin that will allow you to add ProIcons into your design. It will also have the ability to automatically update ProIcons in your file.
@@ -13,6 +16,7 @@ A Figma plugin that will allow you to add ProIcons into your design. It will als
 The plugin source code is available in the [proicons-figma](https://github.com/ProCode-Software/proicons-figma) repository and will be published to Figma Community in the future.
 
 ## Roblox Plugin
+
 > [!IMPORTANT]
 > Due to Roblox API changes, new icons aren't being uploaded to Roblox.
 
@@ -21,6 +25,7 @@ The plugin source code is available in the [proicons-figma](https://github.com/P
 ~~A free and open-source plugin will be available to download for copying and adding icons into your game.~~
 
 ## ProIcons 5.0
+
 Changes planned for the next major version of ProIcons. These are subject to change.
 
 - A new package that includes all icon nodes will be published. This will be a dependency of all ProIcons packages to avoid copying the same icons when multiple packages are installed.
@@ -28,5 +33,6 @@ Changes planned for the next major version of ProIcons. These are subject to cha
 - Codebase changes and rewrites.
 
 ### Breaking changes
+
 - Packages will be published as ESM-only.
 - JavaScript targets will be set to ES2020 or Baseline Widely Available. The current target for the `proicons` package is ES6.

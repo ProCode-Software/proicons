@@ -1,22 +1,22 @@
 packages:
-  - 'packages/*'
-  - 'tools/*'
-  - 'site'
+    - 'packages/*'
+    - 'tools/*'
+    - 'site'
 
 catalog:
-  typescript: ^7.0.2
-  vite: ^8.3.6
+    typescript: ^7.0.2
+    vite: ^8.3.8
 
 overrides:
-  file-type: '>=21.3.1'
-  svelte: '>=5.56.7'
+    file-type: '>=21.3.1'
+    svelte: '>=5.56.7'
 
 sharedWorkspaceLockfile: false
 ignoreWorkspaceCycles: true
 minimumReleaseAgeExclude:
-  - proicons
-  - '@proicons/*'
+    - proicons
+    - '@proicons/*'
 allowBuilds:
-  '@parcel/watcher': set this to true or false
-  es5-ext: true
-  ttf2woff2: true
+    '@parcel/watcher': set this to true or false
+    es5-ext: true
+    ttf2woff2: true

@@ -1,4 +1,4 @@
-import ansiColors from 'ansi-colors'
+import { styleText } from 'util'
 import { formatJson, getVersion } from './utils.ts'
 import { resolve } from 'path'
 import { readFileSync, writeFileSync } from 'fs'
@@ -38,7 +38,7 @@ export function auditDeprecated() {
         return Math.max(n1, n2)
     }
     if (!lockfile.deprecated?.length) {
-        console.log(ansiColors.green('There are no deprecated icons!'))
+        console.log(styleText('green', 'There are no deprecated icons!'))
         process.exit(0)
     }
 
@@ -58,25 +58,25 @@ export function auditDeprecated() {
     )
 
     if (timeToRemove.length > 0) {
-        console.log(ansiColors.bold('\nThese icons should be removed:\n'))
+        console.log(styleText('bold', '\nThese icons should be removed:\n'))
 
         console.log(
             timeToRemove
                 .map(
                     ({ icon, removalVersion }) =>
-                        `${ansiColors.red(icon)} ${ansiColors.dim(`(v${removalVersion})`)}`
+                        `${styleText('red', icon)} ${styleText('dim', `(v${removalVersion})`)}`
                 )
                 .join('\n')
         )
     }
 
-    console.log(ansiColors.bold('\nDeprecated icons:\n'))
+    console.log(styleText('bold', '\nDeprecated icons:\n'))
 
     deprecatedIcons.forEach(({ icon, version, alternative, removalVersion }) => {
         console.log(
             `   ${icon}
-    ${ansiColors.dim(`Deprecated in v${version}; to be removed in v${removalVersion}`)}
-    ${alternative ? ansiColors.yellow(`Alternative: ${alternative}`) : ''}`
+    ${styleText('dim', `Deprecated in v${version}; to be removed in v${removalVersion}`)}
+    ${alternative ? styleText('yellow', `Alternative: ${alternative}`) : ''}`
         )
     })
     process.exit(0)

@@ -18,7 +18,9 @@ export interface WorkerResponse {
     path: string
 }
 
-export default async function generateIconModule(data: WorkerData): Promise<WorkerResponse> {
+export default async function generateIconModule(
+    data: WorkerData
+): Promise<WorkerResponse> {
     const { iconName, inDir, outDir, templateDir, format } = data
 
     const inFile = kebabCase(iconName) + '.svg'

@@ -1,5 +1,5 @@
 import { FontAssetType, generateFonts, OtherAssetType } from 'fantasticon'
-import ansiColors from 'ansi-colors'
+import { styleText } from 'util'
 import { execSync } from 'child_process'
 import { existsSync, mkdirSync, readFileSync } from 'fs'
 import SVGFixer from 'oslllo-svg-fixer'
@@ -26,7 +26,7 @@ async function outlineSvgs(rebuild: boolean) {
 
     try {
         if (!needsBuilding) {
-            console.log(ansiColors.green('SVGs are already outlined, skipped'))
+            console.log(styleText('green', 'SVGs are already outlined, skipped'))
             return
         }
         if (!existsSync(outputDir)) mkdirSync(outputDir)
@@ -36,9 +36,9 @@ async function outlineSvgs(rebuild: boolean) {
             traceResolution: 800,
         }).fix()
 
-        console.log(ansiColors.green('Done outlining SVGs!'))
+        console.log(styleText('green', 'Done outlining SVGs!'))
     } catch (err) {
-        console.log(ansiColors.red('Error outlining SVGs:'))
+        console.log(styleText('red', 'Error outlining SVGs:'))
         throw err
     }
 }
@@ -79,9 +79,9 @@ export async function buildFont(rebuild: boolean) {
             prefix: 'proicon',
         })
 
-        console.log(ansiColors.green('Done building fonts!'))
+        console.log(styleText('green', 'Done building fonts!'))
     } catch (err) {
-        console.log(ansiColors.red('Error building fonts:'))
+        console.log(styleText('red', 'Error building fonts:'))
         throw err
     }
 }

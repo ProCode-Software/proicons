@@ -1,6 +1,6 @@
 import * as rename from '@proicons/shared'
 import convertPathToRect from '@proicons/svgo-plugins/convertPathToRect'
-import ansiColors from 'ansi-colors'
+import { styleText } from 'util'
 import { $ } from 'bun'
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'fs'
 import { join, resolve } from 'path'
@@ -139,7 +139,7 @@ async function writeSvgFilesFromData(jsonData: IconList) {
 async function optimizeIcons() {
     await writeSvgFilesFromData(getIconsJson())
 
-    console.log(ansiColors.bold(ansiColors.green('Optimized icons!')))
+    console.log(styleText('bold', styleText('green', 'Optimized icons!')))
 }
 
 /** Writes data for **new icons** into `icons/icons.json`, and optimized SVG files into `icons/svg`. */
@@ -150,7 +150,7 @@ async function createSvgFiles() {
             .default as IconList
     } catch {}
     await writeSvgFilesFromData(inIcons)
-    console.log(ansiColors.green('Done creating SVG files!'))
+    console.log(styleText('green', 'Done creating SVG files!'))
 }
 
 // Build lockfile
@@ -183,7 +183,7 @@ async function writeLockfile() {
 
         writeFileSync(location, formatted)
 
-        console.log(ansiColors.green(`Done building lockfile!`))
+        console.log(styleText('green', `Done building lockfile!`))
     } catch (error) {
         console.error('Error writing lockfile:')
         throw error
@@ -215,7 +215,7 @@ async function buildPNGs() {
     )
     console.timeEnd('Build PNGs')
     progressBar.terminate()
-    console.log(ansiColors.green('Done building PNGs!'))
+    console.log(styleText('green', 'Done building PNGs!'))
 }
 
 /** Builds icon modules for all packages. */
@@ -250,13 +250,13 @@ async function run() {
     await buildFont(rebuildFont)
 
     // Build complete
-    console.log(ansiColors.greenBright('\nBuild complete!'))
+    console.log(styleText('greenBright', '\nBuild complete!'))
     console.timeEnd('Build time')
 
     if (newIcons.length > 0) {
-        console.log(ansiColors.cyan('New icons: ' + newIcons.join(', ')))
+        console.log(styleText('cyan', 'New icons: ' + newIcons.join(', ')))
     } else {
-        console.log(ansiColors.cyan('No newly added icons'))
+        console.log(styleText('cyan', 'No newly added icons'))
     }
 }
 
